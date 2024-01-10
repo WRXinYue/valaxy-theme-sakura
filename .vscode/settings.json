@@ -1,0 +1,44 @@
+{
+  "cSpell.words": [
+    "algoliasearch",
+    "instantsearch",
+    "valaxy",
+    "valaxyjs",
+    "beian"
+  ],
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": ["./locales"],
+  "i18n-ally.sortKeys": true,
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+  "svg.preview.background": "editor",
+
+  // Enable the ESlint flat config support
+  "eslint.experimental.useFlatConfig": true,
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml"
+  ]
+}

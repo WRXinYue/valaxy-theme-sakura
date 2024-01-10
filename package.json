@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@8.9.2",
+  "homepage": "https://valaxy.site",
+  "scripts": {
+    "build": "npm run build:demo",
+    "build:demo": "npm -C demo run build",
+    "ci:publish": "pnpm -r publish --access public --no-git-checks",
+    "dev": "npm run demo",
+    "demo": "npm -C demo run dev",
+    "lint": "eslint .",
+    "release": "cd theme && git add -A && bumpp",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "1.0.0-beta.29",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.52.0",
+    "typescript": "^5.2.2",
+    "valaxy": "^0.15.10",
+    "valaxy-theme-sakura": "workspace:*",
+    "vue-tsc": "^1.8.22"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "valaxy-theme-sakura",
+  "version": "0.2.1",
+  "packageManager": "pnpm@7.5.0",
+  "author": {
+    "email": "me@yunyoujun.cn",
+    "name": "YunYouJun",
+    "url": "https://www.yunyoujun.cn"
+  },
+  "homepage": "https://starter.valaxy.site",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WRXinYue/valaxy-theme-sakura"
+  },
+  "keywords": [
+    "valaxy",
+    "theme",
+    "sakura",
+    "vue"
+  ],
+  "main": "client/index.ts",
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "@iconify-json/ant-design": "^1.1.10",
+    "@iconify-json/simple-icons": "^1.1.76"
+  },
+  "devDependencies": {
+    "valaxy": "^0.15.10"
+  }
+}

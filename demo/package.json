@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "npm run build:ssg && npm run rss",
+    "build:spa": "valaxy build",
+    "build:ssg": "valaxy build --ssg",
+    "dev": "valaxy",
+    "rss": "valaxy rss",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "valaxy": "^0.15.10",
+    "valaxy-theme-sakura": "workspace:*"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "vite-plugin-inspect": "^0.7.41"
+  }
+}
