@@ -40,5 +40,6 @@
     "json",
     "jsonc",
     "yaml"
-  ]
+  ],
+  "deepscan.enable": true
 }
