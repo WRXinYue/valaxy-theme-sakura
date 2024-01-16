@@ -2,7 +2,7 @@
   "type": "module",
   "private": true,
   "packageManager": "pnpm@8.9.2",
-  "homepage": "https://valaxy.site",
+  "homepage": "https://sakura.wrxinyue.org",
   "scripts": {
     "build": "npm run build:demo",
     "build:demo": "npm -C demo run build",
