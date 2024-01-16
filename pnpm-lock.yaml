@@ -55,6 +55,9 @@ importers:
         specifier: ^1.1.76
         version: 1.1.87
     devDependencies:
+      '@iconify-json/fa':
+        specifier: ^1.1.8
+        version: 1.1.8
       valaxy:
         specifier: ^0.15.10
         version: 0.15.14(@types/markdown-it@13.0.7)(@unhead/shared@1.8.9)(postcss@8.4.33)(typescript@5.3.3)(unhead@1.8.9)
@@ -868,6 +871,12 @@ packages:
     resolution: {integrity: sha512-tJVXv9+D9cjU5HcaY+8J0awv9AL/Mjo9MWR/fxHfHFPP/iokjPBEgq4jOBDGNe8W0k/BTrVI3zpgZjLoi6RNGg==}
     dependencies:
       '@iconify/types': 2.0.0
+
+  /@iconify-json/fa@1.1.8:
+    resolution: {integrity: sha512-he23ZsuDxA6Hx7rnrEpSJnmu7t7RtG/SbrENZhMSPiZ4bNRGHjyPZimtOy10k2/nfwNsW57ECDsO5eK0BkcoMg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
 
   /@iconify-json/ri@1.1.18:
     resolution: {integrity: sha512-/gm7OrzhX6iOklhSnhK102unCzA+5wB0OJzXPgvpMr19VOD+dkXzIxEAbGu5lhFCxgn5TJ2jJLc8DtvnZWsyrw==}

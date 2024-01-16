@@ -15,6 +15,10 @@ export interface ThemeConfig {
     primary: string
   }
 
+  // site name
+  prefixName: string
+  siteName: string
+
   /**
    * footer
    */
@@ -31,9 +35,8 @@ export interface ThemeConfig {
       /**
        * icon name, i-xxx
        */
-      name: string
+      img: string
       animated: boolean
-      color: string
       url: string
       title: string
     }

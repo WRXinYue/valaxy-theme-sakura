@@ -1,0 +1,55 @@
+<script setup lang="ts">
+import { onMounted, onUnmounted, ref } from 'vue'
+
+const hide = 'top: -900px'
+const style = ref(hide)
+function onScroll() {
+  if (window.scrollY > 200) {
+    if (window.innerWidth > 720)
+      style.value = `top: ${Math.min(window.innerHeight - 968, 0)}px`
+    else
+      style.value = `top: -640px`
+  }
+  else {
+    style.value = hide
+  }
+}
+function toTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+onMounted(() => {
+  window.addEventListener('scroll', onScroll)
+  onScroll()
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+})
+</script>
+
+<template>
+  <a href="#" class="totop" :style="style" aria-label="to-top" @click="toTop" />
+</template>
+
+<style lang="scss" scoped>
+.totop {
+  position: fixed;
+  width: 70px;
+  height: 900px;
+  right: 25px;
+  z-index: 50;
+  background-image: url("../assets/scroll.png");
+  transition: top 0.5s ease-in-out;
+  animation: float 2s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+</style>

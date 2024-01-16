@@ -1,5 +1,5 @@
 <template>
   <Layout>
-    <StarterArticle />
+    <SakuraArticle />
   </Layout>
 </template>

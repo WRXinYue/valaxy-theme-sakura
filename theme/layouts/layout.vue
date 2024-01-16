@@ -1,10 +1,8 @@
 <template>
   <div class="antialiased">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-      <StarterNav />
-    </div>
+    <SakuraNav />
 
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+    <main class="mx-auto">
       <slot>
         <RouterView v-slot="{ Component }">
           <component :is="Component">
@@ -43,8 +41,8 @@
 
     <StarterHelper />
 
-    <StarterFooter>
+    <SakuraFooter>
       <slot name="footer" />
-    </StarterFooter>
+    </SakuraFooter>
   </div>
 </template>

@@ -1,7 +1,7 @@
 ---
 title: 测试文档
 tags: [测试, 算法, 测试1, 测试2, 测试3, 测试4, 测试5, 测试6, 测试7]
-cover: https://tva2.sinaimg.cn/large/0060lm7Tly1fpx1skrabaj31hc0u01kx.jpg
+cover: /60651947_p0.jpg
 ---
 
 ## 代码测试
@@ -9,20 +9,21 @@ cover: https://tva2.sinaimg.cn/large/0060lm7Tly1fpx1skrabaj31hc0u01kx.jpg
 二分查找 `binsearch`
 
 ```ts
-//[l, r)
-function search(nums: number[], target: number): number { 
-    let l = 0, r = nums.length;
-    while (l < r) {
-        let c = (l + r) >> 1;
-        if (nums[c] > target) {
-            r = c;
-        } else if (nums[c] < target) {
-            l = c + 1;
-        } else {
-            return c;
-        }
-    }
-    return -1;
+// [l, r)
+function search(nums: number[], target: number): number {
+  let l = 0; let r = nums.length
+  while (l < r) {
+    const c = (l + r) >> 1
+    if (nums[c] > target)
+      r = c
+
+    else if (nums[c] < target)
+      l = c + 1
+
+    else
+      return c
+  }
+  return -1
 }
 ```
 

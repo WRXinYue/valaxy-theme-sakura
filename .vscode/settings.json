@@ -1,10 +1,11 @@
 {
   "cSpell.words": [
     "algoliasearch",
+    "beian",
     "instantsearch",
+    "Sakura",
     "valaxy",
-    "valaxyjs",
-    "beian"
+    "valaxyjs"
   ],
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.keystyle": "nested",
@@ -22,12 +23,18 @@
   "eslint.experimental.useFlatConfig": true,
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   // Auto fix
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
   // Enable eslint for all supported languages
   "eslint.validate": [
     "javascript",
@@ -40,6 +47,5 @@
     "json",
     "jsonc",
     "yaml"
-  ],
-  "deepscan.enable": true
+  ]
 }
