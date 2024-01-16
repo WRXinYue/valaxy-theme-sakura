@@ -1,4 +1,4 @@
-![Preview](https://wrxinyue-images.s3.bitiful.net/2024-01-16_19-31.png)
+![Preview](assets/2024-01-16_19-31.png)
 
 <h2 align="center">Valaxy Theme Sakura</h2>
 <pre align="center">
@@ -103,7 +103,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
 **更新主题：**
 ~~~bash
-pnpm up valaxy-theme-sakura
+pnpm up valaxy-theme-sakura --latest
 # npm update valaxy-theme-sakura
 ~~~
 

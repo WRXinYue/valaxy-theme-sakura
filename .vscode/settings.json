@@ -14,11 +14,6 @@
   "files.associations": {
     "*.css": "postcss"
   },
-  "[scss]": {
-    "editor.formatOnSave": true
-  },
-  "svg.preview.background": "editor",
-
   // Enable the ESlint flat config support
   "eslint.experimental.useFlatConfig": true,
   // Disable the default formatter, use eslint instead
@@ -26,11 +21,10 @@
   "editor.formatOnSave": true,
   // Auto fix
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+    "source.fixAll.eslint": "explicit"
   },
   "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
