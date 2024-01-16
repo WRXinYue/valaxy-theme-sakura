@@ -11,7 +11,8 @@ cover: /60651947_p0.jpg
 ```ts
 // [l, r)
 function search(nums: number[], target: number): number {
-  let l = 0; let r = nums.length
+  let l = 0
+  let r = nums.length
   while (l < r) {
     const c = (l + r) >> 1
     if (nums[c] > target)

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { isDark, toggleDark, useSiteConfig } from 'valaxy'
+// import { isDark, toggleDark, useSiteConfig } from 'valaxy'
+import { useSiteConfig } from 'valaxy'
 import { onMounted, onUnmounted, ref } from 'vue'
 
 // import { computed } from 'vue'

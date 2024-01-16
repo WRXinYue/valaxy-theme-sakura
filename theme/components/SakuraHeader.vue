@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { useSiteConfig } from 'valaxy'
+// import { useSiteConfig } from 'valaxy'
 import { ref } from 'vue'
 
-const siteConfig = useSiteConfig()
+// const siteConfig = useSiteConfig()
 
 const bgClass = ref('filter-dot')
 
 const hello = 'Hello, sakura'
 const motto = 'You got to put the past behind you before you can move on.'
-const social = []
+// const social = []
 const cover = 'https://w.wallhaven.cc/full/we/wallhaven-wewdy7.jpg'
 </script>
 
