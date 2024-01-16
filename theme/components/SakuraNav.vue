@@ -36,13 +36,13 @@ function handleScroll() {
         <span class="logolink moe-mashiro flex">
           <img class="mr-2" style="width: 40px; height: 40px" alt="logo" :src="siteConfig.favicon">
           <RouterLink class="text-xl" to="/" :aria-label="siteConfig.title">
-            <span class="sakurasono">{{ themeConfig.prefixName }}</span>
-            <span class="shironeko hidden md:inline">{{ themeConfig.siteName }}</span>
+            <span class="sakurasono hidden md:inline">{{ themeConfig.prefixName }}</span>
+            <span class="shironeko">{{ themeConfig.siteName }}</span>
           </RouterLink>
         </span>
       </span>
     </div>
-    <div class="text-sm text-gray-500 leading-5">
+    <div class="text-sm text-gray-500 leading-5 hidden md:inline">
       <template v-for="(item, i) in themeConfig.nav" :key="i">
         <AppLink :to="item.link" rel="noopener">
           {{ item.text }}

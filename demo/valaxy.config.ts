@@ -13,8 +13,8 @@ export default defineConfig<ThemeConfig>({
     //   primary: 'red',
     // },
 
-    prefixName: 'vitepress-theme',
-    siteName: '-sakura',
+    prefixName: 'vitepress-theme-',
+    siteName: 'sakura',
 
     nav: [
       {

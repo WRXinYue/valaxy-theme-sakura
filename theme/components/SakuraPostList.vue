@@ -17,7 +17,7 @@ const posts = computed(() => props.posts || routes.value)
 
 <template>
   <div class="max-w-800px m-auto">
-    <div class="pt-24px flex items-center">
+    <div class="pt-24px px-20px flex items-center">
       <div class="i-fa-book mr-1 text-[#333]" /> 文章列表
     </div>
     <hr>

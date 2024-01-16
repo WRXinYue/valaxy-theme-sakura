@@ -10,8 +10,8 @@ export const defaultThemeConfig: ThemeConfig = {
     primary: '#ffc0cb',
   },
 
-  prefixName: 'vitepress-theme',
-  siteName: '-sakura',
+  prefixName: 'vitepress-theme-',
+  siteName: 'sakura',
 
   footer: {
     since: 2024,
