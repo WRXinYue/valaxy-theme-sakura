@@ -13,7 +13,7 @@
 
 ### Usage
 
-安装主题:
+**安装主题:**
 ~~~bash
 # pnpm (推荐)
 pnpm create valaxy
@@ -27,7 +27,7 @@ pnpm add valaxy-theme-sakura
 ~~~
 
 
-启用主题:
+**启用主题:**
 ~~~ts
 // valaxy.config.ts
 import { defineConfig } from 'valaxy'
@@ -39,7 +39,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 ~~~
 
 
-配置示例:
+**配置示例:**
 ~~~ts
 // valaxy.config.ts
 import { defineValaxyConfig } from 'valaxy'
@@ -99,6 +99,12 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
   unocss: { safelist },
 })
+~~~
+
+**更新主题：**
+~~~bash
+pnpm up valaxy-theme-sakura
+# npm update valaxy-theme-sakura
 ~~~
 
 示例: <a href="https://sakura.wrxinyue.org/">Live Demo</a>
