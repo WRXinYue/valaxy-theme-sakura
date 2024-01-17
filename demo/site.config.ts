@@ -4,7 +4,7 @@ export default defineSiteConfig({
   lang: 'zh-CN',
   title: 'Valaxy Theme Sakura',
   favicon: '/favicon.ico',
-  url: 'https://starter.valaxy.site/',
+  url: 'https://sakura.wrxinyue.org/',
   author: {
     avatar: 'https://www.yunyoujun.cn/images/avatar.jpg',
     name: 'WRXinYue',
