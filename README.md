@@ -2,7 +2,7 @@
 
 <h2 align="center">Valaxy Theme Sakura</h2>
 <pre align="center">
-🧪 正在积极开发中
+🧪 正在积极开发中 | <a href="https://sakura.wrxinyue.org/">Live Demo</a>
 </pre>
 
 <p align="center">
@@ -106,8 +106,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
 pnpm up valaxy-theme-sakura --latest
 # npm update valaxy-theme-sakura
 ~~~
-
-示例: <a href="https://sakura.wrxinyue.org/">Live Demo</a>
 
 
 ### 鸣谢
