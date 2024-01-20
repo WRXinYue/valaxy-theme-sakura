@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { useSiteConfig } from 'valaxy'
+// import { useSiteConfig } from 'valaxy'
 import { ref } from 'vue'
 
-const siteConfig = useSiteConfig()
+// const siteConfig = useSiteConfig()
 
 const bgClass = ref('filter-dot')
 
