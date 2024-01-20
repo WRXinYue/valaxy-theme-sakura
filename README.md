@@ -2,7 +2,7 @@
 
 <h2 align="center">Valaxy Theme Sakura</h2>
 <pre align="center">
-🧪 正在积极开发中，此版本不代表正式结果...
+🧪 正在积极开发中
 </pre>
 
 <p align="center">
@@ -11,7 +11,7 @@
 </p>
 
 
-### Usage
+### 使用
 
 **安装主题:**
 ~~~bash
@@ -108,3 +108,11 @@ pnpm up valaxy-theme-sakura --latest
 ~~~
 
 示例: <a href="https://sakura.wrxinyue.org/">Live Demo</a>
+
+
+### 鸣谢
+
+- [云游君(云猫猫)](https://valaxy.site/)
+- [樱花庄的白猫博客主题](https://github.com/mashirozx/sakura)
+- [hexo-theme-sakura](https://github.com/honjun/hexo-theme-sakura)
+- [vitepress-theme-sakura](https://github.com/flaribbit/vitepress-theme-sakura)

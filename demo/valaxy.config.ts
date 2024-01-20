@@ -13,8 +13,10 @@ export default defineConfig<ThemeConfig>({
     //   primary: 'red',
     // },
 
-    prefixName: 'vitepress-theme-',
-    siteName: 'sakura',
+    prefixName: 'かなしいの',
+    siteName: '心悦',
+
+    favicon: false,
 
     nav: [
       {

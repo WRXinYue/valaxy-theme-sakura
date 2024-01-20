@@ -34,7 +34,7 @@ function handleScroll() {
     <div class="site-branding">
       <span class="site-title">
         <span class="logolink moe-mashiro flex">
-          <img class="mr-2" style="width: 40px; height: 40px" alt="logo" :src="siteConfig.favicon">
+          <img v-if="themeConfig.favicon" class="mr-2 w-40px h-40px" alt="logo" :src="siteConfig.favicon">
           <RouterLink class="text-xl" to="/" :aria-label="siteConfig.title">
             <span class="sakurasono hidden md:inline">{{ themeConfig.prefixName }}</span>
             <span class="shironeko">{{ themeConfig.siteName }}</span>

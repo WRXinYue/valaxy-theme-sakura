@@ -1,115 +1,69 @@
 <script lang="ts" setup>
-// import { useSiteConfig } from 'valaxy'
+import { useSiteConfig } from 'valaxy'
 import { ref } from 'vue'
 
-// const siteConfig = useSiteConfig()
+const siteConfig = useSiteConfig()
 
 const bgClass = ref('filter-dot')
 
 const hello = 'Hello, sakura'
 const motto = 'You got to put the past behind you before you can move on.'
 // const social = []
-const cover = 'https://wrxinyue-images.s3.bitiful.net/wallhaven-wewdy7.jpg'
+const cover = 'https://w.wallhaven.cc/full/we/wallhaven-wewdy7.jpg'
 </script>
 
 <template>
-  <div style="width: 100%; height: 100vh;" class="headertop" :class="bgClass">
-    <div class="banner" :style="`background-image: url(${cover})`">
-      <div class="wave1" />
-      <div class="wave2" />
-      <div class="info">
-        <GlitchText :text="hello" />
-        <div class="<md:w-full w-600px text-white w-full h-full rounded-2xl px-4 py-3" style="background-color: rgba(0, 0, 0, 0.5);">
-          <div class="text-center text-lg flex items-center items-center w-full h-full">
-            <div class="i-fa-quote-left text-xs" />
-            <div class="px-2">
-              {{ motto }}
-            </div>
-            <div class="i-fa-quote-right text-xs" />
+  <header class="relative flex px-70px justify-center flex-items-center w-full h-100vh">
+    <div class="headertop absolute h-full w-full top-0 overflow-hidden" :class="bgClass">
+      <video class="object-cover block bg-cover w-full h-full" preload="auto" autoplay loop muted>
+        <source src="https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4" type="video/mp4">
+        您的浏览器不支持视频标签。
+      </video>
+    </div>
+    <!-- <div class="banner" :style="`background-image: url(${cover})`" /> -->
+    <div class="front-wave absolute z-12 bottom-0 w-[400%] h-65px" />
+    <div class="foreground-wave absolute z-12 bottom-0 w-[400%] h-80px" />
+    <div class="info z-4">
+      <GlitchText :text="hello" />
+      <div
+        class="<md:w-full w-600px text-white w-full h-full rounded-2xl px-4 py-3"
+        style="background-color: rgba(0, 0, 0, 0.5);"
+      >
+        <div class="text-center text-lg flex items-center items-center w-full h-full">
+          <div class="i-fa-quote-left text-xs" />
+          <div class="px-2">
+            {{ motto }}
           </div>
-          <!-- <div class="contact">
-            <a
-              v-for="s in social"
-              :href="s.url"
-              aria-label="icon"
-              target="_blank"
-            >
-              <i class="fab" :class="[s.icon]" />
-            </a>
-          </div> -->
+          <div class="i-fa-quote-right text-xs" />
+          <a v-for="s in siteConfig" :href="s.url" aria-label="icon" target="_blank">
+            <div :class="[s.icon]" />
+          </a>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <style lang="scss" scoped>
-.banner {
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
+.front-wave {
+  background: url("../assets/wave1.png") repeat-x;
+  animation: front-wave-animation 30s infinite linear;
+}
+
+.foreground-wave {
+  background: url("../assets/wave2.png") repeat-x;
+  animation: foreground-wave-animation 20s infinite linear;
+}
+
+.info {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-
-  .wave1,
-  .wave2 {
-    position: absolute;
-    width: 400%;
-    bottom: 0;
-    z-index: 4;
-  }
-
-  .wave1 {
-    background: url("../assets/wave1.png") repeat-x;
-    height: 65px;
-    animation: wave-animation-1 30s infinite linear;
-    z-index: 4;
-  }
-
-  .wave2 {
-    background: url("../assets/wave2.png") repeat-x;
-    height: 80px;
-    animation: wave-animation-2 20s infinite linear;
-    z-index: 4;
-  }
-
-  .info {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 4;
-  }
-  .contact {
-    display: flex;
-    justify-content: center;
-    font-size: 24px;
-    padding-bottom: 12px;
-
-    a {
-      color: white;
-      margin: 6px;
-    }
-  }
 }
 
-@media (max-width: 720px) {
-  .banner {
-    .info {
-      margin: 0 0.5em;
-    }
-
-    .text {
-      margin: 1em 0.5em;
-    }
-  }
-}
-
-@keyframes wave-animation-1 {
+@keyframes front-wave-animation {
   0% {
     left: 0;
   }
@@ -119,7 +73,7 @@ const cover = 'https://wrxinyue-images.s3.bitiful.net/wallhaven-wewdy7.jpg'
   }
 }
 
-@keyframes wave-animation-2 {
+@keyframes foreground-wave-animation {
   0% {
     left: 0;
   }
@@ -130,21 +84,24 @@ const cover = 'https://wrxinyue-images.s3.bitiful.net/wallhaven-wewdy7.jpg'
 }
 
 .headertop::before {
-  content:'';
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  z-index:3;
-  background-attachment:fixed
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background-attachment: fixed
 }
+
 .headertop.filter-dim::before {
-    background-color:rgba(0,0,0,0.3)
+  background-color: rgba(0, 0, 0, 0.3)
 }
+
 .headertop.filter-grid::before {
-    background-image:url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/grid.png)
+  background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/grid.png)
 }
+
 .filter-dot.filter-dot::before {
   background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/dot.gif);
 }

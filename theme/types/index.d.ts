@@ -19,6 +19,9 @@ export interface ThemeConfig {
   prefixName: string
   siteName: string
 
+  // navbar favicon
+  favicon: boolean
+
   /**
    * footer
    */

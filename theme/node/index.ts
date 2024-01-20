@@ -10,8 +10,29 @@ export const defaultThemeConfig: ThemeConfig = {
     primary: '#ffc0cb',
   },
 
-  prefixName: 'vitepress-theme-',
-  siteName: 'sakura',
+  prefixName: 'かなしいの',
+  siteName: '心悦',
+
+  favicon: false,
+
+  // TODO:
+
+  // social  url, img PC端配置
+  social: {
+    github: { url: 'http://github.com/xbclub', img: 'https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/img/social/github.png' },
+    // sina: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/sina.png},
+    // wangyiyun: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/wangyiyun.png},
+    // zhihu: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/zhihu.png},
+    email: { url: '525255289@qq.com', img: 'https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/img/social/email.svg' },
+    // wechat: {url: /#, qrcode: /img/custom/wechat.jpg, img: /img/social/wechat.png},
+  },
+
+  // social  url, img 移动端配置
+  msocial: {
+    github: { url: 'http://github.com/xbclub', fa: 'fa-github', color: 333 },
+    // weibo: {url: 'http://weibo.com/mashirozx?is_all=1', fa: 'fa-weibo', color: 'dd4b39'},
+    qq: { url: 'https://wpa.qq.com/msgrd?v=3&uin=525255289&site=qq&menu=yes', fa: ' fa-qq', color: ' 25c6fe' },
+  },
 
   footer: {
     since: 2024,
