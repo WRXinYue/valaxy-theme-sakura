@@ -9,7 +9,7 @@ const bgClass = ref('filter-dot')
 const hello = 'Hello, sakura'
 const motto = 'You got to put the past behind you before you can move on.'
 // const social = []
-const cover = 'https://w.wallhaven.cc/full/we/wallhaven-wewdy7.jpg'
+// const cover = 'https://w.wallhaven.cc/full/we/wallhaven-wewdy7.jpg'
 </script>
 
 <template>
@@ -35,9 +35,9 @@ const cover = 'https://w.wallhaven.cc/full/we/wallhaven-wewdy7.jpg'
             {{ motto }}
           </div>
           <div class="i-fa-quote-right text-xs" />
-          <a v-for="s in siteConfig" :href="s.url" aria-label="icon" target="_blank">
+          <!-- <a v-for="s in siteConfig" :href="s.url" aria-label="icon" target="_blank">
             <div :class="[s.icon]" />
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
