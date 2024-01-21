@@ -22,7 +22,8 @@
   "types": "types/index.d.ts",
   "dependencies": {
     "@iconify-json/ant-design": "^1.1.10",
-    "@iconify-json/simple-icons": "^1.1.76"
+    "@iconify-json/simple-icons": "^1.1.76",
+    "gsap": "^3.12.5"
   },
   "devDependencies": {
     "@iconify-json/fa": "^1.1.8",
