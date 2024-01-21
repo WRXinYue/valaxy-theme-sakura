@@ -9,6 +9,7 @@
     "ci:publish": "pnpm -r publish --access public --no-git-checks",
     "dev": "npm run demo",
     "demo": "npm -C demo run dev",
+    "preview": "cd demo && vite preview --host",
     "lint": "eslint .",
     "release": "cd theme && git add -A && bumpp",
     "typecheck": "vue-tsc --noEmit --skipLibCheck"
