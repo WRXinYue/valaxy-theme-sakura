@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- 在首页添加视频壁纸加载功能
+- 导航栏新增下划线效果
+
+### Fixed
+
+- 修复了文章页面导航栏不加载的问题
+- 修复了RSS链接无法正确跳转的问题
+
+
 ## [0.0.2] - 2024-01-16
 
 ### Added
