@@ -1,30 +1,27 @@
 <script lang="ts" setup>
 // import { useSiteConfig } from 'valaxy'
-import { ref } from 'vue'
+
+import { useThemeConfig } from '../composables'
 
 // const siteConfig = useSiteConfig()
+const themeConfig = useThemeConfig()
 
-const bgClass = ref('filter-dot')
-
-const hello = 'Hello, sakura'
-const motto = 'You got to put the past behind you before you can move on.'
 // const social = []
-// const cover = 'https://w.wallhaven.cc/full/we/wallhaven-wewdy7.jpg'
 </script>
 
 <template>
   <header class="relative flex px-70px justify-center flex-items-center w-full h-100vh">
-    <div class="headertop absolute h-full w-full top-0 overflow-hidden" :class="bgClass">
-      <video class="object-cover block bg-cover w-full h-full" preload="auto" autoplay loop muted>
-        <source src="https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4" type="video/mp4">
+    <div class="headertop absolute h-full w-full top-0 overflow-hidden" :class="themeConfig.headerWallpaper.backgroundStyle">
+      <video v-if="themeConfig.headerWallpaper.type === 'video'" class="object-cover block bg-cover w-full h-full" preload="auto" autoplay loop muted>
+        <source :src="themeConfig.headerWallpaper.videoUrl" type="video/mp4">
         您的浏览器不支持视频标签。
       </video>
+      <div v-if="themeConfig.headerWallpaper.type === 'image'" class="w-full h-full object-cover block bg-cover" :style="`background-image: url(${themeConfig.headerWallpaper.imageUrl})`" />
     </div>
-    <!-- <div class="banner" :style="`background-image: url(${cover})`" /> -->
     <div class="front-wave absolute z-12 bottom-0 w-[400%] h-65px" />
     <div class="foreground-wave absolute z-12 bottom-0 w-[400%] h-80px" />
     <div class="info z-4">
-      <GlitchText :text="hello" />
+      <GlitchText :text="themeConfig.homeTitle" />
       <div
         class="<md:w-full w-600px text-white w-full h-full rounded-2xl px-4 py-3"
         style="background-color: rgba(0, 0, 0, 0.5);"
@@ -32,7 +29,7 @@ const motto = 'You got to put the past behind you before you can move on.'
         <div class="text-center text-lg flex items-center items-center w-full h-full">
           <div class="i-fa-quote-left text-xs" />
           <div class="px-2">
-            {{ motto }}
+            {{ themeConfig.homeMotto }}
           </div>
           <div class="i-fa-quote-right text-xs" />
           <!-- <a v-for="s in siteConfig" :href="s.url" aria-label="icon" target="_blank">

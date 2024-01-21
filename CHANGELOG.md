@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.3] - 2024-01-21
+
 ### Added
 
 - 在首页添加视频壁纸加载功能
 - 导航栏新增下划线效果
+- 添加首页标题、壁纸配置项
 
 ### Fixed
 

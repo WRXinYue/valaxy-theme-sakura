@@ -19,8 +19,21 @@ export interface ThemeConfig {
   prefixName: string
   siteName: string
 
+  // home page
+  homeTitle: string
+  homeMotto: string
+
   // navbar favicon
   favicon: boolean
+
+  headerWallpaper: {
+    type: 'image' | 'video'
+
+    imageUrl: string
+    videoUrl: string
+
+    backgroundStyle: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
+  }
 
   /**
    * footer

@@ -63,9 +63,33 @@ export default defineValaxyConfig<ThemeUserConfig>({
     //   primary: 'red',
     // },
 
-    prefixName: 'vitepress-theme-',
-    siteName: 'sakura',
+    prefixName: 'かなしいの',
+    siteName: '心悦',
 
+    homeTitle: 'Hello, sakura',
+    homeMotto: 'You got to put the past behind you before you can move on.',
+
+    favicon: false, // 导航栏图标
+
+    headerWallpaper: {
+      // 壁纸类型:
+      // - 'video': 视频
+      // - 'image': 图片
+      type: 'video',
+      // 图片壁纸链接
+      imageUrl: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
+      // 视频壁纸链接
+      videoUrl: 'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
+
+      // 背景样式选项:
+      // - '': 无特效，显示原图
+      // - 'filter-dim': 阴影效果
+      // - 'filter-grid': 横条效果
+      // - 'filter-dot': 点点效果
+      backgroundStyle: 'filter-dot',
+    },
+
+    // 导航栏
     nav: [
       {
         text: 'GitHub',
@@ -85,6 +109,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
       },
     ],
 
+    // 页脚配置
     footer: {
       since: 2024,
 
