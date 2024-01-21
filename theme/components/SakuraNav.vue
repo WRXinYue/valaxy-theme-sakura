@@ -1,8 +1,9 @@
 <script setup>
 import { isDark, toggleDark, useSiteConfig } from 'valaxy'
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 
 // import { useRoute } from 'vue-router'
+import gsap from 'gsap'
 import { useThemeConfig } from '../composables'
 
 // const route = useRoute()
@@ -13,15 +14,29 @@ const themeConfig = useThemeConfig()
 
 const scrolled = ref(false)
 const showYYA = ref(false)
-
+const mobileNav = ref(null)
+const mobileNavOpen = ref(false)
 /** Special handling of certain links */
 const processedNavItems = computed(() => themeConfig.value.nav.map(item => ({
   ...item,
   isExternal: item.link === '/atom.xml',
 })))
 
+watch(mobileNavOpen, (newVal) => {
+  if (newVal) {
+    // 打开导航栏
+    gsap.to(mobileNav.value, { x: 0, duration: 0.5 })
+  }
+  else {
+    // 关闭导航栏
+    gsap.to(mobileNav.value, { x: '-110%', duration: 0.5 })
+  }
+})
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+
+  gsap.set(mobileNav.value, { x: '-110%' })
 })
 
 onUnmounted(() => {
@@ -35,12 +50,19 @@ function handleScroll() {
 </script>
 
 <template>
-  <header class="px-3" :class="showYYA || scrolled ? 'yya' : ''" @mouseover="showYYA = true" @mouseleave="showYYA = false">
-    <div class="relative float-left h-75px line-height-75px ml-12px" style="animation: sitetop 1s">
+  <header class="px-3 h-60px" :class="showYYA || mobileNavOpen || scrolled ? 'yya' : ''" @mouseover="showYYA = true" @mouseleave="showYYA = false">
+    <button class="mobile_btn md:!hidden" :class="mobileNavOpen ? 'mobile_btn-open' : ''" @click="mobileNavOpen = !mobileNavOpen">
+      <!-- TODO: Add more color configurations? -->
+      <span :class="showYYA || mobileNavOpen ? 'bg-orange' : 'bg-white'" />
+      <span :class="showYYA || mobileNavOpen ? 'bg-orange' : 'bg-white'" />
+      <span :class="showYYA || mobileNavOpen ? 'bg-orange' : 'bg-white'" />
+    </button>
+
+    <div class="relative float-left line-height-75px ml-12px" style="animation: sitetop 1s">
       <span class="logolink moe-mashiro flex w-auto h-full items-center">
         <img v-if="themeConfig.favicon" class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
         <RouterLink class="text-xl" to="/" :aria-label="siteConfig.title">
-          <span class="sakurasono hidden md:inline mr-1">{{ themeConfig.prefixName }}</span>
+          <span class="sakurasono mr-1">{{ themeConfig.prefixName }}</span>
           <span class="shironeko">{{ themeConfig.siteName }}</span>
         </RouterLink>
       </span>
@@ -65,6 +87,22 @@ function handleScroll() {
       <div v-else i-ri-moon-line />
     </button>
   </header>
+
+  <div v-if="mobileNavOpen" class="overlay" @click="mobileNavOpen = false" />
+
+  <div ref="mobileNav" class="w-60% h-full z-200 fixed mt-60px" style="background: rgba(255, 255, 255, 0.95);">
+    <div class="border border-t" />
+    <template v-for="(item, i) in processedNavItems" :key="i">
+      <div class="border-b flex justify-center">
+        <AppLink v-if="!item.isExternal" :to="item.link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
+          {{ item.text }}
+        </AppLink>
+        <a v-else :href="item.link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
+          {{ item.text }}
+        </a>
+      </div>
+    </template>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -72,7 +110,6 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,8 +124,6 @@ header {
   height: auto;
   line-height: 25px;
   padding-bottom: 0;
-  text-size-adjust: 100%;
-  width: auto
 }
 
 .logolink a:hover .sakurasono {
@@ -131,7 +166,7 @@ header {
   position: fixed;
   left: 0;
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5)
+  box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
 }
 
 .app-link-after::after {
@@ -143,5 +178,52 @@ header {
   height: 6px;
   background-color: #fe9600;
   transition: width 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 30;
+}
+
+.mobile_btn {
+  width: 20px;
+  height: 22px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  transition: transform 0.3s;
+
+  span {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    border-radius: 20px;
+  }
+
+  span:nth-child(1), span:nth-child(3) {
+    width: 50%;
+    align-self: flex-end;
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  span:nth-child(1) {
+    align-self: flex-start;
+    transform-origin: right;
+  }
+
+}
+
+.mobile_btn-open {
+  transform: rotate(-45deg);
+}
+
+.mobile_btn-open span:nth-child(1), .mobile_btn-open span:nth-child(3) {
+  transform: rotate(-90deg);
 }
 </style>
