@@ -1,5 +1,9 @@
 <template>
   <div class="antialiased">
+    <SakuraNav>
+      <slot name="main-nav" />
+    </SakuraNav>
+
     <main class="mx-auto">
       <slot>
         <RouterView v-slot="{ Component }">
