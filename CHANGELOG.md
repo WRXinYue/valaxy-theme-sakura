@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.4] - 2024-01-22
+
+### Added
+
+- 添加用于移动端的侧边栏切换按钮和侧边栏菜单列表
+
+### Fixed
+
+- 修复导航栏重叠问题
+- 修复手机端首页过宽
+
 ## [0.0.3] - 2024-01-21
 
 ### Added
@@ -19,7 +30,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - 修复了文章页面导航栏不加载的问题
 - 修复了RSS链接无法正确跳转的问题
-
 
 ## [0.0.2] - 2024-01-16
 

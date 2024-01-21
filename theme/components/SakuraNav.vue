@@ -22,6 +22,10 @@ const processedNavItems = computed(() => themeConfig.value.nav.map(item => ({
   isExternal: item.link === '/atom.xml',
 })))
 
+const isHeaderActive = computed(() => {
+  return showYYA.value || scrolled.value || mobileNavOpen.value
+})
+
 watch(mobileNavOpen, (newVal) => {
   if (newVal) {
     // 打开导航栏
@@ -50,12 +54,12 @@ function handleScroll() {
 </script>
 
 <template>
-  <header class="px-3 h-60px" :class="showYYA || mobileNavOpen || scrolled ? 'yya' : ''" @mouseover="showYYA = true" @mouseleave="showYYA = false">
+  <header class="px-3 h-60px" :class="isHeaderActive ? 'yya' : ''" @mouseover="showYYA = true" @mouseleave="showYYA = false">
     <button class="mobile_btn md:!hidden" :class="mobileNavOpen ? 'mobile_btn-open' : ''" @click="mobileNavOpen = !mobileNavOpen">
       <!-- TODO: Add more color configurations? -->
-      <span :class="showYYA || mobileNavOpen ? 'bg-orange' : 'bg-white'" />
-      <span :class="showYYA || mobileNavOpen ? 'bg-orange' : 'bg-white'" />
-      <span :class="showYYA || mobileNavOpen ? 'bg-orange' : 'bg-white'" />
+      <span :class="isHeaderActive ? 'bg-orange' : 'bg-white'" />
+      <span :class="isHeaderActive ? 'bg-orange' : 'bg-white'" />
+      <span :class="isHeaderActive ? 'bg-orange' : 'bg-white'" />
     </button>
 
     <div class="relative float-left line-height-75px ml-12px" style="animation: sitetop 1s">
