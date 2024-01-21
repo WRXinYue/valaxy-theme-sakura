@@ -39,8 +39,6 @@ watch(mobileNavOpen, (newVal) => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
-
-  gsap.set(mobileNav.value, { x: '-110%' })
 })
 
 onUnmounted(() => {
@@ -94,7 +92,7 @@ function handleScroll() {
 
   <div v-if="mobileNavOpen" class="overlay" @click="mobileNavOpen = false" />
 
-  <div ref="mobileNav" class="w-60% h-full z-200 fixed mt-60px" style="background: rgba(255, 255, 255, 0.95);">
+  <div ref="mobileNav" class="w-60% h-full z-200 fixed mt-60px" style="background: rgba(255, 255, 255, 0.95); transform: translateX(-110%)">
     <div class="border border-t" />
     <template v-for="(item, i) in processedNavItems" :key="i">
       <div class="border-b flex justify-center">
