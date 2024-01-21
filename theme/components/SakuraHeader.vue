@@ -10,20 +10,20 @@ const themeConfig = useThemeConfig()
 </script>
 
 <template>
-  <header class="relative flex px-70px justify-center flex-items-center w-full h-100vh">
+  <header class="relative flex <md:px-5 justify-center flex-items-center w-full h-100vh">
     <div class="headertop absolute h-full w-full top-0 overflow-hidden" :class="themeConfig.headerWallpaper.backgroundStyle">
       <video v-if="themeConfig.headerWallpaper.type === 'video'" class="object-cover block bg-cover w-full h-full" preload="auto" autoplay loop muted>
         <source :src="themeConfig.headerWallpaper.videoUrl" type="video/mp4">
         您的浏览器不支持视频标签。
       </video>
       <div v-if="themeConfig.headerWallpaper.type === 'image'" class="w-full h-full object-cover block bg-cover" :style="`background-image: url(${themeConfig.headerWallpaper.imageUrl})`" />
+      <div class="front-wave absolute z-12 bottom-0 w-[400%] h-65px" />
+      <div class="foreground-wave absolute z-12 bottom-0 w-[400%] h-80px" />
     </div>
-    <div class="front-wave absolute z-12 bottom-0 w-[400%] h-65px" />
-    <div class="foreground-wave absolute z-12 bottom-0 w-[400%] h-80px" />
     <div class="info z-4">
       <GlitchText :text="themeConfig.homeTitle" />
       <div
-        class="<md:w-full w-600px text-white w-full h-full rounded-2xl px-4 py-3"
+        class="text-white w-full h-full rounded-2xl px-4 py-3"
         style="background-color: rgba(0, 0, 0, 0.5);"
       >
         <div class="text-center text-lg flex items-center items-center w-full h-full">
