@@ -3,36 +3,35 @@ import type { Post } from 'valaxy'
 
 defineProps<{
   post: Post
+  imagePosition: boolean
 }>()
 </script>
 
 <template>
-  <article class="card">
-    <div class="image" />
-    <div class="info">
-      <div class="inline-flex items-center">
-        <div class="i-fa-clock-o mr-1" />
-        发布于 <SakuraDate :date="post.date" />
-      </div>
+  <article class="card" h-50 flex overflow-hidden justify-between :class="imagePosition && post.cover && 'flex-row-reverse'">
+    <div v-if="post.cover" w="40%" h-auto overflow-hidden>
+      <div bg="center no-repeat cover" transition-400 w-full h-full :class="`bg-[url(${post.cover})]`" hover:transform="scale-120" />
     </div>
-    <RouterLink class="st-text" :to="post.path || ''">
-      <div class="title my-2">
-        {{ post.title }}
+
+    <div m-4>
+      <div inline-flex items-center>
+        <div i-fa-clock-o mr-1 /> 发布于 <SakuraDate :date="post.date" />
       </div>
-      <div class="content" v-html="post.excerpt" />
-      <div class="tags">
-        <a v-for="tag in post.tags" :key="tag" href="#" class="inline-flex items-center">
-          <div class="i-fa-tag" />
-          {{ tag }}
-        </a>
-      </div>
+      <RouterLink class="st-text" :to="post.path || ''">
+        <div class="title" my-2>
+          {{ post.title }}
+        </div>
+        <div v-html="post.excerpt" />
+        <div class="tags">
+          <a v-for="tag in post.tags" :key="tag" href="#" inline-flex items-center> <div i-fa-tag /> {{ tag }} </a>
+        </div>
       <!-- <div class="tags">
         <a v-for="t in p.tags" :href="`${base}tags/?q=${t}`">
           <i class="fa fa-tag" />
           {{ t }}
         </a>
       </div> -->
-    </RouterLink>
+      </RouterLink>
     <!-- <div
       v-if="post.excerpt"
       class="prose max-w-none text-gray-500"
@@ -45,6 +44,7 @@ defineProps<{
         </RouterLink>
       </div>
     </div> -->
+    </div>
   </article>
 </template>
 
@@ -54,14 +54,9 @@ defineProps<{
   font-size: 14px;
 }
 
-.fa {
-  font-size: 16px;
-}
-
 .card {
   color: var(--color-gray);
   margin: 20px 0;
-  padding: 24px;
   border-radius: 10px;
   box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease;

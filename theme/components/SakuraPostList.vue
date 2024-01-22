@@ -22,9 +22,9 @@ const posts = computed(() => props.posts || routes.value)
     </div>
     <hr>
 
-    <template v-for="post in posts" :key="post.path">
+    <template v-for="(post, index) in posts" :key="post.path">
       <Transition name="fade">
-        <SakuraArticleCard v-if="post" :post="post" />
+        <SakuraArticleCard v-if="post" :image-position="index % 2 === 1" :post="post" />
       </Transition>
     </template>
   </div>

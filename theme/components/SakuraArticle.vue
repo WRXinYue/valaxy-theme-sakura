@@ -42,15 +42,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
         <slot />
       </div>
 
-      <footer
-        class="
-          text-sm
-          font-medium
-          leading-5
-          divide-y divide-gray-200 dark:divide-gray-700
-          xl:col-start-1 xl:row-start-2
-        "
-      >
+      <footer class=" text-sm font-medium leading-5 divide-y divide-gray-200 dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
         <div v-if="nextPost && nextPost.path" class="py-8">
           <h2 class="text-xs tracking-wide uppercase text-gray-500">
             Next Article
