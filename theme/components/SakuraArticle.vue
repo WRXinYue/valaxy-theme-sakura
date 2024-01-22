@@ -20,17 +20,19 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 <template>
   <article>
     <header class="xl:pb-10 space-y-1 text-center">
-      <div class="abanner" :style="`background-image: url(${frontmatter.cover})`">
-        <div class="titlebox">
-          <h1 class="title">
+      <div class="abanner h-45" :class="frontmatter.cover ? `bg-[url(${frontmatter.cover})]` : '<xl:max-h-200px'">
+        <div class="titlebox font-bold" :class="frontmatter.cover && 'text-shadow-[2px_2px_10px_black]'">
+          <h1 class="text-3xl" :class="!frontmatter.cover && 'text-[#404040] entry-title'">
             {{ frontmatter.title }}
           </h1>
-          <div class="info inline-flex">
+          <div class="info text-base inline-flex" :class="!frontmatter.cover && 'text-[#888888]'">
             {{ frontmatter.author }} · 更新于 <SakuraDate :date="frontmatter.date" />
             <!-- {{ frontmatter.author }} · 更新于 <SakuraDate :date="frontmatter.date" /> · {{ frontmatter.view }} 次阅读 -->
           </div>
         </div>
       </div>
+
+      <hr class="max-w-[50%] min-w-[40%] m-auto">
     </header>
 
     <div
@@ -75,7 +77,6 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 
 <style lang="scss">
 .abanner {
-  height: 400px;
   width: 100%;
   background-size: cover;
   background-position: center center;
@@ -89,18 +90,27 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
     left: 0;
     right: 0;
     bottom: 20px;
-    text-shadow: 2px 2px 10px black;
     color: white;
   }
 
-  .title {
-    font-size: 32px;
-  }
-
-  .info {
-    font-size: 14px;
-  }
 }
+
+.entry-title {
+    &::before {
+      content:" {";
+      color:#f8ba0b;
+      font-size:1.2em;
+      margin-right:6px;
+      font-family: 'Helvetica'
+    }
+    &::after {
+      content:"}";
+      color:#f8ba0b;
+      font-size:1.2em;
+      margin-left:6px;
+      font-family: 'Helvetica'
+    }
+  }
 
 .article {
   position: relative;
@@ -180,16 +190,6 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 
 .katex-display {
   overflow: auto hidden;
-}
-
-@media (max-width: 800px) {
-  .abanner {
-    height: 200px;
-
-    .titlebox {
-      margin-left: 0.5em;
-    }
-  }
 }
 
 .custom-block {
