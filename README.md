@@ -10,7 +10,6 @@
 <a href="https://github.com/WRXinYue/valaxy-theme-sakura/actions/workflows/release.yml"><img src="https://github.com/WRXinYue/valaxy-theme-sakura/actions/workflows/release.yml/badge.svg" alt="Release"></a>
 </p>
 
-
 ### 使用
 
 **安装主题:**
@@ -26,7 +25,6 @@ pnpm create valaxy
 pnpm add valaxy-theme-sakura
 ~~~
 
-
 **启用主题:**
 ~~~ts
 // valaxy.config.ts
@@ -37,7 +35,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura'
 })
 ~~~
-
 
 **配置示例:**
 ~~~ts
@@ -131,7 +128,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
 pnpm up valaxy-theme-sakura --latest
 # npm update valaxy-theme-sakura
 ~~~
-
 
 ### 鸣谢
 

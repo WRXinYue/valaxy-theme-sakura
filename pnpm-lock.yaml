@@ -46,14 +46,14 @@ importers:
   theme:
     dependencies:
       '@iconify-json/ant-design':
-        specifier: ^1.1.10
+        specifier: ^1.1.13
         version: 1.1.13
       '@iconify-json/fa':
         specifier: ^1.1.8
         version: 1.1.8
       '@iconify-json/simple-icons':
-        specifier: ^1.1.76
-        version: 1.1.88
+        specifier: ^1.1.89
+        version: 1.1.89
       gsap:
         specifier: ^3.12.5
         version: 3.12.5
@@ -768,8 +768,8 @@ packages:
       '@iconify/types': 2.0.0
     dev: false
 
-  /@iconify-json/carbon@1.1.27:
-    resolution: {integrity: sha512-tJVXv9+D9cjU5HcaY+8J0awv9AL/Mjo9MWR/fxHfHFPP/iokjPBEgq4jOBDGNe8W0k/BTrVI3zpgZjLoi6RNGg==}
+  /@iconify-json/carbon@1.1.28:
+    resolution: {integrity: sha512-tg+h0i+69JrIqUpQva2Mt611KdLMeCyibqS7lIqaMRXJgnalHtdqDcdZAKCSLb/hTbkJHyk0NCpQSYJ3f/v51w==}
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -784,8 +784,8 @@ packages:
     dependencies:
       '@iconify/types': 2.0.0
 
-  /@iconify-json/simple-icons@1.1.88:
-    resolution: {integrity: sha512-KJ4czDbJm3L2Ihl0SNb7R8naYgqYIlO+LsWQmVBf6eTNGj8EQjVlnnY3gkQKOQcDNPT1Z271Eh0VWAc4UYCStw==}
+  /@iconify-json/simple-icons@1.1.89:
+    resolution: {integrity: sha512-rsRgN5okCP6Xg4RD/5t8UlSQR7812AYMz3eas1JzOtBdLuaSDjI+FIarI+EUXzVblA6VAX2n9SwSuyXlHcjy+g==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false
@@ -5064,7 +5064,7 @@ packages:
     dependencies:
       '@antfu/utils': 0.7.7
       '@ctrl/tinycolor': 4.0.3
-      '@iconify-json/carbon': 1.1.27
+      '@iconify-json/carbon': 1.1.28
       '@iconify-json/ri': 1.1.19
       '@intlify/unplugin-vue-i18n': 2.0.0(vue-i18n@9.9.0)
       '@types/body-scroll-lock': 3.1.2
