@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5] - 2024-01-22
+
+### Fixed
+
+- 紧急修复用户npm包部署博客布局问题
+
 ## [0.0.4] - 2024-01-22
 
 ### Added
