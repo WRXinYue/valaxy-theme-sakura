@@ -87,7 +87,6 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
   width: 100%;
   background-size: cover;
   background-position: center center;
-  margin-top: 60px;
   position: relative;
 
   .titlebox {
