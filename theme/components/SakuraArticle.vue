@@ -20,7 +20,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 <template>
   <article>
     <header class="xl:pb-10 space-y-1 text-center">
-      <div class="abanner h-45" :class="frontmatter.cover ? `bg-[url(${frontmatter.cover})]` : '<xl:max-h-200px'">
+      <div class="abanner" :class="frontmatter.cover ? `h-80` : '<xl:max-h-200px h-45'" :style="`background-image: url(${frontmatter.cover}`">
         <div class="titlebox font-bold" :class="frontmatter.cover && 'text-shadow-[2px_2px_10px_black]'">
           <h1 class="text-3xl" :class="!frontmatter.cover && 'text-[#404040] entry-title'">
             {{ frontmatter.title }}

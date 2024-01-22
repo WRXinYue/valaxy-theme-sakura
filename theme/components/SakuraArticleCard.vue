@@ -10,7 +10,7 @@ defineProps<{
 <template>
   <article class="card" h-50 flex overflow-hidden justify-between :class="imagePosition && post.cover && 'flex-row-reverse'">
     <div v-if="post.cover" w="40%" h-auto overflow-hidden>
-      <div bg="center no-repeat cover" transition-400 w-full h-full :class="`bg-[url(${post.cover})]`" hover:transform="scale-120" />
+      <div bg="center no-repeat cover" transition-400 w-full h-full :style="`background-image: url(${post.cover}`" hover:transform="scale-120" />
     </div>
 
     <div m-4>
