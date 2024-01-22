@@ -1,5 +1,5 @@
 <template>
-  <Layout>
-    <SakuraArticle />
-  </Layout>
+  <SakuraArticle>
+    <RouterView />
+  </SakuraArticle>
 </template>

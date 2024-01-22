@@ -26,7 +26,8 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
             {{ frontmatter.title }}
           </h1>
           <div class="info inline-flex">
-            {{ frontmatter.author }} · 更新于 <SakuraDate :date="frontmatter.date" /> · {{ frontmatter.view }} 次阅读
+            {{ frontmatter.author }} · 更新于 <SakuraDate :date="frontmatter.date" />
+            <!-- {{ frontmatter.author }} · 更新于 <SakuraDate :date="frontmatter.date" /> · {{ frontmatter.view }} 次阅读 -->
           </div>
         </div>
       </div>
@@ -38,7 +39,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
     >
       <StarterAuthor v-if="frontmatter.author" :frontmatter="frontmatter" />
       <div class="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
-        <RouterView />
+        <slot />
       </div>
 
       <footer
