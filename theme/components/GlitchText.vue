@@ -50,7 +50,7 @@ const { text } = defineProps<{ text: string }>()
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .glitch {
     font-size: 45px;
   }
