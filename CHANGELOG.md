@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 添加文章页无图片情况下文字样式展示
 - 添加移动端文章列表样式
 - 添加桌面端文章列表左右布局
+- 移动端隐藏ToTop
 
 ## [0.0.5] - 2024-01-22
 

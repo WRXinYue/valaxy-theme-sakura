@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <article :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'text-right'">
+  <article :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'md:text-right'">
     <div v-if="post.cover" class="h-auto overflow-hidden h-full <md:rounded-3">
       <RouterLink :to="post.path || ''">
         <img class="object-cover h-210px w-full transition-400" :src="post.cover" alt="cover" hover:transform="scale-120">
