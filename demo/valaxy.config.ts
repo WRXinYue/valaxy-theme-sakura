@@ -32,18 +32,22 @@ export default defineConfig<ThemeConfig>({
     nav: [
       {
         text: 'GitHub',
+        icon: 'i-ri-github-fill',
         link: 'https://github.com/WRXinYue/valaxy-theme-sakura',
       },
       {
         text: 'RSS',
+        icon: 'i-ri-rss-fill',
         link: '/atom.xml',
       },
       {
         text: 'Discord',
+        icon: 'i-ri-discord-fill',
         link: 'https://discord.gg/sGe4U4p4CK',
       },
       {
         text: 'Valaxy →',
+        icon: 'i-ri-cloud-fill',
         link: 'https://github.com/YunYouJun/valaxy',
       },
     ],
@@ -60,3 +64,17 @@ export default defineConfig<ThemeConfig>({
     },
   },
 })
+
+/**
+ * generateSafelist by config
+ * @param themeConfig
+ */
+export function generateSafelist(themeConfig: ThemeConfig) {
+  const safelist: string[] = []
+
+  const footerIcon = themeConfig.footer?.icon?.name
+  if (footerIcon)
+    safelist.push(footerIcon)
+
+  return safelist
+}

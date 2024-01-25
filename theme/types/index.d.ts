@@ -36,6 +36,11 @@ export interface ThemeConfig {
   }
 
   /**
+   * navbar
+   */
+  nav: NavItem[]
+
+  /**
    * footer
    */
   footer: Partial<{
@@ -76,11 +81,6 @@ export interface ThemeConfig {
       icp: string
     }
   }>
-
-  /**
-   * navbar
-   */
-  nav: NavItem[]
 }
 
 export interface NavItem {

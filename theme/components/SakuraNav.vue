@@ -12,9 +12,12 @@ import { useThemeConfig } from '../composables'
 const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
 
+/** GSAP */
+const mobileNavGSAP = ref(null)
+const pcNavGSAP = ref(null)
+
 const scrolled = ref(false)
 const showYYA = ref(false)
-const mobileNav = ref(null)
 const mobileNavOpen = ref(false)
 /** Special handling of certain links */
 const processedNavItems = computed(() => themeConfig.value.nav.map(item => ({
@@ -26,15 +29,23 @@ const isHeaderActive = computed(() => {
   return showYYA.value || scrolled.value || mobileNavOpen.value
 })
 
+function pcNavAnimation() {
+  gsap.from(pcNavGSAP.value, {
+    duration: 1.25,
+    opacity: 0,
+    x: 30,
+    stagger: 0.2,
+    ease: 'power3.out',
+  })
+}
+
+watch(isHeaderActive, (newVal) => {
+  newVal && pcNavAnimation()
+})
+
+/** Monitor the mobile navigation bar */
 watch(mobileNavOpen, (newVal) => {
-  if (newVal) {
-    // 打开导航栏
-    gsap.to(mobileNav.value, { x: 0, duration: 0.5 })
-  }
-  else {
-    // 关闭导航栏
-    gsap.to(mobileNav.value, { x: '-110%', duration: 0.5 })
-  }
+  newVal ? gsap.to(mobileNavGSAP.value, { x: 0, duration: 0.5 }) : gsap.to(mobileNavGSAP.value, { x: '-110%', duration: 0.5 })
 })
 
 onMounted(() => {
@@ -69,13 +80,15 @@ function handleScroll() {
         </RouterLink>
       </span>
     </div>
-    <div class="text-sm text-gray-500 leading-5 hidden md:inline h-full w-auto">
+    <div ref="pcNavGSAP" :class="isHeaderActive ? 'md:inline' : 'hidden'" class="text-sm text-gray-500 leading-5 h-full w-auto">
       <template v-for="(item, i) in processedNavItems" :key="i">
         <div class="app-link-after relative h-full w-auto items-center inline-flex justify-center hover:after:w-full">
           <AppLink v-if="!item.isExternal" :to="item.link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
+            <div :class="item.icon" class="mr-0.5 inline-flex align-text-top" />
             {{ item.text }}
           </AppLink>
           <a v-else :href="item.link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
+            <div :class="item.icon" class="mr-0.5 inline-flex align-text-top" />
             {{ item.text }}
           </a>
         </div>
@@ -92,7 +105,7 @@ function handleScroll() {
 
   <div v-if="mobileNavOpen" class="overlay" @click="mobileNavOpen = false" />
 
-  <div ref="mobileNav" class="w-60% h-full z-200 fixed mt-60px" style="background: rgba(255, 255, 255, 0.95); transform: translateX(-110%)">
+  <div ref="mobileNavGSAP" class="w-60% h-full z-200 fixed mt-60px" style="background: rgba(255, 255, 255, 0.95); transform: translateX(-110%)">
     <div class="border border-t" />
     <template v-for="(item, i) in processedNavItems" :key="i">
       <div class="border-b flex justify-center">

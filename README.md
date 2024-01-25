@@ -90,18 +90,22 @@ export default defineValaxyConfig<ThemeUserConfig>({
     nav: [
       {
         text: 'GitHub',
+        icon: 'i-ri-github-fill',
         link: 'https://github.com/WRXinYue/valaxy-theme-sakura',
       },
       {
         text: 'RSS',
+        icon: 'i-ri-rss-fill',
         link: '/atom.xml',
       },
       {
         text: 'Discord',
+        icon: 'i-ri-discord-fill',
         link: 'https://discord.gg/sGe4U4p4CK',
       },
       {
         text: 'Valaxy →',
+        icon: 'i-ri-cloud-fill',
         link: 'https://github.com/YunYouJun/valaxy',
       },
     ],
