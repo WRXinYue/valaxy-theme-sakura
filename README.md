@@ -42,11 +42,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
 import { defineValaxyConfig } from 'valaxy'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 
-// add icons what you will need
-const safelist = [
-  'i-ri-home-line',
-]
-
 /**
  * User Config
  */
@@ -122,15 +117,13 @@ export default defineValaxyConfig<ThemeUserConfig>({
       },
     },
   },
-
-  unocss: { safelist },
 })
 ~~~
 
 **更新主题：**
 ~~~bash
 pnpm up valaxy-theme-sakura --latest
-# npm update valaxy-theme-sakura
+# npm update valaxy-theme-sakura --latest
 ~~~
 
 ### 鸣谢

@@ -1,12 +1,9 @@
 <script lang="ts" setup>
-// import { useSiteConfig } from 'valaxy'
-
+import { useSiteConfig } from 'valaxy'
 import { useThemeConfig } from '../composables'
 
-// const siteConfig = useSiteConfig()
+const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
-
-// const social = []
 </script>
 
 <template>
@@ -32,9 +29,11 @@ const themeConfig = useThemeConfig()
             {{ themeConfig.homeMotto }}
           </div>
           <div class="i-fa-quote-right text-xs" />
-          <!-- <a v-for="s in siteConfig" :href="s.url" aria-label="icon" target="_blank">
+        </div>
+        <div class="flex justify-between mx-5 mt-4">
+          <a v-for="s in siteConfig.social" :key="s.name" :href="s.link" aria-label="icon" target="_blank">
             <div :class="[s.icon]" />
-          </a> -->
+          </a>
         </div>
       </div>
     </div>
