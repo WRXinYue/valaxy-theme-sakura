@@ -6,10 +6,6 @@ import type { ThemeConfig } from '../types'
  * Default Config
  */
 export const defaultThemeConfig: ThemeConfig = {
-  colors: {
-    primary: '#ffc0cb',
-  },
-
   prefixName: 'かなしいの',
   siteName: '心悦',
 
@@ -62,7 +58,7 @@ export function themePlugin(
           preprocessorOptions: {
             scss: {
               additionalData: `$c-primary: ${
-                themeConfig.colors?.primary || '#0078E7'
+                themeConfig.colors?.primary || '#e67474'
               } !default;`,
             },
           },

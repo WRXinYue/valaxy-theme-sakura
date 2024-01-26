@@ -2,7 +2,8 @@
 defineProps<{
   color?: string
   icon?: string
-  title?: string
+  title: string
+  subTitle?: string
   cover?: string
   author?: string
   date?: string
@@ -16,6 +17,7 @@ defineProps<{
         <h1 class="text-3xl" :class="!cover && 'text-[#404040] entry-title'">
           <div v-if="icon" class="icon" m="r-1" inline-flex align-top :class="icon" />
           {{ title }}
+          <span v-if="subTitle">· {{ subTitle }}</span>
         </h1>
         <div v-if="date" class="info text-base inline-flex" :class="!cover && 'text-[#888888]'">
           {{ author }} · 更新于 <SakuraDate :date="date" />

@@ -7,10 +7,10 @@ export namespace StarterTheme {
  * Theme Config
  */
 export interface ThemeConfig {
-  colors: {
+  colors?: {
     /**
      * primary color
-     * @default '#0078E7'
+     * @default '#e67474'
      */
     primary: string
   }

@@ -7,11 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.7] - 2024-01-26
+
 ### Added
 
 - 添加桌面端导航动画
 - 添加桌面端导航图标
 - 添加主页介绍图标
+- 新增文章标签页面
 
 ## [0.0.6] - 2024-01-24
 

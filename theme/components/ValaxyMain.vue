@@ -10,36 +10,32 @@ const siteConfig = useSiteConfig()
 </script>
 
 <template>
-  <main>
-    <div w="full" flex="~">
-      <slot name="main">
-        <div class="content" flex="~ col grow" w="full" p="l-4 lt-md:0">
-          <slot name="main-header" />
-          <slot name="main-header-after" />
+  <slot name="main">
+    <div class="content">
+      <slot name="main-header" />
+      <slot name="main-header-after" />
 
-          <slot name="main-content">
-            <div class="markdown-body prose max-w-none pb-8">
-              <ValaxyMd :frontmatter="frontmatter">
-                <slot name="main-content-md" />
-                <slot />
-              </ValaxyMd>
-            </div>
-            <slot name="main-content-after" />
-          </slot>
+      <slot name="main-content">
+        <div class="markdown-body prose max-w-none pb-8">
+          <ValaxyMd :frontmatter="frontmatter">
+            <slot name="main-content-md" />
+            <slot />
+          </ValaxyMd>
         </div>
-
-        <slot name="main-nav-before" />
-
-        <slot name="main-nav" />
-
-        <slot name="main-nav-after" />
-
-        <slot v-if="siteConfig.comment.enable && frontmatter.comment !== false" name="comment" />
-
-        <slot name="footer" />
+        <slot name="main-content-after" />
       </slot>
     </div>
 
-    <slot name="aside" />
-  </main>
+    <slot name="main-nav-before" />
+
+    <slot name="main-nav" />
+
+    <slot name="main-nav-after" />
+
+    <slot v-if="siteConfig.comment.enable && frontmatter.comment !== false" name="comment" />
+
+    <slot name="footer" />
+  </slot>
+
+  <slot name="aside" />
 </template>

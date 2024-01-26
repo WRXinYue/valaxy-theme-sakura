@@ -52,7 +52,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
   themeConfig: {
     // colors: {
-    //   primary: 'red',
+    //   primary: '#e67474',
     // },
 
     prefixName: 'かなしいの',

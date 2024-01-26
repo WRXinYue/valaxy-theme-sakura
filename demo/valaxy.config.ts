@@ -10,7 +10,7 @@ export default defineConfig<ThemeConfig>({
 
   themeConfig: {
     // colors: {
-    //   primary: 'red',
+    //   primary: '#e67474',
     // },
 
     prefixName: 'かなしいの',

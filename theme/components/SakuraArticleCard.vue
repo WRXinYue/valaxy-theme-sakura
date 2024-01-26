@@ -24,16 +24,9 @@ defineProps<{
           {{ post.title }}
         </div>
         <div v-html="post.excerpt" />
-        <div class="tags">
-          <a v-for="tag in post.tags" :key="tag" href="#" class="inline-flex items-center"> <div i-fa-tag /> {{ tag }} </a>
-        </div>
-      <!-- <div class="tags">
-        <a v-for="t in p.tags" :href="`${base}tags/?q=${t}`">
-          <i class="fa fa-tag" />
-          {{ t }}
-        </a>
-      </div> -->
       </RouterLink>
+
+      <SakuraPostTags v-if="post.tags" :tags="post.tags" />
     <!-- <div
       v-if="post.excerpt"
       class="prose max-w-none text-gray-500"
@@ -73,20 +66,6 @@ article {
 
     &:hover {
       box-shadow: none;
-    }
-  }
-}
-
-.tags {
-  font-size: 14px;
-
-  a {
-    margin-right: 8px;
-    color: var(--color-gray);
-    transition: color 0.2s ease-out;
-
-    &:hover {
-      color: var(--color-accent);
     }
   }
 }
