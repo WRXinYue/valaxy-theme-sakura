@@ -19,21 +19,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 
 <template>
   <article>
-    <header class="xl:pb-10 space-y-1 text-center">
-      <div class="abanner" :class="frontmatter.cover ? `h-80` : '<xl:max-h-200px h-45'" :style="`background-image: url(${frontmatter.cover}`">
-        <div class="titlebox font-bold" :class="frontmatter.cover && 'text-shadow-[2px_2px_10px_black]'">
-          <h1 class="text-3xl" :class="!frontmatter.cover && 'text-[#404040] entry-title'">
-            {{ frontmatter.title }}
-          </h1>
-          <div class="info text-base inline-flex" :class="!frontmatter.cover && 'text-[#888888]'">
-            {{ frontmatter.author }} · 更新于 <SakuraDate :date="frontmatter.date" />
-            <!-- {{ frontmatter.author }} · 更新于 <SakuraDate :date="frontmatter.date" /> · {{ frontmatter.view }} 次阅读 -->
-          </div>
-        </div>
-      </div>
-
-      <hr class="max-w-[50%] min-w-[40%] m-auto">
-    </header>
+    <SakuraPageHeader :title="frontmatter.title" :cover="frontmatter.cover" :author="frontmatter.author" :date="frontmatter.date" />
 
     <div
       class="divide-y xl:divide-y-0  divide-gray-200 dark:divide-gray-700 pb-16 mx-8 md:mx-15 lg:mx-60 xl:mx-100"
@@ -76,42 +62,6 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 </template>
 
 <style lang="scss" scoped>
-.abanner {
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-
-  .titlebox {
-    position: absolute;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: 20px;
-    color: white;
-  }
-
-}
-
-.entry-title {
-    &::before {
-      content:" {";
-      color:#f8ba0b;
-      font-size:1.2em;
-      margin-right:6px;
-      font-family: 'Helvetica'
-    }
-    &::after {
-      content:"}";
-      color:#f8ba0b;
-      font-size:1.2em;
-      margin-left:6px;
-      font-family: 'Helvetica'
-    }
-  }
-
 // .article {
 //   position: relative;
 //   max-width: 800px;
