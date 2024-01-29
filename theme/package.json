@@ -27,6 +27,7 @@
     "gsap": "^3.12.5"
   },
   "devDependencies": {
-    "valaxy": "^0.17.2"
+    "valaxy": "^0.17.2",
+    "vite-plugin-pwa": "^0.17.5"
   }
 }
