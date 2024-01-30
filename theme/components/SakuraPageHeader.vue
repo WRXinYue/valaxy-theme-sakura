@@ -50,8 +50,9 @@ defineProps<{
 .abanner {
   width: 100%;
   background-size: cover;
-  background-position: center -7cm;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
 
   .titlebox {
     position: absolute;
