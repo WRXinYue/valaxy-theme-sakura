@@ -8,8 +8,9 @@ defineProps<{
 
 <template>
   <div class="tags">
-    <RouterLink v-for="tag in tags" :key="tag" :to="{ path: '/tags/', query: { tag } }" class="inline-flex items-center">
-      <div i-fa-tag /> {{ tag }}
+    <RouterLink v-for="(tag, index) in tags" :key="tag" :to="{ path: '/tags/', query: { tag } }" class="inline-flex items-center align-top">
+      <div v-if="index === 0" class="mr-1" i-mdi-tag-multiple />
+      <span v-if="index > 0" class="mx-1 non-hoverable">·</span> {{ tag }}
     </RouterLink>
   </div>
 </template>
@@ -19,12 +20,15 @@ defineProps<{
   font-size: 14px;
 
   a {
-    margin-right: 8px;
     color: var(--color-gray);
     transition: color 0.2s ease-out;
 
     &:hover {
       color: var(--color-accent);
+
+      .non-hoverable {
+        color: var(--color-gray) !important;
+      }
     }
   }
 }

@@ -9,9 +9,9 @@ defineProps<{
 
 <template>
   <article :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'md:text-right'">
-    <div v-if="post.cover" class="h-auto overflow-hidden h-full <md:rounded-3">
+    <div v-if="post.cover" class="h-auto overflow-hidden <md:rounded-3">
       <RouterLink :to="post.path || ''">
-        <img class="object-cover h-210px w-full transition-400" :src="post.cover" alt="cover" hover:transform="scale-120">
+        <img class="object-cover h-230px w-full transition-400" :src="post.cover" alt="cover" hover:transform="scale-120">
       </RouterLink>
     </div>
 
@@ -23,22 +23,13 @@ defineProps<{
         <div class="title my-2">
           {{ post.title }}
         </div>
-        <div v-html="post.excerpt" />
+        <div class="mb-3 text-[var(--st-c-text-secondary)] dark:text-[var(--st-c-text-secondary)]" v-html="post.excerpt" />
       </RouterLink>
 
-      <SakuraPostTags v-if="post.tags" :tags="post.tags" />
-    <!-- <div
-      v-if="post.excerpt"
-      class="prose max-w-none text-gray-500"
-      v-html="post.excerpt"
-    />
-    <div class="space-y-5 xl:col-span-3">
-      <div class="text-base leading-6 font-medium">
-        <RouterLink class="link" aria-label="read more" :to="post.path || ''">
-          Read more →
-        </RouterLink>
+      <div class="inline-flex">
+        <SakuraPostCategories v-if="post.categories" class="mr-3" :categories="post.categories" />
+        <SakuraPostTags v-if="post.tags" :tags="post.tags" />
       </div>
-    </div> -->
     </div>
   </article>
 </template>

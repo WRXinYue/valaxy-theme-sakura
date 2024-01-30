@@ -1,0 +1,44 @@
+<script lang="ts" setup>
+import { computed } from 'vue'
+import type { Categories } from 'valaxy'
+
+const props = defineProps<{
+  categories: Categories[]
+}>()
+
+const convertedCategories = computed(() => {
+  if (typeof props.categories === 'string')
+    return [props.categories]
+
+  return props.categories
+})
+</script>
+
+<template>
+  <div class="categories">
+    <RouterLink
+      v-for="(category, index) in convertedCategories"
+      :key="index"
+      :to="{ path: '/categories', query: { category: Array.isArray(categories) ? categories.join('/') : categories } }"
+      class="inline-flex items-center align-top"
+    >
+      <div v-if="index === 0" class="mr-1" i-mdi-folder-open-outline />
+      <span v-if="index > 0" class="mx-1">/</span> {{ category }}
+    </RouterLink>
+  </div>
+</template>
+
+<style last="scss" scoped>
+.categories {
+  font-size: 14px;
+
+  a {
+    color: var(--color-gray);
+    transition: color 0.2s ease-out;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+</style>

@@ -13,6 +13,15 @@ const props = withDefaults(defineProps<{
 
 const routes = usePostList({ type: props.type || '' })
 const posts = computed(() => props.posts || routes.value)
+
+const postsWithLimitedTags = computed(() => {
+  return posts.value.map((post) => {
+    if (post.tags && post.tags.length > 3)
+      return { ...post, tags: post.tags.slice(0, 3) }
+
+    return post
+  })
+})
 </script>
 
 <template>
@@ -22,7 +31,7 @@ const posts = computed(() => props.posts || routes.value)
     </div>
     <hr>
 
-    <template v-for="(post, index) in posts" :key="post.path">
+    <template v-for="(post, index) in postsWithLimitedTags" :key="post.path">
       <Transition name="fade">
         <SakuraArticleCard v-if="post" :image-position="index % 2 === 1" :post="post" />
       </Transition>

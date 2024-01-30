@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- 添加小云的文章分类页面
+
+### Fixed
+
+- 修复动画细节问题
+
 ## [0.0.7] - 2024-01-26
 
 ### Added
