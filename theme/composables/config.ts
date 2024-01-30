@@ -1,6 +1,7 @@
 import { computed } from 'vue'
 import { useConfig } from 'valaxy'
 import type { ThemeConfig } from '../types'
+import 'animate.css'
 
 /**
  * getThemeConfig

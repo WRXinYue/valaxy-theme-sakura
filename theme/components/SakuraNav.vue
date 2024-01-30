@@ -32,9 +32,7 @@ const isHeaderActive = computed(() => {
 function pcNavAnimation() {
   gsap.from(pcNavGSAP.value, {
     duration: 1.25,
-    opacity: 0,
     x: 30,
-    stagger: 0.2,
     ease: 'power3.out',
   })
 }
@@ -80,7 +78,7 @@ function handleScroll() {
         </RouterLink>
       </span>
     </div>
-    <div ref="pcNavGSAP" :class="isHeaderActive ? '<md:hidden' : 'md:relative hidden'" class="text-sm text-gray-500 leading-5 h-full w-auto">
+    <div ref="pcNavGSAP" :class="isHeaderActive ? '<md:hidden animate__fadeIn' : 'md:relative hidden'" class="text-sm text-gray-500 leading-5 h-full w-auto animate__animated">
       <template v-for="(item, i) in processedNavItems" :key="i">
         <div class="app-link-after relative h-full w-auto items-center inline-flex justify-center hover:after:w-full">
           <AppLink v-if="!item.isExternal" :to="item.link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
