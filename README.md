@@ -113,6 +113,9 @@ export default defineValaxyConfig<ThemeUserConfig>({
 pnpm up valaxy-theme-sakura --latest
 ~~~
 
+### 文档 & 完整配置
+> 更多信息看[详情配置](https://sakura.wrxinyue.org/posts/theme-sakura)
+
 ### 鸣谢
 
 - [云游君(云猫猫)](https://valaxy.site/)
