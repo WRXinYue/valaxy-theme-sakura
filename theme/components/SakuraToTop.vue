@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { isClient, useWindowScroll } from '@vueuse/core'
 import { onMounted, onUnmounted, ref } from 'vue'
+
+const { y } = useWindowScroll()
 
 const hide = 'top: -900px'
 const style = ref(hide)
 function onScroll() {
-  if (window.scrollY > 200) {
+  if (y.value > 200) {
     if (window.innerWidth > 720)
       style.value = `top: ${Math.min(window.innerHeight - 968, 0)}px`
     else
@@ -15,7 +18,9 @@ function onScroll() {
   }
 }
 function toTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  if (!isClient)
+    return
+  window.scrollTo({ top: 0 })
 }
 onMounted(() => {
   window.addEventListener('scroll', onScroll)

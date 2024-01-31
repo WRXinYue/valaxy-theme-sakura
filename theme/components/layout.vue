@@ -1,6 +1,6 @@
 <template>
   <div class="antialiased">
-    <SakuraNav />
+    <SakuraNavbar />
 
     <main class="mx-auto">
       <slot>
@@ -39,7 +39,7 @@
       </slot>
     </main>
 
-    <StarterHelper />
+    <SakuraToTop class="<md:hidden" />
 
     <SakuraFooter>
       <slot name="footer" />
