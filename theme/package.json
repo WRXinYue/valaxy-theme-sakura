@@ -21,14 +21,14 @@
   "main": "client/index.ts",
   "types": "types/index.d.ts",
   "dependencies": {
-    "animate.css": "^4.1.1",
-    "gsap": "^3.12.5"
-  },
-  "devDependencies": {
     "@iconify-json/ant-design": "^1.1.13",
     "@iconify-json/material-symbols-light": "^1.1.11",
     "@iconify-json/mdi": "^1.1.64",
     "@iconify-json/simple-icons": "^1.1.89",
+    "animate.css": "^4.1.1",
+    "gsap": "^3.12.5"
+  },
+  "devDependencies": {
     "valaxy": "^0.17.2",
     "vite-plugin-pwa": "^0.17.5"
   }
