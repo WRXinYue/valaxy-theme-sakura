@@ -1,6 +1,8 @@
 import { defineConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
 
+import { addonWaline } from 'valaxy-addon-waline'
+
 /**
  * User Config
  * do not use export const config to avoid defu conflict
@@ -22,11 +24,11 @@ export default defineConfig<ThemeConfig>({
     favicon: false,
 
     headerWallpaper: {
-      type: 'video',
-      imageUrl: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
+      type: 'image',
+      imageUrl: 'https://wrxinyue-images.s3.bitiful.net/wallpaper/wallhaven-zy2r3w.jpg',
       videoUrl: 'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
 
-      backgroundStyle: 'filter-dot',
+      backgroundStyle: '',
     },
 
     nav: [
@@ -63,6 +65,14 @@ export default defineConfig<ThemeConfig>({
       },
     },
   },
+
+  addons: [
+    addonWaline({
+      serverURL: 'https://waline.wrxinyue.org',
+      pageview: true,
+      comment: true,
+    }),
+  ],
 })
 
 /**

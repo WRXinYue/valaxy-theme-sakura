@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "valaxy": "^0.17.2",
+    "valaxy-addon-waline": "^0.1.1",
     "valaxy-theme-sakura": "workspace:*"
   },
   "devDependencies": {

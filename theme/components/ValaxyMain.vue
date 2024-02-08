@@ -32,7 +32,9 @@ const siteConfig = useSiteConfig()
 
     <slot name="main-nav-after" />
 
-    <slot v-if="siteConfig.comment.enable && frontmatter.comment !== false" name="comment" />
+    <slot v-if="siteConfig.comment.enable && frontmatter.comment !== false" name="comment">
+      <YunComment :class="frontmatter.nav === false ? 'mt-4' : 0" />
+    </slot>
 
     <slot name="footer" />
   </slot>
