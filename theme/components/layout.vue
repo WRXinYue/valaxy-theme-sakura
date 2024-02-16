@@ -1,8 +1,12 @@
 <template>
   <div class="antialiased">
-    <SakuraNavbar />
-
     <main class="mx-auto">
+      <div class="<md:hidden">
+        <SakuraNavbar />
+      </div>
+      <div class="md:hidden">
+        <SakuraSidebar :show-hamburger="true" />
+      </div>
       <slot>
         <RouterView v-slot="{ Component }">
           <component :is="Component">

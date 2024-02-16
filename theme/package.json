@@ -26,7 +26,8 @@
     "@iconify-json/mdi": "^1.1.64",
     "@iconify-json/simple-icons": "^1.1.89",
     "animate.css": "^4.1.1",
-    "gsap": "^3.12.5"
+    "gsap": "^3.12.5",
+    "hover.css": "^2.3.2"
   },
   "devDependencies": {
     "valaxy": "^0.17.2",

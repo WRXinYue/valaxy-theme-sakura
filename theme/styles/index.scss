@@ -1,2 +1,5 @@
 @use './layout' as *;
 @use './markdown' as *;
+
+// override the default style of star-markdown-css
+@use "./common/button.scss" as *;

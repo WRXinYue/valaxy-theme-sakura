@@ -1,8 +1,11 @@
-<script setup>
+<script lang="ts" setup>
+import { useAppStore, useLayout } from 'valaxy'
 import { onBeforeRouteLeave, useRoute } from 'vue-router'
 import { useSakuraAppStore } from '../stores/app'
 
+const app = useAppStore()
 const route = useRoute()
+const isHome = useLayout('home')
 const sakura = useSakuraAppStore()
 
 onBeforeRouteLeave(() => {
@@ -12,9 +15,9 @@ onBeforeRouteLeave(() => {
 </script>
 
 <template>
-  <Layout>
-    <div class="divide-y divide-gray-200 dark:divide-gray-700">
-      <SakuraHeader />
+  <Layout class="sakura-main" :class="(isHome && !app.isSidebarOpen) ? 'pl-0' : '<md:pl-$va-sidebar-width'">
+    <div>
+      <SakuraBanner />
 
       <slot>
         <RouterView />

@@ -41,6 +41,11 @@ export interface ThemeConfig {
   nav: NavItem[]
 
   /**
+   * sidebar
+   */
+  sidebar: NavItem[]
+
+  /**
    * footer
    */
   footer: Partial<{
@@ -85,6 +90,7 @@ export interface ThemeConfig {
 
 export interface NavItem {
   text: string
+  locale: string
   link: string
   icon?: string
 }

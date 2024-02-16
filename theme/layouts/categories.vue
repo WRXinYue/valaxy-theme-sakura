@@ -43,7 +43,7 @@ const title = usePostTitle(frontmatter)
       <component :is="Component">
         <template #main-header>
           <SakuraPageHeader
-            :title="title || t('menu.tags')"
+            :title="title || t('menu.categories')"
             :sub-title="curCategory"
             :icon="frontmatter.icon || 'i-ri-tag-line'"
             :color="frontmatter.color"

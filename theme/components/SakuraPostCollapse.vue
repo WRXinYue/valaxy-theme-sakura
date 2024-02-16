@@ -47,7 +47,7 @@ const sortedYears = computed(() => {
     </div>
 
     <div class="post-collapse-action" text="center">
-      <button class="yun-icon-btn shadow hover:shadow-md" @click="isDesc = !isDesc">
+      <button class="sakura-icon-btn shadow hover:shadow-md" @click="isDesc = !isDesc">
         <div v-if="isDesc" i-ri-sort-desc />
         <div v-else i-ri-sort-asc />
       </button>

@@ -13,3 +13,7 @@ a {
 .st-text {
   color: var(--st-c-text);
 }
+
+.sakura-main {
+  transition: padding-left var(--va-transition-duration);
+}

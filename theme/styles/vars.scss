@@ -12,7 +12,12 @@ $light: (
 
   "c-text": #101820,
 ) !default;
-$light: map.merge((), $light);
+$light: map.merge(
+  (
+    "sidebar-bg-color": var(--va-c-bg-light),
+  ),
+  $light
+);
 
 $dark: (
   "c-text-secondary": #ffffff,

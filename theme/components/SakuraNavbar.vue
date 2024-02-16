@@ -13,12 +13,10 @@ const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
 
 /** GSAP */
-const mobileNavGSAP = ref(null)
 const pcNavGSAP = ref(null)
 
 const scrolled = ref(false)
 const showYYA = ref(false)
-const mobileNavOpen = ref(false)
 /** Special handling of certain links */
 const processedNavItems = computed(() => themeConfig.value.nav.map(item => ({
   ...item,
@@ -26,7 +24,7 @@ const processedNavItems = computed(() => themeConfig.value.nav.map(item => ({
 })))
 
 const isHeaderActive = computed(() => {
-  return showYYA.value || scrolled.value || mobileNavOpen.value
+  return showYYA.value || scrolled.value
 })
 
 function pcNavAnimation() {
@@ -39,11 +37,6 @@ function pcNavAnimation() {
 
 watch(isHeaderActive, (newVal) => {
   newVal && pcNavAnimation()
-})
-
-/** Monitor the mobile navigation bar */
-watch(mobileNavOpen, (newVal) => {
-  newVal ? gsap.to(mobileNavGSAP.value, { x: 0, duration: 0.5 }) : gsap.to(mobileNavGSAP.value, { x: '-110%', duration: 0.5 })
 })
 
 onMounted(() => {
@@ -62,13 +55,6 @@ function handleScroll() {
 
 <template>
   <header class="px-3 h-60px" :class="isHeaderActive ? 'yya' : ''" @mouseover="showYYA = true" @mouseleave="showYYA = false">
-    <button class="mobile_btn md:!hidden" :class="mobileNavOpen ? 'mobile_btn-open' : ''" @click="mobileNavOpen = !mobileNavOpen">
-      <!-- TODO: Add more color configurations? -->
-      <span :class="isHeaderActive ? 'bg-orange' : 'bg-white'" />
-      <span :class="isHeaderActive ? 'bg-orange' : 'bg-white'" />
-      <span :class="isHeaderActive ? 'bg-orange' : 'bg-white'" />
-    </button>
-
     <div class="relative float-left line-height-75px ml-12px" style="animation: sitetop 1s">
       <span class="logolink moe-mashiro flex w-auto h-full items-center">
         <img v-if="themeConfig.favicon" class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
@@ -91,9 +77,13 @@ function handleScroll() {
           </a>
         </div>
 
-        <span v-if="i !== themeConfig.nav.length - 1" class="mr-2 ml-2">·</span>
+        <span v-if="i !== themeConfig.nav.length - 1" class="mr-3 ml-3" />
       </template>
     </div>
+    <SakuraSidebar v-if="$slots['sidebar-child']">
+      <slot name="sidebar-child" />
+    </SakuraSidebar>
+    <YunSidebar v-else />
 
     <button type="button" aria-label="Toggle Dark Mode" @click="toggleDark()">
       <div v-if="!isDark" i-ri-sun-line />
@@ -101,21 +91,7 @@ function handleScroll() {
     </button>
   </header>
 
-  <div v-if="mobileNavOpen" class="overlay" @click="mobileNavOpen = false" />
-
-  <div ref="mobileNavGSAP" class="w-60% h-full z-200 fixed mt-60px" style="background: rgba(255, 255, 255, 0.95); transform: translateX(-110%)">
-    <div class="border border-t" />
-    <template v-for="(item, i) in processedNavItems" :key="i">
-      <div class="border-b flex justify-center">
-        <AppLink v-if="!item.isExternal" :to="item.link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
-          {{ item.text }}
-        </AppLink>
-        <a v-else :href="item.link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
-          {{ item.text }}
-        </a>
-      </div>
-    </template>
-  </div>
+  <!-- <div v-if="mobileNavOpen" class="overlay" @click="mobileNavOpen = false" /> -->
 </template>
 
 <style lang="scss" scoped>
@@ -191,52 +167,5 @@ header {
   height: 6px;
   background-color: #fe9600;
   transition: width 0.3s ease;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 30;
-}
-
-.mobile_btn {
-  width: 20px;
-  height: 22px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  transition: transform 0.3s;
-
-  span {
-    position: relative;
-    width: 100%;
-    height: 5px;
-    border-radius: 20px;
-  }
-
-  span:nth-child(1), span:nth-child(3) {
-    width: 50%;
-    align-self: flex-end;
-    transform-origin: left;
-    transition: transform 0.3s;
-  }
-
-  span:nth-child(1) {
-    align-self: flex-start;
-    transform-origin: right;
-  }
-
-}
-
-.mobile_btn-open {
-  transform: rotate(-45deg);
-}
-
-.mobile_btn-open span:nth-child(1), .mobile_btn-open span:nth-child(3) {
-  transform: rotate(-90deg);
 }
 </style>

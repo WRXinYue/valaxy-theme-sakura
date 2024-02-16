@@ -24,11 +24,11 @@ export default defineConfig<ThemeConfig>({
     favicon: false,
 
     headerWallpaper: {
-      type: 'image',
+      type: 'video',
       imageUrl: 'https://wrxinyue-images.s3.bitiful.net/wallpaper/wallhaven-zy2r3w.jpg',
       videoUrl: 'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
 
-      backgroundStyle: '',
+      backgroundStyle: 'filter-dot',
     },
 
     nav: [
@@ -51,6 +51,29 @@ export default defineConfig<ThemeConfig>({
         text: 'Valaxy →',
         icon: 'i-ri-cloud-fill',
         link: 'https://github.com/YunYouJun/valaxy',
+      },
+    ],
+
+    sidebar: [
+      {
+        text: '首页',
+        icon: 'i-ri-home-4-line',
+        link: '/',
+      },
+      {
+        locale: 'menu.archives',
+        icon: 'i-ri-archive-line',
+        link: '/archives/',
+      },
+      {
+        locale: 'menu.categories',
+        icon: 'i-ri-folder-2-line',
+        link: '/categories/',
+      },
+      {
+        locale: 'menu.tags',
+        icon: 'i-ri-price-tag-3-line',
+        link: '/tags/',
       },
     ],
 
