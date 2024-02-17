@@ -27,11 +27,7 @@ export interface ThemeConfig {
   favicon: boolean
 
   headerWallpaper: {
-    type: 'image' | 'video'
-
-    imageUrl: string
-    videoUrl: string
-
+    urls: string[]
     backgroundStyle: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
   }
 
@@ -89,8 +85,8 @@ export interface ThemeConfig {
 }
 
 export interface NavItem {
-  text: string
-  locale: string
+  text?: string
+  locale?: string
   link: string
   icon?: string
 }

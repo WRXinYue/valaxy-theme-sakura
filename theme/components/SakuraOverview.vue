@@ -38,11 +38,11 @@ const router = useRouter()
 
     <SakuraSidebarNav />
     <hr m="y-2" op="20">
-    <SakuraSidebarLinks />
+    <!-- <SakuraSidebarLinks /> -->
     <br>
   </div>
 
-  <YunConfig />
+  <!-- <YunConfig /> -->
 </template>
 
 <style lang="scss">

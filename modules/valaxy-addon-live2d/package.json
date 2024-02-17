@@ -1,0 +1,17 @@
+{
+  "name": "valaxy-addon-live2d",
+  "global": true,
+  "version": "0.0.0",
+  "description": "Live2d",
+  "repository": {
+    "url": "https://github.com/Fog-Forest/live2d"
+  },
+  "keywords": [
+    "valaxy"
+  ],
+  "exports": {
+    "./*": "./*"
+  },
+  "main": "index.ts",
+  "types": "index.d.ts"
+}

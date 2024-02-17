@@ -15,14 +15,15 @@ export const defaultThemeConfig: ThemeConfig = {
   favicon: false,
 
   headerWallpaper: {
-    type: 'video',
-    imageUrl: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
-    videoUrl: 'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
-
+    urls: [
+      'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
+      'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
+    ],
     backgroundStyle: 'filter-dot',
   },
 
   nav: [],
+  sidebar: [],
 
   footer: {
     since: 2024,
@@ -83,6 +84,10 @@ export function generateSafelist(themeConfig: ThemeConfig) {
 
   themeConfig.nav?.forEach((navItem) => {
     navItem?.icon && safelist.push(navItem.icon)
+  })
+
+  themeConfig.sidebar?.forEach((sidebarItem) => {
+    sidebarItem?.icon && safelist.push(sidebarItem.icon)
   })
 
   return safelist

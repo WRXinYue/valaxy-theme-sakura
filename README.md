@@ -52,20 +52,12 @@ export default defineValaxyConfig<ThemeUserConfig>({
     favicon: false, // 导航栏图标
 
     headerWallpaper: {
-      // 壁纸类型:
-      // - 'video': 视频
-      // - 'image': 图片
-      type: 'video',
-      // 图片壁纸链接
-      imageUrl: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
-      // 视频壁纸链接
-      videoUrl: 'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
-
-      // 背景样式选项:
-      // - '': 无特效，显示原图
-      // - 'filter-dim': 阴影效果
-      // - 'filter-grid': 横条效果
-      // - 'filter-dot': 点点效果
+      // 壁纸支持图片及视频
+      urls: [
+        'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
+        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg'
+      ],
+      // 背景样式选项: 'filter-dim' | 'filter-grid' | 'filter-dot'
       backgroundStyle: 'filter-dot',
     },
 

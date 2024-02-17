@@ -83,7 +83,7 @@ function handleScroll() {
     <SakuraSidebar v-if="$slots['sidebar-child']">
       <slot name="sidebar-child" />
     </SakuraSidebar>
-    <YunSidebar v-else />
+    <!-- <YunSidebar v-else /> -->
 
     <button type="button" aria-label="Toggle Dark Mode" @click="toggleDark()">
       <div v-if="!isDark" i-ri-sun-line />

@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- 修改了主页壁纸配置方式，降低了复杂度
+- 添加主页壁纸切换
+- 添加valaxy-addon-meting音乐播放器示例
+- 创建valaxy-addon-live2d看板娘组件
+
 ## [0.1.0] - 2024-02-17
 
 ### Added

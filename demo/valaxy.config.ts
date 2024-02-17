@@ -1,7 +1,9 @@
 import { defineConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
 
+import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
+import { addonLive2d } from 'valaxy-addon-live2d'
 
 /**
  * User Config
@@ -24,10 +26,10 @@ export default defineConfig<ThemeConfig>({
     favicon: false,
 
     headerWallpaper: {
-      type: 'video',
-      imageUrl: 'https://wrxinyue-images.s3.bitiful.net/wallpaper/wallhaven-zy2r3w.jpg',
-      videoUrl: 'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
-
+      urls: [
+        'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
+        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
+      ],
       backgroundStyle: 'filter-dot',
     },
 
@@ -94,6 +96,17 @@ export default defineConfig<ThemeConfig>({
       serverURL: 'https://waline.wrxinyue.org',
       pageview: true,
       comment: true,
+    }),
+    addonMeting({
+      global: true,
+      props: {
+        id: '7426988124',
+        server: 'netease',
+        type: 'playlist',
+      },
+    }),
+    addonLive2d({
+      live2dPath: 'live2d/',
     }),
   ],
 })

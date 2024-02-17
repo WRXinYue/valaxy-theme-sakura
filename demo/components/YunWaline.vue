@@ -4,7 +4,7 @@ import type { WalineInitOptions } from '@waline/client'
 // import consola from 'consola'
 
 const customOptions: WalineInitOptions = {
-  serverURL: 'https://waline.wrxinyue.cn',
+  serverURL: 'https://waline.wrxinyue.org',
   pageview: true,
   comment: true,
 
