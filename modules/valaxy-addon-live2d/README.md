@@ -5,7 +5,7 @@
 ## Usage
 
 ```bash
-# 暂无发布包版本，原因看文档底部
+pnpm install valaxy-addon-live2d
 ```
 
 > 暂时考虑复制项目引用

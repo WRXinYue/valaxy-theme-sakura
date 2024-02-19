@@ -28,7 +28,7 @@ pnpm add valaxy-theme-sakura
 ### 启用主题
 ~~~ts
 // valaxy.config.ts
-import { defineConfig } from 'valaxy'
+import { defineValaxyConfig } from 'valaxy'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 
 export default defineValaxyConfig<ThemeUserConfig>({
