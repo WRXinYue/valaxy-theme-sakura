@@ -57,7 +57,9 @@ export interface ThemeConfig {
       /**
        * icon name, i-xxx
        */
-      img: string
+      enable?: boolean
+      name?: string
+      img?: string
       animated: boolean
       url: string
       title: string
