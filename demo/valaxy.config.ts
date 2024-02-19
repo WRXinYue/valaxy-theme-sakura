@@ -27,6 +27,7 @@ export default defineConfig<ThemeConfig>({
 
     headerWallpaper: {
       urls: [
+        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/cGZ4kz2q.png',
         'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
         'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
       ],
@@ -35,25 +36,53 @@ export default defineConfig<ThemeConfig>({
 
     nav: [
       {
-        text: 'GitHub',
-        icon: 'i-ri-github-fill',
-        link: 'https://github.com/WRXinYue/valaxy-theme-sakura',
+        text: '🌈 首页',
+        link: '/',
       },
       {
-        text: 'RSS',
-        icon: 'i-ri-rss-fill',
-        link: '/atom.xml',
+        text: '🎮 Unity3D',
+        link: '/',
       },
       {
-        text: 'Discord',
-        icon: 'i-ri-discord-fill',
-        link: 'https://discord.gg/sGe4U4p4CK',
+        text: '🌎 Web前端/后端',
+        link: '/',
       },
       {
-        text: 'Valaxy →',
-        icon: 'i-ri-cloud-fill',
+        text: '☄️ 其他',
+        link: '/',
+      },
+      {
+        text: '📌 关于我',
+        link: '/',
+      },
+      {
+        text: '🍻 友情链接',
         link: 'https://github.com/YunYouJun/valaxy',
       },
+      {
+        text: '🔦 时光轴',
+        link: '/',
+      },
+      // {
+      //   text: 'GitHub',
+      //   icon: 'i-ri-github-fill',
+      //   link: 'https://github.com/WRXinYue/valaxy-theme-sakura',
+      // },
+      // {
+      //   text: 'RSS',
+      //   icon: 'i-ri-rss-fill',
+      //   link: '/atom.xml',
+      // },
+      // {
+      //   text: 'Discord',
+      //   icon: 'i-ri-discord-fill',
+      //   link: 'https://discord.gg/sGe4U4p4CK',
+      // },
+      // {
+      //   text: 'Valaxy →',
+      //   icon: 'i-ri-cloud-fill',
+      //   link: 'https://github.com/YunYouJun/valaxy',
+      // },
     ],
 
     sidebar: [
