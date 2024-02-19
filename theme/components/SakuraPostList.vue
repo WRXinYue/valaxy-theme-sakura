@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { usePostList, useSiteConfig, useSiteStore } from 'valaxy'
+import { useSiteConfig, useSiteStore } from 'valaxy'
 import type { Post } from 'valaxy'
+
+// import { usePostList } from 'valaxy'
 
 const props = withDefaults(defineProps<{
   type?: string
@@ -15,7 +17,7 @@ const site = useSiteStore()
 const siteConfig = useSiteConfig()
 const pageSize = computed(() => siteConfig.value.pageSize)
 
-const routes = usePostList({ type: props.type || '' })
+// const routes = usePostList({ type: props.type || '' })
 // const posts = computed(() => props.posts || routes.value)
 const posts = computed(() => (
   props.posts || site.postList).filter(post => import.meta.env.DEV ? true : !post.hide),
