@@ -1,5 +1,3 @@
-![Preview](assets/2024-01-21_17-53.png)
-
 <h2 align="center">Valaxy Theme Sakura</h2>
 <pre align="center">
 🧪 正在积极开发中 | <a href="https://sakura.wrxinyue.org/">Live Demo</a> 🌸
