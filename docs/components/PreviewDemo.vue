@@ -1,7 +1,12 @@
+<script lang="ts" setup>
+import imacMockup from '../assets/images/mockuphone-imac.png'
+import surfaceMockup from '../assets/images/mockuphone-surface.png'
+</script>
+
 <template>
   <div class="device-mockups <md:mr-40px">
-    <img src="mockuphone-imac.png" class="imac-mockup" alt="iMac Mockup">
-    <img src="mockuphone-surface.png" class="surface-mockup" alt="Surface Mockup">
+    <img :src="imacMockup" class="imac-mockup" alt="iMac Mockup">
+    <img :src="surfaceMockup" class="surface-mockup" alt="Surface Mockup">
   </div>
 </template>
 
