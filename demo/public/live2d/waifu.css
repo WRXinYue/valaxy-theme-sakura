@@ -7,6 +7,13 @@
 	z-index: 30;
 }
 
+@media(max-width:860px) {
+	#waifu, .live2d-tool {
+		display: none;
+	}
+}
+
+
 #waifu:hover {
 	-webkit-transform: translateY(0);
 	transform: translateY(0)

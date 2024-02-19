@@ -14,7 +14,8 @@ function setCookie(e, t, i) {
 
 function getCookie(e) {
   for (let t = `${e}acai` + `=`, i = document.cookie.split(';'), o = 0; o < i.length; o++) {
-    for (let a = i[o]; a.charAt(0) === ' ';)
+    let a
+    for (a = i[o]; a.charAt(0) === ' ';)
       a = a.substring(1, a.length)
 
     if (a.indexOf(t) === 0)
@@ -332,10 +333,16 @@ function initWidget(config, apiPath = '/') {
     if (getCookie('live2d') === 'Hide') {
       setTimeout(() => {
         if (document.body.clientWidth > 860) {
-          $('.hide-live2d').css('bottom', '66px')
-          $('.save-live2d, .switch-live2d, .live2d-pio, .live2d-tia').addClass('hide-live2d-tool')
+          document.querySelectorAll('.hide-live2d').forEach((element) => {
+            element.style.bottom = '66px'
+          })
+          document.querySelectorAll('.save-live2d, .switch-live2d, .live2d-pio, .live2d-tia').forEach((element) => {
+            element.classList.add('hide-live2d-tool')
+          })
         }
-        $('.hide-live2d .keys').html('Show')
+        document.querySelectorAll('.hide-live2d .keys').forEach((element) => {
+          element.textContent = 'Show'
+        })
         document.querySelector('#waifu-tool .fa-times').click()
         setCookie('live2d', 'Show', 7)
       }, 10)
@@ -343,13 +350,20 @@ function initWidget(config, apiPath = '/') {
     else {
       setTimeout(() => {
         if (document.body.clientWidth > 860) {
-          $('.hide-live2d').css('bottom', '185px')
-          $('.save-live2d, .switch-live2d, .live2d-pio, .live2d-tia').removeClass('hide-live2d-tool')
+          document.querySelectorAll('.hide-live2d').forEach((element) => {
+            element.style.bottom = '185px'
+          })
+          document.querySelectorAll('.save-live2d, .switch-live2d, .live2d-pio, .live2d-tia').forEach((element) => {
+            element.classList.remove('hide-live2d-tool')
+          })
         }
-        $('.hide-live2d .keys').html('Hide')
+        document.querySelectorAll('.hide-live2d .keys').forEach((element) => {
+          element.textContent = 'Hide'
+        })
         localStorage.removeItem('waifu-display')
-        document.getElementById('waifu').style.display = ''
-        document.getElementById('waifu').style.bottom = 0
+        const waifuElement = document.getElementById('waifu')
+        waifuElement.style.display = ''
+        waifuElement.style.bottom = '0'
         setCookie('live2d', 'Hide', 7)
         setCookie('dontwantlive2d', 'no', 7)
       }, 10)
