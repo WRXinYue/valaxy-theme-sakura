@@ -1,12 +1,14 @@
 <h2 align="center">Valaxy Theme Sakura</h2>
 <pre align="center">
-🧪 正在积极开发中 | <a href="https://sakura.wrxinyue.org/">Live Demo</a> 🌸
+🧪 第一阶段即将完成 | <a href="https://sakura-docs.wrxinyue.org/">Docs</a> | <a href="https://sakura.wrxinyue.org/">Demo</a>
 </pre>
 
 <p align="center">
 <a href="https://www.npmjs.com/package/valaxy-theme-sakura" rel="nofollow"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura?color=0078E7" alt="NPM version"></a>
 <a href="https://github.com/WRXinYue/valaxy-theme-sakura/actions/workflows/release.yml"><img src="https://github.com/WRXinYue/valaxy-theme-sakura/actions/workflows/release.yml/badge.svg" alt="Release"></a>
 </p>
+
+[在线文档](https://sakura-docs.wrxinyue.org/)
 
 ### 使用
 
@@ -104,7 +106,7 @@ pnpm up valaxy-theme-sakura --latest
 ~~~
 
 ### 文档 & 完整配置
-> 更多信息看[详情配置](https://sakura.wrxinyue.org/posts/theme-sakura)
+> 更多信息看[详情配置](https://sakura-docs.wrxinyue.org/)
 
 ### 鸣谢
 

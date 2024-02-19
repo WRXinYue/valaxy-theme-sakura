@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- 修复了文章页面返回主页无法通过点击“回到顶部”按钮返回顶部的问题
+
 ## [0.1.1] - 2024-02-19
 
 ### Added
