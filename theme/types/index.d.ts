@@ -84,6 +84,38 @@ export interface ThemeConfig {
       icp: string
     }
   }>
+
+  // Pagination configuration
+  pagination?: {
+    /**
+     * Defines the pagination type.
+     * 'infinite-scroll' for automatic loading more content on scroll,
+     * 'pagination' for traditional page number navigation.
+     */
+    type?: 'infinite-scroll' | 'pagination'
+
+    /**
+     * Items per page - applicable for 'pagination' type.
+     * Specifies how many items/articles to show per page.
+     */
+    itemsPerPage?: number // Optional for 'infinite-scroll'
+
+    /**
+     * Optional settings for 'infinite-scroll' type, like threshold for loading more.
+     */
+    infiniteScrollOptions?: {
+      /**
+       * Enable preloading of content before the user actually reaches the end.
+       * This can improve user experience by having the next content ready in advance.
+       */
+      preload?: boolean
+
+      /**
+       * Threshold in pixels before the end of the items where new items will be loaded.
+       */
+      threshold?: number
+    }
+  }
 }
 
 export interface NavItem {
