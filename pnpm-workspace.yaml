@@ -1,4 +1,5 @@
 packages:
   - theme
   - demo
+  - docs
   - modules/*

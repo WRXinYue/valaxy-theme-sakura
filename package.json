@@ -6,9 +6,11 @@
   "scripts": {
     "build": "npm run build:demo",
     "build:demo": "npm -C demo run build",
+    "build:docs": "pnpm -C docs run build",
     "ci:publish": "pnpm -r publish --access public --no-git-checks",
     "dev": "npm run demo",
     "demo": "npm -C demo run dev",
+    "docs": "pnpm -C docs run dev",
     "preview": "cd demo && vite preview --host",
     "lint": "eslint .",
     "release": "cd theme && git add -A && bumpp",

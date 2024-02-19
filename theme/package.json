@@ -31,7 +31,6 @@
     "hover.css": "^2.3.2"
   },
   "devDependencies": {
-    "valaxy": "^0.17.2",
-    "vite-plugin-pwa": "^0.17.5"
+    "valaxy": "^0.17.2"
   }
 }

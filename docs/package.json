@@ -1,0 +1,29 @@
+{
+  "name": "valaxy-theme-sakura-docs",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:ssg",
+    "build:spa": "valaxy build",
+    "build:ssg": "valaxy build --ssg",
+    "dev": "valaxy",
+    "rss": "valaxy rss",
+    "serve": "vite preview",
+    "vitepress:dev": "vitepress dev",
+    "vitepress:build": "vitepress build",
+    "vitepress:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "valaxy": "^0.17.5",
+    "valaxy-addon-algolia": "^0.0.3",
+    "valaxy-addon-components": "^0.0.2",
+    "valaxy-theme-press": "^0.18.1",
+    "valaxy-theme-sakura": "workspace:*"
+  },
+  "devDependencies": {
+    "@iconify-json/simple-icons": "^1.1.89",
+    "nodemon": "^3.0.3",
+    "vite": "^5.0.12",
+    "vitepress": "1.0.0-rc.40"
+  }
+}

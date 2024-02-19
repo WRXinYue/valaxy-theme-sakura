@@ -1,0 +1,95 @@
+gallery:
+  tip: 搜索
+
+nav:
+  guide: 指南
+  theme: 主题
+  addon: 插件
+
+  getting-started: 起步
+  migrate-from-other: 从其他框架迁移
+
+  use-a-theme: 使用主题
+  write-a-theme: 编写主题
+  themes-gallery: 主题橱窗
+
+  why-need-addons: 为什么需要插件？
+  use-an-addon: 使用插件
+  write-an-addon: 编写插件
+  addons-gallery: 插件橱窗
+
+  ecosystem: 生态
+
+  vscode: VSCode 插件
+  client: 客户端应用
+  news: 新闻
+  community: 社区
+  dev: 参与开发
+
+  examples:
+    site: 示例站点
+
+category:
+  getting-started: 起步
+  guide: 指南
+  config: 配置
+  migration: 迁移
+  third: 第三方
+  custom: 自定义
+  examples: 示例
+  theme: 主题
+  addon: 插件
+  dev: 开发
+
+banner:
+  introduction: 简约轻量的 valaxy sakura 主题.🚀
+
+hero:
+  actions:
+    get-started: 快速上手
+    view-github: 查看 Github
+
+features:
+  markdown:
+    title: Markdown - 专注你的内容
+    details: 支持完整的 Markdown 语法与各类扩展格式，毫无疑问还有 SSG
+  vite:
+    title: Vite - 极速的开发体验
+    details: 享受 Vite 带来的生态与热更新开发体验，即便在编写内容与修改配置之时
+  vue:
+    title: Vue - 自定义任意组件与布局
+    details: 在 Markdown 中使用 Vue，或是自定义覆盖主题中的任意组件与布局
+  unocss:
+    title: UnoCSS - 自由的编写样式
+    details: 在文章、组件以及任意地方自由地编写任意样式，同时保持最小的体积
+  vueuse:
+    title: VueUse - 合成式 API 工具集
+    details: 内置的 VueUse 按需满足你的各类需求，除此之外，还有我们自身的 Blog Composition API
+  actions:
+    title: Actions - 自动化部署
+    details: 内置 GitHub Actions、Netlify、Vercel 等自动部署配置，一键部署你的站点
+  i18n:
+    title: 国际化 - 无缝的多语言支持
+    details: Vue i18n + CSS i18n 实现单页面与局部元素的全局多语言支持，国际化无需新页面/新站点
+  typescript:
+    title: TypeScript - 类型安全
+    details: 所有配置与 API 伴随着完备的类型安全与智能提示，这是当然的
+  vscode:
+    title: VSCode - 流畅的开发体验
+    details: 我们正在完善 VSCode 插件，以便你在使用 VSCode 开发、编写文章过程中获得更好的体验
+  theme:
+    title: 主题 - 扩展亦或自定义
+    details: 通过同名 Vue 组件覆盖主题中的任意组件与布局，或是编写自己的主题
+  addon:
+    title: 插件 - 无限的可能性
+    details: 完全兼容 Vite/Vue 插件外，你还可通过 Addon 进一步封装简化配置或扩展功能（包括组件）
+  electron:
+    title: Electron - 客户端应用
+    details: 在未来我们还将推出面向非开发者的客户端，让你从开发、部署到发布更加便捷，敬请期待……
+
+tooltip:
+  edit_this_page: 在 GitHub 上编辑此页
+
+toc:
+  base-config: 基础配置
+  extend-config: 扩展配置

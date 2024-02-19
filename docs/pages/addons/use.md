@@ -1,0 +1,50 @@
+---
+title: Use Addon
+title_zh-CN: 使用插件
+categories:
+  - addon
+---
+
+## How To Use
+
+```bash
+pnpm add [valaxy-addon-package1] [valaxy-addon-package2]
+# npm i [valaxy-addon-package1] [valaxy-addon-package2]
+```
+
+使用
+
+```ts
+// valaxy.config.ts
+import { defineValaxyConfig } from 'valaxy'
+
+export default defineValaxyConfig({
+  addons: [
+    'valaxy-addon-package1',
+    // pass addon options
+    ['valaxy-addon-package2', { global: false }],
+  ]
+})
+```
+
+### Addon With Options
+
+譬如开启 Waline 评论：
+
+```ts
+import { defineValaxyConfig } from 'valaxy'
+import { addonWaline } from 'valaxy-addon-waline'
+
+export default defineValaxyConfig({
+  // 启用评论
+  comment: {
+    enable: true
+  },
+  // 设置 valaxy-addon-waline 配置项
+  addons: [
+    addonWaline({
+      serverURL: 'https://your-waline-url',
+    }),
+  ],
+})
+```
