@@ -15,32 +15,6 @@ export interface ThemeConfig {
     primary: string
   }
 
-  // site name
-  prefixName: string
-  siteName: string
-
-  // home page
-  homeTitle: string
-  homeMotto: string
-
-  // navbar favicon
-  favicon: boolean
-
-  headerWallpaper: {
-    urls: string[]
-    backgroundStyle: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
-  }
-
-  /**
-   * navbar
-   */
-  nav: NavItem[]
-
-  /**
-   * sidebar
-   */
-  sidebar: NavItem[]
-
   /**
    * footer
    */
@@ -84,6 +58,34 @@ export interface ThemeConfig {
       icp: string
     }
   }>
+
+  /**
+   * navbar
+   */
+  nav: NavItem[]
+
+  // ============== Valaxy Theme Sakura Config ==============
+
+  // site name
+  prefixName: string
+  siteName: string
+
+  // home page
+  homeTitle: string
+  homeMotto: string
+
+  // navbar favicon
+  favicon: boolean
+
+  headerWallpaper: {
+    urls: string[]
+    backgroundStyle: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
+  }
+
+  /**
+   * sidebar
+   */
+  sidebar: NavItem[]
 
   // Pagination configuration
   pagination?: {
