@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- 新增了分页功能及加载更多的支持，具体为valaxy的分页功能和Sakura的加载更多功能（样式待完成）。默认配置为启用Sakura加载更多模式
+
 ### Fixed
 
 - 修复了文章页面返回主页无法通过点击“回到顶部”按钮返回顶部的问题
