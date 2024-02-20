@@ -46,21 +46,7 @@ export default defineValaxyConfig<PressTheme.Config>({
     logo: '/favicon.svg',
     sidebar: [
       'getting-started',
-      'guide',
-      {
-        text: 'category.config',
-        collapsed: false,
-        items: [
-          {
-            text: 'toc.base-config',
-            link: '/guide/config/',
-          },
-          {
-            text: 'toc.extend-config',
-            link: '/guide/config/extend',
-          },
-        ],
-      },
+      'config',
       'migration',
       'built-ins',
       'third',
