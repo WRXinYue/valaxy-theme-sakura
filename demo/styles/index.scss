@@ -2,15 +2,20 @@
 @use "./docs.scss";
 
 .aplayer {
-    & .aplayer-miniswitcher, & .aplayer-body {
+
+    & .aplayer-miniswitcher,
+    & .aplayer-body {
         border-radius: 0 6px 6px 0 !important;
     }
 }
+
 .aplayer.aplayer-withlist.aplayer-fixed.aplayer-narrow {
     & .aplayer-body {
-        left: -66px !important;
+        display: none;
+        left: -100px;
     }
 }
+
 .aplayer.aplayer-withlist.aplayer-fixed:hover {
     & .aplayer-body:hover {
         left: 0 !important

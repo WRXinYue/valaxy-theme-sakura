@@ -58,7 +58,7 @@ function loadWidget(config) {
 	</div>`)
   // https://stackoverflow.com/questions/24148403/trigger-css-transition-on-appended-element
   setTimeout(() => {
-    document.getElementById('waifu').style.bottom = 0
+    document.getElementById('waifu').style.bottom = '-10px'
   }, 0);
 
   (function registerEventListener() {
