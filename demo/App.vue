@@ -3,13 +3,12 @@ import { onMounted } from 'vue'
 
 function setupLrcIconHidingObserver() {
   const observer = new MutationObserver((mutations) => {
-    /** Hidden ap.lrc */
+    const lrcElement = document.querySelector('.aplayer-lrc .aplayer-lrc-contents .aplayer-lrc-current') as HTMLElement
+    const lrcButton = document.querySelector('.aplayer-icon-lrc') as HTMLElement
     function removelrc() {
-      const lrcElement = document.querySelector('.aplayer-lrc .aplayer-lrc-contents .aplayer-lrc-current') as HTMLElement
       if (lrcElement) {
         lrcElement.style.display = 'none'
-        const lrcButton = document.querySelector('.aplayer-icon-lrc') as HTMLElement
-        if (lrcElement?.textContent !== 'Loading') {
+        if (lrcElement.textContent !== 'Loading') {
           lrcButton.click()
           lrcElement.style.display = ''
           observer.disconnect()
@@ -20,8 +19,7 @@ function setupLrcIconHidingObserver() {
       removelrc()
     })
   })
-  const config = { childList: true, subtree: true }
-  observer.observe(document.body, config)
+  observer.observe(document.body, { childList: true, subtree: true })
 }
 
 function setupAplayerVisibilityObserver() {
@@ -53,9 +51,7 @@ function setupAplayerVisibilityObserver() {
       hiddenAplayer()
     })
   })
-
-  const config = { childList: true, subtree: true }
-  observer.observe(document.body, config)
+  observer.observe(document.body, { childList: true, subtree: true })
 }
 
 function onMetingLoad() {
@@ -68,7 +64,7 @@ function setupAplayerVisibility() {
 
   let aplayerNarrow = true
 
-  function ToggleAplayerNarrow() {
+  function toggleAplayerVisibility() {
     aplayerNarrow = !aplayerNarrow
   }
 
@@ -83,7 +79,7 @@ function setupAplayerVisibility() {
 
   aplayerFixedElement.addEventListener('mouseenter', showAplayer)
   aplayerFixedElement.addEventListener('mouseleave', hiddenAplayer)
-  aplayerIconButton.addEventListener('click', ToggleAplayerNarrow)
+  aplayerIconButton.addEventListener('click', toggleAplayerVisibility)
 }
 
 onMounted(() => {
