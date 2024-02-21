@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { isClient, useWindowScroll } from '@vueuse/core'
 import { onMounted, onUnmounted, ref } from 'vue'
+import type Lenis from '@studio-freight/lenis'
+
+let lenis: Lenis
 
 const { y } = useWindowScroll()
 
@@ -18,13 +21,30 @@ function onScroll() {
   }
 }
 function toTop() {
-  if (!isClient)
-    return
-  window.scrollTo({ top: 0 })
+  if (isClient) {
+    lenis.scrollTo(0, {
+      offset: 0,
+      immediate: false,
+    })
+  }
 }
-onMounted(() => {
+
+function raf(time: any) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+onMounted(async () => {
   window.addEventListener('scroll', onScroll)
   onScroll()
+
+  if (window.innerWidth >= 768) {
+    const LenisModule = await import('@studio-freight/lenis')
+    const Lenis = LenisModule.default
+    lenis = new Lenis({ lerp: 0.04 })
+
+    requestAnimationFrame(raf)
+  }
 })
 onUnmounted(() => {
   window.removeEventListener('scroll', onScroll)

@@ -28,7 +28,8 @@
     "@iconify-json/simple-icons": "^1.1.89",
     "animate.css": "^4.1.1",
     "gsap": "^3.12.5",
-    "hover.css": "^2.3.2"
+    "hover.css": "^2.3.2",
+    "smooth-scrollbar": "^8.8.4"
   },
   "devDependencies": {
     "valaxy": "^0.17.2"

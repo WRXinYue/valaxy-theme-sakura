@@ -9,7 +9,6 @@ meta:
 
 <style lang="scss">
 html {
-  scroll-behavior: smooth;
   --global-font: "Noto Serif SC", "MicroSoft Yahei", serif;
   --color-accent: #fe9600;
   --color-gray: #666;
