@@ -39,7 +39,8 @@ function setupAplayerVisibilityObserver() {
       }
       else {
         const aplayerFixedElement = document.querySelector('.aplayer.aplayer-withlist.aplayer-fixed .aplayer-body') as HTMLElement
-        aplayerFixedElement.style.left = '0'
+        if (aplayerFixedElement)
+          aplayerFixedElement.style.left = '0'
       }
     }
     mutations.forEach((_mutation) => {
@@ -56,3 +57,7 @@ onMounted(() => {
   setupAplayerVisibilityObserver()
 })
 </script>
+
+<template>
+  <div />
+</template>

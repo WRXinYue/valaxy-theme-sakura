@@ -8,8 +8,6 @@
 pnpm install valaxy-addon-live2d
 ```
 
-> 暂时考虑复制项目引用
-
 ### 主题使用者
 
 启用 live2d看板娘
