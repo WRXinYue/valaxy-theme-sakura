@@ -3,7 +3,8 @@ import type { ThemeConfig } from 'valaxy-theme-sakura'
 
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
-import { addonLive2d } from 'valaxy-addon-live2d'
+
+// import { addonLive2d } from 'valaxy-addon-live2d'
 
 /**
  * User Config
@@ -134,9 +135,9 @@ export default defineConfig<ThemeConfig>({
         type: 'playlist',
       },
     }),
-    addonLive2d({
-      live2dPath: 'live2d/',
-    }),
+    // addonLive2d({
+    //   live2dPath: 'live2d/',
+    // }),
   ],
 })
 
