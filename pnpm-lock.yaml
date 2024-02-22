@@ -11,6 +11,9 @@ importers:
       '@antfu/eslint-config':
         specifier: 2.6.4
         version: 2.6.4(@vue/compiler-sfc@3.4.15)(eslint@8.56.0)(typescript@5.3.3)
+      '@studio-freight/lenis':
+        specifier: ^1.0.34
+        version: 1.0.36
       bumpp:
         specifier: ^9.3.0
         version: 9.3.0
@@ -32,6 +35,9 @@ importers:
 
   demo:
     dependencies:
+      '@studio-freight/lenis':
+        specifier: ^1.0.36
+        version: 1.0.36
       valaxy:
         specifier: ^0.17.5
         version: 0.17.5(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.33)(typescript@5.3.3)(unhead@1.8.10)
@@ -114,6 +120,9 @@ importers:
       hover.css:
         specifier: ^2.3.2
         version: 2.3.2
+      smooth-scrollbar:
+        specifier: ^8.8.4
+        version: 8.8.4
     devDependencies:
       valaxy:
         specifier: ^0.17.2
@@ -1543,6 +1552,9 @@ packages:
     dependencies:
       domhandler: 5.0.3
       selderee: 0.11.0
+
+  /@studio-freight/lenis@1.0.36:
+    resolution: {integrity: sha512-dPrPjz8F5MRtZlCKVQ8t7xIyjS+btRr1FmHIM84FwC1e+T+M86+32YhhgD0o45NMx9XOyipIzsga2n34NbajZw==}
 
   /@stylistic/eslint-plugin-js@1.5.4(eslint@8.56.0):
     resolution: {integrity: sha512-3ctWb3NvJNV1MsrZN91cYp2EGInLPSoZKphXIbIRx/zjZxKwLDr9z4LMOWtqjq14li/OgqUUcMq5pj8fgbLoTw==}
@@ -3177,6 +3189,11 @@ packages:
     dependencies:
       browserslist: 4.22.2
     dev: true
+
+  /core-js@3.36.0:
+    resolution: {integrity: sha512-mt7+TUBbTFg5+GngsAxeKBTl5/VS0guFeJacYge9OmHb+m058UwwIm41SE9T4Den7ClatV57B6TYTuJ0CX1MAw==}
+    requiresBuild: true
+    dev: false
 
   /critters@0.0.20:
     resolution: {integrity: sha512-CImNRorKOl5d8TWcnAz5n5izQ6HFsvz29k327/ELy6UFcmbiZNOsinaKvzv16WZR0P6etfSWYzE47C4/56B3Uw==}
@@ -5646,6 +5663,13 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /smooth-scrollbar@8.8.4:
+    resolution: {integrity: sha512-Wn2Q/iE+PE1ef4EfhFMhgaIMfSrjJl2LalRu0hBWSrw5nZKGsUIjWFWHnLB/Lpx7N+a1pJH6+wkQzBr+5nWPUg==}
+    dependencies:
+      core-js: 3.36.0
+      tslib: 1.14.1
+    dev: false
+
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
@@ -5859,6 +5883,10 @@ packages:
     dependencies:
       typescript: 5.3.3
     dev: true
+
+  /tslib@1.14.1:
+    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
+    dev: false
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}

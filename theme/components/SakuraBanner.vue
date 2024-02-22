@@ -14,9 +14,12 @@ onMounted(() => {
   currentIndex.value = Number.parseInt(localStorage.getItem(storageKey) || '0', 10)
 })
 
+const currentWallpaperUrl = computed(() => {
+  return themeConfig.value.headerWallpaper.urls[currentIndex.value] || ''
+})
+
 const isCurrentMediaVideo = computed(() => {
-  const currentUrl = themeConfig.value.headerWallpaper.urls[currentIndex.value]
-  return isVideoUrl(currentUrl)
+  return isVideoUrl(currentWallpaperUrl.value)
 })
 
 function nextMedia() {
@@ -43,12 +46,12 @@ watch(currentIndex, (newIndex) => {
     <div class="headertop absolute h-full w-full top-0 overflow-hidden" :class="themeConfig.headerWallpaper.backgroundStyle">
       <template v-if="isCurrentMediaVideo">
         <video class="object-cover block bg-cover w-full h-full" preload="auto" autoplay loop muted>
-          <source :src="themeConfig.headerWallpaper.urls[currentIndex]" type="video/mp4">
+          <source :src="currentWallpaperUrl" type="video/mp4">
           您的浏览器不支持视频标签。
         </video>
       </template>
       <template v-else>
-        <div class="w-full h-full object-cover block bg-cover" :style="`background-image: url(${themeConfig.headerWallpaper.urls[currentIndex]})`" />
+        <div class="w-full h-full object-cover block bg-cover" :style="`background-image: url(${currentWallpaperUrl})`" />
       </template>
       <div class="front-wave absolute z-12 bottom-0 w-[400%] h-65px" />
       <div class="foreground-wave absolute z-12 bottom-0 w-[400%] h-80px" />
