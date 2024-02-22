@@ -26,6 +26,7 @@
     "@iconify-json/material-symbols-light": "^1.1.11",
     "@iconify-json/mdi": "^1.1.64",
     "@iconify-json/simple-icons": "^1.1.89",
+    "@studio-freight/lenis": "^1.0.36",
     "animate.css": "^4.1.1",
     "gsap": "^3.12.5",
     "hover.css": "^2.3.2",

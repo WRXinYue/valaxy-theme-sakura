@@ -100,6 +100,9 @@ importers:
       '@iconify-json/simple-icons':
         specifier: ^1.1.89
         version: 1.1.89
+      '@studio-freight/lenis':
+        specifier: ^1.0.36
+        version: 1.0.36
       animate.css:
         specifier: ^4.1.1
         version: 4.1.1
@@ -1541,6 +1544,10 @@ packages:
     dependencies:
       domhandler: 5.0.3
       selderee: 0.11.0
+
+  /@studio-freight/lenis@1.0.36:
+    resolution: {integrity: sha512-dPrPjz8F5MRtZlCKVQ8t7xIyjS+btRr1FmHIM84FwC1e+T+M86+32YhhgD0o45NMx9XOyipIzsga2n34NbajZw==}
+    dev: false
 
   /@stylistic/eslint-plugin-js@1.5.4(eslint@8.56.0):
     resolution: {integrity: sha512-3ctWb3NvJNV1MsrZN91cYp2EGInLPSoZKphXIbIRx/zjZxKwLDr9z4LMOWtqjq14li/OgqUUcMq5pj8fgbLoTw==}
