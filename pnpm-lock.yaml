@@ -11,9 +11,6 @@ importers:
       '@antfu/eslint-config':
         specifier: 2.6.4
         version: 2.6.4(@vue/compiler-sfc@3.4.15)(eslint@8.56.0)(typescript@5.3.3)
-      '@studio-freight/lenis':
-        specifier: ^1.0.34
-        version: 1.0.36
       bumpp:
         specifier: ^9.3.0
         version: 9.3.0
@@ -35,18 +32,12 @@ importers:
 
   demo:
     dependencies:
-      '@studio-freight/lenis':
-        specifier: ^1.0.36
-        version: 1.0.36
       valaxy:
         specifier: ^0.17.5
         version: 0.17.5(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.33)(typescript@5.3.3)(unhead@1.8.10)
       valaxy-addon-algolia:
         specifier: ^0.0.3
         version: 0.0.3(@algolia/client-search@4.22.1)(search-insights@2.13.0)(valaxy@0.17.5)
-      valaxy-addon-live2d:
-        specifier: workspace:*
-        version: link:../modules/valaxy-addon-live2d
       valaxy-addon-meting:
         specifier: ^0.0.5
         version: 0.0.5
@@ -91,8 +82,6 @@ importers:
       vitepress:
         specifier: 1.0.0-rc.40
         version: 1.0.0-rc.40(@algolia/client-search@4.22.1)(postcss@8.4.33)(search-insights@2.13.0)(typescript@5.3.3)
-
-  modules/valaxy-addon-live2d: {}
 
   theme:
     dependencies:
@@ -1552,9 +1541,6 @@ packages:
     dependencies:
       domhandler: 5.0.3
       selderee: 0.11.0
-
-  /@studio-freight/lenis@1.0.36:
-    resolution: {integrity: sha512-dPrPjz8F5MRtZlCKVQ8t7xIyjS+btRr1FmHIM84FwC1e+T+M86+32YhhgD0o45NMx9XOyipIzsga2n34NbajZw==}
 
   /@stylistic/eslint-plugin-js@1.5.4(eslint@8.56.0):
     resolution: {integrity: sha512-3ctWb3NvJNV1MsrZN91cYp2EGInLPSoZKphXIbIRx/zjZxKwLDr9z4LMOWtqjq14li/OgqUUcMq5pj8fgbLoTw==}
