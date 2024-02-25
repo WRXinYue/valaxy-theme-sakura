@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import pkg from '../../package.json'
+import pkg from 'valaxy/package.json'
 </script>
 
 <template>

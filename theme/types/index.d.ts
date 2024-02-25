@@ -126,7 +126,7 @@ export interface ThemeConfig {
 
 export interface NavItem {
   text?: string
-  locale?: string
+  locale?: string | number
   link: string
   icon?: string
 }

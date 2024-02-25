@@ -15,7 +15,7 @@ const tags = useTags()
 <template>
   <nav class="site-nav" text-xl mt-6>
     <ul>
-      <RouterLink v-for="(item, i) in themeConfig.sidebar" :key="i" class="site-link-item" :to="item.link" :title="item.text || t(item.locale)">
+      <RouterLink v-for="(item, i) in themeConfig.sidebar" :key="i" class="site-link-item" :to="item.link" :title="item.text || t(item.locale || '')">
         <div class="icon" :class="item.icon" />
         <span text-base ml-1>
           <template v-if="item.locale === 'menu.archives'">
