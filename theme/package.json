@@ -33,6 +33,6 @@
     "smooth-scrollbar": "^8.8.4"
   },
   "devDependencies": {
-    "valaxy": "^0.18.4"
+    "valaxy": "^0.18.5"
   }
 }

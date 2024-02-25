@@ -9,7 +9,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "valaxy": "^0.18.4",
     "valaxy-addon-algolia": "^0.0.3",
     "valaxy-addon-live2d": "workspace:*",
     "valaxy-addon-meting": "^0.0.5",
@@ -17,6 +16,7 @@
     "valaxy-theme-sakura": "workspace:*"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "valaxy": "^0.18.5"
   }
 }

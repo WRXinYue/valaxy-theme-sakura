@@ -21,8 +21,8 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
       valaxy:
-        specifier: ^0.18.4
-        version: 0.18.4(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10)
+        specifier: ^0.18.5
+        version: 0.18.5(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10)
       valaxy-theme-sakura:
         specifier: workspace:*
         version: link:theme
@@ -32,12 +32,9 @@ importers:
 
   demo:
     dependencies:
-      valaxy:
-        specifier: ^0.18.4
-        version: 0.18.4(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10)
       valaxy-addon-algolia:
         specifier: ^0.0.3
-        version: 0.0.3(@algolia/client-search@4.22.1)(search-insights@2.13.0)(valaxy@0.18.4)
+        version: 0.0.3(@algolia/client-search@4.22.1)(search-insights@2.13.0)(valaxy@0.18.5)
       valaxy-addon-live2d:
         specifier: workspace:*
         version: link:../models/valaxy-addon-live2d
@@ -46,7 +43,7 @@ importers:
         version: 0.0.5
       valaxy-addon-waline:
         specifier: ^0.1.2
-        version: 0.1.2(typescript@5.3.3)(valaxy@0.18.4)
+        version: 0.1.2(typescript@5.3.3)(valaxy@0.18.5)
       valaxy-theme-sakura:
         specifier: workspace:*
         version: link:../theme
@@ -54,6 +51,9 @@ importers:
       nodemon:
         specifier: ^3.1.0
         version: 3.1.0
+      valaxy:
+        specifier: ^0.18.5
+        version: 0.18.5(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10)
 
   docs:
     dependencies:
@@ -126,8 +126,8 @@ importers:
         version: 8.8.4
     devDependencies:
       valaxy:
-        specifier: ^0.18.4
-        version: 0.18.4(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10)
+        specifier: ^0.18.5
+        version: 0.18.5(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10)
 
 packages:
 
@@ -1858,6 +1858,22 @@ packages:
 
   /@valaxyjs/devtools@0.18.4(debug@4.3.4):
     resolution: {integrity: sha512-BwNLxOd9qEK5HPGOpl7gRmDVz3rL7I6esRI2uhwjVNzEtFhJYsPxhO0EGCs5oaQVDNUevbNi3LkVAL5AsLywcg==}
+    dependencies:
+      '@rollup/pluginutils': 5.1.0
+      axios: 1.6.7(debug@4.3.4)
+      body-parser: 1.20.2
+      http-proxy-middleware: 2.0.6(debug@4.3.4)
+      picocolors: 1.0.0
+      sirv: 2.0.4
+    transitivePeerDependencies:
+      - '@types/express'
+      - debug
+      - rollup
+      - supports-color
+    dev: false
+
+  /@valaxyjs/devtools@0.18.5(debug@4.3.4):
+    resolution: {integrity: sha512-cBiHKaFI78Ok1VLliKH5pufTBKDhdc3YztVtm4/Ycio4z/D1ZlDBF0udTpSCDNvciWVpLLmcB55uWLOgIvTbfQ==}
     dependencies:
       '@rollup/pluginutils': 5.1.0
       axios: 1.6.7(debug@4.3.4)
@@ -6363,6 +6379,22 @@ packages:
       - search-insights
     dev: false
 
+  /valaxy-addon-algolia@0.0.3(@algolia/client-search@4.22.1)(search-insights@2.13.0)(valaxy@0.18.5):
+    resolution: {integrity: sha512-FGwJgtlVmYcFxu732bKKnTigWbiiuJGRwegifptHKFxAaYMZreadcaCcxjZUffQk2EHbaQp8T/WuRo0R5+mBzA==}
+    peerDependencies:
+      valaxy: latest
+    dependencies:
+      '@docsearch/css': 3.5.2
+      '@docsearch/js': 3.5.2(@algolia/client-search@4.22.1)(search-insights@2.13.0)
+      valaxy: 0.18.5(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10)
+    transitivePeerDependencies:
+      - '@algolia/client-search'
+      - '@types/react'
+      - react
+      - react-dom
+      - search-insights
+    dev: false
+
   /valaxy-addon-components@0.0.2:
     resolution: {integrity: sha512-J6JeNTagohF9fNvYaYiOwVHQGuhoWamy1P01mEUfzreacaJ3CqzJU1G/uSFMTvm3CXvMo8OAQCwqa+OqBG0dkw==}
     dev: false
@@ -6371,13 +6403,13 @@ packages:
     resolution: {integrity: sha512-cLlSTwdDOX5SZ42ByBm14lKK8DzYPfijlhrnLpYA+TjuAjMzwVYye6sKu6itttKKQEYJOzprzkVMWEB1zdmrhA==}
     dev: false
 
-  /valaxy-addon-waline@0.1.2(typescript@5.3.3)(valaxy@0.18.4):
+  /valaxy-addon-waline@0.1.2(typescript@5.3.3)(valaxy@0.18.5):
     resolution: {integrity: sha512-Qq0WZ+v4mjSLeV4xmGle3bQZhjRWzzjMakqUo37WZyLtfgZJQTeGaACfjCJ4uikS29GBoAOcOvlEr8PpLZEkQw==}
     peerDependencies:
       valaxy: latest
     dependencies:
       '@waline/client': 3.1.3(typescript@5.3.3)
-      valaxy: 0.18.4(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10)
+      valaxy: 0.18.5(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - typescript
@@ -6412,6 +6444,115 @@ packages:
       '@unhead/schema-org': 1.8.10(@unhead/shared@1.8.10)(unhead@1.8.10)
       '@unhead/vue': 1.8.10(vue@3.4.19)
       '@valaxyjs/devtools': 0.18.4(debug@4.3.4)
+      '@vitejs/plugin-vue': 5.0.4(vite@5.1.4)(vue@3.4.19)
+      '@vue/devtools-api': 7.0.15(vue@3.4.19)
+      '@vueuse/core': 10.8.0(vue@3.4.19)
+      '@vueuse/integrations': 10.8.0(fuse.js@7.0.0)(nprogress@0.2.0)(qrcode@1.5.3)(vue@3.4.19)
+      body-scroll-lock: 4.0.0-beta.0
+      consola: 3.2.3
+      critters: 0.0.20
+      cross-spawn: 7.0.3
+      css-i18n: 0.0.2
+      dayjs: 1.11.10
+      debug: 4.3.4(supports-color@5.5.0)
+      defu: 6.1.4
+      ejs: 3.1.9
+      escape-html: 1.0.3
+      feed: 4.2.2
+      fs-extra: 11.2.0
+      fuse.js: 7.0.0
+      gray-matter: 4.0.3
+      hookable: 5.5.3
+      html-to-text: 9.0.5
+      is-installed-globally: 1.0.0
+      jiti: 1.21.0
+      js-base64: 3.7.7
+      katex: 0.16.9
+      lru-cache: 10.2.0
+      markdown-it: 14.0.0
+      markdown-it-anchor: 8.6.7(@types/markdown-it@13.0.7)(markdown-it@14.0.0)
+      markdown-it-attrs: 4.1.6(markdown-it@14.0.0)
+      markdown-it-container: 4.0.0
+      markdown-it-emoji: 3.0.0
+      markdown-it-table-of-contents: 0.6.0
+      markdown-it-task-lists: 2.1.1
+      medium-zoom: 1.1.0
+      mermaid: 10.8.0
+      nprogress: 0.2.0
+      open: 10.0.3
+      ora: 8.0.1
+      pascalcase: 2.0.0
+      pathe: 1.1.2
+      pinia: 2.1.7(typescript@5.3.3)(vue@3.4.19)
+      qrcode: 1.5.3
+      sass: 1.71.1
+      shiki: 1.1.7
+      star-markdown-css: 0.4.2
+      unocss: 0.58.5(postcss@8.4.35)(vite@5.1.4)
+      unplugin-vue-components: 0.26.0(vue@3.4.19)
+      unplugin-vue-markdown: 0.26.0(vite@5.1.4)
+      unplugin-vue-router: 0.8.4(vue-router@4.3.0)(vue@3.4.19)
+      vanilla-lazyload: 17.8.8
+      vite: 5.1.4(sass@1.71.1)
+      vite-plugin-vue-devtools: 7.0.15(vite@5.1.4)(vue@3.4.19)
+      vite-plugin-vue-layouts: 0.11.0(vite@5.1.4)(vue-router@4.3.0)(vue@3.4.19)
+      vite-ssg: 0.23.6(critters@0.0.20)(vite@5.1.4)(vue-router@4.3.0)(vue@3.4.19)
+      vite-ssg-sitemap: 0.6.1
+      vue: 3.4.19(typescript@5.3.3)
+      vue-i18n: 9.9.1(vue@3.4.19)
+      vue-router: 4.3.0(vue@3.4.19)
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - '@babel/parser'
+      - '@nuxt/kit'
+      - '@types/express'
+      - '@types/markdown-it'
+      - '@types/node'
+      - '@unhead/shared'
+      - '@unocss/webpack'
+      - '@vue/composition-api'
+      - async-validator
+      - axios
+      - bufferutil
+      - canvas
+      - change-case
+      - drauu
+      - focus-trap
+      - idb-keyval
+      - jwt-decode
+      - less
+      - lightningcss
+      - petite-vue-i18n
+      - postcss
+      - rollup
+      - sortablejs
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - typescript
+      - unhead
+      - universal-cookie
+      - utf-8-validate
+      - vue-i18n-bridge
+    dev: false
+
+  /valaxy@0.18.5(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10):
+    resolution: {integrity: sha512-J7jpQq5Qp3EO/eo2HgrLXbODwZGV3ofAEljF1MNIPTxDm/My/WwnnEz9dPfO4zFf/I3QdygvGfc2iKPrAI3cjA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    dependencies:
+      '@antfu/utils': 0.7.7
+      '@ctrl/tinycolor': 4.0.3
+      '@iconify-json/carbon': 1.1.30
+      '@iconify-json/ri': 1.1.19
+      '@intlify/unplugin-vue-i18n': 2.0.0(vue-i18n@9.9.1)
+      '@types/body-scroll-lock': 3.1.2
+      '@types/katex': 0.16.7
+      '@unhead/addons': 1.8.10
+      '@unhead/schema-org': 1.8.10(@unhead/shared@1.8.10)(unhead@1.8.10)
+      '@unhead/vue': 1.8.10(vue@3.4.19)
+      '@valaxyjs/devtools': 0.18.5(debug@4.3.4)
       '@vitejs/plugin-vue': 5.0.4(vite@5.1.4)(vue@3.4.19)
       '@vue/devtools-api': 7.0.15(vue@3.4.19)
       '@vueuse/core': 10.8.0(vue@3.4.19)
