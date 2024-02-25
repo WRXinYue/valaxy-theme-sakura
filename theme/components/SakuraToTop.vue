@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { isClient, useWindowScroll } from '@vueuse/core'
 import { onMounted, onUnmounted, ref } from 'vue'
-import type Lenis from '@studio-freight/lenis'
+import { useThemeConfig } from '../composables'
+import { scrollToTop } from '../utils/scrollDamping'
 
-let lenis: Lenis
-
+const themeConfig = useThemeConfig()
 const { y } = useWindowScroll()
-
 const hide = 'top: -900px'
 const style = ref(hide)
+
 function onScroll() {
   if (y.value > 200) {
     if (window.innerWidth > 720)
@@ -21,31 +21,19 @@ function onScroll() {
   }
 }
 function toTop() {
-  if (isClient) {
-    lenis.scrollTo(0, {
-      offset: 0,
-      immediate: false,
-    })
-  }
+  if (isClient)
+    return
+
+  if (!themeConfig.value.scrollDamping?.dampingType)
+    window.scrollTo({ top: 0 })
+  else
+    scrollToTop()
 }
 
-function raf(time: any) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-
-onMounted(async () => {
+onMounted(() => {
   window.addEventListener('scroll', onScroll)
-  onScroll()
-
-  if (window.innerWidth >= 768) {
-    const LenisModule = await import('@studio-freight/lenis')
-    const Lenis = LenisModule.default
-    lenis = new Lenis({ lerp: 0.04 })
-
-    requestAnimationFrame(raf)
-  }
 })
+
 onUnmounted(() => {
   window.removeEventListener('scroll', onScroll)
 })

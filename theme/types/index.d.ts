@@ -118,6 +118,10 @@ export interface ThemeConfig {
       threshold?: number
     }
   }
+
+  scrollDamping?: {
+    dampingType: 'default' | 'gasp' | ''
+  }
 }
 
 export interface NavItem {

@@ -1,20 +1,16 @@
 <script lang="ts" setup>
-import { useHead } from '@unhead/vue'
 import { useAppStore } from 'valaxy'
 import { onMounted } from 'vue'
-
-useHead({
-  link: [
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap',
-    },
-  ],
-})
+import { useThemeConfig } from './composables'
+import { useSakura } from './setup/themeStart'
 
 const app = useAppStore()
+const themeConfig = useThemeConfig()
+
 onMounted(() => {
   app.showLoading = false
+
+  useSakura(themeConfig.value)
 })
 </script>
 
