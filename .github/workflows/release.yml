@@ -15,8 +15,6 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
-        with:
-          run_install: true
 
       # after pnpm
       - name: Use Node.js LTS

@@ -23,9 +23,6 @@ importers:
       valaxy:
         specifier: ^0.18.4
         version: 0.18.4(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10)
-      valaxy-addon-live2d:
-        specifier: workspace:*
-        version: link:models/valaxy-addon-live2d
       valaxy-theme-sakura:
         specifier: workspace:*
         version: link:theme

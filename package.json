@@ -22,7 +22,6 @@
     "eslint": "^8.57.0",
     "typescript": "^5.3.3",
     "valaxy": "^0.18.4",
-    "valaxy-addon-live2d": "workspace:*",
     "valaxy-theme-sakura": "workspace:*",
     "vue-tsc": "^1.8.27"
   }
