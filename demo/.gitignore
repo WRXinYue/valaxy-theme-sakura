@@ -22,3 +22,6 @@ public/feed.json
 
 # valaxy rss
 public/feed.xml
+
+# valaxy fuse
+public/valaxy-fuse-list.json

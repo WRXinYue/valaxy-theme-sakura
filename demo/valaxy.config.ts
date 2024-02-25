@@ -136,7 +136,7 @@ export default defineConfig<ThemeConfig>({
     }),
     addonLive2d({
       live2dPath: {
-        baseUrl: 'local',
+        baseUrl: 'online',
       },
     }),
   ],

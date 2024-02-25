@@ -39,8 +39,8 @@ importers:
         specifier: ^0.0.3
         version: 0.0.3(@algolia/client-search@4.22.1)(search-insights@2.13.0)(valaxy@0.18.4)
       valaxy-addon-live2d:
-        specifier: ^0.0.4
-        version: 0.0.4
+        specifier: workspace:*
+        version: link:../models/valaxy-addon-live2d
       valaxy-addon-meting:
         specifier: ^0.0.5
         version: 0.0.5
@@ -85,6 +85,8 @@ importers:
       vitepress:
         specifier: 1.0.0-rc.44
         version: 1.0.0-rc.44(@algolia/client-search@4.22.1)(postcss@8.4.35)(search-insights@2.13.0)(typescript@5.3.3)
+
+  models/valaxy-addon-live2d: {}
 
   theme:
     dependencies:
@@ -6346,10 +6348,6 @@ packages:
 
   /valaxy-addon-components@0.0.2:
     resolution: {integrity: sha512-J6JeNTagohF9fNvYaYiOwVHQGuhoWamy1P01mEUfzreacaJ3CqzJU1G/uSFMTvm3CXvMo8OAQCwqa+OqBG0dkw==}
-    dev: false
-
-  /valaxy-addon-live2d@0.0.4:
-    resolution: {integrity: sha512-x5fzH9aSOd5ipXWwJzmmGtbqlGa18tBHSzUJ6AEnNPQwMDA7YxH9kKkQtK1dTXN7Q5xTnPMOHvL12ZnFcbMqmw==}
     dev: false
 
   /valaxy-addon-meting@0.0.5:
