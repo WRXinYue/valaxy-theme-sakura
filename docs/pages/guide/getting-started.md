@@ -21,23 +21,23 @@ pnpm create valaxy
 
 ### 安装主题
 
-进入到刚刚生成文件夹位置打开终端，执行如下命令进行安装主题:config
+进入到刚刚生成文件夹位置打开终端，执行如下命令进行安装主题:
 
 ~~~bash
 pnpm add valaxy-theme-sakura
 ~~~
 
 ::: tip
-
-如果你在创建的过程中遇到困难，强烈建议先看[Valaxy文档](https://valaxy.site/guide/getting-started)
-
+如果您在创建的过程中遇到困难，强烈建议先看[Valaxy文档](https://valaxy.site/guide/getting-started)
 :::
 
 ### 启用主题
 
-在valaxy.config.ts文件中进行切换主题:
+在 `valaxy.config.ts` 文件中启用 `sakura` 主题，您需要按照以下步骤操作：
 
-~~~ts
+**导入所需的函数和类型** - 通过从 `valaxy` 和 `valaxy-theme-sakura` 导入 `defineValaxyConfig` 和 `ThemeUserConfig`，以确保您可以使用 TypeScript 的类型检查和自动完成功能。
+
+~~~ts {2-4}
 import { defineValaxyConfig } from 'valaxy'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 
@@ -45,6 +45,23 @@ export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura'
 })
 ~~~
+
+**切换Sakura主题** - 在theme进行配置，如`sakura`
+
+~~~ts {5}
+import { defineValaxyConfig } from 'valaxy'
+import type { ThemeUserConfig } from 'valaxy-theme-sakura'
+
+export default defineValaxyConfig<ThemeUserConfig>({
+  theme: 'sakura'
+})
+~~~
+
+::: warning
+请确保您已经正确地导入了所有必要的类型。如果导入的类型不正确，可能会导致构建失败
+:::
+
+> 通过遵循上述步骤，您可以顺利地在您的项目中启用 sakura 主题，并利用 TypeScript 提供的类型安全和代码智能提示功能，提高开发效率和项目的可维护性
 
 如果设置选项的时候没有安装依赖，那么我们就要手动安装依赖:
 

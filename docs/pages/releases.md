@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - 新增了分页功能及加载更多的支持，具体为valaxy的分页功能和Sakura的加载更多功能（样式待完成）。默认配置为启用Sakura加载更多模式
+- 添加了滑动阻尼Demo效果
+- 优化aplayer和live2d操作和细节上问题
 
 ### Fixed
 

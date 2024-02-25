@@ -9,41 +9,20 @@ codeHeightLimit: 300
 
 ```ts
 export interface ThemeConfig {
-  // Pagination configuration
   pagination?: {
-    /**
-     * Defines the pagination type.
-     * 'infinite-scroll' for automatic loading more content on scroll,
-     * 'pagination' for traditional page number navigation.
-     */
     type?: 'infinite-scroll' | 'pagination'
-
-    /**
-     * Items per page - applicable for 'pagination' type.
-     * Specifies how many items/articles to show per page.
-     */
-    itemsPerPage?: number // Optional for 'infinite-scroll'
-
-    /**
-     * Optional settings for 'infinite-scroll' type, like threshold for loading more.
-     */
+    itemsPerPage?: number
     infiniteScrollOptions?: {
-      /**
-       * Enable preloading of content before the user actually reaches the end.
-       * This can improve user experience by having the next content ready in advance.
-       */
       preload?: boolean
-
-      /**
-       * Threshold in pixels before the end of the items where new items will be loaded.
-       */
       threshold?: number
     }
   }
 }
 ```
 
-| 名称 | 默认值 | 描述 |
-| ---- | ---- | ---- |
-| homeTitle  | Hello, sakura | 首页标题 |
-| homeMotto  | You got to put the past behind you before you can move on. | 首页标语 (写下愿景也很不错呀) |
+| 名称                      | 默认值                               | 描述                                            |
+| ------------------------- | ----------------------------------- | ----------------------------------------------- |
+| `pagination.type`         | -                                   | 分页类型: 'infinite-scroll' 或 'pagination'     |
+| `pagination.itemsPerPage` | -                                   | 每页项目数 - 适用于 'pagination' 类型           |
+| `pagination.infiniteScrollOptions.preload` | -       | 是否在用户实际到达底部之前预加载内容            |
+| `pagination.infiniteScrollOptions.threshold` | -     | 触发加载更多内容的阈值(像素)                    |
