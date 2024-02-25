@@ -9,13 +9,14 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "valaxy": "^0.17.5",
+    "valaxy": "^0.18.4",
     "valaxy-addon-algolia": "^0.0.3",
+    "valaxy-addon-live2d": "^0.0.4",
     "valaxy-addon-meting": "^0.0.5",
-    "valaxy-addon-waline": "^0.1.1",
+    "valaxy-addon-waline": "^0.1.2",
     "valaxy-theme-sakura": "workspace:*"
   },
   "devDependencies": {
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.1.0"
   }
 }
