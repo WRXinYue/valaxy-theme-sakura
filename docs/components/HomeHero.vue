@@ -19,7 +19,7 @@ const { t } = useI18n()
     </h2>
 
     <div m="t-8">
-      <h3>valaxy theme sakura 来自于 wordpress sakura主题衍生，注重体验及优化</h3>
+      <h3>valaxy theme sakura 来自于 wordpress sakura 主题衍生，注重体验及优化</h3>
     </div>
 
     <div p="t-6">

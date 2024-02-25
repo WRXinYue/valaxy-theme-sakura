@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { isDark, toggleDark, useSiteConfig } from 'valaxy'
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 

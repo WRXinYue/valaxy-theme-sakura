@@ -53,8 +53,8 @@ watch(currentIndex, (newIndex) => {
       <template v-else>
         <div class="w-full h-full object-cover block bg-cover" :style="`background-image: url(${currentWallpaperUrl})`" />
       </template>
-      <div class="front-wave absolute z-12 bottom-0 w-[400%] h-65px" />
-      <div class="foreground-wave absolute z-12 bottom-0 w-[400%] h-80px" />
+      <div class="front-wave absolute z-0 bottom-0 w-[400%] h-65px" />
+      <div class="foreground-wave absolute z-1 bottom-0 w-[400%] h-80px" />
     </div>
     <div class="info z-4">
       <GlitchText :text="themeConfig.homeTitle" />
@@ -129,7 +129,6 @@ watch(currentIndex, (newIndex) => {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 3;
   background-attachment: fixed
 }
 
