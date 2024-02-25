@@ -30,6 +30,9 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // Enable eslint for all supported languages
   "eslint.validate": [
     "javascript",
