@@ -6,10 +6,10 @@ import { useSakuraAppStore } from '../stores/app'
 const app = useAppStore()
 const route = useRoute()
 const isHome = useLayout('home')
+const sakura = useSakuraAppStore()
 
 onBeforeRouteLeave(() => {
   const currentScroll = document.documentElement.scrollTop
-  const sakura = useSakuraAppStore()
   sakura.setScrollPosition(route.path, currentScroll)
 })
 </script>

@@ -33,6 +33,7 @@
     "smooth-scrollbar": "^8.8.4"
   },
   "devDependencies": {
-    "valaxy": "^0.18.5"
+    "valaxy": "^0.18.5",
+    "valaxy-addon-waline": "0.1.1"
   }
 }

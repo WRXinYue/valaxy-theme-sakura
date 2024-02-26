@@ -8,7 +8,7 @@ const runtimeConfig = useRuntimeConfig()
   <YunCard w="full" p="4" class="comment yun-comment sm:p-6 lg:px-12 xl:px-16">
     <ClientOnly>
       <YunWaline v-if="runtimeConfig.addons['valaxy-addon-waline']" />
-      <YunTwikoo v-if="runtimeConfig.addons['valaxy-addon-twikoo']" />
+      <!-- <YunTwikoo v-if="runtimeConfig.addons['valaxy-addon-twikoo']" /> -->
       <slot />
     </ClientOnly>
   </YunCard>
