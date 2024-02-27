@@ -1,11 +1,14 @@
 import { defineAppSetup } from 'valaxy'
-import { toScrollPosition } from '../utils/rolling'
+import { useSakuraAppStore } from '../stores/app'
 import 'animate.css'
 
-export default defineAppSetup((_ctx) => {
+export default defineAppSetup(async (_ctx) => {
   const { router, isClient } = _ctx
   if (!isClient)
     return
 
-  toScrollPosition(router)
+  const { toScrollPosition } = await import('../utils/rolling')
+  const sakura = useSakuraAppStore()
+
+  toScrollPosition(router, sakura)
 })

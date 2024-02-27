@@ -154,7 +154,7 @@ header {
 .yya {
   position: fixed;
   left: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--va-c-bg);
   box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
 }
 

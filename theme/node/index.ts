@@ -6,6 +6,10 @@ import type { ThemeConfig } from '../types'
  * Default Config
  */
 export const defaultThemeConfig: ThemeConfig = {
+  // colors: {
+  //   primary: '#e67474',
+  // },
+
   prefixName: 'かなしいの',
   siteName: '心悦',
 

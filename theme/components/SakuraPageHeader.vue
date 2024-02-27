@@ -6,7 +6,7 @@ defineProps<{
   subTitle?: string
   cover?: string
   author?: string
-  date?: string
+  date?: string | number | Date
 }>()
 </script>
 

@@ -19,7 +19,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 
 <template>
   <article>
-    <SakuraPageHeader :title="frontmatter.title" :cover="frontmatter.cover" :author="frontmatter.author" :date="frontmatter.date" />
+    <SakuraPageHeader :title="frontmatter.title ?? 'Default Title'" :cover="frontmatter.cover" :author="frontmatter.author" :date="frontmatter.date" />
 
     <div
       class="divide-y xl:divide-y-0  divide-gray-200 dark:divide-gray-700 pb-16 mx-8 md:mx-15 lg:mx-60 xl:mx-100"

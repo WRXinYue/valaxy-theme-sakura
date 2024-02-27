@@ -13,10 +13,6 @@ export default defineConfig<ThemeConfig>({
   theme: 'sakura',
 
   themeConfig: {
-    // colors: {
-    //   primary: '#e67474',
-    // },
-
     prefixName: 'かなしいの',
     siteName: '心悦',
 
@@ -141,17 +137,3 @@ export default defineConfig<ThemeConfig>({
     }),
   ],
 })
-
-/**
- * generateSafelist by config
- * @param themeConfig
- */
-export function generateSafelist(themeConfig: ThemeConfig) {
-  const safelist: string[] = []
-
-  const footerIcon = themeConfig.footer?.icon?.name
-  if (footerIcon)
-    safelist.push(footerIcon)
-
-  return safelist
-}
