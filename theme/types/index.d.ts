@@ -122,6 +122,8 @@ export interface ThemeConfig {
   scrollDamping?: {
     dampingType: 'default' | 'gasp' | ''
   }
+
+  animation?: boolean
 }
 
 export interface NavItem {

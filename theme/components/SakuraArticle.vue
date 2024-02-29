@@ -1,20 +1,21 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-
 import { useFrontmatter, usePostList } from 'valaxy'
+import { useThemeConfig } from '../composables'
 
+const themeConfig = useThemeConfig()
 const frontmatter = useFrontmatter()
 
 const route = useRoute()
 const posts = usePostList()
 
+const nextPost = computed(() => posts.value[findCurrentIndex() - 1])
+const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
+
 function findCurrentIndex() {
   return posts.value.findIndex(p => p.path === route.path)
 }
-
-const nextPost = computed(() => posts.value[findCurrentIndex() - 1])
-const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 </script>
 
 <template>
@@ -23,6 +24,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 
     <div
       class="divide-y xl:divide-y-0  divide-gray-200 dark:divide-gray-700 pb-16 mx-8 md:mx-15 lg:mx-60 xl:mx-100"
+      :class="themeConfig.animation && 'element-slide-up'"
       style="grid-template-rows: auto 1fr"
     >
       <StarterAuthor v-if="frontmatter.author" :frontmatter="frontmatter" />
@@ -30,7 +32,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
         <slot />
       </div>
 
-      <footer class=" text-sm font-medium leading-5 divide-y divide-gray-200 dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
+      <footer class="text-sm font-medium leading-5 divide-y divide-gray-200 dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
         <div v-if="nextPost && nextPost.path" class="py-8">
           <h2 class="text-xs tracking-wide uppercase text-gray-500">
             Next Article
@@ -78,7 +80,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 // }
 
 // .content {
-//   color: var(--color-text);
+//   color: var(--st-c-text);
 
 //   a {
 //     color: #e58700;
@@ -95,7 +97,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 //     }
 
 //     &:hover {
-//       color: var(--color-accent);
+//       color: var(--st-c-accent);
 
 //       &:after {
 //         transform: scaleX(1);
@@ -111,7 +113,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 //       height: 2px;
 //       bottom: 0;
 //       left: 0;
-//       background-color: var(--color-accent);
+//       background-color: var(--st-c-accent);
 //       transition: transform 0.2s ease-out;
 //       transform-origin: right;
 //     }
@@ -126,7 +128,7 @@ const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
 //   h2 {
 //     padding-bottom: 0.3em;
 //     margin-bottom: 1em;
-//     border-bottom: 1px dashed var(--color-border);
+//     border-bottom: 1px dashed var(--st-c-border);
 //   }
 
 //   p {

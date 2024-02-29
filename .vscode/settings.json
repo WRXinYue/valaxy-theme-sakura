@@ -2,7 +2,6 @@
   "cSpell.words": [
     "algoliasearch",
     "beian",
-    "GSAP",
     "instantsearch",
     "Sakura",
     "valaxy",
@@ -34,6 +33,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // Enable eslint for all supported languages

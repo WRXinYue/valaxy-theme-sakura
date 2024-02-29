@@ -2,7 +2,7 @@
 @use "valaxy/client/styles/mixins/index.scss" as * with ($namespace: "st");
 
 :root {
-  --un-prose-links: var(--st-c-link);
+  // --un-prose-links: var(--st-c-link);
 
   @include set-css-var-from-map($common);
   @include set-css-var-from-map($z-index, "z");

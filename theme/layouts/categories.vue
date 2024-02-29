@@ -4,6 +4,7 @@ import { useCategories, useFrontmatter, usePostTitle, useSiteStore } from 'valax
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { defineWebPage, useSchemaOrg } from '@unhead/schema-org'
+import { useThemeConfig } from '../composables'
 
 useSchemaOrg([
   defineWebPage({
@@ -13,6 +14,7 @@ useSchemaOrg([
 
 const site = useSiteStore()
 const frontmatter = useFrontmatter()
+const themeConfig = useThemeConfig()
 
 const { t } = useI18n()
 const route = useRoute()
@@ -51,12 +53,14 @@ const title = usePostTitle(frontmatter)
           />
         </template>
         <template #main-content>
-          <div text="center" class="yun-text-light" p="2">
-            {{ t('counter.categories', Array.from(categories.children).length) }}
-          </div>
-          <SakuraCategories :categories="categories.children" />
+          <div :class="themeConfig.animation && 'element-slide-up'">
+            <div text="center" class="yun-text-light" p="2">
+              {{ t('counter.categories', Array.from(categories.children).length) }}
+            </div>
+            <SakuraCategories :categories="categories.children" />
 
-          <RouterView />
+            <RouterView />
+          </div>
         </template>
 
         <template #main-nav-before>

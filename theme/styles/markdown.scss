@@ -36,9 +36,8 @@ html.dark {
     margin: 16px 0;
     border-left: 4px solid var(--va-c-divider);
     padding-left: 12px;
-    transition: border-color .5s
 
-    p {
+    transition: border-color .5s p {
       margin: 0;
       font-size: 16px;
       color: var(--vp-c-text-2);
@@ -84,7 +83,7 @@ div[class*="language-"] {
   display: flex;
   flex-direction: row-reverse;
   border-radius: 8px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--st-c-border);
   padding-top: 32px;
   overflow: hidden;
 
@@ -102,7 +101,7 @@ div[class*="language-"] {
     background-position: 50%;
     border-radius: 4px;
     opacity: 0;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--st-c-border);
   }
 
   &:hover button.copy {
@@ -136,7 +135,7 @@ div[class*="language-"] {
     top: 0;
     height: 32px;
     background: #f6f8fa;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--st-c-border);
   }
 
   &:after {
@@ -154,6 +153,6 @@ div[class*="language-"] {
 
 .line-numbers-wrapper {
   padding-left: 16px;
-  color: var(--color-gray);
+  color: var(--st-c-gray);
   user-select: none;
 }

@@ -9,9 +9,9 @@ defineProps<{
     class="mobile_btn" :class="active ? 'mobile_btn-open' : ''" aria-label="mobile navigation" :aria-expanded="active"
   >
     <!-- TODO: Add more color configurations? -->
-    <span :class="active ? 'bg-orange' : 'bg-white'" />
-    <span :class="active ? 'bg-orange' : 'bg-white'" />
-    <span :class="active ? 'bg-orange' : 'bg-white'" />
+    <span :class="active ? 'bg-$st-c-brand' : 'bg-$st-c-accent'" />
+    <span :class="active ? 'bg-$st-c-brand' : 'bg-$st-c-accent'" />
+    <span :class="active ? 'bg-$st-c-brand' : 'bg-$st-c-accent'" />
   </button>
 </template>
 

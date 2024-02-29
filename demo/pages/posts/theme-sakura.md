@@ -1,7 +1,7 @@
 ---
 title: Valaxy 主题 Sakura 🌸
 tags: [sakura]
-cover: https://wrxinyue-images.s3.bitiful.net/60651947_p0.jpg
+cover: https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/optimize/60651947_p0.webp
 date: 2024-1-31
 ---
 

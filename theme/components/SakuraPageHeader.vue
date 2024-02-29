@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useThemeConfig } from '../composables'
+
 defineProps<{
   color?: string
   icon?: string
@@ -8,10 +10,12 @@ defineProps<{
   author?: string
   date?: string | number | Date
 }>()
+
+const themeConfig = useThemeConfig()
 </script>
 
 <template>
-  <header class="xl:pb-10 space-y-1 text-center">
+  <header class="xl:pb-10 space-y-1 text-center" :class="themeConfig.animation && 'element-slide-down'">
     <div class="abanner" :class="cover ? `h-80` : '<xl:max-h-200px h-45'" :style="`background-image: url(${cover}`">
       <div class="titlebox font-bold" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
         <h1 class="text-3xl" :class="!cover && 'text-[#404040] entry-title'">

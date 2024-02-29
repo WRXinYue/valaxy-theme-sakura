@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useSiteConfig, useSiteStore } from 'valaxy'
 import type { Post } from 'valaxy'
 import { useThemeConfig } from '../composables'
@@ -47,10 +47,15 @@ const postsWithLimitedTags = computed(() => {
 function handLoadMore() {
   sakura.handLoadMore()
 }
+
+const loading = ref(true)
+onMounted(() => {
+  loading.value = false
+})
 </script>
 
 <template>
-  <div class="max-w-800px m-auto">
+  <div v-if="!loading" class="md:w-800px m-auto min-w-300px" :class="themeConfig.animation && 'element-slide-up'">
     <div class="pt-24px px-20px flex items-center">
       <div class="i-mdi:leaf mr-1 text-[#333]" /> 文章列表
     </div>

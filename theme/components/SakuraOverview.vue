@@ -1,16 +1,23 @@
 <script lang="ts" setup>
+import LazyLoad from 'vanilla-lazyload'
 import { useSiteConfig } from 'valaxy'
 import { useRouter } from 'vue-router'
+import { onMounted } from 'vue'
 
 const siteConfig = useSiteConfig()
 const router = useRouter()
+
+onMounted(() => {
+  // eslint-disable-next-line no-new
+  new LazyLoad({ })
+})
 </script>
 
 <template>
   <div class="sidebar-panel" p="2">
     <div class="site-info" m="t-6">
       <RouterLink class="site-author-avatar" to="/about">
-        <img class="rounded-full" :src="siteConfig.author.avatar" alt="avatar">
+        <img class="lazy rounded-full" :data-src="siteConfig.author.avatar" alt="avatar">
         <span class="site-author-status" :title="siteConfig.author.status.message">{{ siteConfig.author.status.emoji }}</span>
       </RouterLink>
       <div

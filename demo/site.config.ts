@@ -3,10 +3,10 @@ import { defineSiteConfig } from 'valaxy'
 export default defineSiteConfig({
   lang: 'zh-CN',
   title: 'Valaxy Theme Sakura',
-  favicon: '/favicon.ico',
+  favicon: '/favicon-32x32.ico',
   url: 'https://sakura.wrxinyue.org/',
   author: {
-    avatar: 'https://q1.qlogo.cn/g?b=qq&nk=3322543587&s=640',
+    avatar: 'https://wrxinyue-images.s3.bitiful.net/profile-picture.jpg',
     name: 'WRXinYue',
     status: {
       emoji: '📚',

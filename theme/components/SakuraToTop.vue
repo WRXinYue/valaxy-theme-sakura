@@ -8,13 +8,19 @@ const themeConfig = useThemeConfig()
 const { y } = useWindowScroll()
 const hide = 'top: -900px'
 const style = ref(hide)
+const isVisible = ref(false)
 
 function onScroll() {
   if (y.value > 200) {
-    if (window.innerWidth > 720)
+    if (window.innerWidth > 720) {
+      isVisible.value = false
       style.value = `top: ${Math.min(window.innerHeight - 968, 0)}px`
-    else
+    }
+
+    else {
+      isVisible.value = true
       style.value = `top: -640px`
+    }
   }
   else {
     style.value = hide
@@ -40,7 +46,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <a href="#" class="totop" :style="style" aria-label="to-top" @click="toTop" />
+  <a href="#" class="totop <md:hidden lazy" data-bg="../assets/scroll.png" :shadow="isVisible" :style="style" aria-label="to-top" @click="toTop" />
 </template>
 
 <style lang="scss" scoped>
@@ -49,8 +55,6 @@ onUnmounted(() => {
   width: 70px;
   height: 900px;
   right: 25px;
-  z-index: 50;
-  background-image: url("../assets/scroll.png");
   transition: top 0.5s ease-in-out;
   animation: float 2s ease-in-out infinite;
 }

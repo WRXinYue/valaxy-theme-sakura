@@ -6,24 +6,26 @@ $common: map.merge((), $common);
 
 // palette
 $light: (
-  "c-brand": #e67474,
-  "c-link": "var(--st-c-brand)",
+  "c-brand": #CA4B49,
+  "c-bg-nav": #fff,
+  "c-link": var(--st-c-brand),
   "c-text-secondary": rgba(0, 0, 0, 0.66),
-
-  "c-text": #101820,
-) !default;
-$light: map.merge(
-  (
-    "sidebar-bg-color": var(--va-c-bg-light),
-  ),
-  $light
-);
+  "c-sidebar-bg-color": var(--va-c-bg-light),
+  "c-accent": #fe9600,
+  "c-gray": #666,
+  "c-text": #02111d,
+  "c-background": #eee,
+  "c-border": #d0d7de,
+  "c-icon": #fff,
+  ) !default;
+$light: map.merge((), $light);
 
 $dark: (
   "c-text-secondary": #ffffff,
 
+  "c-bg-nav": var(--va-c-bg-alt),
   "c-text": #f0f8ff,
-) !default;
+  ) !default;
 $dark: map.merge((), $dark);
 
 $z-index: () !default;

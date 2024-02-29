@@ -7,9 +7,8 @@ defineProps<{ cover?: string }>()
     <img
       v-if="cover"
       width="640" height="360"
-      class="object-cover select-none" h="64 md:sm" w="full"
+      class="object-cover select-none lazy" h="64 md:sm" w="full"
       :src="cover"
-      loading="lazy"
     >
 
     <div v-if="$slots.header" class="yun-card-header">

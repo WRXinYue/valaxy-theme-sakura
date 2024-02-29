@@ -1,25 +1,33 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
+import { onMounted, ref } from 'vue'
 
 defineProps<{
   post: Post
   imagePosition: boolean
 }>()
+
+const loading = ref(true)
+
+onMounted(() => {
+  loading.value = false
+})
 </script>
 
 <template>
-  <article :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'md:text-right'">
+  <article v-if="!loading" :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'md:text-right'">
     <div v-if="post.cover" class="h-auto overflow-hidden <md:rounded-3">
-      <RouterLink :to="post.path || ''">
-        <img class="object-cover h-230px w-full transition-400" :src="post.cover" alt="cover" hover:transform="scale-120">
+      <RouterLink :to="post.path || ''" aria-label="Go to Post">
+        <img class="lazy object-cover h-230px w-full transition-400" :src="post.cover" alt="cover" hover:transform="scale-120">
       </RouterLink>
     </div>
 
     <div class="m-4 w-100">
       <div class="inline-flex items-center">
-        <div i-fa-clock-o class="mr-1" /> 发布于 <SakuraDate :date="post.date" />
+        <div i-fa-clock-o class="mr-1" /> 发布于
+        <SakuraDate :date="post.date" />
       </div>
-      <RouterLink :to="post.path || ''">
+      <RouterLink :to="post.path || ''" :aria-label="`Read more about ${post.title}`">
         <div class="title my-2">
           {{ post.title }}
         </div>
@@ -39,7 +47,7 @@ article {
   display: flex;
   overflow: hidden;
   justify-content: space-between;
-  color: var(--color-gray);
+  color: var(--st-c-gray);
   margin: 20px 0;
   border-radius: 10px;
   box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5);
@@ -67,7 +75,7 @@ article {
   transition: color 0.2s ease-out;
 
   &:hover {
-    color: var(--color-accent);
+    color: var(--st-c-accent);
   }
 }
 </style>

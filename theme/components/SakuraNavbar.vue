@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { isDark, toggleDark, useSiteConfig } from 'valaxy'
-import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 
 // import { useRoute } from 'vue-router'
-import gsap from 'gsap'
 import { useThemeConfig } from '../composables'
 
 // const route = useRoute()
@@ -11,9 +10,6 @@ import { useThemeConfig } from '../composables'
 
 const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
-
-/** GSAP */
-const pcNavGSAP = ref(null)
 
 const scrolled = ref(false)
 const showYYA = ref(false)
@@ -25,18 +21,6 @@ const processedNavItems = computed(() => themeConfig.value.nav.map(item => ({
 
 const isHeaderActive = computed(() => {
   return showYYA.value || scrolled.value
-})
-
-function pcNavAnimation() {
-  gsap.from(pcNavGSAP.value, {
-    duration: 1.25,
-    x: 30,
-    ease: 'power3.out',
-  })
-}
-
-watch(isHeaderActive, (newVal) => {
-  newVal && pcNavAnimation()
 })
 
 onMounted(() => {
@@ -55,7 +39,7 @@ function handleScroll() {
 
 <template>
   <header class="px-3 h-60px" :class="isHeaderActive ? 'yya' : ''" @mouseover="showYYA = true" @mouseleave="showYYA = false">
-    <div class="relative float-left line-height-75px ml-12px" style="animation: sitetop 1s">
+    <div class="relative float-left line-height-75px ml-8" style="animation: sitetop 1s">
       <span class="logolink moe-mashiro flex w-auto h-full items-center">
         <img v-if="themeConfig.favicon" class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
         <RouterLink class="text-xl" to="/" :aria-label="siteConfig.title">
@@ -64,7 +48,7 @@ function handleScroll() {
         </RouterLink>
       </span>
     </div>
-    <div ref="pcNavGSAP" :class="isHeaderActive ? '<md:hidden animate__fadeIn' : 'md:relative hidden'" class="text-sm text-gray-500 leading-5 h-full w-auto animate__animated">
+    <div :class="isHeaderActive ? '<md:hidden animate__fadeIn' : 'md:relative hidden'" class="text-sm text-gray-500 leading-5 h-full w-auto animate__animated">
       <template v-for="(item, i) in processedNavItems" :key="i">
         <div class="app-link-after relative h-full w-auto items-center inline-flex justify-center hover:after:w-full">
           <AppLink v-if="!item.isExternal" :to="item.link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
@@ -142,19 +126,14 @@ header {
   padding-top: 5px
 }
 
-@font-face {
-  font-family: 'Gen Jyuu Gothic Monospace Bold';
-  src: url("../assets/Gen Jyuu Gothic Monospace Bold.ttf");
-}
-
 .moe-mashiro {
-  font-family: 'Gen Jyuu Gothic Monospace Bold', sans-serif;
+  font-family: 'Moe-Mashiro', sans-serif;
 }
 
 .yya {
   position: fixed;
   left: 0;
-  background: var(--va-c-bg);
+  background: var(--st-c-bg-nav);
   box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
 }
 

@@ -41,7 +41,7 @@ function loadMoreContent() {
 
 <style lang="scss">
 .load-more-container {
-  color: #adadad;
+  color: #757575;
 }
 
 .load-more-button {

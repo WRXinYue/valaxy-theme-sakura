@@ -1,9 +1,10 @@
 import { defineConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
 
-import { addonMeting } from 'valaxy-addon-meting'
+// import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
-import { addonLive2d } from 'valaxy-addon-live2d'
+
+// import { addonLive2d } from 'valaxy-addon-live2d'
 
 /**
  * User Config
@@ -20,14 +21,15 @@ export default defineConfig<ThemeConfig>({
     homeMotto: 'You got to put the past behind you before you can move on.',
 
     favicon: false,
+    animation: true,
 
     headerWallpaper: {
       urls: [
-        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/cGZ4kz2q.png',
+        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/optimize/cGZ4kz2q.webp',
         'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
-        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
+        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg:desktop',
       ],
-      backgroundStyle: 'filter-dot',
+      backgroundStyle: '',
     },
 
     nav: [
@@ -108,7 +110,7 @@ export default defineConfig<ThemeConfig>({
       since: 2024,
 
       icon: {
-        img: '/favicon.ico',
+        img: '/favicon-16x16.ico',
         animated: true,
         url: 'https://wrxinyue.org',
         title: 'WRXinYue',
@@ -122,18 +124,18 @@ export default defineConfig<ThemeConfig>({
       pageview: true,
       comment: true,
     }),
-    addonMeting({
-      global: true,
-      props: {
-        id: '2489775340',
-        server: 'netease',
-        type: 'playlist',
-      },
-    }),
-    addonLive2d({
-      live2dPath: {
-        baseUrl: 'online',
-      },
-    }),
+    // addonMeting({
+    //   global: true,
+    //   props: {
+    //     id: '2489775340',
+    //     server: 'netease',
+    //     type: 'playlist',
+    //   },
+    // }),
+    // addonLive2d({
+    //   live2dPath: {
+    //     baseUrl: 'online',
+    //   },
+    // }),
   ],
 })

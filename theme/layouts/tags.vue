@@ -14,7 +14,6 @@ useSchemaOrg([
 
 const route = useRoute()
 const router = useRouter()
-
 const themeConfig = useThemeConfig()
 
 const { t } = useI18n()
@@ -71,22 +70,24 @@ const title = usePostTitle(frontmatter)
           />
         </template>
         <template #main-content>
-          <div class="yun-text-light" text="center" p="2">
-            {{ t('counter.tags', Array.from(tags).length) }}
-          </div>
+          <div :class="themeConfig.animation && 'element-slide-up'">
+            <div class="yun-text-light " text="center" p="2">
+              {{ t('counter.tags', Array.from(tags).length) }}
+            </div>
 
-          <div class="justify-center items-end" flex="~ wrap" gap="1">
-            <SakuraLayoutPostTag
-              v-for="[key, tag] in Array.from(tags).sort()"
-              :key="key"
-              :title="key"
-              :count="tag.count"
-              :style="getTagStyle(tag.count)"
-              @click="displayTag(key.toString())"
-            />
-          </div>
+            <div class="justify-center items-end" flex="~ wrap" gap="1">
+              <SakuraLayoutPostTag
+                v-for="[key, tag] in Array.from(tags).sort()"
+                :key="key"
+                :title="key"
+                :count="tag.count"
+                :style="getTagStyle(tag.count)"
+                @click="displayTag(key.toString())"
+              />
+            </div>
 
-          <RouterView />
+            <RouterView />
+          </div>
         </template>
 
         <template #main-nav-before>

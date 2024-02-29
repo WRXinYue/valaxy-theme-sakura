@@ -15,7 +15,7 @@ const showOverview = ref(false)
 
   <SakuraHamburger
     :active="app.isSidebarOpen"
-    class="menu-btn sidebar-toggle sakura-icon-btn leading-4 fixed left-0.8rem top-0.6rem z-2000"
+    class="menu-btn sidebar-toggle sakura-icon-btn leading-4 fixed left-0.8rem top-4 z-2000"
     inline-flex cursor="pointer"
     :class="showHamburger ? '' : 'md:hidden'" @click="app.toggleSidebar()"
   />
@@ -23,7 +23,7 @@ const showOverview = ref(false)
   <aside
     class="va-card transition sidebar fixed inset-y-0 left-0 overflow-y-auto z-500"
     :class="[app.isSidebarOpen && 'open', !showHamburger && 'md:translate-x-0']"
-    text="center" bg="$st-sidebar-bg-color contain no-repeat"
+    text="center" bg="$st-c-sidebar-bg-color contain no-repeat"
   >
     <div v-if="$slots.default" class="sidebar-nav" m="t-6">
       <button

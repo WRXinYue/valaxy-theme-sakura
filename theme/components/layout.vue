@@ -1,9 +1,7 @@
 <template>
   <div class="antialiased">
     <main class="mx-auto">
-      <div class="<md:hidden">
-        <SakuraNavbar />
-      </div>
+      <SakuraNavbar />
       <div class="md:hidden">
         <SakuraSidebar :show-hamburger="true" />
       </div>

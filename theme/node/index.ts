@@ -19,20 +19,18 @@ export const defaultThemeConfig: ThemeConfig = {
   favicon: false,
 
   headerWallpaper: {
-    urls: [
-      'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
-      'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
-    ],
+    urls: [],
     backgroundStyle: 'filter-dot',
   },
 
   nav: [],
   sidebar: [],
 
+  animation: false,
+
   footer: {
     since: 2024,
     icon: {
-      img: '/favicon.ico',
       animated: true,
       url: 'https://sponsors.yunyoujun.cn',
       title: 'WRXinYue',
