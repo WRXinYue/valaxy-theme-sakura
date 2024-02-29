@@ -33,11 +33,11 @@ onMounted(() => {
       <template v-if="true">
         <SakuraBackgroundDisplay :url="currentWallpaperUrl" />
       </template>
-      <template v-if="false">
+      <template v-if="true">
         <SakuraWaveDecoration />
       </template>
     </div>
-    <template v-if="false">
+    <template v-if="true">
       <SakuraInfoOverlay :current-index="currentIndex" @update-index="updateIndex" />
     </template>
   </header>
