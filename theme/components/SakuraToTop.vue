@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { isClient, useWindowScroll } from '@vueuse/core'
 import { onMounted, onUnmounted, ref } from 'vue'
+import LazyLoad from 'vanilla-lazyload'
 import { useThemeConfig } from '../composables'
 import { scrollToTop } from '../utils/scrollDamping'
+import scrollImage from '../assets/scroll.png'
 
 const themeConfig = useThemeConfig()
 const { y } = useWindowScroll()
@@ -38,6 +40,8 @@ function toTop() {
 
 onMounted(() => {
   window.addEventListener('scroll', onScroll)
+  // eslint-disable-next-line no-new
+  new LazyLoad({ })
 })
 
 onUnmounted(() => {
@@ -46,7 +50,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <a href="#" class="totop <md:hidden lazy" data-bg="../assets/scroll.png" :shadow="isVisible" :style="style" aria-label="to-top" @click="toTop" />
+  <a href="#" class="lazy totop <md:hidden" :data-bg="scrollImage" :shadow="isVisible" :style="style" aria-label="to-top" @click="toTop" />
 </template>
 
 <style lang="scss" scoped>
