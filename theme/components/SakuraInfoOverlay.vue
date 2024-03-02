@@ -16,7 +16,7 @@ const themeConfig = useThemeConfig()
 
 function nextMedia() {
   let newIndex = props.currentIndex
-  if (newIndex < themeConfig.value.headerWallpaper.urls.length - 1)
+  if (newIndex < themeConfig.value.banner.urls.length - 1)
     newIndex++
   else
     newIndex = 0
@@ -29,7 +29,7 @@ function prevMedia() {
   if (newIndex > 0)
     newIndex--
   else
-    newIndex = themeConfig.value.headerWallpaper.urls.length - 1
+    newIndex = themeConfig.value.banner.urls.length - 1
 
   emits('updateIndex', newIndex)
 }
@@ -37,7 +37,7 @@ function prevMedia() {
 
 <template>
   <div class="info z-4">
-    <GlitchText :text="themeConfig.homeTitle" />
+    <GlitchText :text="themeConfig.banner.title" />
     <div class="w-full h-full rounded-2xl px-4 py-3" style="background-color: rgba(0, 0, 0, 0.5);">
       <SakuraMottoDisplay />
       <div class="flex justify-between mx-5 mt-4">

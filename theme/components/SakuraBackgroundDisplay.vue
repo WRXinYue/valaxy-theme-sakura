@@ -13,12 +13,13 @@ const isCurrentMediaVideo = computed(() => {
 
 <template>
   <template v-if="isCurrentMediaVideo">
-    <video class="object-cover block bg-cover w-full h-full" preload="auto" autoplay loop muted>
+    <video :key="url" class="object-cover block bg-cover w-full h-full" preload="auto" autoplay loop muted>
       <source :src="url" type="video/mp4">
       Your browser does not support video tags
     </video>
   </template>
   <template v-else>
-    <img alt="Image Wallpaper" class="w-full h-100vh object-cover block bg-cover bg-center" :src="url">
+    <img v-if="url" alt="Image Wallpaper" class="w-full h-100vh object-cover block bg-cover bg-center" :src="url">
+    <div v-else class="w-full h-100vh  bg-$st-c-scrollbar-color" />
   </template>
 </template>

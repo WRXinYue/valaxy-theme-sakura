@@ -1,5 +1,11 @@
+<script lang="ts" setup>
+import { useThemeConfig } from '../composables'
+
+const themeConfig = useThemeConfig()
+</script>
+
 <template>
-  <div class="antialiased">
+  <div class="antialiased custom-background">
     <main class="mx-auto">
       <SakuraNavbar />
       <div class="md:hidden">
@@ -41,7 +47,9 @@
       </slot>
     </main>
 
-    <SakuraToTop class="<md:hidden" />
+    <template v-if="themeConfig.showBackToTop">
+      <SakuraToTop class="<md:hidden" />
+    </template>
 
     <SakuraFooter>
       <slot name="footer" />

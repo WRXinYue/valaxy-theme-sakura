@@ -32,7 +32,7 @@ function toTop() {
   if (isClient)
     return
 
-  if (!themeConfig.value.scrollDamping?.dampingType)
+  if (!themeConfig.value.scrollDamping)
     window.scrollTo({ top: 0 })
   else
     scrollToTop()
@@ -50,11 +50,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <a href="#" class="lazy totop <md:hidden" :data-bg="scrollImage" :shadow="isVisible" :style="style" aria-label="to-top" @click="toTop" />
+  <a href="#" class="lazy to-top <md:hidden" :data-bg="scrollImage" :shadow="isVisible" :style="style" aria-label="to-top" @click="toTop" />
 </template>
 
 <style lang="scss" scoped>
-.totop {
+.to-top {
   position: fixed;
   width: 70px;
   height: 900px;

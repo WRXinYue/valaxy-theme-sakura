@@ -13,14 +13,13 @@ export const defaultThemeConfig: ThemeConfig = {
   prefixName: 'かなしいの',
   siteName: '心悦',
 
-  homeTitle: 'Hello, sakura',
-  homeMotto: 'You got to put the past behind you before you can move on.',
-
   favicon: false,
 
-  headerWallpaper: {
+  banner: {
+    title: 'Hello, sakura',
+    motto: 'You got to put the past behind you before you can move on.',
     urls: [],
-    backgroundStyle: 'filter-dot',
+    style: 'filter-dim',
   },
 
   nav: [],

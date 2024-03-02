@@ -1,6 +1,15 @@
-export namespace StarterTheme {
+export namespace SakuraTheme {
   export type Config = ThemeConfig
   export type Sidebar = any
+
+  export interface Banner {
+    enable?: boolean
+    title?: string | string[]
+    motto?: string
+    urls: string[]
+    style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
+    overlayBar?: boolean
+  }
 }
 
 /**
@@ -70,17 +79,10 @@ export interface ThemeConfig {
   prefixName: string
   siteName: string
 
-  // home page
-  homeTitle: string
-  homeMotto: string
-
   // navbar favicon
   favicon: boolean
 
-  headerWallpaper: {
-    urls: string[]
-    backgroundStyle: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
-  }
+  banner: SakuraTheme.Banner
 
   /**
    * sidebar
@@ -97,10 +99,16 @@ export interface ThemeConfig {
     type?: 'infinite-scroll' | 'pagination'
 
     /**
+     * Animations are valid only for the 'infinite-scroll' type
+     */
+    animation?: boolean
+
+    /**
      * Items per page - applicable for 'pagination' type.
      * Specifies how many items/articles to show per page.
+     * Default is siteConfig.pageSize configuration
      */
-    itemsPerPage?: number // Optional for 'infinite-scroll'
+    itemsPerPage?: number
 
     /**
      * Optional settings for 'infinite-scroll' type, like threshold for loading more.
@@ -113,17 +121,17 @@ export interface ThemeConfig {
       preload?: boolean
 
       /**
-       * Threshold in pixels before the end of the items where new items will be loaded.
+       * Set threshold for loading new items, based on pixels before end of current items
        */
       threshold?: number
     }
   }
 
-  scrollDamping?: {
-    dampingType: 'default' | 'gasp' | ''
-  }
+  scrollDamping?: boolean
 
   animation?: boolean
+
+  showBackToTop?: boolean
 }
 
 export interface NavItem {

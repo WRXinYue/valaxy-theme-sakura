@@ -1,0 +1,17 @@
+@mixin background-style($image) {
+  background-image: $image;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.custom-background {
+  @include background-style(var(--st-c-custom-bg-img));
+}
+
+body {
+  @include background-style(var(--st-c-body-bg-img));
+}

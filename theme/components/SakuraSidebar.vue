@@ -56,7 +56,7 @@ const showOverview = ref(false)
 .sidebar {
   width: calc(100vw - 64px);
   max-width: var(--va-sidebar-width);
-  background-image: var(--st-sidebar-bg-img);
+  background-image: var(--st-c-sidebar-bg-img);
   background-position: bottom 1rem center;
   transform: translateX(-100%);
   transition: box-shadow var(--va-transition-duration),

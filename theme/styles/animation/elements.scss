@@ -1,0 +1,45 @@
+.element-slide-down {
+  animation-name: slideDown;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+.element-slide-up {
+  animation-name: slideUp;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+.element-slide-left {
+  animation-name: slideLeft;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+.element-slide-right {
+  animation-name: slideRight;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+.element-fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+.element-slide-right-fade-in {
+  animation-name: slideRight, fadeIn;
+  animation-duration: 0.5s, 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out, ease-in-out;
+}
+.element-slide-left-fade-in {
+  animation-name: slideLeft, fadeIn;
+  animation-duration: 0.5s, 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out, ease-in-out;
+}
+.element-slide-fade-in {
+  animation-name: slideInFromBottomFadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out, forwards;
+}

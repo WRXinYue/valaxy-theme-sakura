@@ -1,9 +1,13 @@
 import { ref } from 'vue'
+import type { Ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
 export const useSakuraAppStore = defineStore('sakura-app', () => {
   const positions = ref<Record<string, number>>({})
   const loadMultiple = ref(1)
+  const paginationTargets: Ref<Element[]> = ref([])
+  const paginationObserver = ref<IntersectionObserver>()
+  const paginationElementPositionsNumber = ref(0)
 
   function setScrollPosition(id: string, position: number) {
     positions.value[id] = position
@@ -13,16 +17,14 @@ export const useSakuraAppStore = defineStore('sakura-app', () => {
     return positions.value[id] || 0
   }
 
-  function handLoadMore() {
-    loadMultiple.value++
-  }
-
   return {
     positions,
     setScrollPosition,
     getScrollPosition,
     loadMultiple,
-    handLoadMore,
+    paginationTargets,
+    paginationObserver,
+    paginationElementPositionsNumber,
   }
 })
 

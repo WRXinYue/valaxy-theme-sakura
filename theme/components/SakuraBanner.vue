@@ -14,7 +14,7 @@ watch(currentIndex, (newIndex) => {
 })
 
 const currentWallpaperUrl = computed(() => {
-  return themeConfig.value.headerWallpaper.urls[currentIndex.value!] || ''
+  return themeConfig.value.banner.urls[currentIndex.value!] || ''
 })
 
 function updateIndex(newIndex: number) {
@@ -29,17 +29,18 @@ onMounted(() => {
 
 <template>
   <header v-if="!loading" class="relative flex <md:px-5 justify-center flex-items-center w-full h-100vh" :class="themeConfig.animation && 'element-slide-down'">
-    <div class="headertop absolute h-full w-full top-0 overflow-hidden" :class="themeConfig.headerWallpaper.backgroundStyle">
-      <template v-if="true">
+    <div class="headertop absolute h-full w-full top-0 overflow-hidden" :class="themeConfig.banner.style">
+      <slot v-if="true" name="background-display">
         <SakuraBackgroundDisplay :url="currentWallpaperUrl" />
-      </template>
-      <template v-if="true">
-        <SakuraWaveDecoration />
-      </template>
+      </slot>
+
+      <slot v-if="themeConfig.banner.overlayBar" name="banner-overlay-bar">
+        <SakuraBannerOverlayBar />
+      </slot>
     </div>
-    <template v-if="true">
+    <slot v-if="true" name="info-overlay">
       <SakuraInfoOverlay :current-index="currentIndex" @update-index="updateIndex" />
-    </template>
+    </slot>
   </header>
 </template>
 

@@ -17,19 +17,26 @@ export default defineConfig<ThemeConfig>({
     prefixName: 'かなしいの',
     siteName: '心悦',
 
-    homeTitle: 'Hello, sakura',
-    homeMotto: 'You got to put the past behind you before you can move on.',
-
     favicon: false,
     animation: true,
 
-    headerWallpaper: {
+    banner: {
+      title: 'Hello, sakura',
+      motto: 'You got to put the past behind you before you can move on.',
       urls: [
         'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/optimize/cGZ4kz2q.webp',
         'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
-        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg:desktop',
+        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
       ],
-      backgroundStyle: '',
+      style: '',
+      overlayBar: true,
+    },
+
+    pagination: {
+      animation: true,
+      infiniteScrollOptions: {
+        preload: true,
+      },
     },
 
     nav: [

@@ -27,22 +27,3 @@ onMounted(() => {
 <template>
   <div />
 </template>
-
-<style lang="scss">
-html {
-  --global-font: "Noto Serif SC", "MicroSoft Yahei", serif;
-  --code-line-height: 24px;
-  --code-font-family: monospace;
-  --code-font-size: 15px;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background: var(--st-c-accent);
-}
-</style>

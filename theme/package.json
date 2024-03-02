@@ -21,11 +21,7 @@
   "main": "client/index.ts",
   "types": "types/index.d.ts",
   "dependencies": {
-    "@iconify-json/ant-design": "^1.1.15",
-    "@iconify-json/fa6-solid": "^1.1.20",
-    "@iconify-json/material-symbols-light": "^1.1.13",
     "@iconify-json/mdi": "^1.1.64",
-    "@iconify-json/simple-icons": "^1.1.92",
     "@studio-freight/lenis": "^1.0.37",
     "hover.css": "^2.3.2",
     "smooth-scrollbar": "^8.8.4",

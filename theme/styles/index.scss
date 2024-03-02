@@ -1,39 +1,9 @@
 @use './layout' as *;
 @use './markdown' as *;
+@use './animation/keyframes' as *;
+@use './animation/elements' as *;
 
 // override the default style of star-markdown-css
 @use "./common/button.scss" as *;
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-50px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-.element-slide-down {
-  animation-name: slideDown;
-  animation-duration: 0.75s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(50px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-.element-slide-up {
-  animation-name: slideUp;
-  animation-duration: 0.75s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-}
+@use "./common/background.scss" as *;
+@use "./common/scrollbar.scss" as *;

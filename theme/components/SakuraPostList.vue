@@ -19,7 +19,7 @@ const site = useSiteStore()
 const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
 const sakura = useSakuraAppStore()
-const pageSize = computed(() => siteConfig.value.pageSize)
+const pageSize = computed(() => themeConfig.value.pagination?.itemsPerPage || siteConfig.value.pageSize)
 
 // const routes = usePostList({ type: props.type || '' })
 // const posts = computed(() => props.posts || routes.value)
@@ -44,10 +44,6 @@ const postsWithLimitedTags = computed(() => {
   })
 })
 
-function handLoadMore() {
-  sakura.handLoadMore()
-}
-
 const loading = ref(true)
 onMounted(() => {
   loading.value = false
@@ -55,7 +51,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="!loading" class="md:w-800px m-auto min-w-300px" :class="themeConfig.animation && 'element-slide-up'">
+  <div v-if="!loading" class="md:w-800px m-auto min-w-300px">
     <div class="pt-24px px-20px flex items-center">
       <div class="i-mdi:leaf mr-1 text-[#333]" /> 文章列表
     </div>
@@ -63,12 +59,12 @@ onMounted(() => {
 
     <template v-for="(post, index) in postsWithLimitedTags" :key="post.path">
       <Transition name="fade">
-        <SakuraArticleCard v-if="post" :image-position="index % 2 === 1" :post="post" />
+        <SakuraArticleCard v-if="post" :id="`article-card-${index}`" class="article-card" :image-position="index % 2 === 1" :post="post" />
       </Transition>
     </template>
 
     <template v-if="paginationType === 'infinite-scroll'">
-      <SakuraPagination :cur-page="curPage" :page-size="pageSize" :total="posts.length" @load-more="handLoadMore" />
+      <SakuraPagination :page-size="pageSize" :total="posts.length" />
     </template>
 
     <template v-if="paginationType === 'pagination'">
