@@ -24,6 +24,8 @@ export const defaultThemeConfig: ThemeConfig = {
 
   nav: [],
   sidebar: [],
+  sidebarPushMode: 'home',
+  sidebarShowOnPC: false,
 
   animation: false,
 

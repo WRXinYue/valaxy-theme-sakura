@@ -43,3 +43,10 @@
   animation-fill-mode: forwards;
   animation-timing-function: ease-out, forwards;
 }
+.element-slide-in-gently {
+  animation-name: slideInGently;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+

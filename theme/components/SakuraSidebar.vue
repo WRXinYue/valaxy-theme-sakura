@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
 import { useAppStore } from 'valaxy'
 
 defineProps<{
@@ -7,11 +6,10 @@ defineProps<{
 }>()
 
 const app = useAppStore()
-const showOverview = ref(false)
 </script>
 
 <template>
-  <ValaxyOverlay class="md:hidden" :show="app.isSidebarOpen" @click="app.toggleSidebar()" />
+  <ValaxyOverlay class="md:hidden z-1" :show="app.isSidebarOpen" @click="app.toggleSidebar()" />
 
   <SakuraHamburger
     :active="app.isSidebarOpen"
@@ -25,22 +23,7 @@ const showOverview = ref(false)
     :class="[app.isSidebarOpen && 'open', !showHamburger && 'md:translate-x-0']"
     text="center" bg="$st-c-sidebar-bg-color contain no-repeat"
   >
-    <div v-if="$slots.default" class="sidebar-nav" m="t-6">
-      <button
-        m="x-4" class="sidebar-nav-item sakura-icon-btn"
-        :class="showOverview && 'active'" @click="showOverview = true"
-      >
-        <div i-ri-passport-line />
-      </button>
-      <button
-        m="x-4" class="sidebar-nav-item sakura-icon-btn"
-        :class="!showOverview && 'active'" @click="showOverview = false"
-      >
-        <div i-ri-list-ordered />
-      </button>
-    </div>
-
-    <div v-if="showOverview || !$slots.default" :class="$slots.default && '-mt-4'">
+    <div v-if="!$slots.default" :class="$slots.default && '-mt-4'">
       <SakuraOverview />
     </div>
 
@@ -65,19 +48,6 @@ const showOverview = ref(false)
 
   &.open {
     transform: translateX(0);
-  }
-}
-
-.sidebar-nav {
-  .sidebar-nav-item {
-    color: var(--va-c-primary);
-    border: 1px solid var(--va-c-primary);
-
-    &.active {
-      border: 1px solid var(--va-c-primary);
-      color: white;
-      background-color: var(--va-c-primary);
-    }
   }
 }
 </style>

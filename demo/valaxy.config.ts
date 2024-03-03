@@ -19,6 +19,7 @@ export default defineConfig<ThemeConfig>({
 
     favicon: false,
     animation: true,
+    showBackToTop: true,
 
     banner: {
       title: 'Hello, sakura',
@@ -55,6 +56,7 @@ export default defineConfig<ThemeConfig>({
       {
         text: '☄️ 其他',
         link: '/',
+        submenu: [],
       },
       {
         text: '📌 关于我',

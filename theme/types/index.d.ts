@@ -88,6 +88,8 @@ export interface ThemeConfig {
    * sidebar
    */
   sidebar: NavItem[]
+  sidebarPushMode: boolean | string | string[]
+  sidebarShowOnPC: boolean
 
   // Pagination configuration
   pagination?: {
@@ -139,6 +141,8 @@ export interface NavItem {
   locale?: string | number
   link: string
   icon?: string
+  isExternal: boolean
+  submenu: NavItem[]
 }
 
 export type ThemeUserConfig = Partial<ThemeConfig>
