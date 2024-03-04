@@ -9,7 +9,6 @@ export const defaultThemeConfig: ThemeConfig = {
   // colors: {
   //   primary: '#e67474',
   // },
-
   prefixName: 'かなしいの',
   siteName: '心悦',
 
@@ -44,6 +43,7 @@ export const defaultThemeConfig: ThemeConfig = {
       icp: '',
     },
   },
+  sidebarDefaultOpen: '',
 }
 
 // write a vite plugin

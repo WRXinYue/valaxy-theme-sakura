@@ -32,7 +32,7 @@ function handleScroll() {
 </script>
 
 <template>
-  <header class="px-3 h-60px" :class="isHeaderActive ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
+  <header class="px-3 h-60px fixed" :class="isHeaderActive ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
     <slot name="navbar-brand">
       <SakuraNavbarBrand />
     </slot>
@@ -65,8 +65,6 @@ header {
 }
 
 .active-header {
-  position: fixed;
-  left: 0;
   background: var(--st-c-bg-nav);
   box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
 }
