@@ -10,6 +10,10 @@ export namespace SakuraTheme {
     style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
     overlayBar?: boolean
   }
+
+  export interface SidebarMulti {
+    [path: string]: SidebarItem[] | { items: SidebarItem[], base: string }
+  }
 }
 
 /**
@@ -87,9 +91,10 @@ export interface ThemeConfig {
   /**
    * sidebar
    */
-  sidebar: NavItem[]
+  sidebar: NavItem[] | SidebarMulti
   sidebarPushMode: boolean | string | string[]
-  sidebarShowOnPC: boolean
+  sidebarShowOnPC: boolean | string | string[]
+  sidebarDefaultOpen: boolean | string | string[]
 
   // Pagination configuration
   pagination?: {
