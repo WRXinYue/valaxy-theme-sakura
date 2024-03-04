@@ -55,13 +55,13 @@ watch(() => props.posts, () => {
 }, { immediate: true })
 
 const sortedYears = computed(() => {
-  const y = years.value
+  const y = [...years.value]
   const arr = y.sort((a, b) => b - a)
   return isDesc.value ? arr : arr.reverse()
 })
 
 function sortedMonths(year: number) {
-  const m = months.value[year]
+  const m = [...months.value[year]]
   const arr = m.sort((a, b) => b - a)
   return isDesc.value ? arr : arr.reverse()
 }
