@@ -68,7 +68,7 @@ export default defineConfig<ThemeConfig>({
       },
       {
         text: '🔦 时光轴',
-        link: '/',
+        link: '/archives',
       },
       // {
       //   text: 'GitHub',
