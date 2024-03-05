@@ -2,5 +2,4 @@ packages:
   - theme
   - demo
   - docs
-  - ant
   - models/*

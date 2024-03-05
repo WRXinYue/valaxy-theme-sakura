@@ -1,15 +1,24 @@
 <script lang="ts" setup>
+import { useRouter } from 'vue-router'
 import { useThemeConfig } from '../composables'
 
+const router = useRouter()
 const themeConfig = useThemeConfig()
+
+function toPath(path: string) {
+  if (/^https?:\/\//.test(path))
+    window.location.href = path
+  else
+    router.push({ path })
+}
 </script>
 
 <template>
   <div class="image-row flex">
     <SakuraImageCard
-      v-for="(startDash, i) in themeConfig.startDash" :key="i"
-      :data-title="startDash.title" :data-desc="startDash.desc" overlay="true" :src="startDash.img" :to="startDash.link"
-      class="image-card"
+      v-for="(startDash, i) in themeConfig.startDash" :key="i" :to="startDash.link"
+      :data-title="startDash.title" :data-desc="startDash.desc" overlay="true" :src="startDash.img"
+      class="image-card" :class="startDash.link ? 'cursor-pointer' : ''" @click="toPath(startDash.link || '')"
     />
   </div>
 </template>
