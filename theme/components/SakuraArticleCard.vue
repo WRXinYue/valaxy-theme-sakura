@@ -16,15 +16,14 @@ onMounted(() => {
 
 <template>
   <article v-if="!loading" :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'md:text-right'">
-    <div v-if="post.cover" class="h-auto overflow-hidden <md:rounded-3">
-      <RouterLink :to="post.path || ''" aria-label="Go to Post">
-        <img class="lazy object-cover h-230px w-full transition-400" :src="post.cover" alt="cover" hover:transform="scale-120">
-      </RouterLink>
-    </div>
+    <SakuraImageCard
+      v-if="post.cover" class="<md:rounded-3 h-230px md:w-430px" :to="post.path" :src="post.cover"
+      rotate="5" space="1.1" transition-duration="0.45s"
+    />
 
-    <div class="m-4 w-100">
-      <div class="inline-flex items-center">
-        <div i-fa-clock-o class="mr-1" /> 发布于
+    <div class="m-4">
+      <div class="font-secondary" inline-flex items-center>
+        <div i-mdi:clock-outline class="mr-1" /> 发布于
         <SakuraDate :date="post.date" />
       </div>
       <RouterLink :to="post.path || ''" :aria-label="`Read more about ${post.title}`">
@@ -35,8 +34,8 @@ onMounted(() => {
       </RouterLink>
 
       <div class="inline-flex">
-        <SakuraPostCategories v-if="post.categories" class="mr-3" :categories="post.categories" />
-        <SakuraPostTags v-if="post.tags" :tags="post.tags" />
+        <SakuraPostCategories v-if="post.categories" class="font-secondary mr-3" :categories="post.categories" />
+        <SakuraPostTags v-if="post.tags" class="font-secondary" :tags="post.tags" />
       </div>
     </div>
   </article>
@@ -47,14 +46,19 @@ article {
   display: flex;
   overflow: hidden;
   justify-content: space-between;
-  color: var(--st-c-gray);
+  color: var(--st-c-text-secondary);
   margin: 20px 0;
-  border-radius: 10px;
+  border-radius: var(--st-c-article-card-rd);
   box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease;
 
   &:hover {
     box-shadow: 0 5px 10px 5px rgb(0, 0, 0, 0.2);
+  }
+
+  .font-secondary {
+    font-size: var(--st-c-article-card-font-size-secondary);
+    color: var(--st-c-text-secondary);
   }
 
   @media (max-width: 768px) {
@@ -70,7 +74,7 @@ article {
 }
 
 .title {
-  color: #333;
+  color: var(--st-c-text);
   font-size: 24px;
   transition: color 0.2s ease-out;
 

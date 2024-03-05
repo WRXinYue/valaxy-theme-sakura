@@ -1,11 +1,23 @@
 <script lang="ts" setup>
 import { useAppStore } from 'valaxy'
+import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useThemeConfig } from '../composables'
+import { checkRouteAgainstConditions } from '../utils'
 
 defineProps<{
   showHamburger?: boolean
 }>()
 
 const app = useAppStore()
+const route = useRoute()
+const themeConfig = useThemeConfig()
+
+onMounted(() => {
+  const isSidebarDefaultOpen = checkRouteAgainstConditions(route, themeConfig.value.sidebarDefaultOpen)
+  if (isSidebarDefaultOpen)
+    app.isSidebarOpen = true
+})
 </script>
 
 <template>

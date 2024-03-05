@@ -37,7 +37,7 @@ function prevMedia() {
 
 <template>
   <div class="info z-4">
-    <GlitchText :text="themeConfig.banner.title" />
+    <SakuraGlitchText :text="themeConfig.banner.title" />
     <div class="w-full h-full rounded-2xl px-4 py-3" style="background-color: rgba(0, 0, 0, 0.5);">
       <SakuraMottoDisplay />
       <div class="flex justify-between mx-5 mt-4">

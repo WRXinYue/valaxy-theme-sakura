@@ -11,20 +11,25 @@ $light: (
   "c-accent": #fe9600,
   "c-bg-nav": #fff,
   "c-link": var(--st-c-brand),
-  "c-text-secondary": rgba(0, 0, 0, 0.66),
   "c-sidebar-bg-color": var(--va-c-bg-light),
-  "c-gray": #666,
-  "c-text": #02111d,
+  "c-text": #504e4e,
+  "c-text-secondary": #888888,
   "c-background": #eee,
   "c-border": #d0d7de,
   "c-icon": #fff,
   "c-scrollbar-color": #49b1f5,
   /* -------------------------------------
-  * TimeLine
+  * SakuraTimeLine
   * ------------------------------------- */
   "c-timeline-color": #49b1f5,
   "c-timeline-text-color": #0bf,
   "c-timeline-height": 30px,
+  /* -------------------------------------
+  * SakuraArticleCard
+  * ------------------------------------- */
+  "c-article-card-rd": 10px,
+  "c-article-card-font-size": 1.17em,
+  "c-article-card-font-size-secondary": 12px,
   ) !default;
 $light: map.merge((), $light);
 

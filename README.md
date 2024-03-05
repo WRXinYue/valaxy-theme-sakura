@@ -51,14 +51,14 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
     favicon: false, // 导航栏图标
 
-    headerWallpaper: {
+    banner: {
       // 壁纸支持图片及视频
       urls: [
         'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
         'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg'
       ],
       // 背景样式选项: 'filter-dim' | 'filter-grid' | 'filter-dot'
-      backgroundStyle: 'filter-dot',
+      style: 'filter-dot',
     },
 
     // 导航栏

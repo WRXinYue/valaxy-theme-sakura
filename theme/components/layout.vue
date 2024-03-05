@@ -1,53 +1,32 @@
 <script lang="ts" setup>
 import { useAppStore } from 'valaxy'
 import { computed } from 'vue'
-import type { RouteLocationNormalizedLoaded } from 'vue-router'
 import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
+import { checkRouteAgainstConditions } from '../utils'
 
 const route = useRoute()
 const app = useAppStore()
 const themeConfig = useThemeConfig()
 
-const layoutClass = computed(() => {
+const sidebarPushModeClass = computed(() => {
   if (!app.isSidebarOpen)
     return
-
-  let isCurrentRouter = false
-  if (themeConfig.value.sidebarPushMode === true) {
-    isCurrentRouter = true
-  }
-  else if (typeof themeConfig.value.sidebarPushMode === 'string') {
-    isCurrentRouter = checkCurrentRouter(route, themeConfig.value.sidebarPushMode)
-  }
-  else if (Array.isArray(themeConfig.value.sidebarPushMode)) {
-    for (const entry of themeConfig.value.sidebarPushMode) {
-      isCurrentRouter = checkCurrentRouter(route, entry)
-      if (isCurrentRouter)
-        break
-    }
-  }
-
-  if (themeConfig.value.sidebarPushMode && isCurrentRouter) {
-    if (!themeConfig.value.sidebarShowOnPC)
-      return '<md:pl-$va-sidebar-width'
-    return 'pl-$va-sidebar-width'
-  }
-  else { return 'pl-0' }
+  const isSidebarPushMode = checkRouteAgainstConditions(route, themeConfig.value.sidebarPushMode)
+  return isSidebarPushMode ? 'pl-$va-sidebar-width' : '<md:pl-$va-sidebar-width'
 })
 
-function checkCurrentRouter(route: RouteLocationNormalizedLoaded, path: string) {
-  if (path === 'home')
-    return route.path.replace(/index.html$/, '') === '/'
-  return route.path.includes(`/${path}`)
-}
+const layoutClass = computed(() => {
+  const isSidebarShowOnPC = checkRouteAgainstConditions(route, themeConfig.value.sidebarShowOnPC)
+  return isSidebarShowOnPC
+})
 </script>
 
 <template>
-  <div class="sakura-main custom-background antialiased" :class="layoutClass">
+  <div class="sakura-main custom-background antialiased" :class="sidebarPushModeClass">
     <main class="mx-auto">
       <SakuraNavbar />
-      <div :class="!themeConfig.sidebarShowOnPC && 'md:hidden'">
+      <div v-if="layoutClass" :class="!themeConfig.sidebarShowOnPC && 'md:hidden'">
         <slot name="side-bar">
           <SakuraSidebar :show-hamburger="true" />
         </slot>

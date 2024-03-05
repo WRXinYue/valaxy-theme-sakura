@@ -20,14 +20,14 @@ defineProps<{
   font-size: 14px;
 
   a {
-    color: var(--st-c-gray);
+    color: var(--st-c-text-secondary);
     transition: color 0.2s ease-out;
 
     &:hover {
       color: var(--st-c-accent);
 
       .non-hoverable {
-        color: var(--st-c-gray) !important;
+        color: var(--st-c-text-secondary) !important;
       }
     }
   }

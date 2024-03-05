@@ -51,12 +51,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="!loading" class="md:w-800px m-auto min-w-300px">
-    <div class="pt-24px px-20px flex items-center">
-      <div class="i-mdi:leaf mr-1 text-[#333]" /> 文章列表
-    </div>
-    <hr>
-
+  <div v-if="!loading">
     <template v-for="(post, index) in postsWithLimitedTags" :key="post.path">
       <Transition name="fade">
         <SakuraArticleCard v-if="post" :id="`article-card-${index}`" class="article-card" :image-position="index % 2 === 1" :post="post" />

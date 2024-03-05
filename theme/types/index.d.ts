@@ -4,7 +4,7 @@ export namespace SakuraTheme {
 
   export interface Banner {
     enable?: boolean
-    title?: string | string[]
+    title?: string
     motto?: string
     urls: string[]
     style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
@@ -87,6 +87,13 @@ export interface ThemeConfig {
   favicon: boolean
 
   banner: SakuraTheme.Banner
+
+  startDash?: {
+    title?: string
+    desc?: string
+    img?: string
+    link?: string
+  }[]
 
   /**
    * sidebar

@@ -102,7 +102,7 @@ onMounted(() => {
 }
 
 .site-subtitle {
-  color: get-css-var('c-gray');
+  color: get-css-var('c-text-secondary');
   display: block;
 }
 
