@@ -15,6 +15,7 @@
     "valaxy-theme-sakura": "workspace:*"
   },
   "devDependencies": {
+    "@iconify-json/simple-icons": "^1.1.92",
     "nodemon": "^3.1.0",
     "typescript": "^5.3.3"
   }

@@ -10,7 +10,7 @@ const { t } = useI18n()
 
 <template>
   <div m="t-10 md:t-0" flex="~ col" justify="center">
-    <h1 my="10" text="6xl" font="black" class="gradient-text" bg="gradient-to-r">
+    <h1 py="10" text="!5xl" font="black" class="gradient-text" bg="gradient-to-r">
       {{ fm.hero.name }}
     </h1>
 
@@ -19,18 +19,18 @@ const { t } = useI18n()
     </h2>
 
     <div m="t-8">
-      <h3>valaxy theme sakura 来自于 wordpress sakura 主题衍生，注重体验及优化</h3>
+      <h3>{{ t('theme.description') }}</h3>
     </div>
 
     <div p="t-6">
       <AppLink
-        border="3 red-300/50"
+        border="3 $st-c-brand"
         to="releases"
         class="btn transition rounded-full hover:shadow-md w-auto pl-1"
         bg="gradient-to-r transparent"
       >
         <div flex items-center>
-          <div class="rounded-full aspect-ratio-square w-9 h-9 mr-1 flex items-center justify-center" bg="red-300/50">
+          <div class="rounded-full aspect-ratio-square w-9 h-9 mr-1 flex items-center justify-center" bg="$st-c-brand">
             <div i-simple-icons-npm />
           </div>
           <div dark="color-white" class="color-black">
@@ -55,7 +55,7 @@ const { t } = useI18n()
 
 <style lang="scss" scoped>
 .gradient-text {
-  background: linear-gradient(to right, var(--st-c-brand), var(--st-c-secondary));
+  background: linear-gradient(to right, var(--st-c-brand), 60%, var(--st-c-secondary));
   background-clip: text;
   color: transparent;
 }

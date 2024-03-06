@@ -15,7 +15,6 @@ onBeforeRouteLeave(() => {
   <Layout>
     <div>
       <SakuraBanner />
-
       <slot>
         <RouterView />
       </slot>

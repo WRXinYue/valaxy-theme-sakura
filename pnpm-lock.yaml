@@ -67,6 +67,9 @@ importers:
         specifier: workspace:*
         version: link:../theme
     devDependencies:
+      '@iconify-json/simple-icons':
+        specifier: ^1.1.92
+        version: 1.1.94
       nodemon:
         specifier: ^3.1.0
         version: 3.1.0
@@ -1009,6 +1012,12 @@ packages:
     resolution: {integrity: sha512-yScIGjLFBCJKWKskQTWRjNI2Awoq+VRDkRxEsCQvSfdz41n+xkRtFG2K6J1OVI90ClRHfjFC8VJ2+WzxxyFjTQ==}
     dependencies:
       '@iconify/types': 2.0.0
+
+  /@iconify-json/simple-icons@1.1.94:
+    resolution: {integrity: sha512-2UwwbEJeZ/aMpACG/dZoOhNszKFO+IjcRCbYB+lMqd+6fA5ewykRy63IP8//UdviazOPamGJ/XbNBJH/o1YFdQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
 
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}

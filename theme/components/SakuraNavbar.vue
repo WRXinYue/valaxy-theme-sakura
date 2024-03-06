@@ -55,6 +55,7 @@ function handleScroll() {
   position: fixed;
   height: var(--st-c-navbar-height);
   width: 100%;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;

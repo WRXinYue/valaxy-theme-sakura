@@ -44,6 +44,9 @@ category:
 banner:
   introduction: 简约轻量的 valaxy sakura 主题.🚀
 
+theme:
+  description: 使用 Valaxy 架构的二次元风格博客主题，灵感源自 WordPress 的 Sakura 主题
+
 hero:
   actions:
     get-started: 快速上手

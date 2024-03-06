@@ -12,7 +12,7 @@ const props = defineProps<{
 const classes = computed(() => {
   const arr = []
   if (props.theme === 'brand')
-    arr.push('from-purple-700', 'to-indigo-600')
+    arr.push('from-$st-c-brand', 'to-$st-c-secondary')
   else
     arr.push('from-gray-700', 'to-dark-300')
 
@@ -27,7 +27,7 @@ const { t } = useI18n()
     :to="link"
     m="2"
     :class="classes"
-    class="sese-btn btn transition rounded-full hover:shadow-md"
+    class="sese-btn btn transition rounded-full hover:shadow-md decoration-none"
     bg="gradient-to-r"
     p="x-6"
   >
