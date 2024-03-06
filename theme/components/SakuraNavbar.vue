@@ -8,7 +8,7 @@ const themeConfig = useThemeConfig()
 const scrolled = ref(false)
 const hoverHeaderActive = ref(false)
 /** Special handling of certain links */
-const processedNavItems = computed(() => themeConfig.value.nav.map(item => ({
+const processedNavItems = computed(() => themeConfig.value.navbar.map(item => ({
   ...item,
   isExternal: item.link === '/atom.xml',
 })))
@@ -32,16 +32,14 @@ function handleScroll() {
 </script>
 
 <template>
-  <header class="px-3 h-60px fixed" :class="isHeaderActive ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
-    <slot name="navbar-brand">
-      <SakuraNavbarBrand />
-    </slot>
+  <header class="navbar z-5" :class="isHeaderActive ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
+    <SakuraNavbarBrand />
     <div :class="isHeaderActive ? 'element-slide-left-fade-in <md:hidden' : 'md:relative hidden'" class="text-sm text-gray-500 leading-5 h-full w-auto">
       <template v-for="(item, i) in processedNavItems" :key="i">
         <div class="app-link-after relative h-full w-auto items-center inline-flex justify-center hover:after:w-full right-20">
           <SakuraNavLink :link="item.link" :icon="item.icon" :text="item.text" :is-external="item.isExternal" :submenu="item.submenu" />
         </div>
-        <span v-if="i !== themeConfig.nav.length - 1" class="mr-3 ml-3" />
+        <span v-if="i !== themeConfig.navbar.length - 1" class="mr-3 ml-3" />
       </template>
     </div>
 
@@ -53,15 +51,16 @@ function handleScroll() {
 </template>
 
 <style lang="scss" scoped>
-header {
+.navbar {
   position: fixed;
-  top: 0;
+  height: var(--st-c-navbar-height);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 100;
   transition: all 0.4s ease;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .active-header {

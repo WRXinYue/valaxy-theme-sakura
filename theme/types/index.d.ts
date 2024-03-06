@@ -47,7 +47,7 @@ export interface ThemeConfig {
       enable?: boolean
       name?: string
       img?: string
-      animated: boolean
+      animated?: boolean
       url: string
       title: string
     }
@@ -57,31 +57,11 @@ export interface ThemeConfig {
      */
     powered: boolean
 
-    /**
-     * Chinese Users | 中国用户
-     * 备案 ICP
-     * 国内用户需要在网站页脚展示备案 ICP 号
-     * https://beian.miit.gov.cn/
-     */
-    beian: {
-      enable: boolean
-      /**
-       * 苏ICP备xxxxxxxx号
-       */
-      icp: string
-    }
+    /** 备案 ICP */
+    icp: string
   }>
 
-  /**
-   * navbar
-   */
-  nav: NavItem[]
-
   // ============== Valaxy Theme Sakura Config ==============
-
-  // site name
-  prefixName: string
-  siteName: string
 
   // navbar favicon
   favicon: boolean
@@ -99,9 +79,21 @@ export interface ThemeConfig {
    * sidebar
    */
   sidebar: NavItem[] | SidebarMulti
-  sidebarPushMode: boolean | string | string[]
-  sidebarShowOnPC: boolean | string | string[]
-  sidebarDefaultOpen: boolean | string | string[]
+  sidebarPushMode: string | string[]
+  sidebarShowOnPC: string | string[]
+  sidebarDefaultOpen: string | string[]
+  sidebarHamburger: string | string[]
+
+  /**
+   * navbar
+   */
+  navbar: NavItem[]
+  navbarTitle: string | string[]
+
+  layout: {
+    nav: 'left-top' | 'top-left'
+    sidebar: 'overview' | 'dynamic'
+  }
 
   // Pagination configuration
   pagination?: {

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useAppStore } from 'valaxy'
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
 import { checkRouteAgainstConditions } from '../utils'
@@ -9,28 +9,34 @@ const route = useRoute()
 const app = useAppStore()
 const themeConfig = useThemeConfig()
 
+const isSidebarPushMode = ref(false)
+const isSidebarShowOnPC = ref(false)
+
 const sidebarPushModeClass = computed(() => {
   if (!app.isSidebarOpen)
     return
-  const isSidebarPushMode = checkRouteAgainstConditions(route, themeConfig.value.sidebarPushMode)
-  return isSidebarPushMode ? 'pl-$va-sidebar-width' : '<md:pl-$va-sidebar-width'
+  if (isSidebarPushMode.value)
+    return isSidebarShowOnPC.value ? 'pl-$va-sidebar-width' : '<md:pl-$va-sidebar-width'
+  return ''
 })
 
-const layoutClass = computed(() => {
-  const isSidebarShowOnPC = checkRouteAgainstConditions(route, themeConfig.value.sidebarShowOnPC)
-  return isSidebarShowOnPC
+onMounted(() => {
+  isSidebarPushMode.value = checkRouteAgainstConditions(route, themeConfig.value.sidebarPushMode)
+  isSidebarShowOnPC.value = checkRouteAgainstConditions(route, themeConfig.value.sidebarShowOnPC)
 })
 </script>
 
 <template>
-  <div class="sakura-main custom-background antialiased" :class="sidebarPushModeClass">
-    <main class="mx-auto">
+  <div class="main-content-transition custom-background antialiased" :class="themeConfig.layout.nav === 'left-top' && sidebarPushModeClass">
+    <slot name="nav-bar">
       <SakuraNavbar />
-      <div v-if="layoutClass" :class="!themeConfig.sidebarShowOnPC && 'md:hidden'">
-        <slot name="side-bar">
-          <SakuraSidebar :show-hamburger="true" />
-        </slot>
-      </div>
+    </slot>
+
+    <slot name="side-bar">
+      <SakuraSidebar :show-hamburger="true" :class="!isSidebarShowOnPC && 'md:hidden'" />
+    </slot>
+
+    <main class="main-content-transition mx-auto" :class="themeConfig.layout.nav === 'top-left' && sidebarPushModeClass">
       <slot>
         <RouterView v-slot="{ Component }">
           <component :is="Component">

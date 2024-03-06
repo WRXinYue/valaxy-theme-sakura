@@ -1,58 +1,65 @@
 <script setup lang="ts">
 import { useSiteConfig } from 'valaxy'
+import { onMounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
+import { checkRouteAgainstConditions } from '../utils'
 
+const route = useRoute()
 const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
+
+const isShowSidebarHamburger = ref()
+
+onMounted(() => {
+  isShowSidebarHamburger.value = checkRouteAgainstConditions(route, themeConfig.value.sidebarHamburger)
+})
 </script>
 
 <template>
-  <div class="relative float-left line-height-75px ml-8" style="animation: sitetop 1s">
-    <span class="logolink moe-mashiro flex w-auto h-full items-center">
-      <img v-if="themeConfig.favicon" class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
-      <RouterLink class="text-xl" to="/" :aria-label="siteConfig.title">
-        <span class="sakurasono mr-1">{{ themeConfig.prefixName }}</span>
-        <span class="shironeko">{{ themeConfig.siteName }}</span>
-      </RouterLink>
-    </span>
+  <div :class="isShowSidebarHamburger && 'ml-8'">
+    <img v-if="themeConfig.favicon" class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
+    <RouterLink class="logo-link moe-mashiro" to="/" :aria-label="siteConfig.title">
+      <template v-if="typeof themeConfig.navbarTitle === 'string'">
+        <span mr-1>{{ themeConfig.navbarTitle }}</span>
+      </template>
+      <template v-else>
+        <span mr-1>{{ themeConfig.navbarTitle[0] }}</span>
+        <span inline-block>{{ themeConfig.navbarTitle[1] }}</span>
+        <span>{{ themeConfig.navbarTitle[2] }}</span>
+      </template>
+    </RouterLink>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.logolink .sakurasono {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  color: #464646;
-  height: auto;
-  line-height: 25px;
-  padding-bottom: 0;
-}
+<style lang="scss">
+$navbar-hover-bg-color: orange;
+$navbar-default-color: #464646;
+$navbar-hover-color: #fff;
 
-.logolink a:hover .sakurasono {
-  background-color: orange;
-  color: #fff
-}
-
-.logolink a:hover .shironeko,
-.logolink a:hover rt {
-  color: orange
-}
-
-.logolink.moe-mashiro a {
-  color: #464646;
-  float: left;
+.logo-link {
+  color: $navbar-default-color;
   font-size: 28px;
   font-weight: 800;
-  height: 56px;
-  line-height: 56px;
-  text-decoration-line: none
-}
 
-.logolink.moe-mashiro .sakurasono {
-  font-size: 25px;
-  border-radius: 9px;
-  padding-bottom: 2px;
-  padding-top: 5px
+  span:first-child {
+    border-radius: 9px;
+    padding-bottom: 2px;
+    padding-top: 5px;
+  }
+
+  &:hover {
+    span:first-child {
+      background-color: $navbar-hover-bg-color;
+      color: $navbar-hover-color;
+    }
+    span:nth-of-type(2) {
+      animation: rotate 1s linear infinite;
+    }
+    span:not(:first-child) {
+      color: $navbar-hover-bg-color;
+    }
+  }
 }
 
 .moe-mashiro {

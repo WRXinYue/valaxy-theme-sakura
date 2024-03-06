@@ -28,12 +28,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <footer v-if="!loading" class="va-footer p-4" text="center sm" style="color:var(--va-c-text-light)">
-    <div v-if="themeConfig.footer.beian?.enable && themeConfig.footer.beian.icp" class="beian" m="y-2">
-      <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">
-        {{ themeConfig.footer.beian.icp }}
-      </a>
-    </div>
+  <footer v-if="!loading" class="h-$st-c-footer-height" text="center sm" style="color:var(--va-c-text-light)">
+    <div class="icp" m="y-2" v-html="themeConfig.footer.icp" />
 
     <div class="copyright flex justify-center items-center" p="1">
       <span>

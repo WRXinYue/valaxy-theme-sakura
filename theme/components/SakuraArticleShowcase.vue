@@ -17,7 +17,7 @@ function toPath(path: string) {
   <div class="image-row flex">
     <SakuraImageCard
       v-for="(startDash, i) in themeConfig.startDash" :key="i" :to="startDash.link"
-      :data-title="startDash.title" :data-desc="startDash.desc" overlay="true" :src="startDash.img"
+      :data-title="startDash.title" :data-desc="startDash.desc" :overlay="true" :src="startDash.img"
       class="image-card" :class="startDash.link ? 'cursor-pointer' : ''" @click="toPath(startDash.link || '')"
     />
   </div>

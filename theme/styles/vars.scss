@@ -1,7 +1,10 @@
 @use "sass:map";
 
 // common
-$common: () !default;
+$common: (
+  "c-navbar-height": 60px,
+  "c-footer-height": 80px
+) !default;
 $common: map.merge((), $common);
 
 // palette

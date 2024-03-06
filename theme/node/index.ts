@@ -9,8 +9,7 @@ export const defaultThemeConfig: ThemeConfig = {
   // colors: {
   //   primary: '#e67474',
   // },
-  prefixName: 'かなしいの',
-  siteName: '心悦',
+  navbarTitle: ['はじまり', 'の', '旅'],
 
   favicon: false,
 
@@ -21,10 +20,17 @@ export const defaultThemeConfig: ThemeConfig = {
     style: 'filter-dim',
   },
 
-  nav: [],
+  navbar: [],
   sidebar: [],
   sidebarPushMode: 'home',
-  sidebarShowOnPC: false,
+  sidebarShowOnPC: 'none',
+  sidebarDefaultOpen: '',
+  sidebarHamburger: 'all',
+
+  layout: {
+    nav: 'left-top',
+    sidebar: 'overview',
+  },
 
   animation: false,
 
@@ -37,13 +43,7 @@ export const defaultThemeConfig: ThemeConfig = {
     },
 
     powered: true,
-
-    beian: {
-      enable: false,
-      icp: '',
-    },
   },
-  sidebarDefaultOpen: '',
 }
 
 // write a vite plugin
@@ -85,7 +85,7 @@ export function generateSafelist(themeConfig: ThemeConfig) {
 
   footerIcon && safelist.push(footerIcon)
 
-  themeConfig.nav?.forEach((navItem) => {
+  themeConfig.navbar?.forEach((navItem) => {
     navItem?.icon && safelist.push(navItem.icon)
   })
 
