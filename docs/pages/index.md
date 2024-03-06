@@ -18,5 +18,4 @@ hero:
     - theme: alt
       text: hero.actions.view-github
       link: https://github.com/WRXinYue/valaxy-theme-sakura
-
 ---
