@@ -14,8 +14,7 @@ export default defineConfig<ThemeConfig>({
   theme: 'sakura',
 
   themeConfig: {
-    prefixName: 'かなしいの',
-    siteName: '心悦',
+    navbarTitle: ['かなしい', 'の', '心悦'],
 
     favicon: false,
     animation: true,
@@ -33,6 +32,26 @@ export default defineConfig<ThemeConfig>({
       overlayBar: true,
     },
 
+    startDash: [
+      {
+        title: 'Valaxy Theme Sakura',
+        desc: '本站使用的 valaxy sakura 主题',
+        img: 'https://w.wallhaven.cc/full/d6/wallhaven-d6mryl.jpg',
+        link: '/posts/theme-sakura',
+      },
+      {
+        title: 'Valaxy sakura theme docs',
+        desc: '主题文档',
+        img: 'https://w.wallhaven.cc/full/gp/wallhaven-gpxyed.jpg',
+        link: 'https://sakura-docs.wrxinyue.org/',
+      },
+      {
+        title: '示例站点',
+        desc: '(暂无)',
+        img: 'https://w.wallhaven.cc/full/jx/wallhaven-jxqgjw.jpg',
+      },
+    ],
+
     pagination: {
       animation: true,
       infiniteScrollOptions: {
@@ -40,7 +59,7 @@ export default defineConfig<ThemeConfig>({
       },
     },
 
-    nav: [
+    navbar: [
       {
         text: '🌈 首页',
         link: '/',
