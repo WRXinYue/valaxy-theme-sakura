@@ -10,7 +10,7 @@ const { t } = useI18n()
 
 <template>
   <div m="t-10 md:t-0" flex="~ col" justify="center">
-    <h1 my="10" text="6xl" font="black" class="gradient-text from-purple-800 to-blue-500" bg="gradient-to-r">
+    <h1 my="10" text="6xl" font="black" class="gradient-text" bg="gradient-to-r">
       {{ fm.hero.name }}
     </h1>
 
@@ -52,3 +52,11 @@ const { t } = useI18n()
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.gradient-text {
+  background: linear-gradient(to right, var(--st-c-brand), var(--st-c-secondary));
+  background-clip: text;
+  color: transparent;
+}
+</style>

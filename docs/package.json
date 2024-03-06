@@ -8,22 +8,13 @@
     "build:ssg": "valaxy build --ssg",
     "dev": "valaxy",
     "rss": "valaxy rss",
-    "serve": "vite preview",
-    "vitepress:dev": "vitepress dev",
-    "vitepress:build": "vitepress build",
-    "vitepress:preview": "vitepress preview"
+    "serve": "vite preview"
   },
   "dependencies": {
-    "valaxy": "^0.18.4",
-    "valaxy-addon-algolia": "^0.0.3",
-    "valaxy-addon-components": "^0.0.2",
-    "valaxy-theme-press": "^0.18.4",
+    "valaxy": "0.18.5",
     "valaxy-theme-sakura": "workspace:*"
   },
   "devDependencies": {
-    "@iconify-json/simple-icons": "^1.1.92",
-    "nodemon": "^3.1.0",
-    "vite": "^5.1.4",
-    "vitepress": "1.0.0-rc.44"
+    "typescript": "^5.3.3"
   }
 }

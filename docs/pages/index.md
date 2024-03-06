@@ -20,5 +20,3 @@ hero:
       link: https://github.com/WRXinYue/valaxy-theme-sakura
 
 ---
-
-<SakuraBanner />

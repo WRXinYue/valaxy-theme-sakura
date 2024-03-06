@@ -1,23 +1,14 @@
-import process from 'node:process'
 import { defineValaxyConfig } from 'valaxy'
-import type { PressTheme } from 'valaxy-theme-press'
-import { addonAlgolia } from 'valaxy-addon-algolia'
-import { addonComponents } from 'valaxy-addon-components'
+import type { ThemeConfig } from 'valaxy-theme-sakura'
 
-const COMMIT_ID = process.env.CF_PAGES_COMMIT_SHA || process.env.COMMIT_REF
-const commitRef = COMMIT_ID?.slice(0, 8) || 'dev'
-
-const safelist = [
-  'i-ri-home-line',
-
-  'i-ri-github-line',
-]
-
-export default defineValaxyConfig<PressTheme.Config>({
+export default defineValaxyConfig<ThemeConfig>({
   siteConfig: {
     title: 'Sakura Docs',
     url: 'https://sakura.wrxinyue.org',
     description: 'Valaxy Sakura Theme Site Docs',
+    author: {
+      name: 'WRXinYue',
+    },
 
     search: {
       enable: false,
@@ -32,18 +23,28 @@ export default defineValaxyConfig<PressTheme.Config>({
     },
   },
 
-  addons: [
-    addonAlgolia({
-      appId: '7MV77DWO4A',
-      apiKey: '9b9438ca112ab7c044c985c2daa1190b',
-      indexName: 'valaxysite',
-    }),
-    addonComponents(),
-  ],
-
-  theme: 'press',
+  theme: 'sakura',
   themeConfig: {
-    logo: '/favicon.svg',
+    navbarTitle: ['Valaxy Theme', '', 'Sakura'],
+    sidebarShowOnPC: ['-home'],
+    sidebarPushMode: ['-home'],
+    sidebarDefaultOpen: ['-home'],
+    sidebarHamburger: 'none',
+
+    layout: {
+      nav: 'top-left',
+      sidebar: 'dynamic',
+    },
+
+    // addons: [
+    //   addonAlgolia({
+    //     appId: '7MV77DWO4A',
+    //     apiKey: '9b9438ca112ab7c044c985c2daa1190b',
+    //     indexName: 'valaxysite',
+    //   }),
+    //   addonComponents(),
+    // ],
+
     sidebar: [
       'getting-started',
       'config',
@@ -56,54 +57,10 @@ export default defineValaxyConfig<PressTheme.Config>({
       'addon',
       'dev',
     ],
-    socialLinks: [
-      { icon: 'i-ri-github-line', link: 'https://github.com/YunYouJun/valaxy' },
-    ],
-    nav: [
-      {
-        text: 'nav.guide',
-        link: '/guide/getting-started',
-      },
-    ],
 
     footer: {
-      message: `Released under the MIT License. (<a href="https://github.com/WRXinYue/valaxy/commit/${commitRef}" target="_blank" alt=${commitRef}>${commitRef}</a>)`,
-      copyright:
-        'Copyright © 2024-present <a href="https://github.com/WRXinYue" target="_blank">WRXinYue</a>',
+      since: 2024,
+      icp: '<a href="https://icp.gov.moe/?keyword=20240113" target="_blank">萌ICP备20240113号</a>',
     },
-  },
-
-  vite: {
-    base: '/',
-  },
-  unocss: {
-    safelist,
-  },
-
-  markdown: {
-    blocks: {
-      tip: {
-        icon: 'i-carbon-thumbs-up',
-      },
-      warning: {
-        icon: 'i-carbon-warning-alt',
-      },
-      danger: {
-        icon: 'i-carbon-warning',
-      },
-      info: {
-        icon: 'i-carbon-information',
-      },
-    },
-
-    codeTransformers: [
-      // We use `[!!code` in demo to prevent transformation, here we revert it back.
-      {
-        postprocess(code) {
-          return code.replace(/\[\!\!code/g, '[!code')
-        },
-      },
-    ],
-    // theme: 'material-theme-palenight',
   },
 })
