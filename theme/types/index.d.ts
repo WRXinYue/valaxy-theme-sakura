@@ -79,10 +79,16 @@ export interface ThemeConfig {
    * sidebar
    */
   sidebar: NavItem[] | SidebarMulti
-  sidebarPushMode: string | string[]
-  sidebarShowOnPC: string | string[]
-  sidebarDefaultOpen: string | string[]
-  sidebarHamburger: string | string[]
+  sidebarPCOptions: {
+    enable: string | string[]
+    pushMode: string | string[]
+    defaultOpen: string | string[]
+    hamburger: string | string[]
+  }
+  sidebarMobileOptions: {
+    pushMode: string | string[]
+    hamburger: string | string[]
+  }
 
   /**
    * navbar

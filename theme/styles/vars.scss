@@ -11,14 +11,15 @@ $common: map.merge((), $common);
 $light: (
   "c-brand": #CA4B49,
   "c-secondary": #fe9600,
-  "c-accent": #fe9600,
+  "c-accent": var(--st-c-secondary),
   "c-bg-nav": #fff,
   "c-link": var(--st-c-brand),
   "c-sidebar-bg-color": var(--va-c-bg-light),
   "c-text": #504e4e,
   "c-text-secondary": #888888,
-  "c-background": #eee,
   "c-border": #d0d7de,
+  "c-hover-border": #f1c484,
+  "c-hover-bg": var(--st-c-secondary),
   "c-icon": #fff,
   "c-scrollbar-color": #49b1f5,
   /* -------------------------------------
@@ -33,14 +34,46 @@ $light: (
   "c-article-card-rd": 10px,
   "c-article-card-font-size": 1.17em,
   "c-article-card-font-size-secondary": 12px,
+  /* -------------------------------------
+  * SakuraNavbar
+  * ------------------------------------- */
+  "c-navbar-text": var(--st-c-text),
+  "c-navbar-hover-color": #fff,
+  "c-navbar-hover-bg-color": orange,
   ) !default;
 $light: map.merge((), $light);
 
 $dark: (
-  "c-text-secondary": #ffffff,
-
+  "c-brand": #CA4B49,
+  "c-secondary": #fe9600,
+  "c-accent": var(--st-c-secondary),
   "c-bg-nav": var(--va-c-bg-alt),
+  "c-link": var(--st-c-brand),
   "c-text": #f0f8ff,
+  "c-text-secondary": #ffffff,
+  "c-border": #d0d7de,
+  "c-hover-border": #f1c484,
+  "c-hover-bg": var(--st-c-secondary),
+  "c-icon": #fff,
+  "c-scrollbar-color": #49b1f5,
+  /* -------------------------------------
+  * SakuraTimeLine
+  * ------------------------------------- */
+  "c-timeline-color": #49b1f5,
+  "c-timeline-text-color": #0bf,
+  "c-timeline-height": 30px,
+  /* -------------------------------------
+  * SakuraArticleCard
+  * ------------------------------------- */
+  "c-article-card-rd": 10px,
+  "c-article-card-font-size": 1.17em,
+  "c-article-card-font-size-secondary": 12px,
+  /* -------------------------------------
+  * SakuraNavbar
+  * ------------------------------------- */
+  "c-navbar-text": var(--st-c-text),
+  "c-navbar-hover-color": var(--va-c-bg-alt),
+  "c-navbar-hover-bg-color": orange,
   ) !default;
 $dark: map.merge((), $dark);
 
