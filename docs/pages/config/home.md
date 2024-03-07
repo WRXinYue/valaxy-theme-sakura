@@ -7,7 +7,7 @@ categories:
 codeHeightLimit: 300
 ---
 
-### 首页标题配置
+### 首页标题
 ```ts
 export interface ThemeConfig {
   homeTitle: string
@@ -19,6 +19,8 @@ export interface ThemeConfig {
 | ---- | ---- | ---- |
 | homeTitle  | Hello, sakura | 首页标题 |
 | homeMotto  | You got to put the past behind you before you can move on. | 首页标语 (写下愿景也很不错呀) |
+
+<SakuraBannerPG />
 
 ### 首页壁纸配置
 

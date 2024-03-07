@@ -26,10 +26,16 @@ export default defineValaxyConfig<ThemeConfig>({
   theme: 'sakura',
   themeConfig: {
     navbarTitle: ['Valaxy Theme', '', 'Sakura'],
-    sidebarShowOnPC: ['-home'],
-    sidebarPushMode: ['-home'],
-    sidebarDefaultOpen: ['-home'],
-    sidebarHamburger: 'none',
+    sidebarPCOptions: {
+      enable: ['-home'],
+      pushMode: ['-home'],
+      defaultOpen: ['-home'],
+      hamburger: 'none',
+    },
+
+    sidebarMobileOptions: {
+      hamburger: '-home',
+    },
 
     layout: {
       nav: 'top-left',

@@ -27,10 +27,16 @@ const { t } = useI18n()
     :to="link"
     m="2"
     :class="classes"
-    class="sese-btn btn transition rounded-full hover:shadow-md decoration-none"
+    class="btn transition rounded-full decoration-none"
     bg="gradient-to-r"
     p="x-6"
   >
     {{ t(text) }}
   </AppLink>
 </template>
+
+<style last="scss" scoped>
+.btn:hover {
+  filter: brightness(120%);
+}
+</style>
