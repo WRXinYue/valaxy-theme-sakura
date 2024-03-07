@@ -21,8 +21,8 @@ const sidebarPushModeClass = computed(() => {
 })
 
 onMounted(() => {
-  isSidebarPushMode.value = checkRouteAgainstConditions(route, themeConfig.value.sidebarPushMode)
-  isSidebarShowOnPC.value = checkRouteAgainstConditions(route, themeConfig.value.sidebarShowOnPC)
+  isSidebarPushMode.value = checkRouteAgainstConditions(route, themeConfig.value.sidebarPCOptions.pushMode)
+  isSidebarShowOnPC.value = checkRouteAgainstConditions(route, themeConfig.value.sidebarPCOptions.enable)
 })
 </script>
 

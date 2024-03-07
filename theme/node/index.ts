@@ -22,10 +22,17 @@ export const defaultThemeConfig: ThemeConfig = {
 
   navbar: [],
   sidebar: [],
-  sidebarPushMode: 'home',
-  sidebarShowOnPC: 'none',
-  sidebarDefaultOpen: '',
-  sidebarHamburger: 'all',
+  sidebarPCOptions: {
+    enable: 'none',
+    pushMode: 'home',
+    defaultOpen: 'none',
+    hamburger: 'all',
+  },
+
+  sidebarMobileOptions: {
+    pushMode: 'home',
+    hamburger: 'all',
+  },
 
   layout: {
     nav: 'left-top',

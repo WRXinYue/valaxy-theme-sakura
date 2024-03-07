@@ -1,22 +1,23 @@
 <script setup lang="ts">
 import { useSiteConfig } from 'valaxy'
-import { useThemeConfig } from '../composables'
 
 const props = defineProps({
   currentIndex: {
     type: Number,
     required: true,
   },
+  title: String,
+  motto: String,
+  urls: Array,
 })
 
 const emits = defineEmits(['updateIndex'])
 
 const siteConfig = useSiteConfig()
-const themeConfig = useThemeConfig()
 
 function nextMedia() {
   let newIndex = props.currentIndex
-  if (newIndex < themeConfig.value.banner.urls.length - 1)
+  if (newIndex < props.urls!.length - 1)
     newIndex++
   else
     newIndex = 0
@@ -29,7 +30,7 @@ function prevMedia() {
   if (newIndex > 0)
     newIndex--
   else
-    newIndex = themeConfig.value.banner.urls.length - 1
+    newIndex = props.urls!.length - 1
 
   emits('updateIndex', newIndex)
 }
@@ -37,9 +38,9 @@ function prevMedia() {
 
 <template>
   <div class="info z-4">
-    <SakuraGlitchText :text="themeConfig.banner.title" />
+    <SakuraGlitchText :text="props.title" />
     <div class="w-full h-full rounded-2xl px-4 py-3" style="background-color: rgba(0, 0, 0, 0.5);">
-      <SakuraMottoDisplay />
+      <SakuraMottoDisplay :motto="props.motto" />
       <div class="flex justify-between mx-5 mt-4">
         <img class="icon" cursor-pointer rotate-180 src="../assets/next-b.svg" alt="Previous media" @click="prevMedia">
         <a v-for="s in siteConfig.social" :key="s.name" class="icon" :href="s.link" aria-label="icon" target="_blank">

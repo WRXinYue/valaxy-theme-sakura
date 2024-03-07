@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.14.1",
+  "packageManager": "pnpm@8.15.4",
   "homepage": "https://sakura.wrxinyue.org",
   "scripts": {
     "build": "npm run build:demo",
@@ -17,8 +17,8 @@
     "typecheck": "vue-tsc --noEmit --skipLibCheck"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "2.6.4",
-    "bumpp": "^9.3.0",
+    "@antfu/eslint-config": "2.7.0",
+    "bumpp": "^9.3.1",
     "eslint": "^8.57.0",
     "typescript": "^5.3.3",
     "valaxy": "^0.18.5",

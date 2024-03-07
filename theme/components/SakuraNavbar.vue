@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { isDark, toggleDark } from 'valaxy'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useThemeConfig } from '../composables'
 
@@ -33,20 +32,24 @@ function handleScroll() {
 
 <template>
   <header class="navbar z-5" :class="isHeaderActive ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
-    <SakuraNavbarBrand />
-    <div :class="isHeaderActive ? 'element-slide-left-fade-in <md:hidden' : 'md:relative hidden'" class="text-sm text-gray-500 leading-5 h-full w-auto">
-      <template v-for="(item, i) in processedNavItems" :key="i">
-        <div class="app-link-after relative h-full w-auto items-center inline-flex justify-center hover:after:w-full right-20">
-          <SakuraNavLink :link="item.link" :icon="item.icon" :text="item.text" :is-external="item.isExternal" :submenu="item.submenu" />
-        </div>
-        <span v-if="i !== themeConfig.navbar.length - 1" class="mr-3 ml-3" />
-      </template>
-    </div>
+    <slot name="nav-brand">
+      <SakuraNavbarBrand />
+    </slot>
 
-    <button type="button" aria-label="Toggle Dark Mode" @click="toggleDark()">
-      <div v-if="!isDark" i-ri-sun-line />
-      <div v-else i-ri-moon-line />
-    </button>
+    <slot name="nav-link">
+      <div :class="isHeaderActive ? 'element-slide-left-fade-in <md:hidden' : 'md:relative hidden'" class="text-sm text-gray-500 leading-5 h-full w-auto">
+        <template v-for="(item, i) in processedNavItems" :key="i">
+          <div class="app-link-after relative h-full w-auto items-center inline-flex justify-center hover:after:w-full right-20">
+            <SakuraNavLink :link="item.link" :icon="item.icon" :text="item.text" :is-external="item.isExternal" :submenu="item.submenu" />
+          </div>
+          <span v-if="i !== themeConfig.navbar.length - 1" class="mr-3 ml-3" />
+        </template>
+      </div>
+    </slot>
+
+    <slot name="nav-tool">
+      <SakuraToggleTheme />
+    </slot>
   </header>
 </template>
 

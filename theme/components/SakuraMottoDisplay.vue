@@ -2,9 +2,10 @@
 import { onMounted } from 'vue'
 
 // import Typed from 'typed.js'
-import { useThemeConfig } from '../composables'
 
-const themeConfig = useThemeConfig()
+const props = defineProps({
+  motto: String,
+})
 
 onMounted(() => {
 
@@ -22,7 +23,7 @@ onMounted(() => {
     <div class="blink" i-fa6-solid-quote-left text-base />
     <div class="px-2 w-full">
       <!-- <span id="typed" /> -->
-      {{ themeConfig.banner.motto }}
+      {{ props.motto }}
     </div>
     <div class="blink" i-fa6-solid-quote-right text-base />
   </div>

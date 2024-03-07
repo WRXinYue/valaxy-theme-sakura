@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useAppStore } from 'valaxy'
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
 import { checkRouteAgainstConditions } from '../utils'
@@ -12,13 +12,21 @@ defineProps<{
 const app = useAppStore()
 const route = useRoute()
 const themeConfig = useThemeConfig()
-
-const isShowSidebarHamburger = ref()
+const isShowPCSidebarHamburger = computed(() => {
+  if (window.innerWidth > 768)
+    return checkRouteAgainstConditions(route, themeConfig.value.sidebarPCOptions.hamburger)
+  else
+    return checkRouteAgainstConditions(route, themeConfig.value.sidebarMobileOptions.hamburger)
+})
 
 onMounted(() => {
-  const isSidebarDefaultOpen = checkRouteAgainstConditions(route, themeConfig.value.sidebarDefaultOpen)
-  isShowSidebarHamburger.value = checkRouteAgainstConditions(route, themeConfig.value.sidebarHamburger)
-  app.isSidebarOpen = isSidebarDefaultOpen
+  if (window.innerWidth > 768) {
+    const isPCSidebarDefaultOpen = checkRouteAgainstConditions(route, themeConfig.value.sidebarPCOptions.defaultOpen)
+    app.isSidebarOpen = isPCSidebarDefaultOpen
+  }
+  else {
+    app.isSidebarOpen = false
+  }
 })
 </script>
 
@@ -27,7 +35,7 @@ onMounted(() => {
     <ValaxyOverlay class="md:hidden z-1" :show="app.isSidebarOpen" @click="app.toggleSidebar()" />
 
     <SakuraHamburger
-      v-if="isShowSidebarHamburger"
+      v-if="isShowPCSidebarHamburger"
       :active="app.isSidebarOpen"
       class="menu-btn sidebar-toggle sakura-icon-btn leading-4 fixed left-0.8rem top-4 z-2000 "
       inline-flex cursor="pointer"

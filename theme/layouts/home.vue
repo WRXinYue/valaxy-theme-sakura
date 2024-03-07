@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 import { onBeforeRouteLeave, useRoute } from 'vue-router'
 import { useSakuraAppStore } from '../stores/app'
+import { useThemeConfig } from '../composables'
 
 const route = useRoute()
 const sakura = useSakuraAppStore()
+const themeConfig = useThemeConfig()
 
 onBeforeRouteLeave(() => {
   const currentScroll = document.documentElement.scrollTop
@@ -14,7 +16,7 @@ onBeforeRouteLeave(() => {
 <template>
   <Layout>
     <div>
-      <SakuraBanner />
+      <SakuraBanner :banner="themeConfig.banner" />
       <slot>
         <RouterView />
       </slot>

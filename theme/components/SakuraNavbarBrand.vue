@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useSiteConfig } from 'valaxy'
-import { onMounted, ref } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
 import { checkRouteAgainstConditions } from '../utils'
@@ -9,15 +9,16 @@ const route = useRoute()
 const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
 
-const isShowSidebarHamburger = ref()
-
-onMounted(() => {
-  isShowSidebarHamburger.value = checkRouteAgainstConditions(route, themeConfig.value.sidebarHamburger)
+const isShowPCSidebarHamburger = computed(() => {
+  if (window.innerWidth > 768)
+    return checkRouteAgainstConditions(route, themeConfig.value.sidebarPCOptions.hamburger)
+  else
+    return checkRouteAgainstConditions(route, themeConfig.value.sidebarMobileOptions.hamburger)
 })
 </script>
 
 <template>
-  <div :class="isShowSidebarHamburger && 'ml-8'">
+  <div :class="isShowPCSidebarHamburger && 'ml-8'">
     <img v-if="themeConfig.favicon" class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
     <RouterLink class="logo-link moe-mashiro" to="/" :aria-label="siteConfig.title">
       <template v-if="typeof themeConfig.navbarTitle === 'string'">
@@ -32,13 +33,9 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="scss">
-$navbar-hover-bg-color: orange;
-$navbar-default-color: #464646;
-$navbar-hover-color: #fff;
-
+<style lang="scss" scoped>
 .logo-link {
-  color: $navbar-default-color;
+  color: var(--st-c-navbar-text);
   font-size: 28px;
   font-weight: 800;
 
@@ -50,14 +47,14 @@ $navbar-hover-color: #fff;
 
   &:hover {
     span:first-child {
-      background-color: $navbar-hover-bg-color;
-      color: $navbar-hover-color;
+      background-color: var(--st-c-navbar-hover-bg-color);
+      color: var(--st-c-navbar-hover-color);
     }
     span:nth-of-type(2) {
       animation: rotate 1s linear infinite;
     }
     span:not(:first-child) {
-      color: $navbar-hover-bg-color;
+      color: var(--st-c-navbar-hover-bg-color);
     }
   }
 }
