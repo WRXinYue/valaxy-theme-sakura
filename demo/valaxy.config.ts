@@ -36,19 +36,19 @@ export default defineConfig<ThemeConfig>({
       {
         title: 'Valaxy Theme Sakura',
         desc: '本站使用的 valaxy sakura 主题',
-        img: 'https://w.wallhaven.cc/full/d6/wallhaven-d6mryl.jpg',
+        img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-d6mryl.jpg',
         link: '/posts/theme-sakura',
       },
       {
         title: 'Valaxy sakura theme docs',
         desc: '主题文档',
-        img: 'https://w.wallhaven.cc/full/gp/wallhaven-gpxyed.jpg',
+        img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-gpxyed.jpg',
         link: 'https://sakura-docs.wrxinyue.org/',
       },
       {
         title: '示例站点',
         desc: '(暂无)',
-        img: 'https://w.wallhaven.cc/full/jx/wallhaven-jxqgjw.jpg',
+        img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-jxqgjw.jpg',
       },
     ],
 

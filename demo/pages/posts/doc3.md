@@ -2,6 +2,7 @@
 title: 测试文档3
 tags: [测试, 算法]
 date: 2024-11-20
+cover: https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-1kkdov.jpg
 ---
 
 ## 代码测试
