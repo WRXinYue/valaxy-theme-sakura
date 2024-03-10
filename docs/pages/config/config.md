@@ -1,10 +1,19 @@
 ---
-title: Code height limit
-title_zh-CN: 配置介紹
+title: Theme Config
+title_zh-CN: 主题配置
 toc: true
 categories:
   - config
 codeHeightLimit: 300
 ---
 
-Valaxy Theme Sakura完全适配 valaxy 的 **themeConfig** 及 **siteConfig**，如果不想搞得太麻烦只想要简约的主题，那么看[valaxy配置文档](https://valaxy.site/guide/config/)学会如何基础使用即可
+### 入门配置
+
+* 配置首页
+* 配置导航栏
+* 配置侧边栏
+* 配置页脚
+
+### 高级配置
+
+* 布局配置

@@ -1,0 +1,20 @@
+/* -------------------------------------
+* Markdown components styles reset
+* ------------------------------------- */
+a {
+  text-decoration: none !important;
+}
+
+.site-nav {
+  ul {
+    padding-left: 0;
+  }
+}
+
+.sidebar {
+  div {
+    ul {
+      list-style-type: none
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { defineValaxyConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
+import monacoEditorPlugin from 'vite-plugin-monaco-editor'
 
 export default defineValaxyConfig<ThemeConfig>({
   siteConfig: {
@@ -54,19 +55,18 @@ export default defineValaxyConfig<ThemeConfig>({
     sidebar: [
       'getting-started',
       'config',
-      'migration',
-      'built-ins',
-      'third',
-      'custom',
-      'examples',
       'theme',
-      'addon',
-      'dev',
+      'components',
     ],
 
     footer: {
       since: 2024,
       icp: '<a href="https://icp.gov.moe/?keyword=20240113" target="_blank">萌ICP备20240113号</a>',
     },
+  },
+  vite: {
+    plugins: [
+      monacoEditorPlugin({}),
+    ],
   },
 })

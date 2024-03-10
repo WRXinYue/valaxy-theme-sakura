@@ -1,7 +1,7 @@
 import { defineAppSetup } from 'valaxy'
-import PrimeVue from 'primevue/config'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 
-export default defineAppSetup(async (_ctx) => {
-  const { app } = _ctx
-  app.use(PrimeVue)
+export default defineAppSetup(async ({ app }) => {
+  app.use(ElementPlus)
 })

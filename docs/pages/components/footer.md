@@ -1,10 +1,9 @@
 ---
-title: footer
-title_zh-CN: 页脚
+title: Footer
+title_zh-CN: Footer 页脚
 toc: true
 categories:
-  - config
-codeHeightLimit: 300
+  - components
 ---
 
 ```ts
