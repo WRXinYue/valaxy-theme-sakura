@@ -1,19 +1,6 @@
 export namespace SakuraTheme {
   export type Config = ThemeConfig
-  export type Sidebar = any
-
-  export interface Banner {
-    enable?: boolean
-    title?: string
-    motto?: string
-    urls: string[]
-    style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
-    overlayBar?: boolean
-  }
-
-  export interface SidebarMulti {
-    [path: string]: SidebarItem[] | { items: SidebarItem[], base: string }
-  }
+  export type ThemeUserConfig = Partial<ThemeConfig>
 }
 
 /**
@@ -76,7 +63,7 @@ export interface ThemeConfig {
   }[]
 
   /**
-   * sidebar
+   * Sidebar
    */
   sidebar: NavItem[] | SidebarMulti
   sidebarPCOptions: {
@@ -91,15 +78,15 @@ export interface ThemeConfig {
   }
 
   /**
-   * navbar
+   * Navbar
    */
   navbar: NavItem[]
   navbarTitle: string | string[]
 
-  layout: {
-    nav: 'left-top' | 'top-left'
-    sidebar: 'overview' | 'dynamic'
-  }
+  /**
+   * Layout
+   */
+  layout: Layout
 
   // Pagination configuration
   pagination?: {
@@ -146,13 +133,30 @@ export interface ThemeConfig {
   showBackToTop?: boolean
 }
 
+export interface Banner {
+  enable?: boolean
+  title?: string
+  motto?: string
+  urls: string[]
+  style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
+  overlayBar?: boolean
+}
+
+export interface SidebarMulti {
+  [path: string]
+  // [path: string]: SidebarItem[] | { items: SidebarItem[], base: string }
+}
+
 export interface NavItem {
   text?: string
   locale?: string | number
   link: string
   icon?: string
-  isExternal: boolean
-  submenu: NavItem[]
+  isExternal?: boolean
+  submenu?: NavItem[]
 }
 
-export type ThemeUserConfig = Partial<ThemeConfig>
+export interface Layout {
+  nav?: 'left-top' | 'top-left'
+  sidebar: 'overview' | 'dynamic'
+}

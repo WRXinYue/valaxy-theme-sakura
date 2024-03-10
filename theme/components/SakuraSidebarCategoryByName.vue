@@ -14,7 +14,7 @@ const category = computed(() => {
 </script>
 
 <template>
-  <PressCategory
+  <SakuraSidebarCategory
     v-if="category"
     :category="category"
     :collapsable="false"

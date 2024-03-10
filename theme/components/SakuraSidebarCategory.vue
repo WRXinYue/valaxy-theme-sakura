@@ -53,7 +53,7 @@ function getTitle(post: Post | any) {
         </RouterLink>
       </template>
 
-      <PressCategory v-else :category="categoryItem" :display-category="displayCategory" :collapsable="collapsable" />
+      <SakuraSidebarCategory v-else :category="categoryItem" :display-category="displayCategory" :collapsable="collapsable" />
     </li>
   </ul>
 </template>

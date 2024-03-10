@@ -1,19 +1,40 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
+import type { NavItem } from '../types/index'
+import { checkRouteAgainstConditions } from '../utils'
+
+const props = defineProps({
+  favicon: Boolean,
+  title: [String, Array],
+  hamburger: Boolean,
+  navbar: Array<NavItem>,
+})
 
 const themeConfig = useThemeConfig()
+const route = useRoute()
 
 const scrolled = ref(false)
 const hoverHeaderActive = ref(false)
 /** Special handling of certain links */
-const processedNavItems = computed(() => themeConfig.value.navbar.map(item => ({
+const processedNavItems = computed(() => (props.navbar || themeConfig.value.navbar)!.map(item => ({
   ...item,
   isExternal: item.link === '/atom.xml',
 })))
 
 const isHeaderActive = computed(() => {
   return hoverHeaderActive.value || scrolled.value
+})
+
+const isShowPCSidebarHamburger = computed(() => {
+  if (typeof window === 'undefined')
+    return
+
+  if (window.innerWidth > 768)
+    return checkRouteAgainstConditions(route, themeConfig.value.sidebarPCOptions.hamburger)
+  else
+    return checkRouteAgainstConditions(route, themeConfig.value.sidebarMobileOptions.hamburger)
 })
 
 onMounted(() => {
@@ -33,7 +54,7 @@ function handleScroll() {
 <template>
   <header class="navbar z-5" :class="isHeaderActive ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
     <slot name="nav-brand">
-      <SakuraNavbarBrand />
+      <SakuraNavbarBrand :hamburger="hamburger || isShowPCSidebarHamburger" :favicon="favicon" :navbar-title="title || themeConfig.navbarTitle" />
     </slot>
 
     <slot name="nav-link">
@@ -42,7 +63,7 @@ function handleScroll() {
           <div class="app-link-after relative h-full w-auto items-center inline-flex justify-center hover:after:w-full right-20">
             <SakuraNavLink :link="item.link" :icon="item.icon" :text="item.text" :is-external="item.isExternal" :submenu="item.submenu" />
           </div>
-          <span v-if="i !== themeConfig.navbar.length - 1" class="mr-3 ml-3" />
+          <span v-if="i !== (navbar?.length || themeConfig.navbar.length) - 1" class="mr-3 ml-3" />
         </template>
       </div>
     </slot>
@@ -79,7 +100,7 @@ function handleScroll() {
   left: 0;
   width: 0;
   height: 6px;
-  background-color: #fe9600;
+  background-color: var(--st-c-secondary);
   transition: width 0.3s ease;
 }
 </style>

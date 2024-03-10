@@ -1,13 +1,16 @@
 <script lang="ts" setup>
 import { useCategories, useSiteStore, useTags } from 'valaxy'
 import { useI18n } from 'vue-i18n'
-import { useThemeConfig } from '../composables'
+import type { NavItem } from '../types'
+
+defineProps({
+  sidebar: Array<NavItem>,
+})
 
 const { t } = useI18n()
 
 const site = useSiteStore()
 
-const themeConfig = useThemeConfig()
 const categories = useCategories()
 const tags = useTags()
 </script>
@@ -15,7 +18,7 @@ const tags = useTags()
 <template>
   <nav class="site-nav" text-xl mt-6>
     <ul>
-      <RouterLink v-for="(item, i) in themeConfig.sidebar" :key="i" class="site-link-item" :to="item.link" :title="item.text || t(item.locale || '')">
+      <RouterLink v-for="(item, i) in sidebar" :key="i" class="site-link-item" :to="item.link" :title="item.text || t(item.locale || '')">
         <div class="icon" :class="item.icon" />
         <span text-base ml-1>
           <template v-if="item.locale === 'menu.archives'">

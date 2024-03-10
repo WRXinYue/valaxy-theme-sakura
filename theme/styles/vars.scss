@@ -39,7 +39,7 @@ $light: (
   * ------------------------------------- */
   "c-navbar-text": var(--st-c-text),
   "c-navbar-hover-color": #fff,
-  "c-navbar-hover-bg-color": orange,
+  "c-navbar-hover-bg-color": var(--st-c-secondary),
   ) !default;
 $light: map.merge((), $light);
 

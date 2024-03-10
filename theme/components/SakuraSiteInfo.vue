@@ -1,0 +1,94 @@
+<script lang="ts" setup>
+import { useSiteConfig } from 'valaxy'
+import { useRouter } from 'vue-router'
+
+const siteConfig = useSiteConfig()
+const router = useRouter()
+</script>
+
+<template>
+  <div class="site-info" m="t-6">
+    <RouterLink class="site-author-avatar" to="/about">
+      <img class="lazy rounded-full" :data-src="siteConfig.author.avatar" alt="avatar">
+      <span class="site-author-status" :title="siteConfig.author.status.message">{{ siteConfig.author.status.emoji }}</span>
+    </RouterLink>
+    <div
+      class="site-author-name leading-6"
+      m="t-0 b-4"
+    >
+      <RouterLink to="/about">
+        {{ siteConfig.author.name }}
+      </RouterLink>
+    </div>
+    <RouterLink v-if="router.hasRoute('/about/site')" to="/about/site" class="site-name">
+      {{ siteConfig.title }}
+    </RouterLink>
+    <span v-else class="site-name">{{ siteConfig.title }}</span>
+    <h4 v-if="siteConfig.subtitle" class="site-subtitle block" text="xs">
+      {{ siteConfig.subtitle }}
+    </h4>
+    <div v-if="siteConfig.description" class="site-description my-1">
+      {{ siteConfig.description }}
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+@use "valaxy/client/styles/mixins/index.scss" as *;
+
+.site-info {
+  &.fix-top {
+    margin-top: -1.5rem;
+  }
+}
+
+.site-author-avatar {
+  display: inline-block;
+  line-height: 0;
+  position: relative;
+
+  img {
+    height: 96px;
+    width: 96px;
+    max-width: 100%;
+    margin: 0;
+    padding: 4px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(black, 0.2);
+    transition: 0.4s;
+
+    &:hover {
+      box-shadow: 0 0 30px rgba(var(--va-c-primary-rgb), 0.2);
+    }
+  }
+}
+
+.site-author-status {
+  position: absolute;
+  height: 1.8rem;
+  width: 1.8rem;
+  bottom: 0;
+  right: 0;
+  line-height: 1.8rem;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: var(--va-c-bg-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-name {
+  color: var(--va-c-text);
+  font-family: get-css-var('font-serif');
+  font-weight: 900;
+}
+
+.site-subtitle {
+  color: get-css-var('c-text-secondary');
+  display: block;
+}
+
+.site-description {
+  color: var(--va-c-text);
+  font-size: 0.8rem;
+}
+</style>

@@ -40,11 +40,11 @@ function cancelHideDropdown() {
 <template>
   <div>
     <div id="dropdownNavbarLink" @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown">
-      <AppLink v-if="!isExternal" :to="link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
+      <AppLink v-if="!isExternal" :to="link" rel="noopener" class="navbar-link">
         <div :class="icon" class="mr-0.5 inline-flex align-text-top" />
         {{ text }}
       </AppLink>
-      <a v-else :href="link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
+      <a v-else :href="link" rel="noopener" class="navbar-link">
         <div :class="icon" class="mr-0.5 inline-flex align-text-top" />
         {{ text }}
       </a>
@@ -62,11 +62,11 @@ function cancelHideDropdown() {
         class="rounded bg-$st-c-bg-nav mt-3 py-2"
       >
         <li v-for="subitem in submenu" :key="subitem.text" class="py-2 px-4">
-          <AppLink v-if="!subitem.isExternal" :to="subitem.link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
+          <AppLink v-if="!subitem.isExternal" :to="subitem.link" rel="noopener" class="navbar-link">
             <div :class="icon" class="mr-0.5 inline-flex align-text-top" />
             {{ subitem.text }}
           </AppLink>
-          <a v-else :href="subitem.link" rel="noopener" class="text-[#666666] hover:text-[#fe9600]">
+          <a v-else :href="subitem.link" rel="noopener" class="navbar-link">
             <div :class="subitem.icon" class="mr-0.5 inline-flex align-text-top" />
             {{ subitem.text }}
           </a>
@@ -80,6 +80,7 @@ function cancelHideDropdown() {
 #dropdownNavbar {
   box-shadow: 0 1px 40px -8px rgba(0,0,0,.5);
 }
+
 #dropdownNavbar::before {
   content: "";
   position: absolute;
@@ -89,5 +90,13 @@ function cancelHideDropdown() {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid var(--st-c-bg-nav);
+}
+
+.navbar-link {
+  color: var(--st-c-text);
+
+  &:hover {
+    color: var(--st-c-secondary);
+  }
 }
 </style>

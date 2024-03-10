@@ -2,10 +2,10 @@
 import { computed, onMounted, ref, watch } from 'vue'
 import { useThemeConfig } from '../composables'
 import { getLocalStorageItem, setLocalStorageItem } from '../utils/localStorage'
-import type { SakuraTheme } from '../types/index'
+import type { Banner } from '../types/index'
 
 const props = defineProps({
-  banner: Object as () => SakuraTheme.Banner,
+  banner: Object as () => Banner,
 })
 
 const storageKey = 'headerMediaIndex'

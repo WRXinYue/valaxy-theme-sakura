@@ -1,18 +1,30 @@
 <script lang="ts" setup>
 import { useAppStore } from 'valaxy'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
 import { checkRouteAgainstConditions } from '../utils'
+import type { Layout, NavItem, SidebarMulti } from '../types'
 
-defineProps<{
+const props = withDefaults(defineProps<{
   showHamburger?: boolean
-}>()
+  fixed?: boolean
+  layout?: Layout
+  sidebar?: NavItem[] | SidebarMulti
+}>(), {
+  fixed: true,
+})
 
 const app = useAppStore()
 const route = useRoute()
 const themeConfig = useThemeConfig()
+
+const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar)
+const layout = computed(() => props.layout || themeConfig.value.layout as Layout)
 const isShowPCSidebarHamburger = computed(() => {
+  if (typeof window === 'undefined')
+    return
+
   if (window.innerWidth > 768)
     return checkRouteAgainstConditions(route, themeConfig.value.sidebarPCOptions.hamburger)
   else
@@ -43,14 +55,15 @@ onMounted(() => {
     />
 
     <aside
-      class="va-card transition sidebar fixed inset-y-0 left-0 overflow-y-auto z-500"
+      class="va-card transition sidebar inset-y-0 left-0 overflow-y-auto z-500"
       :class="[app.isSidebarOpen && 'open', !showHamburger && 'md:translate-x-0',
-               themeConfig.layout.nav === 'top-left' && 'mt-$st-c-navbar-height']"
+               layout.nav === 'top-left' && 'mt-$st-c-navbar-height',
+               fixed && 'fixed']"
       text="center" bg="$st-c-sidebar-bg-color contain no-repeat"
     >
       <div v-if="!$slots.default" :class="$slots.default && '-mt-4'">
-        <SakuraSidebarOverview v-if="themeConfig.layout.sidebar === 'overview'" />
-        <SakuraSidebarDynamic v-else-if="themeConfig.layout.sidebar === 'dynamic'" />
+        <SakuraSidebarLayoutOverview v-if="layout.sidebar === 'overview'" :sidebar />
+        <SakuraSidebarLayoutDynamic v-else-if="layout.sidebar === 'dynamic'" :sidebar />
       </div>
 
       <div v-else>

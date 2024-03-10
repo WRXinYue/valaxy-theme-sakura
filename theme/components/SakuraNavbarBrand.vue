@@ -1,33 +1,29 @@
 <script setup lang="ts">
+import type { PropType } from 'vue'
 import { useSiteConfig } from 'valaxy'
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-import { useThemeConfig } from '../composables'
-import { checkRouteAgainstConditions } from '../utils'
 
-const route = useRoute()
-const siteConfig = useSiteConfig()
-const themeConfig = useThemeConfig()
-
-const isShowPCSidebarHamburger = computed(() => {
-  if (window.innerWidth > 768)
-    return checkRouteAgainstConditions(route, themeConfig.value.sidebarPCOptions.hamburger)
-  else
-    return checkRouteAgainstConditions(route, themeConfig.value.sidebarMobileOptions.hamburger)
+defineProps({
+  favicon: Boolean,
+  navbarTitle: [String, Array] as PropType<string | string[]>,
+  hamburger: Boolean,
 })
+
+const siteConfig = useSiteConfig()
 </script>
 
 <template>
-  <div :class="isShowPCSidebarHamburger && 'ml-8'">
-    <img v-if="themeConfig.favicon" class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
+  <div :class="hamburger && 'ml-8'">
+    <template v-if="favicon">
+      <img class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
+    </template>
     <RouterLink class="logo-link moe-mashiro" to="/" :aria-label="siteConfig.title">
-      <template v-if="typeof themeConfig.navbarTitle === 'string'">
-        <span mr-1>{{ themeConfig.navbarTitle }}</span>
+      <template v-if="typeof navbarTitle === 'string'">
+        <span mr-1>{{ navbarTitle }}</span>
       </template>
       <template v-else>
-        <span mr-1>{{ themeConfig.navbarTitle[0] }}</span>
-        <span inline-block>{{ themeConfig.navbarTitle[1] }}</span>
-        <span>{{ themeConfig.navbarTitle[2] }}</span>
+        <span mr-1>{{ navbarTitle![0] }}</span>
+        <span inline-block>{{ navbarTitle![1] }}</span>
+        <span>{{ navbarTitle![2] }}</span>
       </template>
     </RouterLink>
   </div>
