@@ -12,6 +12,7 @@ $light: (
   "c-brand": #CA4B49,
   "c-secondary": #fe9600,
   "c-accent": var(--st-c-secondary),
+  "c-bg": var(--va-c-bg),
   "c-bg-nav": #fff,
   "c-link": var(--st-c-brand),
   "c-sidebar-bg-color": var(--va-c-bg-light),
@@ -22,6 +23,7 @@ $light: (
   "c-hover-bg": var(--st-c-secondary),
   "c-icon": #fff,
   "c-scrollbar-color": #49b1f5,
+  "c-rd": 10px,
   /* -------------------------------------
   * SakuraTimeLine
   * ------------------------------------- */
@@ -31,7 +33,8 @@ $light: (
   /* -------------------------------------
   * SakuraArticleCard
   * ------------------------------------- */
-  "c-article-card-rd": 10px,
+  "c-article-card-bg": var(--st-c-bg),
+  "c-article-card-rd": var(--st-c-rd),
   "c-article-card-font-size": 1.17em,
   "c-article-card-font-size-secondary": 12px,
   /* -------------------------------------
@@ -47,6 +50,7 @@ $dark: (
   "c-brand": #CA4B49,
   "c-secondary": #fe9600,
   "c-accent": var(--st-c-secondary),
+  "c-bg": var(--va-c-bg),
   "c-bg-nav": var(--va-c-bg-alt),
   "c-link": var(--st-c-brand),
   "c-text": #f0f8ff,
@@ -56,6 +60,7 @@ $dark: (
   "c-hover-bg": var(--st-c-secondary),
   "c-icon": #fff,
   "c-scrollbar-color": #49b1f5,
+  "c-rd": 10px,
   /* -------------------------------------
   * SakuraTimeLine
   * ------------------------------------- */
@@ -65,7 +70,8 @@ $dark: (
   /* -------------------------------------
   * SakuraArticleCard
   * ------------------------------------- */
-  "c-article-card-rd": 10px,
+  "c-article-card-bg": var(--st-c-bg),
+  "c-article-card-rd": var(--st-c-rd),
   "c-article-card-font-size": 1.17em,
   "c-article-card-font-size-secondary": 12px,
   /* -------------------------------------
@@ -73,7 +79,7 @@ $dark: (
   * ------------------------------------- */
   "c-navbar-text": var(--st-c-text),
   "c-navbar-hover-color": var(--va-c-bg-alt),
-  "c-navbar-hover-bg-color": orange,
+  "c-navbar-hover-bg-color": var(--st-c-secondary),
   ) !default;
 $dark: map.merge((), $dark);
 
