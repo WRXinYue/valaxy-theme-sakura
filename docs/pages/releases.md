@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1] - 2024-03-13
+
+### Added
+
+- 网站背景设置为图片时，对文章卡片和文章页面进行样式优化
+
 ## [0.3.0] - 2024-03-12
 
 ### Added
@@ -25,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 添加图片特效封装组件
 - 调整了部分样式、全局CSS变量以及图标添加
 - 调整了侧边栏配置，防止潜在问题
+- 调整导航栏标题配置方式
 
 ## [0.2.2] - 2024-03-05
 
