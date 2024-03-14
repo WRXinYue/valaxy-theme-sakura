@@ -1,11 +1,13 @@
 ---
-title: pagination
-title_zh-CN: 分页
+title: Pagination
+title_zh-CN: Pagination 分页
 toc: true
 categories:
-  - config
+  - components
 codeHeightLimit: 300
 ---
+
+## Pagination 分页
 
 ```ts
 export interface ThemeConfig {

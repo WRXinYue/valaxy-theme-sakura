@@ -4,7 +4,6 @@ title_zh-CN: Sidebar 侧边栏
 toc: true
 categories:
   - components
-codeHeightLimit: 300
 ---
 
 ## Sidebar 侧边栏
@@ -20,6 +19,39 @@ codeHeightLimit: 300
 ```ts
 export interface ThemeConfig {
   sidebar: NavItem[] | SidebarMulti
+}
+```
+
+``` ts
+export namespace SakuraTheme {
+  export interface NavItem {
+    text?: string
+    locale?: string | number
+    link: string
+    icon?: string
+    isExternal?: boolean
+    submenu?: NavItem[]
+  }
+  export type SidebarMulti = (string | SidebarItem)[]
+  export interface SidebarItem {
+    text?: string
+    link?: string
+    items?: SidebarItem[]
+    collapsed?: boolean
+    base?: string
+    docFooterText?: string
+    rel?: string
+    target?: string
+  }
+}
+```
+
+::: warning
+以下配置可能较为复杂，初学者请略过下面配置
+:::
+
+```ts
+export interface ThemeConfig {
   sidebarPCOptions: {
     enable: string | string[]
     pushMode: string | string[]
@@ -33,27 +65,9 @@ export interface ThemeConfig {
 }
 ```
 
-``` ts
-export namespace SakuraTheme {
-  export interface SidebarMulti {
-    [path: string]: SidebarItem[] | { items: SidebarItem[], base: string }
-  }
-  export interface NavItem {
-    text?: string
-    locale?: string | number
-    link: string
-    icon?: string
-    isExternal?: boolean
-    submenu?: NavItem[]
-  }
-}
-```
-
 | 名称 | 默认值 | 描述 |
 | ---- | ---- | ---- |
-| sidebar |  | 定义网站侧边栏项目。`NavItem`对象的数组。 |
 | sidebarPCOptions |  | 配置PC端的侧边栏选项 |
-| sidebarMobileOptions |  | 配置移动端的侧边栏选项 |
 | sidebarMobileOptions |  | 配置移动端的侧边栏选项 |
 | enable |  | 是否显示 |
 | pushMode |  | "推动"或"挤压"主内容区域 |

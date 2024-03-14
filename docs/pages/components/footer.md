@@ -6,6 +6,8 @@ categories:
   - components
 ---
 
+## Footer 页脚
+
 ```ts
 export interface ThemeConfig {
   footer: Partial<{

@@ -14,7 +14,7 @@ hero:
   actions:
     - theme: brand
       text: hero.actions.get-started
-      link: /guide/getting-started
+      link: /guide/installation
     - theme: alt
       text: hero.actions.view-github
       link: https://github.com/WRXinYue/valaxy-theme-sakura

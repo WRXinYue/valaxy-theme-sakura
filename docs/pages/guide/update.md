@@ -1,11 +1,13 @@
 ---
-title: 更新主题
-title_zh-CN: 更新主题
+title: Update
+title_zh-CN: 更新
 categories:
   - getting-started
 end: true
 top: 100
 ---
+
+## 更新
 
 由于主题更新比较频繁，想要获得更好的体验记得随时更新
 

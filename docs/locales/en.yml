@@ -41,6 +41,7 @@ category:
   addon: Addon
   dev: Dev
   components: Components
+  releases: releases
 
 banner:
   next-generation: Next Generation

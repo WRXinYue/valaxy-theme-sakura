@@ -57,6 +57,7 @@ export default defineValaxyConfig<ThemeConfig>({
       'config',
       'theme',
       'components',
+      'releases',
     ],
 
     footer: {
