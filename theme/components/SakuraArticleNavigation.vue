@@ -21,7 +21,7 @@ const navigationMerge = computed(() => themeConfig.value.article?.navigationMerg
 <template>
   <div class="w-full" :class="navigationMerge && 'flex'">
     <SakuraImageCard
-      v-if="nextPost && nextPost.path" :src="nextPost.cover" :to="prevPost.path" class="h-50"
+      v-if="nextPost && nextPost.path" :src="nextPost.cover" :to="nextPost.path" class="h-50"
       :class="navigationMerge ? 'w-1/2 rounded-l-$st-c-rd' : 'rounded-$st-c-rd mt-10'"
       :overlay="true" :overlay-opacity="0" :overlay-opacity-initial="0.5"
     >
