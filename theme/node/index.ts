@@ -93,11 +93,13 @@ export function generateSafelist(themeConfig: ThemeConfig) {
   footerIcon && safelist.push(footerIcon)
 
   themeConfig.navbar?.forEach((navItem) => {
-    navItem?.icon && safelist.push(navItem.icon)
+    if (navItem.icon)
+      safelist.push(navItem.icon)
   })
 
-  themeConfig.sidebar?.forEach((sidebarItem: { icon: string }) => {
-    sidebarItem?.icon && safelist.push(sidebarItem.icon)
+  themeConfig.sidebar?.forEach((sidebarItem) => {
+    if (typeof sidebarItem !== 'string' && sidebarItem.icon)
+      safelist.push(sidebarItem.icon)
   })
 
   return safelist

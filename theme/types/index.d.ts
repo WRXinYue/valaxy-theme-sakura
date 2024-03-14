@@ -154,6 +154,8 @@ export interface SidebarItem {
    */
   text?: string
 
+  icon?: string
+
   /**
    * The link of the item.
    */
