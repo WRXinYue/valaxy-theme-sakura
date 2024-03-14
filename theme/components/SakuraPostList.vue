@@ -67,3 +67,9 @@ onMounted(() => {
     </template>
   </div>
 </template>
+
+<style lang="scss">
+.article-card {
+  background: var(--st-c-article-card-bg);
+}
+</style>

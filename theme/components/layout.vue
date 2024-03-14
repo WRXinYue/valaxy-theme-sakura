@@ -77,7 +77,7 @@ onMounted(() => {
       <SakuraToTop class="<md:hidden" />
     </template>
 
-    <SakuraFooter>
+    <SakuraFooter :class="sidebarPushModeClass">
       <slot name="footer" />
     </SakuraFooter>
   </div>
