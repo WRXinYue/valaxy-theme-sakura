@@ -8,8 +8,7 @@ const props = defineProps<{
 }>()
 
 const category = computed(() => {
-  const c = props.categories.children.get(props.item)
-  return c
+  return props.categories.children.get(props.item)
 })
 </script>
 

@@ -37,7 +37,6 @@ function getTitle(post: Post | any) {
     <button
       tabindex="0" role="button" aria-label="toggle section"
       class="caret folder-action inline-flex cursor-pointer"
-      text-base
       @click="collapsable = !collapsable"
     >
       <div v-if="collapsable" i-ri-folder-add-line />
@@ -45,7 +44,7 @@ function getTitle(post: Post | any) {
     </button>
   </li>
 
-  <ul v-if="!collapsable">
+  <ul v-show="!collapsable">
     <li v-for="categoryItem, i in category.children.values()" :key="i" class="post-list-item">
       <template v-if="!isCategoryList(categoryItem)">
         <RouterLink v-if="categoryItem.title" :to="categoryItem.path || ''" class="inline-flex items-center" active-class="active">
