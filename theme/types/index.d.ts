@@ -88,6 +88,13 @@ export interface ThemeConfig {
    */
   layout: Layout
 
+  /**
+   * Article
+   */
+  article?: {
+    navigationMerge?: boolean
+  }
+
   // Pagination configuration
   pagination?: {
     /**

@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- 添加新的文章Navigation组件并替换默认组件
+
 ## [0.3.2] - 2024-03-14
 
 ### Added
