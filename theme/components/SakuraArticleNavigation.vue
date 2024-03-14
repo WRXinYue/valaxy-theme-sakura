@@ -22,7 +22,7 @@ const navigationMerge = computed(() => themeConfig.value.article?.navigationMerg
   <div class="w-full" :class="navigationMerge && 'flex'">
     <SakuraImageCard
       v-if="nextPost && nextPost.path" :src="nextPost.cover" :to="prevPost.path" class="h-50"
-      :class="navigationMerge ? 'w-1/2' : 'rounded-$st-c-rd mt-10'"
+      :class="navigationMerge ? 'w-1/2 rounded-l-$st-c-rd' : 'rounded-$st-c-rd mt-10'"
       :overlay="true" :overlay-opacity="0" :overlay-opacity-initial="0.5"
     >
       <div class="flex flex-col justify-center h-full w-full mx-10">
@@ -37,8 +37,8 @@ const navigationMerge = computed(() => themeConfig.value.article?.navigationMerg
       </div>
     </SakuraImageCard>
     <SakuraImageCard
-      v-if="prevPost && prevPost.path" :src="prevPost.cover" :to="prevPost.path" class="h-50 rounded-$st-c-rd"
-      :class="navigationMerge ? 'w-1/2' : 'rounded-$st-c-rd mt-10'"
+      v-if="prevPost && prevPost.path" :src="prevPost.cover" :to="prevPost.path" class="h-50"
+      :class="navigationMerge ? 'w-1/2 rounded-r-$st-c-rd' : 'rounded-$st-c-rd mt-10'"
       :overlay="true" :overlay-opacity="0" :overlay-opacity-initial="0.5"
     >
       <div class="flex flex-col justify-center h-full mx-10 justify-end">

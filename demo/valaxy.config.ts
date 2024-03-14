@@ -59,6 +59,10 @@ export default defineConfig<ThemeConfig>({
       },
     },
 
+    article: {
+      navigationMerge: true,
+    },
+
     navbar: [
       {
         text: '🌈 首页',
