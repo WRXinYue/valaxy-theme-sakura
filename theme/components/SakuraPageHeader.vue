@@ -16,7 +16,7 @@ const themeConfig = useThemeConfig()
 
 <template>
   <header class="xl:pb-10 space-y-1 text-center" :class="themeConfig.animation && 'element-slide-down'">
-    <div class="abanner" :class="cover ? `h-80` : '<xl:max-h-200px h-45'" :style="`background-image: url(${cover}`">
+    <div class="abanner" :class="cover ? `h-80` : '<xl:max-h-200px h-45'" :style="cover && `background-image: url(${cover}`">
       <div class="titlebox font-bold" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
         <h1 class="text-3xl" :class="!cover && 'text-[#404040] entry-title'">
           <div v-if="icon" class="icon" m="r-1" inline-flex align-top :class="icon" />
