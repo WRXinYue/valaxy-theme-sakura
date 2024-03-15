@@ -13,3 +13,9 @@
     </slot>
   </footer>
 </template>
+
+<style lang="scss">
+.article-footer {
+  border-style: none;
+}
+</style>

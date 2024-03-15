@@ -18,7 +18,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- 支持了social彩色icon
+
+### Added
+
 - 添加新的文章Navigation组件并替换默认组件
+
+### Fixed
+
+- 修复文章标题页面没有图片会显示undefined问题
 
 ## [0.3.2] - 2024-03-14
 

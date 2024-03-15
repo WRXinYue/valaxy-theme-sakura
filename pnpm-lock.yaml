@@ -39,8 +39,8 @@ importers:
         specifier: workspace:*
         version: link:../models/valaxy-addon-live2d
       valaxy-addon-meting:
-        specifier: ^0.0.5
-        version: 0.0.5
+        specifier: ^0.1.0
+        version: 0.1.0
       valaxy-addon-twikoo:
         specifier: ^0.0.3
         version: 0.0.3(valaxy@0.18.5)
@@ -6461,8 +6461,8 @@ packages:
       - search-insights
     dev: false
 
-  /valaxy-addon-meting@0.0.5:
-    resolution: {integrity: sha512-cLlSTwdDOX5SZ42ByBm14lKK8DzYPfijlhrnLpYA+TjuAjMzwVYye6sKu6itttKKQEYJOzprzkVMWEB1zdmrhA==}
+  /valaxy-addon-meting@0.1.0:
+    resolution: {integrity: sha512-2pw8r3nWMx942BdmxnpKu5p/eHXLplZ6C199ZyurtsY+EycmaP953Veuvf2URW2I6KrvmwUqN/fC5OFzVhbP4w==}
     dev: false
 
   /valaxy-addon-twikoo@0.0.3(valaxy@0.18.5):

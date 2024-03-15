@@ -43,7 +43,7 @@ function prevMedia() {
       <SakuraMottoDisplay :motto="props.motto" />
       <div class="flex justify-between mx-5 mt-4">
         <img class="icon" cursor-pointer rotate-180 src="../assets/next-b.svg" alt="Previous media" @click="prevMedia">
-        <a v-for="s in siteConfig.social" :key="s.name" class="icon" :href="s.link" aria-label="icon" target="_blank">
+        <a v-for="s in siteConfig.social" :key="s.name" :style="{ '--st-c-icon': s.color }" class="icon" :href="s.link" aria-label="icon" target="_blank">
           <div :class="[s.icon]" />
         </a>
         <img class="icon" cursor-pointer src="../assets/next-b.svg" alt="Next media" @click="nextMedia">
