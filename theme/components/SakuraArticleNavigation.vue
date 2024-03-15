@@ -21,9 +21,10 @@ const navigationMerge = computed(() => themeConfig.value.article?.navigationMerg
 <template>
   <div class="w-full" :class="navigationMerge && 'flex'">
     <SakuraImageCard
-      v-if="nextPost && nextPost.path" :src="nextPost.cover" :to="nextPost.path" class="h-50"
-      :class="navigationMerge ? 'w-1/2 rounded-l-$st-c-rd' : 'rounded-$st-c-rd mt-10'"
-      :overlay="true" :overlay-opacity="0" :overlay-opacity-initial="0.5"
+      v-if="nextPost?.path" :src="nextPost.cover" :to="nextPost.path" class="h-50 w-full" :class="{
+        'w-1/2 rounded-l-$st-c-rd': prevPost?.path && navigationMerge,
+        'rounded-$st-c-rd': (navigationMerge && !prevPost?.path) || !navigationMerge,
+      }" :overlay="true" :overlay-opacity="0" :overlay-opacity-initial="0.5"
     >
       <div class="flex flex-col justify-center h-full w-full mx-10">
         <h2 class="text-xs tracking-wide uppercase text-$st-c-article-navigation-text">
@@ -37,9 +38,11 @@ const navigationMerge = computed(() => themeConfig.value.article?.navigationMerg
       </div>
     </SakuraImageCard>
     <SakuraImageCard
-      v-if="prevPost && prevPost.path" :src="prevPost.cover" :to="prevPost.path" class="h-50"
-      :class="navigationMerge ? 'w-1/2 rounded-r-$st-c-rd' : 'rounded-$st-c-rd mt-10'"
-      :overlay="true" :overlay-opacity="0" :overlay-opacity-initial="0.5"
+      v-if="prevPost?.path" :src="prevPost.cover" :to="prevPost.path" class="h-50 w-full" :class="{
+        'mt-10': !navigationMerge,
+        'w-1/2 rounded-r-$st-c-rd': nextPost?.path && navigationMerge,
+        'rounded-$st-c-rd': (navigationMerge && !nextPost?.path) || !navigationMerge,
+      }" :overlay="true" :overlay-opacity="0" :overlay-opacity-initial="0.5"
     >
       <div class="flex flex-col justify-center h-full mx-10 justify-end">
         <h2 class="text-xs tracking-wide uppercase text-$st-c-article-navigation-text flex justify-end">
