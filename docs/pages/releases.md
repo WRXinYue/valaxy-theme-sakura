@@ -18,7 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- 支持了social彩色icon
+- 支持 social 彩色图标
+- 添加了文章目录（ArticleToc）支持
+- 添加进入页面时执行的锚点定位功能
+- 新增多种 categories 和 tags 的布局样式
 
 ### Added
 
