@@ -18,6 +18,9 @@ watch(currentIndex, (newIndex) => {
 })
 
 const currentWallpaperUrl = computed(() => {
+  if (typeof props.banner?.urls === 'string')
+    return props.banner?.urls
+
   return props.banner?.urls[currentIndex.value!] || ''
 })
 

@@ -1,6 +1,5 @@
 export namespace SakuraTheme {
   export type Config = ThemeConfig
-  export type ThemeUserConfig = Partial<ThemeConfig>
 }
 
 /**
@@ -211,3 +210,5 @@ export interface Layout {
   nav?: 'left-top' | 'top-left'
   sidebar: 'overview' | 'dynamic'
 }
+
+export type ThemeUserConfig = Partial<ThemeConfig>
