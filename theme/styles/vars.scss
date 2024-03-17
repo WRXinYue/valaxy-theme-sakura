@@ -3,7 +3,13 @@
 // common
 $common: (
   "c-navbar-height": 60px,
-  "c-footer-height": 80px
+  "c-footer-height": 80px,
+  "c-rd": 10px,
+  /* -------------------------------------
+  * SakuraAside
+  * ------------------------------------- */
+  "c-aside-translate-x": 35px,
+  "c-aside-width": 15rem,
 ) !default;
 $common: map.merge((), $common);
 
@@ -17,13 +23,13 @@ $light: (
   "c-link": var(--st-c-brand),
   "c-sidebar-bg-color": var(--va-c-bg-light),
   "c-text": #504e4e,
+  "c-text-brand": var(--st-c-brand),
   "c-text-secondary": #888888,
   "c-border": #d0d7de,
   "c-hover-border": #f1c484,
   "c-hover-bg": var(--st-c-secondary),
   "c-icon": #fff,
   "c-scrollbar-color": #49b1f5,
-  "c-rd": 10px,
   /* -------------------------------------
   * SakuraTimeLine
   * ------------------------------------- */
@@ -58,13 +64,13 @@ $dark: (
   "c-bg-nav": var(--va-c-bg-alt),
   "c-link": var(--st-c-brand),
   "c-text": #f0f8ff,
+  "c-text-brand": var(--st-c-brand),
   "c-text-secondary": #ffffff,
   "c-border": #d0d7de,
   "c-hover-border": #f1c484,
   "c-hover-bg": var(--st-c-secondary),
   "c-icon": #fff,
   "c-scrollbar-color": #49b1f5,
-  "c-rd": 10px,
   /* -------------------------------------
   * SakuraTimeLine
   * ------------------------------------- */

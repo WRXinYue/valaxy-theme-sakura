@@ -95,6 +95,8 @@ export interface ThemeConfig {
     navigationMerge?: boolean
   }
 
+  outlineTitle?: string
+
   // Pagination configuration
   pagination?: {
     /**

@@ -6,10 +6,12 @@ export function toScrollPosition(router: Router, sakura: any) {
   router.afterEach((to, from) => {
     const savedPosition = sakura.getScrollPosition(to.path)
 
-    if (to.fullPath !== from.fullPath) {
-      setTimeout(() => {
-        document.documentElement.scrollTop = savedPosition
-      }, 0)
+    if (to.fullPath !== from.fullPath && !to.hash) {
+      nextTick(() => {
+        setTimeout(() => {
+          document.documentElement.scrollTop = savedPosition
+        }, 0)
+      })
     }
   })
 

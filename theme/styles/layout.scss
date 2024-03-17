@@ -17,10 +17,3 @@ a {
 .main-content-transition {
   transition: padding-left var(--va-transition-duration);
 }
-
-/* -------------------------------------
-* Article
-* ------------------------------------- */
-.article-width {
-  @apply mx-0 md:mx-15 lg:mx-40 xl:mx-60 2xl:mx-120
-}

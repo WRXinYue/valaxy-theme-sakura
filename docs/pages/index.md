@@ -3,6 +3,7 @@ layout: home
 
 title: Valaxy Theme Sakura
 titleTemplate: '%s - Next Generation Static Blog Framework'
+aside: false
 
 hero:
   name: Valaxy Theme Sakura
