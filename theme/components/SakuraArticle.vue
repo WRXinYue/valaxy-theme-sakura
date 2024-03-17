@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { useFrontmatter } from 'valaxy'
+import { useElementSize } from '@vueuse/core'
 
 const frontmatter = useFrontmatter()
 
 const articleContentElement = ref<HTMLElement | null>(null)
-const asideHeight = computed(() => articleContentElement.value?.clientHeight)
+const { height } = useElementSize(articleContentElement)
 </script>
 
 <template>
@@ -28,7 +29,7 @@ const asideHeight = computed(() => articleContentElement.value?.clientHeight)
       </div>
 
       <slot name="aside">
-        <SakuraAside :style="{ height: `${asideHeight}px` }">
+        <SakuraAside :style="{ height: `${height}px` }">
           <slot name="aside-custom" />
         </SakuraAside>
       </slot>
