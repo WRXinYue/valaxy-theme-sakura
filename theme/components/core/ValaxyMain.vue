@@ -69,10 +69,10 @@ nextTick(() => {
     <slot name="main-header" />
     <slot name="main-header-after" />
 
-    <div class="content left-0 right-0 mx-auto w-full" flex="~">
+    <div class="content" flex="~">
       <slot name="main-content">
         <Transition appear>
-          <ValaxyMd class="markdown-body mx-auto w-full prose max-w-none md:min-w-800px" :frontmatter="frontmatter">
+          <ValaxyMd class="markdown-bod w-full prose max-w-none mx-auto md:min-w-400px lg:min-w-600px 2xl:min-w-800px" :frontmatter="frontmatter">
             <slot name="main-content-md" />
             <slot />
             <slot name="main-content-after" />

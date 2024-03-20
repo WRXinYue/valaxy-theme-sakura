@@ -1,5 +1,5 @@
 <template>
-  <div class="<md:w-$st-c-aside-width <md:hidden">
+  <div class="<md:hidden ml-32px">
     <SakuraAsideCustom />
   </div>
 </template>
