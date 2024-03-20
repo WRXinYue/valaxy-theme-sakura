@@ -1,5 +1,5 @@
 <template>
   <Layout class="relative">
-    <CategoriesSakura />
+    <CategoriesThemeSakura />
   </Layout>
 </template>

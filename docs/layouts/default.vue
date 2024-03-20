@@ -4,7 +4,7 @@
       <Navbar />
     </template>
 
-    <div mx-20>
+    <div mx-16px md:mx-20>
       <RouterView />
     </div>
   </Layout>

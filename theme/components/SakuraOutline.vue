@@ -14,7 +14,7 @@ const { headers, handleClick } = useOutline()
 </script>
 
 <template>
-  <div v-show="headers.length" ref="container" class="w-$st-c-aside-width">
+  <div v-show="headers.length" ref="container">
     <div class="content">
       <div class="outline-title">
         {{ themeConfig.outlineTitle || 'On this page' }}

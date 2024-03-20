@@ -65,39 +65,36 @@ nextTick(() => {
 </script>
 
 <template>
-  <div class="content left-0 right-0 mx-auto w-full" flex="~">
-    <div flex-auto>
-      <slot name="main">
-        <slot name="main-header" />
-        <slot name="main-header-after" />
+  <slot name="main">
+    <slot name="main-header" />
+    <slot name="main-header-after" />
 
-        <slot name="main-content">
-          <Transition appear>
-            <ValaxyMd class="markdown-body mx-auto w-full prose max-w-none" :frontmatter="frontmatter">
-              <slot name="main-content-md" />
-              <slot />
-            </ValaxyMd>
-          </Transition>
-          <slot name="main-content-after" />
-        </slot>
+    <div class="content left-0 right-0 mx-auto w-full" flex="~">
+      <slot name="main-content">
+        <Transition appear>
+          <ValaxyMd class="markdown-body mx-auto w-full prose max-w-none md:min-w-800px" :frontmatter="frontmatter">
+            <slot name="main-content-md" />
+            <slot />
+            <slot name="main-content-after" />
+          </ValaxyMd>
+        </Transition>
+      </slot>
 
-        <slot name="main-nav-before" />
-
-        <slot name="main-nav" />
-
-        <slot name="main-nav-after" />
-
-        <slot v-if="siteConfig.comment.enable && frontmatter.comment !== false" name="comment">
-          <SakuraComment :class="frontmatter.nav === false ? 'mt-4' : 0" />
-        </slot>
-
-        <slot name="footer" />
+      <slot name="aside">
+        <SakuraAside />
       </slot>
     </div>
-    <slot name="aside">
-      <SakuraAside>
-        <slot name="aside-custom" />
-      </SakuraAside>
+
+    <slot name="main-nav-before" />
+
+    <slot name="main-nav" />
+
+    <slot name="main-nav-after" />
+
+    <slot v-if="siteConfig.comment.enable && frontmatter.comment !== false" name="comment">
+      <SakuraComment :class="frontmatter.nav === false ? 'mt-4' : 0" />
     </slot>
-  </div>
+
+    <slot name="footer" />
+  </slot>
 </template>

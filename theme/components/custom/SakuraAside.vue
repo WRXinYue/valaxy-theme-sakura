@@ -1,4 +1,0 @@
-<template>
-  <slot />
-  <!-- <SakuraToc /> -->
-</template>

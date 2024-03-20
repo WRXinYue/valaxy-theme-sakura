@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useScriptTag } from '@vueuse/core'
+import { useSiteConfig } from 'valaxy'
 import { useThemeConfig } from '../composables'
 
 defineProps<{
@@ -11,7 +13,10 @@ defineProps<{
   date?: string | number | Date
 }>()
 
+useScriptTag('//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
+
 const themeConfig = useThemeConfig()
+const siteConfig = useSiteConfig()
 </script>
 
 <template>
@@ -24,7 +29,10 @@ const themeConfig = useThemeConfig()
           <span v-if="subTitle">· {{ subTitle }}</span>
         </h1>
         <div v-if="date" class="info text-base inline-flex" :class="!cover && 'text-[#888888]'">
-          {{ author }} · 更新于 <SakuraDate :date="date" />
+          {{ siteConfig.author.name }} · 更新于 <SakuraDate :date="date" />
+          <span id="busuanzi_container_page_pv">
+            <span id="busuanzi_value_page_pv" />次阅读
+          </span>
           <!-- {{ author }} · 更新于 <SakuraDate :date="date" /> · {{ view }} 次阅读 -->
         </div>
       </div>

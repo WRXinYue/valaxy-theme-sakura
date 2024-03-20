@@ -33,7 +33,7 @@ onMounted(() => {
     </slot>
 
     <slot name="side-bar">
-      <SakuraSidebar :show-hamburger="true" :class="!isSidebarShowOnPC && 'md:hidden'" />
+      <SakuraSidebar :class="!isSidebarShowOnPC && 'md:hidden'" />
     </slot>
 
     <main class="main-content-transition" :class="themeConfig.layout.nav === 'top-left' && sidebarPushModeClass">
@@ -73,7 +73,7 @@ onMounted(() => {
       </slot>
     </main>
 
-    <SakuraFooter :class="sidebarPushModeClass">
+    <SakuraFooter>
       <slot name="footer" />
     </SakuraFooter>
   </div>

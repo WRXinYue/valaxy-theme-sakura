@@ -5,6 +5,6 @@ const isHome = useLayout('home')
 </script>
 
 <template>
-  <SakuraToc v-if="!isHome" class="w-0" />
+  <SakuraToc v-if="!isHome" />
   <SakuraToTop class="<md:hidden" />
 </template>

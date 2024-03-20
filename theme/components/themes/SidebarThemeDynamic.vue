@@ -1,16 +1,22 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { removeItemFromCategory, useCategories, usePageList, useSidebar } from 'valaxy'
-import type { SidebarMulti } from '../types'
+import type { SidebarMulti } from '../../types'
+import { useThemeConfig } from '../../composables'
 
 const props = withDefaults(defineProps<{
   sidebar: SidebarMulti
 }>(), {
 })
 
+const themeConfig = useThemeConfig()
+
 const pages = usePageList()
 
 const cs = useCategories('', pages.value)
+
+const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar)
+
 const categories = computed(() => {
   const cList = cs.value
   // Remove the "Unclassified" category

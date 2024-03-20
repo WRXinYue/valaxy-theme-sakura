@@ -1,5 +1,5 @@
 <template>
   <Layout>
-    <TagsFlaribbit />
+    <TagsThemeFlaribbit />
   </Layout>
 </template>

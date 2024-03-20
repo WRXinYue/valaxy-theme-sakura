@@ -13,13 +13,13 @@ const props = withDefaults(defineProps<{
   sidebar?: NavItem[] | SidebarMulti
 }>(), {
   fixed: true,
+  showHamburger: true,
 })
 
 const app = useAppStore()
 const route = useRoute()
 const themeConfig = useThemeConfig()
 
-const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar)
 const layout = computed(() => props.layout || themeConfig.value.layout as Layout)
 const isShowPCSidebarHamburger = computed(() => {
   if (typeof window === 'undefined')
@@ -43,34 +43,27 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <ValaxyOverlay class="md:hidden z-1" :show="app.isSidebarOpen" @click="app.toggleSidebar()" />
+  <ValaxyOverlay class="md:hidden z-1" :show="app.isSidebarOpen" @click="app.toggleSidebar()" />
 
-    <SakuraHamburger
-      v-if="isShowPCSidebarHamburger"
-      :active="app.isSidebarOpen"
-      class="menu-btn sidebar-toggle sakura-icon-btn leading-4 fixed left-0.8rem top-4 z-1000"
-      inline-flex cursor="pointer"
-      :class="showHamburger ? '' : 'md:hidden'" @click="app.toggleSidebar()"
-    />
+  <SakuraHamburger
+    v-if="isShowPCSidebarHamburger"
+    :active="app.isSidebarOpen"
+    class="menu-btn sidebar-toggle sakura-icon-btn leading-4 fixed left-0.8rem top-4 z-1001"
+    inline-flex cursor="pointer"
+    :class="showHamburger ? '' : 'md:hidden'" @click="app.toggleSidebar()"
+  />
 
-    <aside
-      class="va-card transition sidebar inset-y-0 left-0 overflow-y-auto z-1000"
-      :class="[app.isSidebarOpen && 'open', !showHamburger && 'md:translate-x-0',
-               layout.nav === 'top-left' && 'mt-$st-c-navbar-height',
-               fixed && 'fixed']"
-      text="center" bg="$st-c-sidebar-bg-color contain no-repeat"
-    >
-      <div v-if="!$slots.default" :class="$slots.default && '-mt-4'">
-        <SakuraSidebarLayoutOverview v-if="layout.sidebar === 'overview'" :sidebar />
-        <SakuraSidebarLayoutDynamic v-else-if="layout.sidebar === 'dynamic'" :sidebar />
-      </div>
-
-      <div v-else>
-        <slot />
-      </div>
-    </aside>
-  </div>
+  <aside
+    class="va-card transition sidebar inset-y-0 left-0 overflow-y-auto z-1000"
+    :class="[app.isSidebarOpen && 'open', !showHamburger && 'md:translate-x-0',
+             layout.nav === 'top-left' && 'mt-$st-c-navbar-height',
+             fixed && 'fixed']"
+    text="center" bg="$st-c-sidebar-bg-color contain no-repeat"
+  >
+    <slot>
+      <SakuraSidebarCustom />
+    </slot>
+  </aside>
 </template>
 
 <style lang="scss">

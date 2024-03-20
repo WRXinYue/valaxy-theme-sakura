@@ -1,9 +1,15 @@
 <script lang="ts" setup>
-import type { NavItem } from '../types'
+import { computed } from 'vue'
+import type { NavItem } from '../../types'
+import { useThemeConfig } from '../../composables'
 
-defineProps({
+const props = defineProps({
   sidebar: Array<NavItem>,
 })
+
+const themeConfig = useThemeConfig()
+
+const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar)
 </script>
 
 <template>

@@ -7,27 +7,24 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="translate-x-[var(--st-c-aside-translate-x)] <md:hidden">
-    <aside text="center" class="w-$st-c-aside-width">
-      <div class="aside-container">
-        <h2 v-if="frontmatter.toc !== false" font="serif black">
-          {{ t('sidebar.toc') }}
-        </h2>
-        <SakuraOutline v-if="frontmatter.toc !== false" />
-        <div v-if="$slots.default" class="custom-container">
-          <slot />
-        </div>
+  <aside text="center" class="sakura-aside">
+    <div class="aside-container">
+      <h2 v-if="frontmatter.toc !== false" font="serif black">
+        {{ t('sidebar.toc') }}
+      </h2>
+      <SakuraOutline v-if="frontmatter.toc !== false" />
+      <div v-if="$slots.default" class="custom-container">
+        <slot />
       </div>
-    </aside>
-  </div>
+    </div>
+  </aside>
 </template>
 
-<style lang="scss" scoped>
-aside {
+<style lang="scss">
+.sakura-aside {
   position: sticky;
   top: 120px;
-  // need fixed width
-  // width: var(--st-c-sidebar-width, 300px);
+  width: var(--st-c-aside-width);
   transition: box-shadow var(--va-transition-duration),
   background-color var(--va-transition-duration), opacity 0.25s,
   transform var(--va-transition-duration) cubic-bezier(0.19, 1, 0.22, 1),
