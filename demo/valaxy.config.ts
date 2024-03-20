@@ -18,7 +18,6 @@ export default defineConfig<ThemeConfig>({
 
     favicon: false,
     animation: true,
-    showBackToTop: true,
 
     banner: {
       title: 'Hello, sakura',
