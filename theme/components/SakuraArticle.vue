@@ -1,12 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useFrontmatter } from 'valaxy'
-import { useElementSize } from '@vueuse/core'
 
 const frontmatter = useFrontmatter()
-
-const articleContentElement = ref<HTMLElement | null>(null)
-const { height } = useElementSize(articleContentElement)
 </script>
 
 <template>
@@ -14,26 +9,13 @@ const { height } = useElementSize(articleContentElement)
     <SakuraPageHeader :title="frontmatter.title ?? 'Default Title'" :cover="frontmatter.cover" :author="frontmatter.author" :date="frontmatter.date" />
     <!-- :class="themeConfig.animation && 'element-slide-up'" -->
 
-    <main class="flex justify-center">
-      <div
-        class="divide-y xl:divide-y-0  divide-gray-200 dark:divide-gray-700 pb-16"
-        style="grid-template-rows: auto 1fr"
-      >
-        <StarterAuthor v-if="frontmatter.author" :frontmatter="frontmatter" />
+    <div class="divide-y xl:divide-y-0  divide-gray-200 dark:divide-gray-700 pb-8 max-w-800px mx-auto">
+      <StarterAuthor v-if="frontmatter.author" :frontmatter="frontmatter" />
 
-        <div ref="articleContentElement" class="article-content w-1000px rd-$st-c-rd py-2 divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
-          <slot />
-        </div>
-
-        <sakuraArticleFooter />
+      <div class="article-content rd-$st-c-rd divide-y divide-gray-200 dark:divide-gray-700">
+        <slot />
       </div>
-
-      <slot name="aside">
-        <SakuraAside :style="{ height: `${height}px` }">
-          <slot name="aside-custom" />
-        </SakuraAside>
-      </slot>
-    </main>
+    </div>
   </article>
 </template>
 

@@ -49,13 +49,13 @@ onMounted(() => {
     <SakuraHamburger
       v-if="isShowPCSidebarHamburger"
       :active="app.isSidebarOpen"
-      class="menu-btn sidebar-toggle sakura-icon-btn leading-4 fixed left-0.8rem top-4 z-2000 "
+      class="menu-btn sidebar-toggle sakura-icon-btn leading-4 fixed left-0.8rem top-4 z-1000"
       inline-flex cursor="pointer"
       :class="showHamburger ? '' : 'md:hidden'" @click="app.toggleSidebar()"
     />
 
     <aside
-      class="va-card transition sidebar inset-y-0 left-0 overflow-y-auto z-500"
+      class="va-card transition sidebar inset-y-0 left-0 overflow-y-auto z-1000"
       :class="[app.isSidebarOpen && 'open', !showHamburger && 'md:translate-x-0',
                layout.nav === 'top-left' && 'mt-$st-c-navbar-height',
                fixed && 'fixed']"
@@ -78,7 +78,7 @@ onMounted(() => {
 
 .sidebar {
   width: calc(100vw - 64px);
-  max-width: var(--va-sidebar-width);
+  max-width: var(--st-c-sidebar-width);
   background-image: var(--st-c-sidebar-bg-img);
   background-position: bottom 1rem center;
   transform: translateX(-100%);

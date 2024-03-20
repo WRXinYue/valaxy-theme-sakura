@@ -50,7 +50,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <a href="#" class="lazy to-top <md:hidden" :data-bg="scrollImage" :shadow="isVisible" :style="style" aria-label="to-top" @click="toTop" />
+  <a href="#" class="lazy to-top z-1" :data-bg="scrollImage" :shadow="isVisible" :style="style" aria-label="to-top" @click="toTop" />
 </template>
 
 <style lang="scss" scoped>

@@ -3,21 +3,20 @@ defineProps<{ cover?: string }>()
 </script>
 
 <template>
-  <div class="yun-card flex-center rounded" flex="col" min-h="100px" bg="$va-c-bg-light">
+  <div class="card flex-center rounded" flex="col" min-h="100px" bg="$va-c-bg-light">
     <img
-      v-if="cover"
-      width="640" height="360"
+      v-if="cover" width="640" height="360"
       class="object-cover select-none lazy" h="64 md:sm" w="full"
       :src="cover"
     >
 
-    <div v-if="$slots.header" class="yun-card-header">
+    <div v-if="$slots.header" class="card-header">
       <header>
         <slot name="header" />
       </header>
     </div>
     <slot />
-    <div v-if="$slots.content" class="yun-card-content" w="full">
+    <div v-if="$slots.content" class="card-content" w="full">
       <slot name="content" />
     </div>
   </div>

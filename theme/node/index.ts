@@ -9,7 +9,7 @@ export const defaultThemeConfig: ThemeConfig = {
   // colors: {
   //   primary: '#e67474',
   // },
-  navbarTitle: ['はじまり', 'の', '旅'],
+  navbarTitle: '',
 
   favicon: false,
 
@@ -28,7 +28,6 @@ export const defaultThemeConfig: ThemeConfig = {
     defaultOpen: 'none',
     hamburger: 'all',
   },
-
   sidebarMobileOptions: {
     pushMode: 'home',
     hamburger: 'all',

@@ -4,23 +4,22 @@ import type { PageData, Post } from 'valaxy'
 
 // import { onContentUpdated, useSiteConfig } from 'valaxy'
 // import { useRoute, useRouter } from 'vue-router'
-import { useSiteConfig } from 'valaxy'
+import { scrollTo, useSiteConfig } from 'valaxy'
 import { useRoute } from 'vue-router'
-import { scrollTo } from '../../utils'
 
 defineProps<{
   frontmatter: Post
   data?: PageData
 }>()
-const siteConfig = useSiteConfig()
 
+const siteConfig = useSiteConfig()
 const route = useRoute()
 // const router = useRouter()
 
 nextTick(() => {
   if (route.hash) {
     setTimeout(() => {
-      scrollTo(document.body, route.hash, true)
+      scrollTo(document.body, route.hash)
     }, 0)
   }
 })
@@ -66,38 +65,39 @@ nextTick(() => {
 </script>
 
 <template>
-  <slot name="main">
-    <div class="content">
-      <slot name="main-header" />
-      <slot name="main-header-after" />
+  <div class="content left-0 right-0 mx-auto w-full" flex="~">
+    <div flex-auto>
+      <slot name="main">
+        <slot name="main-header" />
+        <slot name="main-header-after" />
 
-      <slot name="main-content">
-        <div class="markdown-body prose max-w-none pb-8">
-          <ValaxyMd :frontmatter="frontmatter">
-            <slot name="main-content-md" />
-            <slot />
-          </ValaxyMd>
-        </div>
-        <slot name="main-content-after" />
+        <slot name="main-content">
+          <Transition appear>
+            <ValaxyMd class="markdown-body mx-auto w-full prose max-w-none" :frontmatter="frontmatter">
+              <slot name="main-content-md" />
+              <slot />
+            </ValaxyMd>
+          </Transition>
+          <slot name="main-content-after" />
+        </slot>
+
+        <slot name="main-nav-before" />
+
+        <slot name="main-nav" />
+
+        <slot name="main-nav-after" />
+
+        <slot v-if="siteConfig.comment.enable && frontmatter.comment !== false" name="comment">
+          <SakuraComment :class="frontmatter.nav === false ? 'mt-4' : 0" />
+        </slot>
+
+        <slot name="footer" />
       </slot>
     </div>
-
-    <slot name="main-nav-before" />
-
-    <slot name="main-nav" />
-
-    <slot name="main-nav-after" />
-
-    <slot v-if="siteConfig.comment.enable && frontmatter.comment !== false" name="comment">
-      <YunComment :class="frontmatter.nav === false ? 'mt-4' : 0" />
-    </slot>
-
-    <!-- <slot name="aside">
-      <SakuraAside v-if="aside">
+    <slot name="aside">
+      <SakuraAside>
         <slot name="aside-custom" />
       </SakuraAside>
-    </slot> -->
-
-    <slot name="footer" />
-  </slot>
+    </slot>
+  </div>
 </template>

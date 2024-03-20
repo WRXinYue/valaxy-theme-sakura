@@ -5,7 +5,7 @@ const runtimeConfig = useRuntimeConfig()
 </script>
 
 <template>
-  <SakuraCard w="full" p="4" class="comment yun-comment sm:p-6 lg:px-12 xl:px-16">
+  <SakuraCard w="full" class="comment sakura-comment" mt-6>
     <ClientOnly>
       <YunWaline v-if="runtimeConfig.addons['valaxy-addon-waline']" />
       <!-- <YunTwikoo v-if="runtimeConfig.addons['valaxy-addon-twikoo']" /> -->
