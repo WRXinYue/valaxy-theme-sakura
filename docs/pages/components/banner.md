@@ -22,7 +22,7 @@ export interface ThemeConfig {
     enable?: boolean
     title?: string
     motto?: string
-    urls: string[]
+    urls: string[] | string
     style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
     overlayBar?: boolean
   }

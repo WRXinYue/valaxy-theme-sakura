@@ -23,6 +23,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 添加进入页面时执行的锚点定位功能
 - 新增多种 categories 和 tags 的布局样式
 
+### Fixed
+
+- 修复 ThemeUserConfig 导入问题
+- 修复 Banner urls 配置为 string 不生效问题
+
 ### Added
 
 - 添加新的文章Navigation组件并替换默认组件

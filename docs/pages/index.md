@@ -21,7 +21,7 @@ hero:
       link: https://github.com/WRXinYue/valaxy-theme-sakura
 ---
 
-<div md:flex justify-evenly md:mx-20 mx-5 class="h-[calc(100vh-var(--st-c-footer-height)-var(--st-c-navbar-height))]">
+<div md:flex justify-evenly class="h-[calc(100vh-var(--st-c-footer-height)-var(--st-c-navbar-height))] w-full">
   <HomeHero />
   <PreviewDemo />
 </div>

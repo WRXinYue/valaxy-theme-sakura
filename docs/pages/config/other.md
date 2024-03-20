@@ -29,7 +29,7 @@ export interface ThemeConfig {
 }
 ```
 
-### showBackToTop
+### showBackToTop(弃用)
 
 是否显示返回顶部按钮(BackToTop)组件
 
