@@ -1,7 +1,7 @@
 <template>
   <div class="app-container custom-background antialiased">
     <slot name="nav-bar">
-      <SakuraNavbar />
+      <SakuraNavbarCustom />
     </slot>
 
     <slot name="side-bar">

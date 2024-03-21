@@ -68,7 +68,7 @@ function displayTag(tag: string) {
         />
       </template>
       <template #main-content>
-        <div :class="themeConfig.animation && 'element-slide-up'" class="tags-margin-control">
+        <div :class="themeConfig.animation && 'element-slide-up'" class="tags-margin-control w-full">
           <div class="yun-text-light " text="center" p="2">
             {{ t('counter.tags', Array.from(tags).length) }}
           </div>

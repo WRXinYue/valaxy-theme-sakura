@@ -11,11 +11,13 @@ const props = withDefaults(defineProps<{
   sidebar?: NavItem[] | SidebarMulti
   defaultOpen?: boolean
   layoutPl?: string
+  navbarMl?: string
 }>(), {
   fixed: true,
   showHamburger: true,
   defaultOpen: false,
   layoutPl: 'var(--st-c-sidebar-width)',
+  navbarMl: '2rem',
   layout: 'left-top',
 })
 
@@ -33,6 +35,9 @@ watch(() => app.isSidebarOpen, async (isSidebarOpen) => {
 onMounted(() => {
   app.isSidebarOpen = props.defaultOpen
   updateLayoutPadding(app.isSidebarOpen)
+
+  if (props.showHamburger)
+    useCssVar('--navbar-ml').value = props.navbarMl
 })
 
 onUnmounted(() => {

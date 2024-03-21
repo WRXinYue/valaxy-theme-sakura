@@ -6,7 +6,6 @@ import type { NavItem } from '../types/index'
 const props = defineProps({
   favicon: Boolean,
   title: [String, Array],
-  hamburger: Boolean,
   navbar: Array<NavItem>,
 })
 
@@ -41,7 +40,7 @@ function handleScroll() {
 <template>
   <header class="navbar z-5" :class="isHeaderActive ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
     <slot name="nav-brand">
-      <SakuraNavbarBrand :hamburger="hamburger" :favicon="favicon" :navbar-title="title || themeConfig.navbarTitle" />
+      <SakuraNavbarBrand :favicon="favicon" :navbar-title="title || themeConfig.navbarTitle" />
     </slot>
 
     <slot name="nav-link">

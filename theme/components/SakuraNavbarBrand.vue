@@ -12,7 +12,7 @@ const siteConfig = useSiteConfig()
 </script>
 
 <template>
-  <div :class="hamburger && 'ml-8'">
+  <div class="ml-$navbar-ml">
     <template v-if="favicon">
       <img class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
     </template>

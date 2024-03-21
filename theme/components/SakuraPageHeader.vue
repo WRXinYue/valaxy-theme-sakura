@@ -23,17 +23,17 @@ const siteConfig = useSiteConfig()
   <header class="xl:pb-10 space-y-1 text-center" :class="themeConfig.animation && 'element-slide-down'">
     <div class="abanner" :class="cover ? `h-80` : '<xl:max-h-200px h-45'" :style="cover && `background-image: url(${cover}`">
       <div class="titlebox font-bold" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
-        <h1 class="text-3xl" :class="!cover && 'text-[#404040] entry-title'">
+        <h1 class="text-3xl" :class="!cover && 'text-$st-c-text-deep entry-title'">
           <div v-if="icon" class="icon" m="r-1" inline-flex align-top :class="icon" />
           {{ title }}
           <span v-if="subTitle">· {{ subTitle }}</span>
         </h1>
-        <div v-if="date" class="info text-base inline-flex" :class="!cover && 'text-[#888888]'">
-          {{ siteConfig.author.name }} · 更新于 <SakuraDate :date="date" />
+        <div v-if="date" class="info" :class="{ 'text-$st-c-text-secondary': !cover }">
+          {{ siteConfig.author.name }} <span class="mx-1">·</span> 更新于 <SakuraDate :date="date" />
+          <span class="mx-1">·</span>
           <span id="busuanzi_container_page_pv">
             <span id="busuanzi_value_page_pv" />次阅读
           </span>
-          <!-- {{ author }} · 更新于 <SakuraDate :date="date" /> · {{ view }} 次阅读 -->
         </div>
       </div>
     </div>
@@ -76,6 +76,11 @@ const siteConfig = useSiteConfig()
     bottom: 20px;
     color: white;
   }
+}
 
+.info {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  display: inline-flex;
 }
 </style>

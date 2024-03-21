@@ -1,0 +1,3 @@
+<template>
+  <SakuraNavbar />
+</template>

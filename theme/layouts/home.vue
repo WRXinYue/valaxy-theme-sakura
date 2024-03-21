@@ -17,9 +17,11 @@ onBeforeRouteLeave(() => {
   <Layout>
     <div>
       <SakuraBanner :banner="themeConfig.banner" />
-      <slot>
-        <RouterView />
-      </slot>
+      <div class="md:w-800px m-auto min-w-300px">
+        <slot>
+          <RouterView />
+        </slot>
+      </div>
     </div>
   </Layout>
 </template>

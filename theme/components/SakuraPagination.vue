@@ -83,7 +83,7 @@ onUnmounted(() => {
 
 <style lang="scss">
 .load-more-container {
-  color: #757575;
+  color: var(--st-c-text-secondary);
 }
 
 .load-more-button {
