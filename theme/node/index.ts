@@ -22,21 +22,6 @@ export const defaultThemeConfig: ThemeConfig = {
 
   navbar: [],
   sidebar: [],
-  sidebarPCOptions: {
-    enable: 'none',
-    pushMode: 'home',
-    defaultOpen: 'none',
-    hamburger: 'all',
-  },
-  sidebarMobileOptions: {
-    pushMode: 'home',
-    hamburger: 'all',
-  },
-
-  layout: {
-    nav: 'left-top',
-    sidebar: 'overview',
-  },
 
   animation: false,
 

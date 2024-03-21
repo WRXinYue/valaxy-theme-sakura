@@ -65,27 +65,12 @@ export interface ThemeConfig {
    * Sidebar
    */
   sidebar: NavItem[] | SidebarMulti
-  sidebarPCOptions: {
-    enable: string | string[]
-    pushMode: string | string[]
-    defaultOpen: string | string[]
-    hamburger: string | string[]
-  }
-  sidebarMobileOptions: {
-    pushMode: string | string[]
-    hamburger: string | string[]
-  }
 
   /**
    * Navbar
    */
   navbar: NavItem[]
   navbarTitle: string | string[]
-
-  /**
-   * Layout
-   */
-  layout: Layout
 
   /**
    * Article
@@ -202,11 +187,6 @@ export interface NavItem {
   icon?: string
   isExternal?: boolean
   submenu?: NavItem[]
-}
-
-export interface Layout {
-  nav?: 'left-top' | 'top-left'
-  sidebar: 'overview' | 'dynamic'
 }
 
 export type ThemeUserConfig = Partial<ThemeConfig>

@@ -10,7 +10,6 @@ $common: (
   * ------------------------------------- */
   "c-aside-width": var(--va-sidebar-width),
   "c-sidebar-width": var(--va-sidebar-width),
-  "c-layout-pl": var(--st-c-sidebar-width),
 ) !default;
 $common: map.merge((), $common);
 

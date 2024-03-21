@@ -1,42 +1,14 @@
-<script lang="ts" setup>
-import { useAppStore } from 'valaxy'
-import { computed, onMounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
-import { useThemeConfig } from '../../composables'
-import { checkRouteAgainstConditions } from '../../utils'
-
-const route = useRoute()
-const app = useAppStore()
-const themeConfig = useThemeConfig()
-
-const isSidebarPushMode = ref(false)
-const isSidebarShowOnPC = ref(false)
-
-const sidebarPushModeClass = computed(() => {
-  if (!app.isSidebarOpen)
-    return
-  if (isSidebarPushMode.value)
-    return isSidebarShowOnPC.value ? 'pl-$st-c-layout-pl' : '<md:pl-$st-c-layout-pl'
-  return ''
-})
-
-onMounted(() => {
-  isSidebarPushMode.value = checkRouteAgainstConditions(route, themeConfig.value.sidebarPCOptions.pushMode)
-  isSidebarShowOnPC.value = checkRouteAgainstConditions(route, themeConfig.value.sidebarPCOptions.enable)
-})
-</script>
-
 <template>
-  <div class="main-content-transition custom-background antialiased" :class="themeConfig.layout.nav === 'left-top' && sidebarPushModeClass">
+  <div class="app-container custom-background antialiased">
     <slot name="nav-bar">
       <SakuraNavbar />
     </slot>
 
     <slot name="side-bar">
-      <SakuraSidebar :class="!isSidebarShowOnPC && 'md:hidden'" />
+      <SakuraSidebarCustom />
     </slot>
 
-    <main class="main-content-transition" :class="themeConfig.layout.nav === 'top-left' && sidebarPushModeClass">
+    <main class="sakura-main">
       <slot>
         <RouterView v-slot="{ Component }">
           <component :is="Component">
@@ -78,3 +50,15 @@ onMounted(() => {
     </SakuraFooter>
   </div>
 </template>
+
+<style lang="scss">
+.sakura-main {
+  transition: padding-left var(--va-transition-duration);
+  padding-left: var(--st-c-layout-pl)
+}
+
+.app-container {
+  transition: padding-left var(--va-transition-duration);
+  padding-left: var(--app-container-layout-pl)
+}
+</style>
