@@ -1,4 +1,6 @@
-@use './layout' as *;
+@use './layouts/layout.scss' as *;
+@use './layouts/tags.scss' as *;
+@use './layouts/categories.scss' as *;
 
 @use './animation/keyframes.scss' as *;
 @use './animation/elements.scss' as *;

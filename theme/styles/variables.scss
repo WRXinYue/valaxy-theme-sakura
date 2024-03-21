@@ -1,0 +1,19 @@
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1536px,
+);
+
+@mixin responsive-margin($margin-values) {
+  @each $breakpoint, $margin in $margin-values {
+    @if map-has-key($breakpoints, $breakpoint) {
+      @media (min-width: map-get($breakpoints, $breakpoint)) {
+        margin: $margin;
+      }
+    } @else {
+      @warn "Unknown breakpoint: #{$breakpoint}.";
+    }
+  }
+}

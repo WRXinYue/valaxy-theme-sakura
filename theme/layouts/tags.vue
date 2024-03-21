@@ -1,5 +1,5 @@
 <template>
   <Layout>
-    <TagsSakura />
+    <TagsThemeSakura />
   </Layout>
 </template>

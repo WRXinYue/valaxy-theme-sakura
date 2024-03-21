@@ -52,7 +52,7 @@ const title = usePostTitle(frontmatter)
         />
       </template>
       <template #main-content>
-        <div m="x-100" :class="themeConfig.animation && 'element-slide-up'">
+        <div :class="themeConfig.animation && 'element-slide-up'" class="categories-margin-control">
           <div text="center" class="yun-text-light" p="2">
             {{ t('counter.categories', Array.from(categories.children).length) }}
           </div>
@@ -67,7 +67,7 @@ const title = usePostTitle(frontmatter)
       </template>
 
       <template #main-nav-before>
-        <div v-if="curCategory" m="x-100">
+        <div v-if="curCategory" class="categories-margin-control">
           <SakuraPostList w="full" :posts="posts" />
         </div>
       </template>
