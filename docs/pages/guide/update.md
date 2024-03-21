@@ -16,7 +16,7 @@ top: 100
 <a href="https://www.npmjs.com/package/valaxy-theme-sakura" rel="nofollow"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura?color=0078E7" alt="NPM version"></a>
 
 ```bash
-pnpm up valaxy-theme-sakura --latest
+pnpm add valaxy-theme-sakura@latest
 ```
 
 ### 先行版

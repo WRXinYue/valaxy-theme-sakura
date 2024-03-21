@@ -44,7 +44,7 @@ export function checkCurrentRouter(route: RouteLocationNormalizedLoaded, path: s
 
 /**
  * set default img
- * @param e
+ * @param el
  */
 // export function onImgError(e: Event, defaultImg = noneImg) {
 //   const targetEl = e.target as HTMLImageElement
