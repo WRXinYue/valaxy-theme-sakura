@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
 import type { NavItem } from '../types/index'
-import { checkRouteAgainstConditions } from '../utils'
 
 const props = defineProps({
   favicon: Boolean,
@@ -13,7 +11,6 @@ const props = defineProps({
 })
 
 const themeConfig = useThemeConfig()
-const route = useRoute()
 
 const scrolled = ref(false)
 const hoverHeaderActive = ref(false)
@@ -25,16 +22,6 @@ const processedNavItems = computed(() => (props.navbar || themeConfig.value.navb
 
 const isHeaderActive = computed(() => {
   return hoverHeaderActive.value || scrolled.value
-})
-
-const isShowPCSidebarHamburger = computed(() => {
-  if (typeof window === 'undefined')
-    return
-
-  if (window.innerWidth > 768)
-    return checkRouteAgainstConditions(route, themeConfig.value.sidebarPCOptions.hamburger)
-  else
-    return checkRouteAgainstConditions(route, themeConfig.value.sidebarMobileOptions.hamburger)
 })
 
 onMounted(() => {
@@ -54,7 +41,7 @@ function handleScroll() {
 <template>
   <header class="navbar z-5" :class="isHeaderActive ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
     <slot name="nav-brand">
-      <SakuraNavbarBrand :hamburger="hamburger || isShowPCSidebarHamburger" :favicon="favicon" :navbar-title="title || themeConfig.navbarTitle" />
+      <SakuraNavbarBrand :hamburger="hamburger" :favicon="favicon" :navbar-title="title || themeConfig.navbarTitle" />
     </slot>
 
     <slot name="nav-link">

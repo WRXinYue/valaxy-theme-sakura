@@ -27,21 +27,6 @@ export default defineValaxyConfig<ThemeConfig>({
   theme: 'sakura',
   themeConfig: {
     navbarTitle: ['Valaxy Theme', '', 'Sakura'],
-    sidebarPCOptions: {
-      enable: ['-home'],
-      pushMode: ['-home'],
-      defaultOpen: ['-home'],
-      hamburger: 'none',
-    },
-
-    sidebarMobileOptions: {
-      hamburger: '-home',
-    },
-
-    layout: {
-      nav: 'top-left',
-      sidebar: 'dynamic',
-    },
 
     // addons: [
     //   addonAlgolia({
