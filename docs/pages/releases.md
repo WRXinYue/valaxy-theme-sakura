@@ -27,6 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - 修复 ThemeUserConfig 导入问题
 - 修复 Banner urls 配置为 string 不生效问题
+- 修复默认 tags 布局内容不展示问题
+- 修复从其他页面跳转回来文章列表预加载失效问题
 
 ### Added
 

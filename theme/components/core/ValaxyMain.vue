@@ -92,7 +92,7 @@ nextTick(() => {
     <slot name="main-nav-after" />
 
     <slot v-if="siteConfig.comment.enable && frontmatter.comment !== false" name="comment">
-      <SakuraComment :class="frontmatter.nav === false ? 'mt-4' : 0" />
+      <SakuraCommentCustom />
     </slot>
 
     <slot name="footer" />

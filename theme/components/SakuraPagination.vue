@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { useSakuraAppStore } from '../stores/app'
 import { useThemeConfig } from '../composables'
 
@@ -65,7 +65,7 @@ onMounted(() => {
   }
 })
 
-onBeforeUnmount(() => {
+onUnmounted(() => {
   unregisterTargets()
 })
 </script>
