@@ -24,7 +24,6 @@ export interface ThemeConfig {
     motto?: string
     urls: string[]
     style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
-    overlayBar?: boolean
   }
 }
 ```
@@ -48,7 +47,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
         'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
       ],
       style: '',
-      overlayBar: true,
     },
   },
 })
@@ -75,7 +73,6 @@ export interface Banner {
   motto?: string
   urls: string[]
   style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
-  overlayBar?: boolean
 }
 ```
 

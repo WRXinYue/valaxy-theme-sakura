@@ -24,7 +24,6 @@ export interface ThemeConfig {
     motto?: string
     urls: string[] | string
     style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
-    overlayBar?: boolean
   }
 }
 ```
@@ -35,4 +34,3 @@ export interface ThemeConfig {
 | motto  | You got to put the past behind you before you can move on. | 首页标语 (写下愿景也很不错呀) |
 | urls | | 用于网站头部背景壁纸链接支持图片及视频,支持填入多个 |
 | style | 'filter-dim' | 背景图片的过滤样式，可选值为`'filter-dot'`（点状过滤效果）、<br class="<md:hidden" />`'filter-dim'`（昏暗过滤效果）、`'filter-grid'`（网格过滤效果）<br class="<md:hidden" /> 或空字符串（无过滤效果） |
-| overlayBar | false | banner下方的效果，比如默认的水浪效果 |

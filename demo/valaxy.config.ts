@@ -28,7 +28,6 @@ export default defineConfig<ThemeConfig>({
         'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
       ],
       style: '',
-      overlayBar: true,
     },
 
     startDash: [

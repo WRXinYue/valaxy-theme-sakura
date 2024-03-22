@@ -11,7 +11,6 @@ const banner = ref<Banner>({
     'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-wewdy7.jpg',
   ],
   style: 'filter-dot',
-  overlayBar: true,
 })
 </script>
 
@@ -42,10 +41,6 @@ const banner = ref<Banner>({
         <el-option label="filter-grid" value="filter-grid" />
         <el-option label="" value="" />
       </el-select>
-    </el-form-item>
-
-    <el-form-item label="Overlay Bar">
-      <el-switch v-model="banner.overlayBar" />
     </el-form-item>
   </el-form>
 </template>

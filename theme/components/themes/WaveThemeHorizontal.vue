@@ -5,12 +5,12 @@
 
 <style lang="scss" scoped>
 .front-wave {
-  background: url("../assets/wave1.png") repeat-x;
+  background: url("../../assets/wave1.png") repeat-x;
   animation: front-wave-animation 30s infinite linear;
 }
 
 .foreground-wave {
-  background: url("../assets/wave2.png") repeat-x;
+  background: url("../../assets/wave2.png") repeat-x;
   animation: foreground-wave-animation 20s infinite linear;
 }
 

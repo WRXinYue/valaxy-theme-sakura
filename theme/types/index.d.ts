@@ -130,7 +130,6 @@ export interface Banner {
   motto?: string
   urls: string[] | string
   style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
-  overlayBar?: boolean
 }
 
 export type SidebarMulti = (string | SidebarItem)[]
