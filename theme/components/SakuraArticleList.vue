@@ -1,37 +1,29 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import { useSiteConfig, useSiteStore } from 'valaxy'
+import { usePostList, useSiteConfig } from 'valaxy'
 import type { Post } from 'valaxy'
 import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores/app'
-
-// import { usePostList } from 'valaxy'
 
 const props = withDefaults(defineProps<{
   type?: string
   posts?: Post[]
   curPage?: number
-}>(), {
-  curPage: 1,
-})
+}>(), { })
 
-const site = useSiteStore()
 const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
 const sakura = useSakuraAppStore()
 const pageSize = computed(() => themeConfig.value.pagination?.itemsPerPage || siteConfig.value.pageSize)
 
-// const routes = usePostList({ type: props.type || '' })
-// const posts = computed(() => props.posts || routes.value)
-const paginationType = computed(() => themeConfig.value.pagination?.type || 'infinite-scroll')
-const posts = computed(() => (
-  props.posts || site.postList).filter(post => import.meta.env.DEV ? true : !post.hide),
-)
+const routes = usePostList({ type: props.type || '' })
+const posts = computed(() => props.posts || routes.value)
+const curPage = computed(() => props.curPage || sakura.curPage || 1)
 
 const displayedPosts = computed(() =>
   posts.value.slice(
-    (props.curPage - 1) * pageSize.value,
-    props.curPage * pageSize.value * sakura.loadMultiple,
+    (curPage.value - 1) * pageSize.value,
+    curPage.value * pageSize.value * sakura.loadMultiple,
   ),
 )
 
@@ -56,14 +48,6 @@ onMounted(() => {
       <Transition name="fade">
         <SakuraArticleCard v-if="post" :id="`article-card-${index}`" class="article-card" :image-position="index % 2 === 1" :post="post" />
       </Transition>
-    </template>
-
-    <template v-if="paginationType === 'infinite-scroll'">
-      <SakuraPagination :page-size="pageSize" :total="posts.length" />
-    </template>
-
-    <template v-if="paginationType === 'pagination'">
-      <ValaxyPagination :cur-page="curPage" :page-size="pageSize" :total="posts.length" />
     </template>
   </div>
 </template>

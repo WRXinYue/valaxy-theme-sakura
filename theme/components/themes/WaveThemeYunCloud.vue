@@ -1,14 +1,22 @@
+<script setup lang="ts">
+withDefaults(defineProps<{
+  color: string
+}>(), {
+  color: '#ffffff',
+})
+</script>
+
 <template>
   <div class="yun-cloud">
     <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
       <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="#fff" />
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" :fill="color" />
       </defs>
       <g class="parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" />
-        <use xlink:href="#gentle-wave" x="48" y="3" />
-        <use xlink:href="#gentle-wave" x="48" y="5" />
-        <use xlink:href="#gentle-wave" x="48" y="7" />
+        <use xlink:href="#gentle-wave" x="48" y="0" :style="{ fill: color }" />
+        <use xlink:href="#gentle-wave" x="48" y="3" :style="{ fill: color }" />
+        <use xlink:href="#gentle-wave" x="48" y="5" :style="{ fill: color }" />
+        <use xlink:href="#gentle-wave" x="48" y="7" :style="{ fill: color }" />
       </g>
     </svg>
   </div>

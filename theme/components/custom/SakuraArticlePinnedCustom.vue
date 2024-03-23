@@ -1,3 +1,3 @@
 <template>
-  <SakuraCardShowcase />
+  <ArticlePinnedThemeStartDash />
 </template>

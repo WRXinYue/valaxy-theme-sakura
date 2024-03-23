@@ -68,7 +68,7 @@ const title = usePostTitle(frontmatter)
 
       <template #main-nav-before>
         <div v-if="curCategory" class="categories-margin-control">
-          <SakuraArticleList w="full" :posts="posts" />
+          <SakuraArticleListCustom w="full" :posts="posts" />
         </div>
       </template>
     </component>

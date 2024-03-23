@@ -45,9 +45,9 @@
       </slot>
     </main>
 
-    <SakuraFooter>
-      <slot name="footer" />
-    </SakuraFooter>
+    <slot name="footer">
+      <SakuraFooterCustom />
+    </slot>
   </div>
 </template>
 

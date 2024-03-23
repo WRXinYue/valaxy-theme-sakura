@@ -1,7 +1,15 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router'
-import { useThemeConfig } from '../composables'
+import { useThemeConfig } from '../../composables'
 
+defineProps<{
+  articlePinned?: {
+    title?: string
+    desc?: string
+    img?: string
+    link?: string
+  }[]
+}>()
 const router = useRouter()
 const themeConfig = useThemeConfig()
 
@@ -16,7 +24,7 @@ function toPath(path: string) {
 <template>
   <div class="image-row flex">
     <SakuraImageCard
-      v-for="(startDash, i) in themeConfig.startDash" :key="i" :to="startDash.link"
+      v-for="(startDash, i) in articlePinned || themeConfig.articlePinned" :key="i" :to="startDash.link"
       :data-title="startDash.title" :data-desc="startDash.desc" :overlay="true" :src="startDash.img"
       class="image-card" :class="startDash.link ? 'cursor-pointer' : ''" @click="toPath(startDash.link || '')"
     />

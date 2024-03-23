@@ -1,16 +1,18 @@
 <script lang="ts" setup>
-import { onMounted, onUnmounted, ref } from 'vue'
-import { useSakuraAppStore } from '../stores/app'
-import { useThemeConfig } from '../composables'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { usePostList, useSiteConfig } from 'valaxy'
+import { useSakuraAppStore } from '../../stores/app'
+import { useThemeConfig } from '../../composables'
 
-const props = defineProps<{
-  total: number
-  pageSize: number
-}>()
-
+const siteConfig = useSiteConfig()
 const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
-const totalPages = ref(Math.ceil(props.total / props.pageSize))
+const routes = usePostList({ type: '' })
+
+const pageSize = computed(() => themeConfig.value.pagination?.itemsPerPage || siteConfig.value.pageSize)
+const posts = computed(() => routes.value)
+
+const totalPages = ref(Math.ceil(posts.value.length / pageSize.value))
 
 function loadMoreContent() {
   if (sakura.loadMultiple < totalPages.value) {

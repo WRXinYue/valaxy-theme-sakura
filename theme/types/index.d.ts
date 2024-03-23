@@ -17,42 +17,14 @@ export interface ThemeConfig {
   /**
    * footer
    */
-  footer: Partial<{
-    /**
-     * 建站于
-     */
-    since: number
-
-    /**
-     * Icon between year and copyright info.
-     */
-    icon: {
-      /**
-       * icon name, i-xxx
-       */
-      enable?: boolean
-      name?: string
-      img?: string
-      animated?: boolean
-      url: string
-      title: string
-    }
-
-    /**
-     * Powered by valaxy & valaxy-theme-${name}, default is yun
-     */
-    powered: boolean
-
-    /** 备案 ICP */
-    icp: string
-  }>
+  footer: Footer
 
   // ============== Valaxy Theme Sakura Config ==============
 
   // navbar favicon
   favicon: boolean
 
-  banner: SakuraTheme.Banner
+  banner: Banner
 
   articlePinned?: {
     title?: string
@@ -83,13 +55,6 @@ export interface ThemeConfig {
 
   // Pagination configuration
   pagination?: {
-    /**
-     * Defines the pagination type.
-     * 'infinite-scroll' for automatic loading more content on scroll,
-     * 'pagination' for traditional page number navigation.
-     */
-    type?: 'infinite-scroll' | 'pagination'
-
     /**
      * Animations are valid only for the 'infinite-scroll' type
      */
@@ -125,7 +90,6 @@ export interface ThemeConfig {
 }
 
 export interface Banner {
-  enable?: boolean
   title?: string
   motto?: string
   urls: string[] | string
@@ -189,3 +153,33 @@ export interface NavItem {
 }
 
 export type ThemeUserConfig = Partial<ThemeConfig>
+
+export interface Footer {
+  /**
+   * 建站于
+   */
+  since?: number
+
+  /**
+   * Icon between year and copyright info.
+   */
+  icon?: {
+    /**
+     * icon name, i-xxx
+     */
+    enable?: boolean
+    name?: string
+    img?: string
+    animated?: boolean
+    url?: string
+    title?: string
+  }
+
+  /**
+   * Powered by valaxy & valaxy-theme-${name}, default is yun
+   */
+  powered?: boolean
+
+  /** 备案 ICP */
+  icp?: string
+}

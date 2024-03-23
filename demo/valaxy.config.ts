@@ -30,7 +30,7 @@ export default defineConfig<ThemeConfig>({
       style: '',
     },
 
-    startDash: [
+    articlePinned: [
       {
         title: 'Valaxy Theme Sakura',
         desc: '本站使用的 valaxy sakura 主题',
