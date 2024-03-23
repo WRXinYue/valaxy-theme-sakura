@@ -46,6 +46,10 @@ export default defineValaxyConfig<ThemeConfig>({
       'releases',
     ],
 
+    pagination: {
+      itemsPerPage: 3,
+    },
+
     footer: {
       since: 2024,
       icp: '<a href="https://icp.gov.moe/?keyword=20240113" target="_blank">萌ICP备20240113号</a>',

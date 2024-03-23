@@ -6,9 +6,27 @@ categories:
   - components
 ---
 
-## Banner 横幅
+## Banner 横幅 (待重构)
 
-Banner 横幅当中可以配置博客首页大屏壁纸或者标题之类的，您也可以什么都不配置，或者添加更多的样式风格，完全取决于自己。这个配置是您的第一个需要配置的地方，
+Banner 横幅当中可以配置博客首页大屏壁纸或者标题之类的
+
+### 组件布局
+
+<BannerLayout />
+
+### 自定义插槽
+
+`<SakuraBannerCustom />`
+
+```vue
+<template>
+  <SakuraBanner>
+    <template #background-display />
+    <template #banner-overlay-bar />
+    <template #info-overlay />
+  </SakuraBanner>
+</template>
+```
 
 ### 预览
 
@@ -19,7 +37,6 @@ Banner 横幅当中可以配置博客首页大屏壁纸或者标题之类的，�
 ```ts
 export interface ThemeConfig {
   banner: {
-    enable?: boolean
     title?: string
     motto?: string
     urls: string[] | string

@@ -1,22 +1,13 @@
 <template>
   <div class="container mx-auto">
-    <AppLink class="item header hvr-grow btn" draggable="true" to="/components/navbar">
-      Navbar 导航栏
+    <AppLink class="item background-display hvr-grow btn" draggable="true" to="/components/background-display">
+      BackgroundDisplay 背景显示
     </AppLink>
-    <AppLink class="item sidebar hvr-grow btn" draggable="true" to="/components/sidebar">
-      Sidebar 侧边栏
+    <AppLink class="item banner-overlay-bar hvr-grow btn" draggable="true" to="/components/banner-overlay-bar">
+      BannerOverlayBar 横幅覆盖条
     </AppLink>
-    <AppLink class="item banner hvr-grow btn" draggable="true" to="/components/banner">
-      Banner 横幅
-    </AppLink>
-    <AppLink class="item article-pinned hvr-grow btn" draggable="true" to="/components/article-pinned">
-      ArticlePinned 置顶文章
-    </AppLink>
-    <AppLink class="item article-list hvr-grow btn" draggable="true" to="/components/article-list">
-      ArticleList 文章列表
-    </AppLink>
-    <AppLink class="item footer hvr-grow btn" draggable="true" to="/components/footer">
-      footer 页脚
+    <AppLink class="item info-overlay hvr-grow btn" draggable="true" to="/components/info-overlay">
+      InfoOverlay 信息覆盖层
     </AppLink>
   </div>
 </template>
@@ -28,9 +19,7 @@
   height: 600px;
   grid-gap: 1rem;
   grid-template-columns:
-    [main-start sidebar-start] 120px
-    [sidebar-end content-start] 1fr
-    [column3-start] 1fr
+    [content-start] 1fr
     [content-end main-end];
   grid-template-rows:
     [row1-start] 1fr
@@ -42,34 +31,19 @@
 
 }
 
-.header {
-  grid-column: main-start / main-end;
-  grid-row: row1-start / row2-start;
-}
-
-.sidebar {
-  grid-column: sidebar-start / sidebar-end;
-  grid-row: row2-start / row5-start;
-}
-
-.banner {
+.background-display {
   grid-column: content-start / content-end;
   grid-row: row2-start / row3-start;
 }
 
-.article-pinned {
+.banner-overlay-bar {
   grid-column: content-start / content-end;
   grid-row: row3-start / row4-start;
 }
 
-.article-list {
+.info-overlay {
   grid-column: content-start / content-end;
   grid-row: row4-start / row5-start;
-}
-
-.footer {
-  grid-column: main-start / main-end;
-  grid-row: row5-start / row5-end;
 }
 
 /* OTHER STYLES */

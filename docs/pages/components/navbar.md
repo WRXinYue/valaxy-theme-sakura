@@ -10,6 +10,16 @@ categories:
 
 导航栏允许您配置页面间的跳转，例如到归档、关于页面，同时也可以设置网站图标和网站标题等元素
 
+### 自定义插槽
+
+`<SakuraNavbarCustom />`
+
+```vue
+<template>
+  <SakuraNavbar />
+</template>
+```
+
 ### 预览
 
 <SakuraNavbarPG />

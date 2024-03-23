@@ -12,6 +12,8 @@ categories:
 
 ### 自定义插槽
 
+`<SakuraSidebarCustom/>`
+
 ```vue
 <template>
   <SakuraSidebar>
@@ -22,9 +24,10 @@ categories:
 
 ### 插槽组件
 
-[SidebarThemeDynamic](/sidebar-dynamic)
+侧边栏作为一个全局组件，直接在本文档中展示会干扰到文档的侧边栏布局，因此请通过以下链接查看预览
 
-[SidebarThemeOverview](/sidebar-overview)
+* [SidebarThemeDynamic](/sidebar-dynamic)
+* [SidebarThemeOverview](/sidebar-overview)
 
 ### 配置选项
 
@@ -64,6 +67,8 @@ export interface SidebarItem {
   target?: string // 指定链接打开的位置，如 `_blank` 以在新标签页中打开链接。在此配置中可能用于控制如何打开侧边栏项的链接
 }
 ```
+
+### TODO: 待完善
 
 | 名称 | 默认值 | 描述 |
 | ---- | ---- | ---- |

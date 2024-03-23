@@ -3,7 +3,7 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 const props = withDefaults(defineProps<{
   config: object
-  height: string
+  height?: string
 }>(), {
   height: '500px',
 })

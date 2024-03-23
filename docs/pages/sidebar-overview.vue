@@ -1,38 +1,39 @@
 <script lang="ts" setup>
-import type { NavItem } from 'valaxy-theme-sakura/types'
 import { ref } from 'vue'
 
-const sidebarOverviewConfig = ref<NavItem[]>([
-  {
-    text: '首页',
-    icon: 'i-ri-home-4-line',
-    link: '/',
-  },
-  {
-    locale: 'menu.archives',
-    icon: 'i-ri-archive-line',
-    link: '/archives/',
-  },
-  {
-    locale: 'menu.categories',
-    icon: 'i-ri-folder-2-line',
-    link: '/categories/',
-  },
-  {
-    locale: 'menu.tags',
-    icon: 'i-ri-price-tag-3-line',
-    link: '/tags/',
-  },
-])
+const config = ref({
+  sidebar: [
+    {
+      text: '首页',
+      icon: 'i-ri-home-4-line',
+      link: '/',
+    },
+    {
+      locale: 'menu.archives',
+      icon: 'i-ri-archive-line',
+      link: '/archives/',
+    },
+    {
+      locale: 'menu.categories',
+      icon: 'i-ri-folder-2-line',
+      link: '/categories/',
+    },
+    {
+      locale: 'menu.tags',
+      icon: 'i-ri-price-tag-3-line',
+      link: '/tags/',
+    },
+  ],
+})
 
-function handleOverviewConfigUpdate(newConfig: NavItem[]) {
-  sidebarOverviewConfig.value = newConfig
+function configUpdate(newConfig: any) {
+  config.value = newConfig
 }
 </script>
 
 <template>
   <SakuraSidebar>
-    <SidebarThemeOverview :sidebar="sidebarOverviewConfig" />
+    <SidebarThemeOverview :sidebar="config.sidebar" />
   </SakuraSidebar>
 
   <div class="flex flex-col items-center justify-center h-100vh">
@@ -40,7 +41,7 @@ function handleOverviewConfigUpdate(newConfig: NavItem[]) {
       Sidebar Overview 布局
     </h2>
 
-    <CodeEditor class="md:w1/2 mt-20" :config="sidebarOverviewConfig" @update:config="handleOverviewConfigUpdate" />
+    <CodeEditor class="md:w1/2 mt-20" :config="config" @update:config="configUpdate" />
   </div>
 </template>
 

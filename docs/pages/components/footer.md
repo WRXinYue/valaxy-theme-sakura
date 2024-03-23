@@ -8,6 +8,20 @@ categories:
 
 ## Footer 页脚
 
+### 自定义插槽
+
+`<SakuraFooterCustom />`
+
+```vue
+<template>
+  <SakuraFooter />
+</template>
+```
+
+### 预览
+
+<SakuraFooterPG />
+
 ```ts
 export interface ThemeConfig {
   footer: Partial<{
