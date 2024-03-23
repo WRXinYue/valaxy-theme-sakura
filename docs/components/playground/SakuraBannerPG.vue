@@ -12,35 +12,14 @@ const banner = ref<Banner>({
   ],
   style: 'filter-dot',
 })
+
+function configUpdate(newConfig: Banner) {
+  banner.value = newConfig
+}
 </script>
 
 <template>
   <SakuraBanner :banner />
 
-  <el-form label-position="top">
-    <!-- <el-form-item label="Enable Banner">
-      <el-switch v-model="banner.enable" />
-    </el-form-item> -->
-
-    <el-form-item label="Banner Title">
-      <el-input v-model="banner.title" />
-    </el-form-item>
-
-    <el-form-item label="Banner Motto">
-      <el-input v-model="banner.motto" />
-    </el-form-item>
-
-    <el-form-item label="Banner Urls">
-      <el-input v-model="banner.urls[0]" />
-    </el-form-item>
-
-    <el-form-item label="Banner Style">
-      <el-select v-model="banner.style" placeholder="Banner Style">
-        <el-option label="filter-dot" value="filter-dot" />
-        <el-option label="filter-dim" value="filter-dim" />
-        <el-option label="filter-grid" value="filter-grid" />
-        <el-option label="" value="" />
-      </el-select>
-    </el-form-item>
-  </el-form>
+  <CodeEditor :config="banner" @update:config="configUpdate" />
 </template>

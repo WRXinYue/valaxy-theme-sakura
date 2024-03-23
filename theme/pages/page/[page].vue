@@ -7,5 +7,5 @@ const pageIndex = computed(() => Number.parseInt((route.params as { page: string
 </script>
 
 <template>
-  <SakuraPostList :cur-page="pageIndex" />
+  <SakuraArticleList :cur-page="pageIndex" />
 </template>

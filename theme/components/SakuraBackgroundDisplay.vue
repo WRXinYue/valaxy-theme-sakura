@@ -20,6 +20,6 @@ const isCurrentMediaVideo = computed(() => {
   </template>
   <template v-else>
     <img v-if="url" alt="Image Wallpaper" class="w-full h-100vh object-cover block bg-cover bg-center" :src="url">
-    <div v-else class="w-full h-100vh  bg-$st-c-scrollbar-color" />
+    <div v-else class="w-full h-100vh bg-$st-c-scrollbar-color" />
   </template>
 </template>

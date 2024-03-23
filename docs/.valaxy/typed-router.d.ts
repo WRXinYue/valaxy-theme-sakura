@@ -38,6 +38,7 @@ declare module 'vue-router/auto-routes' {
     '/examples/docs': RouteRecordInfo<'/examples/docs', '/examples/docs', Record<never, never>, Record<never, never>>,
     '/guide/installation': RouteRecordInfo<'/guide/installation', '/guide/installation', Record<never, never>, Record<never, never>>,
     '/guide/update': RouteRecordInfo<'/guide/update', '/guide/update', Record<never, never>, Record<never, never>>,
+    '/layouts/home': RouteRecordInfo<'/layouts/home', '/layouts/home', Record<never, never>, Record<never, never>>,
     '/page/[page]': RouteRecordInfo<'/page/[page]', '/page/:page', { page: ParamValue<true> }, { page: ParamValue<false> }>,
     '/releases': RouteRecordInfo<'/releases', '/releases', Record<never, never>, Record<never, never>>,
     '/sidebar-dynamic': RouteRecordInfo<'/sidebar-dynamic', '/sidebar-dynamic', Record<never, never>, Record<never, never>>,

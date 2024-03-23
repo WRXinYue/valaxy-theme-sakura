@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-const props = defineProps({
-  config: Object,
+const props = withDefaults(defineProps<{
+  config: object
+  height: string
+}>(), {
+  height: '500px',
 })
 
 const emit = defineEmits(['update:config'])
@@ -37,9 +40,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="language-ts vp-adaptive-theme pt-0! h-500px ">
-    <pre class="shiki shiki-themes github-light github-dark vp-code pt-0! pb-0! overflow-y-hidden!">
-      <div ref="editorContainer" class="editor-container h-500px" />
+  <div class="language-ts pt-0!" :style="{ height }">
+    <pre class="p-0! m-0! overflow-hidden!">
+      <div ref="editorContainer" class="editor-container" :style="{ height }" />
     </pre>
   </div>
 </template>

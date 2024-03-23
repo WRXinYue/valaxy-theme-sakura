@@ -1,0 +1,3 @@
+<template>
+  <SakuraCardShowcase />
+</template>

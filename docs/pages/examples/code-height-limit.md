@@ -8,6 +8,7 @@ codeHeightLimit: 300
 ---
 
 ### 示例1
+
 ~~~ts
 // valaxy.config.ts
 import { defineValaxyConfig } from 'valaxy'

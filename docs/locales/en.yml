@@ -42,6 +42,7 @@ category:
   dev: Dev
   components: Components
   releases: releases
+  layouts: Layouts
 
 banner:
   next-generation: Next Generation

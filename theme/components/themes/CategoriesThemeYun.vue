@@ -64,7 +64,7 @@ const title = usePostTitle(frontmatter)
 
       <template #main-nav-before>
         <SakuraCard v-if="curCategory" class="post-collapse-container" m="t-4" w="full">
-          <SakuraPostCollapse w="full" m="b-4" p="x-20 lt-sm:x-5" :posts="posts" />
+          <SakuraArticleCollapse w="full" m="b-4" p="x-20 lt-sm:x-5" :posts="posts" />
         </SakuraCard>
       </template>
     </component>

@@ -11,7 +11,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "element-plus": "^2.6.0",
     "monaco-editor": "^0.47.0",
     "valaxy": "0.18.5",
     "valaxy-theme-sakura": "workspace:*",

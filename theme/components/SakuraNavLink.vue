@@ -59,16 +59,20 @@ function cancelHideDropdown() {
       <ul
         id="dropdownNavbar"
         aria-labelledby="dropdownLargeButton"
-        class="rounded bg-$st-c-bg-nav mt-3 py-2"
+        class="rounded bg-$st-c-bg-nav mt-3 py-2 px-0"
       >
-        <li v-for="subitem in submenu" :key="subitem.text" class="py-2 px-4">
-          <AppLink v-if="!subitem.isExternal" :to="subitem.link" rel="noopener" class="navbar-link">
-            <div :class="icon" class="mr-0.5 inline-flex align-text-top" />
-            {{ subitem.text }}
+        <li v-for="subitem in submenu" :key="subitem.text" class="py-2 justify-center flex">
+          <AppLink v-if="!subitem.isExternal" :to="subitem.link" rel="noopener" class="navbar-link flex items-center mx-2">
+            <div :class="icon" class="mr-0.5" />
+            <span truncate>
+              {{ subitem.text }}
+            </span>
           </AppLink>
           <a v-else :href="subitem.link" rel="noopener" class="navbar-link">
-            <div :class="subitem.icon" class="mr-0.5 inline-flex align-text-top" />
-            {{ subitem.text }}
+            <div :class="subitem.icon" class="mr-0.5" />
+            <span truncate>
+              {{ subitem.text }}
+            </span>
           </a>
         </li>
       </ul>

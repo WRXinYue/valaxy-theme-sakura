@@ -38,7 +38,7 @@ function handleScroll() {
 </script>
 
 <template>
-  <header class="navbar z-5" :class="isHeaderActive ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
+  <header class="sakura-navbar z-5" :class="isHeaderActive ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
     <slot name="nav-brand">
       <SakuraNavbarBrand :favicon="favicon" :navbar-title="title || themeConfig.navbarTitle" />
     </slot>
@@ -60,8 +60,8 @@ function handleScroll() {
   </header>
 </template>
 
-<style lang="scss" scoped>
-.navbar {
+<style lang="scss">
+.sakura-navbar {
   position: fixed;
   height: var(--st-c-navbar-height);
   width: 100%;

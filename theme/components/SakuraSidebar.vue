@@ -59,7 +59,7 @@ onUnmounted(() => {
     />
 
     <aside
-      class="va-card transition sidebar inset-y-0 left-0 overflow-y-auto z-1000"
+      class="va-card transition sakura-sidebar inset-y-0 left-0 overflow-y-auto z-1000"
       :class="[app.isSidebarOpen && 'open', !showHamburger && 'md:translate-x-0',
                layout === 'top-left' && 'mt-$st-c-navbar-height',
                fixed && 'fixed']"
@@ -75,7 +75,7 @@ onUnmounted(() => {
 <style lang="scss">
 @use "sass:map";
 
-.sidebar {
+.sakura-sidebar {
   width: calc(100vw - 64px);
   max-width: var(--st-c-sidebar-width);
   background-image: var(--st-c-sidebar-bg-img);

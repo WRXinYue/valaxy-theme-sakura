@@ -54,7 +54,7 @@ export interface ThemeConfig {
 
   banner: SakuraTheme.Banner
 
-  startDash?: {
+  articlePinned?: {
     title?: string
     desc?: string
     img?: string

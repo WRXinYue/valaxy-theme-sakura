@@ -133,6 +133,10 @@ npm run dev
 
 :::
 
+### 配置
+
+我们可以先从首页 [Home 布局](/layouts/home) 进行开始
+
 ### 部署
 
 对于大多数用户来说，`hexo`和`hugo`的常见操作是构建生成网站内容后，再上传至仓库以部署网站。若需进行构建，直接运行`pnpm run build`命令即可，其操作步骤与之类似。然而，我并不推荐使用这种方法。想要了解更多部署方式，请参考[Valaxy部署文档](https://valaxy.site/guide/deploy)

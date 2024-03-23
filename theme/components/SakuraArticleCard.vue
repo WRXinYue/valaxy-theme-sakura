@@ -34,8 +34,8 @@ onMounted(() => {
       </RouterLink>
 
       <div class="inline-flex">
-        <SakuraPostCategories v-if="post.categories" class="font-secondary mr-3" :categories="post.categories" />
-        <SakuraPostTags v-if="post.tags" class="font-secondary" :tags="post.tags" />
+        <SakuraArticleCategories v-if="post.categories" class="font-secondary mr-3" :categories="post.categories" />
+        <SakuraArticleTags v-if="post.tags" class="font-secondary" :tags="post.tags" />
       </div>
     </div>
   </article>
