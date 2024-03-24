@@ -8,4 +8,4 @@ categories:
 
 ## InfoOverlay 信息覆盖层
 
-TODO:
+<SakuraInfoOverlay />

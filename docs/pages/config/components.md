@@ -1,6 +1,6 @@
 ---
-title: Component
-title_zh-CN: Component 组件
+title: Component config
+title_zh-CN: Component 组件配置
 toc: true
 categories:
   - config

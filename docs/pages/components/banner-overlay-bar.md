@@ -12,7 +12,23 @@ categories:
 
 #### WaveThemeFish
 
+```vue
+<template>
+  <SakuraBanner h-160>
+    <template #background-display>
+      <SakuraBackgroundDisplay />
+    </template>
+    <template #banner-overlay-bar>
+      <WaveThemeFish />
+    </template>
+  </SakuraBanner>
+</template>
+```
+
 <SakuraBanner h-160>
+  <template #background-display>
+    <SakuraBackgroundDisplay />
+  </template>
   <template #banner-overlay-bar>
       <WaveThemeFish />
   </template>
@@ -20,7 +36,23 @@ categories:
 
 #### WaveThemeHorizontal
 
+```vue
+<template>
+  <SakuraBanner h-160>
+    <template #background-display>
+      <SakuraBackgroundDisplay />
+    </template>
+    <template #banner-overlay-bar>
+      <WaveThemeHorizontal />
+    </template>
+  </SakuraBanner>
+</template>
+```
+
 <SakuraBanner h-160>
+  <template #background-display>
+    <SakuraBackgroundDisplay />
+  </template>
   <template #banner-overlay-bar>
       <WaveThemeHorizontal />
   </template>
@@ -28,7 +60,23 @@ categories:
 
 #### WaveThemeRipple
 
+```vue
+<template>
+  <SakuraBanner h-160>
+    <template #background-display>
+      <SakuraBackgroundDisplay />
+    </template>
+    <template #banner-overlay-bar>
+      <WaveThemeRipple />
+    </template>
+  </SakuraBanner>
+</template>
+```
+
 <SakuraBanner h-160>
+  <template #background-display>
+    <SakuraBackgroundDisplay />
+  </template>
   <template #banner-overlay-bar>
       <WaveThemeRipple />
   </template>
@@ -36,7 +84,23 @@ categories:
 
 #### WaveThemeYunCloud
 
+```vue
+<template>
+  <SakuraBanner h-160>
+    <template #background-display>
+      <SakuraBackgroundDisplay />
+    </template>
+    <template #banner-overlay-bar>
+      <WaveThemeYunCloud />
+    </template>
+  </SakuraBanner>
+</template>
+```
+
 <SakuraBanner h-160>
+  <template #background-display>
+    <SakuraBackgroundDisplay />
+  </template>
   <template #banner-overlay-bar>
       <WaveThemeYunCloud />
   </template>

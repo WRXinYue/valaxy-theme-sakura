@@ -1,6 +1,6 @@
 ---
 title: Other config
-title_zh-CN: 其他配置
+title_zh-CN: Other 其他配置
 toc: true
 categories:
   - config

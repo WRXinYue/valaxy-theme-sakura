@@ -33,7 +33,6 @@ declare module 'vue-router/auto-routes' {
     '/components/pagination': RouteRecordInfo<'/components/pagination', '/components/pagination', Record<never, never>, Record<never, never>>,
     '/components/sidebar': RouteRecordInfo<'/components/sidebar', '/components/sidebar', Record<never, never>, Record<never, never>>,
     '/config/components': RouteRecordInfo<'/config/components', '/config/components', Record<never, never>, Record<never, never>>,
-    '/config/container': RouteRecordInfo<'/config/container', '/config/container', Record<never, never>, Record<never, never>>,
     '/config/layout': RouteRecordInfo<'/config/layout', '/config/layout', Record<never, never>, Record<never, never>>,
     '/config/other': RouteRecordInfo<'/config/other', '/config/other', Record<never, never>, Record<never, never>>,
     '/config/overview': RouteRecordInfo<'/config/overview', '/config/overview', Record<never, never>, Record<never, never>>,

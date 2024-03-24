@@ -12,6 +12,9 @@ export const useSakuraAppStore = defineStore('sakura-app', () => {
   const curPage = ref()
   const loadMultiple = ref(1)
 
+  const wallpaperIndex = ref<{ [key: string]: number }>({})
+  const wallpaperLength = ref<{ [key: string]: number }>({})
+
   function setScrollPosition(id: string, position: number) {
     positions.value[id] = position
   }
@@ -29,6 +32,8 @@ export const useSakuraAppStore = defineStore('sakura-app', () => {
     paginationObserver,
     paginationElementPositionsNumber,
     curPage,
+    wallpaperIndex,
+    wallpaperLength,
   }
 })
 

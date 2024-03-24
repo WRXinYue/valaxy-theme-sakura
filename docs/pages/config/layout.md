@@ -1,6 +1,6 @@
 ---
-title: Layout
-title_zh-CN: Layout 布局
+title: Layout config
+title_zh-CN: Layout 布局配置
 toc: true
 categories:
   - config

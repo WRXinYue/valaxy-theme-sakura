@@ -5,9 +5,8 @@ import type { SidebarMulti } from '../../types'
 import { useThemeConfig } from '../../composables'
 
 const props = withDefaults(defineProps<{
-  sidebar: SidebarMulti
-}>(), {
-})
+  sidebar?: SidebarMulti
+}>(), {})
 
 const themeConfig = useThemeConfig()
 
@@ -22,9 +21,9 @@ const categories = computed(() => {
   // Remove the "Unclassified" category
   removeItemFromCategory(cList, 'Uncategorized')
 
-  if (props.sidebar) {
+  if (sidebar.value) {
     cList.children.forEach((item) => {
-      if (!props.sidebar.includes(item.name))
+      if (!sidebar.value.includes(item.name))
         removeItemFromCategory(cList, item.name)
     })
   }

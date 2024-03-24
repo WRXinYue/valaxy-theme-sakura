@@ -19,7 +19,15 @@ function configUpdate(newConfig: any) {
 </script>
 
 <template>
-  <SakuraBanner :banner="config.banner" />
+  <SakuraBanner :banner="config.banner">
+    <template #background-display>
+      <SakuraBackgroundDisplay :urls="config.banner.urls" />
+    </template>
+    <template #banner-overlay-bar />
+    <template #info-overlay>
+      <SakuraInfoOverlay :banner="config.banner" />
+    </template>
+  </SakuraBanner>
 
   <CodeEditor :config="config" @update:config="configUpdate" />
 </template>

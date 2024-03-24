@@ -1,56 +1,30 @@
 <script lang="ts" setup>
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useThemeConfig } from '../composables'
-import { getLocalStorageItem, setLocalStorageItem } from '../utils/localStorage'
 import type { Banner } from '../types/index'
 
 const props = defineProps<{
   banner?: Banner
 }>()
 
-const storageKey = 'headerMediaIndex'
 const themeConfig = useThemeConfig()
-const currentIndex = ref()
 const loading = ref(true)
 
 const banner = computed(() => props.banner || themeConfig.value.banner)
 
-watch(currentIndex, (newIndex) => {
-  setLocalStorageItem(storageKey, newIndex!)
-})
-
-const currentWallpaperUrl = computed(() => {
-  if (typeof banner.value?.urls === 'string')
-    return banner.value?.urls
-
-  return banner.value?.urls[currentIndex.value!] || ''
-})
-
-function updateIndex(newIndex: number) {
-  currentIndex.value = newIndex
-}
-
 onMounted(() => {
   loading.value = false
-  currentIndex.value = getLocalStorageItem(storageKey, 0)
 })
 </script>
 
 <template>
   <header v-if="!loading" class="relative flex <md:px-5 justify-center flex-items-center w-full h-100vh" :class="themeConfig.animation && 'element-slide-down'">
     <div class="headertop absolute h-full w-full top-0 overflow-hidden" :class="banner?.style ">
-      <slot name="background-display">
-        <SakuraBackgroundDisplay :url="currentWallpaperUrl" />
-      </slot>
+      <slot name="background-display" />
 
       <slot name="banner-overlay-bar" />
     </div>
-    <slot name="info-overlay">
-      <SakuraInfoOverlay
-        :current-index="currentIndex" :urls="banner?.urls"
-        :title="banner?.title" :motto="banner?.motto" @update-index="updateIndex"
-      />
-    </slot>
+    <slot name="info-overlay" />
   </header>
 </template>
 
