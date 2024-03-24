@@ -1,6 +1,6 @@
 <h1 align="center">Valaxy Theme Sakura</h1>
 <pre align="center">
-🧪 正在测试、完善主题示例和主题文档 | <a href="https://sakura.valaxy.site/">文档</a> | <a href="https://sakura.wrxinyue.org/">示例</a> | <a href="./README.md">English</a>
+🧪 正在测试、完善主题示例和主题文档 | <a href="https://sakura.valaxy.site/">文档</a> | <a href="https://sakura.wrxinyue.org/">示例</a> | <a href="./README-en.md">English</a>
 </pre>
 
 <p align="center">
