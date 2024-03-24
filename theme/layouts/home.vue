@@ -24,20 +24,10 @@ watch(() => pageIndex.value, async (value) => {
 
       <div class="md:w-800px m-auto min-w-300px">
         <slot name="article-pinned">
-          <div class="<md:hidden">
-            <div class="pt-24px px-20px flex items-center text-$st-c-text">
-              <div i-fa6-solid:anchor class="mr-1" /> START:DASH!!
-            </div>
-            <hr>
-            <SakuraArticlePinnedCustom />
-          </div>
+          <SakuraArticlePinnedCustom />
         </slot>
 
         <slot name="article-list">
-          <div class="pt-24px px-20px flex items-center text-$st-c-text">
-            <div i-fa6-solid:water class="mr-1" /> 文章列表
-          </div>
-          <hr>
           <SakuraArticleListCustom />
         </slot>
 

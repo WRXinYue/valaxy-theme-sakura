@@ -7,7 +7,15 @@ end: true
 top: 100
 ---
 
-## 更新
+## 更新 Valaxy
+
+为确保与 `valaxy-theme-sakura` 主题的兼容性，建议您将 Valaxy 更新至最新版本。这样可以保证最佳体验和功能支持。关于最低版本要求，请参阅[安装指南](/guide/installation)
+
+```bash
+pnpm add valaxy@latest
+```
+
+## 更新主题
 
 由于主题更新比较频繁，想要获得更好的体验记得随时更新
 
