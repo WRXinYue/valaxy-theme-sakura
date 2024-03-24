@@ -21,9 +21,15 @@ Banner 横幅当中可以配置博客首页大屏壁纸或者标题之类的
 ```vue
 <template>
   <SakuraBanner>
-    <template #background-display />
-    <template #banner-overlay-bar />
-    <template #info-overlay />
+    <template #background-display>
+      <SakuraBackgroundDisplay />
+    </template>
+    <template #banner-overlay-bar>
+      <WaveThemeHorizontal />
+    </template>
+    <template #info-overlay>
+      <SakuraInfoOverlay />
+    </template>
   </SakuraBanner>
 </template>
 ```

@@ -25,5 +25,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <div />
+  <SakuraNavbarCustom />
+  <SakuraSidebarCustom />
 </template>

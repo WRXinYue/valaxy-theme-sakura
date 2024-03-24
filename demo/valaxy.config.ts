@@ -67,22 +67,22 @@ export default defineConfig<ThemeConfig>({
         link: '/',
       },
       {
-        text: '🎮 Unity3D',
-        link: '/',
+        text: '分类',
+        link: '/categories',
       },
       {
-        text: '🌎 Web前端/后端',
-        link: '/',
+        text: '标签',
+        link: '/tags',
       },
-      {
-        text: '☄️ 其他',
-        link: '/',
-        submenu: [],
-      },
-      {
-        text: '📌 关于我',
-        link: '/',
-      },
+      // {
+      //   text: '☄️ 其他',
+      //   link: '/',
+      //   submenu: [],
+      // },
+      // {
+      //   text: '📌 关于我',
+      //   link: '/',
+      // },
       {
         text: '🍻 友情链接',
         link: 'https://github.com/YunYouJun/valaxy',

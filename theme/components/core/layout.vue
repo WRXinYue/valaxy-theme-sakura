@@ -1,12 +1,8 @@
 <template>
   <div class="app-container custom-background antialiased">
-    <slot name="nav-bar">
-      <SakuraNavbarCustom />
-    </slot>
+    <slot name="nav-bar" />
 
-    <slot name="side-bar">
-      <SakuraSidebarCustom />
-    </slot>
+    <slot name="side-bar" />
 
     <main class="sakura-main">
       <slot>

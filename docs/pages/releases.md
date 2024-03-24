@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - 添加首页组件替换支持
 - 添加更多的 Wane 组件
+- 优化导航栏样式及性能
 
 ## [0.4.4] - 2024-03-21
 

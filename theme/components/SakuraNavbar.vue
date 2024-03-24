@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
 import type { NavItem } from '../types/index'
 
@@ -10,6 +11,9 @@ const props = defineProps({
 })
 
 const themeConfig = useThemeConfig()
+const route = useRoute()
+
+const marker = ref()
 
 const scrolled = ref(false)
 const hoverHeaderActive = ref(false)
@@ -19,13 +23,33 @@ const processedNavItems = computed(() => (props.navbar || themeConfig.value.navb
   isExternal: item.link === '/atom.xml',
 })))
 
-const isHeaderActive = computed(() => {
-  return hoverHeaderActive.value || scrolled.value
+const isHeaderHighlighted = computed(() => {
+  return hoverHeaderActive.value || !scrolled.value
 })
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+
+  nextTick(() => {
+    marker.value = document.querySelector('#marker')
+    updateMarker()
+  })
 })
+
+watch(
+  () => route.path,
+  () => {
+    nextTick(updateMarker)
+  },
+)
+
+function updateMarker() {
+  const routeActive = document.querySelector('.sakura-nav .router-link-active') as any
+  if (routeActive) {
+    marker.value.style.left = `${routeActive.offsetLeft}px`
+    marker.value.style.width = `${routeActive.offsetWidth}px`
+  }
+}
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
@@ -38,20 +62,21 @@ function handleScroll() {
 </script>
 
 <template>
-  <header class="sakura-navbar z-5" :class="isHeaderActive ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
+  <header class="sakura-navbar z-5" :class="isHeaderHighlighted ? 'active-header' : ''" @mouseover="hoverHeaderActive = true" @mouseleave="hoverHeaderActive = false">
     <slot name="nav-brand">
       <SakuraNavbarBrand :favicon="favicon" :navbar-title="title || themeConfig.navbarTitle" />
     </slot>
 
     <slot name="nav-link">
-      <div :class="isHeaderActive ? 'element-slide-left-fade-in <md:hidden' : 'md:relative hidden'" class="text-sm text-gray-500 leading-5 h-full w-auto">
+      <!-- <nav :class="isHeaderHighlighted ? 'element-slide-left-fade-in' : 'element-slide-left-fade-out'" class="sakura-nav <md:hidden"> -->
+      <nav :class="isHeaderHighlighted ? 'element-slide-left-fade-in' : 'element-slide-left-fade-out'" class="sakura-nav <md:hidden">
         <template v-for="(item, i) in processedNavItems" :key="i">
-          <div class="app-link-after relative h-full w-auto items-center inline-flex justify-center hover:after:w-full right-20">
-            <SakuraNavLink :link="item.link" :icon="item.icon" :text="item.text" :is-external="item.isExternal" :submenu="item.submenu" />
-          </div>
+          <SakuraNavLink :link="item.link" :icon="item.icon" :text="item.text" :is-external="item.isExternal" :submenu="item.submenu" />
           <span v-if="i !== (navbar?.length || themeConfig.navbar.length) - 1" class="mr-3 ml-3" />
         </template>
-      </div>
+
+        <div id="marker" />
+      </nav>
     </slot>
 
     <slot name="nav-tool">
@@ -61,6 +86,15 @@ function handleScroll() {
 </template>
 
 <style lang="scss">
+#marker {
+  position: absolute;
+  border-bottom: var(--st-c-sidebar-marker-h) solid var(--st-c-secondary);
+  transition: 0.5s;
+  pointer-events: none;
+  filter: drop-shadow(0 5px 25px #08f9ff);
+  height: 100%;
+}
+
 .sakura-navbar {
   position: fixed;
   height: var(--st-c-navbar-height);
@@ -74,19 +108,25 @@ function handleScroll() {
   padding-right: 0.75rem;
 }
 
+.sakura-nav {
+  display: flex;
+  height: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(107 114 128 / var(--un-text-opacity));
+  line-height: 1.25rem;
+}
+
 .active-header {
   background: var(--st-c-bg-nav);
   box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
 }
 
-.app-link-after::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 6px;
+.sakura-nav-link:hover {
   background-color: var(--st-c-secondary);
+  border: #08f9ff;
   transition: width 0.3s ease;
+  height: 100%;
+  width: 100%;
 }
 </style>

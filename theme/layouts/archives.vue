@@ -18,7 +18,7 @@ useSchemaOrg([
 </script>
 
 <template>
-  <Layout class="relative">
+  <Layout>
     <RouterView v-slot="{ Component }">
       <component :is="Component">
         <template #main-header>

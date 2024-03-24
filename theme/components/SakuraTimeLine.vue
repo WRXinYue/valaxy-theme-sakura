@@ -78,7 +78,7 @@ function handleMouseEnter(year: number, month: number) {
 </script>
 
 <template>
-  <div class="post-collapse px-10 lt-sm:px-5">
+  <div class="post-collapse px-10 lt-sm:px-5 mx-auto">
     <div w="full" text="center" class="yun-text-light" p="2">
       {{ t('counter.archives', posts.length) }}
     </div>
