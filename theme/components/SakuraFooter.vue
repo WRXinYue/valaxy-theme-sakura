@@ -2,7 +2,8 @@
 import { capitalize, computed, onMounted, ref } from 'vue'
 import { useSiteConfig, useValaxyConfig } from 'valaxy'
 import { useI18n } from 'vue-i18n'
-import pkg from 'valaxy/package.json'
+import valaxyPkg from 'valaxy/package.json'
+import sakuraPkg from '../package.json'
 import { useThemeConfig } from '../composables'
 import type { Footer } from '../types'
 
@@ -25,7 +26,7 @@ const isThisYear = computed(() => {
   return year === footer.value.since
 })
 
-const poweredHtml = computed(() => t('footer.powered', [`<a href="${pkg.repository.url}" target="_blank" rel="noopener">Valaxy</a> v${pkg.version}`]))
+const poweredHtml = computed(() => t('footer.powered', [`<a href="${valaxyPkg.repository.url}" target="_blank" rel="noopener">Valaxy</a> v${valaxyPkg.version}`]))
 const footerIcon = computed(() => footer.value.icon!)
 
 onMounted(() => {
@@ -55,7 +56,7 @@ onMounted(() => {
     </div>
 
     <div v-if="footer.powered" class="powered" m="2">
-      <span v-html="poweredHtml" /> | <span>{{ t('footer.theme') }} - <a :href="pkg.homepage" :title="`valaxy-theme-${config.theme}`" target="_blank">{{ capitalize(config.theme) }}</a> v{{ pkg.version }}</span>
+      <span v-html="poweredHtml" /> | <span>{{ t('footer.theme') }} - <a :href="sakuraPkg.homepage" :title="`valaxy-theme-${config.theme}`" target="_blank">{{ capitalize(config.theme) }}</a> v{{ sakuraPkg.version }}</span>
     </div>
 
     <slot />

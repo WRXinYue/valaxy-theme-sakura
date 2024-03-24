@@ -84,12 +84,12 @@ export default defineConfig<ThemeConfig>({
       //   link: '/',
       // },
       {
-        text: '🍻 友情链接',
-        link: 'https://github.com/YunYouJun/valaxy',
-      },
-      {
         text: '🔦 时光轴',
         link: '/archives',
+      },
+      {
+        text: '🍻 友情链接',
+        link: 'https://github.com/YunYouJun/valaxy',
       },
       // {
       //   text: 'GitHub',
