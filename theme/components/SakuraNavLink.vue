@@ -38,10 +38,10 @@ function cancelHideDropdown() {
 </script>
 
 <template>
-  <AppLink v-if="!isExternal" id="dropdownNavbarLink" :to="link" rel="noopener" class="sakura-navbar-link" @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown">
+  <RouterLink v-if="!isExternal" id="dropdownNavbarLink" :title="text" :to="link" rel="noopener" class="sakura-navbar-link" @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown">
     <div :class="icon" class="mr-0.5" />
     {{ text }}
-  </AppLink>
+  </RouterLink>
   <a v-else id="dropdownNavbarLink" :href="link" rel="noopener" class="sakura-navbar-link" @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown">
     <div :class="icon" class="mr-0.5" />
     {{ text }}
@@ -59,12 +59,12 @@ function cancelHideDropdown() {
       class="rounded bg-$st-c-bg-nav mt-3 py-2 px-0"
     >
       <li v-for="subitem in submenu" :key="subitem.text" class="py-2 justify-center flex">
-        <AppLink v-if="!subitem.isExternal" :to="subitem.link" rel="noopener" class="sakura-navbar-link flex items-center mx-2">
+        <RouterLink v-if="!subitem.isExternal" :to="subitem.link" rel="noopener" class="sakura-navbar-link flex items-center mx-2">
           <div :class="icon" class="mr-0.5" />
           <span truncate>
             {{ subitem.text }}
           </span>
-        </AppLink>
+        </RouterLink>
         <a v-else :href="subitem.link" rel="noopener" class="sakura-navbar-link">
           <div :class="subitem.icon" class="mr-0.5" />
           <span truncate>

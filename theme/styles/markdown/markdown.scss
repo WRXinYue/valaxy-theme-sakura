@@ -7,6 +7,10 @@
   --c-toc-link: var(--va-c-text-light);
 }
 
+.prose {
+  max-width: var(--st-c-prose-max-w);
+}
+
 html.dark {
   .markdown-body {
     --c-toc-link: var(--va-c-text-dark);
