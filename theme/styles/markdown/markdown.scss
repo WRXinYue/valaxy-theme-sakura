@@ -7,10 +7,6 @@
   --c-toc-link: var(--va-c-text-light);
 }
 
-.prose {
-  max-width: var(--st-c-prose-max-w);
-}
-
 html.dark {
   .markdown-body {
     --c-toc-link: var(--va-c-text-dark);
@@ -124,6 +120,7 @@ div[class*="language-"] {
     margin-left: 16px;
     flex-grow: 1;
     overflow: scroll;
+    overflow-y: hidden;
   }
 
   code {
