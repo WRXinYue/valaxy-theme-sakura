@@ -36,7 +36,7 @@ onMounted(() => {
 
 <template>
   <footer v-if="!loading" class="h-$st-c-footer-height" text="center sm" style="color:var(--va-c-text-light)">
-    <div class="icp" m="y-2" v-html="footer.icp" />
+    <div v-if="footer.icp" class="icp" m="y-2" v-html="footer.icp" />
 
     <div class="copyright flex justify-center items-center" p="1">
       <span>
