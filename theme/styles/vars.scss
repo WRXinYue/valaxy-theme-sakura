@@ -9,9 +9,12 @@ $common: (
   * SakuraAside
   * ------------------------------------- */
   "c-aside-width": var(--va-sidebar-width),
+  /* -------------------------------------
+  * SakuraSidebar
+  * ------------------------------------- */
   "c-sidebar-width": var(--va-sidebar-width),
   "c-sidebar-marker-h": 4px,
-  "c-sidebar-bg-color": var(--st-c-bg-light),
+  "c-sidebar-bg-color": var(--st-c-bg),
 ) !default;
 $common: map.merge((), $common);
 
