@@ -148,7 +148,6 @@ export interface NavItem {
   locale?: string | number
   link: string
   icon?: string
-  isExternal?: boolean
   submenu?: NavItem[]
 }
 

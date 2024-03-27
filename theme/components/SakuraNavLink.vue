@@ -1,121 +1,75 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import type { NavItem } from '../types'
+import { computed, nextTick, onMounted, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import type { NavItem } from '../types/index'
+import { useThemeConfig } from '../composables'
+import { useSakuraAppStore } from '../stores/app'
 
-defineProps<{
-  text: string
-  link: string
-  icon?: string
-  isExternal?: boolean
-  submenu?: NavItem[]
-}>()
+const { navbar } = withDefaults(defineProps<{
+  navbar: NavItem[]
+  animIn: string | string[]
+  animOut: string | string[]
+}>(), {
+  animIn: 'element-slide-left-fade-in',
+  animOut: 'element-slide-left-fade-out',
+})
 
-const isDropdownVisible = ref(false)
-const hideTimeout = ref<number | null>(null)
-const delay = 50
+const themeConfig = useThemeConfig()
+const sakura = useSakuraAppStore()
+const route = useRoute()
 
-function showDropdown() {
-  isDropdownVisible.value = true
-  cancelHideDropdown()
-}
+const marker = ref()
 
-function hideDropdown() {
-  isDropdownVisible.value = false
-}
+const navLinkItems = computed(() => (navbar || themeConfig.value.navbar))
 
-function scheduleHideDropdown() {
-  hideTimeout.value = setTimeout(() => {
-    hideDropdown()
-  }, delay) as unknown as number
-}
+const isHeaderHighlighted = computed(() => sakura.isHeaderHighlighted)
 
-function cancelHideDropdown() {
-  if (hideTimeout.value !== null) {
-    clearTimeout(hideTimeout.value)
-    hideTimeout.value = null
+watch(() => route.path, () => {
+  nextTick(updateMarker)
+})
+
+function updateMarker() {
+  const routeActive = document.querySelector('.sakura-nav-lick .router-link-active') as any
+  if (routeActive) {
+    marker.value.style.left = `${routeActive.offsetLeft}px`
+    marker.value.style.width = `${routeActive.offsetWidth}px`
   }
 }
+
+onMounted(() => {
+  nextTick(() => {
+    marker.value = document.querySelector('#marker')
+    updateMarker()
+  })
+})
 </script>
 
 <template>
-  <RouterLink v-if="!isExternal" id="dropdownNavbarLink" :title="text" :to="link" rel="noopener" class="sakura-navbar-link" @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown">
-    <div :class="icon" class="mr-0.5" />
-    {{ text }}
-  </RouterLink>
-  <a v-else id="dropdownNavbarLink" :href="link" rel="noopener" class="sakura-navbar-link" @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown">
-    <div :class="icon" class="mr-0.5" />
-    {{ text }}
-  </a>
-  <!-- Dropdown menu -->
-  <div
-    v-if="isDropdownVisible && submenu?.length"
-    class="min-w-20 w-auto h-auto z-3 absolute element-slide-in-gently"
-    @mouseenter="showDropdown"
-    @mouseleave="scheduleHideDropdown"
-  >
-    <ul
-      id="dropdownNavbar"
-      aria-labelledby="dropdownLargeButton"
-      class="rounded bg-$st-c-bg-nav mt-3 py-2 px-0"
-    >
-      <li v-for="subitem in submenu" :key="subitem.text" class="py-2 justify-center flex">
-        <RouterLink v-if="!subitem.isExternal" :to="subitem.link" rel="noopener" class="sakura-navbar-link flex items-center mx-2">
-          <div :class="icon" class="mr-0.5" />
-          <span truncate>
-            {{ subitem.text }}
-          </span>
-        </RouterLink>
-        <a v-else :href="subitem.link" rel="noopener" class="sakura-navbar-link">
-          <div :class="subitem.icon" class="mr-0.5" />
-          <span truncate>
-            {{ subitem.text }}
-          </span>
-        </a>
-      </li>
-    </ul>
-  </div>
+  <nav :class="isHeaderHighlighted ? animIn : animOut" class="sakura-nav-lick">
+    <template v-for="(item, i) in navLinkItems" :key="i">
+      <SakuraNavLinkItem :link="item.link" :icon="item.icon" :text="item.text" :submenu="item.submenu" />
+      <span v-if="i !== (navbar?.length || themeConfig.navbar.length) - 1" class="mr-3 ml-3" />
+    </template>
+
+    <div id="marker" />
+  </nav>
 </template>
 
-<style lang="scss" scoped>
-#dropdownNavbar {
-  box-shadow: 0 1px 40px -8px rgba(0,0,0,.5);
-}
-
-#dropdownNavbar::before {
-  content: "";
-  position: absolute;
-  top: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid var(--st-c-bg-nav);
-}
-
-.sakura-navbar-link {
-  height: 100%;
-  color: var(--st-c-text);
-  position: relative;
+<style lang="scss">
+.sakura-nav-lick {
   display: flex;
-  align-items: center;
+  height: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(107 114 128 / var(--un-text-opacity));
+  line-height: 1.25rem;
+}
 
-  &:hover {
-    color: var(--st-c-secondary);
-
-    &::after {
-      width: 100%;
-    }
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: var(--st-c-sidebar-marker-h);
-    background-color: var(--st-c-secondary);
-    transition: width 0.3s ease;
-  }
+.sakura-nav-link:hover {
+  background-color: var(--st-c-secondary);
+  border: #08f9ff;
+  transition: width 0.3s ease;
+  height: 100%;
+  width: 100%;
 }
 </style>

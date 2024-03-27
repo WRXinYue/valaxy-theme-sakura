@@ -56,3 +56,13 @@ function getTitle(post: Post | any) {
     </li>
   </ul>
 </template>
+
+<style lang="scss" scoped>
+a {
+  color: var(--st-c-text);
+}
+
+.router-link-exact-active {
+  color: var(--st-c-brand);
+}
+</style>

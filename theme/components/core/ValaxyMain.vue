@@ -72,7 +72,7 @@ nextTick(() => {
     <div class="content" flex="~">
       <slot name="main-content">
         <Transition appear>
-          <ValaxyMd class="markdown-bod w-full prose max-w-none mx-auto md:min-w-400px lg:min-w-600px 2xl:min-w-800px" :frontmatter="frontmatter">
+          <ValaxyMd class="w-full prose max-w-none mx-auto md:min-w-400px lg:min-w-600px 2xl:min-w-800px" :frontmatter="frontmatter">
             <slot name="main-content-md" />
             <slot />
             <slot name="main-content-after" />

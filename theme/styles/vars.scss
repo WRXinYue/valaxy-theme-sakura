@@ -11,6 +11,7 @@ $common: (
   "c-aside-width": var(--va-sidebar-width),
   "c-sidebar-width": var(--va-sidebar-width),
   "c-sidebar-marker-h": 4px,
+  "c-sidebar-bg-color": var(--st-c-bg-light),
 ) !default;
 $common: map.merge((), $common);
 
@@ -22,7 +23,6 @@ $light: (
   "c-bg": var(--va-c-bg),
   "c-bg-nav": #fff,
   "c-link": var(--st-c-brand),
-  "c-sidebar-bg-color": var(--va-c-bg-light),
   "c-text": #504e4e,
   "c-text-deep": #404040,
   "c-text-brand": var(--st-c-brand),
