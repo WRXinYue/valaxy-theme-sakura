@@ -151,8 +151,6 @@ export interface NavItem {
   submenu?: NavItem[]
 }
 
-export type ThemeUserConfig = Partial<ThemeConfig>
-
 export interface Footer {
   /**
    * 建站于
@@ -182,3 +180,6 @@ export interface Footer {
   /** 备案 ICP */
   icp?: string
 }
+
+export type ThemeUserConfig = Partial<ThemeConfig>
+export type UserThemeConfig = ThemeUserConfig

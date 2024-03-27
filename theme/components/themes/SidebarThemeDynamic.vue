@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { removeItemFromCategory, useCategories, usePageList, useSidebar } from 'valaxy'
+import { removeItemFromCategory, useCategories, usePageList } from 'valaxy'
 import type { SidebarMulti } from '../../types'
 import { useThemeConfig } from '../../composables'
 
@@ -31,11 +31,12 @@ const categories = computed(() => {
   return cList
 })
 
-const { hasSidebar } = useSidebar()
+// const { hasSidebar } = useSidebar()
 </script>
 
 <template>
-  <aside v-if="hasSidebar" @click.stop>
+  <!-- <aside v-if="hasSidebar" @click.stop> -->
+  <aside @click.stop>
     <ul v-for="(item, i) in sidebar" :key="i" text="left" m="2">
       <template v-if="typeof item === 'string'">
         <SakuraSidebarCategoryByName
