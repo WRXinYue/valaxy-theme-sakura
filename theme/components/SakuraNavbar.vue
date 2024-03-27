@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
-import { useScroll } from '@vueuse/core'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores/app'
 
@@ -14,17 +13,25 @@ const { invertScrolled } = withDefaults(defineProps<{
 
 const themeConfig = useThemeConfig()
 const sakura = useSakuraAppStore()
-const { y } = useScroll(window, { throttle: 80 })
 
 const hoverNavbar = ref(false)
+const scrolled = ref(false)
 
-const scrolled = computed(() => y.value > 100)
 const isHeaderHighlighted = computed(() => hoverNavbar.value || (invertScrolled ? scrolled.value : !scrolled.value))
 
 watch(isHeaderHighlighted, () => sakura.isHeaderHighlighted = isHeaderHighlighted.value)
 
+function handleScroll() {
+  scrolled.value = window.scrollY > 100
+}
+
 onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
   sakura.isHeaderHighlighted = hoverNavbar.value || (invertScrolled ? scrolled.value : !scrolled.value)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
