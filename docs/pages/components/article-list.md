@@ -14,7 +14,7 @@ categories:
 
 ```vue
 <template>
-  <SakuraArticleList />
+  <SakuraArticleListThemeCard />
 </template>
 ```
 

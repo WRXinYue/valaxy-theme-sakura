@@ -2,8 +2,8 @@
 import { computed, onMounted, ref } from 'vue'
 import { usePostList, useSiteConfig } from 'valaxy'
 import type { Post } from 'valaxy'
-import { useThemeConfig } from '../composables'
-import { useSakuraAppStore } from '../stores/app'
+import { useThemeConfig } from '../../composables'
+import { useSakuraAppStore } from '../../stores/app'
 
 const props = withDefaults(defineProps<{
   type?: string
@@ -46,14 +46,8 @@ onMounted(() => {
   <div v-if="!loading">
     <template v-for="(post, index) in postsWithLimitedTags" :key="post.path">
       <Transition name="fade">
-        <SakuraArticleCard v-if="post" :id="`article-card-${index}`" class="article-card" :image-position="index % 2 === 1" :post="post" />
+        <SakuraArticleThemeMinima v-if="post" :id="`article-minima-${index}`" class="sakura-article-minima" :post="post" />
       </Transition>
     </template>
   </div>
 </template>
-
-<style lang="scss">
-.article-card {
-  background: var(--st-c-article-card-bg);
-}
-</style>

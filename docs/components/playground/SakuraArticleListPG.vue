@@ -1,3 +1,3 @@
 <template>
-  <SakuraArticleList />
+  <SakuraArticleListThemeCard />
 </template>

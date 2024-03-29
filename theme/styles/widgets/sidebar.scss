@@ -1,0 +1,9 @@
+
+
+.sakura-sidebar-item-link {
+  color: var(--st-c-text);
+}
+
+.sakura-sidebar-item-link.router-link-exact-active {
+  color: var(--st-c-brand);
+}

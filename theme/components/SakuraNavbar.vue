@@ -6,7 +6,7 @@ import { useSakuraAppStore } from '../stores/app'
 const { invertScrolled } = withDefaults(defineProps<{
   favicon: boolean
   title: string | string[]
-  invertScrolled: boolean
+  invertScrolled?: boolean
 }>(), {
   invertScrolled: false,
 })

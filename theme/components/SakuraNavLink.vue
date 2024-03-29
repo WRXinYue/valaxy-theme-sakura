@@ -6,9 +6,9 @@ import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores/app'
 
 const { navbar } = withDefaults(defineProps<{
-  navbar: NavItem[]
-  animIn: string | string[]
-  animOut: string | string[]
+  navbar?: NavItem[]
+  animIn?: string | string[]
+  animOut?: string | string[]
 }>(), {
   animIn: 'element-slide-left-fade-in',
   animOut: 'element-slide-left-fade-out',

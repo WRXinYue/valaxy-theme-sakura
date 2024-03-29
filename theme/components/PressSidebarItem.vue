@@ -29,9 +29,9 @@ const { t } = useI18n()
     </button>
   </li>
 
-  <ul v-if="item.items" v-show="!collapsed">
-    <li v-for="sidebarItem in item.items" :key="sidebarItem.text">
-      <RouterLink v-if="sidebarItem.text" :to="sidebarItem.link || ''" class="inline-flex items-center" active-class="active">
+  <ul v-if="item.items" v-show="!collapsed" class="sakura-sidebar-section">
+    <li v-for="sidebarItem in item.items" :key="sidebarItem.text" class="sakura-sidebar-item">
+      <RouterLink v-if="sidebarItem.text" :to="sidebarItem.link || ''" class="sakura-sidebar-item-link inline-flex items-center" active-class="active">
         <span m="l-1" text="sm">{{ t(sidebarItem.text) }}</span>
       </RouterLink>
 

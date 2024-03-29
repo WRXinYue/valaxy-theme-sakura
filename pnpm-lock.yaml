@@ -89,6 +89,19 @@ importers:
         specifier: ^11.0.4
         version: 11.0.4
 
+  ocean:
+    dependencies:
+      valaxy:
+        specifier: 0.18.5
+        version: 0.18.5(@types/markdown-it@13.0.7)(@unhead/shared@1.8.10)(postcss@8.4.35)(typescript@5.3.3)(unhead@1.8.10)
+      valaxy-theme-sakura:
+        specifier: workspace:*
+        version: link:../theme
+    devDependencies:
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+
   theme:
     dependencies:
       '@iconify-json/fa6-solid':
@@ -100,9 +113,6 @@ importers:
       '@studio-freight/lenis':
         specifier: ^1.0.37
         version: 1.0.39
-      smooth-scrollbar:
-        specifier: ^8.8.4
-        version: 8.8.4
       typed.js:
         specifier: ^2.1.0
         version: 2.1.0
@@ -2708,11 +2718,6 @@ packages:
     dependencies:
       browserslist: 4.23.0
     dev: true
-
-  /core-js@3.36.0:
-    resolution: {integrity: sha512-mt7+TUBbTFg5+GngsAxeKBTl5/VS0guFeJacYge9OmHb+m058UwwIm41SE9T4Den7ClatV57B6TYTuJ0CX1MAw==}
-    requiresBuild: true
-    dev: false
 
   /cose-base@1.0.3:
     resolution: {integrity: sha512-s9whTXInMSgAp/NVXVNuVxVKzGH2qck3aQlVHxDCdAEPgtMKwc4Wq6/QKhgdEdgbLSi9rBTAcPoRa6JpiG4ksg==}
@@ -5808,13 +5813,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /smooth-scrollbar@8.8.4:
-    resolution: {integrity: sha512-Wn2Q/iE+PE1ef4EfhFMhgaIMfSrjJl2LalRu0hBWSrw5nZKGsUIjWFWHnLB/Lpx7N+a1pJH6+wkQzBr+5nWPUg==}
-    dependencies:
-      core-js: 3.36.0
-      tslib: 1.14.1
-    dev: false
-
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
@@ -6034,10 +6032,6 @@ packages:
   /ts-dedent@2.2.0:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
     engines: {node: '>=6.10'}
-
-  /tslib@1.14.1:
-    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: false
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}

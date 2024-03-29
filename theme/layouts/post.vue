@@ -50,7 +50,7 @@ useSchemaOrg(
             <ValaxyCopyright v-if="frontmatter.copyright || siteConfig.license.enabled" :url="url" />
           </template>
           <template #footer>
-            <SakuraArticleFooter />
+            <SakuraArticleFooterCustom />
           </template>
         </component>
       </RouterView>

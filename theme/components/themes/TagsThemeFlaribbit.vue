@@ -92,7 +92,7 @@ function displayTag(tag: string) {
 
       <template #main-nav-before>
         <div v-if="curTag" class="tags-margin-control">
-          <SakuraArticleList :posts="posts" />
+          <SakuraArticleListThemeCard :posts="posts" />
         </div>
       </template>
     </component>

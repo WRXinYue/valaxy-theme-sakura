@@ -7,8 +7,8 @@ withDefaults(defineProps<{
   link: string
   icon?: string
   submenu?: NavItem[]
-  animIn: string | string[]
-  animOut: string | string[]
+  animIn?: string | string[]
+  animOut?: string | string[]
 }>(), {
   animIn: 'element-slide-in-gently',
 })
