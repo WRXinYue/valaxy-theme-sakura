@@ -5,6 +5,6 @@ const isPost = useLayout('post')
 </script>
 
 <template>
-  <SakuraToc v-if="isPost" ml-32px />
+  <SakuraToc v-if="isPost" />
   <SakuraToTop class="<md:hidden" />
 </template>

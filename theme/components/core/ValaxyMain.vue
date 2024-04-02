@@ -69,21 +69,15 @@ nextTick(() => {
     <slot name="main-header" />
     <slot name="main-header-after" />
 
-    <div class="content" flex="~">
-      <slot name="main-content">
-        <Transition appear>
-          <ValaxyMd class="w-full prose max-w-none mx-auto md:min-w-400px lg:min-w-600px 2xl:min-w-800px" :frontmatter="frontmatter">
-            <slot name="main-content-md" />
-            <slot />
-            <slot name="main-content-after" />
-          </ValaxyMd>
-        </Transition>
-      </slot>
-
-      <slot name="aside">
-        <SakuraAside />
-      </slot>
-    </div>
+    <slot name="main-content">
+      <Transition appear>
+        <ValaxyMd class="prose max-w-none min-w-0" :frontmatter="frontmatter">
+          <slot name="main-content-md" />
+          <slot />
+          <slot name="main-content-after" />
+        </ValaxyMd>
+      </Transition>
+    </slot>
 
     <slot name="main-nav-before" />
 
