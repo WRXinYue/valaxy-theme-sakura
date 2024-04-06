@@ -6,11 +6,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
   themeConfig: {
     banner: {
-      enable: true,
       title: '云游君的小站',
-      cloud: {
-        enable: true,
-      },
     },
   },
 })

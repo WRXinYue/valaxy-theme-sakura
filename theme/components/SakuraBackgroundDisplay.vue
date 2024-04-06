@@ -6,7 +6,7 @@ import { useSakuraAppStore } from '../stores/app'
 import { useThemeConfig } from '../composables'
 
 const props = withDefaults(defineProps<{
-  urls?: string[]
+  urls?: string[] | string
   wallpaperKey?: string
 }>(), {
   wallpaperKey: 'banner',
@@ -18,7 +18,7 @@ const currentIndex = ref<number>(0)
 const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
 
-const urls = computed(() => props.urls || themeConfig.value.banner.urls)
+const urls = computed(() => props.urls || themeConfig.value.banner.urls || '')
 const currentWallpaperUrl = computed(() => typeof urls.value === 'string' ? urls.value : urls.value[currentIndex.value])
 const isCurrentMediaVideo = computed(() => isVideoUrl(currentWallpaperUrl.value))
 
