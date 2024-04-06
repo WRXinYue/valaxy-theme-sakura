@@ -25,7 +25,7 @@ codeHeightLimit: 300
 
 分页方式为滚动
 
-<SakuraArticleListThemeCard />
+<ArticleListThemeCard />
 <PaginationThemeInfiniteScroll />
 
 ```ts

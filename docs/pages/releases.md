@@ -18,9 +18,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- 添加首页组件替换支持
-- 添加更多的 Wane 组件
-- 优化导航栏样式及性能
+- 新增首页组件替换功能
+- 引入更多 Wane 组件
+- 对导航栏的样式和性能进行了优化
+- 将 SakuraArticle 的布局从 flex 改为 grid，并允许在 grid 布局的左右 aside 区域添加自定义组件
+- 支持瀑布流文章列表布局自动预加载
+
+### Fixed
+
+- 随着 SakuraArticle 布局的调整，解决了在一些设备上，文章目录(toc)会阻止页面滚动到底部的问题
 
 ## [0.4.4] - 2024-03-21
 
