@@ -3,6 +3,7 @@
 
 :root {
   --un-prose-links: var(--st-c-link);
+  --un-prose-body: var(--st-c-text);
 
   @include set-css-var-from-map($common);
   @include set-css-var-from-map($z-index, "z");

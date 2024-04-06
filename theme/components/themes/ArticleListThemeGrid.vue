@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import { computed } from 'vue'
 import { usePostList, useSiteConfig } from 'valaxy'
 import type { Post } from 'valaxy'
-import { useThemeConfig } from '../../composables'
+
 import { useSakuraAppStore } from '../../stores/app'
+import { useThemeConfig } from '../../composables'
 
 const props = withDefaults(defineProps<{
   type?: string
@@ -36,18 +38,32 @@ const postsWithLimitedTags = computed(() => {
   })
 })
 
-const loading = ref(true)
-onMounted(() => {
-  loading.value = false
+const breakpoints = useBreakpoints(breakpointsTailwind)
+
+const cols = computed(() => {
+  if (breakpoints.xl.value)
+    return 3
+  if (breakpoints.lg.value)
+    return 2
+  return 1
+})
+
+const parts = computed(() => {
+  const result = Array.from({ length: cols.value }, () => [] as typeof postsWithLimitedTags.value)
+  postsWithLimitedTags.value.forEach((item, i) => {
+    result[i % cols.value].push(item)
+  })
+  return result
 })
 </script>
 
 <template>
-  <div v-if="!loading">
-    <template v-for="(post, index) in postsWithLimitedTags" :key="post.path">
-      <Transition name="fade">
-        <SakuraArticleThemeMinima v-if="post" :id="`article-minima-${index}`" class="sakura-article-minima" :post="post" />
-      </Transition>
-    </template>
+  <div grid="~ cols-1 lg:cols-2 xl:cols-3 gap-4">
+    <div v-for="items, idx of parts" :key="idx" flex="~ col gap-4">
+      <ArticleThemeGrid
+        v-for="({ excerpt, date, cover, path, title }, index) of items" :id="`sakura-article-${index * parts.length + idx}`" :key="date" :link="path" :date="date" :src="cover"
+        :title="title" :excerpt="excerpt" class="slide-enter sakura-article" :style="{ '--enter-stage': idx + 1 }"
+      />
+    </div>
   </div>
 </template>

@@ -19,22 +19,10 @@ watch(() => pageIndex.value, async (value) => {
 
 <template>
   <Layout>
-    <div>
-      <SakuraBannerCustom />
-
-      <div class="md:w-800px m-auto min-w-300px">
-        <slot name="article-pinned">
-          <SakuraArticlePinnedCustom />
-        </slot>
-
-        <slot name="article-list">
-          <SakuraArticleListCustom />
-        </slot>
-
-        <SakuraPaginationCustom />
-
+    <SakuraHomeLayoutCustom>
+      <template #content>
         <RouterView />
-      </div>
-    </div>
+      </template>
+    </SakuraHomeLayoutCustom>
   </Layout>
 </template>

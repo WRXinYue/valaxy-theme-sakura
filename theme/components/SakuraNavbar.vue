@@ -4,8 +4,8 @@ import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores/app'
 
 const { invertScrolled } = withDefaults(defineProps<{
-  favicon: boolean
-  title: string | string[]
+  favicon?: boolean
+  title?: string | string[]
   invertScrolled?: boolean
 }>(), {
   invertScrolled: false,

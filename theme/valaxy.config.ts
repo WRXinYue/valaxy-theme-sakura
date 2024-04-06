@@ -13,5 +13,17 @@ export default defineTheme<ThemeConfig>((options) => {
     unocss: {
       safelist: generateSafelist(options.config.themeConfig as ThemeConfig),
     },
+    // markdown: {
+    //   wrapperClasses: (id, code) => code.includes('@layout-full-width')
+    //     ? ''
+    //     : 'prose m-auto slide-enter-content',
+    //   headEnabled: true,
+    //   exportFrontmatter: false,
+    //   exposeFrontmatter: false,
+    //   exposeExcerpt: false,
+    //   markdownItOptions: {
+    //     quotes: '""\'\'',
+    //   },
+    // },
   }
 })

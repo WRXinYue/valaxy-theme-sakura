@@ -92,7 +92,7 @@ export interface ThemeConfig {
 export interface Banner {
   title?: string
   motto?: string
-  urls: string[] | string
+  urls?: string[] | string
   style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
 }
 

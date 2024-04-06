@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
 import { useSiteConfig } from 'valaxy'
 
-defineProps({
-  favicon: Boolean,
-  navbarTitle: [String, Array] as PropType<string | string[]>,
-  hamburger: Boolean,
-})
+defineProps<{
+  favicon?: boolean
+  navbarTitle?: string | string[]
+  hamburger?: boolean
+}>()
 
 const siteConfig = useSiteConfig()
 </script>

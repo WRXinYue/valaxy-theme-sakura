@@ -11,6 +11,7 @@ const routes = usePostList({ type: '' })
 
 const pageSize = computed(() => themeConfig.value.pagination?.itemsPerPage || siteConfig.value.pageSize)
 const posts = computed(() => routes.value)
+const identification = computed(() => themeConfig.value.pagination?.animation ? 'element-slide-fade-in' : 'identification') // Determine the class identifier; if animation is enabled, use the class with animation
 
 const totalPages = ref(Math.ceil(posts.value.length / pageSize.value))
 
@@ -24,10 +25,10 @@ function loadMoreContent() {
 
 function applySlideUpAnimation(entries: IntersectionObserverEntry[], _observer: IntersectionObserver) {
   entries.forEach((entry) => {
-    if (entry.isIntersecting && !entry.target.classList.contains('element-slide-fade-in')) {
-      if (themeConfig.value.pagination?.animation)
-        entry.target.classList.add('element-slide-fade-in')
+    if (entry.isIntersecting && !entry.target.classList.contains(identification.value)) {
+      entry.target.classList.add(identification.value)
       sakura.paginationElementPositionsNumber += 1
+
       // Preload content before reaching end to ensure smooth user experience
       if (sakura.paginationElementPositionsNumber === sakura.paginationTargets.length - 1
         && themeConfig.value.pagination?.infiniteScrollOptions?.preload)
@@ -38,13 +39,20 @@ function applySlideUpAnimation(entries: IntersectionObserverEntry[], _observer: 
 
 function registerTargets() {
   setTimeout(() => {
-    sakura.paginationTargets = Array.from(document.querySelectorAll('.article-card'))
-    for (let i = 0; i < sakura.paginationTargets.length; i++) {
-      if (i >= sakura.paginationElementPositionsNumber) {
-        if (themeConfig.value.pagination?.animation)
-          sakura.paginationTargets[i].classList.add('op-0')
-        sakura.paginationObserver!.observe(sakura.paginationTargets[i])
+    sakura.paginationTargets = Array.from(document.querySelectorAll('.sakura-article'))
+
+    for (let i = sakura.paginationElementPositionsNumber; i < sakura.paginationTargets.length; i++) {
+      const target = document.getElementById(`sakura-article-${i}`)
+
+      if (target === null) {
+        console.error(`Element with ID 'sakura-article-${i}' not found. This may prevent preload from working properly.`)
+        return
       }
+
+      if (themeConfig.value.pagination?.animation)
+        target.classList.add('op-0')
+
+      sakura.paginationObserver!.observe(target)
     }
   }, 0)
 }

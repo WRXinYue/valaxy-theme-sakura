@@ -3,5 +3,5 @@
     <div i-fa6-solid:water class="mr-1" /> 文章列表
   </div>
   <hr>
-  <SakuraArticleListThemeCard />
+  <ArticleListThemeCard />
 </template>

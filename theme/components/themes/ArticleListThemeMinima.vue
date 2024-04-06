@@ -46,14 +46,8 @@ onMounted(() => {
   <div v-if="!loading">
     <template v-for="(post, index) in postsWithLimitedTags" :key="post.path">
       <Transition name="fade">
-        <SakuraArticleThemeCard v-if="post" :id="`article-card-${index}`" class="article-card" :image-position="index % 2 === 1" :post="post" />
+        <ArticleThemeMinima v-if="post" :id="`article-minima-${index}`" class="sakura-article-minima" :post="post" />
       </Transition>
     </template>
   </div>
 </template>
-
-<style lang="scss">
-.article-card {
-  background: var(--st-c-article-card-bg);
-}
-</style>

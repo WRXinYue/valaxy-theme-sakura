@@ -91,7 +91,7 @@ const title = usePostTitle(frontmatter)
 
       <template #main-nav-before>
         <div v-if="curTag" m="x-100">
-          <SakuraArticleListThemeCard :posts="posts" />
+          <ArticleListThemeCard :posts="posts" />
         </div>
       </template>
     </component>
