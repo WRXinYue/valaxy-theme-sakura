@@ -8,6 +8,7 @@ const { link, src, date } = defineProps({
   },
   link: {
     type: String,
+    default: '',
   },
   src: {
     type: String,
