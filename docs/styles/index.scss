@@ -24,7 +24,7 @@ a {
 }
 
 .sakura-main {
-  min-height: calc(100vh - var(--st-c-footer-height));
+  min-height: calc(100vh - var(--st-c-footer-height) - var(--st-c-navbar-height));
 }
 
 .prose img {

@@ -25,9 +25,3 @@ import { isDark, toggleDarkWithTransition } from 'valaxy'
   </button>
 </template>
 ```
-
-## Node
-
-### Hooks
-
-- [钩子](/guide/custom/hooks.md)
