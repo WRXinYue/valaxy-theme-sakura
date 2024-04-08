@@ -48,6 +48,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/doc3': RouteRecordInfo<'/posts/doc3', '/posts/doc3', Record<never, never>, Record<never, never>>,
     '/posts/doc4': RouteRecordInfo<'/posts/doc4', '/posts/doc4', Record<never, never>, Record<never, never>>,
     '/posts/doc5': RouteRecordInfo<'/posts/doc5', '/posts/doc5', Record<never, never>, Record<never, never>>,
+    '/posts/doc6': RouteRecordInfo<'/posts/doc6', '/posts/doc6', Record<never, never>, Record<never, never>>,
     '/releases': RouteRecordInfo<'/releases', '/releases', Record<never, never>, Record<never, never>>,
     '/sidebar-dynamic': RouteRecordInfo<'/sidebar-dynamic', '/sidebar-dynamic', Record<never, never>, Record<never, never>>,
     '/sidebar-overview': RouteRecordInfo<'/sidebar-overview', '/sidebar-overview', Record<never, never>, Record<never, never>>,

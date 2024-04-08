@@ -47,7 +47,7 @@ export default defineValaxyConfig<ThemeConfig>({
     ],
 
     pagination: {
-      itemsPerPage: 3,
+      itemsPerPage: 6,
     },
 
     footer: {

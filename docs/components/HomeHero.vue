@@ -29,7 +29,7 @@ const { t } = useI18n()
         hover="shadow-md bg-transparent border-$st-hover-border"
       >
         <div flex items-center>
-          <div class="rounded-full aspect-ratio-square w-9 h-9 mr-1 flex items-center justify-center" bg="$st-c-secondary">
+          <div class="rounded-full aspect-ratio-square w-9 h-9 mr-1 flex items-center justify-center color-white" bg="$st-c-secondary">
             <div i-simple-icons-npm />
           </div>
           <div dark="color-white" class="color-black min-w-30">

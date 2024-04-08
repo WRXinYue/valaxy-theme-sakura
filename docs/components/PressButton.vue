@@ -27,7 +27,7 @@ const { t } = useI18n()
     :to="link"
     m="2"
     :class="classes"
-    class="btn transition rounded-full decoration-none"
+    class="btn transition rounded-full decoration-none text-white!"
     bg="gradient-to-r"
     p="x-6"
   >
