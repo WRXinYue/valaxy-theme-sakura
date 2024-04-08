@@ -40,8 +40,6 @@ categories:
 
 <ArticleListThemeMinima />
 
-### 预览
-
 ### 相关
 
 * [Pagination 分页](/components/pagination)
