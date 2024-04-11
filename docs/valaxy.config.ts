@@ -43,6 +43,7 @@ export default defineValaxyConfig<ThemeConfig>({
       'theme',
       'layouts',
       'components',
+      'examples',
       'releases',
     ],
 
