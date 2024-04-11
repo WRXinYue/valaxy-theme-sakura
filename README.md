@@ -10,9 +10,6 @@
 </p>
 
 ### 使用
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/___YOUR_PATH___)
-
-<https://stackblitz.com/edit/stackblitz-starters-tqdtk7?file=README.md>
 
 **安装主题:**
 
