@@ -41,7 +41,7 @@ const overlayStyle = computed(() => ({
 
 <template>
   <div class="overflow-hidden relative" @mouseover="isHovering = true" @mouseleave="isHovering = false">
-    <RouterLink :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
+    <AppLink :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
       <img class="lazy object-cover h-full w-full" :src="props.src || image404" alt="cover" :style="imageStyle">
       <template v-if="overlay">
         <div class="overlay" :style="overlayStyle" />
@@ -49,7 +49,7 @@ const overlayStyle = computed(() => ({
       <div class="absolute top-0 w-full h-full">
         <slot />
       </div>
-    </RouterLink>
+    </AppLink>
   </div>
 </template>
 
