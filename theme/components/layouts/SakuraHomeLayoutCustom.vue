@@ -5,6 +5,10 @@
     <div />
 
     <div class="md:w-800px m-auto min-w-300px">
+      <slot name="notice-board">
+        <SakuraNoticeBoardCustom />
+      </slot>
+
       <slot name="article-pinned">
         <SakuraArticlePinnedCustom />
       </slot>
