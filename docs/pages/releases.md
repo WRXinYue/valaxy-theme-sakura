@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- 修复标签(tags)页面宽度样式问题
+- 修复导航栏动画反转在加载页面时候出现闪烁问题
+- 修复代码块高度限制(codeHeightLimit)无法展开代码块问题
+
 ## [0.5.0] - 2024-04-06
 
 ### Added

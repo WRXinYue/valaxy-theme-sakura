@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(defineProps<{
-  icon: string
-  text: string
+  icon?: string
+  text?: string
 }>(), {
   icon: 'i-fa6-solid:bullhorn',
   text: '这是一个公告组件',
