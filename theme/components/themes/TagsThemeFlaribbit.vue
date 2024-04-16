@@ -68,7 +68,7 @@ function displayTag(tag: string) {
         />
       </template>
       <template #main-content>
-        <div :class="themeConfig.animation && 'element-slide-up'" class="tags-margin-control w-full">
+        <div :class="themeConfig.animation && 'element-slide-up'" class="tags-margin-control">
           <div class="yun-text-light " text="center" p="2">
             {{ t('counter.tags', Array.from(tags).length) }}
           </div>
@@ -82,9 +82,7 @@ function displayTag(tag: string) {
             </SakuraButton>
           </div>
 
-          <div class="pt-24px px-20px flex items-center text-$st-c-text">
-            <div i-fa6-solid:water class="mr-1" /> 文章列表
-          </div>
+          <SakuraIconTextDivider icon="i-fa6-solid:water" text="文章列表" :divider="false" />
 
           <RouterView />
         </div>

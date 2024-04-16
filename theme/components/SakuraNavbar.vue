@@ -3,12 +3,12 @@ import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores/app'
 
-const { invertScrolled } = withDefaults(defineProps<{
+const { invert } = withDefaults(defineProps<{
   favicon?: boolean
   title?: string | string[]
-  invertScrolled?: boolean
+  invert?: boolean
 }>(), {
-  invertScrolled: false,
+  invert: false,
 })
 
 const themeConfig = useThemeConfig()
@@ -17,7 +17,7 @@ const sakura = useSakuraAppStore()
 const hoverNavbar = ref(false)
 const scrolled = ref(false)
 
-const isHeaderHighlighted = computed(() => hoverNavbar.value || (invertScrolled ? scrolled.value : !scrolled.value))
+const isHeaderHighlighted = computed(() => hoverNavbar.value || (invert ? scrolled.value : !scrolled.value))
 
 watch(isHeaderHighlighted, () => sakura.isHeaderHighlighted = isHeaderHighlighted.value)
 
@@ -27,7 +27,15 @@ function handleScroll() {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
-  sakura.isHeaderHighlighted = hoverNavbar.value || (invertScrolled ? scrolled.value : !scrolled.value)
+
+  /**
+   * If 'invert' is true, set 'isHeaderHighlighted' to null to prevent animation flicker
+   * If 'invert' is false, initialize 'isHeaderHighlighted' normally based on navbar hover state or scroll state
+   */
+  if (invert)
+    sakura.isHeaderHighlighted = null
+  else
+    sakura.isHeaderHighlighted = hoverNavbar.value || (invert ? scrolled.value : !scrolled.value)
 })
 
 onUnmounted(() => {
