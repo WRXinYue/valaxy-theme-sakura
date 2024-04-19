@@ -87,6 +87,12 @@ export interface ThemeConfig {
   scrollDamping?: boolean
 
   animation?: boolean
+
+  notFoundImage?: string
+
+  noticeBoard?: {
+    message?: string
+  }
 }
 
 export interface Banner {

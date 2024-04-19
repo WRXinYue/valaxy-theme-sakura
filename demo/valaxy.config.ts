@@ -30,6 +30,10 @@ export default defineConfig<ThemeConfig>({
       style: '',
     },
 
+    noticeBoard: {
+      message: '这是一个公告信息',
+    },
+
     articlePinned: [
       {
         title: 'Valaxy Theme Sakura',

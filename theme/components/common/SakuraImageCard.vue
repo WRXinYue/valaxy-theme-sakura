@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import image404 from '../../assets/image-404.png'
+import { useThemeConfig } from '../../composables'
 
 const props = defineProps({
   src: String,
@@ -19,6 +20,8 @@ const props = defineProps({
   overlayOpacity: { type: [Number, String], default: 0.5 },
   overlayOpacityInitial: { type: [Number, String], default: 0 },
 })
+
+const themeConfig = useThemeConfig()
 
 const isHovering = ref(false)
 
@@ -42,7 +45,7 @@ const overlayStyle = computed(() => ({
 <template>
   <div class="overflow-hidden relative" @mouseover="isHovering = true" @mouseleave="isHovering = false">
     <AppLink :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
-      <img class="lazy object-cover h-full w-full" :src="props.src || image404" alt="cover" :style="imageStyle">
+      <img class="lazy object-cover h-full w-full" :src="props.src || (themeConfig.notFoundImage || image404)" alt="cover" :style="imageStyle">
       <template v-if="overlay">
         <div class="overlay" :style="overlayStyle" />
       </template>

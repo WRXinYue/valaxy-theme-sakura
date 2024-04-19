@@ -1,15 +1,21 @@
 <script setup lang="ts">
-withDefaults(defineProps<{
+import { computed } from 'vue'
+import { useThemeConfig } from '../composables'
+
+const props = withDefaults(defineProps<{
   icon?: string
-  text?: string
+  text: string
 }>(), {
   icon: 'i-fa6-solid:bullhorn',
-  text: '这是一个公告组件',
 })
+
+const themeConfig = useThemeConfig()
+
+const text = computed(() => props.text || themeConfig.value.noticeBoard?.message)
 </script>
 
 <template>
-  <div class="border border-dashed rounded-$st-c-rd mt-10 mb-5 p-5 flex items-center">
+  <div v-if="text" class="border border-dashed rounded-$st-c-rd mt-10 mb-5 p-5 flex items-center">
     <div :class="icon" mr-2 />
     <div>
       {{ text }}

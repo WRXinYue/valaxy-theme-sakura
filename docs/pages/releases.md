@@ -16,6 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.5] - 2024-04-19
+
+### Added
+
+- 新增公告栏配置选项
+- 新增替换默认404图片配置选项
+
 ### Fixed
 
 - 修复标签(tags)页面宽度样式问题

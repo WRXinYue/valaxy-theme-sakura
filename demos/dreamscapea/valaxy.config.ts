@@ -16,6 +16,8 @@ export default defineValaxyConfig<ThemeUserConfig>({
       itemsPerPage: 2,
     },
 
+    notFoundImage: '/404.gif',
+
     navbarTitle: ['Hello', '', 'Sakura'],
   },
 })
