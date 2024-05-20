@@ -3,7 +3,7 @@
   height: 6px;
 }
 
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background: var(--st-c-accent);
 }

@@ -1,10 +1,9 @@
 import { defineConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
 
-// import { addonMeting } from 'valaxy-addon-meting'
+import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
-
-// import { addonLive2d } from 'valaxy-addon-live2d'
+import { addonLive2d } from 'valaxy-addon-live2d'
 
 /**
  * User Config
@@ -31,7 +30,7 @@ export default defineConfig<ThemeConfig>({
     },
 
     noticeBoard: {
-      message: '这是一个公告信息',
+      message: '<b>这是一个公告信息, 主题开源地址请见: <a href="https://github.com/WRXinYue/valaxy-theme-sakura">https://github.com/WRXinYue/valaxy-theme-sakura</a></br>',
     },
 
     articlePinned: [
@@ -45,7 +44,7 @@ export default defineConfig<ThemeConfig>({
         title: 'Valaxy sakura theme docs',
         desc: '主题文档',
         img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-gpxyed.jpg',
-        link: 'https://sakura-docs.wrxinyue.org/',
+        link: 'https://sakura.valaxy.site',
       },
       {
         title: '示例站点',
@@ -160,18 +159,23 @@ export default defineConfig<ThemeConfig>({
       pageview: true,
       comment: true,
     }),
-    // addonMeting({
-    //   global: true,
-    //   props: {
-    //     id: '2489775340',
-    //     server: 'netease',
-    //     type: 'playlist',
-    //   },
-    // }),
-    // addonLive2d({
-    //   live2dPath: {
-    //     baseUrl: 'online',
-    //   },
-    // }),
+    addonMeting({
+      global: true,
+      props: {
+        id: '2489775340',
+        server: 'netease',
+        type: 'playlist',
+      },
+      options: {
+        autoHidden: true,
+        animationIn: true,
+        lyricHidden: true,
+      },
+    }),
+    addonLive2d({
+      live2dPath: {
+        baseUrl: 'online',
+      },
+    }),
   ],
 })

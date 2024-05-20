@@ -61,7 +61,7 @@ onUnmounted(() => {
 
 <style lang="scss">
 .sakura-navbar {
-  position: fixed;
+  position: sticky;
   z-index: 5;
   height: var(--st-c-navbar-height);
   width: 100%;

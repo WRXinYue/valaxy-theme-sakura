@@ -30,9 +30,9 @@ nav:
     site: 示例站点
 
 category:
-  getting-started: 起步
+  getting-started: Setup 起步
   guide: 指南
-  config: 配置
+  config: Configuration 配置
   migration: 迁移
   third: 第三方
   custom: 自定义
@@ -40,9 +40,9 @@ category:
   theme: 主题
   addon: 插件
   dev: 开发
-  components: 组件
+  components: Components 组件
   releases: 发行
-  layouts: 布局
+  layouts: Layouts 布局
 
 banner:
   introduction: 简约轻量的 valaxy sakura 主题.🚀

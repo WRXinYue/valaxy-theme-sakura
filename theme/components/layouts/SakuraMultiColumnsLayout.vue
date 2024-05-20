@@ -64,7 +64,7 @@
   gap: 0px 12px;
 
   @include screen('md') {
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 330px 1fr;
   }
 }
 
@@ -75,7 +75,7 @@
   gap: 0px 12px;
 
   @include screen('md') {
-    grid-template-columns: 1fr 250px;
+    grid-template-columns: 1fr 330px;
   }
 }
 </style>

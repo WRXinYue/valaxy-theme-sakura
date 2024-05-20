@@ -1,9 +1,14 @@
 <script lang="ts" setup>
 import { isDark, toggleDarkWithTransition } from 'valaxy'
+
+function enhancedToggleDarkWithTransition() {
+  const fakeEvent = new MouseEvent('click')
+  toggleDarkWithTransition(fakeEvent)
+}
 </script>
 
 <template>
-  <button class="switch switch-appearance" type="button" aria-label="Toggle Dark Mode" @click="toggleDarkWithTransition">
+  <button class="switch switch-appearance" type="button" aria-label="Toggle Dark Mode" @click="enhancedToggleDarkWithTransition">
     <span class="check">
       <span class="icon-wrap">
         <div v-if="!isDark" class="icon" i-ri-sun-line />
