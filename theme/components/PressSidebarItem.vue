@@ -15,7 +15,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <li v-if="item.text && depth === 0" p="t-2" w="full" class="inline-flex items-center justify-between" :tabindex="item.items && 0">
+  <li v-if="item.text && depth === 0" w="full" class="inline-flex items-center justify-between" :tabindex="item.items && 0">
     <span font="bold" m="l-1">
       {{ t(props.item.text || '') }}
     </span>

@@ -30,3 +30,30 @@ a {
 .prose img {
   margin: 0;
 }
+
+.active-header {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.sakura-sidebar-item-link {
+  color: var(--st-c-text);
+  transition: all 0.5s;
+
+  border-left: 1px solid var(--st-c-surface-border);
+
+  &.router-link-exact-active {
+    color: var(--st-c-text);
+
+    border-left-width: 1px;
+    border-color: var(--fgColor-accent, var(--st-c-secondary));
+    // &::after {
+    //   position: absolute;
+    //   width: 4px;
+    //   height: 24px;
+    //   content: "";
+    //   background-color: var(--fgColor-accent, var(--st-c-secondary));
+    //   border-radius: 6px;
+    // }
+  }
+}

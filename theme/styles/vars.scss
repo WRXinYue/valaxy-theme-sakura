@@ -2,7 +2,7 @@
 
 // common
 $common: (
-  "c-navbar-height": 60px,
+  "c-navbar-height": 4rem,
   "c-footer-height": 140px,
   "c-rd": 10px,
   /* -------------------------------------
@@ -29,8 +29,9 @@ $light: (
   "c-text": #504e4e,
   "c-text-deep": #404040,
   "c-text-brand": var(--st-c-brand),
-  "c-text-secondary": #888888,
+  "c-text-secondary": rgba(60, 60, 60, 0.7),
   "c-border": #d0d7de,
+  "c-surface-border": #e2e8f0,
   "c-hover-border": #f1c484,
   "c-hover-bg": var(--st-c-secondary),
   "c-icon": #fff,

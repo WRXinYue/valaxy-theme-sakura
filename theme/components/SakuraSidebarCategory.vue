@@ -29,7 +29,7 @@ function getTitle(post: Post | any) {
 </script>
 
 <template>
-  <li v-if="category.total" p="t-2" w="full" class="inline-flex items-center justify-between" tabindex="0">
+  <li v-if="category.total" w="full" class="sakura-sidebar-group inline-flex items-center justify-between" tabindex="0">
     <span font="bold" m="l-1" @click="displayCategory ? displayCategory(category.name) : null">
       {{ category.name === 'Uncategorized' ? t('category.uncategorized') : t(`category.${category.name}`) }}
       <!-- <sup font="normal">[{{ category.total }}]</sup> -->
@@ -39,8 +39,7 @@ function getTitle(post: Post | any) {
       class="caret folder-action inline-flex cursor-pointer"
       @click="collapsable = !collapsable"
     >
-      <div v-if="collapsable" i-ri-folder-add-line />
-      <div v-else i-ri-folder-reduce-line />
+      <div class="w-3 h-3 i-fa6-solid-angle-down mr-4" :class="collapsable ? 'angle-down' : 'angle-right'" />
     </button>
   </li>
 
@@ -48,7 +47,7 @@ function getTitle(post: Post | any) {
     <li v-for="categoryItem, i in category.children.values()" :key="i" class="sakura-sidebar-item">
       <template v-if="!isCategoryList(categoryItem)">
         <RouterLink v-if="categoryItem.title" :to="categoryItem.path || ''" class="sakura-sidebar-item-link inline-flex items-center" active-class="active">
-          <span m="l-1" text="sm">{{ getTitle(categoryItem) }}</span>
+          <span text="sm" class="color-$st-c-text-secondary hover:color-$st-c-text">{{ getTitle(categoryItem) }}</span>
         </RouterLink>
       </template>
 
@@ -56,3 +55,17 @@ function getTitle(post: Post | any) {
     </li>
   </ul>
 </template>
+
+<style lang="scss">
+.angle-right {
+  transform: rotate(0deg);
+}
+
+.angle-down {
+  transform: rotate(-90deg);
+}
+
+.angle-right, .angle-down {
+  transition: transform 0.15s cubic-bezier(0.9, 0, 0.2, 0);
+}
+</style>

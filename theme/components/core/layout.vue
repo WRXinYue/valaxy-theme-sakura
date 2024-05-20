@@ -2,8 +2,6 @@
   <div class="app-container custom-background antialiased">
     <slot name="nav-bar" />
 
-    <slot name="side-bar" />
-
     <main class="sakura-main">
       <slot>
         <RouterView v-slot="{ Component }">
@@ -50,12 +48,12 @@
 <style lang="scss">
 .sakura-main {
   transition: padding-left var(--va-transition-duration);
-  padding-left: var(--st-c-layout-pl)
 }
 
 .app-container {
   transition: padding-left var(--va-transition-duration);
   padding-left: var(--app-container-layout-pl);
   background-color: var(--st-c-bg);
+  margin-top: calc(-1 * var(--st-c-navbar-height));
 }
 </style>

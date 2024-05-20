@@ -1,4 +1,11 @@
+.sakura-sidebar-item {
+  line-height: 0;
+  padding-left: 0.3rem;
 
+  span {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+  }
+}
 
 .sakura-sidebar-item-link {
   color: var(--st-c-text);
