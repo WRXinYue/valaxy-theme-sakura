@@ -18,4 +18,4 @@ categories:
 ## 相关组件
 
 - [Layout](/components/layout)
-- [TagsThemeSakura](/components-themes/tags-theme-sakura)
+- [TagsThemeSakura](/components-themes/TagsThemeSakura)

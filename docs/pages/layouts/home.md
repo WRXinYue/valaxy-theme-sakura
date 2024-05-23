@@ -27,4 +27,4 @@ categories:
 ## 相关组件
 
 - [Layout](/components/layout)
-- [SakuraHomeLayout](/components-layout/sakura-home-layout)
+- [SakuraHomeLayout](/components-layout/SakuraHomeLayout)
