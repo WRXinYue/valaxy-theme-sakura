@@ -21,7 +21,7 @@ export interface ThemeConfig {
 
   // ============== Valaxy Theme Sakura Config ==============
 
-  // navbar favicon
+  /** navbar favicon */
   favicon: boolean
 
   banner: Banner

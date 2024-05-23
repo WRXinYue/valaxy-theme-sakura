@@ -1,3 +1,5 @@
+@use "valaxy/client/styles/mixins/index.scss" as *;
+
 /* -------------------------------------
 * Markdown components styles reset
 * ------------------------------------- */
@@ -55,5 +57,13 @@ a {
     //   background-color: var(--fgColor-accent, var(--st-c-secondary));
     //   border-radius: 6px;
     // }
+  }
+}
+
+.moe-mashiro {
+  @include mobile {
+    & {
+      display: none;
+    }
   }
 }

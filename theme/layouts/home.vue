@@ -19,10 +19,10 @@ watch(() => pageIndex.value, async (value) => {
 
 <template>
   <Layout>
-    <SakuraHomeLayoutCustom>
+    <SakuraHomeLayout>
       <template #content>
         <RouterView />
       </template>
-    </SakuraHomeLayoutCustom>
+    </SakuraHomeLayout>
   </Layout>
 </template>

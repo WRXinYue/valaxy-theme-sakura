@@ -41,8 +41,13 @@ export default defineValaxyConfig<ThemeConfig>({
       'getting-started',
       'config',
       'theme',
+      'css', // TODO:
+      'tutorial', // TODO:
       'layouts',
       'components',
+      'components-custom',
+      'components-layout',
+      'components-themes',
       'examples',
       'releases',
     ],
@@ -53,7 +58,7 @@ export default defineValaxyConfig<ThemeConfig>({
 
     footer: {
       since: 2024,
-      icp: '<a href="https://icp.gov.moe/?keyword=20240113" target="_blank">萌ICP备20240113号</a>',
+      icp: '<a href="https://icp.gov.moe/?keyword=20240132" target="_blank">萌ICP备20240132号</a>',
     },
   },
   vite: {

@@ -32,10 +32,10 @@ nav:
 category:
   getting-started: Getting Started
   guide: Guide
-  config: Config
+  config: Configuration
   migration: Migration
   third: Third
-  custom: Custom
+  custom: Customize
   examples: Examples
   theme: Theme
   addon: Addon

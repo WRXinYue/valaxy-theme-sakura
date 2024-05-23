@@ -9,18 +9,16 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div m="t-10 md:t-0" flex="~ col" justify="center">
-    <h1 m="0" py="10" text="!5xl" font="black" class="gradient-text" bg="gradient-to-r">
+  <div flex="~ col" justify="center">
+    <span text="4xl md:6xl" font="black" class="gradient-text" bg="gradient-to-r">
       {{ fm.hero.name }}
-    </h1>
+    </span>
 
-    <h2 m="0" max-w-130 text="4xl md:6xl" font="black" leading="2.5rem md:6.5rem">
+    <span m="t-4" text="3xl md:5xl" font="black" leading="2.5rem md:6.5rem" ws-pre-wrap>
       {{ t('banner.introduction') }}
-    </h2>
+    </span>
 
-    <div m="t-8">
-      <h3>{{ t('theme.description') }}</h3>
-    </div>
+    <span>{{ t('theme.description') }}</span>
 
     <div p="t-6">
       <AppLink

@@ -30,25 +30,28 @@ nav:
     site: 示例站点
 
 category:
-  getting-started: Setup 起步
+  getting-started: 快速起步
   guide: 指南
-  config: Configuration 配置
+  config: 配置
   migration: 迁移
   third: 第三方
-  custom: 自定义
+  components: 系统组件
+  components-common: 通用组件
+  components-custom: 自定义组件
+  components-layout: 布局组件
+  components-themes: 主题组件
   examples: 示例
   theme: 主题
   addon: 插件
   dev: 开发
-  components: Components 组件
   releases: 发行
-  layouts: Layouts 布局
+  layouts: 布局
 
 banner:
-  introduction: 简约轻量的 valaxy sakura 主题.🚀
+  introduction: 开放、高自由、功能丰富的 valaxy 主题
 
 theme:
-  description: 使用 Valaxy 架构的二次元风格博客主题，灵感源自 WordPress 的 Sakura 主题
+  description: 使用 Valaxy 架构的二次元风格博客主题，部分灵感源自 WordPress 的 Sakura 主题
 
 hero:
   actions:

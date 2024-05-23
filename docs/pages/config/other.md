@@ -1,6 +1,6 @@
 ---
 title: Other config
-title_zh-CN: Other 其他配置
+title_zh-CN: 其他配置
 toc: true
 categories:
   - config
@@ -9,32 +9,10 @@ codeHeightLimit: 300
 
 ## 其他配置
 
-### scrollDamping
+::: info
+该页正在完善中，敬请期待...
+:::
 
-页面是否启用滚动阻尼效果
-
-```ts
-export interface ThemeConfig {
-  scrollDamping?: boolean
-}
-```
-
-### animation
-
-页面是否启用动画
-
-```ts
-export interface ThemeConfig {
-  animation?: boolean
-}
-```
-
-### showBackToTop(弃用)
-
-是否显示返回顶部按钮(BackToTop)组件
-
-```ts
-export interface ThemeConfig {
-  showBackToTop?: boolean
-}
-```
+<!-- TODO: 主题样式文件配置 -->
+<!-- TODO: 主题全局CSS变量 -->
+<!-- TODO: 插件配置 -->

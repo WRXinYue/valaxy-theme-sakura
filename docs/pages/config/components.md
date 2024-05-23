@@ -1,85 +1,33 @@
 ---
 title: Component config
-title_zh-CN: Component 组件配置
+title_zh-CN: 组件配置
 toc: true
 categories:
   - config
 ---
 
+## 组件配置
+
 ## Component 组件
 
 由于 valaxy 是基于 vue 构建的博客框架，我们可以充分利用 Vue 的全部功能和特性，在此，**组件(Component)** 是 Vue 中的一个核心概念，一个页面可以是由多个组件相结合，这样不仅可以将界面分割成独立、可复用的单元，还能够根据个人偏好自由组合这些单元以构建网页。这种做法使得代码变得更加模块化和有序，在这里我们不需要关注 Vue **组件(Component)** 核心机制， 我们只需学会如何配置即可，如果您想深入了解 **组件(Component)** 的相关信息，请参考 [Vue 官方文档](https://vuejs.org/guide/essentials/component-basics)
 
-## 组件配置
+## 组件替换
 
-每个组件都会在文章列表进行展示，您可以进行在线编辑来实时预览主题
+要替换组件，您只需创建一个与原主题中相同名称的自定义组件，系统便会自动进行替换。我们推荐通过 **[自定义组件](#自定义组件)** 来进行这种替换操作。详细信息和操作指南，请访问 [Valaxy Components](https://valaxy.site/guide/custom/components) 学习如何替换组件
 
-在组件里您可能发现**配置选项**,如：
+## 系统组件
 
-```ts
-export interface ThemeConfig {
-  banner: {
-    enable?: boolean
-    title?: string
-    motto?: string
-    urls: string[]
-    style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
-  }
-}
-```
-
-在 Valaxy 中，`ThemeConfig`是`export default defineValaxyConfig<ThemeConfig>`中的`themeConfig`部分，允许用户对主题进行个性化配置。以下是 valaxy-theme-sakura 主题的Banner配置示例：
-
-```ts
-import { defineValaxyConfig } from 'valaxy'
-import type { ThemeUserConfig } from 'valaxy-theme-sakura'
-
-export default defineValaxyConfig<ThemeUserConfig>({
-  theme: 'sakura',
-
-  themeConfig: {
-    banner: {
-      title: 'Hello, sakura',
-      motto: 'You got to put the past behind you before you can move on.',
-      urls: [
-        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/optimize/cGZ4kz2q.webp',
-        'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
-        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
-      ],
-      style: '',
-    },
-  },
-})
-```
-
-::: tip
-在TypeScript中，当您看到`enable?: boolean`这样的语法时，这意味着`enable`属性是可选的
-
-更多关于可选属性的信息，请参考[TypeScript Required](https://www.typescriptlang.org/docs/handbook/utility-types.html#requiredtype)
-:::
-
-有时您可能会遇到以下接口定义方式，它定义了 `ThemeConfig` 应有的结构，但实质上与上面的示例配置具有相同的含义：
-
-```ts
-export interface ThemeConfig {
-  banner: SakuraTheme.Banner
-}
-```
-
-```ts
-export interface Banner {
-  enable?: boolean
-  title?: string
-  motto?: string
-  urls: string[]
-  style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
-}
-```
+系统组件是框架中最基础的部分，类似于应用的基础架构。由于它们的基础性质，我们通常不建议对这些系统组件进行随意的修改或替换
 
 ## 自定义组件
 
-请见[Valaxy Components](https://valaxy.site/guide/custom/components)
+您可以通过自定义组件来调用或替换系统组件。这里，您可以根据自己的需要替换或修改想要的组件。自定义组件通常包括一套与主题相匹配的组件，使得个性化定制成为可能
 
-## 组件替换
+## 布局组件
 
-和自定义组件原理相同，只要命名为与原主题相同组件名就会自动进行替换
+布局组件主要用于定义应用的布局结构。这些组件通常是预设的各种布局框架，可以通过绑定现有的其他组件来使用这些布局组件，以便更加轻松地应用主题和进行页面设计
+
+## 主题组件
+
+主题组件提供了多种不同的结构和样式选项，允许自由更改布局和替换组件。通过自定义组件替换这些主题组件，您可以将您的博客转变为具有独特风格和个性的平台
