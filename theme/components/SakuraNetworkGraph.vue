@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import * as d3 from 'd3'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
-import type { D3DragEvent, D3ZoomEvent, Simulation, SimulationLinkDatum, SimulationNodeDatum } from 'd3'
+import type { D3DragEvent, D3ZoomEvent, Selection, Simulation, SimulationLinkDatum, SimulationNodeDatum } from 'd3'
 import data from './data.json'
 
 const chartContainer = ref()
@@ -13,32 +13,29 @@ let simulation: Simulation<SimulationNodeDatum, SimulationLinkDatum<SimulationNo
 
 function createChart() {
   const links = data.links.map(d => ({ ...d }))
-  const nodes = data.nodes.map(d => ({ ...d }))
+  const nodes = data.nodes.map(d => ({ ...d })) as SimulationNodeDatum[]
 
-  // Create a simulation with several forces.
-  simulation = d3.forceSimulation(nodes as SimulationNodeDatum[])
+  simulation = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(links).id((d: any) => d.id))
     .force('charge', d3.forceManyBody())
     .force('x', d3.forceX())
     .force('y', d3.forceY())
 
-  // Create the SVG container.
   const svg = d3.create('svg')
     .attr('width', width)
     .attr('height', height)
     .attr('viewBox', [-width / 2, -height / 2, width, height])
-    .attr('style', 'max-width: 100%; height: auto;') as any
+    .attr('style', 'max-width: 100%; height: auto;') as Selection<SVGSVGElement, unknown, null, undefined>
 
-  const zoom = d3.zoom()
-    .scaleExtent([0.1, 10])
+  const zoom = d3.zoom<SVGSVGElement, unknown>()
+    .scaleExtent([0.1, 10000])
     .on('zoom', zoomed)
 
   svg.call(zoom)
 
   const container = svg.append('g')
 
-  // Add a line for each link, and a circle for each node.
-  const link = svg.append('g')
+  const link = container.append('g')
     .attr('stroke', '#999')
     .attr('stroke-opacity', 0.6)
     .selectAll('line')
@@ -46,7 +43,7 @@ function createChart() {
     .join('line')
     .attr('stroke-width', (d: any) => Math.sqrt(d.value))
 
-  const node = svg.append('g')
+  const node = container.append('g')
     .attr('stroke', '#fff')
     .attr('stroke-width', 1.5)
     .selectAll('circle')
@@ -58,13 +55,11 @@ function createChart() {
   node.append('title')
     .text((d: any) => d.id)
 
-  // Add a drag behavior.
   node.call(d3.drag()
     .on('start', dragstarted)
     .on('drag', dragged)
-    .on('end', dragended))
+    .on('end', dragended) as any)
 
-  // Set the position attributes of links and nodes each time the simulation ticks.
   simulation.on('tick', () => {
     link
       .attr('x1', (d: any) => d.source.x)
@@ -76,7 +71,7 @@ function createChart() {
       .attr('cx', (d: any) => d.x)
       .attr('cy', (d: any) => d.y)
   })
-  // Reheat the simulation when drag starts, and fix the subject position.
+
   function dragstarted(event: D3DragEvent<any, any, any>) {
     if (!event.active)
       simulation.alphaTarget(0.3).restart()
@@ -84,14 +79,11 @@ function createChart() {
     event.subject.fy = event.subject.y
   }
 
-  // Update the subject (dragged node) position during drag.
   function dragged(event: D3DragEvent<any, any, any>) {
     event.subject.fx = event.x
     event.subject.fy = event.y
   }
 
-  // Restore the target alpha so the simulation cools after dragging ends.
-  // Unfix the subject position now that it’s no longer being dragged.
   function dragended(event: D3DragEvent<any, any, any>) {
     if (!event.active)
       simulation.alphaTarget(0)
@@ -99,20 +91,15 @@ function createChart() {
     event.subject.fy = null
   }
 
-  function zoomed(event: D3ZoomEvent<any, any>) {
-    container.attr('transform', event.transform)
+  function zoomed(event: D3ZoomEvent<SVGSVGElement, unknown>) {
+    container.attr('transform', event.transform.toString())
   }
 
   chartContainer.value.appendChild(svg.node())
 }
 
-onMounted(() => {
-  createChart()
-})
-
-onBeforeUnmount(() => {
-  simulation.stop()
-})
+onMounted(() => createChart())
+onBeforeUnmount(() => simulation.stop())
 </script>
 
 <template>
