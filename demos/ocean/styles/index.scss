@@ -1,8 +1,1 @@
-.sakura-sidebar-item {
-  border-radius: 0.3rem;
-  margin-top: 2px;
-
-  &:hover {
-    background-color: rgba($color: #000000, $alpha: 0.1);
-  }
-}
+@use "valaxy-theme-sakura/styles/themes/ocean/index.scss" as *;

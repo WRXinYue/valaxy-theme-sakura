@@ -10,7 +10,7 @@ categories:
 
 Banner 横幅当中可以配置博客首页大屏壁纸或者标题之类的
 
-### 插槽
+## 基础用法
 
 ```vue
 <template>
@@ -28,11 +28,13 @@ Banner 横幅当中可以配置博客首页大屏壁纸或者标题之类的
 </template>
 ```
 
-### 预览
+## 预览
 
 <SakuraBannerCustomPG />
 
-### API
+## API
+
+### ThemeConfig
 
 ```ts
 export interface ThemeConfig {
@@ -52,10 +54,10 @@ export interface ThemeConfig {
 | urls | `string[] \| string` | `undefined` | 用于网站头部背景壁纸链接支持图片及视频,支持填入多个 |
 | style | `'\|filter-dot\|' \| 'filter-dim' \| 'filter-grid' \| ''` | `'filter-dim'` | 背景图片的过滤样式，可选值为`'filter-dot'`（点状过滤效果）、<br class="<md:hidden" />`'filter-dim'`（昏暗过滤效果）、`'filter-grid'`（网格过滤效果）<br class="<md:hidden" /> 或空字符串（无过滤效果） |
 
-#### Attributes
-
-#### Slots
+### Slots
 
 | 插槽名 | 说明 |
 | --- | --- |
-| | |
+| background-display | 用于显示页面或应用的背景元素 |
+| banner-overlay-bar | 一个覆盖在页面底部的横幅条 |
+| info-overlay | 显示额外信息的浮动层，一般用于提示或详细说明 |

@@ -73,9 +73,4 @@ onUnmounted(() => {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
-
-.active-header {
-  background: var(--st-c-bg-nav);
-  box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
-}
 </style>

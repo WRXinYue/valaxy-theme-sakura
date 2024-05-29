@@ -12,13 +12,13 @@ categories:
 
 `wallpaperKey`属性用于与壁纸切换逻辑进行绑定。利用不同的`wallpaperKey`，可以实现多个背景显示组件的复用
 
-### 预览
+## 预览
 
 <SakuraBackgroundDisplayPG />
 
-### API
+## API
 
-#### Attributes
+### Attributes
 
 | 属性名 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |

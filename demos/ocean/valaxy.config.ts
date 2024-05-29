@@ -7,22 +7,16 @@ export default defineValaxyConfig<ThemeUserConfig>({
   themeConfig: {
     sidebar: [
       {
-        text: '',
-        link: '',
-        items: [
-          {
-            text: '日志',
-            link: '/',
-          },
-          {
-            text: '图谱',
-            link: '/graph',
-          },
-          {
-            text: '全部页面',
-            link: '/all-pages',
-          },
-        ],
+        text: '日志',
+        link: '/',
+      },
+      {
+        text: '图谱',
+        link: '/graph',
+      },
+      {
+        text: '全部页面',
+        link: '/all-pages',
       },
     ],
   },

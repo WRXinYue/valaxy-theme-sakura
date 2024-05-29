@@ -37,8 +37,9 @@
     "@studio-freight/lenis": "^1.0.37"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.3",
     "@types/d3-force": "^3.0.9",
-    "valaxy": "^0.18.5",
+    "valaxy": "^0.18.7",
     "valaxy-addon-waline": "0.1.1"
   }
 }

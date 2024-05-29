@@ -33,10 +33,10 @@ router.afterEach(() => {
 <style lang="scss">
 // Reset style
 .prose ol > li::before {
-  display: none;
+  display: none !important;
 }
 .prose ul > li {
-  position: inherit;
+  position: inherit !important;
 }
 
 .prose li {

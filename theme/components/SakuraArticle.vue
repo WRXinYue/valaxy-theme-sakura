@@ -10,8 +10,8 @@ const frontmatter = useFrontmatter()
     <!-- :class="themeConfig.animation && 'element-slide-up'" -->
 
     <SakuraMultiColumnsLayout class="grid-layout container !max-w-screen-2xl lg:px-6 mx-auto pt-$header-height min-w-0">
-      <template #right>
-        <SakuraAside />
+      <template #left>
+        <slot name="left" />
       </template>
 
       <template #content>
@@ -19,11 +19,14 @@ const frontmatter = useFrontmatter()
 
         <!-- This 'content' cannot be change. For more information, see https://github.com/YunYouJun/valaxy/blob/a7d24dfabb1022e20ec12bb1938fd272fd1e19e6/packages/valaxy/client/composables/outline/anchor.ts#L42 -->
         <div class="content article-content grid divide-y divide-gray-200 dark:divide-gray-700 px-30px">
+          <slot name="content" />
           <slot />
         </div>
       </template>
 
-      <template #left />
+      <template #right>
+        <slot name="right" />
+      </template>
     </SakuraMultiColumnsLayout>
   </article>
 </template>

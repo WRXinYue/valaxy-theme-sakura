@@ -12,7 +12,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "valaxy": "0.18.5",
+    "valaxy": "0.18.7",
     "valaxy-theme-sakura": "workspace:*"
   },
   "devDependencies": {

@@ -11,7 +11,7 @@ const siteConfig = useSiteConfig()
 </script>
 
 <template>
-  <div class="ml-$navbar-ml">
+  <div>
     <template v-if="favicon">
       <img class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
     </template>

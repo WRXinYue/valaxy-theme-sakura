@@ -7,7 +7,7 @@ const router = useRouter()
 </script>
 
 <template>
-  <div class="site-info" m="t-6">
+  <div class="site-info flex flex-col items-center">
     <RouterLink class="site-author-avatar" to="/about">
       <img class="rounded-full" :src="siteConfig.author.avatar" alt="avatar">
       <span class="site-author-status" :title="siteConfig.author.status.message">{{ siteConfig.author.status.emoji }}</span>

@@ -54,6 +54,5 @@
   transition: padding-left var(--va-transition-duration);
   padding-left: var(--app-container-layout-pl);
   background-color: var(--st-c-bg);
-  margin-top: calc(-1 * var(--st-c-navbar-height));
 }
 </style>
