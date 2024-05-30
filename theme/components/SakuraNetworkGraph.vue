@@ -1,33 +1,88 @@
 <script setup lang="ts">
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import * as d3 from 'd3'
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import type { Post } from 'valaxy'
 import type { D3DragEvent, D3ZoomEvent, Selection, Simulation, SimulationLinkDatum, SimulationNodeDatum } from 'd3'
-import data from './data.json'
+import { useFrontmatter, usePostList, usePostTitle } from 'valaxy'
+import { useRouter } from 'vue-router'
+
+const props = withDefaults(defineProps<{
+  type?: string
+  posts?: Post[]
+  width?: number
+  height?: number
+  nodeWeight?: number
+}>(), {
+  width: 1812,
+  height: 1738,
+  nodeWeight: 5,
+})
 
 const chartContainer = ref()
+const frontmatter = useFrontmatter()
+const title = usePostTitle(frontmatter)
 
-const width = 928
-const height = 680
+const router = useRouter()
+const routes = usePostList({ type: props.type || '' })
+const posts = computed(() => props.posts || routes.value)
+
+router.afterEach(() => onRouteChange())
+
 const color = d3.scaleOrdinal(d3.schemeCategory10)
 let simulation: Simulation<SimulationNodeDatum, SimulationLinkDatum<SimulationNodeDatum>>
+let allNodes: Array<SimulationNodeDatum | any> = []
+let svg: Selection<SVGSVGElement, unknown, null, undefined>
+let zoom: any
 
 function createChart() {
-  const links = data.links.map(d => ({ ...d }))
-  const nodes = data.nodes.map(d => ({ ...d })) as SimulationNodeDatum[]
+  const width = props.width
+  const height = props.height
 
-  simulation = d3.forceSimulation(nodes)
+  const links = posts.value.map<SimulationLinkDatum<SimulationNodeDatum | any>>(d => ({
+    source: d.title,
+    target: d.categories,
+    value: 1,
+  }))
+
+  const nodes = posts.value.map<SimulationNodeDatum | any>(d => ({
+    id: d.title,
+    group: d.categories,
+    title: d.title,
+    path: d.path,
+  }))
+
+  const categoryCount = posts.value.reduce((acc, d) => {
+    const categories = Array.isArray(d.categories) ? d.categories : [d.categories]
+    categories.forEach((category) => {
+      if (category)
+        acc[category] = (acc[category] || props.nodeWeight) + 1
+    })
+    return acc
+  }, {} as Record<string, number>)
+
+  const categoryNodes = [...new Set(posts.value.flatMap(d => Array.isArray(d.categories) ? d.categories : [d.categories]))].map(category => ({
+    id: category,
+    group: 'category',
+    title: category,
+    path: `/categories?category=${category}`,
+    weight: categoryCount[category!],
+  })).filter(node => node !== null)
+
+  allNodes = [...nodes, ...categoryNodes]
+
+  simulation = d3.forceSimulation(allNodes)
     .force('link', d3.forceLink(links).id((d: any) => d.id))
-    .force('charge', d3.forceManyBody())
+    .force('charge', d3.forceManyBody().strength(-50)) // 排斥力强度
+    .force('collide', d3.forceCollide().radius((d: any) => d.weight ? d.weight * 2.5 : 15).iterations(2)) // 增加碰撞力的半径和迭代次数
     .force('x', d3.forceX())
     .force('y', d3.forceY())
 
-  const svg = d3.create('svg')
+  svg = d3.create('svg')
     .attr('width', width)
     .attr('height', height)
-    .attr('viewBox', [-width / 2, -height / 2, width, height])
     .attr('style', 'max-width: 100%; height: auto;') as Selection<SVGSVGElement, unknown, null, undefined>
 
-  const zoom = d3.zoom<SVGSVGElement, unknown>()
+  zoom = d3.zoom<SVGSVGElement, unknown>()
     .scaleExtent([0.1, 10000])
     .on('zoom', zoomed)
 
@@ -47,13 +102,26 @@ function createChart() {
     .attr('stroke', '#fff')
     .attr('stroke-width', 1.5)
     .selectAll('circle')
-    .data(nodes)
+    .data(allNodes)
     .join('circle')
-    .attr('r', 5)
+    .attr('r', (d: any) => d.weight || props.nodeWeight)
     .attr('fill', (d: any) => color(d.group))
+    .on('click', (event, d) => {
+      router.push(d.path)
+    })
+
+  const labels = container.append('g')
+    .selectAll('text')
+    .data(allNodes)
+    .join('text')
+    .attr('text-anchor', 'middle')
+    .text((d: any) => d.title)
+    .style('font-size', '10px')
+    .style('fill', '#555')
+    .classed('sakura-graph-label-text', true)
 
   node.append('title')
-    .text((d: any) => d.id)
+    .text((d: any) => d.title)
 
   node.call(d3.drag()
     .on('start', dragstarted)
@@ -70,6 +138,10 @@ function createChart() {
     node
       .attr('cx', (d: any) => d.x)
       .attr('cy', (d: any) => d.y)
+
+    labels
+      .attr('x', (d: any) => d.x)
+      .attr('y', (d: any) => d.y + (d.weight ? d.weight + 7 : 12))
   })
 
   function dragstarted(event: D3DragEvent<any, any, any>) {
@@ -93,15 +165,53 @@ function createChart() {
 
   function zoomed(event: D3ZoomEvent<SVGSVGElement, unknown>) {
     container.attr('transform', event.transform.toString())
+    const scale = event.transform.k
+    if (scale < 1) // 调整缩放隐藏范围
+      labels.style('display', 'none')
+    else
+      labels.style('display', 'block')
   }
 
   chartContainer.value.appendChild(svg.node())
 }
 
-onMounted(() => createChart())
+function onRouteChange() {
+  const targetNode = allNodes.find(node => node.title === title.value)
+
+  if (targetNode) {
+    const { x, y } = targetNode
+
+    // console.log('Target Node:', targetNode)
+    // console.log('Current Transform:', d3.zoomTransform(svg.node()))
+
+    const currentTransform = d3.zoomTransform(svg.node()!)
+    const scale = currentTransform.k
+
+    const translateX = (props.width / 2 - x * scale)
+    const translateY = (props.height / 2 - y * scale)
+
+    // console.log('Translate:', translateX, translateY)
+
+    svg.transition().duration(750).call(
+      zoom.transform,
+      d3.zoomIdentity.translate(translateX, translateY).scale(scale),
+    )
+  }
+}
+
+onMounted(() => {
+  createChart()
+  onRouteChange()
+})
 onBeforeUnmount(() => simulation.stop())
 </script>
 
 <template>
-  <div ref="chartContainer" />
+  <div ref="chartContainer" class="sakura-network-graph" />
 </template>
+
+<style lang="scss">
+.sakura-graph-label-text {
+  pointer-events: none;
+}
+</style>
