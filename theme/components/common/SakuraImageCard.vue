@@ -49,7 +49,7 @@ const overlayStyle = computed(() => ({
       <template v-if="overlay">
         <div class="overlay" :style="overlayStyle" />
       </template>
-      <div class="absolute top-0 w-full h-full">
+      <div v-if="$slots.default" class="absolute top-0 w-full h-full">
         <slot />
       </div>
     </AppLink>

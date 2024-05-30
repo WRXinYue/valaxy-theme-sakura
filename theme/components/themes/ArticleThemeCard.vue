@@ -51,6 +51,7 @@ article {
   border-radius: var(--st-c-article-card-rd);
   box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease;
+  min-height: 230px;
 
   &:hover {
     box-shadow: 0 5px 10px 5px rgb(0, 0, 0, 0.2);
