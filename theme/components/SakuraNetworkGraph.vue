@@ -46,32 +46,41 @@ function createChart() {
 
   const links = posts.value.flatMap<SimulationLinkDatum<SimulationNodeDatum | any>>((d) => {
     // categories
+    let categoryLinks: any[] = []
     if (Array.isArray(d.categories)) {
-      const links = [{
+      categoryLinks = [{
         source: d.path,
         target: d.categories[d.categories.length - 1],
         value: 1,
       }]
 
       for (let i = 0; i < d.categories.length - 1; i++) {
-        links.push({
+        categoryLinks.push({
           source: d.categories[i],
           target: d.categories[i + 1],
           value: 1,
         })
       }
-      return links
     }
     else if (typeof d.categories === 'string') {
-      return [{
+      categoryLinks = [{
         source: d.path,
         target: d.categories,
         value: 1,
       }]
     }
-    else {
-      return []
+
+    // tags
+    let tagLinks: any[] = []
+    if (d.tags) {
+      tagLinks = d.tags.map(tag => ({
+        source: d.path,
+        target: tag,
+        value: 1,
+      }))
     }
+
+    return [...categoryLinks, ...tagLinks]
   })
 
   const nodes = posts.value.map<SimulationNodeDatum | any>(d => ({
@@ -99,7 +108,16 @@ function createChart() {
       weight: categoryCount[category!],
     }))
 
-  allNodes = [...nodes, ...categoryNodes]
+  const tagNodes = [...new Set(posts.value.flatMap(d => d.tags))]
+    .map(tag => ({
+      id: tag,
+      group: 'tag',
+      title: tag,
+      path: `/tags/?tag=${tag}`,
+      weight: categoryCount[tag!],
+    }))
+
+  allNodes = [...nodes, ...categoryNodes, ...tagNodes]
 
   simulation = d3.forceSimulation(allNodes)
     .force('link', d3.forceLink(links).id((d: any) => d.id))
