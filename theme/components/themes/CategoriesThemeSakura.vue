@@ -3,14 +3,7 @@ import { computed } from 'vue'
 import { useCategories, useFrontmatter, usePostTitle, useSiteStore } from 'valaxy'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import { defineWebPage, useSchemaOrg } from '@unhead/schema-org'
 import { useThemeConfig } from '../../composables'
-
-useSchemaOrg([
-  defineWebPage({
-    '@type': 'CollectionPage',
-  }),
-])
 
 const site = useSiteStore()
 const frontmatter = useFrontmatter()
@@ -58,15 +51,13 @@ const title = usePostTitle(frontmatter)
           </div>
           <SakuraCategories :categories="categories.children" />
 
-          <SakuraIconTextDivider icon="i-fa6-solid:water" text="文章列表" :divider="false" />
-
           <RouterView />
         </div>
       </template>
 
       <template #main-nav-before>
         <div v-if="curCategory" class="categories-margin-control">
-          <SakuraArticleListCustom w="full" :posts="posts" />
+          <ArticleListThemeCard w="full" :posts="posts" />
         </div>
       </template>
     </component>
