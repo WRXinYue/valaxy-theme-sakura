@@ -44,11 +44,35 @@ function createChart() {
   const width = props.width
   const height = props.height
 
-  const links = posts.value.map<SimulationLinkDatum<SimulationNodeDatum | any>>(d => ({
-    source: d.path,
-    target: d.categories,
-    value: 1,
-  }))
+  const links = posts.value.flatMap<SimulationLinkDatum<SimulationNodeDatum | any>>((d) => {
+    // categories
+    if (Array.isArray(d.categories)) {
+      const links = [{
+        source: d.path,
+        target: d.categories[d.categories.length - 1],
+        value: 1,
+      }]
+
+      for (let i = 0; i < d.categories.length - 1; i++) {
+        links.push({
+          source: d.categories[i],
+          target: d.categories[i + 1],
+          value: 1,
+        })
+      }
+      return links
+    }
+    else if (typeof d.categories === 'string') {
+      return [{
+        source: d.path,
+        target: d.categories,
+        value: 1,
+      }]
+    }
+    else {
+      return []
+    }
+  })
 
   const nodes = posts.value.map<SimulationNodeDatum | any>(d => ({
     id: d.path,
@@ -66,13 +90,14 @@ function createChart() {
     return acc
   }, {} as Record<string, number>)
 
-  const categoryNodes = [...new Set(posts.value.flatMap(d => Array.isArray(d.categories) ? d.categories : [d.categories]))].map(category => ({
-    id: category,
-    group: 'category',
-    title: category,
-    path: `/categories?category=${category}`,
-    weight: categoryCount[category!],
-  })).filter(node => node !== null)
+  const categoryNodes = [...new Set(posts.value.flatMap(d => Array.isArray(d.categories) ? d.categories : [d.categories]))]
+    .map(category => ({
+      id: category,
+      group: 'category',
+      title: category,
+      path: `/categories?category=${category}`,
+      weight: categoryCount[category!],
+    }))
 
   allNodes = [...nodes, ...categoryNodes]
 
@@ -114,6 +139,12 @@ function createChart() {
     .attr('fill', (d: any) => color(d.group))
     .on('click', (event, d) => {
       router.push(d.path)
+    })
+    .on('mouseover', (event, d) => {
+      link.attr('stroke', l => (l.source.id === d.id || l.target.id === d.id) ? 'blue' : '#999')
+    })
+    .on('mouseout', () => {
+      link.attr('stroke', '#999')
     })
 
   const labels = container.append('g')
@@ -253,7 +284,10 @@ function onRouteChange() {
 
 onMounted(() => {
   createChart()
-  onRouteChange()
+
+  setTimeout(() => {
+    onRouteChange()
+  }, 1000)
 })
 onBeforeUnmount(() => simulation.stop())
 </script>
