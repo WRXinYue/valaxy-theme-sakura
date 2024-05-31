@@ -37,4 +37,4 @@ categories:
 - SakuraArticle <!-- TODO: -->
 - YunSponsor <!-- TODO: -->
 - ValaxyCopyright <!-- TODO: -->
-- [SakuraArticleFooterCustom](/components-themes/SakuraArticleFooterCustom)
+- [SakuraArticleFooterCustom](/components-custom/SakuraArticleFooterCustom)

@@ -19,7 +19,7 @@ categories:
 
 ## 自定义
 
-如果您想自定义或者不想要默认配置的[`SakuraNavbarCustom`](/custom/SakuraNavbarCustom)组件，进行替换即可。如:
+如果您想自定义或者不想要默认配置的[`SakuraNavbarCustom`](/components-custom/SakuraNavbarCustom)组件，进行替换即可。如:
 
 ```vue
 <template>
