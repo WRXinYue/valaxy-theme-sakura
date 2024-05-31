@@ -12,10 +12,16 @@ const props = withDefaults(defineProps<{
   width?: number
   height?: number
   nodeWeight?: number
+  scale?: number
+  hideScaleThreshold?: number
+  selectNodeColor?: string
 }>(), {
   width: 1812,
   height: 1738,
   nodeWeight: 5,
+  scale: 1.8,
+  hideScaleThreshold: 1,
+  selectNodeColor: 'red',
 })
 
 const chartContainer = ref()
@@ -39,13 +45,13 @@ function createChart() {
   const height = props.height
 
   const links = posts.value.map<SimulationLinkDatum<SimulationNodeDatum | any>>(d => ({
-    source: d.title,
+    source: d.path,
     target: d.categories,
     value: 1,
   }))
 
   const nodes = posts.value.map<SimulationNodeDatum | any>(d => ({
-    id: d.title,
+    id: d.path,
     group: d.categories,
     title: d.title,
     path: d.path,
@@ -164,13 +170,49 @@ function createChart() {
   }
 
   function zoomed(event: D3ZoomEvent<SVGSVGElement, unknown>) {
-    container.attr('transform', event.transform.toString())
     const scale = event.transform.k
-    if (scale < 1) // 调整缩放隐藏范围
+    const translateX = event.transform.x
+    const translateY = event.transform.y
+
+    const duration = 1600
+
+    container.transition()
+      .duration(duration)
+      .ease(d3.easeCircleOut)
+      .attrTween('transform', () => {
+        const currentTransform = container.attr('transform') || 'translate(0,0) scale(1)'
+        const translateMatch = currentTransform.match(/translate\(([^)]+)\)/)
+        const currentTranslate = translateMatch ? translateMatch[1].split(',').map(Number) : [0, 0]
+        const currentScaleMatch = currentTransform.match(/scale\(([^)]+)\)/)
+        const currentScale = currentScaleMatch ? Number.parseFloat(currentScaleMatch[1]) : 1
+
+        const scaleInterpolate = d3.interpolateNumber(currentScale, scale)
+
+        const translateXInterpolate = d3.interpolateNumber(currentTranslate[0], translateX)
+        const translateYInterpolate = d3.interpolateNumber(currentTranslate[1], translateY)
+
+        return function (t) {
+          const interpolatedScale = scaleInterpolate(t)
+          const interpolatedTranslateX = translateXInterpolate(t)
+          const interpolatedTranslateY = translateYInterpolate(t)
+          return `translate(${interpolatedTranslateX},${interpolatedTranslateY}) scale(${interpolatedScale})`
+        }
+      })
+
+    if (scale < props.hideScaleThreshold)
       labels.style('display', 'none')
     else
       labels.style('display', 'block')
   }
+
+  // Initial zoom and shift Settings
+  const initialScale = props.scale
+  const initialTranslate: [number, number] = [props.width / 2, props.height / 2]
+
+  svg.call(
+    zoom.transform,
+    d3.zoomIdentity.translate(...initialTranslate).scale(initialScale),
+  )
 
   chartContainer.value.appendChild(svg.node())
 }
@@ -192,10 +234,20 @@ function onRouteChange() {
 
     // console.log('Translate:', translateX, translateY)
 
-    svg.transition().duration(750).call(
-      zoom.transform,
-      d3.zoomIdentity.translate(translateX, translateY).scale(scale),
-    )
+    svg.transition()
+      .duration(750)
+      .call(
+        zoom.transform,
+        d3.zoomIdentity.translate(translateX, translateY).scale(scale),
+      )
+
+    svg.selectAll('circle')
+      .filter((d: any) => d.id === targetNode.id)
+      .attr('fill', props.selectNodeColor)
+
+    svg.selectAll('circle')
+      .filter((d: any) => d.id !== targetNode.id)
+      .attr('fill', (d: any) => color(d.group))
   }
 }
 
