@@ -24,7 +24,7 @@ watch(() => props.posts, () => {
     if (post.hide && post.hide !== 'index')
       return
     if (post.date) {
-      const year = Number.parseInt(formatDate(post.date, 'YYYY'))
+      const year = Number.parseInt(formatDate(post.date, 'yyyy'))
       const month = Number.parseInt(formatDate(post.date, 'MM'))
       if (!postListByYear.value[year]) {
         years.value.push(year)
