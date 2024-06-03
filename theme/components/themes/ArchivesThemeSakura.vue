@@ -25,7 +25,6 @@ useSchemaOrg([
       </template>
       <template #main-content>
         <SakuraTimeLine :posts="site.postList" />
-        <RouterView />
       </template>
     </component>
   </RouterView>

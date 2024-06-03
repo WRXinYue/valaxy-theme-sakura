@@ -50,8 +50,6 @@ const title = usePostTitle(frontmatter)
             {{ t('counter.categories', Array.from(categories.children).length) }}
           </div>
           <SakuraCategories :categories="categories.children" />
-
-          <RouterView />
         </div>
       </template>
 

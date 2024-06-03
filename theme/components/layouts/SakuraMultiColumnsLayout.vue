@@ -45,6 +45,16 @@ const props = defineProps(['class'])
       </aside>
     </div>
   </template>
+  <template v-if="($slots.default || $slots.content) && !$slots.left && !$slots.right">
+    <div :class="props.class" class="grid-layout-one-columns container !max-w-screen-2xl lg:px-6 mx-auto pt-$header-height min-w-0">
+      <div>
+        <template v-if="$slots.default">
+          <slot />
+        </template>
+        <slot v-else name="content" />
+      </div>
+    </div>
+  </template>
 </template>
 
 <style lang="scss" scoped>
@@ -80,6 +90,17 @@ const props = defineProps(['class'])
 
   @include screen('md') {
     grid-template-columns: 1fr 330px;
+  }
+}
+
+.grid-layout-one-columns {
+  grid-template-columns: 1fr;
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 0px;
+
+  @include screen('md') {
+    grid-template-columns: 1fr;
   }
 }
 </style>

@@ -1,4 +1,5 @@
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
+import noneImg from '../assets/image-404.png'
 
 export function isVideoUrl(url: string) {
   return /\.(mp4|webm|ogg)$/i.test(url)
@@ -44,13 +45,13 @@ export function checkCurrentRouter(route: RouteLocationNormalizedLoaded, path: s
 
 /**
  * set default img
- * @param el
+ * @param e
  */
-// export function onImgError(e: Event, defaultImg = noneImg) {
-//   const targetEl = e.target as HTMLImageElement
-//   targetEl.setAttribute('data-src', targetEl.src)
-//   targetEl.src = defaultImg
-// }
+export function onImgError(e: Event, defaultImg = noneImg) {
+  const targetEl = e.target as HTMLImageElement
+  targetEl.setAttribute('data-src', targetEl.src)
+  targetEl.src = defaultImg
+}
 
 export function scrollTo(el: HTMLElement, hash: string, smooth = false) {
   let target: Element | null = null

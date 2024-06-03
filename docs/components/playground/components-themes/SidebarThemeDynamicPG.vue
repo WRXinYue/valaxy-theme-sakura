@@ -1,10 +1,8 @@
 <script lang="ts" setup>
 import { useThemeConfig } from 'valaxy'
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 
 const themeConfig = useThemeConfig() as any
-const router = useRouter()
 
 const config = ref(
   {
@@ -15,11 +13,6 @@ const config = ref(
 function configUpdate(newConfig: any) {
   config.value = newConfig
 }
-
-// Loading this module will cause global style changes, this is the simplest solution for now
-router.afterEach(() => {
-  location.reload()
-})
 </script>
 
 <template>

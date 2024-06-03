@@ -1,6 +1,35 @@
 import { ref, watch } from 'vue'
 import { isClient } from '@vueuse/core'
 
+// export function fetchData<T>(source: string | T[]) {
+//   const data = ref<T[]>()
+
+//   watch(() => source, () => {
+//     let rawData: T[]
+//     if (typeof source === 'string') {
+//       if (!isClient)
+//         return
+//       fetch(source)
+//         .then(res => res.json())
+//         .then((json: T[]) => {
+//           rawData = json || []
+//           data.value = rawData
+//         })
+//         .catch(() => {
+//           data.value = []
+//         })
+//     }
+//     else {
+//       rawData = source
+//       data.value = rawData
+//     }
+//   }, { immediate: true })
+
+//   return {
+//     data,
+//   }
+// }
+
 /**
  * fetch data from source, and random
  * @param source
