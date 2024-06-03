@@ -58,6 +58,20 @@
   color: #6b7280;
   left: 0;
 }
+.prose ul > li {
+  position: relative;
+  padding-left: 1.75em;
+}
+.prose ul > li::before {
+  content: '';
+  position: absolute;
+  background-color: #d1d5db;
+  border-radius: 50%;
+  width: 0.375em;
+  height: 0.375em;
+  top: calc(0.875em - 0.1875em);
+  left: 0.25em;
+}
 .prose hr {
   border-color: rgba(125, 125, 125, 0.3);
   margin-top: 3em;

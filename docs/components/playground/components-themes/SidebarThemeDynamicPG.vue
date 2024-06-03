@@ -17,22 +17,8 @@ function configUpdate(newConfig: any) {
 
 <template>
   <SakuraSidebar>
-    <SidebarThemeDynamic :sidebar="config.sidebar" />
+    <SidebarThemeDynamic :sidebar="config.sidebar" class="playground" />
   </SakuraSidebar>
 
   <CodeEditor :config="config" @update:config="configUpdate" />
 </template>
-
-<style lang="scss">
-// Reset style
-.prose ol > li::before {
-  display: none !important;
-}
-.prose ul > li {
-  position: inherit !important;
-}
-
-.prose li {
-  margin: 0 !important;
-}
-</style>

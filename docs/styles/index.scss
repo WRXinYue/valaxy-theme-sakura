@@ -62,3 +62,31 @@ a {
     }
   }
 }
+
+
+.playground {
+  &.sakura-sidebar {
+    li {
+      margin: 0;
+    }
+    ul > li {
+      position: inherit;
+      padding-left: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+    ol > li {
+      position: inherit;
+      padding-left: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+    :where(ol,ul):not(:where(.not-prose,.not-prose *)) {
+      padding-left: 0;
+    }
+  }
+}
