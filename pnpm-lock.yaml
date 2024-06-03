@@ -43,8 +43,8 @@ importers:
         specifier: workspace:*
         version: link:../models/valaxy-addon-live2d
       valaxy-addon-meting:
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^0.1.2
+        version: 0.1.2
       valaxy-addon-twikoo:
         specifier: ^0.0.3
         version: 0.0.3(valaxy@0.18.7(@babel/parser@7.24.5)(@types/markdown-it@14.1.1)(@types/node@20.12.11)(@unhead/shared@1.9.10)(axios@1.6.8)(postcss@8.4.38)(rollup@4.17.2)(typescript@5.4.5)(unhead@1.9.10))
@@ -3891,8 +3891,8 @@ packages:
     peerDependencies:
       valaxy: latest
 
-  valaxy-addon-meting@0.1.1:
-    resolution: {integrity: sha512-cG5MOXF96A14ZK6O/IhUcj4QhtRedpW5jL9YQaA7fUJ2Iba41f4vF7v0qvBWdwrtkskaFXfGQ0tUIvc2PpI3Aw==}
+  valaxy-addon-meting@0.1.2:
+    resolution: {integrity: sha512-nps69kRXHsjhQyWp1Ot6oOLkyk4O6f/WwKHVumZABuVqt+LIsXxBCHCBTtTAOsq0dgk3vvisAn0WQ7EOAfX1OA==}
 
   valaxy-addon-twikoo@0.0.3:
     resolution: {integrity: sha512-8ISPqSF3uto8jCceaDuGzeq1utJuH3oJ3mqtz9h1lQhXkP3jwReh8Sa3bnfhHlcfCUCoNK2E5dj8CNK2tVgHpg==}
@@ -8369,7 +8369,7 @@ snapshots:
       - react-dom
       - search-insights
 
-  valaxy-addon-meting@0.1.1: {}
+  valaxy-addon-meting@0.1.2: {}
 
   valaxy-addon-twikoo@0.0.3(valaxy@0.18.7(@babel/parser@7.24.5)(@types/markdown-it@14.1.1)(@types/node@20.12.11)(@unhead/shared@1.9.10)(axios@1.6.8)(postcss@8.4.38)(rollup@4.17.2)(typescript@5.4.5)(unhead@1.9.10)):
     dependencies:
