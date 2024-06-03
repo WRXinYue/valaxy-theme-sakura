@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { onImgError } from '../../utils'
+import noneImg from '../../assets/image-404.png'
 
 const props = defineProps({
   src: String,
@@ -41,14 +42,14 @@ const overlayStyle = computed(() => ({
 }))
 
 function onError(e: Event) {
-  onImgError(e, props.errorImg)
+  onImgError(e, props.errorImg || noneImg)
 }
 </script>
 
 <template>
   <div class="overflow-hidden relative" @mouseover="isHovering = true" @mouseleave="isHovering = false">
     <AppLink :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
-      <img class="lazy object-cover h-full w-full" :src="props.src" :alt="props.alt || 'cover'" :style="imageStyle" @error="onError">
+      <img class="lazy object-cover h-full w-full" loading="lazy" :src="props.src || noneImg" :alt="props.alt || 'cover'" :style="imageStyle" @error="onError">
       <template v-if="overlay">
         <div class="overlay" :style="overlayStyle" />
       </template>

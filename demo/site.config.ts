@@ -55,5 +55,9 @@ export default defineSiteConfig({
     enable: true,
   },
 
+  vanillaLazyload: {
+    enable: true,
+  },
+
   mediumZoom: { enable: true },
 })
