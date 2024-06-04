@@ -5,9 +5,9 @@ import { useCategories, useSiteStore, useTags } from 'valaxy'
 import type { NavItem } from '../../types'
 import { useThemeConfig } from '../../composables'
 
-const props = defineProps({
-  sidebar: Array<NavItem>,
-})
+const props = defineProps<{
+  sidebar: NavItem[]
+}>()
 
 const { t } = useI18n()
 

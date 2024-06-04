@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { useThemeConfig } from '../../composables'
+
+const themeConfig = useThemeConfig()
+</script>
+
 <template>
   <SakuraBannerCustom />
 
@@ -10,7 +16,7 @@
       </slot>
 
       <slot name="article-pinned">
-        <SakuraArticlePinnedCustom />
+        <SakuraArticlePinnedCustom v-if="themeConfig.articlePinned" />
       </slot>
 
       <slot name="article-list">

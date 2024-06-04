@@ -3,14 +3,7 @@ import { computed } from 'vue'
 import { useCategories, useFrontmatter, usePostTitle, useSiteStore } from 'valaxy'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import { defineWebPage, useSchemaOrg } from '@unhead/schema-org'
 import { useThemeConfig } from '../../composables'
-
-useSchemaOrg([
-  defineWebPage({
-    '@type': 'CollectionPage',
-  }),
-])
 
 const site = useSiteStore()
 const frontmatter = useFrontmatter()

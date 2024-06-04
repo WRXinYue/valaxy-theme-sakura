@@ -1,20 +1,16 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
-import { onMounted, ref } from 'vue'
+import { useMounted } from '@vueuse/core'
 
 defineProps<{
   post: Post
 }>()
 
-const loading = ref(true)
-
-onMounted(() => {
-  loading.value = false
-})
+const isMounted = useMounted()
 </script>
 
 <template>
-  <article v-if="!loading">
+  <article v-if="isMounted">
     <RouterLink :to="post.path || ''" :aria-label="`Read more about ${post.title}`">
       <SakuraDate :date="post.date" class="sakura-minima-date" />
       <div class="title my-2">

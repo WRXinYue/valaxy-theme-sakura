@@ -1,21 +1,17 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
-import { onMounted, ref } from 'vue'
+import { useMounted } from '@vueuse/core'
 
 defineProps<{
   post: Post
   imagePosition: boolean
 }>()
 
-const loading = ref(true)
-
-onMounted(() => {
-  loading.value = false
-})
+const isMounted = useMounted()
 </script>
 
 <template>
-  <article v-if="!loading" :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'md:text-right'">
+  <article v-if="isMounted" :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'md:text-right'">
     <SakuraImageCard
       v-if="post.cover" class="<md:rounded-3 h-230px md:w-430px" :to="post.path" :src="post.cover"
       rotate="5" space="1.1" transition-duration="0.45s"

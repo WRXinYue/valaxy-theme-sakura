@@ -4,10 +4,10 @@ import { usePostList, useSiteConfig } from 'valaxy'
 import { useSakuraAppStore } from '../../stores/app'
 import { useThemeConfig } from '../../composables'
 
-const props = defineProps({
-  pageSize: Number,
-  total: Number,
-})
+const props = defineProps<{
+  pageSize?: number
+  total?: number
+}>()
 
 const siteConfig = useSiteConfig()
 const sakura = useSakuraAppStore()
