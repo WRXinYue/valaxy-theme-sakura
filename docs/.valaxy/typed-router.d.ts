@@ -22,10 +22,13 @@ declare module 'vue-router/auto-routes' {
     '/[...path]': RouteRecordInfo<'/[...path]', '/:path(.*)', { path: ParamValue<true> }, { path: ParamValue<false> }>,
     '/api/': RouteRecordInfo<'/api/', '/api', Record<never, never>, Record<never, never>>,
     '/api/addon': RouteRecordInfo<'/api/addon', '/api/addon', Record<never, never>, Record<never, never>>,
+    '/categories/': RouteRecordInfo<'/categories/', '/categories', Record<never, never>, Record<never, never>>,
     '/components/BannerOverlayBar': RouteRecordInfo<'/components/BannerOverlayBar', '/components/BannerOverlayBar', Record<never, never>, Record<never, never>>,
     '/components/InfoOverlay': RouteRecordInfo<'/components/InfoOverlay', '/components/InfoOverlay', Record<never, never>, Record<never, never>>,
     '/components/layout': RouteRecordInfo<'/components/layout', '/components/layout', Record<never, never>, Record<never, never>>,
     '/components/SakuraBackgroundDisplay': RouteRecordInfo<'/components/SakuraBackgroundDisplay', '/components/SakuraBackgroundDisplay', Record<never, never>, Record<never, never>>,
+    '/components/SakuraFooter': RouteRecordInfo<'/components/SakuraFooter', '/components/SakuraFooter', Record<never, never>, Record<never, never>>,
+    '/components/SakuraNetworkGraph': RouteRecordInfo<'/components/SakuraNetworkGraph', '/components/SakuraNetworkGraph', Record<never, never>, Record<never, never>>,
     '/components/SakuraSidebar': RouteRecordInfo<'/components/SakuraSidebar', '/components/SakuraSidebar', Record<never, never>, Record<never, never>>,
     '/components-custom/App': RouteRecordInfo<'/components-custom/App', '/components-custom/App', Record<never, never>, Record<never, never>>,
     '/components-custom/SakuraArticleFooterCustom': RouteRecordInfo<'/components-custom/SakuraArticleFooterCustom', '/components-custom/SakuraArticleFooterCustom', Record<never, never>, Record<never, never>>,
@@ -88,5 +91,6 @@ declare module 'vue-router/auto-routes' {
     '/posts/doc5': RouteRecordInfo<'/posts/doc5', '/posts/doc5', Record<never, never>, Record<never, never>>,
     '/posts/doc6': RouteRecordInfo<'/posts/doc6', '/posts/doc6', Record<never, never>, Record<never, never>>,
     '/releases': RouteRecordInfo<'/releases', '/releases', Record<never, never>, Record<never, never>>,
+    '/tags/': RouteRecordInfo<'/tags/', '/tags', Record<never, never>, Record<never, never>>,
   }
 }

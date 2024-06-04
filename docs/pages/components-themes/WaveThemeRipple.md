@@ -8,13 +8,9 @@ categories:
 
 ## WaveThemeRipple
 
-::: info
-该页正在完善中，敬请期待...
-:::
+## 预览
 
-<!-- TODO: -->
-
-#### WaveThemeRipple
+<WaveThemeRipplePG />
 
 ```vue
 <template>
@@ -28,5 +24,3 @@ categories:
   </SakuraBanner>
 </template>
 ```
-
-<WaveThemeRipplePG />

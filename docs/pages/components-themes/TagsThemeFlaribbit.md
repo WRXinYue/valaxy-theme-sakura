@@ -8,8 +8,8 @@ categories:
 
 ## TagsThemeFlaribbit
 
-::: info
-该页正在完善中，敬请期待...
-:::
+## 预览
 
-<!-- TODO: -->
+<AppLink to="/tags?theme=flaribbit">
+  <SakuraButton>点我预览</SakuraButton>
+</AppLink>

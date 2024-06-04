@@ -8,8 +8,6 @@ categories:
 
 ## TagsThemeYun
 
-::: info
-该页正在完善中，敬请期待...
-:::
-
-<!-- TODO: -->
+<AppLink to="/tags?theme=yun">
+  <SakuraButton>点我预览</SakuraButton>
+</AppLink>

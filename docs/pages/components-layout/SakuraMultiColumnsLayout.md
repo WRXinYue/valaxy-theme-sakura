@@ -10,7 +10,7 @@ categories:
 
 插槽(Slots) 填充两个元素实现双列布局，三个元素实现三列布局
 
-## 基础用法
+## 双列示例
 
 ```vue
 <template>
@@ -25,7 +25,7 @@ categories:
 </template>
 ```
 
-## 三列
+## 三列示例
 
 ```vue
 <script lang="ts" setup>

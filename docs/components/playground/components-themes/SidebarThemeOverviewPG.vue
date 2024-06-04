@@ -33,7 +33,7 @@ function configUpdate(newConfig: any) {
 
 <template>
   <SakuraSidebar>
-    <SidebarThemeOverview :sidebar="config.sidebar" />
+    <SidebarThemeOverview :sidebar="config.sidebar" class="playground" />
   </SakuraSidebar>
 
   <CodeEditor :config="config" @update:config="configUpdate" />

@@ -8,8 +8,14 @@ categories:
 
 ## ArticleThemeMinima
 
-::: info
-该页正在完善中，敬请期待...
-:::
+## 预览
 
-<!-- TODO: -->
+<ArticleThemeMinimaPG />
+
+## API
+
+### Attributes
+
+| 属性名 | 类型 | 默认值 | 说明 |
+| ---- | ---- | ---- | ---- |
+| post | `Post` | `undefined` | --- |

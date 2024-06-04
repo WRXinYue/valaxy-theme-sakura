@@ -234,4 +234,4 @@ pnpm up valaxy-theme-sakura --latest
 - [云游君(云猫猫)](https://valaxy.site/)
 - [樱花庄的白猫博客主题](https://github.com/mashirozx/sakura)
 - [hexo-theme-sakura](https://github.com/honjun/hexo-theme-sakura)
-- [vitePress-theme-sakura](https://github.com/flaribbit/vitepress-theme-sakura)
+- [vitepress-theme-sakura](https://github.com/flaribbit/vitepress-theme-sakura)

@@ -8,8 +8,21 @@ categories:
 
 ## ArticlePinnedThemeStartDash
 
-::: info
-该页正在完善中，敬请期待...
-:::
+## 预览
 
-<!-- TODO: -->
+<ArticlePinnedThemeStartDashPG />
+
+## API
+
+### Attributes
+
+```ts
+export interface ThemeConfig {
+  articlePinned?: {
+    title?: string // 标题
+    desc?: string // 文本
+    img?: string // 图片URL
+    link?: string // 跳转链接
+  }[]
+}
+```

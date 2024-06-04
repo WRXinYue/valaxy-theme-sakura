@@ -8,13 +8,11 @@ categories:
 
 ## WaveThemeYunCloud
 
-::: info
-该页正在完善中，敬请期待...
-:::
+来自于`yun`主题的组件
 
-<!-- TODO: -->
+## 预览
 
-#### WaveThemeYunCloud
+<WaveThemeYunCloudPG />
 
 ```vue
 <template>
@@ -29,4 +27,10 @@ categories:
 </template>
 ```
 
-<WaveThemeYunCloudPG />
+## API
+
+### Attributes
+
+| 属性名 | 类型 | 默认值 | 说明 |
+| ---- | ---- | ---- | ---- |
+| color | `string` | `'#ffffff'` | 波浪的颜色 |

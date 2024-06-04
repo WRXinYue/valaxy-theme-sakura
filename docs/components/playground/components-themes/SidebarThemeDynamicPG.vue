@@ -4,11 +4,9 @@ import { ref } from 'vue'
 
 const themeConfig = useThemeConfig() as any
 
-const config = ref(
-  {
-    sidebar: themeConfig.value.sidebar,
-  },
-)
+const config = ref({
+  sidebar: themeConfig.value.sidebar,
+})
 
 function configUpdate(newConfig: any) {
   config.value = newConfig

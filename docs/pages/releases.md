@@ -16,6 +16,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- 重构主页及其他页面为多栏布局
+- 新增文章d3-force网络图功能(BATE)
+- 增加博客友链和RSS支持
+- 新增首页布局组件
+- 优化和调整细节样式
+- 侧边栏改为三栏布局，提升性能并支持左右侧边栏和侧边栏状态持久化
+- 实现布局(layout)主题化
+
+### Fixed
+
+- 修复标签(tags)页面文章列表数据问题
+- 修复版本更新导致的日期格式化问题
+
 ## [0.5.5] - 2024-04-19
 
 ### Added

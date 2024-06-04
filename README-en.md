@@ -45,4 +45,4 @@ pnpm up valaxy-theme-sakura --latest
 - [YunYouJun](https://valaxy.site/)
 - [樱花庄的白猫博客主题](https://github.com/mashirozx/sakura)
 - [hexo-theme-sakura](https://github.com/honjun/hexo-theme-sakura)
-- [vitePress-theme-sakura](https://github.com/flaribbit/vitepress-theme-sakura)
+- [vitepress-theme-sakura](https://github.com/flaribbit/vitepress-theme-sakura)

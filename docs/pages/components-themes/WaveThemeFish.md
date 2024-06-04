@@ -8,13 +8,11 @@ categories:
 
 ## WaveThemeFish
 
-::: info
-该页正在完善中，敬请期待...
-:::
+未知来源，在原代码基础上进行使用typescript重构去除对jQuery的依赖
 
-<!-- TODO: -->
+## 预览
 
-#### WaveThemeFish
+<WaveThemeFishPG />
 
 ```vue
 <template>
@@ -29,4 +27,10 @@ categories:
 </template>
 ```
 
-<WaveThemeFishPG />
+## API
+
+### Attributes
+
+| 属性名 | 类型 | 默认值 | 说明 |
+| ---- | ---- | ---- | ---- |
+| color | `string` | `'var(--st-c-bg)'` | 鱼的颜色 |
