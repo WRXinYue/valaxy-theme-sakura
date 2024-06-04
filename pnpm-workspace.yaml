@@ -3,4 +3,4 @@ packages:
   - demo
   - demos/*
   - docs
-  - models/*
+  - packages/*

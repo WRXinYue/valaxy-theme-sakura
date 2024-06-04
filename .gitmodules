@@ -1,3 +1,3 @@
-[submodule "models/valaxy-addon-live2d"]
-	path = models/valaxy-addon-live2d
+[submodule "packages/valaxy-addon-live2d"]
+	path = packages/valaxy-addon-live2d
 	url = https://github.com/valaxyjs/valaxy-addon-live2d.git
