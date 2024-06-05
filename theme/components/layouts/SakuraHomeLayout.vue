@@ -5,11 +5,11 @@ const themeConfig = useThemeConfig()
 </script>
 
 <template>
-  <SakuraBannerCustom />
+  <slot name="banner">
+    <SakuraBannerCustom />
+  </slot>
 
   <div class="grid-layout container !max-w-screen-2xl lg:px-6 mx-auto pt-$header-height min-w-0">
-    <div />
-
     <div class="md:w-800px m-auto min-w-300px">
       <slot name="notice-board">
         <SakuraNoticeBoardCustom />
