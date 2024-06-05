@@ -67,7 +67,7 @@ const sortedYears = computed(() => {
         <header class="post-header" flex items-center relative>
           <div class="post-meta">
             <time v-if="post.date" class="post-time" font="mono" opacity="80">{{
-              formatDate(post.date, 'MM-DD') }}
+              formatDate(post.date, 'MM-dd') }}
             </time>
           </div>
           <h2 class="post-title" inline-flex items-center font="serif black">

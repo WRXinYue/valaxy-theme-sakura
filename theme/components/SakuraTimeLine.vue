@@ -114,7 +114,7 @@ function handleMouseEnter(year: number, month: number) {
               </div>
               <div v-if="j !== 0" class="post-meta">
                 <time v-if="post.date" class="post-time text-$st-c-timeline-text-color" font="mono" opacity="80">{{
-                  formatDate(post.date, 'DD') }}日
+                  formatDate(post.date, 'dd') }}日
                 </time>
                 <h2 class="post-title" inline-flex items-center font="serif black">
                   <RouterLink :to="post.path || ''" class="post-title-link text-$st-c-text hover:text-$st-c-accent">
