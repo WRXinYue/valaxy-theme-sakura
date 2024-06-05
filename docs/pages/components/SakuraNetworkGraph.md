@@ -19,7 +19,7 @@ categories:
 ### Attributes
 
 | 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+| ---- | ---- | ---- | ---- |
 | type | `string` | `undefined` | post card type, can be bilibili/yuque/... |
 | posts | `Post[]` | `undefined` | 自定义传入`Post`数据，默认为获取全局posts数据 |
 | width | `number` | `1812` | 画布宽度 |

@@ -13,6 +13,8 @@
   "dependencies": {
     "monaco-editor": "^0.47.0",
     "valaxy": "0.18.7",
+    "valaxy-addon-twikoo": "^0.0.3",
+    "valaxy-addon-waline": "0.1.1",
     "valaxy-theme-sakura": "workspace:*",
     "vite-plugin-monaco-editor": "^1.1.0"
   },

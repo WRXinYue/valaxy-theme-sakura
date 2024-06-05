@@ -26,3 +26,7 @@ categories:
   <div />
 </template>
 ```
+
+## 相关组件
+
+- [SakuraNavbarCustom](/components-custom/SakuraNavbarCustom)

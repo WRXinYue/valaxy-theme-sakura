@@ -8,8 +8,18 @@ categories:
 
 ## 评论 SakuraCommentCustom
 
+::: warning
+暂未完全集成改组件，需要手动配置 🚧
+:::
+
 ```vue
 <template>
   <SakuraComment />
 </template>
 ```
+
+<SakuraCommentCustomPG />
+
+## 相关组件
+
+- SakuraComment

@@ -22,9 +22,13 @@ categories:
 <SakuraIconTextDivider icon="i-fa6-solid:water" text="文章列表" />
 <ArticleListThemeCard />
 
-### 插槽主题
+## 插槽主题
 
-- ArticleListThemeCard
-- ArticleListThemeMasonry
-- ArticleListThemeGrid
-- ArticleListThemeMinima
+- [ArticleListThemeCard](/components-themes/ArticleListThemeCard)
+- [ArticleListThemeMasonry](/components-themes/ArticleListThemeGrid)
+- [ArticleListThemeGrid](/components-themes/ArticleListThemeMasonry)
+- [ArticleListThemeMinima](/components-themes/ArticleListThemeMinima)
+
+## 相关组件
+
+- SakuraIconTextDivider

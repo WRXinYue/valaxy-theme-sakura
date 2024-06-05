@@ -1,5 +1,6 @@
 import { defineValaxyConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
+import { addonWaline } from 'valaxy-addon-waline'
 import monacoEditorPlugin from 'vite-plugin-monaco-editor'
 
 export default defineValaxyConfig<ThemeConfig>({
@@ -44,9 +45,9 @@ export default defineValaxyConfig<ThemeConfig>({
       'css', // TODO:
       'tutorial', // TODO:
       'layouts',
-      'components',
       'components-custom',
       'components-layout',
+      'components',
       'components-themes',
       'examples',
       'releases',
@@ -61,6 +62,13 @@ export default defineValaxyConfig<ThemeConfig>({
       icp: '<a href="https://icp.gov.moe/?keyword=20240132" target="_blank">萌ICP备20240132号</a>',
     },
   },
+  addons: [
+    addonWaline({
+      serverURL: 'https://waline.wrxinyue.org',
+      pageview: true,
+      comment: true,
+    }),
+  ],
   vite: {
     plugins: [
       monacoEditorPlugin({}),

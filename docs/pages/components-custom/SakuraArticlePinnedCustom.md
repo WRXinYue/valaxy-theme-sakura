@@ -19,6 +19,12 @@ categories:
 </template>
 ```
 
-### 插槽主题
+<SakuraArticlePinnedCustomPG />
+
+## 插槽主题
 
 - [ArticlePinnedThemeStartDash](/components-themes/ArticlePinnedThemeStartDash)
+
+## 相关组件
+
+- SakuraIconTextDivider

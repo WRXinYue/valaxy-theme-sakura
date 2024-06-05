@@ -13,3 +13,9 @@ categories:
   <SakuraArticleFooter />
 </template>
 ```
+
+<SakuraArticleFooterCustomPG />
+
+## 相关组件
+
+- [SakuraArticleFooter](/components/SakuraArticleFooter)

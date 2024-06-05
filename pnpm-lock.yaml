@@ -125,6 +125,12 @@ importers:
       valaxy:
         specifier: 0.18.7
         version: 0.18.7(@babel/parser@7.24.5)(@types/markdown-it@14.1.1)(@types/node@20.12.11)(@unhead/shared@1.9.10)(axios@1.6.8)(focus-trap@7.5.4)(less@4.2.0)(postcss@8.4.38)(rollup@4.17.2)(typescript@5.4.5)(unhead@1.9.10)
+      valaxy-addon-twikoo:
+        specifier: ^0.0.3
+        version: 0.0.3(valaxy@0.18.7(@babel/parser@7.24.5)(@types/markdown-it@14.1.1)(@types/node@20.12.11)(@unhead/shared@1.9.10)(axios@1.6.8)(focus-trap@7.5.4)(less@4.2.0)(postcss@8.4.38)(rollup@4.17.2)(typescript@5.4.5)(unhead@1.9.10))
+      valaxy-addon-waline:
+        specifier: 0.1.1
+        version: 0.1.1(typescript@5.4.5)(valaxy@0.18.7(@babel/parser@7.24.5)(@types/markdown-it@14.1.1)(@types/node@20.12.11)(@unhead/shared@1.9.10)(axios@1.6.8)(focus-trap@7.5.4)(less@4.2.0)(postcss@8.4.38)(rollup@4.17.2)(typescript@5.4.5)(unhead@1.9.10))
       valaxy-theme-sakura:
         specifier: workspace:*
         version: link:../theme

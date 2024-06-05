@@ -15,7 +15,11 @@ categories:
 </template>
 ```
 
-### 相关组件
+## 布局主题
+
+- [CategoriesThemeSakura](/components-themes/CategoriesThemeSakura)
+- [CategoriesThemeYun](/components-themes/CategoriesThemeYun)
+
+## 相关组件
 
 - [Layout](/components/layout)
-- [CategoriesThemeSakura](/layouts/categories)

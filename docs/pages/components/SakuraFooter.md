@@ -14,6 +14,12 @@ categories:
 
 ## API
 
+### Attributes
+
+| 属性名 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| footer | `Footer` | `undefined` | --- |
+
 ### ThemeConfig
 
 ```ts
@@ -49,12 +55,6 @@ export interface ThemeConfig {
 | powered | `true` | 是否显示“Powered by”信息 |
 | beian.enable | --- | 是否启用备案信息显示 |
 | beian.icp | --- | 备案号 |
-
-### Attributes
-
-| 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| footer | `Footer` | `undefined` | --- |
 
 ### Slots
 

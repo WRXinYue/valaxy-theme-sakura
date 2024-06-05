@@ -13,3 +13,9 @@ categories:
   <SakuraNoticeBoard />
 </template>
 ```
+
+<SakuraNoticeBoardCustomPG />
+
+## 相关组件
+
+- [SakuraNoticeBoard](/components/SakuraNoticeBoard)

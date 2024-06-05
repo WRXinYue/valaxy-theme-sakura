@@ -8,7 +8,7 @@ categories:
 
 ## Home 主页
 
-主页就是博客的首页，在首页当中如下是Home页的默认配置
+主页就是博客的首页，我们推荐用`SakuraHomeLayout`组件快速搭建首页
 
 ```vue
 <template>

@@ -15,7 +15,12 @@ categories:
 </template>
 ```
 
+## 布局主题
+
+- [TagsThemeSakura](/components-themes/TagsThemeSakura)
+- [TagsThemeFlaribbit](/components-themes/TagsThemeFlaribbit)
+- [TagsThemeYun](/components-themes/TagsThemeYun)
+
 ## 相关组件
 
 - [Layout](/components/layout)
-- [TagsThemeSakura](/components-themes/TagsThemeSakura)

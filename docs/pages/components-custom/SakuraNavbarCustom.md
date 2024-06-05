@@ -71,3 +71,7 @@ export namespace SakuraTheme {
 | `nav-brand` | --- |
 | `nav-link` | --- |
 | `nav-tool` | --- |
+
+## 相关组件
+
+- [SakuraNavbar](/components/SakuraNavbar)

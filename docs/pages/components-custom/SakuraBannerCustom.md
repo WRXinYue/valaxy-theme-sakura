@@ -54,10 +54,17 @@ export interface ThemeConfig {
 | urls | `string[] \| string` | `undefined` | 用于网站头部背景壁纸链接支持图片及视频,支持填入多个 |
 | style | `'\|filter-dot\|' \| 'filter-dim' \| 'filter-grid' \| ''` | `'filter-dim'` | 背景图片的过滤样式，可选值为`'filter-dot'`（点状过滤效果）、<br class="<md:hidden" />`'filter-dim'`（昏暗过滤效果）、`'filter-grid'`（网格过滤效果）<br class="<md:hidden" /> 或空字符串（无过滤效果） |
 
-### Slots
+## 主题组件
 
-| 插槽名 | 说明 |
-| --- | --- |
-| background-display | 用于显示页面或应用的背景元素 |
-| banner-overlay-bar | 一个覆盖在页面底部的横幅条 |
-| info-overlay | 显示额外信息的浮动层，一般用于提示或详细说明 |
+### banner-overlay-bar
+
+- [WaveThemeFish](/components-themes/WaveThemeFish)
+- [WaveThemeHorizontal](/components-themes/WaveThemeHorizontal)
+- [WaveThemeRipple](/components-themes/WaveThemeRipple)
+- [WaveThemeYunCloud](/components-themes/WaveThemeYunCloud)
+
+## 相关组件
+
+- [SakuraBanner](/components/SakuraBanner)
+- [SakuraBackgroundDisplay](/components/SakuraBackgroundDisplay)
+- [SakuraInfoOverlay](/components/SakuraInfoOverlay)
