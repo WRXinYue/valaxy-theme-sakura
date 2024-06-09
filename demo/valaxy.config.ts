@@ -169,7 +169,7 @@ export default defineConfig<ThemeConfig>({
       },
       options: {
         autoHidden: true,
-        animationIn: true,
+        // animationIn: true,
         lyricHidden: true,
       },
     }),
