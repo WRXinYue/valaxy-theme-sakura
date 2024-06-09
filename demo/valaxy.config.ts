@@ -22,6 +22,7 @@ export default defineConfig<ThemeConfig>({
       title: 'Hello, sakura',
       motto: 'You got to put the past behind you before you can move on.',
       urls: [
+        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/114448705_p0.png',
         'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/optimize/cGZ4kz2q.webp',
         'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
         'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',

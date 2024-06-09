@@ -18,7 +18,7 @@
       <template #right>
         <SakuraAsideLayout>
           <SakuraSiteInfoCard />
-          <SakuraNetworkGraph width="300" height="300" />
+          <SakuraNetworkGraph :width="300" :height="300" />
         </SakuraAsideLayout>
       </template>
     </SakuraMultiColumnsLayout>

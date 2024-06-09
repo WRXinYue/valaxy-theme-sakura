@@ -15,7 +15,7 @@ codeHeightLimit: 300
 
 ### 布局配置
 
-一般来说布局是不需要配置的，只需要配置布局当中 **组件([自定义组件](/components-custom/SakuraBannerCustom))** 即可
+一般来说布局是不需要配置的，只需要配置布局当中 **组件([自定义组件](/config/components#自定义组件))** 即可
 
 ### 自定义布局
 

@@ -17,7 +17,7 @@ const { t } = useI18n()
   </h2>
   <div class="custom-container">
     <slot>
-      <SakuraOutline v-if="frontmatter.toc !== false" :view-scroll />
+      <SakuraOutline v-if="frontmatter.toc !== false" :view-scroll="viewScroll" />
     </slot>
   </div>
 </template>
