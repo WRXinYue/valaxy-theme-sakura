@@ -1,14 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useActiveAnchor, useOutline } from 'valaxy'
+import { useOutline } from 'valaxy'
+import { useActiveAnchor } from '../client'
 import { useThemeConfig } from '../composables'
+
+const { viewScroll } = defineProps<{
+  viewScroll: boolean
+}>()
 
 const themeConfig = useThemeConfig()
 
 const container = ref()
 const marker = ref()
 
-useActiveAnchor(container, marker)
+useActiveAnchor(container, marker, !viewScroll)
 
 const { headers, handleClick } = useOutline()
 </script>

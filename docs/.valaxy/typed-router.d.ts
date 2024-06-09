@@ -53,8 +53,6 @@ declare module 'vue-router/auto-routes' {
     '/components/SakuraNavLinkItem': RouteRecordInfo<'/components/SakuraNavLinkItem', '/components/SakuraNavLinkItem', Record<never, never>, Record<never, never>>,
     '/components/SakuraNetworkGraph': RouteRecordInfo<'/components/SakuraNetworkGraph', '/components/SakuraNetworkGraph', Record<never, never>, Record<never, never>>,
     '/components/SakuraNoticeBoard': RouteRecordInfo<'/components/SakuraNoticeBoard', '/components/SakuraNoticeBoard', Record<never, never>, Record<never, never>>,
-    '/components/SakuraOutline': RouteRecordInfo<'/components/SakuraOutline', '/components/SakuraOutline', Record<never, never>, Record<never, never>>,
-    '/components/SakuraOutlineItem': RouteRecordInfo<'/components/SakuraOutlineItem', '/components/SakuraOutlineItem', Record<never, never>, Record<never, never>>,
     '/components/SakuraPageHeader': RouteRecordInfo<'/components/SakuraPageHeader', '/components/SakuraPageHeader', Record<never, never>, Record<never, never>>,
     '/components/SakuraSidebar': RouteRecordInfo<'/components/SakuraSidebar', '/components/SakuraSidebar', Record<never, never>, Record<never, never>>,
     '/components/SakuraSidebarCategory': RouteRecordInfo<'/components/SakuraSidebarCategory', '/components/SakuraSidebarCategory', Record<never, never>, Record<never, never>>,

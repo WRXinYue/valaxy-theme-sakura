@@ -2,6 +2,11 @@
 import { useI18n } from 'vue-i18n'
 import { useFrontmatter } from 'valaxy'
 
+const { viewScroll } = withDefaults(defineProps<{
+  viewScroll: boolean
+}>(), {
+  viewScroll: false,
+})
 const frontmatter = useFrontmatter()
 const { t } = useI18n()
 </script>
@@ -10,9 +15,10 @@ const { t } = useI18n()
   <h2 v-if="frontmatter.toc !== false" font="serif black">
     {{ t('sidebar.toc') }}
   </h2>
-  <SakuraOutline v-if="frontmatter.toc !== false" />
-  <div v-if="$slots.default" class="custom-container">
-    <slot />
+  <div class="custom-container">
+    <slot>
+      <SakuraOutline v-if="frontmatter.toc !== false" :view-scroll />
+    </slot>
   </div>
 </template>
 
