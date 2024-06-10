@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2024-06-10
+
 ### Added
 
 - 重构主页及其他页面为多栏布局
@@ -30,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - 修复标签(tags)页面文章列表数据问题
 - 修复版本更新导致的日期格式化问题
-- 修复目录(toc)视图滚动问题
+- 修复目录(toc)视图滚动问题 [Issue #3](https://github.com/WRXinYue/valaxy-theme-sakura/issues/3)
 
 ## [0.5.5] - 2024-04-19
 

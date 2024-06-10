@@ -71,11 +71,11 @@ export default defineConfig<ThemeConfig>({
         link: '/',
       },
       {
-        text: '分类',
+        text: '📁 分类',
         link: '/categories',
       },
       {
-        text: '标签',
+        text: '🏷️ 标签',
         link: '/tags',
       },
       // {
@@ -93,7 +93,7 @@ export default defineConfig<ThemeConfig>({
       },
       {
         text: '🍻 友情链接',
-        link: 'https://github.com/YunYouJun/valaxy',
+        link: '/links',
         submenu: [
           {
             text: 'GitHub',
