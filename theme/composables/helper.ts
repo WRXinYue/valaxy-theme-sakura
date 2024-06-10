@@ -1,53 +1,28 @@
 import { ref, watch } from 'vue'
 import { isClient } from '@vueuse/core'
 
-// export function fetchData<T>(source: string | T[]) {
-//   const data = ref<T[]>()
-
-//   watch(() => source, () => {
-//     let rawData: T[]
-//     if (typeof source === 'string') {
-//       if (!isClient)
-//         return
-//       fetch(source)
-//         .then(res => res.json())
-//         .then((json: T[]) => {
-//           rawData = json || []
-//           data.value = rawData
-//         })
-//         .catch(() => {
-//           data.value = []
-//         })
-//     }
-//     else {
-//       rawData = source
-//       data.value = rawData
-//     }
-//   }, { immediate: true })
-
-//   return {
-//     data,
-//   }
-// }
-
-/**
- * fetch data from source, and random
- * @param source
- * @param random
- */
-export function useRandomData<T>(source: string | T[], random = false) {
+export function fetchData<T>(source: string | T[]) {
   const data = ref<T[]>()
 
-  watch(() => source, async () => {
+  watch(() => source, () => {
     let rawData: T[]
     if (typeof source === 'string') {
       if (!isClient)
         return
-      rawData = (await fetch(source).then(res => res.json()) as T[]) || []
+      fetch(source)
+        .then(res => res.json())
+        .then((json: T[]) => {
+          rawData = json || []
+          data.value = rawData
+        })
+        .catch(() => {
+          data.value = []
+        })
     }
-    else { rawData = source }
-
-    data.value = random ? Array.from(rawData).sort(() => Math.random() - 0.5) : rawData
+    else {
+      rawData = source
+      data.value = rawData
+    }
   }, { immediate: true })
 
   return {

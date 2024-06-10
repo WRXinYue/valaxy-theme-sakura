@@ -187,5 +187,15 @@ export interface Footer {
   icp?: string
 }
 
+export interface LinkType {
+  avatar: string
+  name: string
+  url: string
+  color: string
+  blog: string
+  desc: string
+  rss: string
+}
+
 export type ThemeUserConfig = Partial<ThemeConfig>
 export type UserThemeConfig = ThemeUserConfig
