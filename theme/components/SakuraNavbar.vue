@@ -7,8 +7,10 @@ const { invert } = withDefaults(defineProps<{
   favicon?: boolean
   title?: string | string[]
   invert?: boolean
+  col?: boolean
 }>(), {
   invert: false,
+  col: false,
 })
 
 const themeConfig = useThemeConfig()
@@ -44,13 +46,16 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header class="sakura-navbar" :class="isHeaderHighlighted ? 'active-header' : ''" @mouseover="hoverNavbar = true" @mouseleave="hoverNavbar = false">
+  <header
+    class="sakura-navbar" :class="{ 'active-header': isHeaderHighlighted, 'col': col }"
+    @mouseover="hoverNavbar = true" @mouseleave="hoverNavbar = false"
+  >
     <slot name="nav-brand">
       <SakuraNavbarBrand :favicon="favicon" :navbar-title="title || themeConfig.navbarTitle" />
     </slot>
 
     <slot name="nav-link">
-      <SakuraNavLink class="<md:hidden" />
+      <SakuraNavLink class="<md:hidden" :col="col" />
     </slot>
 
     <slot name="nav-tool">

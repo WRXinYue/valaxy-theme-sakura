@@ -9,27 +9,31 @@ const themeConfig = useThemeConfig()
     <SakuraBannerCustom />
   </slot>
 
-  <div class="grid-layout container !max-w-screen-2xl lg:px-6 mx-auto pt-$header-height min-w-0">
-    <div class="md:w-800px m-auto min-w-300px">
-      <slot name="notice-board">
-        <SakuraNoticeBoardCustom />
-      </slot>
+  <SakuraMultiColumnsLayout>
+    <slot name="notice-board">
+      <SakuraNoticeBoardCustom />
+    </slot>
 
-      <slot name="article-pinned">
-        <SakuraArticlePinnedCustom v-if="themeConfig.articlePinned" />
-      </slot>
+    <slot name="article-pinned">
+      <SakuraArticlePinnedCustom v-if="themeConfig.articlePinned" />
+    </slot>
 
-      <slot name="article-list">
-        <SakuraArticleListCustom />
-      </slot>
+    <slot name="article-list">
+      <SakuraArticleListCustom />
+    </slot>
 
-      <slot name="pagination">
-        <SakuraPaginationCustom />
-      </slot>
+    <slot name="pagination">
+      <SakuraPaginationCustom />
+    </slot>
 
-      <slot name="content" />
-    </div>
+    <slot name="content" />
 
-    <div />
-  </div>
+    <template #right>
+      <slot name="right" />
+    </template>
+
+    <template #left>
+      <slot name="left" />
+    </template>
+  </SakuraMultiColumnsLayout>
 </template>

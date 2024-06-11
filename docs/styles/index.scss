@@ -1,5 +1,9 @@
 @use "valaxy/client/styles/mixins/index.scss" as *;
 
+:root {
+  --st-c-text-deeper: var(--st-c-brand)
+}
+
 /* -------------------------------------
 * Markdown components styles reset
 * ------------------------------------- */
@@ -88,5 +92,9 @@ a {
     :where(ol,ul):not(:where(.not-prose,.not-prose *)) {
       padding-left: 0;
     }
+  }
+
+  ul {
+    margin: 0 !important
   }
 }
