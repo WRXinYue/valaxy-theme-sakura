@@ -6,7 +6,7 @@ categories:
   - components-themes
 ---
 
-## LinksThemeYun
+## LinksThemeYun <SupTag>0.6.0</SupTag>
 
 在原来 [valaxy-theme-yun](https://github.com/YunYouJun/valaxy/tree/main/packages/valaxy-theme-yun) YunLinks组件基础上进行扩展
 

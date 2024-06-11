@@ -1,11 +1,11 @@
 ---
 title: links layout
-title_zh-CN: 友联布局 (post)
+title_zh-CN: 友联布局 (links)
 categories:
   - layouts
 ---
 
-## 友联布局 post
+## 友联布局 links <SupTag>0.6.0</SupTag>
 
 ```vue
 <script setup lang="ts">

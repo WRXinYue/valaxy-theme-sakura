@@ -111,6 +111,7 @@ declare module 'vue-router/auto-routes' {
     '/config/other': RouteRecordInfo<'/config/other', '/config/other', Record<never, never>, Record<never, never>>,
     '/config/overview': RouteRecordInfo<'/config/overview', '/config/overview', Record<never, never>, Record<never, never>>,
     '/config/site': RouteRecordInfo<'/config/site', '/config/site', Record<never, never>, Record<never, never>>,
+    '/config/style': RouteRecordInfo<'/config/style', '/config/style', Record<never, never>, Record<never, never>>,
     '/config/theme': RouteRecordInfo<'/config/theme', '/config/theme', Record<never, never>, Record<never, never>>,
     '/examples/config': RouteRecordInfo<'/examples/config', '/examples/config', Record<never, never>, Record<never, never>>,
     '/examples/gallery': RouteRecordInfo<'/examples/gallery', '/examples/gallery', Record<never, never>, Record<never, never>>,

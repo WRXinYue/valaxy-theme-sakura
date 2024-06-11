@@ -207,6 +207,16 @@ export default defineValaxyConfig<ThemeUserConfig>({
 pnpm up valaxy-theme-sakura --latest
 ~~~
 
+### 0.6.0+版本升级注意事项
+
+如果您是从老版本升级过来的，推荐在 `styles` 目录下新建 `index.scss` 文件，然后填入以下内容：
+
+```scss
+@use "valaxy-theme-sakura/styles/themes/sakura/index.scss" as *;
+```
+
+这样就会启动`sakura`样式，后期会不断新增其他的样式文件，敬请期待
+
 ### 📋 计划清单
 
 - [x] 添加文章网络图支持 (预计0.6.0版本发布)
