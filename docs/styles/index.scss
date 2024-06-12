@@ -4,6 +4,14 @@
   --st-c-text-deeper: var(--st-c-brand)
 }
 
+.sakura-navbar {
+  position: sticky;
+}
+
+.sakura-main {
+  min-height: calc(100vh - var(--st-c-footer-height) - var(--st-c-navbar-height));
+}
+
 /* -------------------------------------
 * Markdown components styles reset
 * ------------------------------------- */
@@ -27,10 +35,6 @@ a {
 
 .markdown-body {
   padding: 0 40px;
-}
-
-.sakura-main {
-  min-height: calc(100vh - var(--st-c-footer-height) - var(--st-c-navbar-height));
 }
 
 .prose img {

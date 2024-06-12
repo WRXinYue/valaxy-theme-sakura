@@ -38,7 +38,7 @@ importers:
     dependencies:
       valaxy-addon-algolia:
         specifier: ^0.0.3
-        version: 0.0.3(@algolia/client-search@4.23.3)(search-insights@2.14.0)(valaxy@0.18.7(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.2)(@unhead/shared@1.9.12)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(unhead@1.9.12))
+        version: 0.0.3(@algolia/client-search@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)(valaxy@0.18.7(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.2)(@unhead/shared@1.9.12)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(unhead@1.9.12))
       valaxy-addon-live2d:
         specifier: workspace:*
         version: link:../packages/valaxy-addon-live2d
@@ -62,7 +62,7 @@ importers:
         specifier: ^0.18.7
         version: 0.18.7(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.2)(@unhead/shared@1.9.12)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(unhead@1.9.12)
 
-  demos/default:
+  demos/athena:
     dependencies:
       valaxy:
         specifier: 0.18.7
@@ -75,7 +75,7 @@ importers:
         specifier: ^5.3.3
         version: 5.4.5
 
-  demos/dreamscapea:
+  demos/default:
     dependencies:
       valaxy:
         specifier: 0.18.7
@@ -117,6 +117,19 @@ importers:
         specifier: ^5.3.3
         version: 5.4.5
 
+  demos/play:
+    dependencies:
+      valaxy:
+        specifier: 0.18.7
+        version: 0.18.7(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.2)(@unhead/shared@1.9.12)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(unhead@1.9.12)
+      valaxy-theme-sakura:
+        specifier: workspace:*
+        version: link:../../theme
+    devDependencies:
+      typescript:
+        specifier: ^5.3.3
+        version: 5.4.5
+
   docs:
     dependencies:
       monaco-editor:
@@ -137,6 +150,9 @@ importers:
       vite-plugin-monaco-editor:
         specifier: ^1.1.0
         version: 1.1.0(monaco-editor@0.47.0)
+      vue-toastification:
+        specifier: 2.0.0-rc.5
+        version: 2.0.0-rc.5(vue@3.4.27(typescript@5.4.5))
     devDependencies:
       '@iconify-json/simple-icons':
         specifier: ^1.1.92
@@ -170,9 +186,9 @@ importers:
       d3-force:
         specifier: ^3.0.0
         version: 3.0.0
-      typed.js:
-        specifier: ^2.1.0
-        version: 2.1.0
+      typewriter-effect:
+        specifier: ^2.21.0
+        version: 2.21.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@types/d3':
         specifier: ^7.4.3
@@ -2867,6 +2883,10 @@ packages:
     resolution: {integrity: sha512-i24m8rpwhmPIS4zscNzK6MSEhk0DUWa/8iYQWxhffV8jkI4Phvs3F+quL5xvS0gdQR0FyTCMMH33Y78dDTzzIw==}
     engines: {node: '>=18'}
 
+  loose-envify@1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+
   lower-case@1.1.4:
     resolution: {integrity: sha512-2Fgx1Ycm599x+WGpIYwJOvsjmXFzTSc34IwDWALRA/8AopUKAVPwfJ+h5+f85BCp0PWmmJcWzEpxOpoXycMpdA==}
 
@@ -3170,6 +3190,10 @@ packages:
     engines: {node: ^14.16.0 || >=16.10.0}
     hasBin: true
 
+  object-assign@4.1.1:
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
+    engines: {node: '>=0.10.0'}
+
   object-inspect@1.13.1:
     resolution: {integrity: sha512-5qoj1RUiKOMsCCNLV1CBiPYE10sziTsnmNxkAI/rZhiD63CF7IqdFGC/XzjWjpSgLf0LxXX3bDFIh0E18f6UhQ==}
 
@@ -3301,6 +3325,9 @@ packages:
   perfect-debounce@1.0.0:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
 
+  performance-now@2.1.0:
+    resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
+
   picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
 
@@ -3362,6 +3389,9 @@ packages:
     resolution: {integrity: sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q==}
     engines: {node: '>= 6'}
 
+  prop-types@15.8.1:
+    resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
+
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
@@ -3394,12 +3424,27 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
+  raf@3.4.1:
+    resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
+
   raw-body@2.5.2:
     resolution: {integrity: sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==}
     engines: {node: '>= 0.8'}
 
   rc9@2.1.2:
     resolution: {integrity: sha512-btXCnMmRIBINM2LDZoEmOogIZU7Qe7zn4BpomSKZ/ykbLObuBdvG+mFq11DL6fjH1DRwHhrlgtYWG96bJiC7Cg==}
+
+  react-dom@18.3.1:
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+    peerDependencies:
+      react: ^18.3.1
+
+  react-is@16.13.1:
+    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
+    engines: {node: '>=0.10.0'}
 
   read-pkg-up@7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
@@ -3504,6 +3549,9 @@ packages:
   saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
+
+  scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
 
   scule@1.3.0:
     resolution: {integrity: sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==}
@@ -3763,13 +3811,16 @@ packages:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
     engines: {node: '>= 0.6'}
 
-  typed.js@2.1.0:
-    resolution: {integrity: sha512-bDuXEf7YcaKN4g08NMTUM6G90XU25CK3bh6U0THC/Mod/QPKlEt9g/EjvbYB8x2Qwr2p6J6I3NrsoYaVnY6wsQ==}
-
   typescript@5.4.5:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  typewriter-effect@2.21.0:
+    resolution: {integrity: sha512-Y3VL1fuJpUBj0gS4OTXBLzy1gnYTYaBuVuuO99tGNyTkkub5CXi+b/hsV7Og9fp6HlhogOwWJwgq7iXI5sQlEg==}
+    peerDependencies:
+      react: ^17.x || ^18.x
+      react-dom: ^17.x || ^18.x
 
   uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
@@ -4032,6 +4083,11 @@ packages:
 
   vue-template-compiler@2.7.16:
     resolution: {integrity: sha512-AYbUWAJHLGGQM7+cNTELw+KsOG9nl2CnSv467WobS5Cv9uk3wFcnr1Etsz2sEIHEZvw1U+o9mRlEO6QbZvUPGQ==}
+
+  vue-toastification@2.0.0-rc.5:
+    resolution: {integrity: sha512-q73e5jy6gucEO/U+P48hqX+/qyXDozAGmaGgLFm5tXX4wJBcVsnGp4e/iJqlm9xzHETYOilUuwOUje2Qg1JdwA==}
+    peerDependencies:
+      vue: ^3.0.2
 
   vue-tsc@1.8.27:
     resolution: {integrity: sha512-WesKCAZCRAbmmhuGl3+VrdWItEvfoFIPXOvUJkjULi+x+6G/Dy69yO3TBRJDr9eUlmsNAwVmxsNZxvHKzbkKdg==}
@@ -4603,9 +4659,9 @@ snapshots:
 
   '@docsearch/css@3.6.0': {}
 
-  '@docsearch/js@3.6.0(@algolia/client-search@4.23.3)(search-insights@2.14.0)':
+  '@docsearch/js@3.6.0(@algolia/client-search@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)':
     dependencies:
-      '@docsearch/react': 3.6.0(@algolia/client-search@4.23.3)(search-insights@2.14.0)
+      '@docsearch/react': 3.6.0(@algolia/client-search@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)
       preact: 10.22.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -4614,13 +4670,15 @@ snapshots:
       - react-dom
       - search-insights
 
-  '@docsearch/react@3.6.0(@algolia/client-search@4.23.3)(search-insights@2.14.0)':
+  '@docsearch/react@3.6.0(@algolia/client-search@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)':
     dependencies:
       '@algolia/autocomplete-core': 1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)(search-insights@2.14.0)
       '@algolia/autocomplete-preset-algolia': 1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)
       '@docsearch/css': 3.6.0
       algoliasearch: 4.23.3
     optionalDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       search-insights: 2.14.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -7253,6 +7311,10 @@ snapshots:
       chalk: 5.3.0
       is-unicode-supported: 1.3.0
 
+  loose-envify@1.4.0:
+    dependencies:
+      js-tokens: 4.0.0
+
   lower-case@1.1.4: {}
 
   lru-cache@10.2.2: {}
@@ -7644,6 +7706,8 @@ snapshots:
       pathe: 1.1.2
       ufo: 1.5.3
 
+  object-assign@4.1.1: {}
+
   object-inspect@1.13.1: {}
 
   ofetch@1.3.4:
@@ -7785,6 +7849,8 @@ snapshots:
 
   perfect-debounce@1.0.0: {}
 
+  performance-now@2.1.0: {}
+
   picocolors@1.0.1: {}
 
   picomatch@2.3.1: {}
@@ -7833,6 +7899,12 @@ snapshots:
       kleur: 3.0.3
       sisteransi: 1.0.5
 
+  prop-types@15.8.1:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
+
   proxy-from-env@1.1.0: {}
 
   psl@1.9.0: {}
@@ -7858,6 +7930,10 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
+  raf@3.4.1:
+    dependencies:
+      performance-now: 2.1.0
+
   raw-body@2.5.2:
     dependencies:
       bytes: 3.1.2
@@ -7869,6 +7945,18 @@ snapshots:
     dependencies:
       defu: 6.1.4
       destr: 2.0.3
+
+  react-dom@18.3.1(react@18.3.1):
+    dependencies:
+      loose-envify: 1.4.0
+      react: 18.3.1
+      scheduler: 0.23.2
+
+  react-is@16.13.1: {}
+
+  react@18.3.1:
+    dependencies:
+      loose-envify: 1.4.0
 
   read-pkg-up@7.0.1:
     dependencies:
@@ -7977,6 +8065,10 @@ snapshots:
   saxes@6.0.0:
     dependencies:
       xmlchars: 2.2.0
+
+  scheduler@0.23.2:
+    dependencies:
+      loose-envify: 1.4.0
 
   scule@1.3.0: {}
 
@@ -8197,9 +8289,14 @@ snapshots:
       media-typer: 0.3.0
       mime-types: 2.1.35
 
-  typed.js@2.1.0: {}
-
   typescript@5.4.5: {}
+
+  typewriter-effect@2.21.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      prop-types: 15.8.1
+      raf: 3.4.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   uc.micro@2.1.0: {}
 
@@ -8369,10 +8466,10 @@ snapshots:
       kleur: 4.1.5
       sade: 1.8.1
 
-  valaxy-addon-algolia@0.0.3(@algolia/client-search@4.23.3)(search-insights@2.14.0)(valaxy@0.18.7(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.2)(@unhead/shared@1.9.12)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(unhead@1.9.12)):
+  valaxy-addon-algolia@0.0.3(@algolia/client-search@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)(valaxy@0.18.7(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.2)(@unhead/shared@1.9.12)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(unhead@1.9.12)):
     dependencies:
       '@docsearch/css': 3.6.0
-      '@docsearch/js': 3.6.0(@algolia/client-search@4.23.3)(search-insights@2.14.0)
+      '@docsearch/js': 3.6.0(@algolia/client-search@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)
       valaxy: 0.18.7(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.2)(@unhead/shared@1.9.12)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(unhead@1.9.12)
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -8639,6 +8736,10 @@ snapshots:
     dependencies:
       de-indent: 1.0.2
       he: 1.2.0
+
+  vue-toastification@2.0.0-rc.5(vue@3.4.27(typescript@5.4.5)):
+    dependencies:
+      vue: 3.4.27(typescript@5.4.5)
 
   vue-tsc@1.8.27(typescript@5.4.5):
     dependencies:

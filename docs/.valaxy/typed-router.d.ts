@@ -43,7 +43,6 @@ declare module 'vue-router/auto-routes' {
     '/components/SakuraFooterNavigation': RouteRecordInfo<'/components/SakuraFooterNavigation', '/components/SakuraFooterNavigation', Record<never, never>, Record<never, never>>,
     '/components/SakuraGlitchText': RouteRecordInfo<'/components/SakuraGlitchText', '/components/SakuraGlitchText', Record<never, never>, Record<never, never>>,
     '/components/SakuraHamburger': RouteRecordInfo<'/components/SakuraHamburger', '/components/SakuraHamburger', Record<never, never>, Record<never, never>>,
-    '/components/SakuraInfoOverlay': RouteRecordInfo<'/components/SakuraInfoOverlay', '/components/SakuraInfoOverlay', Record<never, never>, Record<never, never>>,
     '/components/SakuraLayoutPostTag': RouteRecordInfo<'/components/SakuraLayoutPostTag', '/components/SakuraLayoutPostTag', Record<never, never>, Record<never, never>>,
     '/components/SakuraLinks': RouteRecordInfo<'/components/SakuraLinks', '/components/SakuraLinks', Record<never, never>, Record<never, never>>,
     '/components/SakuraMottoDisplay': RouteRecordInfo<'/components/SakuraMottoDisplay', '/components/SakuraMottoDisplay', Record<never, never>, Record<never, never>>,
@@ -93,6 +92,7 @@ declare module 'vue-router/auto-routes' {
     '/components-themes/ArticleThemeMinima': RouteRecordInfo<'/components-themes/ArticleThemeMinima', '/components-themes/ArticleThemeMinima', Record<never, never>, Record<never, never>>,
     '/components-themes/CategoriesThemeSakura': RouteRecordInfo<'/components-themes/CategoriesThemeSakura', '/components-themes/CategoriesThemeSakura', Record<never, never>, Record<never, never>>,
     '/components-themes/CategoriesThemeYun': RouteRecordInfo<'/components-themes/CategoriesThemeYun', '/components-themes/CategoriesThemeYun', Record<never, never>, Record<never, never>>,
+    '/components-themes/InfoOverlayThemeSakura': RouteRecordInfo<'/components-themes/InfoOverlayThemeSakura', '/components-themes/InfoOverlayThemeSakura', Record<never, never>, Record<never, never>>,
     '/components-themes/LinksThemeYun': RouteRecordInfo<'/components-themes/LinksThemeYun', '/components-themes/LinksThemeYun', Record<never, never>, Record<never, never>>,
     '/components-themes/PaginationThemeInfiniteScroll': RouteRecordInfo<'/components-themes/PaginationThemeInfiniteScroll', '/components-themes/PaginationThemeInfiniteScroll', Record<never, never>, Record<never, never>>,
     '/components-themes/PaginationThemeValaxy': RouteRecordInfo<'/components-themes/PaginationThemeValaxy', '/components-themes/PaginationThemeValaxy', Record<never, never>, Record<never, never>>,
@@ -133,6 +133,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/doc5': RouteRecordInfo<'/posts/doc5', '/posts/doc5', Record<never, never>, Record<never, never>>,
     '/posts/doc6': RouteRecordInfo<'/posts/doc6', '/posts/doc6', Record<never, never>, Record<never, never>>,
     '/releases': RouteRecordInfo<'/releases', '/releases', Record<never, never>, Record<never, never>>,
+    '/styles/animation': RouteRecordInfo<'/styles/animation', '/styles/animation', Record<never, never>, Record<never, never>>,
     '/tags/': RouteRecordInfo<'/tags/', '/tags', Record<never, never>, Record<never, never>>,
   }
 }

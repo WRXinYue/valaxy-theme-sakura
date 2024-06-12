@@ -21,13 +21,13 @@
   "types": "types/index.d.ts",
   "peerDependencies": {
     "d3-force": "^3.0.0",
-    "typed.js": "^2.1.0"
+    "typewriter-effect": "^2.21.0"
   },
   "peerDependenciesMeta": {
     "d3-force": {
       "optional": true
     },
-    "typed.js": {
+    "typewriter-effect": {
       "optional": true
     }
   },

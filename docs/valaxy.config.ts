@@ -42,7 +42,7 @@ export default defineValaxyConfig<ThemeConfig>({
       'getting-started',
       'config',
       'theme',
-      'css', // TODO:
+      'styles',
       'tutorial', // TODO:
       'layouts',
       'components-custom',
