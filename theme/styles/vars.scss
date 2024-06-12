@@ -20,7 +20,7 @@ $common: map.merge((), $common);
 
 // palette
 $light: (
-  "c-brand": #CA4B49,
+  "c-brand": #ff4e6a,
   "c-secondary": #fe9600,
   "c-accent": var(--st-c-secondary),
   "c-bg": var(--va-c-bg),
@@ -36,7 +36,6 @@ $light: (
   "c-hover-border": #f1c484,
   "c-hover-bg": var(--st-c-secondary),
   "c-icon": #fff,
-  "c-scrollbar-color": #49b1f5,
   /* -------------------------------------
   * SakuraTimeLine
   * ------------------------------------- */
@@ -64,7 +63,7 @@ $light: (
 $light: map.merge((), $light);
 
 $dark: (
-  "c-brand": #CA4B49,
+  "c-brand": #ff4e6a,
   "c-secondary": #fe9600,
   "c-accent": var(--st-c-secondary),
   "c-bg": var(--va-c-bg),
@@ -79,7 +78,6 @@ $dark: (
   "c-hover-border": #f1c484,
   "c-hover-bg": var(--st-c-secondary),
   "c-icon": #fff,
-  "c-scrollbar-color": #49b1f5,
   /* -------------------------------------
   * SakuraTimeLine
   * ------------------------------------- */

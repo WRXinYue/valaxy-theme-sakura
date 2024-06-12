@@ -47,6 +47,6 @@ onMounted(() => {
   </template>
   <template v-else>
     <img v-if="currentWallpaperUrl" alt="Image Wallpaper" class="w-full h-100vh object-cover block bg-cover bg-center" :src="currentWallpaperUrl">
-    <div v-else class="w-full h-100vh bg-$st-c-scrollbar-color" />
+    <div v-else class="w-full h-100vh bg-$st-c-wallpaper-color" />
   </template>
 </template>

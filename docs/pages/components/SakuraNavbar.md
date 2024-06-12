@@ -16,7 +16,7 @@ categories:
 
 <SakuraNavbarPG />
 
-## 改为侧边栏导航<SupTag>0.6.1</SupTag>
+## 侧边导航栏<SupTag>0.6.1</SupTag>
 
 ```vue
 <template>
@@ -24,19 +24,15 @@ categories:
 </template>
 ```
 
-## 如何让它不占用实际位置
-
-由于 `SakuraNavbar` 默认使用 `position: sticky`，如果想要它不占用实际位置，请将定位改为 `fixed`
-
-**示例：**
+## 启用 `sticky`
 
 ```scss
 .sakura-navbar {
-  position: fixed
+  position: sticky;
 }
 ```
 
-或者
+## 如何为`sticky`不占用实际位置
 
 ```scss
 .app-container {
@@ -57,7 +53,7 @@ categories:
 | favicon | `boolean` | `undefined` | --- |
 | title | `string \| string[]` | `undefined` | --- |
 | invert | `boolean` | `false` | 滚动触发反转 |
-| col | `boolean` | `false` | 改为侧边栏导航 |
+| col | `boolean` | `false` | 改为侧边导航栏 |
 
 ### ThemeConfig
 

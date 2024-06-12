@@ -11,8 +11,8 @@ const { navbar, animIn, animOut, col } = withDefaults(defineProps<{
   animOut?: string | string[]
   col?: boolean
 }>(), {
-  animIn: 'element-slide-left-fade-in',
-  animOut: 'element-slide-left-fade-out',
+  animIn: 'animation-fade-in-left',
+  animOut: 'animation-fade-out-left',
   col: false,
 })
 

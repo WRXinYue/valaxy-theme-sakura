@@ -18,7 +18,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header v-if="!loading" class="relative flex <md:px-5 justify-center flex-items-center w-full h-100vh" :class="themeConfig.animation && 'element-slide-down'">
+  <header v-if="!loading" class="sakura-banner <md:px-5" :class="themeConfig.animation && 'element-slide-down'">
     <div class="headertop absolute h-full w-full top-0 overflow-hidden" :class="banner?.style ">
       <slot name="background-display" />
 
@@ -28,7 +28,16 @@ onMounted(() => {
   </header>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.sakura-banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
 .headertop::before {
   content: '';
   position: absolute;
