@@ -8,786 +8,701 @@
  * Hover.css Copyright Ian Lunn 2017. Generated with Sass.
  */
 
-@import "options";
-@import "mixins";
-@import "hacks";
+@import "../options";
+@import "../mixins";
+@import "../hacks";
 
 
 /* 2D TRANSITIONS */
-@import "effects/2d-transitions/grow";
+@import "2d-transitions/grow";
 @if $includeClasses {
-	.#{$nameSpace}-grow {
+	.#{$nameSpace}-hvr-grow {
 		@include grow();
 	}
 }
 
-@import "effects/2d-transitions/shrink";
+@import "2d-transitions/shrink";
 @if $includeClasses {
-	.#{$nameSpace}-shrink {
+	.#{$nameSpace}-hvr-shrink {
 		@include shrink();
 	}
 }
 
-@import "effects/2d-transitions/pulse";
+@import "2d-transitions/pulse";
 @if $includeClasses {
-	.#{$nameSpace}-pulse {
+	.#{$nameSpace}-hvr-pulse {
 		@include pulse();
 	}
 }
 
-@import "effects/2d-transitions/pulse-grow";
+@import "2d-transitions/pulse-grow";
 @if $includeClasses {
-	.#{$nameSpace}-pulse-grow {
+	.#{$nameSpace}-hvr-pulse-grow {
 		@include pulse-grow();
 	}
 }
 
-@import "effects/2d-transitions/pulse-shrink";
+@import "2d-transitions/pulse-shrink";
 @if $includeClasses {
-	.#{$nameSpace}-pulse-shrink {
+	.#{$nameSpace}-hvr-pulse-shrink {
 		@include pulse-shrink();
 	}
 }
 
-@import "effects/2d-transitions/push";
+@import "2d-transitions/push";
 @if $includeClasses {
-	.#{$nameSpace}-push {
+	.#{$nameSpace}-hvr-push {
 		@include push();
 	}
 }
 
-@import "effects/2d-transitions/pop";
+@import "2d-transitions/pop";
 @if $includeClasses {
-	.#{$nameSpace}-pop {
+	.#{$nameSpace}-hvr-pop {
 		@include pop();
 	}
 }
 
-@import "effects/2d-transitions/bounce-in";
+@import "2d-transitions/bounce-in";
 @if $includeClasses {
-	.#{$nameSpace}-bounce-in {
+	.#{$nameSpace}-hvr-bounce-in {
 		@include bounce-in();
 	}
 }
 
-@import "effects/2d-transitions/bounce-out";
+@import "2d-transitions/bounce-out";
 @if $includeClasses {
-	.#{$nameSpace}-bounce-out {
+	.#{$nameSpace}-hvr-bounce-out {
 		@include bounce-out();
 	}
 }
 
-@import "effects/2d-transitions/rotate";
+@import "2d-transitions/rotate";
 @if $includeClasses {
-	.#{$nameSpace}-rotate {
+	.#{$nameSpace}-hvr-rotate {
 		@include rotate();
 	}
 }
 
-@import "effects/2d-transitions/grow-rotate";
+@import "2d-transitions/grow-rotate";
 @if $includeClasses {
-	.#{$nameSpace}-grow-rotate {
+	.#{$nameSpace}-hvr-grow-rotate {
 		@include grow-rotate();
 	}
 }
 
-@import "effects/2d-transitions/float";
+@import "2d-transitions/float";
 @if $includeClasses {
-	.#{$nameSpace}-float {
+	.#{$nameSpace}-hvr-float {
 		@include float();
 	}
 }
 
-@import "effects/2d-transitions/sink";
+@import "2d-transitions/sink";
 @if $includeClasses {
-	.#{$nameSpace}-sink {
+	.#{$nameSpace}-hvr-sink {
 		@include sink();
 	}
 }
 
-@import "effects/2d-transitions/bob";
+@import "2d-transitions/bob";
 @if $includeClasses {
-	.#{$nameSpace}-bob {
+	.#{$nameSpace}-hvr-bob {
 		@include bob();
 	}
 }
 
-@import "effects/2d-transitions/hang";
+@import "2d-transitions/hang";
 @if $includeClasses {
-	.#{$nameSpace}-hang {
+	.#{$nameSpace}-hvr-hang {
 		@include hang();
 	}
 }
 
-@import "effects/2d-transitions/skew";
+@import "2d-transitions/skew";
 @if $includeClasses {
-	.#{$nameSpace}-skew {
+	.#{$nameSpace}-hvr-skew {
 		@include skew();
 	}
 }
 
-@import "effects/2d-transitions/skew-forward";
+@import "2d-transitions/skew-forward";
 @if $includeClasses {
-	.#{$nameSpace}-skew-forward {
+	.#{$nameSpace}-hvr-skew-forward {
 		@include skew-forward();
 	}
 }
 
-@import "effects/2d-transitions/skew-backward";
+@import "2d-transitions/skew-backward";
 @if $includeClasses {
-	.#{$nameSpace}-skew-backward {
+	.#{$nameSpace}-hvr-skew-backward {
 	    @include skew-backward();
 	}
 }
 
-@import "effects/2d-transitions/wobble-vertical";
+@import "2d-transitions/wobble-vertical";
 @if $includeClasses {
-	.#{$nameSpace}-wobble-vertical {
+	.#{$nameSpace}-hvr-wobble-vertical {
 		@include wobble-vertical();
 	}
 }
 
-@import "effects/2d-transitions/wobble-horizontal";
+@import "2d-transitions/wobble-horizontal";
 @if $includeClasses {
-	.#{$nameSpace}-wobble-horizontal {
+	.#{$nameSpace}-hvr-wobble-horizontal {
 		@include wobble-horizontal();
 	}
 }
 
-@import "effects/2d-transitions/wobble-to-bottom-right";
+@import "2d-transitions/wobble-to-bottom-right";
 @if $includeClasses {
-	.#{$nameSpace}-wobble-to-bottom-right {
+	.#{$nameSpace}-hvr-wobble-to-bottom-right {
 	    @include wobble-to-bottom-right();
 	}
 }
 
-@import "effects/2d-transitions/wobble-to-top-right";
+@import "2d-transitions/wobble-to-top-right";
 @if $includeClasses {
-	.#{$nameSpace}-wobble-to-top-right {
+	.#{$nameSpace}-hvr-wobble-to-top-right {
 	    @include wobble-to-top-right();
 	}
 }
 
-@import "effects/2d-transitions/wobble-top";
+@import "2d-transitions/wobble-top";
 @if $includeClasses {
-	.#{$nameSpace}-wobble-top {
+	.#{$nameSpace}-hvr-wobble-top {
 		@include wobble-top();
 	}
 }
 
-@import "effects/2d-transitions/wobble-bottom";
+@import "2d-transitions/wobble-bottom";
 @if $includeClasses {
-	.#{$nameSpace}-wobble-bottom {
+	.#{$nameSpace}-hvr-wobble-bottom {
 		@include wobble-bottom();
 	}
 }
 
-@import "effects/2d-transitions/wobble-skew";
+@import "2d-transitions/wobble-skew";
 @if $includeClasses {
-	.#{$nameSpace}-wobble-skew {
+	.#{$nameSpace}-hvr-wobble-skew {
 	    @include wobble-skew();
 	}
 }
 
-@import "effects/2d-transitions/buzz";
+@import "2d-transitions/buzz";
 @if $includeClasses {
-	.#{$nameSpace}-buzz {
+	.#{$nameSpace}-hvr-buzz {
 	    @include buzz();
 	}
 }
 
-@import "effects/2d-transitions/buzz-out";
+@import "2d-transitions/buzz-out";
 @if $includeClasses {
-	.#{$nameSpace}-buzz-out {
+	.#{$nameSpace}-hvr-buzz-out {
 	    @include buzz-out();
 	}
 }
 
-@import "effects/2d-transitions/forward";
+@import "2d-transitions/forward";
 @if $includeClasses {
-	.#{$nameSpace}-forward {
+	.#{$nameSpace}-hvr-forward {
 		@include forward();
 	}
 }
 
-@import "effects/2d-transitions/backward";
+@import "2d-transitions/backward";
 @if $includeClasses {
-	.#{$nameSpace}-backward {
+	.#{$nameSpace}-hvr-backward {
 		@include backward();
 	}
 }
 
 /* BACKGROUND TRANSITIONS */
-@import "effects/background-transitions/fade";
+@import "background-transitions/fade";
 @if $includeClasses {
-	.#{$nameSpace}-fade {
+	.#{$nameSpace}-hvr-fade {
 		@include fade();
 	}
 }
 
-@import "effects/background-transitions/back-pulse";
+@import "background-transitions/back-pulse";
 @if $includeClasses {
-	.#{$nameSpace}-back-pulse {
+	.#{$nameSpace}-hvr-back-pulse {
 		@include back-pulse();
 	}
 }
 
-@import "effects/background-transitions/sweep-to-right";
+@import "background-transitions/sweep-to-right";
 @if $includeClasses {
-	.#{$nameSpace}-sweep-to-right {
+	.#{$nameSpace}-hvr-sweep-to-right {
 		@include sweep-to-right();
 	}
 }
 
-@import "effects/background-transitions/sweep-to-left";
+@import "background-transitions/sweep-to-left";
 @if $includeClasses {
-	.#{$nameSpace}-sweep-to-left {
+	.#{$nameSpace}-hvr-sweep-to-left {
 		@include sweep-to-left();
 	}
 }
 
-@import "effects/background-transitions/sweep-to-bottom";
+@import "background-transitions/sweep-to-bottom";
 @if $includeClasses {
-	.#{$nameSpace}-sweep-to-bottom {
+	.#{$nameSpace}-hvr-sweep-to-bottom {
 		@include sweep-to-bottom();
 	}
 }
 
-@import "effects/background-transitions/sweep-to-top";
+@import "background-transitions/sweep-to-top";
 @if $includeClasses {
-	.#{$nameSpace}-sweep-to-top {
+	.#{$nameSpace}-hvr-sweep-to-top {
 		@include sweep-to-top();
 	}
 }
 
-@import "effects/background-transitions/bounce-to-right";
+@import "background-transitions/bounce-to-right";
 @if $includeClasses {
-	.#{$nameSpace}-bounce-to-right {
+	.#{$nameSpace}-hvr-bounce-to-right {
 		@include bounce-to-right();
 	}
 }
 
-@import "effects/background-transitions/bounce-to-left";
+@import "background-transitions/bounce-to-left";
 @if $includeClasses {
-	.#{$nameSpace}-bounce-to-left {
+	.#{$nameSpace}-hvr-bounce-to-left {
 		@include bounce-to-left();
 	}
 }
 
-@import "effects/background-transitions/bounce-to-bottom";
+@import "background-transitions/bounce-to-bottom";
 @if $includeClasses {
-	.#{$nameSpace}-bounce-to-bottom {
+	.#{$nameSpace}-hvr-bounce-to-bottom {
 		@include bounce-to-bottom();
 	}
 }
 
-@import "effects/background-transitions/bounce-to-top";
+@import "background-transitions/bounce-to-top";
 @if $includeClasses {
-	.#{$nameSpace}-bounce-to-top {
+	.#{$nameSpace}-hvr-bounce-to-top {
 		@include bounce-to-top();
 	}
 }
 
-@import "effects/background-transitions/radial-out";
+@import "background-transitions/radial-out";
 @if $includeClasses {
-	.#{$nameSpace}-radial-out {
+	.#{$nameSpace}-hvr-radial-out {
 		@include radial-out();
 	}
 }
 
-@import "effects/background-transitions/radial-in";
+@import "background-transitions/radial-in";
 @if $includeClasses {
-	.#{$nameSpace}-radial-in {
+	.#{$nameSpace}-hvr-radial-in {
 		@include radial-in();
 	}
 }
 
-@import "effects/background-transitions/rectangle-in";
+@import "background-transitions/rectangle-in";
 @if $includeClasses {
-	.#{$nameSpace}-rectangle-in {
+	.#{$nameSpace}-hvr-rectangle-in {
 		@include rectangle-in();
 	}
 }
 
-@import "effects/background-transitions/rectangle-out";
+@import "background-transitions/rectangle-out";
 @if $includeClasses {
-	.#{$nameSpace}-rectangle-out {
+	.#{$nameSpace}-hvr-rectangle-out {
 		@include rectangle-out();
 	}
 }
 
-@import "effects/background-transitions/shutter-in-horizontal";
+@import "background-transitions/shutter-in-horizontal";
 @if $includeClasses {
-	.#{$nameSpace}-shutter-in-horizontal {
+	.#{$nameSpace}-hvr-shutter-in-horizontal {
 		@include shutter-in-horizontal();
 	}
 }
 
-@import "effects/background-transitions/shutter-out-horizontal";
+@import "background-transitions/shutter-out-horizontal";
 @if $includeClasses {
-	.#{$nameSpace}-shutter-out-horizontal {
+	.#{$nameSpace}-hvr-shutter-out-horizontal {
 		@include shutter-out-horizontal();
 	}
 }
 
-@import "effects/background-transitions/shutter-in-vertical";
+@import "background-transitions/shutter-in-vertical";
 @if $includeClasses {
-	.#{$nameSpace}-shutter-in-vertical {
+	.#{$nameSpace}-hvr-shutter-in-vertical {
 		@include shutter-in-vertical();
 	}
 }
 
-@import "effects/background-transitions/shutter-out-vertical";
+@import "background-transitions/shutter-out-vertical";
 @if $includeClasses {
-	.#{$nameSpace}-shutter-out-vertical {
+	.#{$nameSpace}-hvr-shutter-out-vertical {
 		@include shutter-out-vertical();
 	}
 }
 
 
 /* BORDER TRANSITIONS */
-@import "effects/border-transitions/border-fade";
+@import "border-transitions/border-fade";
 @if $includeClasses {
-	.#{$nameSpace}-border-fade {
+	.#{$nameSpace}-hvr-border-fade {
 		@include border-fade();
 	}
 }
 
-@import "effects/border-transitions/hollow";
+@import "border-transitions/hollow";
 @if $includeClasses {
-	.#{$nameSpace}-hollow {
+	.#{$nameSpace}-hvr-hollow {
 		@include hollow();
 	}
 }
 
-@import "effects/border-transitions/trim";
+@import "border-transitions/trim";
 @if $includeClasses {
-	.#{$nameSpace}-trim {
+	.#{$nameSpace}-hvr-trim {
 		@include trim();
 	}
 }
 
-@import "effects/border-transitions/ripple-out";
+@import "border-transitions/ripple-out";
 @if $includeClasses {
-	.#{$nameSpace}-ripple-out {
+	.#{$nameSpace}-hvr-ripple-out {
 		@include ripple-out();
 	}
 }
 
-@import "effects/border-transitions/ripple-in";
+@import "border-transitions/ripple-in";
 @if $includeClasses {
-	.#{$nameSpace}-ripple-in {
+	.#{$nameSpace}-hvr-ripple-in {
 		@include ripple-in();
 	}
 }
 
-@import "effects/border-transitions/outline-out";
+@import "border-transitions/outline-out";
 @if $includeClasses {
-	.#{$nameSpace}-outline-out {
+	.#{$nameSpace}-hvr-outline-out {
 		@include outline-out();
 	}
 }
 
-@import "effects/border-transitions/outline-in";
+@import "border-transitions/outline-in";
 @if $includeClasses {
-	.#{$nameSpace}-outline-in {
+	.#{$nameSpace}-hvr-outline-in {
 		@include outline-in();
 	}
 }
 
-@import "effects/border-transitions/round-corners";
+@import "border-transitions/round-corners";
 @if $includeClasses {
-	.#{$nameSpace}-round-corners {
+	.#{$nameSpace}-hvr-round-corners {
 		@include round-corners();
 	}
 }
 
-@import "effects/border-transitions/underline-from-left";
+@import "border-transitions/underline-from-left";
 @if $includeClasses {
-	.#{$nameSpace}-underline-from-left {
+	.#{$nameSpace}-hvr-underline-from-left {
 		@include underline-from-left();
 	}
 }
 
-@import "effects/border-transitions/underline-from-center";
+@import "border-transitions/underline-from-center";
 @if $includeClasses {
-	.#{$nameSpace}-underline-from-center {
+	.#{$nameSpace}-hvr-underline-from-center {
 		@include underline-from-center();
 	}
 }
 
-@import "effects/border-transitions/underline-from-right";
+@import "border-transitions/underline-from-right";
 @if $includeClasses {
-	.#{$nameSpace}-underline-from-right {
+	.#{$nameSpace}-hvr-underline-from-right {
 		@include underline-from-right();
 	}
 }
 
-@import "effects/border-transitions/overline-from-left";
+@import "border-transitions/overline-from-left";
 @if $includeClasses {
-	.#{$nameSpace}-overline-from-left {
+	.#{$nameSpace}-hvr-overline-from-left {
 		@include overline-from-left();
 	}
 }
 
-@import "effects/border-transitions/overline-from-center";
+@import "border-transitions/overline-from-center";
 @if $includeClasses {
-	.#{$nameSpace}-overline-from-center {
+	.#{$nameSpace}-hvr-overline-from-center {
 		@include overline-from-center();
 	}
 }
 
-@import "effects/border-transitions/overline-from-right";
+@import "border-transitions/overline-from-right";
 @if $includeClasses {
-	.#{$nameSpace}-overline-from-right {
+	.#{$nameSpace}-hvr-overline-from-right {
 		@include overline-from-right();
 	}
 }
 
-@import "effects/border-transitions/reveal";
+@import "border-transitions/reveal";
 @if $includeClasses {
-	.#{$nameSpace}-reveal {
+	.#{$nameSpace}-hvr-reveal {
 		@include reveal();
 	}
 }
 
-@import "effects/border-transitions/underline-reveal";
+@import "border-transitions/underline-reveal";
 @if $includeClasses {
-	.#{$nameSpace}-underline-reveal {
+	.#{$nameSpace}-hvr-underline-reveal {
 		@include underline-reveal();
 	}
 }
 
-@import "effects/border-transitions/overline-reveal";
+@import "border-transitions/overline-reveal";
 @if $includeClasses {
-	.#{$nameSpace}-overline-reveal {
+	.#{$nameSpace}-hvr-overline-reveal {
 		@include overline-reveal();
 	}
 }
 
 
 /* SHADOW/GLOW TRANSITIONS */
-@import "effects/shadow-and-glow-transitions/glow";
+@import "shadow-and-glow-transitions/glow";
 @if $includeClasses {
-	.#{$nameSpace}-glow {
+	.#{$nameSpace}-hvr-glow {
 		@include glow();
 	}
 }
 
-@import "effects/shadow-and-glow-transitions/shadow";
+@import "shadow-and-glow-transitions/shadow";
 @if $includeClasses {
-	.#{$nameSpace}-shadow {
+	.#{$nameSpace}-hvr-shadow {
 		@include shadow();
 	}
 }
 
-@import "effects/shadow-and-glow-transitions/grow-shadow";
+@import "shadow-and-glow-transitions/grow-shadow";
 @if $includeClasses {
-	.#{$nameSpace}-grow-shadow {
+	.#{$nameSpace}-hvr-grow-shadow {
 		@include grow-shadow();
 	}
 }
 
-@import "effects/shadow-and-glow-transitions/box-shadow-outset";
+@import "shadow-and-glow-transitions/box-shadow-outset";
 @if $includeClasses {
-	.#{$nameSpace}-box-shadow-outset {
+	.#{$nameSpace}-hvr-box-shadow-outset {
 		@include box-shadow-outset();
 	}
 }
 
-@import "effects/shadow-and-glow-transitions/box-shadow-inset";
+@import "shadow-and-glow-transitions/box-shadow-inset";
 @if $includeClasses {
-	.#{$nameSpace}-box-shadow-inset {
+	.#{$nameSpace}-hvr-box-shadow-inset {
 		@include box-shadow-inset();
 	}
 }
 
-@import "effects/shadow-and-glow-transitions/float-shadow";
+@import "shadow-and-glow-transitions/float-shadow";
 @if $includeClasses {
-	.#{$nameSpace}-float-shadow {
+	.#{$nameSpace}-hvr-float-shadow {
 		@include float-shadow();
 	}
 }
 
-@import "effects/shadow-and-glow-transitions/shadow-radial";
+@import "shadow-and-glow-transitions/shadow-radial";
 @if $includeClasses {
-	.#{$nameSpace}-shadow-radial {
+	.#{$nameSpace}-hvr-shadow-radial {
 		@include shadow-radial();
 	}
 }
 
-/* SPEECH BUBBLES */
-@import "effects/speech-bubbles/bubble-top";
-@if $includeClasses {
-	.#{$nameSpace}-bubble-top {
-		@include bubble-top();
-	}
-}
-
-@import "effects/speech-bubbles/bubble-right";
-@if $includeClasses {
-	.#{$nameSpace}-bubble-right {
-		@include bubble-right();
-	}
-}
-
-@import "effects/speech-bubbles/bubble-bottom";
-@if $includeClasses {
-	.#{$nameSpace}-bubble-bottom {
-		@include bubble-bottom();
-	}
-}
-
-@import "effects/speech-bubbles/bubble-left";
-@if $includeClasses {
-	.#{$nameSpace}-bubble-left {
-		@include bubble-left();
-	}
-}
-
-@import "effects/speech-bubbles/bubble-float-top";
-@if $includeClasses {
-	.#{$nameSpace}-bubble-float-top {
-		@include bubble-float-top();
-	}
-}
-
-@import "effects/speech-bubbles/bubble-float-right";
-@if $includeClasses {
-	.#{$nameSpace}-bubble-float-right {
-		@include bubble-float-right();
-	}
-}
-
-@import "effects/speech-bubbles/bubble-float-bottom";
-@if $includeClasses {
-	.#{$nameSpace}-bubble-float-bottom {
-		@include bubble-float-bottom();
-	}
-}
-
-@import "effects/speech-bubbles/bubble-float-left";
-@if $includeClasses {
-	.#{$nameSpace}-bubble-float-left {
-		@include bubble-float-left();
-	}
-}
 
 /* ICONS */
-@import "effects/icons/icon-back";
+@import "icons/icon-back";
 @if $includeClasses {
-	.#{$nameSpace}-icon-back {
+	.#{$nameSpace}-hvr-icon-back {
 		@include icon-back();
 	}
 }
 
-@import "effects/icons/icon-forward";
+@import "icons/icon-forward";
 @if $includeClasses {
-	.#{$nameSpace}-icon-forward {
+	.#{$nameSpace}-hvr-icon-forward {
 		@include icon-forward();
 	}
 }
 
-@import "effects/icons/icon-down";
+@import "icons/icon-down";
 @if $includeClasses {
-	.#{$nameSpace}-icon-down {
+	.#{$nameSpace}-hvr-icon-down {
 		@include icon-down();
 	}
 }
 
-@import "effects/icons/icon-up";
+@import "icons/icon-up";
 @if $includeClasses {
-	.#{$nameSpace}-icon-up {
+	.#{$nameSpace}-hvr-icon-up {
 		@include icon-up();
 	}
 }
 
-@import "effects/icons/icon-spin";
+@import "icons/icon-spin";
 @if $includeClasses {
-	.#{$nameSpace}-icon-spin {
+	.#{$nameSpace}-hvr-icon-spin {
 		@include icon-spin();
 	}
 }
 
-@import "effects/icons/icon-drop";
+@import "icons/icon-drop";
 @if $includeClasses {
-	.#{$nameSpace}-icon-drop {
+	.#{$nameSpace}-hvr-icon-drop {
 		@include icon-drop();
 	}
 }
 
-@import "effects/icons/icon-fade";
+@import "icons/icon-fade";
 @if $includeClasses {
-	.#{$nameSpace}-icon-fade {
+	.#{$nameSpace}-hvr-icon-fade {
 		@include icon-fade();
 	}
 }
 
-@import "effects/icons/icon-float-away";
+@import "icons/icon-float-away";
 @if $includeClasses {
-	.#{$nameSpace}-icon-float-away {
+	.#{$nameSpace}-hvr-icon-float-away {
 		@include icon-float-away();
 	}
 }
 
-@import "effects/icons/icon-sink-away";
+@import "icons/icon-sink-away";
 @if $includeClasses {
-	.#{$nameSpace}-icon-sink-away {
+	.#{$nameSpace}-hvr-icon-sink-away {
 		@include icon-sink-away();
 	}
 }
 
-@import "effects/icons/icon-grow";
+@import "icons/icon-grow";
 @if $includeClasses {
-	.#{$nameSpace}-icon-grow {
+	.#{$nameSpace}-hvr-icon-grow {
 		@include icon-grow();
 	}
 }
 
-@import "effects/icons/icon-shrink";
+@import "icons/icon-shrink";
 @if $includeClasses {
-	.#{$nameSpace}-icon-shrink {
+	.#{$nameSpace}-hvr-icon-shrink {
 		@include icon-shrink();
 	}
 }
 
-@import "effects/icons/icon-pulse";
+@import "icons/icon-pulse";
 @if $includeClasses {
-	.#{$nameSpace}-icon-pulse {
+	.#{$nameSpace}-hvr-icon-pulse {
 		@include icon-pulse();
 	}
 }
 
-@import "effects/icons/icon-pulse-grow";
+@import "icons/icon-pulse-grow";
 @if $includeClasses {
-	.#{$nameSpace}-icon-pulse-grow {
+	.#{$nameSpace}-hvr-icon-pulse-grow {
 		@include icon-pulse-grow();
 	}
 }
 
-@import "effects/icons/icon-pulse-shrink";
+@import "icons/icon-pulse-shrink";
 @if $includeClasses {
-	.#{$nameSpace}-icon-pulse-shrink {
+	.#{$nameSpace}-hvr-icon-pulse-shrink {
 		@include icon-pulse-shrink();
 	}
 }
 
-@import "effects/icons/icon-push";
+@import "icons/icon-push";
 @if $includeClasses {
-	.#{$nameSpace}-icon-push {
+	.#{$nameSpace}-hvr-icon-push {
 		@include icon-push();
 	}
 }
 
-@import "effects/icons/icon-pop";
+@import "icons/icon-pop";
 @if $includeClasses {
-	.#{$nameSpace}-icon-pop {
+	.#{$nameSpace}-hvr-icon-pop {
 		@include icon-pop();
 	}
 }
 
-@import "effects/icons/icon-bounce";
+@import "icons/icon-bounce";
 @if $includeClasses {
-	.#{$nameSpace}-icon-bounce {
+	.#{$nameSpace}-hvr-icon-bounce {
 		@include icon-bounce();
 	}
 }
 
-@import "effects/icons/icon-rotate";
+@import "icons/icon-rotate";
 @if $includeClasses {
-	.#{$nameSpace}-icon-rotate {
+	.#{$nameSpace}-hvr-icon-rotate {
 		@include icon-rotate();
 	}
 }
 
-@import "effects/icons/icon-grow-rotate";
+@import "icons/icon-grow-rotate";
 @if $includeClasses {
-	.#{$nameSpace}-icon-grow-rotate {
+	.#{$nameSpace}-hvr-icon-grow-rotate {
 		@include icon-grow-rotate();
 	}
 }
 
-@import "effects/icons/icon-float";
+@import "icons/icon-float";
 @if $includeClasses {
-	.#{$nameSpace}-icon-float {
+	.#{$nameSpace}-hvr-icon-float {
 		@include icon-float();
 	}
 }
 
-@import "effects/icons/icon-sink";
+@import "icons/icon-sink";
 @if $includeClasses {
-	.#{$nameSpace}-icon-sink {
+	.#{$nameSpace}-hvr-icon-sink {
 		@include icon-sink();
 	}
 }
 
-@import "effects/icons/icon-bob";
+@import "icons/icon-bob";
 @if $includeClasses {
-	.#{$nameSpace}-icon-bob {
+	.#{$nameSpace}-hvr-icon-bob {
 		@include icon-bob();
 	}
 }
 
-@import "effects/icons/icon-hang";
+@import "icons/icon-hang";
 @if $includeClasses {
-	.#{$nameSpace}-icon-hang {
+	.#{$nameSpace}-hvr-icon-hang {
 		@include icon-hang();
 	}
 }
 
-@import "effects/icons/icon-wobble-horizontal";
+@import "icons/icon-wobble-horizontal";
 @if $includeClasses {
-	.#{$nameSpace}-icon-wobble-horizontal {
+	.#{$nameSpace}-hvr-icon-wobble-horizontal {
 		@include icon-wobble-horizontal();
 	}
 }
 
-@import "effects/icons/icon-wobble-vertical";
+@import "icons/icon-wobble-vertical";
 @if $includeClasses {
-	.#{$nameSpace}-icon-wobble-vertical {
+	.#{$nameSpace}-hvr-icon-wobble-vertical {
 		@include icon-wobble-vertical();
 	}
 }
 
-@import "effects/icons/icon-buzz";
+@import "icons/icon-buzz";
 @if $includeClasses {
-	.#{$nameSpace}-icon-buzz {
+	.#{$nameSpace}-hvr-icon-buzz {
 		@include icon-buzz();
 	}
 }
 
-@import "effects/icons/icon-buzz-out";
+@import "icons/icon-buzz-out";
 @if $includeClasses {
-	.#{$nameSpace}-icon-buzz-out {
+	.#{$nameSpace}-hvr-icon-buzz-out {
 		@include icon-buzz-out();
-	}
-}
-
-/* CURLS */
-@import "effects/curls/curl-top-left";
-@if $includeClasses {
-	.#{$nameSpace}-curl-top-left {
-		@include curl-top-left();
-	}
-}
-
-@import "effects/curls/curl-top-right";
-@if $includeClasses {
-	.#{$nameSpace}-curl-top-right {
-		@include curl-top-right();
-	}
-}
-
-@import "effects/curls/curl-bottom-right";
-@if $includeClasses {
-	.#{$nameSpace}-curl-bottom-right {
-		@include curl-bottom-right();
-	}
-}
-
-@import "effects/curls/curl-bottom-left";
-@if $includeClasses {
-	.#{$nameSpace}-curl-bottom-left {
-		@include curl-bottom-left();
 	}
 }

@@ -2,8 +2,8 @@
 @use './layouts/tags.scss' as *;
 @use './layouts/categories.scss' as *;
 
-@use './animation/keyframes.scss' as *;
-@use './animation/elements.scss' as *;
+@use './animation/fading/fading.scss' as *;
+@use './animation/slide/slide.scss' as *;
 @use './animation/hover/hover.scss' as *;
 
 @use "./common/button.scss" as *;

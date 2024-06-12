@@ -1,0 +1,16 @@
+@include keyframes(#{$nameSpace}-slide-down) {
+  from {
+    transform: translateY(-50px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@mixin slide-down {
+  @include prefixed(animation-name, #{$nameSpace}-slide-down);
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
