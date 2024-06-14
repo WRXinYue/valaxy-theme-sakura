@@ -1,16 +1,16 @@
 ---
-title: SakuraInfoOverlay
-title_zh-CN: 信息覆盖层 (SakuraInfoOverlay)
+title: InfoOverlayThemeSakura
+title_zh-CN: InfoOverlayThemeSakura
 toc: true
 categories:
-  - components
+  - components-themes
 ---
 
-## 信息覆盖层 SakuraInfoOverlay
+## InfoOverlayThemeSakura <SupTag>0.6.1</SupTag>
 
 ## 预览
 
-<SakuraInfoOverlayPG />
+<InfoOverlayThemeSakuraPG />
 
 ## API
 

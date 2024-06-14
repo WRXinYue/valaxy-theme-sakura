@@ -73,32 +73,39 @@ a {
 
 
 .playground {
-  &.sakura-sidebar {
-    li {
-      margin: 0;
-    }
-    ul > li {
-      position: inherit;
-      padding-left: 0;
+  li {
+    margin: 0;
+  }
+  ul {
+    margin: 0;
+  }
+  ul > li {
+    position: inherit;
+    padding: 0;
 
-      &::before {
-        display: none;
-      }
-    }
-    ol > li {
-      position: inherit;
-      padding-left: 0;
-
-      &::before {
-        display: none;
-      }
-    }
-    :where(ol,ul):not(:where(.not-prose,.not-prose *)) {
-      padding-left: 0;
+    &::before {
+      display: none;
     }
   }
+  ol > li {
+    position: inherit;
+    padding: 0;
 
-  ul {
-    margin: 0 !important
+    &::before {
+      display: none;
+    }
+  }
+  :where(ol,ul):not(:where(.not-prose,.not-prose *)) {
+    padding-left: 0;
+  }
+  p {
+    margin: 0;
+  }
+
+  .info-overlay-theme-hero {
+    ul > li {
+      position: inherit;
+      padding: 0.5rem;
+    }
   }
 }

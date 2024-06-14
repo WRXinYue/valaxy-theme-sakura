@@ -1,3 +1,0 @@
-<template>
-  <SakuraInfoOverlay />
-</template>

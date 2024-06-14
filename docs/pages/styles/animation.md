@@ -217,7 +217,15 @@ hover-shadow-and-glow-transitions:
     class: animation-hvr-box-shadow-inset
 ---
 
-## 动画<SupTag>0.6.1</SupTag>
+## 动画 <SupTag>0.6.1</SupTag>
+
+点击对应的示例即可复制对应 class。除了[Hover](#hover)之外，其他动画在演示时只会在点击时触发。因为是动态添加 class，正常使用会立即触发，例如：
+
+```html
+<div class="animation-fade-in">
+  animation-fade-in
+</div>
+```
 
 ## Fading
 
@@ -229,6 +237,8 @@ hover-shadow-and-glow-transitions:
 
 ## Hover
 
+在原来的 [hover.css](https://github.com/IanLunn/Hover) 源码上进行了调整，使其能够更好地与主题集成
+
 ### 2D Transitions
 
 <AnimateDemo type="hover-2d-transitions" />
@@ -238,6 +248,16 @@ hover-shadow-and-glow-transitions:
 <AnimateDemo type="hover-background-transitions" />
 
 ### Icons
+
+`animation-hvr-icon-back` 需要在触发的元素上使用，而 `hvr-icon` 仅应用于被触发的元素
+
+```html
+<div class="animation-hvr-icon-back" >
+    Icon Back
+    <span class="i-simple-icons-icloud hvr-icon inline-block" />
+  </div>
+</div>
+```
 
 <AnimateDemo type="hover-icons" />
 

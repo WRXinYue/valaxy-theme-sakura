@@ -8,6 +8,28 @@ export default defineValaxyConfig<ThemeConfig>({
     title: 'Sakura Docs',
     url: 'https://sakura.wrxinyue.org',
     description: 'Valaxy Sakura Theme Site Docs',
+
+    social: [
+      {
+        name: 'GitHub',
+        link: 'https://github.com/WRXinYue/valaxy-theme-sakura',
+        icon: 'i-ri-github-line',
+        color: '#a29bfe',
+      },
+      {
+        name: 'NPM',
+        link: 'https://www.npmjs.com/package/valaxy-theme-sakura',
+        icon: 'i-ri-npmjs-fill',
+        color: '#eb4d4b',
+      },
+      {
+        name: 'RSS',
+        link: '/atom.xml',
+        icon: 'i-ri-rss-line',
+        color: '#f9ca24',
+      },
+    ],
+
     author: {
       name: 'WRXinYue',
     },
