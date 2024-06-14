@@ -19,6 +19,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - 新增侧边栏导航支持
+- 新增 CSS3 Animation 动画效果，轻松应用于自己的元素
+- 新增打字效果 SakuraTypewriter 组件
+- 新增 InfoOverlayThemeSakura 横幅 overlay-bar 主题组件
+
+### Changed
+
+- SakuraInfoOverlay 组件重名为 InfoOverlayThemeSakura 主题组件
+- SakuraBanner 组件 banner-overlay-bar 插槽 重命名为 overlay-bar
+
+### Removed
+
+- SakuraHomeLayout 组件去除 content 插槽
 
 ## [0.6.0] - 2024-06-10
 

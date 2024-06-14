@@ -16,7 +16,7 @@ categories:
 
 <SakuraNavbarPG />
 
-## 侧边导航栏<SupTag>0.6.1</SupTag>
+## 侧边导航栏 <SupTag>0.6.1</SupTag>
 
 ```vue
 <template>

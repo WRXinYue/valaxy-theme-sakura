@@ -5,6 +5,8 @@ import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{
   theme: 'brand' | 'alt'
+  class: string
+  icon: string
   link: string
   text: string
 }>()
@@ -25,13 +27,12 @@ const { t } = useI18n()
 <template>
   <AppLink
     :to="link"
-    m="2"
-    :class="classes"
-    class="btn transition rounded-full decoration-none text-white!"
+    :class="[classes, props.class]"
+    class="btn transition rounded-$st-c-rd decoration-none text-white! flex items-center"
     bg="gradient-to-r"
-    p="x-6"
   >
     {{ t(text) }}
+    <div class="inline-flex hvr-icon ml-2" :class="icon" />
   </AppLink>
 </template>
 

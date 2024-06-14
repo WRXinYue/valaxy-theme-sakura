@@ -15,10 +15,17 @@ hero:
   actions:
     - theme: brand
       text: hero.actions.get-started
-      link: /guide/installation
+      class: animation-hvr-icon-bob
+      icon: i-mdi-rocket-launch-outline
+      link: /config/components
     - theme: alt
-      text: hero.actions.view-github
-      link: https://github.com/WRXinYue/valaxy-theme-sakura
+      text: hero.actions.install
+      class: animation-hvr-icon-drop
+      icon: i-mdi-package-down
+      link: /guide/installation
+    # - theme: alt
+    #   text: hero.actions.demo
+    #   class:
+    #   icon:
+    #   link:
 ---
-
-<HomePageShowcase />

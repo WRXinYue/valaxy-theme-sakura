@@ -56,7 +56,7 @@ theme:
 hero:
   actions:
     get-started: 快速上手
-    view-github: 查看 Github
+    install: 安装
 
 tooltip:
   edit_this_page: 在 GitHub 上编辑此页

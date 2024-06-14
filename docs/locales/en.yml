@@ -53,7 +53,7 @@ banner:
 hero:
   actions:
     get-started: Get Started
-    view-github: View Github
+    install: Install
 
 tooltip:
   edit_this_page: Edit this page on GitHub

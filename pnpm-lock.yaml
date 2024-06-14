@@ -62,19 +62,6 @@ importers:
         specifier: ^0.18.7
         version: 0.18.7(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.2)(@unhead/shared@1.9.12)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(unhead@1.9.12)
 
-  demos/athena:
-    dependencies:
-      valaxy:
-        specifier: 0.18.7
-        version: 0.18.7(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.2)(@unhead/shared@1.9.12)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(unhead@1.9.12)
-      valaxy-theme-sakura:
-        specifier: workspace:*
-        version: link:../../theme
-    devDependencies:
-      typescript:
-        specifier: ^5.3.3
-        version: 5.4.5
-
   demos/default:
     dependencies:
       valaxy:
@@ -84,22 +71,6 @@ importers:
         specifier: workspace:*
         version: link:../../theme
     devDependencies:
-      typescript:
-        specifier: ^5.3.3
-        version: 5.4.5
-
-  demos/flaribbit:
-    dependencies:
-      valaxy:
-        specifier: 0.18.7
-        version: 0.18.7(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.2)(@unhead/shared@1.9.12)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(unhead@1.9.12)
-      valaxy-theme-sakura:
-        specifier: workspace:*
-        version: link:../../theme
-    devDependencies:
-      '@iconify-json/ion':
-        specifier: ^1.1.15
-        version: 1.1.18
       typescript:
         specifier: ^5.3.3
         version: 5.4.5
@@ -118,6 +89,19 @@ importers:
         version: 5.4.5
 
   demos/play:
+    dependencies:
+      valaxy:
+        specifier: 0.18.7
+        version: 0.18.7(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.2)(@unhead/shared@1.9.12)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(unhead@1.9.12)
+      valaxy-theme-sakura:
+        specifier: workspace:*
+        version: link:../../theme
+    devDependencies:
+      typescript:
+        specifier: ^5.3.3
+        version: 5.4.5
+
+  demos/yasakani:
     dependencies:
       valaxy:
         specifier: 0.18.7
@@ -715,9 +699,6 @@ packages:
 
   '@iconify-json/fa6-solid@1.1.21':
     resolution: {integrity: sha512-+C6F3dFjNdqj8S83ggIXZFsX2CwecFErJKk9dVEZNd0XpNx2iNCNS+K/fl1HLFhYRhS4lb2Rgfi8yVV4MQU7yA==}
-
-  '@iconify-json/ion@1.1.18':
-    resolution: {integrity: sha512-iS4PRBySPnTqz4IyNGc62KtNs4mG9oh/mXyVXcMDluxGOz7W4MSnKeazz23x7aQLHAx/JhbFStl9YMSt2z3AQg==}
 
   '@iconify-json/mdi@1.1.66':
     resolution: {integrity: sha512-7KPF2RVUUWav/hXCM8Ti/smqu3cmgePJpiX9CSkldiL+80+eBRBeKlc4vPOc9jhAItlqIU1vKsbKoPP0JIfgbg==}
@@ -4807,10 +4788,6 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/fa6-solid@1.1.21':
-    dependencies:
-      '@iconify/types': 2.0.0
-
-  '@iconify-json/ion@1.1.18':
     dependencies:
       '@iconify/types': 2.0.0
 

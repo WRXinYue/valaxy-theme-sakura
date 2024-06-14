@@ -12,11 +12,16 @@ categories:
 
 ## 基础用法
 
+在 `layouts` 文件夹中新建 `home.vue` 文件，并添加如下代码，以取消文章列表及分页：
+
 ```vue
 <template>
   <SakuraHomeLayout>
-    <template #content>
-      <RouterView />
+    <template #article-list>
+      <div />
+    </template>
+    <template #pagination>
+      <div />
     </template>
   </SakuraHomeLayout>
 </template>
@@ -33,7 +38,8 @@ categories:
 | article-pinned | 置顶文章插槽，默认组件`<SakuraArticlePinnedCustom />` |
 | article-list | 文章列表插槽，默认组件`<SakuraArticleListCustom />` |
 | pagination | 分页插槽，默认组件`<SakuraPaginationCustom />` |
-| content | 在所有插槽最底部 |
+| right | --- |
+| left | --- |
 
 ## 相关组件
 

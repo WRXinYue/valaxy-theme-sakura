@@ -3,7 +3,7 @@ import { useI18n } from 'vue-i18n'
 import { useFrontmatter } from 'valaxy'
 
 const { viewScroll } = withDefaults(defineProps<{
-  viewScroll: boolean
+  viewScroll?: boolean
 }>(), {
   viewScroll: false,
 })
