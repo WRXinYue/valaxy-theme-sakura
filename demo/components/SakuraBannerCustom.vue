@@ -3,11 +3,11 @@
     <template #background-display>
       <SakuraBackgroundDisplay />
     </template>
-    <template #banner-overlay-bar>
+    <template #overlay-bar>
       <WaveThemeHorizontal />
     </template>
     <template #info-overlay>
-      <SakuraInfoOverlay />
+      <InfoOverlayThemeSakura />
     </template>
   </SakuraBanner>
 </template>

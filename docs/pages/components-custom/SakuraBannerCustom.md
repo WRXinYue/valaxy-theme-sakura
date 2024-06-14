@@ -12,25 +12,39 @@ Banner 横幅当中可以配置博客首页大屏壁纸或者标题之类的
 
 ## 基础用法
 
+这里分别配置 `overlay-bar` 为 `InfoOverlayThemeSakura` 主题和 `info-overlay` 为 `InfoOverlayThemeSakura` 主题：
+
 ```vue
 <template>
   <SakuraBanner>
     <template #background-display>
       <SakuraBackgroundDisplay />
     </template>
-    <template #banner-overlay-bar>
+    <template #overlay-bar>
       <WaveThemeHorizontal />
     </template>
     <template #info-overlay>
-      <SakuraInfoOverlay />
+      <InfoOverlayThemeSakura />
     </template>
   </SakuraBanner>
 </template>
 ```
 
-## 预览
+<SakuraBannerCustomPG theme="sakura" />
 
-<SakuraBannerCustomPG />
+## 固定横幅高度
+
+通过添加`h-[calc(100vh-var(--st-c-footer-height))]!`，可以使横幅和页脚的高度总和等于100vh
+
+```vue
+<template>
+  <SakuraBanner class="h-[calc(100vh-var(--st-c-footer-height))]!">
+    <template #info-overlay>
+      <InfoOverlayThemeHero />
+    </template>
+  </SakuraBanner>
+</template>
+```
 
 ## API
 
@@ -56,15 +70,19 @@ export interface ThemeConfig {
 
 ## 主题组件
 
-### banner-overlay-bar
+### overlay-bar
 
 - [WaveThemeFish](/components-themes/WaveThemeFish)
 - [WaveThemeHorizontal](/components-themes/WaveThemeHorizontal)
 - [WaveThemeRipple](/components-themes/WaveThemeRipple)
 - [WaveThemeYunCloud](/components-themes/WaveThemeYunCloud)
 
+### info-overlay
+
+- [InfoOverlayThemeSakura](/components-themes/InfoOverlayThemeSakura)
+- [InfoOverlayThemeHero](/components-themes/InfoOverlayThemeHero)
+
 ## 相关组件
 
 - [SakuraBanner](/components/SakuraBanner)
 - [SakuraBackgroundDisplay](/components/SakuraBackgroundDisplay)
-- [SakuraInfoOverlay](/components/SakuraInfoOverlay)

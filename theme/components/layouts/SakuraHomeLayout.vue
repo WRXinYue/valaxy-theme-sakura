@@ -26,8 +26,6 @@ const themeConfig = useThemeConfig()
       <SakuraPaginationCustom />
     </slot>
 
-    <slot name="content" />
-
     <template #right>
       <slot name="right" />
     </template>

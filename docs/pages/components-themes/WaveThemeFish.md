@@ -20,7 +20,7 @@ categories:
     <template #background-display>
       <SakuraBackgroundDisplay />
     </template>
-    <template #banner-overlay-bar>
+    <template #overlay-bar>
       <WaveThemeFish />
     </template>
   </SakuraBanner>

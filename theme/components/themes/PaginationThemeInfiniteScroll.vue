@@ -11,7 +11,7 @@ const routes = usePostList({ type: '' })
 
 const pageSize = computed(() => themeConfig.value.pagination?.itemsPerPage || siteConfig.value.pageSize)
 const posts = computed(() => routes.value)
-const identification = computed(() => themeConfig.value.pagination?.animation ? 'element-slide-fade-in' : 'identification') // Determine the class identifier; if animation is enabled, use the class with animation
+const identification = computed(() => themeConfig.value.pagination?.animation ? 'animation-fade-up' : 'identification') // Determine the class identifier; if animation is enabled, use the class with animation
 
 const totalPages = ref(Math.ceil(posts.value.length / pageSize.value))
 

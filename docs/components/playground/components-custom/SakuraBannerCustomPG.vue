@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
+defineProps<{
+  theme: string
+}>()
+
 const config = ref({
   banner: {
     title: 'My Banner',
@@ -24,9 +28,11 @@ function configUpdate(newConfig: any) {
     <template #background-display>
       <SakuraBackgroundDisplay :urls="config.banner.urls" />
     </template>
-    <template #banner-overlay-bar />
+    <template #overlay-bar>
+      <WaveThemeHorizontal />
+    </template>
     <template #info-overlay>
-      <SakuraInfoOverlay :banner="config.banner" />
+      <InfoOverlayThemeSakura :banner="config.banner" />
     </template>
   </SakuraBanner>
 

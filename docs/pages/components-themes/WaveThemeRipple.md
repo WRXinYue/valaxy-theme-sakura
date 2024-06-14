@@ -18,7 +18,7 @@ categories:
     <template #background-display>
       <SakuraBackgroundDisplay />
     </template>
-    <template #banner-overlay-bar>
+    <template #overlay-bar>
       <WaveThemeRipple />
     </template>
   </SakuraBanner>

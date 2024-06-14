@@ -19,12 +19,14 @@ onMounted(() => {
 
 <template>
   <header v-if="!loading" class="sakura-banner <md:px-5" :class="themeConfig.animation && 'element-slide-down'">
-    <div class="headertop absolute h-full w-full top-0 overflow-hidden" :class="banner?.style ">
+    <div class="absolute h-full w-full top-0 overflow-hidden" :class="[banner.style && 'banner-style', banner.style]">
       <slot name="background-display" />
 
-      <slot name="banner-overlay-bar" />
+      <slot name="overlay-bar" />
     </div>
-    <slot name="info-overlay" />
+    <div z-4>
+      <slot name="info-overlay" />
+    </div>
   </header>
 </template>
 
@@ -36,27 +38,27 @@ onMounted(() => {
   align-items: center;
   width: 100%;
   height: 100vh;
-}
 
-.headertop::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-attachment: fixed
-}
+  .banner-style::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-attachment: fixed
+  }
 
-.headertop.filter-dim::before {
-  background-color: rgba(0, 0, 0, 0.3)
-}
+  .banner-style.filter-dim::before {
+    background-color: rgba(0, 0, 0, 0.3)
+  }
 
-.headertop.filter-grid::before {
-  background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/grid.png)
-}
+  .banner-style.filter-grid::before {
+    background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/grid.png)
+  }
 
-.filter-dot.filter-dot::before {
-  background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/dot.gif);
+  .banner-style.filter-dot::before {
+    background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/dot.gif);
+  }
 }
 </style>

@@ -3,9 +3,9 @@
     <template #background-display>
       <SakuraBackgroundDisplay />
     </template>
-    <template #banner-overlay-bar />
+    <template #overlay-bar />
     <template #info-overlay>
-      <SakuraInfoOverlay />
+      <InfoOverlayThemeSakura />
     </template>
   </SakuraBanner>
 </template>

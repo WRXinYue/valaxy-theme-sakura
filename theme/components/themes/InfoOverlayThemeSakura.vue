@@ -28,7 +28,7 @@ function nextMedia() {
 </script>
 
 <template>
-  <div class="info z-4">
+  <div class="info">
     <SakuraGlitchText :text="banner.title" />
     <div class="w-full h-full rounded-2xl px-4 py-3" style="background-color: rgba(0, 0, 0, 0.5);">
       <SakuraMottoDisplay :motto="banner.motto" />
