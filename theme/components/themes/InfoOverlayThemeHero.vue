@@ -14,11 +14,7 @@ const themeConfig = useThemeConfig()
       </slot>
     </p>
 
-    <p
-      class="animation-fade-up gradient-text"
-      text="5xl md:8xl" font="black" bg="gradient-to-r"
-      style="-webkit-text-fill-color: transparent; animation-delay: 400ms;"
-    >
+    <p class="animation-fade-up gradient-text" text="5xl md:8xl" font="black" style="animation-delay: 400ms;">
       <slot name="highlighted-text">
         I'm {{ siteConfig.author.name }}
       </slot>
@@ -26,7 +22,12 @@ const themeConfig = useThemeConfig()
 
     <p class="animation-fade-up" text="2xl md:5xl" style="animation-delay: 600ms;">
       <slot name="subheading-text">
-        <SakuraTypewriter :type-string="[`${siteConfig.description}`, `${siteConfig.author.status.message} ${siteConfig.author.status.emoji}`]" delete-all loop :pause-for="[3000, 4000]" />
+        <SakuraTypewriter
+          :type-string="[
+            `${siteConfig.description}`,
+            `${siteConfig.author.status.message} ${siteConfig.author.status.emoji}`,
+          ]" delete-all loop :pause-for="[3000, 4000]"
+        />
       </slot>
     </p>
 
