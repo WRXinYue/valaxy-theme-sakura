@@ -9,11 +9,7 @@
         </SakuraAsideLayout>
       </template>
       <template #content>
-        <SakuraHomeLayout>
-          <template #content>
-            <RouterView />
-          </template>
-        </SakuraHomeLayout>
+        <SakuraHomeLayout />
       </template>
       <template #right>
         <SakuraAsideLayout>
