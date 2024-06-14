@@ -8,7 +8,6 @@ const { type } = defineProps<{
 }>()
 
 const frontmatter = useFrontmatter()
-const toast = useToast()
 
 const elements = frontmatter.value[type]
 
@@ -19,6 +18,8 @@ const showElements = ref(Array(elements.length).fill(false))
 // }
 
 function copyToClipboard(text: string) {
+  const toast = useToast()
+
   navigator.clipboard.writeText(text).then(() => {
     toast.success('Copied to clipboard', {
       position: POSITION.TOP_CENTER,
