@@ -45,7 +45,6 @@ declare module 'vue-router/auto-routes' {
     '/components/SakuraHamburger': RouteRecordInfo<'/components/SakuraHamburger', '/components/SakuraHamburger', Record<never, never>, Record<never, never>>,
     '/components/SakuraLayoutPostTag': RouteRecordInfo<'/components/SakuraLayoutPostTag', '/components/SakuraLayoutPostTag', Record<never, never>, Record<never, never>>,
     '/components/SakuraLinks': RouteRecordInfo<'/components/SakuraLinks', '/components/SakuraLinks', Record<never, never>, Record<never, never>>,
-    '/components/SakuraMottoDisplay': RouteRecordInfo<'/components/SakuraMottoDisplay', '/components/SakuraMottoDisplay', Record<never, never>, Record<never, never>>,
     '/components/SakuraNavbar': RouteRecordInfo<'/components/SakuraNavbar', '/components/SakuraNavbar', Record<never, never>, Record<never, never>>,
     '/components/SakuraNavbarBrand': RouteRecordInfo<'/components/SakuraNavbarBrand', '/components/SakuraNavbarBrand', Record<never, never>, Record<never, never>>,
     '/components/SakuraNavLink': RouteRecordInfo<'/components/SakuraNavLink', '/components/SakuraNavLink', Record<never, never>, Record<never, never>>,

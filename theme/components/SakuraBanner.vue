@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
 import type { Banner } from '../types/index'
 
@@ -8,17 +8,12 @@ const props = defineProps<{
 }>()
 
 const themeConfig = useThemeConfig()
-const loading = ref(true)
 
 const banner = computed(() => props.banner || themeConfig.value.banner)
-
-onMounted(() => {
-  loading.value = false
-})
 </script>
 
 <template>
-  <header v-if="!loading" class="sakura-banner <md:px-5" :class="themeConfig.animation && 'element-slide-down'">
+  <header class="sakura-banner <md:px-5">
     <div class="absolute h-full w-full top-0 overflow-hidden" :class="[banner.style && 'banner-style', banner.style]">
       <slot name="background-display" />
 
