@@ -24,7 +24,7 @@ const { t } = useI18n()
 
 <style lang="scss">
 .toc-btn {
-  color: var(--va-c-primary);
+  color: var(--st-c-brand);
   background-color: white;
   z-index: var(--yun-z-toc-btn);
 }

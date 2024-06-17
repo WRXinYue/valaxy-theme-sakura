@@ -46,14 +46,14 @@ const siteConfig = useSiteConfig()
 .entry-title {
   &::before {
     content:" {";
-    color:#f8ba0b;
+    color: var(--st-c-secondary);
     font-size:1.2em;
     margin-right:6px;
     font-family: 'Helvetica'
   }
   &::after {
     content:"}";
-    color:#f8ba0b;
+    color:var(--st-c-secondary);
     font-size:1.2em;
     margin-left:6px;
     font-family: 'Helvetica'

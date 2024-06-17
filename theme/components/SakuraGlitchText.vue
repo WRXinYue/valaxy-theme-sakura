@@ -1,14 +1,24 @@
 <script setup lang="ts">
-const { text } = defineProps<{ text: string }>()
+import type { TypewriterProps } from '../components/plugins/SakuraTypewriter.vue'
+
+const props = defineProps<{
+  text?: string
+  [key: string]: any
+} & Partial<TypewriterProps>>()
 </script>
 
 <template>
-  <div class="glitch" :data-text="text">
-    {{ text }}
+  <div class="sakura-glitch-text" :data-text="props.text || props.typeString">
+    <template v-if="props.text">
+      {{ props.text }}
+    </template>
+    <SakuraTypewriter v-else-if="props.typeString" v-bind="props" />
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@use "valaxy/client/styles/mixins/index.scss" as *;
+
 @mixin glitch-common {
   content: attr(data-text);
   position: absolute;
@@ -17,42 +27,42 @@ const { text } = defineProps<{ text: string }>()
   clip: rect(0, 0, 0, 0);
 }
 
-.glitch {
+.sakura-glitch-text {
   display: block;
   position: relative;
   font-weight: bold;
-  font-size: 80px;
   color: white;
+  font-size: 6rem;
   text-shadow: rgba(0, 0, 0, 0.2) 4px 4px 8px;
+
+  @include mobile {
+    & {
+      font-size: 4rem;
+    }
+  }
 
   &:before {
     @include glitch-common;
     left: -1px;
-    text-shadow: 1px 0 #ff3f1a;
+    text-shadow: 1px 0 var(--st-c-brand);
   }
 
   &:after {
     @include glitch-common;
     left: 1px;
-    text-shadow: -1px 0 #00a7e0;
+    text-shadow: -1px 0 var(--st-c-secondary);
   }
 
   &:hover {
     &:before {
-      text-shadow: 4px 0 #ff3f1a;
+      text-shadow: 4px 0 var(--st-c-brand);
       animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
     }
 
     &:after {
-      text-shadow: -4px 0 #00a7e0;
+      text-shadow: -4px 0 var(--st-c-secondary);
       animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse;
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .glitch {
-    font-size: 45px;
   }
 }
 

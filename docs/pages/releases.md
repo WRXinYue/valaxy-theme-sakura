@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - SakuraInfoOverlay 组件重名为 InfoOverlayThemeSakura 主题组件
 - SakuraBanner 组件 banner-overlay-bar 插槽 重命名为 overlay-bar
+- 更改默认主题色为 #0078E7 ，原主题色已经迁移至 sakura styles
 
 ### Removed
 

@@ -65,7 +65,7 @@ onMounted(() => {
   <li class="category-list-item inline-flex items-center cursor-pointer">
     <span class="folder-action inline-flex" @click="collapse = !collapse">
       <div v-if="collapse" i-ri-folder-add-line />
-      <div v-else style="color:var(--va-c-primary)" i-ri-folder-reduce-line />
+      <div v-else style="color:var(--st-c-primary)" i-ri-folder-reduce-line />
     </span>
     <span class="category-name" m="l-1" @click="jumpToDisplayCategory(parentKey)">
       {{ category.name === 'Uncategorized' ? t('category.uncategorized') : category.name }} [{{ category.total }}]

@@ -6,9 +6,10 @@ import type { ThemeConfig } from '../types'
  * Default Config
  */
 export const defaultThemeConfig: ThemeConfig = {
-  // colors: {
-  //   primary: '#e67474',
-  // },
+  colors: {
+    primary: '#0078E7',
+  },
+
   navbarTitle: '',
 
   favicon: false,
@@ -53,7 +54,7 @@ export function themePlugin(
           preprocessorOptions: {
             scss: {
               additionalData: `$c-primary: ${
-                themeConfig.colors?.primary || '#e67474'
+                themeConfig.colors?.primary || '#0078E7'
               } !default;`,
             },
           },

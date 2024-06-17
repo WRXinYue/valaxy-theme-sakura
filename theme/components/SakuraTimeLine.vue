@@ -170,7 +170,7 @@ function handleMouseEnter(year: number, month: number) {
         margin-top: 14px;
         width: 1rem;
         height: 1rem;
-        background: var(--va-c-primary);
+        background: var(--st-c-brand);
         border-radius: 50%;
       }
     }
