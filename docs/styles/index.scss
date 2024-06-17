@@ -7,14 +7,15 @@
 
 .sakura-navbar {
   position: sticky;
+  background: transparent !important;
+
+  &.active-header{
+    box-shadow: none;
+  }
 }
 
 .sakura-main {
   min-height: calc(100vh - var(--st-c-footer-height) - var(--st-c-navbar-height));
-}
-
-.sakura-navbar.active-header {
-  box-shadow: none;
 }
 
 /* -------------------------------------
