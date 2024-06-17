@@ -49,6 +49,10 @@ export default defineValaxyConfig<ThemeConfig>({
 
   theme: 'sakura',
   themeConfig: {
+    colors: {
+      primary: '#ff4e6a',
+    },
+
     navbarTitle: ['Valaxy Theme', '', 'Sakura'],
 
     // addons: [

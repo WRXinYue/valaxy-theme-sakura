@@ -1,9 +1,3 @@
-<script setup lang="ts">
-defineProps<{
-  experimental: boolean
-}>()
-</script>
-
 <template>
   <sup class="sup-tag">
     <slot />

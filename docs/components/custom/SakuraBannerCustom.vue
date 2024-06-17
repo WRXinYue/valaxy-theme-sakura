@@ -2,7 +2,7 @@
 import { useFrontmatter } from 'valaxy'
 import { useI18n } from 'vue-i18n'
 
-const fm = useFrontmatter()
+const frontmatter = useFrontmatter()
 
 const { t } = useI18n()
 </script>
@@ -17,7 +17,7 @@ const { t } = useI18n()
 
         <template #highlighted-text>
           <span text="4xl md:7xl">
-            {{ fm.hero.name }}
+            {{ frontmatter.hero?.name }}
           </span>
         </template>
 
@@ -32,7 +32,7 @@ const { t } = useI18n()
         <template #utils>
           <div class="animation-fade-up flex flex-wrap" style="animation-delay: 1400ms;">
             <PressButton
-              v-for="action in fm.hero.actions"
+              v-for="action in frontmatter.hero?.actions"
               :key="action.link"
               :class="action.class"
               :icon="action.icon"

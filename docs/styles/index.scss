@@ -13,6 +13,10 @@
   min-height: calc(100vh - var(--st-c-footer-height) - var(--st-c-navbar-height));
 }
 
+.sakura-navbar.active-header {
+  box-shadow: none;
+}
+
 /* -------------------------------------
 * Markdown components styles reset
 * ------------------------------------- */
