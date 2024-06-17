@@ -1,4 +1,20 @@
 .sakura-navbar {
+  position: fixed;
+  z-index: 5;
+  height: var(--st-c-navbar-height);
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+
+  &.active-header {
+    background: var(--st-c-bg-nav);
+  }
+
   &.col {
     flex-direction: column;
     height: 100vh;

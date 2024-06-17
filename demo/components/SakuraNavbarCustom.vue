@@ -1,5 +1,5 @@
 <template>
-  <SakuraNavbar :invert="true">
+  <SakuraNavbar :invert="true" auto-hide>
     <template #nav-tool>
       <div flex>
         <SakuraToggleLocale mr-2 />

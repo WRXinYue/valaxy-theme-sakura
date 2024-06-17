@@ -1,27 +1,34 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useThemeConfig } from '../composables'
-import { useSakuraAppStore } from '../stores/app'
 
-const { invert } = withDefaults(defineProps<{
+const { invert, autoHide } = withDefaults(defineProps<{
   favicon?: boolean
   title?: string | string[]
   invert?: boolean
   col?: boolean
+  autoHide?: boolean
+  animIn?: string | string[]
+  animOut?: string | string[]
 }>(), {
   invert: false,
   col: false,
+  autoHide: false,
+  animIn: 'animation-fade-in-left',
+  animOut: 'animation-fade-out-left',
 })
 
 const themeConfig = useThemeConfig()
-const sakura = useSakuraAppStore()
 
 const hoverNavbar = ref(false)
 const scrolled = ref(false)
 
-const isHeaderHighlighted = computed(() => hoverNavbar.value || (invert ? scrolled.value : !scrolled.value))
+const isHeaderHighlighted = computed(() => {
+  if (!autoHide)
+    return true
 
-watch(isHeaderHighlighted, () => sakura.isHeaderHighlighted = isHeaderHighlighted.value)
+  return hoverNavbar.value || (invert ? scrolled.value : !scrolled.value)
+})
 
 function handleScroll() {
   scrolled.value = window.scrollY > 100
@@ -29,15 +36,6 @@ function handleScroll() {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
-
-  /**
-   * If 'invert' is true, set 'isHeaderHighlighted' to null to prevent animation flicker
-   * If 'invert' is false, initialize 'isHeaderHighlighted' normally based on navbar hover state or scroll state
-   */
-  if (invert)
-    sakura.isHeaderHighlighted = null
-  else
-    sakura.isHeaderHighlighted = hoverNavbar.value || (invert ? scrolled.value : !scrolled.value)
 })
 
 onUnmounted(() => {
@@ -55,7 +53,7 @@ onUnmounted(() => {
     </slot>
 
     <slot name="nav-link">
-      <SakuraNavLink class="<md:hidden" :col="col" />
+      <SakuraNavLink :class="autoHide && (isHeaderHighlighted ? animIn : animOut)" :col="col" />
     </slot>
 
     <slot name="nav-tool">
@@ -63,19 +61,3 @@ onUnmounted(() => {
     </slot>
   </header>
 </template>
-
-<style lang="scss">
-.sakura-navbar {
-  position: fixed;
-  z-index: 5;
-  height: var(--st-c-navbar-height);
-  width: 100%;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: all 0.4s ease;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-</style>

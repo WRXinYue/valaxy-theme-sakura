@@ -3,36 +3,20 @@ import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import type { NavItem } from '../types/index'
 import { useThemeConfig } from '../composables'
-import { useSakuraAppStore } from '../stores/app'
 
-const { navbar, animIn, animOut, col } = withDefaults(defineProps<{
+const { navbar, col } = withDefaults(defineProps<{
   navbar?: NavItem[]
-  animIn?: string | string[]
-  animOut?: string | string[]
   col?: boolean
 }>(), {
-  animIn: 'animation-fade-in-left',
-  animOut: 'animation-fade-out-left',
   col: false,
 })
 
 const themeConfig = useThemeConfig()
-const sakura = useSakuraAppStore()
 const route = useRoute()
 
 const marker = ref()
 
 const navLinkItems = computed(() => (navbar || themeConfig.value.navbar))
-const navAnime = computed(() => {
-  /**
-   * If 'isHeaderHighlighted' is null, return 'hidden' to prevent flickering during the 'animOut' animation
-   * Otherwise, determine the animation state based on the value of 'isHeaderHighlighted'
-   */
-  if (sakura.isHeaderHighlighted === null)
-    return 'hidden'
-
-  return sakura.isHeaderHighlighted ? animIn : animOut
-})
 
 watch(() => route.path, () => {
   nextTick(updateMarker)
@@ -62,7 +46,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav :class="navAnime" class="sakura-nav-lick">
+  <nav class="sakura-nav-lick">
     <template v-for="(item, i) in navLinkItems" :key="i">
       <SakuraNavLinkItem :link="item.link" :icon="item.icon" :text="item.text" :submenu="item.submenu" />
       <span v-if="i !== (navbar?.length || themeConfig.navbar.length) - 1" class="mr-3 ml-3" />

@@ -15,8 +15,6 @@ export const useSakuraAppStore = defineStore('sakura-app', () => {
   const wallpaperIndex = ref<{ [key: string]: number }>({})
   const wallpaperLength = ref<{ [key: string]: number }>({})
 
-  const isHeaderHighlighted = ref()
-
   function setScrollPosition(id: string, position: number) {
     positions.value[id] = position
   }
@@ -36,7 +34,6 @@ export const useSakuraAppStore = defineStore('sakura-app', () => {
     curPage,
     wallpaperIndex,
     wallpaperLength,
-    isHeaderHighlighted,
   }
 })
 
