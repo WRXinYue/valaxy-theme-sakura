@@ -71,8 +71,8 @@ nextTick(() => {
 
     <slot name="main-content">
       <Transition appear>
-        <ValaxyMd class="max-w-none min-w-0" :frontmatter="frontmatter">
-          <div class="prose">
+        <ValaxyMd class="min-w-0" :frontmatter="frontmatter">
+          <div class="prose max-w-none">
             <slot name="main-content-md" />
           </div>
           <slot />

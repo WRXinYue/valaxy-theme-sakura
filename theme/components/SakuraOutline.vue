@@ -63,7 +63,7 @@ const { headers, handleClick } = useOutline()
   opacity: 0;
   width: 4px;
   height: 18px;
-  background-color: var(--va-c-brand);
+  background-color: var(--st-c-brand);
   transition: top 0.25s cubic-bezier(0, 1, 0.5, 1), background-color 0.5s, opacity 0.25s;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
@@ -88,7 +88,7 @@ const { headers, handleClick } = useOutline()
 
 .outline-link:hover,
 .outline-link.active {
-  color: var(--va-c-brand);
+  color: var(--st-c-brand);
   transition: color 0.25s;
 }
 

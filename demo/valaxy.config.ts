@@ -13,6 +13,10 @@ export default defineConfig<ThemeConfig>({
   theme: 'sakura',
 
   themeConfig: {
+    colors: {
+      primary: '#ff4e6a',
+    },
+
     navbarTitle: ['かなしい', 'の', '心悦'],
 
     favicon: false,
