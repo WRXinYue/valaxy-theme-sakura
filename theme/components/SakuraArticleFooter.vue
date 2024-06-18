@@ -1,7 +1,7 @@
 <template>
   <footer class="article-footer">
     <slot name="navigation">
-      <SakuraArticleNavigation />
+      <ArticleNavigationThemeSakura />
     </slot>
 
     <slot name="back">
