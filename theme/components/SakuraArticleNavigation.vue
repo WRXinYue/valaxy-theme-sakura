@@ -1,56 +1,58 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-import { usePostList } from 'valaxy'
+import { usePrevNext } from 'valaxy'
 import { useThemeConfig } from '../composables'
+import type { SakuraImageCardProps } from './common/SakuraImageCard.vue'
 
-const route = useRoute()
-const posts = usePostList()
+const props = withDefaults(defineProps<{
+  [key: string]: any
+} & Partial<SakuraImageCardProps>>(), {
+  overlay: true,
+  overlayOpacity: 0,
+  overlayOpacityInitial: 0.5,
+})
+
 const themeConfig = useThemeConfig()
-
-const nextPost = computed(() => posts.value[findCurrentIndex() - 1])
-const prevPost = computed(() => posts.value[findCurrentIndex() + 1])
-
-function findCurrentIndex() {
-  return posts.value.findIndex(p => p.path === route.path)
-}
+const [prev, next] = usePrevNext()
 
 const navigationMerge = computed(() => themeConfig.value.article?.navigationMerge || false)
 </script>
 
 <template>
-  <div class="w-full" :class="navigationMerge && 'flex'">
+  <div class="sakura-article-navigation" :class="navigationMerge && 'flex'">
     <SakuraImageCard
-      v-if="nextPost?.path" :src="nextPost.cover" :to="nextPost.path" class="h-50 w-full" :class="{
-        'w-1/2 rounded-l-$st-c-rd': prevPost?.path && navigationMerge,
-        'rounded-$st-c-rd': (navigationMerge && !prevPost?.path) || !navigationMerge,
-      }" :overlay="true" :overlay-opacity="0" :overlay-opacity-initial="0.5"
+      v-if="prev?.path" v-bind="{ ...props, src: prev.cover, to: prev.path }"
+      class="card-prev" :class="{
+        'mt-10': !navigationMerge,
+        'w-1/2 rounded-l-$st-c-rd': next?.path && navigationMerge,
+        'rounded-$st-c-rd': (navigationMerge && !next?.path) || !navigationMerge,
+      }"
     >
-      <div class="flex flex-col justify-center h-full w-full mx-10">
-        <h2 class="text-xs tracking-wide uppercase text-$st-c-article-navigation-text">
-          Next Article
+      <div class="article-navigation-content">
+        <h2>
+          Previous Article
         </h2>
         <div class="link">
-          <RouterLink :to="nextPost.path">
-            {{ nextPost.title }}
+          <RouterLink :to="prev.path">
+            {{ prev.title }}
           </RouterLink>
         </div>
       </div>
     </SakuraImageCard>
     <SakuraImageCard
-      v-if="prevPost?.path" :src="prevPost.cover" :to="prevPost.path" class="h-50 w-full" :class="{
-        'mt-10': !navigationMerge,
-        'w-1/2 rounded-r-$st-c-rd': nextPost?.path && navigationMerge,
-        'rounded-$st-c-rd': (navigationMerge && !nextPost?.path) || !navigationMerge,
-      }" :overlay="true" :overlay-opacity="0" :overlay-opacity-initial="0.5"
+      v-if="next?.path" v-bind="{ ...props, src: next.cover, to: next.path }"
+      class="card-next" :class="{
+        'w-1/2 rounded-r-$st-c-rd': prev?.path && navigationMerge,
+        'rounded-$st-c-rd': (navigationMerge && !prev?.path) || !navigationMerge,
+      }"
     >
-      <div class="flex flex-col justify-center h-full mx-10 justify-end">
-        <h2 class="text-xs tracking-wide uppercase text-$st-c-article-navigation-text flex justify-end">
-          Previous Article
+      <div class="article-navigation-content">
+        <h2 flex justify-end>
+          Next Article
         </h2>
-        <div class="link flex justify-end">
-          <RouterLink :to="prevPost.path">
-            {{ prevPost.title }}
+        <div class="link" flex justify-end>
+          <RouterLink :to="next.path">
+            {{ next.title }}
           </RouterLink>
         </div>
       </div>
@@ -58,9 +60,35 @@ const navigationMerge = computed(() => themeConfig.value.article?.navigationMerg
   </div>
 </template>
 
-<style lang="scss" scoped>
-a {
-  color: var(--st-c-article-navigation-text);
-  font-weight: bold;
+<style lang="scss">
+.sakura-article-navigation {
+  width: 100%;
+
+  .article-navigation-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+
+    h2 {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+      color: var(--st-c-article-navigation-text);
+    }
+  }
+
+  .sakura-image-card {
+    height: 12.5rem;
+    width: 100%;
+  }
+
+  a {
+    color: var(--st-c-article-navigation-text);
+    font-weight: bold;
+  }
 }
 </style>
