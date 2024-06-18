@@ -23,6 +23,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 新增打字效果 SakuraTypewriter 组件
 - 新增 InfoOverlayThemeSakura 横幅 overlay-bar 主题组件
 
+### Fixed
+
+- 重构上一篇/下一篇文章导航，并重新排列导航组 [Issue #5](https://github.com/WRXinYue/valaxy-theme-sakura/issues/5)
+- 修复 TagsThemeSakura 组件移动端自适应问题
+
 ### Changed
 
 - SakuraInfoOverlay 组件重名为 InfoOverlayThemeSakura 主题组件

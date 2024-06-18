@@ -69,7 +69,7 @@ const title = usePostTitle(frontmatter)
         />
       </template>
       <template #main-content>
-        <div :class="themeConfig.animation && 'element-slide-up'" m="x-100">
+        <div :class="themeConfig.animation && 'element-slide-up'" class="tags-margin-control">
           <div class="yun-text-light " text="center" p="2">
             {{ t('counter.tags', Array.from(tags).length) }}
           </div>
@@ -90,7 +90,7 @@ const title = usePostTitle(frontmatter)
       </template>
 
       <template #main-nav-before>
-        <div v-if="curTag" m="x-100">
+        <div v-if="curTag" class="tags-margin-control">
           <ArticleListThemeCard :posts="posts" />
         </div>
       </template>

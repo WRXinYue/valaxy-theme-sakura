@@ -74,6 +74,7 @@ onMounted(() => {
   line-height: 1.25rem;
   color: rgb(107 114 128 / var(--un-text-opacity));
   line-height: 1.25rem;
+  transform: translateX(0);
 }
 
 .sakura-nav-link:hover {

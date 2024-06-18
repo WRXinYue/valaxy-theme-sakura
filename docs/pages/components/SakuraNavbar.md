@@ -8,10 +8,6 @@ categories:
 
 ## SakuraNavbar
 
-:::warning
-该组件会在0.7.0版本逐渐迁移成主题组件
-:::
-
 ## 预览
 
 <SakuraNavbarPG />
@@ -52,8 +48,10 @@ categories:
 | ---- | ---- | ---- | ---- |
 | favicon | `boolean` | `undefined` | --- |
 | title | `string \| string[]` | `undefined` | --- |
-| invert | `boolean` | `false` | 滚动触发反转 |
-| col | `boolean` | `false` | 改为侧边导航栏 |
+| invert | `boolean` | `false` | 滚动触发反转, 需开启 `autoHide` 选项 |
+| autoHide | `boolean` | `false` | 是否自动隐藏导航栏 |
+| animIn | `string` \| `string[]` | `animation-fade-in-left` | 进入动画效果 |
+| animOut | `string` \| `string[]` | `animation-fade-in-left` | 离开动画效果 |
 
 ### ThemeConfig
 
