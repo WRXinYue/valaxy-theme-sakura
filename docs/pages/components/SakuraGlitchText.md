@@ -18,7 +18,7 @@ categories:
 </template>
 ```
 
-## 打字效果
+## 打字效果 <SupTag>0.6.1</SupTag>
 
 基于 `SakuraTypewriter` 实现, 配置方式同 `SakuraTypewriter` 组件
 
