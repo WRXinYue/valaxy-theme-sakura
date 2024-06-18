@@ -160,7 +160,7 @@ Animation 3
 | intro-text | 用于插入自定义的介绍文本。默认显示 `themeConfig.banner.title` |
 | highlighted-text | 用于插入自定义的高亮文本。默认显示 `I'm {{ siteConfig.author.name }}` |
 | subheading-text | 用于插入自定义的副标题文本。默认显示 `SakuraTypewriter` 组件中 `siteConfig.description` 和 `siteConfig.author.status.message` 结合 `siteConfig.author.status.emoji` |
-| muted-text | 用于插入自定义的静音文本。默认显示 `themeConfig.banner.motto` |
+| muted-text | 用于插入自定义的浅色文本。默认显示 `themeConfig.banner.motto` |
 | social | 用于插入自定义的社交媒体图标列表。默认根据 `siteConfig.social` 渲染社交媒体图标 |
 | utils | 用于插入自定义的实用工具组件 |
 

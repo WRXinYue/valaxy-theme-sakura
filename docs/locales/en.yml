@@ -43,6 +43,7 @@ category:
   components: Components
   releases: releases
   layouts: Layouts
+  styles: Styles
 
 banner:
   next-generation: Next Generation

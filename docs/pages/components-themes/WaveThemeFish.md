@@ -8,7 +8,7 @@ categories:
 
 ## WaveThemeFish
 
-未知来源，在原代码基础上进行使用typescript重构去除对jQuery的依赖
+基于原代码进行 TypeScript 重构，去除了对 jQuery 的依赖。组件源码注释为中文，有兴趣的小伙伴可以阅读[`WaveThemeFish`](https://github.com/WRXinYue/valaxy-theme-sakura/blob/main/theme/components/themes/WaveThemeFish.vue)源码学习。
 
 ## 预览
 

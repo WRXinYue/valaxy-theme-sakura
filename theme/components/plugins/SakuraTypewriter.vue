@@ -13,17 +13,17 @@ export interface TypewriterProps {
   /**
    * @default 75
    *
-   * The delay between each key when typing.
+   * The delay between each key when typing
    */
   delay: number
   /**
-   * The delay between deleting each character.
+   * The delay between deleting each character
    */
   deleteSpeed: number
   /**
    * @default false
    *
-   * Whether to keep looping or not.
+   * Whether to keep looping or not
    */
   loop: boolean
   /**
@@ -35,17 +35,17 @@ export interface TypewriterProps {
   /**
    * @default false
    *
-   * Whether or not to display console logs.
+   * Whether or not to display console logs
    */
   devMode: boolean
   /**
    * String to type out, it can contain HTML tags
-   * Type out a string using the typewriter effect.
+   * Type out a string using the typewriter effect
    */
   typeString: string | string[]
   /**
    * Speed to delete all visibles nodes, can be number or 'natural'
-   * Delete everything that is visible inside of the typewriter wrapper element.
+   * Delete everything that is visible inside of the typewriter wrapper element
    */
   deleteAll: number | boolean | number[]
 }
