@@ -11,13 +11,13 @@
   "dependencies": {
     "valaxy-addon-algolia": "^0.0.3",
     "valaxy-addon-live2d": "workspace:*",
-    "valaxy-addon-meting": "^0.1.2",
+    "valaxy-addon-meting": "^0.1.3",
     "valaxy-addon-twikoo": "^0.0.3",
     "valaxy-addon-waline": "0.1.1",
     "valaxy-theme-sakura": "workspace:*"
   },
   "devDependencies": {
     "nodemon": "^3.1.0",
-    "valaxy": "^0.18.7"
+    "valaxy": "^0.18.8"
   }
 }
