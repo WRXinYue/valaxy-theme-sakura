@@ -16,23 +16,29 @@ const isMounted = useMounted()
       <SakuraNoticeBoardCustom v-if="isMounted" />
     </slot>
 
-    <slot name="article-pinned">
-      <SakuraArticlePinnedCustom v-if="isMounted && themeConfig.articlePinned" />
-    </slot>
+    <template v-if="isMounted">
+      <slot name="article-pinned">
+        <SakuraArticlePinnedCustom v-if="themeConfig.articlePinned" />
+      </slot>
+    </template>
 
-    <slot name="article-list">
-      <SakuraArticleListCustom v-if="isMounted" />
-    </slot>
+    <template v-if="isMounted">
+      <slot name="article-list">
+        <SakuraArticleListCustom />
+      </slot>
+    </template>
 
-    <slot name="pagination">
-      <SakuraPaginationCustom v-if="isMounted" />
-    </slot>
+    <template v-if="isMounted">
+      <slot name="pagination">
+        <SakuraPaginationCustom />
+      </slot>
+    </template>
 
-    <template #right>
+    <template v-if="isMounted" #right>
       <slot name="right" />
     </template>
 
-    <template #left>
+    <template v-if="isMounted" #left>
       <slot name="left" />
     </template>
   </SakuraMultiColumnsLayout>

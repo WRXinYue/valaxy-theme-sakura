@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - 重构上一篇/下一篇文章导航，并重新排列导航组 [Issue #5](https://github.com/WRXinYue/valaxy-theme-sakura/issues/5)
 - 修复 TagsThemeSakura 组件移动端自适应问题
+- 修复首页(home)组件在某些情况下会闪烁问题
 
 ### Changed
 
