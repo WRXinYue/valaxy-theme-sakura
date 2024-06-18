@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
+import { useMounted } from '@vueuse/core'
 import { useThemeConfig } from '../composables'
 import type { Banner } from '../types/index'
 
@@ -8,20 +9,23 @@ const props = defineProps<{
 }>()
 
 const themeConfig = useThemeConfig()
+const isMounted = useMounted()
 
 const banner = computed(() => props.banner || themeConfig.value.banner)
 </script>
 
 <template>
   <header class="sakura-banner <md:px-5">
-    <div class="absolute h-full w-full top-0 overflow-hidden" :class="[banner.style && 'banner-style', banner.style]">
-      <slot name="background-display" />
+    <template v-if="isMounted">
+      <div class="absolute h-full w-full top-0 overflow-hidden" :class="[banner.style && 'banner-style', banner.style]">
+        <slot name="background-display" />
 
-      <slot name="overlay-bar" />
-    </div>
-    <div z-4>
-      <slot name="info-overlay" />
-    </div>
+        <slot name="overlay-bar" />
+      </div>
+      <div z-4>
+        <slot name="info-overlay" />
+      </div>
+    </template>
   </header>
 </template>
 
