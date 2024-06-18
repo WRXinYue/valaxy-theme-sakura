@@ -3,25 +3,43 @@ import { computed, ref } from 'vue'
 import { onImgError } from '../../utils'
 import noneImg from '../../assets/image-404.png'
 
-const props = defineProps({
-  src: String,
-  to: String,
-  alt: String,
-  errorImg: String,
-  scale: { type: [Number, String], default: 1.2 },
-  rotate: { type: [Number, String], default: 0 },
-  skewX: { type: [Number, String], default: 0 },
-  skewY: { type: [Number, String], default: 0 },
-  opacity: { type: [Number, String], default: 1 },
-  translateX: { type: [Number, String], default: 0 },
-  translateY: { type: [Number, String], default: 0 },
-  transitionDuration: { type: String, default: '0.4s' },
-  transitionTimingFunction: { type: String, default: 'ease' },
-  overlay: { type: Boolean, default: false },
-  overlayColor: { type: String, default: 'rgba(0, 0, 0, 0.5)' },
-  overlayOpacity: { type: [Number, String], default: 0.5 },
-  overlayOpacityInitial: { type: [Number, String], default: 0 },
+const props = withDefaults(defineProps<{
+  [key: string]: any
+} & Partial<SakuraImageCardProps>>(), {
+  scale: 1.2,
+  rotate: 0,
+  skewX: 0,
+  skewY: 0,
+  opacity: 1,
+  translateX: 0,
+  translateY: 0,
+  transitionDuration: '0.4s',
+  transitionTimingFunction: 'ease',
+  overlay: false,
+  overlayColor: 'rgba(0, 0, 0, 0.5)',
+  overlayOpacity: 0.5,
+  overlayOpacityInitial: 0,
 })
+
+export interface SakuraImageCardProps {
+  src: string
+  to: string
+  alt: string
+  errorImg: string
+  scale: number | string
+  rotate: number | string
+  skewX: number | string
+  skewY: number | string
+  opacity: number | string
+  translateX: number | string
+  translateY: number | string
+  transitionDuration: string
+  transitionTimingFunction: string
+  overlay: boolean
+  overlayColor: string
+  overlayOpacity: number | string
+  overlayOpacityInitial: number | string
+}
 
 const isHovering = ref(false)
 
@@ -47,7 +65,7 @@ function onError(e: Event) {
 </script>
 
 <template>
-  <div class="overflow-hidden relative" @mouseover="isHovering = true" @mouseleave="isHovering = false">
+  <div class="sakura-image-card overflow-hidden relative" @mouseover="isHovering = true" @mouseleave="isHovering = false">
     <AppLink :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
       <img class="lazy object-cover h-full w-full" loading="lazy" :src="props.src || noneImg" :alt="props.alt || 'cover'" :style="imageStyle" @error="onError">
       <template v-if="overlay">
