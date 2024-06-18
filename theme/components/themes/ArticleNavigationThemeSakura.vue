@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { usePrevNext } from 'valaxy'
-import { useThemeConfig } from '../composables'
-import type { SakuraImageCardProps } from './common/SakuraImageCard.vue'
+import { useThemeConfig } from '../../composables'
+import type { SakuraImageCardProps } from '.././common/SakuraImageCard.vue'
 
 const props = withDefaults(defineProps<{
   [key: string]: any

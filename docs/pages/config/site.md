@@ -8,7 +8,7 @@ categories:
 
 ## 站点配置
 
-站点配置是每个主题都通用的，详情请见<https://valaxy.site/guide/config/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE>
+站点配置是任何主题都通用的，详情请见 [Valaxy 站点配置](https://valaxy.site/guide/config/#站点配置)
 
 ```ts
 /**

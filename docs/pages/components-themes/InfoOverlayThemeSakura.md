@@ -91,3 +91,8 @@ categories:
 | 属性名 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
 | social | `SocialLink[]` | `undefined` | 社交链接 |
+
+## 相关组件
+
+- [SakuraGlitchText](/components/SakuraGlitchText)
+- [SakuraTypewriter](/components/SakuraTypewriter)

@@ -9,7 +9,7 @@ top: 100
 
 ## 安装
 
-我们将尽量用浅显易懂的语言解释如何安装 `valaxy-theme-sakura` 主题，确保您能够跟上进度。对于熟练`valaxy`的读者，可以直接从 [配置样式文件](/config/style#样式文件) 开始
+对于第一次尝试的valaxy的用户，可以在本篇文章会如何安装 `valaxy-theme-sakura` 主题。在此之前，建议先了解一下[valaxy](https://valaxy.site/)
 
 ### 兼容性
 
@@ -37,6 +37,10 @@ pnpm create valaxy
 npm create valaxy
 ```
 
+```bash [yarn]
+yarn create valaxy
+```
+
 :::
 
 ::: details You will be greeted with a few simple questions.
@@ -57,6 +61,10 @@ pnpm add valaxy-theme-sakura
 
 ```bash [npm]
 npm install valaxy-theme-sakura
+```
+
+```bash [yarn]
+yarn add valaxy-theme-sakura
 ```
 
 :::
@@ -117,6 +125,10 @@ pnpm i
 npm install
 ```
 
+```bash [yarn]
+yarn
+```
+
 :::
 
 完成上述配置后，您已经完成了基本设置。接下来，您就可以启动您的博客啦！
@@ -131,11 +143,11 @@ pnpm dev
 npm run dev
 ```
 
+```bash [yarn]
+yarn dev
+```
+
 :::
-
-### 配置
-
-我们可以先从配置 [样式文件](/config/style#样式文件) 开始
 
 ### 部署
 

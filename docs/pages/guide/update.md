@@ -11,19 +11,17 @@ top: 100
 
 <a href="https://www.npmjs.com/package/valaxy" rel="nofollow"><img src="https://img.shields.io/npm/v/valaxy?label=valaxy&color=9333ea" alt="NPM version"></a>
 
-为确保与 `valaxy-theme-sakura` 主题的兼容性，建议您将 Valaxy 更新至最新版本。这样可以保证最佳体验和功能支持。关于最低版本要求，请参阅[安装指南](/guide/installation)
+为确保与 `valaxy-theme-sakura` 主题的兼容性，建议您将 Valaxy 更新至最新版本。这样可以保证最佳体验和功能支持。关于最低版本要求，请参阅[安装指南](/guide/installation#兼容性)
 
 ```bash
 pnpm add valaxy@latest
 ```
 
-## 更新主题
-
-由于主题更新比较频繁，想要获得更好的体验记得随时更新
+## 更新 Valaxy Theme Sakura
 
 ### 正式版
 
-通常情况下建议使用正式版
+通常情况下，建议使用正式版。为了获得更好的体验，请记得随时更新
 
 <a href="https://www.npmjs.com/package/valaxy-theme-sakura" rel="nofollow"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura?label=valaxy-theme-sakura&color=ff4e6a" alt="NPM version"></a>
 
