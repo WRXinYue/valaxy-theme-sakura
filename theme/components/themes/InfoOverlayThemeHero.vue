@@ -14,7 +14,7 @@ const themeConfig = useThemeConfig()
       </slot>
     </p>
 
-    <p class="animation-fade-up gradient-text" text="5xl md:8xl" font="black" style="animation-delay: 400ms;">
+    <p class="animation-fade-up sakura-gradient-text" text="5xl md:8xl" font="black" style="animation-delay: 400ms;">
       <slot name="highlighted-text">
         I'm {{ siteConfig.author.name }}
       </slot>
@@ -69,11 +69,5 @@ const themeConfig = useThemeConfig()
   .social {
     grid-template-columns: repeat(auto-fill, 50px);
   }
-}
-
-.gradient-text {
-  background: linear-gradient(to right, var(--st-c-brand), 60%, var(--st-c-secondary));
-  background-clip: text;
-  color: transparent;
 }
 </style>
