@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { useMounted } from '@vueuse/core'
 import { useThemeConfig } from '../../composables'
 
 const themeConfig = useThemeConfig()
+const isMounted = useMounted()
 </script>
 
 <template>
@@ -11,19 +13,19 @@ const themeConfig = useThemeConfig()
 
   <SakuraMultiColumnsLayout>
     <slot name="notice-board">
-      <SakuraNoticeBoardCustom />
+      <SakuraNoticeBoardCustom v-if="isMounted" />
     </slot>
 
     <slot name="article-pinned">
-      <SakuraArticlePinnedCustom v-if="themeConfig.articlePinned" />
+      <SakuraArticlePinnedCustom v-if="isMounted && themeConfig.articlePinned" />
     </slot>
 
     <slot name="article-list">
-      <SakuraArticleListCustom />
+      <SakuraArticleListCustom v-if="isMounted" />
     </slot>
 
     <slot name="pagination">
-      <SakuraPaginationCustom />
+      <SakuraPaginationCustom v-if="isMounted" />
     </slot>
 
     <template #right>
