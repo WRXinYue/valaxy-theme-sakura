@@ -42,7 +42,6 @@ function toPath(path: string) {
   flex: 1;
   margin: 0 3px;
   border-radius: var(--st-c-article-card-rd);
-  width: 288px;
   overflow: hidden;
 
   &::before,

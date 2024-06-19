@@ -3,11 +3,9 @@ import { computed } from 'vue'
 import { useCategories, useFrontmatter, usePostTitle, useSiteStore } from 'valaxy'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import { useThemeConfig } from '../../composables'
 
 const site = useSiteStore()
 const frontmatter = useFrontmatter()
-const themeConfig = useThemeConfig()
 
 const { t } = useI18n()
 const route = useRoute()

@@ -11,7 +11,7 @@ const isMounted = useMounted()
     <SakuraBannerCustom />
   </slot>
 
-  <SakuraMultiColumnsLayout>
+  <SakuraMultiColumnsLayout class="sakura-home-layout">
     <slot name="notice-board">
       <SakuraNoticeBoardCustom v-if="isMounted" />
     </slot>
@@ -43,3 +43,34 @@ const isMounted = useMounted()
     </template>
   </SakuraMultiColumnsLayout>
 </template>
+
+<style lang="scss">
+@use 'valaxy/client/styles/mixins/index.scss' as *;
+.sakura-home-layout {
+  @include screen('md') {
+    padding: 0 40px;
+  }
+
+  @include screen('lg') {
+    padding: 0 110px;
+  }
+
+  @include screen('xl') {
+    padding: 0;
+  }
+
+  &.grid-layout-triple-columns {
+    @include screen('md') {
+      grid-template-columns: 0 1fr 0;
+    }
+
+    @include screen('lg') {
+      grid-template-columns: 0 1fr 0;
+    }
+
+    @include screen('xl') {
+      grid-template-columns: 250px 1fr 250px;
+    }
+  }
+}
+</style>
