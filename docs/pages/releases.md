@@ -16,6 +16,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- 新增 Sakura 主题文件更多主题化样式, 如 prose 和 animation
+
+### Fixed
+
+- 修复 `valaxy.config.ts` favicon 选项配置失效问题
+
+### Changed
+
+- 部分默认样式迁移至 sakura 主题样式文件(主题化)
+
+### Removed
+
+- 弃用 `valaxy.config.ts` animation 选项，改为引入主题化 animation 样式文件
+
 ## [0.6.1] - 2024-06-19
 
 ### Added

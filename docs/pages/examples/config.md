@@ -34,9 +34,8 @@ export default defineValaxyConfig<ThemeUserConfig>({
     navbarTitle: ['かなしい', 'の', '心悦'],
 
     favicon: false, // 导航栏图标
-    animation: true,
 
-    headerWallpaper: {
+    banner: {
       // 壁纸支持图片及视频
       title: 'Hello, sakura',
       motto: 'You got to put the past behind you before you can move on.',

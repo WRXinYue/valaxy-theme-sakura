@@ -46,7 +46,7 @@ categories:
 
 | 属性名 | 类型 | 默认值 | 说明 |
 | ---- | ---- | ---- | ---- |
-| favicon | `boolean` | `undefined` | --- |
+| favicon | `boolean` | `undefined` | 导航栏图标, 默认为 `themeConfig.favicon` |
 | title | `string \| string[]` | `undefined` | --- |
 | invert | `boolean` | `false` | 滚动触发反转, 需开启 `autoHide` 选项 |
 | autoHide | `boolean` | `false` | 是否自动隐藏导航栏 |
@@ -55,32 +55,19 @@ categories:
 
 ### ThemeConfig
 
-```ts
-export interface ThemeConfig {
-  navbar: NavItem[]
-  navbarTitle: string | string[]
-}
-```
+| 属性名 | 类型 | 默认值 | 说明 |
+| ---- | ---- | ---- | ---- |
+| favicon | `boolean` | `false` | 导航栏图标, 默认关闭 |
+| navbar | `NavItem[]` | `undefined` | 导航栏 |
+| navbarTitle | `string` \| `string[]` | `''` | 导航栏标题 |
 
-``` ts
-export namespace SakuraTheme {
-  export interface NavItem {
-    text?: string
-    locale?: string | number
-    link: string
-    icon?: string
-    isExternal?: boolean
-    submenu?: NavItem[]
-  }
-}
-```
+**NavItem:**
 
-| 名称 | 默认值 | 描述 |
-| ---- | ---- | ---- |
-| text | --- | 导航栏项的显示文本 |
-| locale | --- | 导航栏项的语言设置，用于国际化支持 |
-| link | --- | 导航栏项的链接地址，点击后将被重定向到此URL |
-| icon | --- | 导航栏项的图标，可以是图标的路径或图标库中的一个标识符 |
-| isExternal | --- | 是否使用 a 标签跳转(新手忽略) |
-| submenu | --- | 二级菜单 |
-| navbarTitle | --- | 导航栏标题 |
+| 属性名 | 类型 | 默认值 | 说明 |
+| ---- | ---- | ---- | ---- |
+| text | `string` | --- | 导航栏项的显示文本 |
+| locale | `string` \| `number` | --- | 导航栏项的语言设置，用于国际化支持 |
+| link | `string` | --- | 导航栏项的链接地址，点击后将被重定向到此URL |
+| icon | `string` | --- | 导航栏项的图标，可以是图标的路径或图标库中的一个标识符 |
+| isExternal | `boolean` | --- | 是否使用 a 标签跳转 |
+| submenu | `NavItem[]` | --- | 二级菜单 |

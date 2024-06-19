@@ -26,11 +26,6 @@ export interface ThemeConfig {
   footer: Footer
 
   /**
-   * 导航栏图标
-   */
-  favicon: boolean
-
-  /**
    * 横幅
    */
   banner: Banner
@@ -53,6 +48,7 @@ export interface ThemeConfig {
   /**
    * 导航栏
    */
+  favicon: boolean
   navbar: NavItem[]
   navbarTitle: string | string[]
 
@@ -108,11 +104,6 @@ export interface ThemeConfig {
    * 页面是否启用滚动阻尼效果
    */
   scrollDamping?: boolean
-
-  /**
-   * 页面是否启用动画
-   */
-  animation?: boolean
 
   /**
    * 404 页面图片

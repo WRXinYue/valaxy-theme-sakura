@@ -21,9 +21,6 @@ export interface ThemeConfig {
 
   // ============== Valaxy Theme Sakura Config ==============
 
-  /** navbar favicon */
-  favicon: boolean
-
   banner: Banner
 
   articlePinned?: {
@@ -41,6 +38,7 @@ export interface ThemeConfig {
   /**
    * Navbar
    */
+  favicon: boolean
   navbar: NavItem[]
   navbarTitle: string | string[]
 
@@ -85,8 +83,6 @@ export interface ThemeConfig {
   }
 
   scrollDamping?: boolean
-
-  animation?: boolean
 
   notFoundImage?: string
 

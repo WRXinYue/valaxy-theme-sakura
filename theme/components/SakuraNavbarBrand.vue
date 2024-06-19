@@ -11,7 +11,7 @@ const siteConfig = useSiteConfig()
 </script>
 
 <template>
-  <div>
+  <div class="sakura-navbar-brand">
     <template v-if="favicon">
       <img class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
     </template>
@@ -28,33 +28,38 @@ const siteConfig = useSiteConfig()
   </div>
 </template>
 
-<style lang="scss" scoped>
-.logo-link {
-  color: var(--st-c-navbar-text);
-  font-size: 28px;
-  font-weight: 800;
+<style lang="scss">
+.sakura-navbar-brand {
+  display: flex;
+  align-items: center;
 
-  span:first-child {
-    border-radius: 9px;
-    padding-bottom: 2px;
-    padding-top: 5px;
-  }
+  .logo-link {
+    color: var(--st-c-navbar-text);
+    font-size: 28px;
+    font-weight: 800;
 
-  &:hover {
     span:first-child {
-      background-color: var(--st-c-navbar-hover-bg-color);
-      color: var(--st-c-navbar-hover-color);
+      border-radius: 9px;
+      padding-bottom: 2px;
+      padding-top: 5px;
     }
-    span:nth-of-type(2) {
-      animation: rotate 1s linear infinite;
-    }
-    span:not(:first-child) {
-      color: var(--st-c-navbar-hover-bg-color);
+
+    &:hover {
+      span:first-child {
+        background-color: var(--st-c-navbar-hover-bg-color);
+        color: var(--st-c-navbar-hover-color);
+      }
+      span:nth-of-type(2) {
+        animation: rotate 1s linear infinite;
+      }
+      span:not(:first-child) {
+        color: var(--st-c-navbar-hover-bg-color);
+      }
     }
   }
-}
 
-.moe-mashiro {
-  font-family: 'Moe-Mashiro', sans-serif;
+  .moe-mashiro {
+    font-family: 'Moe-Mashiro', sans-serif;
+  }
 }
 </style>

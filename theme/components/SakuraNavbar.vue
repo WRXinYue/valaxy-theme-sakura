@@ -11,6 +11,7 @@ const { invert, autoHide } = withDefaults(defineProps<{
   animIn?: string | string[]
   animOut?: string | string[]
 }>(), {
+  favicon: undefined,
   invert: false,
   col: false,
   autoHide: false,
@@ -49,7 +50,7 @@ onUnmounted(() => {
     @mouseover="hoverNavbar = true" @mouseleave="hoverNavbar = false"
   >
     <slot name="nav-brand">
-      <SakuraNavbarBrand :favicon="favicon" :navbar-title="title || themeConfig.navbarTitle" />
+      <SakuraNavbarBrand :favicon="favicon ?? themeConfig.favicon" :navbar-title="title || themeConfig.navbarTitle" />
     </slot>
 
     <slot name="nav-link">

@@ -19,9 +19,6 @@ export default defineConfig<ThemeConfig>({
 
     navbarTitle: ['かなしい', 'の', '心悦'],
 
-    favicon: false,
-    animation: true,
-
     banner: {
       title: 'Hello, sakura',
       motto: 'You got to put the past behind you before you can move on.',

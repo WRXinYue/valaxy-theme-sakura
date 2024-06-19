@@ -8,6 +8,7 @@ date: 2024-12-31
 ### 如何使用
 
 **安装主题:**
+
 ~~~bash
 # pnpm (推荐)
 pnpm create valaxy
@@ -21,6 +22,7 @@ pnpm add valaxy-theme-sakura
 ~~~
 
 **启用主题:**
+
 ~~~ts
 // valaxy.config.ts
 import { defineConfig } from 'valaxy'
@@ -32,6 +34,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 ~~~
 
 **配置示例:**
+
 ~~~ts
 // valaxy.config.ts
 import { defineValaxyConfig } from 'valaxy'
@@ -58,7 +61,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
     favicon: false, // 导航栏图标
 
-    headerWallpaper: {
+    banner: {
       // 壁纸支持图片及视频
       urls: [
         'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
@@ -112,6 +115,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 ~~~
 
 **更新主题：**
+
 ~~~bash
 pnpm up valaxy-theme-sakura --latest
 # npm update valaxy-theme-sakura --latest

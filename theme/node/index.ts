@@ -24,8 +24,6 @@ export const defaultThemeConfig: ThemeConfig = {
   navbar: [],
   sidebar: [],
 
-  animation: false,
-
   footer: {
     since: 2024,
     icon: {
