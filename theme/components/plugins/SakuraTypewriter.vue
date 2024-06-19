@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// @ts-expect-error missing types
-import Typewriter from 'typewriter-effect/dist/core'
 import { onMounted, ref } from 'vue'
 
 const props = withDefaults(defineProps<{
@@ -52,7 +50,10 @@ export interface TypewriterProps {
 
 const typewriterElement = ref<HTMLElement | null>(null)
 
-onMounted(() => {
+onMounted(async () => {
+// @ts-expect-error missing types
+  const Typewriter = await import('typewriter-effect/dist/core')
+
   const options = {
     delay: props.delay,
     deleteSpeed: props.deleteSpeed,
