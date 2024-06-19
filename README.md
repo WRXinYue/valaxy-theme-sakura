@@ -49,7 +49,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
   themeConfig: {
     // colors: {
-    //   primary: '#e67474',
+    //   primary: '#e67474', // 主题色
     // },
 
     navbarTitle: ['かなしい', 'の', '心悦'],

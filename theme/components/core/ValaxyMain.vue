@@ -1,11 +1,8 @@
 <script lang="ts" setup>
 import { nextTick } from 'vue'
 import type { PageData, Post } from 'valaxy'
-
-// import { onContentUpdated, useSiteConfig } from 'valaxy'
-// import { useRoute, useRouter } from 'vue-router'
-import { scrollTo, useSiteConfig } from 'valaxy'
-import { useRoute } from 'vue-router'
+import { onContentUpdated, scrollTo, useSiteConfig } from 'valaxy'
+import { useRoute, useRouter } from 'vue-router'
 
 defineProps<{
   frontmatter: Post
@@ -14,7 +11,7 @@ defineProps<{
 
 const siteConfig = useSiteConfig()
 const route = useRoute()
-// const router = useRouter()
+const router = useRouter()
 
 nextTick(() => {
   if (route.hash) {
@@ -24,49 +21,50 @@ nextTick(() => {
   }
 })
 
-// onContentUpdated(() => {
-//   // to extract
-//   // click title scroll
-//   window.addEventListener(
-//     'click',
-//     async (e) => {
-//       const link = (e.target as Element).closest('a')
-//       if (link) {
-//         const { protocol, hostname, pathname, hash, target } = link
-//         const currentUrl = window.location
-//         const extMatch = pathname.match(/\.\w+$/)
-//         // only intercept inbound links
-//         if (
-//           !e.ctrlKey
-//           && !e.shiftKey
-//           && !e.altKey
-//           && !e.metaKey
-//           && target !== '_blank'
-//           && protocol === currentUrl.protocol
-//           && hostname === currentUrl.hostname
-//           && !(extMatch && extMatch[0] !== '.html')
-//         ) {
-//           if (pathname === currentUrl.pathname) {
-//             e.preventDefault()
-//             // scroll between hash anchors in the same page
-//             if (hash && hash !== currentUrl.hash) {
-//               await router.push({ hash: decodeURIComponent(hash) })
+onContentUpdated(() => {
+  // to extract
+  // click title scroll
+  window.addEventListener(
+    'click',
+    async (e) => {
+      const link = (e.target as Element).closest('a')
+      if (link) {
+        const { protocol, hostname, pathname, hash, target } = link
+        const currentUrl = window.location
+        const extMatch = pathname.match(/\.\w+$/)
+        // only intercept inbound links
+        if (
+          !e.ctrlKey
+          && !e.shiftKey
+          && !e.altKey
+          && !e.metaKey
+          && target !== '_blank'
+          && protocol === currentUrl.protocol
+          && hostname === currentUrl.hostname
+          && !(extMatch && extMatch[0] !== '.html')
+        ) {
+          if (pathname === currentUrl.pathname) {
+            e.preventDefault()
+            // scroll between hash anchors in the same page
+            if (hash && hash !== currentUrl.hash) {
+              await router.push({ hash: decodeURIComponent(hash) })
 
-//               // use smooth scroll when clicking on header anchor links
-//               scrollTo(link, hash, link.classList.contains('header-anchor'))
-//             }
-//           }
-//         }
-//       }
-//     },
-//     { capture: true },
-//   )
-// })
+              // use smooth scroll when clicking on header anchor links
+              scrollTo(link, hash, { smooth: link.classList.contains('header-anchor') })
+            }
+          }
+        }
+      }
+    },
+    { capture: true },
+  )
+})
 </script>
 
 <template>
   <slot name="main">
     <slot name="main-header" />
+
     <slot name="main-header-after" />
 
     <slot name="main-content">
@@ -91,6 +89,6 @@ nextTick(() => {
       <SakuraCommentCustom />
     </slot>
 
-    <slot name="footer" />
+    <slot name="main-footer" />
   </slot>
 </template>

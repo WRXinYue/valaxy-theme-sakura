@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { useScriptTag } from '@vueuse/core'
 import { useSiteConfig } from 'valaxy'
-import { useThemeConfig } from '../composables'
 
 defineProps<{
   color?: string
@@ -15,12 +14,11 @@ defineProps<{
 
 useScriptTag('//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
 
-const themeConfig = useThemeConfig()
 const siteConfig = useSiteConfig()
 </script>
 
 <template>
-  <header class="sakura-page-header xl:pb-10 space-y-1 text-center" :class="themeConfig.animation && 'animation-slide-down'">
+  <header class="sakura-page-header xl:pb-10 space-y-1 text-center">
     <div class="abanner" :class="cover ? `h-80` : '<xl:max-h-200px h-45'" :style="cover && `background-image: url(${cover}`">
       <div class="titlebox font-bold" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
         <h1 class="text-3xl" :class="!cover && 'text-$st-c-text-deep entry-title'">

@@ -69,7 +69,7 @@ const title = usePostTitle(frontmatter)
         />
       </template>
       <template #main-content>
-        <div :class="themeConfig.animation && 'element-slide-up'" class="tags-margin-control">
+        <div class="tags-margin-control">
           <div class="yun-text-light " text="center" p="2">
             {{ t('counter.tags', Array.from(tags).length) }}
           </div>

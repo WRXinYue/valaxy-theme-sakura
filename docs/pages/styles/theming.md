@@ -64,6 +64,7 @@ If you only want certain aspects of the theme files, you can import them separat
 @use "valaxy-theme-sakura/styles/themes/sakura/css-vars.scss" as *;
 @use "valaxy-theme-sakura/styles/themes/sakura/prose.scss" as *;
 @use "valaxy-theme-sakura/styles/themes/sakura/components.scss" as *;
+@use "valaxy-theme-sakura/styles/themes/sakura/animation.scss" as *;
 ```
 
 :::
@@ -73,13 +74,15 @@ If you only want certain aspects of the theme files, you can import them separat
 - **CSS变量 (`css-vars.scss`)**: 包含主题配色，文字配色，高度定义等
 - **文章排版 (`prose.scss`)**: 包含文章的基本样式，包括标题、段落、列表等
 - **组件样式 (`components.scss`)**: 包含美化部分组件的样式
+- **动画 (`animation.scss`)**: 包含主题动画效果
 
 :::
 
 ::: en
 
 - **CSS Variables (`css-vars.scss`)**: Contains theme colors, text colors, height definitions, etc.
-- **Prose (`prose.scss`)**: Contains basic styles for articles, including titles, paragraphs, lists, etc.
+- **Prose Styles (`prose.scss`)**: Contains basic styles for articles, including titles, paragraphs, lists, etc.
 - **Component Styles (`components.scss`)**: Includes styles for beautifying various components.
+- **Animation Styles (`animation.scss`)**: Includes theme animation effects.
 
 :::

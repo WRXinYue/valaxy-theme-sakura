@@ -45,7 +45,7 @@ const title = usePostTitle(frontmatter)
         />
       </template>
       <template #main-content>
-        <div :class="themeConfig.animation && 'element-slide-up'">
+        <div>
           <div text="center" class="yun-text-light" p="2">
             {{ t('counter.categories', Array.from(categories.children).length) }}
           </div>

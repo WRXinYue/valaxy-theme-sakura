@@ -7,7 +7,6 @@ const frontmatter = useFrontmatter()
 <template>
   <article>
     <SakuraPageHeader :title="frontmatter.title ?? 'Default Title'" :cover="frontmatter.cover" :author="frontmatter.author" :date="frontmatter.date" />
-    <!-- :class="themeConfig.animation && 'element-slide-up'" -->
 
     <SakuraMultiColumnsLayout class="grid-layout container !max-w-screen-2xl lg:px-6 mx-auto pt-$header-height min-w-0">
       <template #left>

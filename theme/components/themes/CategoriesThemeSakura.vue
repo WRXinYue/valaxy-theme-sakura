@@ -3,11 +3,9 @@ import { computed } from 'vue'
 import { useCategories, useFrontmatter, usePostTitle, useSiteStore } from 'valaxy'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import { useThemeConfig } from '../../composables'
 
 const site = useSiteStore()
 const frontmatter = useFrontmatter()
-const themeConfig = useThemeConfig()
 
 const { t } = useI18n()
 const route = useRoute()
@@ -45,7 +43,7 @@ const title = usePostTitle(frontmatter)
         />
       </template>
       <template #main-content>
-        <div :class="themeConfig.animation && 'element-slide-up'" class="categories-margin-control">
+        <div class="categories-margin-control">
           <div text="center" class="yun-text-light" p="2">
             {{ t('counter.categories', Array.from(categories.children).length) }}
           </div>

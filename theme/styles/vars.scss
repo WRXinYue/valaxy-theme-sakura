@@ -21,7 +21,11 @@ $common: (
   * Other
   * ------------------------------------- */
   "c-text-code": var(--st-c-brand),
-  "c-bg-mute": var(--va-c-bg-mute)
+  "c-bg-mute": var(--va-c-bg-mute),
+  /* -------------------------------------
+  * Default static assets
+  * ------------------------------------- */
+  "c-comment-bg": url("../assets/comment-bg.png")
 ) !default;
 $common: map.merge((), $common);
 
