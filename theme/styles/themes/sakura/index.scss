@@ -1,16 +1,4 @@
-:root {
-  --st-c-brand: #ff4e6a;
-  --st-c-secondary: #fe9600;
-  --st-c-sidebar-marker-h: 4px;
-  --st-c-navbar-height : 3.75rem;
-}
-
-html.dark {
-}
-
-.sakura-navbar {
-  &.active-header {
-    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
-  }
-}
+@use 'css-vars' as *;
+@use 'prose' as *;
+@use 'components' as *;
 

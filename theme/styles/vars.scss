@@ -17,6 +17,11 @@ $common: (
   "c-sidebar-width": var(--va-sidebar-width),
   "c-sidebar-marker-h": 2px,
   "c-sidebar-bg-color": var(--st-c-bg),
+  /* -------------------------------------
+  * Other
+  * ------------------------------------- */
+  "c-text-code": var(--st-c-brand),
+  "c-bg-mute": var(--va-c-bg-mute)
 ) !default;
 $common: map.merge((), $common);
 

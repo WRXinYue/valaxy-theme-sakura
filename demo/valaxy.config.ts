@@ -167,7 +167,7 @@ export default defineConfig<ThemeConfig>({
     addonMeting({
       global: true,
       props: {
-        id: '2489775340',
+        id: '2963327092',
         server: 'netease',
         type: 'playlist',
       },

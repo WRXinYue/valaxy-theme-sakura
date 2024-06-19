@@ -1,0 +1,34 @@
+.sakura-navbar {
+  &.active-header {
+    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
+  }
+}
+
+.sakura-page-header {
+  .entry-title {
+    &::before {
+      content:" {";
+      color: var(--st-c-secondary);
+      font-size:1.2em;
+      margin-right:6px;
+      font-family: 'Helvetica'
+    }
+    &::after {
+      content:"}";
+      color:var(--st-c-secondary);
+      font-size:1.2em;
+      margin-left:6px;
+      font-family: 'Helvetica'
+    }
+  }
+}
+
+.wl-comment {
+  .wl-panel textarea {
+    background-image: url(../../../assets/comment-bg.png) !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    resize: vertical;
+  }
+}

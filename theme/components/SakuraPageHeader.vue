@@ -20,7 +20,7 @@ const siteConfig = useSiteConfig()
 </script>
 
 <template>
-  <header class="xl:pb-10 space-y-1 text-center" :class="themeConfig.animation && 'element-slide-down'">
+  <header class="sakura-page-header xl:pb-10 space-y-1 text-center" :class="themeConfig.animation && 'animation-slide-down'">
     <div class="abanner" :class="cover ? `h-80` : '<xl:max-h-200px h-45'" :style="cover && `background-image: url(${cover}`">
       <div class="titlebox font-bold" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
         <h1 class="text-3xl" :class="!cover && 'text-$st-c-text-deep entry-title'">
@@ -42,45 +42,31 @@ const siteConfig = useSiteConfig()
   </header>
 </template>
 
-<style lang="scss" scoped>
-.entry-title {
-  &::before {
-    content:" {";
-    color: var(--st-c-secondary);
-    font-size:1.2em;
-    margin-right:6px;
-    font-family: 'Helvetica'
-  }
-  &::after {
-    content:"}";
-    color:var(--st-c-secondary);
-    font-size:1.2em;
-    margin-left:6px;
-    font-family: 'Helvetica'
-  }
-}
-.abanner {
-  width: 100%;
-  background-size: cover;
-  position: relative;
-  background-repeat: no-repeat;
-  background-position: center;
+<style lang="scss">
+.sakura-page-header {
+  .abanner {
+    width: 100%;
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
 
-  .titlebox {
-    position: absolute;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: 20px;
-    color: white;
+    .titlebox {
+      position: absolute;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      bottom: 20px;
+      color: white;
+    }
   }
-}
 
-.info {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  display: inline-flex;
+  .info {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    display: inline-flex;
+  }
 }
 </style>

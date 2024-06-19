@@ -1,0 +1,140 @@
+.prose p {
+  color: var(--st-c-text);
+  line-height: 30px;
+}
+
+.prose hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: block;
+  border: 0;
+  text-align: center;
+  background: 0 0;
+}
+
+.prose hr:before {
+  content: '...';
+  display: inline-block;
+  margin-left: 0.6em;
+  color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  top: -30px;
+  font-size: 28px;
+  letter-spacing: 0.6em;
+}
+
+.prose ul, .prose ol {
+  border: 1px dashed #e4e4e4;
+  padding: 15px 10px 15px 50px;
+  color: #616161;
+  margin-left: 0;
+  border-radius: 10px;
+}
+
+.prose ul {
+  list-style: disc;
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose ol li, .prose ul li {
+  padding: 8px 0;
+}
+
+.prose {
+  position: relative;
+}
+
+.prose h3 {
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #ddd;
+  color: var(--st-c-text-muted);
+}
+
+.prose h3, .prose h4, .prose h5 {
+  padding-left: 16px;
+}
+
+.prose h2:after {
+  content: "\00B6";
+  position: absolute;
+  color: var(--st-c-brand);
+  font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+  padding-left: 6px;
+  font-size: 1.03em;
+}
+
+.serif .prose h2:after {
+  content: "\00B6";
+  position: absolute;
+  color: var(--st-c-brand);
+  font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+  padding-left: 6px;
+  font-size: 1.13em;
+}
+
+.prose h3:after {
+  content: "#";
+  left: 0;
+  position: absolute;
+  color: var(--st-c-secondary);
+}
+
+.prose h4:after {
+  content: "▌";
+  left: 0;
+  position: absolute;
+  color: var(--st-c-secondary);
+}
+
+.prose h5:after {
+  content: "♯";
+  left: 0;
+  position: absolute;
+  color: var(--st-c-secondary);
+}
+
+.prose code {
+  word-break: break-word;
+  font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+  padding: 2px;
+  text-shadow: none;
+  border-radius: 5px;
+}
+
+.prose a {
+  color: var(--st-c-link);
+  position: relative;
+}
+
+.prose a:hover {
+  color: var(--st-c-secondary);
+  text-decoration: none;
+}
+
+.prose a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--st-c-secondary);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.prose a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* -------------------------------------
+* reset styles
+* ------------------------------------- */
+.prose ol > li::before {
+  display: none;
+}
