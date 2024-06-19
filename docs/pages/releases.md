@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.2] - 2024-06-20
+
 ### Added
 
 - 新增 Sakura 主题文件更多主题化样式, 如 prose 和 animation
@@ -23,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - 修复 `valaxy.config.ts` favicon 选项配置失效问题
+- 修复 typewriter-effect 依赖加载问题 [Issue #6](https://github.com/WRXinYue/valaxy-theme-sakura/issues/6)
+- 修复开启 SakuraArticlePinnedCustom 组件导致自适应问题
 
 ### Changed
 
