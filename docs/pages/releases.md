@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.3] - 2024-06-20
+
+### Fixed
+
+- 紧急修复分页组件丢失问题
+
 ## [0.6.2] - 2024-06-20
 
 ### Added
