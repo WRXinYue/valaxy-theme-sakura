@@ -28,7 +28,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
   themeConfig: {
     // colors: {
-    //   primary: '#e67474',
+    //   primary: '#e67474', // 主题色
     // },
 
     navbarTitle: ['かなしい', 'の', '心悦'],
@@ -56,18 +56,19 @@ export default defineValaxyConfig<ThemeUserConfig>({
         title: 'Valaxy Theme Sakura',
         desc: '本站使用的 valaxy sakura 主题',
         img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-d6mryl.jpg',
-        link: '/posts/theme-sakura',
+        link: 'https://github.com/WRXinYue/valaxy-theme-sakura',
       },
       {
         title: 'Valaxy sakura theme docs',
         desc: '主题文档',
         img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-gpxyed.jpg',
-        link: 'https://sakura-docs.wrxinyue.org/',
+        link: 'https://sakura.valaxy.site/',
       },
       {
         title: '示例站点',
-        desc: '(暂无)',
+        desc: 'https://sakura.wrxinyue.org/',
         img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-jxqgjw.jpg',
+        link: 'https://sakura.wrxinyue.org/',
       },
     ],
 
@@ -89,29 +90,20 @@ export default defineValaxyConfig<ThemeUserConfig>({
         link: '/',
       },
       {
-        text: '分类',
+        text: '📁 分类',
         link: '/categories',
       },
       {
-        text: '标签',
+        text: '🏷️ 标签',
         link: '/tags',
       },
-      // {
-      //   text: '☄️ 其他',
-      //   link: '/',
-      //   submenu: [],
-      // },
-      // {
-      //   text: '📌 关于我',
-      //   link: '/',
-      // },
       {
         text: '🔦 时光轴',
         link: '/archives',
       },
       {
         text: '🍻 友情链接',
-        link: 'https://github.com/YunYouJun/valaxy',
+        link: '/links',
         submenu: [
           {
             text: 'GitHub',
