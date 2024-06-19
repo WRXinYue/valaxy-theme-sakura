@@ -89,6 +89,6 @@ onContentUpdated(() => {
       <SakuraCommentCustom />
     </slot>
 
-    <slot name="main-footer" />
+    <slot name="footer" />
   </slot>
 </template>
