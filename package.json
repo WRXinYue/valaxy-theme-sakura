@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.1.1",
+  "packageManager": "pnpm@9.3.0",
   "homepage": "https://sakura.wrxinyue.org",
   "scripts": {
     "build": "npm run build:demo",
