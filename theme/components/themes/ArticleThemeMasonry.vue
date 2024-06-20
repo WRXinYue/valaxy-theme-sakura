@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formatDate } from '../../utils/logics'
+import { formatDate } from 'valaxy'
 import { isVideoUrl } from '../../utils'
 
 const { link, src, date } = defineProps({

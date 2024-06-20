@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.4] - 2024-06-20
+
+### Fixed
+
+- 修复 valaxy 更新至 0.18.7 版本无法打开文章页问题
+
 ## [0.6.3] - 2024-06-20
 
 ### Fixed

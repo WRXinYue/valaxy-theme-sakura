@@ -1,4 +1,3 @@
-import dayjs from 'dayjs'
 import { useDark, useStorage } from '@vueuse/core'
 import { nextTick } from 'vue'
 
@@ -51,11 +50,4 @@ export function toggleDark(event: MouseEvent) {
         },
       )
     })
-}
-
-export function formatDate(d: string | Date, onlyDate = true) {
-  const date = dayjs(d)
-  if (onlyDate || date.year() === dayjs().year())
-    return date.format('MMM D')
-  return date.format('MMM D, yyyy')
 }
