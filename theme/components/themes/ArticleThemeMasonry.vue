@@ -45,7 +45,7 @@ const { link, src, date } = defineProps({
           <div v-html="excerpt" />
         </slot>
         <div op50 text-sm pt2>
-          {{ formatDate(date, false) }}
+          {{ formatDate(date) }}
         </div>
       </div>
     </RouterLink>

@@ -50,7 +50,7 @@ const { link, src, date } = defineProps({
         </slot>
         <template v-if="date">
           <div op50 text-sm pt2>
-            {{ formatDate(date, false) }}
+            {{ formatDate(date) }}
           </div>
         </template>
       </div>
