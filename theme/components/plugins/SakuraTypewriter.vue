@@ -51,8 +51,9 @@ export interface TypewriterProps {
 const typewriterElement = ref<HTMLElement | null>(null)
 
 onMounted(async () => {
-// @ts-expect-error missing types
-  const Typewriter = await import('typewriter-effect/dist/core')
+  // @ts-expect-error missing types
+  const TypewriterModule = await import('typewriter-effect/dist/core')
+  const Typewriter = TypewriterModule.default
 
   const options = {
     delay: props.delay,
