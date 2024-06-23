@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { formatDate, useFrontmatter, useSiteConfig } from 'valaxy'
+import { useFrontmatter, useSiteConfig } from 'valaxy'
 import { useI18n } from 'vue-i18n'
 
 defineProps<{
