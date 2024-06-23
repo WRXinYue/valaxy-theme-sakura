@@ -6,7 +6,7 @@ export default defineSiteConfig({
   favicon: '/favicon-32x32.ico',
   url: 'https://sakura.wrxinyue.org/',
   author: {
-    avatar: 'https://wrxinyue-images.s3.bitiful.net/profile-picture.jpg',
+    avatar: 'https://gravatar.com/avatar/08816a513ec0691873ac3f5883431763', // 邮箱地址转为MD5
     name: 'WRXinYue',
     status: {
       emoji: '📚',
@@ -60,4 +60,14 @@ export default defineSiteConfig({
   },
 
   mediumZoom: { enable: true },
+
+  statistics: {
+    enable: true,
+    readTime: {
+      speed: {
+        cn: 300,
+        en: 200,
+      },
+    },
+  },
 })

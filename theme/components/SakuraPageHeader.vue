@@ -1,8 +1,5 @@
 <script lang="ts" setup>
-import { useScriptTag } from '@vueuse/core'
-import { useSiteConfig } from 'valaxy'
-
-defineProps<{
+const props = defineProps<{
   color?: string
   icon?: string
   title: string
@@ -11,28 +8,18 @@ defineProps<{
   author?: string
   date?: string | number | Date
 }>()
-
-useScriptTag('//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
-
-const siteConfig = useSiteConfig()
 </script>
 
 <template>
   <header class="sakura-page-header xl:pb-10 space-y-1 text-center">
-    <div class="abanner" :class="cover ? `h-80` : '<xl:max-h-200px h-45'" :style="cover && `background-image: url(${cover}`">
-      <div class="titlebox font-bold" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
+    <div class="page-banner" :class="cover ? `h-80` : '<xl:max-h-200px h-45'" :style="cover && `background-image: url(${cover}`">
+      <div class="title-container" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
         <h1 class="text-3xl" :class="!cover && 'text-$st-c-text-deep entry-title'">
           <div v-if="icon" class="icon" m="r-1" inline-flex align-top :class="icon" />
           {{ title }}
           <span v-if="subTitle">· {{ subTitle }}</span>
         </h1>
-        <div v-if="date" class="info" :class="{ 'text-$st-c-text-secondary': !cover }">
-          {{ siteConfig.author.name }} <span class="mx-1">·</span> 更新于 <SakuraDate :date="date" />
-          <span class="mx-1">·</span>
-          <span id="busuanzi_container_page_pv">
-            <span id="busuanzi_value_page_pv" />次阅读
-          </span>
-        </div>
+        <SakuraArticleMeta v-bind="props" />
       </div>
     </div>
 
@@ -42,14 +29,14 @@ const siteConfig = useSiteConfig()
 
 <style lang="scss">
 .sakura-page-header {
-  .abanner {
+  .page-banner {
     width: 100%;
     background-size: cover;
     position: relative;
     background-repeat: no-repeat;
     background-position: center;
 
-    .titlebox {
+    .title-container {
       position: absolute;
       max-width: 800px;
       margin-left: auto;
@@ -58,6 +45,7 @@ const siteConfig = useSiteConfig()
       right: 0;
       bottom: 20px;
       color: white;
+      font-weight: 700;
     }
   }
 

@@ -46,6 +46,7 @@ const isMounted = useMounted()
 
 <style lang="scss">
 @use 'valaxy/client/styles/mixins/index.scss' as *;
+
 .sakura-home-layout {
   @include screen('md') {
     padding: 0 40px;
