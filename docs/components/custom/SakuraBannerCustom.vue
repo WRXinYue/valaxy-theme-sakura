@@ -39,9 +39,9 @@ const { t } = useI18n()
               :theme="action.theme"
               :link="action.link"
               :text="action.text"
-              m="6px"
+              mr="6px"
             />
-            <ReleaseButton m="6px" />
+            <ReleaseButton />
           </div>
         </template>
       </InfoOverlayThemeHero>
