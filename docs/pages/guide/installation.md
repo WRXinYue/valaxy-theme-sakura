@@ -7,10 +7,14 @@ end: true
 top: 100
 ---
 
-## 安装
-
-对于第一次尝试的valaxy的用户，可以在本篇文章会如何安装 `valaxy-theme-sakura` 主题。在此之前，建议先了解一下[valaxy](https://valaxy.site/)
-
+## installation {lang="en"}
+::: en
+For users trying Valaxy for the first time, this article will guide you on how to install the valaxy-theme-sakura theme. Before proceeding, it is recommended to familiarize yourself with [valaxy](https://valaxy.site/).
+:::
+## 安装{lang="zh-CN"}
+::: zh-CN
+对于第一次尝试的valaxy的用户，可以在本篇文章会如何安装 `valaxy-theme-sakura` 主题。在此之前，建议先了解一下[valaxy](https://valaxy.site/){lang="zh-CN"}
+:::
 ### 兼容性
 
 要使用valaxy，您的电脑必须安装 [Node.js](https://nodejs.org/)
