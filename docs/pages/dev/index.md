@@ -30,12 +30,14 @@ pnpm i
 pnpm dev
 ```
 
-如果您在clone没有下载子模块，则执行：
+因为本项目是 `valaxy-theme-sakura` 包含 `valaxy-addon-live2d`仓库。所以如果您在clone本项目时没有下载子模块，则执行：
 
 ``` bash
 git submodule init
 git submodule update
 ```
+
+> 相关链接：[git-子模块](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97)
 
 ## Docs
 
