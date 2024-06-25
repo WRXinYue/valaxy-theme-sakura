@@ -1,3 +1,0 @@
-<template>
-  <ArticleListThemeMinima />
-</template>
