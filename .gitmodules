@@ -1,3 +1,6 @@
 [submodule "packages/valaxy-addon-live2d"]
 	path = packages/valaxy-addon-live2d
 	url = https://github.com/valaxyjs/valaxy-addon-live2d.git
+[submodule "packages/valaxy-addon-gitlog"]
+	path = packages/valaxy-addon-gitlog
+	url = https://github.com/wrxinyue/valaxy-addon-gitlog.git
