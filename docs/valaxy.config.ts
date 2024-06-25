@@ -77,7 +77,6 @@ export default defineValaxyConfig<ThemeConfig>({
       'components-themes',
       'examples',
       'releases',
-      'dev',
     ],
 
     pagination: {
