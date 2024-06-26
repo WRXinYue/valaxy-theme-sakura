@@ -102,5 +102,9 @@ export default defineValaxyConfig<ThemeConfig>({
     plugins: [
       monacoEditorPlugin({}),
     ],
+    optimizeDeps: {
+      include: ['typewriter-effect/dist/core', 'd3'],
+    },
   },
+
 })
