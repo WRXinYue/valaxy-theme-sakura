@@ -1,9 +1,9 @@
 [submodule "packages/valaxy-addon-live2d"]
 	path = packages/valaxy-addon-live2d
 	url = https://github.com/valaxyjs/valaxy-addon-live2d.git
-[submodule "packages/valaxy-addon-gitlog"]
-	path = packages/valaxy-addon-gitlog
-	url = https://github.com/wrxinyue/valaxy-addon-gitlog.git
+[submodule "packages/valaxy-addon-git-log"]
+	path = packages/valaxy-addon-git-log
+	url = https://github.com/wrxinyue/valaxy-addon-git-log.git
 # [submodule "packages/valaxy-addon-holidays"]
 # 	path = packages/valaxy-addon-holidays
 # 	url = https://github.com/wrxinyue/valaxy-addon-holidays.git

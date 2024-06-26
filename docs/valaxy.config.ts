@@ -1,6 +1,7 @@
 import { defineValaxyConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
 import { addonWaline } from 'valaxy-addon-waline'
+import { addonGitLog } from 'valaxy-addon-git-log'
 import monacoEditorPlugin from 'vite-plugin-monaco-editor'
 
 export default defineValaxyConfig<ThemeConfig>({
@@ -95,6 +96,7 @@ export default defineValaxyConfig<ThemeConfig>({
       pageview: true,
       comment: true,
     }),
+    addonGitLog(),
   ],
   vite: {
     plugins: [

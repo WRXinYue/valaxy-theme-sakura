@@ -14,7 +14,20 @@ const isHome = useLayout('home')
       </template>
       <template #content>
         <div class="content">
-          <RouterView />
+          <RouterView v-slot="{ Component }">
+            <component :is="Component">
+              <template #main-content-after>
+                <div class="prose">
+                  <p /> <!-- Context spacing -->
+                  <h2 id="Contributors">
+                    <a href="#Contributors" class="header-anchor" />
+                    Contributors
+                  </h2>
+                  <GitLogContributor />
+                </div>
+              </template>
+            </component>
+          </RouterView>
         </div>
       </template>
       <template #right>
