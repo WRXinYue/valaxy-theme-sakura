@@ -12,20 +12,29 @@
     "demo": "npm -C demo run dev",
     "docs": "pnpm -C docs run dev",
     "preview": "cd demo && vite preview --host",
+    "preview:docs": "cd docs && vite preview --host",
     "lint": "eslint .",
+    "stylelint": "stylelint --fix \"**/*.{scss,vue}\"",
     "release": "cd theme && git add -A && bumpp",
-    "typecheck": "vue-tsc --noEmit --skipLibCheck"
+    "typecheck": "vue-tsc --noEmit --skipLibCheck",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "e2e:report": "playwright show-report",
+    "test": "vitest",
+    "test:e2e": "npm run e2e"
   },
   "dependencies": {
     "three": "^0.164.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.7.0",
+    "@playwright/test": "^1.45.0",
     "bumpp": "^9.3.1",
     "eslint": "^8.57.0",
     "typescript": "^5.3.3",
-    "valaxy": "^0.18.8",
+    "valaxy": "^0.18.9",
     "valaxy-theme-sakura": "workspace:*",
-    "vue-tsc": "^1.8.27"
+    "vitest": "^1.6.0",
+    "vue-tsc": "2.0.17"
   }
 }
