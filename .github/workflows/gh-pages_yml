@@ -28,12 +28,15 @@ jobs:
       - name: Build Theme
         run: pnpm run build
 
-      - name: Build Demo
-        run: pnpm run build:demo
+      # - name: Build Demo
+      #   run: pnpm run build:demo
+
+      - name: Build Docs
+        run: pnpm run build:docs
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./demo/dist
+          publish_dir: ./docs/dist
           force_orphan: true

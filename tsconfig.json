@@ -8,6 +8,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "types": [
+      "vitest",
       "vite/client",
       "vite-plugin-vue-layouts/client"
     ],
@@ -19,5 +20,16 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "exclude": ["**/dist/**", "node_modules"]
+  "include": [
+    // for type check
+    "./*.ts",
+    "./test/*.ts",
+    "./packages/**/*.d.ts",
+    "./packages/**/*.ts",
+    "./packages/**/*.vue"
+  ],
+  "exclude": [
+    "**/dist/**",
+    "node_modules"
+  ]
 }

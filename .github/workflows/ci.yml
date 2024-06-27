@@ -77,3 +77,6 @@ jobs:
 
       - name: Build:demo
         run: pnpm run build:demo
+
+      - name: Build:docs
+        run: pnpm run build:docs
