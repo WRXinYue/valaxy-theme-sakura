@@ -2,7 +2,6 @@ import { defineValaxyConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
 import { addonWaline } from 'valaxy-addon-waline'
 import { addonGitLog } from 'valaxy-addon-git-log'
-import monacoEditorPlugin from 'vite-plugin-monaco-editor'
 
 export default defineValaxyConfig<ThemeConfig>({
   siteConfig: {
@@ -101,9 +100,6 @@ export default defineValaxyConfig<ThemeConfig>({
     }),
   ],
   vite: {
-    plugins: [
-      monacoEditorPlugin({}),
-    ],
     optimizeDeps: {
       include: ['typewriter-effect/dist/core', 'd3', 'monaco-editor'],
     },
