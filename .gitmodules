@@ -3,7 +3,7 @@
 	url = https://github.com/valaxyjs/valaxy-addon-live2d.git
 [submodule "packages/valaxy-addon-git-log"]
 	path = packages/valaxy-addon-git-log
-	url = https://github.com/wrxinyue/valaxy-addon-git-log.git
+	url = https://github.com/valaxyjs/valaxy-addon-git-log
 # [submodule "packages/valaxy-addon-holidays"]
 # 	path = packages/valaxy-addon-holidays
 # 	url = https://github.com/wrxinyue/valaxy-addon-holidays.git
