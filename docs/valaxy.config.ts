@@ -101,6 +101,7 @@ export default defineValaxyConfig<ThemeConfig>({
         mode: 'api',
         // logArgs: '--first-parent --follow',
       },
+      repositoryUrl: 'https://github.com/WRXinYue/valaxy-theme-sakura.git',
     }),
   ],
   vite: {
