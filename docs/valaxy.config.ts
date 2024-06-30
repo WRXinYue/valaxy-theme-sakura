@@ -97,6 +97,10 @@ export default defineValaxyConfig<ThemeConfig>({
     }),
     addonGitLog({
       debug: true,
+      contributor: {
+        mode: 'api',
+        // logArgs: '--first-parent --follow',
+      },
     }),
   ],
   vite: {
