@@ -96,6 +96,9 @@ export default defineValaxyConfig<ThemeConfig>({
       comment: true,
     }),
     addonGitLog({
+      contributor: {
+        mode: 'shortLog',
+      },
       debug: true,
     }),
   ],
