@@ -1,4 +1,5 @@
 import { defineTheme } from 'valaxy'
+import { addonVercount } from 'valaxy-addon-vercount'
 import { defaultThemeConfig, generateSafelist, themePlugin } from './node'
 import type { ThemeConfig } from './types'
 
@@ -25,5 +26,8 @@ export default defineTheme<ThemeConfig>((options) => {
     //     quotes: '""\'\'',
     //   },
     // },
+    addons: [
+      addonVercount(),
+    ],
   }
 })
