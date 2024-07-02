@@ -151,8 +151,8 @@ importers:
         specifier: ^0.18.9
         version: 0.18.9(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.9)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.5.2)
       valaxy-addon-vercount:
-        specifier: 0.0.1
-        version: 0.0.1
+        specifier: 0.0.5
+        version: 0.0.5
       valaxy-addon-waline:
         specifier: 0.1.1
         version: 0.1.1(typescript@5.5.2)(valaxy@0.18.9(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.9)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.5.2))
@@ -4080,8 +4080,8 @@ packages:
     peerDependencies:
       valaxy: latest
 
-  valaxy-addon-vercount@0.0.1:
-    resolution: {integrity: sha512-uAQ2jsPchvFQqG2BD6ReQd4mkhLNA/Qr47Vrf/yMmkoJzfgTpyqFjcwRc3T/uHPG6qtZTXYTzwY/sV6yFeLRIQ==}
+  valaxy-addon-vercount@0.0.5:
+    resolution: {integrity: sha512-MjopdhKeeRBJ3ecMbhyuYv/Hi2YjXFAYcGCygxwwXMUatiDYX72/EmjgUwTC7sU1NdiyYC0dj+N1ROMd6O34+w==}
 
   valaxy-addon-waline@0.1.1:
     resolution: {integrity: sha512-IvVefifccHJP8asOGEBLf88298Xu1A6atH8qYo3bb+gKvUJBAzch0EvrvvFnP/J2ICHOwQbitSTYBHOqDY481g==}
@@ -8804,7 +8804,7 @@ snapshots:
     dependencies:
       valaxy: 0.18.9(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.9)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.5.2)
 
-  valaxy-addon-vercount@0.0.1: {}
+  valaxy-addon-vercount@0.0.5: {}
 
   valaxy-addon-waline@0.1.1(typescript@5.5.2)(valaxy@0.18.9(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.9)(axios@1.7.2)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.5.2)):
     dependencies:
