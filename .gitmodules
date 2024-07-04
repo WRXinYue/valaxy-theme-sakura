@@ -4,6 +4,12 @@
 [submodule "packages/valaxy-addon-git-log"]
 	path = packages/valaxy-addon-git-log
 	url = https://github.com/valaxyjs/valaxy-addon-git-log
+[submodule "packages/valaxy-addon-vercount"]
+	path = packages/valaxy-addon-vercount
+	url = https://github.com/valaxyjs/valaxy-addon-vercount
+[submodule "packages/valaxy-addon-hitokoto"]
+	path = packages/valaxy-addon-hitokoto
+	url = https://github.com/valaxyjs/valaxy-addon-hitokoto
 # [submodule "packages/valaxy-addon-holidays"]
 # 	path = packages/valaxy-addon-holidays
 # 	url = https://github.com/wrxinyue/valaxy-addon-holidays.git

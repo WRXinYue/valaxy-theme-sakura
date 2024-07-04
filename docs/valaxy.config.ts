@@ -97,6 +97,11 @@ export default defineValaxyConfig<ThemeConfig>({
     }),
     addonGitLog({
       debug: true,
+      contributor: {
+        mode: 'api',
+        // logArgs: '--first-parent --follow',
+      },
+      repositoryUrl: 'https://github.com/WRXinYue/valaxy-theme-sakura.git',
     }),
   ],
   vite: {
