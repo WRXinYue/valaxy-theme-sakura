@@ -12,7 +12,7 @@ const props = defineProps<{
 
 <template>
   <header class="sakura-page-header xl:pb-10 space-y-1 text-center">
-    <div class="page-banner" :class="cover ? `h-80` : '<xl:max-h-200px h-45'" :style="cover && `background-image: url(${cover}`">
+    <div class="page-banner" :class="cover ? `h-80` : '<xl:max-h-200px mt-$st-c-navbar-height'" :style="cover && `background-image: url(${cover}`">
       <div class="title-container" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
         <h1 class="text-3xl" :class="!cover && 'text-$st-c-text-deep entry-title'">
           <div v-if="icon" class="icon" m="r-1" inline-flex align-top :class="icon" />
@@ -30,6 +30,8 @@ const props = defineProps<{
 <style lang="scss">
 .sakura-page-header {
   .page-banner {
+    display: flex;
+    align-items: flex-end;
     width: 100%;
     background-size: cover;
     position: relative;
@@ -37,13 +39,9 @@ const props = defineProps<{
     background-position: center;
 
     .title-container {
-      position: absolute;
       max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
-      bottom: 20px;
+      margin: 0 auto;
+      margin-bottom: 20px;
       color: white;
       font-weight: 700;
     }

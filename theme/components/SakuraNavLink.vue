@@ -57,24 +57,30 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-#marker {
-  position: absolute;
-  border-bottom: var(--st-c-sidebar-marker-h) solid var(--st-c-secondary);
-  transition-property: opacity, left, top;
-  transition-duration: 0.5s;
-  pointer-events: none;
-  filter: drop-shadow(0 5px 25px #08f9ff);
-  height: 100%;
-}
+@use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-nav-lick {
-  display: flex;
+  display: none;
   height: 100%;
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: rgb(107 114 128 / var(--un-text-opacity));
   line-height: 1.25rem;
   transform: translateX(0);
+
+  #marker {
+    position: absolute;
+    border-bottom: var(--st-c-sidebar-marker-h) solid var(--st-c-secondary);
+    transition-property: opacity, left, top;
+    transition-duration: 0.5s;
+    pointer-events: none;
+    filter: drop-shadow(0 5px 25px #08f9ff);
+    height: 100%;
+  }
+
+  @include screen('md') {
+    display: flex;
+  }
 }
 
 .sakura-nav-link:hover {

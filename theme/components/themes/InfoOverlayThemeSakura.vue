@@ -38,12 +38,14 @@ function nextMedia() {
 
     <div class="card-wrapper">
       <slot name="muted-text">
-        <span class="inline-block" i-fa6-solid-quote-left />
-        <span class="px-2 text-lg">
-          <!-- banner.motto -->
-          <SakuraTypewriter v-if="hitokoto.hitokoto" :type-string="hitokoto.hitokoto" loop :delay="100" :pause-for="10000" :delete-all="100" @typing-finished="fetchHitokoto()" />
-        </span>
-        <span class="inline-block" i-fa6-solid-quote-right />
+        <div class="flex justify-center">
+          <span class="inline-block" i-fa6-solid-quote-left />
+          <span class="px-2 text-lg">
+            <!-- banner.motto -->
+            <SakuraTypewriter v-if="hitokoto.hitokoto" :type-string="hitokoto.hitokoto" loop :delay="100" :pause-for="10000" :delete-all="100" @typing-finished="fetchHitokoto()" />
+          </span>
+          <span class="inline-block" i-fa6-solid-quote-right />
+        </div>
       </slot>
 
       <slot name="social">
@@ -60,6 +62,8 @@ function nextMedia() {
 </template>
 
 <style lang="scss">
+@use 'valaxy/client/styles/mixins/index.scss' as *;
+
 .info-overlay-theme-sakura {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -72,6 +76,11 @@ function nextMedia() {
     border-radius: 1rem;
     padding: 1rem 0.75rem;
     background: hsla(0, 0% , 0%, 0.3);
+
+    @include screen('md') {
+      min-width: 500px;
+      max-width: 800px;
+    }
   }
 
   .icon {
