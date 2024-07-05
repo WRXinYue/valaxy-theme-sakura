@@ -1,6 +1,6 @@
 <h1 align="center">Valaxy Theme Sakura</h1>
 <pre align="center">
-🧪 正在测试、完善主题示例和主题文档 | <a href="https://sakura.valaxy.site/">文档</a> | <a href="https://sakura.wrxinyue.org/">示例</a> | <a href="./README-en.md">English</a>
+🧪 正在测试、完善主题示例和主题文档 | <a href="https://sakura.valaxy.site/">文档</a> | <a href="https://sakura.wrxinyue.org/">示例</a> | <a href="./README.en.md">English</a>
 </pre>
 
 <p align="center">
@@ -210,9 +210,6 @@ pnpm up valaxy-theme-sakura --latest
 
 ### 📋 计划清单
 
-- [x] 添加文章网络图支持 (预计0.6.0版本发布)
-- [x] 添加对双栏及三栏布局支持 (预计0.6.0版本发布)
-- [x] 添加博客友联及RSS支持 (预计0.6.0版本发布)
 - [ ] 添加博客echarts可视化数据统计 (预计0.7.0版本发布)
 - [ ] 发布博客主题到valaxy (预计0.7.0版本同步)
 - [ ] 可视化博客主题编辑 (预计0.8.0版本发布)

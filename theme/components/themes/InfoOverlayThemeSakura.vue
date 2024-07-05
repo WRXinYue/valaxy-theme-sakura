@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useSiteConfig } from 'valaxy'
-import { HitokotoType, useAddonHitokoto } from 'valaxy-addon-hitokoto'
+import { useAddonHitokoto } from 'valaxy-addon-hitokoto'
 import { useSakuraAppStore } from '../../stores/app'
 import type { Banner } from '../../types/index'
 import { useThemeConfig } from '../../composables'
