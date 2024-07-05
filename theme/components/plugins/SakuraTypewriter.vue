@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
 const props = withDefaults(defineProps<{
   [key: string]: any
 } & Partial<TypewriterProps>>(), {
   delay: 75,
+  typeString: '',
 })
+
+const emit = defineEmits(['typingFinished', 'deletionFinished'])
 
 export interface TypewriterProps {
   /**
@@ -49,43 +52,65 @@ export interface TypewriterProps {
 }
 
 const typewriterElement = ref<HTMLElement | null>(null)
+const refreshNeeded = ref(false)
 
 onMounted(async () => {
   // @ts-expect-error missing types
   const TypewriterModule = await import('typewriter-effect/dist/core')
   const Typewriter = TypewriterModule.default
 
-  const options = {
-    delay: props.delay,
-    deleteSpeed: props.deleteSpeed,
-    loop: props.loop,
-    devMode: props.devMode,
-  } as unknown as TypewriterProps
+  const createTypewriter = (typeStrings: string[]) => {
+    const options = {
+      delay: props.delay,
+      deleteSpeed: props.deleteSpeed,
+      loop: props.loop,
+      devMode: props.devMode,
+    } as unknown as TypewriterProps
 
-  if (typeof props.pauseFor === 'number')
-    options.pauseFor = props.pauseFor
+    if (typeof props.pauseFor === 'number')
+      options.pauseFor = props.pauseFor
 
-  const typewriter = new Typewriter(typewriterElement.value, options)
+    const typewriter = new Typewriter(typewriterElement.value, options)
 
-  const typeStrings = Array.isArray(props.typeString) ? props.typeString : [props.typeString]
-  const pauseForArray = Array.isArray(props.pauseFor) ? props.pauseFor : [props.pauseFor]
-  const deleteAllArray = Array.isArray(props.deleteAll) ? props.deleteAll : [props.deleteAll]
+    // const typeStrings = Array.isArray(props.typeString) ? props.typeString : [props.typeString]
+    const pauseForArray = Array.isArray(props.pauseFor) ? props.pauseFor : [props.pauseFor]
+    const deleteAllArray = Array.isArray(props.deleteAll) ? props.deleteAll : [props.deleteAll]
 
-  typeStrings.forEach((str, index) => {
-    typewriter.typeString(str)
+    typeStrings.forEach((str, index) => {
+      typewriter.typeString(str)
 
-    if (pauseForArray[index] !== undefined)
-      typewriter.pauseFor(pauseForArray[index])
+      if (pauseForArray[index] !== undefined)
+        typewriter.pauseFor(pauseForArray[index])
 
-    if (props.deleteAll === true)
-      typewriter.deleteAll()
-    else if (typeof props.deleteAll === 'number')
-      typewriter.deleteAll(props.deleteAll)
-    else if (deleteAllArray[index])
-      typewriter.deleteAll(deleteAllArray[index])
-  })
+      typewriter.callFunction(() => {
+        emit('typingFinished', str)
+      })
 
-  typewriter.start()
+      if (props.deleteAll === true)
+        typewriter.deleteAll()
+      else if (typeof props.deleteAll === 'number')
+        typewriter.deleteAll(props.deleteAll)
+      else if (deleteAllArray[index])
+        typewriter.deleteAll(deleteAllArray[index])
+
+      typewriter.callFunction(() => {
+        emit('deletionFinished', str)
+
+        if (refreshNeeded.value) {
+          refreshNeeded.value = false
+          typewriter.stop()
+          createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+        }
+      })
+    })
+    typewriter.start()
+  }
+
+  createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+
+  watch(() => props.typeString, () => {
+    refreshNeeded.value = true
+  }, { deep: true })
 })
 </script>
 
