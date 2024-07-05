@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useSiteConfig } from 'valaxy'
+import { HitokotoType, useAddonHitokoto } from 'valaxy-addon-hitokoto'
 import { useSakuraAppStore } from '../../stores/app'
 import type { Banner } from '../../types/index'
 import { useThemeConfig } from '../../composables'
@@ -11,10 +12,12 @@ const props = withDefaults(defineProps<{
 }>(), {
   wallpaperKey: 'banner',
 })
+
 const storageKey = `wallpaperKey-${props.wallpaperKey}`
 const siteConfig = useSiteConfig()
 const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
+const { hitokoto, fetchHitokoto } = useAddonHitokoto()
 
 const banner = computed(() => props.banner || themeConfig.value.banner)
 
@@ -37,7 +40,8 @@ function nextMedia() {
       <slot name="muted-text">
         <span class="inline-block" i-fa6-solid-quote-left />
         <span class="px-2 text-lg">
-          {{ banner.motto }}
+          <!-- banner.motto -->
+          <SakuraTypewriter v-if="hitokoto.hitokoto" :type-string="hitokoto.hitokoto" loop :delay="100" :pause-for="10000" :delete-all="100" @typing-finished="fetchHitokoto()" />
         </span>
         <span class="inline-block" i-fa6-solid-quote-right />
       </slot>

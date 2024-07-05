@@ -1,5 +1,6 @@
 import { defineTheme } from 'valaxy'
 import { addonVercount } from 'valaxy-addon-vercount'
+import { addonHitokoto } from 'valaxy-addon-hitokoto'
 import { defaultThemeConfig, generateSafelist, themePlugin } from './node'
 import type { ThemeConfig } from './types'
 
@@ -28,6 +29,7 @@ export default defineTheme<ThemeConfig>((options) => {
     // },
     addons: [
       addonVercount(),
+      addonHitokoto(),
     ],
   }
 })
