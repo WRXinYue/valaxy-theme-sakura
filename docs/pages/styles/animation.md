@@ -217,9 +217,16 @@ hover-shadow-and-glow-transitions:
     class: animation-hvr-box-shadow-inset
 ---
 
-## 动画 <SupTag>0.6.1</SupTag>
+## 动画 <SupTag>0.6.1</SupTag> {lang="zh-CN"}
+## animation <SupTag>0.6.1</SupTag> {lang="en"}
 
+::: zh-CN
 点击对应的示例即可复制对应 class。除了[Hover](#hover)之外，其他动画在演示时只会在点击时触发。因为是动态添加 class，正常使用会立即触发，例如：
+:::
+
+:::en
+Click the corresponding example to copy the respective class. Other than [Hover](#hover), animations will only trigger upon clicking in the demonstration. In normal use, they will trigger immediately as classes are dynamically added. For example:
+:::
 
 ```html
 <div class="animation-fade-in">
@@ -227,29 +234,53 @@ hover-shadow-and-glow-transitions:
 </div>
 ```
 
-## Fading
+## Fading {lang="en"}
+
+## 衰退效果 {lang="zh-CN"}
 
 <AnimateDemo type="fading" />
 
-## Slide
+## Slide {lang="en"}
+
+## 滑动效果 {lang="zh-CN"}
 
 <AnimateDemo type="slide" />
 
-## Hover
+## Hover {lang="en"}
 
+## 徘徊 {lang="zh-CN"}
+
+::: zh-CN
 在原来的 [hover.css](https://github.com/IanLunn/Hover) 源码上进行了调整，使其能够更好地与主题集成
+:::
 
-### 2D Transitions
+::: en
+Adjusted the original [hover.css](https://github.com/IanLunn/Hover) source code to better integrate with the theme.
+:::
+
+### 2D Transitions {lang="en"}
+
+### 2D 过渡 {lang="zh-CN"}
 
 <AnimateDemo type="hover-2d-transitions" />
 
-### Background Transitions
+### Background Transitions {lang="en"}
+
+### 背景转换 {lang="zh-CN"}
 
 <AnimateDemo type="hover-background-transitions" />
 
-### Icons
+### Icons {lang="en}
 
+### 图标 {lang="zh-CN"}
+
+::: zh-CN
 `animation-hvr-icon-back` 需要在触发的元素上使用，而 `hvr-icon` 仅应用于被触发的元素
+:::
+
+::: en
+The `animation-hvr-icon-back` should be used on the triggering element, while `hvr-icon` is only applied to the triggered element.
+:::
 
 ```html
 <div class="animation-hvr-icon-back" >
@@ -261,10 +292,14 @@ hover-shadow-and-glow-transitions:
 
 <AnimateDemo type="hover-icons" />
 
-### Border Transitions
+### Border Transitions {lang="en"}
+
+### 边界过度 {lang="zh-CN"}
 
 <AnimateDemo type="hover-border-transitions" />
 
-### Shadow and Glow Transitions
+### Shadow and Glow Transitions {lang="en"}
+
+### 阴影和发光过度 {lang="zh-CN"}
 
 <AnimateDemo type="hover-shadow-and-glow-transitions" />

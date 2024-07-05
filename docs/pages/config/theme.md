@@ -6,9 +6,17 @@ categories:
   - config
 ---
 
-## 主题配置
+## 主题配置 {lang="zh-CN"}
 
+## Theme config {lang="en"}
+
+::: zh-CN
 如下是主题配置(ThemeConfig)总览，具体效果可以看各个组件的配置说明
+:::
+
+:::en
+Below is an overview of the ThemeConfig. For specific effects, please refer to the configuration instructions of each component.
+:::
 
 ```ts
 export interface ThemeConfig {
