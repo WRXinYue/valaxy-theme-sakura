@@ -27,8 +27,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <div :style="app.isSidebarOpen ? '--_sakura-sidebar-offset: var(--st-c-sidebar-offset)' : ''">
-    <SakuraNavbarCustom />
-    <SakuraSidebarCustom />
-  </div>
+  <SakuraNavbarCustom class="sakura-app-navbar" :style="app.isSidebarOpen ? '--_sakura-sidebar-offset: var(--st-c-sidebar-offset)' : ''" />
+  <SakuraSidebarCustom class="sakura-app-sidebar" />
 </template>

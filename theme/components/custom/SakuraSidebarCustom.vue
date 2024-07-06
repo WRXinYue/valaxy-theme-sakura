@@ -1,5 +1,3 @@
 <template>
-  <SakuraSidebar>
-    <SidebarThemeOverview />
-  </SakuraSidebar>
+  <SakuraSidebar />
 </template>

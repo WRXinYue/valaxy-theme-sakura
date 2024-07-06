@@ -77,7 +77,9 @@ a {
   }
 }
 
-
+/* -------------------------------------
+* Playground
+* ------------------------------------- */
 .playground {
   li {
     margin: 0;
@@ -114,4 +116,12 @@ a {
       padding: 0.5rem;
     }
   }
+}
+
+.wave-theme-pg {
+  background-color: #3ABEF9;
+}
+
+.dark .wave-theme-pg {
+  background-color: #3572EF;
 }

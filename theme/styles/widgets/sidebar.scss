@@ -16,7 +16,7 @@
 }
 
 // translation navbar
-.sakura-navbar, .app-container {
+.sakura-app-navbar, .app-container {
   transform: translateX(var(--_sakura-sidebar-offset));
   transition: transform var(--va-transition-duration) cubic-bezier(0.19, 1, 0.22, 1) !important;
 }

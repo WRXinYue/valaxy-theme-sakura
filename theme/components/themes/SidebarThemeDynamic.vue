@@ -35,7 +35,7 @@ const { hasSidebar } = useSidebar()
 </script>
 
 <template>
-  <aside v-if="hasSidebar" class="sakura-sidebar" @click.stop>
+  <aside v-if="hasSidebar" class="sidebar-theme-dynamic" @click.stop>
     <ol v-for="(item, i) in sidebar" :key="i" text="left">
       <template v-if="typeof item === 'string'">
         <SakuraSidebarCategoryByName
@@ -49,7 +49,7 @@ const { hasSidebar } = useSidebar()
 </template>
 
 <style lang="scss">
-.sakura-sidebar > :not(:first-child) {
+.sidebar-theme-dynamic > :not(:first-child) {
   margin-top: 16px;
 }
 </style>
