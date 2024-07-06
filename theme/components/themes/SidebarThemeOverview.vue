@@ -6,7 +6,7 @@ import type { NavItem } from '../../types'
 import { useThemeConfig } from '../../composables'
 
 const props = defineProps<{
-  sidebar: NavItem[]
+  sidebar?: NavItem[]
 }>()
 
 const { t } = useI18n()

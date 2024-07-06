@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { useAppStore } from 'valaxy'
 import { useThemeConfig } from '../composables'
 
 const { invert, autoHide } = withDefaults(defineProps<{
@@ -19,6 +20,7 @@ const { invert, autoHide } = withDefaults(defineProps<{
   animOut: 'animation-fade-out-left',
 })
 
+const app = useAppStore()
 const themeConfig = useThemeConfig()
 
 const hoverNavbar = ref(false)
@@ -50,7 +52,13 @@ onUnmounted(() => {
     @mouseover="hoverNavbar = true" @mouseleave="hoverNavbar = false"
   >
     <slot name="nav-brand">
-      <SakuraNavbarBrand :favicon="favicon ?? themeConfig.favicon" :navbar-title="title || themeConfig.navbarTitle" />
+      <div class="flex items-center">
+        <div :class="!themeConfig.navbarOptions?.showSidebarToggleButtonOnPC && 'md:hidden'">
+          <SakuraHamburger class="mr-4" :active="app.isSidebarOpen" @click="app.isSidebarOpen = !app.isSidebarOpen" />
+        </div>
+
+        <SakuraNavbarBrand :favicon="favicon ?? themeConfig.favicon" :navbar-title="title || themeConfig.navbarTitle" />
+      </div>
     </slot>
 
     <slot name="nav-link">

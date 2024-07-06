@@ -22,6 +22,10 @@ export const defaultThemeConfig: ThemeConfig = {
   },
 
   navbar: [],
+  navbarOptions: {
+    showSidebarToggleButtonOnPC: false,
+  },
+
   sidebar: [],
 
   footer: {

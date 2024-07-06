@@ -39,7 +39,7 @@ function updateMarker() {
 
 onMounted(() => {
   nextTick(() => {
-    marker.value = document.querySelector('#marker')
+    marker.value = document.querySelector('.sakura-nav-lick #marker')
     updateMarker()
   })
 })

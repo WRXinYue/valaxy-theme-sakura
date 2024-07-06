@@ -32,3 +32,30 @@
     resize: vertical;
   }
 }
+
+/* -------------------------------------
+* Sidebar
+* ------------------------------------- */
+.sakura-sidebar {
+  #marker {
+    width: 90%;
+    height: 80px;
+    border-radius: var(--st-c-rd);
+    background-color: #efefef;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.sidebar-theme-overview {
+  .site-link-item {
+    // background: #000;
+    margin: 0 15px;
+    padding: 8px 10px;
+    z-index: 10;
+  }
+
+  // .router-link-active {
+  //   background-color: #efefef;
+  // }
+}

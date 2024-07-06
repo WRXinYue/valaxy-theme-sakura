@@ -1,5 +1,14 @@
+<script setup lang="ts">
+import { useAppStore } from 'valaxy'
+
+const app = useAppStore()
+</script>
+
 <template>
-  <div class="app-container custom-background antialiased">
+  <div
+    class="app-container custom-background antialiased"
+    :style="app.isSidebarOpen ? '--_sakura-sidebar-offset: var(--st-c-sidebar-offset)' : ''"
+  >
     <slot name="nav-bar" />
 
     <main class="sakura-main">
@@ -44,15 +53,3 @@
     </slot>
   </div>
 </template>
-
-<style lang="scss">
-.sakura-main {
-  transition: padding-left var(--va-transition-duration);
-}
-
-.app-container {
-  transition: padding-left var(--va-transition-duration);
-  padding-left: var(--app-container-layout-pl);
-  background-color: var(--st-c-bg);
-}
-</style>

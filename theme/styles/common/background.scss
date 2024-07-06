@@ -1,4 +1,5 @@
 @mixin background-style($image) {
+  background-color: var(--st-c-bg);
   background-image: $image;
   background-size: cover;
   background-position: center;

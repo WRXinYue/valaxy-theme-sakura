@@ -14,3 +14,9 @@
 .sakura-sidebar-item-link.router-link-exact-active {
   color: var(--st-c-brand);
 }
+
+// translation navbar
+.sakura-navbar, .app-container {
+  transform: translateX(var(--_sakura-sidebar-offset));
+  transition: transform var(--va-transition-duration) cubic-bezier(0.19, 1, 0.22, 1) !important;
+}

@@ -29,14 +29,23 @@ const siteConfig = useSiteConfig()
 </template>
 
 <style lang="scss">
+@use "valaxy/client/styles/mixins/index.scss" as *;
+
 .sakura-navbar-brand {
   display: flex;
   align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
 
   .logo-link {
     color: var(--st-c-navbar-text);
-    font-size: 28px;
-    font-weight: 800;
+    font-size: 24px;
+    font-weight: 600;
+
+    @include screen('md') {
+      font-size: 28px;
+      font-weight: 800;
+    }
 
     span:first-child {
       border-radius: 9px;

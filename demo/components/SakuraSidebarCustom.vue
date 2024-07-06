@@ -1,3 +1,3 @@
 <template>
-  <SakuraSidebar class="md:hidden" />
+  <SakuraSidebar />
 </template>

@@ -34,6 +34,12 @@ export interface ThemeConfig {
    * Sidebar
    */
   sidebar: NavItem[] | SidebarMulti
+  sidebarOptions?: {
+    /**
+     * 用来决定侧边栏显示位置
+     */
+    position: 'left' | 'right'
+  }
 
   /**
    * Navbar
@@ -41,6 +47,9 @@ export interface ThemeConfig {
   favicon: boolean
   navbar: NavItem[]
   navbarTitle: string | string[]
+  navbarOptions?: Partial<{
+    showSidebarToggleButtonOnPC: boolean
+  }>
 
   /**
    * Article
