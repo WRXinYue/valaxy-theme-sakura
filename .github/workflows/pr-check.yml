@@ -19,6 +19,12 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
 
+      - name: Install Bundler
+        run: gem install bundler
+
+      - name: Install Gems
+        run: bundle install
+
       - name: Run Danger
         run: |
           bundle exec danger
