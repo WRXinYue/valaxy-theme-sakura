@@ -9,7 +9,10 @@
   "homepage": "https://github.com/WRXinYue/valaxy-theme-sakura",
   "repository": {
     "type": "git",
-    "url": "https://github.com/WRXinYue/valaxy-theme-sakura"
+    "url": "https://github.com/WRXinYue/valaxy-theme-sakura.git"
+  },
+  "publishConfig": {
+    "@wrxinyue:registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "valaxy",
