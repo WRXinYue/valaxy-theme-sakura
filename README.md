@@ -18,12 +18,15 @@
 
 ## 🌟 特性
 
+- 🌈 **主题化**: 主题化包含 Sakura 及 Ocean 🚧
 - 🌸 **Sakura**: 主题化样式完全支持 [wordpress-theme-sakura](https://github.com/mashirozx/sakura)
+- ❤️ **轻量级**: 组件通过树摇方式优化，实际使用中非常轻量
+- ⚡️ **快速**: 我们较注重性能优化，确保网站的性能
 - 🎪 **互动文档与演示**: 提供互动性强的[文档和演示](https://sakura.valaxy.site/)功能
 - 🦾 **类型安全**: 完全采用 [TypeScript](https://www.typescriptlang.org/) 编写，并使用 [TS Docs](https://github.com/microsoft/tsdoc) 提供详尽的文档说明
 - 🔩 **高度可定制化**: 主题和功能可根据需求进行高度定制，完全可以利用主题组件构建全新样式
-- 🔌 **插件集成**: 集成多种常用插件，且发布主题常用插件，部分插件可通过主题化添加样式
-- 🌍 **多语言支持**: 内置中文和英文语言切换功能
+- 📦 **附加组件**: 集成多种常用插件，且发布主题常用插件，部分插件可通过主题化添加样式
+- 🌍 **多语言支持**: 内置 i18n 中文和英文语言切换功能
 - 🎥 **多媒体横幅**: 支持多种格式的横幅，如图片、视频等，集成横幅组件如打字机效果、一言效果等
 - 🧩 **多列布局**: 可以自由改变文章列表、主页排版及其他页面布局，使主题更加丰富多样
 - 📚 **侧边栏**: 侧边栏可以设置为左侧或右侧打开，甚至可以将导航栏变成侧边栏
@@ -34,11 +37,13 @@
 
 如果您还不清楚如何安装 Valaxy，建议先查看 Valaxy 的[安装文档](https://valaxy.site/guide/getting-started)了解安装过程。关于本主题的详细安装教程，请参考 valaxy-theme-sakura 的 [安装文档](https://sakura.valaxy.site/guide/installation)
 
+如下是简要的安装方式：
+
 ```bash
 pnpm add valaxy-theme-sakura
 ```
 
-在您的 `valaxy.config.ts` 文件中进行如下修改:
+在您的 `valaxy.config.ts` 文件中进行如下修改：
 
 ```ts
 import { defineConfig } from 'valaxy'
@@ -49,7 +54,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 })
 ```
 
-## 使用
+## 🚀 使用
 
 如下是配置主题的一个简单的配置示例：
 
