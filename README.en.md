@@ -1,6 +1,6 @@
 <h1 align="center">Valaxy Theme Sakura</h1>
 <pre align="center">
-🧪 Currently testing and perfecting theme samples and theme documentation | <a href="https://sakura.valaxy.site/">Docs</a> | <a href="https://sakura.wrxinyue.org/">Demo</a> | <a href="./README.md">中文</a>
+🧪 Currently testing and perfecting theme samples and theme documentation
 </pre>
 
 <p align="center">
@@ -8,6 +8,13 @@
 <a href="https://github.com/WRXinYue/valaxy-theme-sakura/actions/workflows/release.yml"><img src="https://github.com/WRXinYue/valaxy-theme-sakura/actions/workflows/release.yml/badge.svg" alt="Release"></a>
 <a href="https://stackblitz.com/edit/stackblitz-starters-tqdtk7?file=README.md"><img src="https://developer.stackblitz.com/img/open_in_stackblitz_small.svg" alt="Open in StackBlitz"></a>
 </p>
+
+- [简体中文](./README.md) | English
+
+## 🌟 Features
+
+- 🎪 Interactive docs & demos
+- 🦾 **Type Strong**: Written in [TypeScript](https://www.typescriptlang.org/), with [TS Docs](https://github.com/microsoft/tsdoc)
 
 ### Usage
 
@@ -186,7 +193,13 @@ pnpm up valaxy-theme-sakura --latest
 
 ### Thanks
 
+This project is heavily inspired by the following awesome projects.
+
 - [YunYouJun](https://valaxy.site/)
-- [樱花庄的白猫博客主题](https://github.com/mashirozx/sakura)
-- [hexo-theme-sakura](https://github.com/honjun/hexo-theme-sakura)
+- [wordpress-theme-sakura](https://github.com/mashirozx/sakura)
 - [vitepress-theme-sakura](https://github.com/flaribbit/vitepress-theme-sakura)
+- [element-plus](https://github.com/element-plus/element-plus)
+- [primevue](https://github.com/primefaces/primevue)
+- [antfu.me](https://github.com/antfu/antfu.me)
+
+And thanks to [all the contributors on GitHub](https://github.com/wrxinyue/valaxy-theme-sakura/graphs/contributors)!
