@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { usePostList, useSiteConfig } from 'valaxy'
-import { useSakuraAppStore } from '../../stores/app'
+import { useSakuraAppStore } from '../../stores'
 import { useThemeConfig } from '../../composables'
 
 const siteConfig = useSiteConfig()

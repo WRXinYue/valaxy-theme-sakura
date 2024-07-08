@@ -1,6 +1,7 @@
 {
   "name": "valaxy-theme-sakura",
   "version": "0.6.5-alpha.1",
+  "packageManager": "pnpm@9.5.0",
   "author": {
     "email": "3322543587@qq.com",
     "name": "WRXinYue",
@@ -42,7 +43,7 @@
   "devDependencies": {
     "@types/d3": "^7.4.3",
     "@types/d3-force": "^3.0.9",
-    "valaxy": "^0.18.9",
+    "valaxy": "^0.19.0",
     "valaxy-addon-hitokoto": "0.0.1",
     "valaxy-addon-vercount": "0.0.5",
     "valaxy-addon-waline": "0.1.1"

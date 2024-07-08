@@ -7,7 +7,10 @@
 @media (prefers-reduced-motion: no-preference) {
   html:not(.no-sliding) [slide-enter],
   html:not(.no-sliding) .slide-enter,
-  html:not(.no-sliding) .markdown-body .prose > *:not(:has(.table-of-contents)) {
+  html:not(.no-sliding)
+    .markdown-body
+    .prose
+    > *:not(:has(.table-of-contents)) {
     --enter-stage: 0;
     --enter-step: 90ms;
     --enter-initial: 0ms;

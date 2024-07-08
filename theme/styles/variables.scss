@@ -13,7 +13,7 @@ $breakpoints: (
         margin: $margin;
       }
     } @else {
-      @warn "Unknown breakpoint: #{$breakpoint}.";
+      @warn 'Unknown breakpoint: #{$breakpoint}.';
     }
   }
 }

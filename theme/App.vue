@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue'
 import { useHead } from '@unhead/vue'
-import { useAppStore } from 'valaxy'
+import { useSakuraAppStore } from './stores'
 import { useThemeConfig } from './composables'
 import { useSakura } from './setup/themeStart'
 
-const app = useAppStore()
+const sakuraAppStore = useSakuraAppStore()
 const themeConfig = useThemeConfig()
 
 onMounted(() => {
@@ -27,6 +27,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <SakuraNavbarCustom class="sakura-app-navbar" :style="app.isSidebarOpen ? '--_sakura-sidebar-offset: var(--st-c-sidebar-offset)' : ''" />
+  <SakuraNavbarCustom
+    class="sakura-app-navbar"
+    :style="sakuraAppStore.rightSidebar.isOpen ? (
+      themeConfig.sidebarOptions?.position === 'left' ? '--_sakura-sidebar-offset: var(--st-c-sidebar-offset)' : '--_sakura-sidebar-offset: calc(var(--st-c-sidebar-offset) * -1)'
+    ) : ''"
+  />
   <SakuraSidebarCustom class="sakura-app-sidebar" />
 </template>

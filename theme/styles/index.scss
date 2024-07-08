@@ -7,12 +7,12 @@
 @use './animation/hover/hover.scss' as *;
 @use './animation/blink/blink.scss' as *;
 
-@use "./common/button.scss" as *;
-@use "./common/background.scss" as *;
-@use "./common/scrollbar.scss" as *;
-@use "./common/valaxy.scss" as *;
-@use "./common/site.scss" as *;
-@use "./common/text.scss" as *;
+@use './common/button.scss' as *;
+@use './common/background.scss' as *;
+@use './common/scrollbar.scss' as *;
+@use './common/valaxy.scss' as *;
+@use './common/site.scss' as *;
+@use './common/text.scss' as *;
 
 @use './markdown/markdown.scss' as *;
 @use './markdown/code.scss' as *;
@@ -22,4 +22,3 @@
 
 @use './widgets/sidebar.scss' as *;
 @use './widgets/navbar.scss' as *;
-

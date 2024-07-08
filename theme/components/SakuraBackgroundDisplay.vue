@@ -2,7 +2,7 @@
 import { computed, onMounted, ref, watch } from 'vue'
 import { isVideoUrl } from '../utils'
 import { getLocalStorageItem, setLocalStorageItem } from '../utils/localStorage'
-import { useSakuraAppStore } from '../stores/app'
+import { useSakuraAppStore } from '../stores'
 import { useThemeConfig } from '../composables'
 
 const props = withDefaults(defineProps<{

@@ -6,6 +6,10 @@ import type { ThemeConfig } from '../types'
  * Default Config
  */
 export const defaultThemeConfig: ThemeConfig = {
+  valaxyDarkOptions: {
+    circleTransition: true,
+  },
+
   colors: {
     primary: '#0078E7',
   },
@@ -23,10 +27,13 @@ export const defaultThemeConfig: ThemeConfig = {
 
   navbar: [],
   navbarOptions: {
-    showSidebarToggleButtonOnPC: false,
+    showSidebarToggleButtonOnPC: true,
   },
 
   sidebar: [],
+  sidebarOptions: {
+    position: 'left',
+  },
 
   footer: {
     since: 2024,
@@ -55,9 +62,8 @@ export function themePlugin(
         css: {
           preprocessorOptions: {
             scss: {
-              additionalData: `$c-primary: ${
-                themeConfig.colors?.primary || '#0078E7'
-              } !default;`,
+              additionalData: `$c-primary: ${themeConfig.colors?.primary || '#0078E7'
+                } !default;`,
             },
           },
         },

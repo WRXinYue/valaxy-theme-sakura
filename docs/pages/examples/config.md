@@ -9,8 +9,6 @@ codeHeightLimit: 300
 
 ## 配置示例
 
-### 示例1
-
 <https://github.com/WRXinYue/valaxy-theme-sakura/blob/main/demo/valaxy.config.ts>
 
 ~~~ts

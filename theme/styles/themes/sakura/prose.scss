@@ -23,7 +23,8 @@
   letter-spacing: 0.6em;
 }
 
-.prose ul, .prose ol {
+.prose ul,
+.prose ol {
   border: 1px dashed #e4e4e4;
   padding: 15px 10px 15px 50px;
   color: #616161;
@@ -39,7 +40,8 @@
   list-style: decimal;
 }
 
-.prose ol li, .prose ul li {
+.prose ol li,
+.prose ul li {
   padding: 8px 0;
 }
 
@@ -53,44 +55,48 @@
   color: var(--st-c-text-muted);
 }
 
-.prose h3, .prose h4, .prose h5 {
+.prose h3,
+.prose h4,
+.prose h5 {
   padding-left: 16px;
 }
 
 .prose h2:after {
-  content: "\00B6";
+  content: '\00B6';
   position: absolute;
   color: var(--st-c-brand);
-  font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+  font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
   padding-left: 6px;
   font-size: 1.03em;
 }
 
 .serif .prose h2:after {
-  content: "\00B6";
+  content: '\00B6';
   position: absolute;
   color: var(--st-c-brand);
-  font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+  font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
   padding-left: 6px;
   font-size: 1.13em;
 }
 
 .prose h3:after {
-  content: "#";
+  content: '#';
   left: 0;
   position: absolute;
   color: var(--st-c-secondary);
 }
 
 .prose h4:after {
-  content: "▌";
+  content: '▌';
   left: 0;
   position: absolute;
   color: var(--st-c-secondary);
 }
 
 .prose h5:after {
-  content: "♯";
+  content: '♯';
   left: 0;
   position: absolute;
   color: var(--st-c-secondary);
@@ -98,7 +104,8 @@
 
 .prose code {
   word-break: break-word;
-  font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+  font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei,
+    'STHeiti Light', 'Microsoft YaHei', sans-serif;
   padding: 2px;
   text-shadow: none;
   border-radius: 5px;

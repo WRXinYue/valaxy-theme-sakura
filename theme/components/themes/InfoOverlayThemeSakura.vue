@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useSiteConfig } from 'valaxy'
 import { useAddonHitokoto } from 'valaxy-addon-hitokoto'
-import { useSakuraAppStore } from '../../stores/app'
+import { useSakuraAppStore } from '../../stores'
 import type { Banner } from '../../types/index'
 import { useThemeConfig } from '../../composables'
 

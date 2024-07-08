@@ -119,6 +119,10 @@ export default defineConfig<ThemeConfig>({
         link: 'https://sakura.wrxinyue.org/atom.xml',
       },
     ],
+    navbarOptions: {
+      invert: true,
+      autoHide: true,
+    },
 
     sidebar: [
       {

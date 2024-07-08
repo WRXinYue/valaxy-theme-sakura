@@ -1,3 +1,5 @@
+import type { DefaultTheme } from 'valaxy'
+
 export namespace SakuraTheme {
   export type Config = ThemeConfig
 }
@@ -5,7 +7,7 @@ export namespace SakuraTheme {
 /**
  * Theme Config
  */
-export interface ThemeConfig {
+export interface ThemeConfig extends DefaultTheme.Config {
   colors?: {
     /**
      * primary color
@@ -34,12 +36,13 @@ export interface ThemeConfig {
    * Sidebar
    */
   sidebar: NavItem[] | SidebarMulti
-  sidebarOptions?: {
+  sidebarOptions?: Partial<{
     /**
      * 用来决定侧边栏显示位置
      */
     position: 'left' | 'right'
-  }
+    offset: boolean
+  }>
 
   /**
    * Navbar
@@ -49,6 +52,12 @@ export interface ThemeConfig {
   navbarTitle: string | string[]
   navbarOptions?: Partial<{
     showSidebarToggleButtonOnPC: boolean
+    title: string | string[]
+    invert: boolean
+    col: boolean
+    autoHide: boolean
+    animIn: string
+    animOut: string
   }>
 
   /**
@@ -95,7 +104,7 @@ export interface ThemeConfig {
 
   notFoundImage?: string
 
-  noticeBoard?: {
+  noticeBoard?: { // TODO: 改为 notice
     message?: string
   }
 }

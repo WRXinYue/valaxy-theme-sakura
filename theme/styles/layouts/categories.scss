@@ -3,10 +3,12 @@
 .categories-margin-control {
   margin: 0 10px;
 
-  @include responsive-margin((
-    md: 0 50px,
-    lg: 0 100px,
-    xl: 0 200px,
-    2xl: 0 400px,
-  ));
+  @include responsive-margin(
+    (
+      md: 0 50px,
+      lg: 0 100px,
+      xl: 0 200px,
+      2xl: 0 400px,
+    )
+  );
 }

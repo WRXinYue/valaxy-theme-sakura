@@ -150,9 +150,7 @@ export function useSidebarControl(
     collapsed.value = !!(collapsible.value && item.value.collapsed)
   })
 
-  watchPostEffect(() => {
-    ;(isActiveLink.value || hasActiveLink.value) && (collapsed.value = false)
-  })
+  watchPostEffect(() => (isActiveLink.value || hasActiveLink.value) && (collapsed.value = false))
 
   function toggle() {
     if (collapsible.value)

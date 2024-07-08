@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { isDark, toggleDarkWithTransition } from 'valaxy'
+import { isDark, toggleDarkWithTransition } from '../../client'
 
 function enhancedToggleDarkWithTransition() {
   const fakeEvent = new MouseEvent('click')
@@ -28,7 +28,9 @@ function enhancedToggleDarkWithTransition() {
   border-radius: 11px;
   border: 1px solid var(--st-c-border);
   background-color: var(--st-c-bg-brand);
-  transition: border-color 0.25s, background-color 0.25s;
+  transition:
+    border-color 0.25s,
+    background-color 0.25s;
 }
 
 .switch:hover {
@@ -43,8 +45,12 @@ function enhancedToggleDarkWithTransition() {
   height: 18px;
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
-  transition: background-color 0.25s, transform 0.25s;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+  transition:
+    background-color 0.25s,
+    transform 0.25s;
 }
 
 .dark .check {

@@ -10,8 +10,6 @@ const siteConfig = useSiteConfig()
       <div class="icon" :class="item.icon" />
     </a>
   </div>
-
-  <div id="marker" />
 </template>
 
 <style lang="scss">

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { usePostList, useSiteConfig } from 'valaxy'
-import { useSakuraAppStore } from '../../stores/app'
+import { useSakuraAppStore } from '../../stores'
 import { useThemeConfig } from '../../composables'
 
 const props = defineProps<{

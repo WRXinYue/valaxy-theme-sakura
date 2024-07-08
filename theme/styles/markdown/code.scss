@@ -7,7 +7,7 @@ html:not(.dark) .vp-code span {
 }
 
 @media screen and (max-width: 640px) {
-  .markdown-body div[class*=language-] {
+  .markdown-body div[class*='language-'] {
     margin: 0 var(--va-code-mobile-margin-x, 0);
   }
 }

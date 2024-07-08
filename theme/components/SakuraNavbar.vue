@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
-import { useAppStore } from 'valaxy'
 import { useThemeConfig } from '../composables'
+import { useSakuraAppStore } from '../stores'
 
-const { invert, autoHide } = withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
   favicon?: boolean
   title?: string | string[]
   invert?: boolean
@@ -20,17 +20,22 @@ const { invert, autoHide } = withDefaults(defineProps<{
   animOut: 'animation-fade-out-left',
 })
 
-const app = useAppStore()
+const sakuraAppStore = useSakuraAppStore()
 const themeConfig = useThemeConfig()
 
 const hoverNavbar = ref(false)
 const scrolled = ref(false)
 
+const title = computed(() => props.title ?? themeConfig.value.navbarTitle)
+const invert = computed(() => themeConfig.value.navbarOptions?.invert ?? props.invert)
+const col = computed(() => themeConfig.value.navbarOptions?.col ?? props.col)
+const autoHide = computed(() => themeConfig.value.navbarOptions?.autoHide ?? props.autoHide)
+const animIn = computed(() => themeConfig.value.navbarOptions?.animIn ?? props.animIn)
+const animOut = computed(() => themeConfig.value.navbarOptions?.animOut ?? props.animOut)
 const isHeaderHighlighted = computed(() => {
-  if (!autoHide)
+  if (!autoHide.value)
     return true
-
-  return hoverNavbar.value || (invert ? scrolled.value : !scrolled.value)
+  return hoverNavbar.value || (invert.value ? scrolled.value : !scrolled.value)
 })
 
 function handleScroll() {
@@ -53,20 +58,27 @@ onUnmounted(() => {
   >
     <slot name="nav-brand">
       <div class="flex items-center">
-        <div :class="!themeConfig.navbarOptions?.showSidebarToggleButtonOnPC && 'md:hidden'">
-          <SakuraHamburger class="mr-4" :active="app.isSidebarOpen" @click="app.isSidebarOpen = !app.isSidebarOpen" />
+        <div
+          v-if="themeConfig.sidebarOptions?.position === 'left'"
+          :class="!themeConfig.navbarOptions?.showSidebarToggleButtonOnPC && 'md:hidden'"
+        >
+          <SakuraHamburger class="mr-4" :active="sakuraAppStore.rightSidebar.isOpen" @click="sakuraAppStore.rightSidebar.toggle" />
         </div>
 
-        <SakuraNavbarBrand :favicon="favicon ?? themeConfig.favicon" :navbar-title="title || themeConfig.navbarTitle" />
+        <SakuraNavbarBrand :favicon="favicon ?? themeConfig.favicon" :navbar-title="title" />
       </div>
     </slot>
 
     <slot name="nav-link">
-      <SakuraNavLink :class="autoHide && (isHeaderHighlighted ? animIn : animOut)" :col="col" />
+      <SakuraNavLink :class="autoHide && (isHeaderHighlighted ? animIn : animOut)" :col />
     </slot>
 
     <slot name="nav-tool">
-      <SakuraToggleTheme />
+      <div flex>
+        <SakuraToggleTheme mr-2 />
+        <SakuraToggleLocale mr-2 />
+        <div v-if="themeConfig.sidebarOptions?.position === 'right'" i-ri-menu-4-fill mr-2 @click="sakuraAppStore.rightSidebar.toggle" />
+      </div>
     </slot>
   </header>
 </template>

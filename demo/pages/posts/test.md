@@ -12,6 +12,7 @@ tags:
 ---
 
 ::: zh-CN
+
 [[toc]]
 
 标题是一级标题
@@ -36,18 +37,11 @@ tags:
   - DDD
     - EEE
 
-### 有序列表
-
-1. 一级
-    1. TEST
-2. 二级
-3. 三級
-
 ### Checkbox
 
 - [ ] FLAG
 - [x] FLAG
-:::
+      :::
 
 ::: en
 [[toc]]
@@ -78,13 +72,7 @@ The title is a primary title
 
 - [ ] FLAG
 - [x] FLAG
-:::
+      :::
 
 ![]()
 _a_
-
-## Dead Links
-
-<!-- [/api/app?name=test](/api/app?name=test) -->
-
-## 一个非常长的长标题测试一个非常长的长标题测试

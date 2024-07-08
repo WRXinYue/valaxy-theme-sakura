@@ -20,14 +20,14 @@
 
 - 🌈 **主题化**: 主题化包含 Sakura 及 Ocean 🚧
 - 🌸 **Sakura**: 主题化样式完全支持 [wordpress-theme-sakura](https://github.com/mashirozx/sakura)
-- ❤️ **轻量级**: 组件通过树摇方式优化，实际使用中非常轻量
-- ⚡️ **快速**: 我们较注重性能优化，确保网站的性能
+- ❤️ **轻量级**: 未使用组件会通过树摇方式优化，实际使用中非常轻量
+- ⚡️ **快速**: 我们较注重性能优化，确保主题的性能
 - 🎪 **互动文档与演示**: 提供互动性强的[文档和演示](https://sakura.valaxy.site/)功能
 - 🦾 **类型安全**: 完全采用 [TypeScript](https://www.typescriptlang.org/) 编写，并使用 [TS Docs](https://github.com/microsoft/tsdoc) 提供详尽的文档说明
 - 🔩 **高度可定制化**: 主题和功能可根据需求进行高度定制，完全可以利用主题组件构建全新样式
 - 📦 **附加组件**: 集成多种常用插件，且发布主题常用插件，部分插件可通过主题化添加样式
 - 🌍 **多语言支持**: 内置 i18n 中文和英文语言切换功能
-- 🎥 **多媒体横幅**: 支持多种格式的横幅，如图片、视频等，集成横幅组件如打字机效果、一言效果等
+- 🎥 **多媒体横幅**: 支持多种媒体格式的横幅，如图片、视频等，集成横幅组件如打字机效果、一言效果等
 - 🧩 **多列布局**: 可以自由改变文章列表、主页排版及其他页面布局，使主题更加丰富多样
 - 📚 **侧边栏**: 侧边栏可以设置为左侧或右侧打开，甚至可以将导航栏变成侧边栏
 - 🎞 **动画效果**: 集成多种动画效果，用户可以方便地添加动画，不再依赖于主题默认效果
@@ -125,7 +125,7 @@ pnpm add valaxy-theme-sakura@latest
 
 ## 📋 其他
 
-关于计划清单已迁移至 [valaxy-theme-sakura projects](https://github.com/WRXinYue/valaxy-theme-sakura/projects)
+相关计划清单已迁移至 [valaxy-theme-sakura projects](https://github.com/WRXinYue/valaxy-theme-sakura/projects)
 
 ## 🌸 致谢
 

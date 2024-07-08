@@ -3,7 +3,7 @@ import { computed, onMounted, ref } from 'vue'
 import { usePostList, useSiteConfig } from 'valaxy'
 import type { Post } from 'valaxy'
 import { useThemeConfig } from '../../composables'
-import { useSakuraAppStore } from '../../stores/app'
+import { useSakuraAppStore } from '../../stores'
 
 const props = withDefaults(defineProps<{
   type?: string

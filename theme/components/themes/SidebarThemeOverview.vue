@@ -21,7 +21,7 @@ const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar) as un
 </script>
 
 <template>
-  <nav class="sidebar-theme-overview" text-xl>
+  <nav class="sidebar-theme-overview site-link" text-xl>
     <RouterLink v-for="(item, i) in sidebar" :key="i" class="site-link-item" :to="item.link" :title="item.text || t(item.locale || '')">
       <div class="icon" :class="item.icon" />
       <span text-base ml-1>
@@ -42,6 +42,8 @@ const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar) as un
         </template>
       </span>
     </RouterLink>
+
+    <div id="marker" />
   </nav>
 </template>
 

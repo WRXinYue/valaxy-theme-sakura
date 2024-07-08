@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, watch } from 'vue'
-import { useAppStore } from 'valaxy'
 import { useStorage } from '@vueuse/core'
+import { useSakuraAppStore } from '../stores'
 
 const { persistence, defaultOpen } = withDefaults(defineProps<{
   persistence?: boolean
@@ -11,25 +11,25 @@ const { persistence, defaultOpen } = withDefaults(defineProps<{
   defaultOpen: false,
 })
 
-const app = useAppStore()
+const sakuraAppStore = useSakuraAppStore()
 
 const sidebarOpen = useStorage('sidebarOpen', defaultOpen)
 
 onMounted(() => {
   if (persistence)
-    app.isSidebarOpen = sidebarOpen.value
+    sakuraAppStore.rightSidebar.isOpen = sidebarOpen.value
 
-  sidebarOpen.value = app.isSidebarOpen
+  sidebarOpen.value = sakuraAppStore.rightSidebar.isOpen
 })
 
-watch(() => app.isSidebarOpen, (open) => {
+watch(() => sakuraAppStore.rightSidebar.isOpen, (open) => {
   sidebarOpen.value = open
 })
 </script>
 
 <template>
-  <div class="sidebar-toggle" @click="app.toggleSidebar()">
-    <slot :active="app.isSidebarOpen" />
+  <div class="sidebar-toggle" @click="sakuraAppStore.rightSidebar.toggle()">
+    <slot :active="sakuraAppStore.rightSidebar.isOpen" />
   </div>
 </template>
 

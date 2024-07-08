@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { useAppStore } from 'valaxy'
+import { useThemeConfig } from '../../composables'
+import { useSakuraAppStore } from '../../stores'
 
-const app = useAppStore()
+const sakuraAppStore = useSakuraAppStore()
+const themeConfig = useThemeConfig()
 </script>
 
 <template>
   <div
     class="app-container custom-background antialiased"
-    :style="app.isSidebarOpen ? '--_sakura-sidebar-offset: var(--st-c-sidebar-offset)' : ''"
+    :style="themeConfig.sidebarOptions?.offset && sakuraAppStore.rightSidebar.isOpen ? '--_sakura-sidebar-offset: var(--st-c-sidebar-offset)' : ''"
   >
     <slot name="nav-bar" />
 

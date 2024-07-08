@@ -1,31 +1,34 @@
 .sakura-navbar {
   &.active-header {
-    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
+    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
   }
 }
 
 .sakura-page-header {
   .entry-title {
     &::before {
-      content:" {";
+      content: ' {';
       color: var(--st-c-secondary);
-      font-size:1.2em;
-      margin-right:6px;
-      font-family: 'Helvetica'
+      font-size: 1.2em;
+      margin-right: 6px;
+      font-family: 'Helvetica';
     }
     &::after {
-      content:"}";
+      content: '}';
       color: var(--st-c-secondary);
-      font-size:1.2em;
-      margin-left:6px;
-      font-family: 'Helvetica'
+      font-size: 1.2em;
+      margin-left: 6px;
+      font-family: 'Helvetica';
     }
   }
 }
 
 .wl-comment {
   .wl-panel textarea {
-    background-image: var(--st-c-waline-bg-img, var(--st-c-comment-bg)) !important;
+    background-image: var(
+      --st-c-waline-bg-img,
+      var(--st-c-comment-bg)
+    ) !important;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
@@ -41,7 +44,7 @@
     width: 90%;
     height: 80px;
     border-radius: var(--st-c-rd);
-    background-color: #efefef;
+    background-color: var(--st-c-secondary);
     left: 50%;
     transform: translateX(-50%);
   }
