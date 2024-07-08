@@ -6,4 +6,3 @@ packages:
 
   - packages/valaxy/api
   - packages/valaxy/packages/*
-  - packages/valaxy/scripts
