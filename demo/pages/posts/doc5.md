@@ -1,7 +1,7 @@
 ---
 title: 测试文档5
 tags: [测试, 算法]
-date: 2024-9-20
+date: 2024-09-20
 cover: https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-8ook81.jpg
 ---
 
@@ -36,12 +36,14 @@ function search(nums: number[], target: number): number {
 #### 4 级标题
 
 有序列表
+
 1. First item
 2. Second item
 3. Third item
 4. Fourth item
 
 无序列表
+
 - First item
 - Second item
 - Third item
@@ -49,7 +51,7 @@ function search(nums: number[], target: number): number {
 
 ## katex 测试
 
-正态分布的概率密度函数均值为 $\mu$  方差为 $\sigma^2$ (或标准差 $\sigma$ )，是高斯函数的一个实例：
+正态分布的概率密度函数均值为 $\mu$ 方差为 $\sigma^2$ (或标准差 $\sigma$ )，是高斯函数的一个实例：
 
 $$f(x;\mu,\sigma)=\frac{1}{\sigma\sqrt{2\pi}} \exp \left( -\frac{(x- \mu)^2}{2\sigma^2} \right)$$
 

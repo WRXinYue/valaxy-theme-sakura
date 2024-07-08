@@ -3,13 +3,16 @@
 	url = https://github.com/valaxyjs/valaxy-addon-live2d.git
 [submodule "packages/valaxy-addon-git-log"]
 	path = packages/valaxy-addon-git-log
-	url = https://github.com/valaxyjs/valaxy-addon-git-log
+	url = https://github.com/valaxyjs/valaxy-addon-git-log.git
 [submodule "packages/valaxy-addon-vercount"]
 	path = packages/valaxy-addon-vercount
-	url = https://github.com/valaxyjs/valaxy-addon-vercount
+	url = https://github.com/valaxyjs/valaxy-addon-vercount.git
 [submodule "packages/valaxy-addon-hitokoto"]
 	path = packages/valaxy-addon-hitokoto
-	url = https://github.com/valaxyjs/valaxy-addon-hitokoto
+	url = https://github.com/valaxyjs/valaxy-addon-hitokoto.git
 # [submodule "packages/valaxy-addon-holidays"]
 # 	path = packages/valaxy-addon-holidays
 # 	url = https://github.com/wrxinyue/valaxy-addon-holidays.git
+[submodule "packages/valaxy"]
+	path = packages/valaxy
+	url = https://github.com/YunYouJun/valaxy.git

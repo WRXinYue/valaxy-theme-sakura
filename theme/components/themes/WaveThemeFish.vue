@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { onMounted, watch } from 'vue'
 import { useCssVar } from '@vueuse/core'
-import { isDark } from 'valaxy'
+import { isDark } from '../../client'
 
 const props = withDefaults(defineProps<{
   color?: string

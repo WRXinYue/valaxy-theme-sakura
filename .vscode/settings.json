@@ -45,6 +45,9 @@
   "[scss]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
   // Enable eslint for all supported languages
   "eslint.validate": [
     "javascript",
