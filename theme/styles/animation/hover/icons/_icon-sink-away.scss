@@ -6,13 +6,14 @@
 
 	100% {
 		opacity: 0;
+
 		@include prefixed(transform, translateY(1em));
 	}
 }
 
 /* Icon Sink Away */
 @mixin icon-sink-away {
-	@include hacks();
+	@include hacks;
 
 	.hvr-icon {
 		@include prefixed(transform, translateZ(0));
@@ -23,7 +24,6 @@
 	&:hover,
 	&:focus,
 	&:active {
-
 		.hvr-icon {
 			@include prefixed(animation-name, #{$nameSpace}-icon-sink-away);
 			@include prefixed(animation-timing-function, ease-out);

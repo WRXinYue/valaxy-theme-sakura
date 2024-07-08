@@ -12,12 +12,13 @@
 
 @mixin blink {
   @include prefixed(animation-name, #{$nameSpace}-blink);
+
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
 
 @if $includeClasses {
 	.#{$nameSpace}-blink {
-		@include blink();
+		@include blink;
 	}
 }

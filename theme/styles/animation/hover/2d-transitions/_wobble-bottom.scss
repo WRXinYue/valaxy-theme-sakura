@@ -26,7 +26,7 @@
 }
 
 @mixin wobble-bottom {
-	@include hacks();
+	@include hacks;
 	@include prefixed(transform-origin, 100% 0);
 
 	&:hover,

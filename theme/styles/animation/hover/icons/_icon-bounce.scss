@@ -1,7 +1,7 @@
 /* Icon Bounce */
 
 @mixin icon-bounce {
-	@include hacks();
+	@include hacks;
 	@include prefixed(transition-duration, $mediumDuration);
 
 	.hvr-icon {
@@ -14,7 +14,6 @@
 	&:hover,
 	&:focus,
 	&:active {
-
 		.hvr-icon {
 			@include prefixed(transform, scale(1.5));
 			@include prefixed(transition-timing-function, cubic-bezier(.47,2.02,.31,-0.36));

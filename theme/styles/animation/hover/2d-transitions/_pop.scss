@@ -6,7 +6,7 @@
 }
 
 @mixin pop {
-	@include hacks();
+	@include hacks;
 
 	&:hover,
 	&:focus,

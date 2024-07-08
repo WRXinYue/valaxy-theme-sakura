@@ -3,9 +3,11 @@
 	0% {
 		@include prefixed(transform, translateY(6px));
 	}
+
 	50% {
 		@include prefixed(transform, translateY(2px));
 	}
+
 	100% {
 		@include prefixed(transform, translateY(6px));
 	}
@@ -18,7 +20,7 @@
 }
 
 @mixin icon-hang {
-	@include hacks();
+	@include hacks;
 	@include prefixed(transition-duration, $mediumDuration);
 
 	.hvr-icon {
@@ -28,7 +30,6 @@
 	&:hover,
 	&:focus,
 	&:active {
-
 		.hvr-icon {
 			@include prefixed(animation-name, "#{$nameSpace}-icon-hang-sink, #{$nameSpace}-icon-hang");
 			@include prefixed(animation-duration, ".3s, 1.5s");

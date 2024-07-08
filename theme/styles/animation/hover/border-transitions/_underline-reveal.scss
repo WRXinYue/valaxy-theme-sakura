@@ -2,11 +2,12 @@
 @mixin underline-reveal {
 	$duration: $mediumDuration;
 
-	@include hacks();
+	@include hacks;
+
 	position: relative;
 	overflow: hidden;
 
-	&:before {
+	&::before {
 		content: "";
 		position: absolute;
 		z-index: -1;
@@ -15,6 +16,7 @@
 		bottom: 0;
 		background: $activeColor;
 		height: 4px;
+
 		@include prefixed(transform, translateY(4px));
 		@include prefixed(transition-property, transform);
 		@include prefixed(transition-duration, $duration);
@@ -24,8 +26,7 @@
 	&:hover,
 	&:focus,
 	&:active {
-
-		&:before {
+		&::before {
 			@include prefixed(transform, translateY(0));
 		}
 	}

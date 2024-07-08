@@ -3,9 +3,11 @@
 	0% {
 		@include prefixed(transform, translateY(-8px));
 	}
+
 	50% {
 		@include prefixed(transform, translateY(-4px));
 	}
+
 	100% {
 		@include prefixed(transform, translateY(-8px));
 	}
@@ -18,7 +20,7 @@
 }
 
 @mixin bob {
-	@include hacks();
+	@include hacks;
 
 	&:hover,
 	&:focus,

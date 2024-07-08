@@ -2,7 +2,7 @@
 @mixin icon-rotate {
 	$duration: $mediumDuration;
 
-	@include hacks();
+	@include hacks;
 	@include prefixed(transition-duration, $duration);
 
 	.hvr-icon {
@@ -15,7 +15,6 @@
 	&:hover,
 	&:focus,
 	&:active {
-
 		.hvr-icon {
 			@include prefixed(transform, rotate(20deg));
 		}

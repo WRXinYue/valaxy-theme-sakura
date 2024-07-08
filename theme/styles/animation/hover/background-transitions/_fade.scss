@@ -1,7 +1,9 @@
 /* Fade */
 @mixin fade {
-	@include hacks();
+	@include hacks;
+
 	overflow: hidden;
+
 	@include prefixed(transition-duration, $mediumDuration);
 	@include prefixed(transition-property, "color, background-color");
 

@@ -41,25 +41,27 @@ const props = defineProps<{
     }
   }
 
-  &:before {
+  &::before {
     @include glitch-common;
+
     left: -1px;
     text-shadow: 1px 0 var(--st-c-brand);
   }
 
-  &:after {
+  &::after {
     @include glitch-common;
+
     left: 1px;
     text-shadow: -1px 0 var(--st-c-secondary);
   }
 
   &:hover {
-    &:before {
+    &::before {
       text-shadow: 4px 0 var(--st-c-brand);
       animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
     }
 
-    &:after {
+    &::after {
       text-shadow: -4px 0 var(--st-c-secondary);
       animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse;
     }

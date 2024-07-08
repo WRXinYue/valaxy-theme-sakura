@@ -8,6 +8,7 @@
 .sakura-aside {
   position: sticky;
   top: var(--st-c-navbar-height);
+
   // width: var(--st-c-aside-width);
   max-height: calc(100vh - var(--st-c-navbar-height));
   transition:

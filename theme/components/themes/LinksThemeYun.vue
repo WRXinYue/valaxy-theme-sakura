@@ -45,7 +45,6 @@ const { data } = useLinkData(props.links, props.random)
     text-align: center;
     justify-content: center;
     flex-wrap: wrap;
-
     padding-left: 0;
   }
 

@@ -10,6 +10,7 @@
 
 @mixin slide-up {
   @include prefixed(animation-name, #{$nameSpace}-slide-up);
+
   animation-duration: 0.75s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;

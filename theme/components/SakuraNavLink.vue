@@ -49,7 +49,7 @@ onMounted(() => {
   <nav class="sakura-nav-lick">
     <template v-for="(item, i) in navLinkItems" :key="i">
       <SakuraNavLinkItem :link="item.link" :icon="item.icon" :text="item.text" :submenu="item.submenu" />
-      <span v-if="i !== (navbar?.length || themeConfig.navbar.length) - 1" class="mr-3 ml-3" />
+      <span v-if="i !== (navbar?.length || themeConfig.navbar.length) - 1" class="ml-3 mr-3" />
     </template>
 
     <div id="marker" />
@@ -63,7 +63,6 @@ onMounted(() => {
   display: none;
   height: 100%;
   font-size: 0.875rem;
-  line-height: 1.25rem;
   color: rgb(107 114 128 / var(--un-text-opacity));
   line-height: 1.25rem;
   transform: translateX(0);

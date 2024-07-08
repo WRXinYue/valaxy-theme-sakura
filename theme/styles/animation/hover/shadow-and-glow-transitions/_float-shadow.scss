@@ -1,11 +1,13 @@
 /* Float Shadow */
 @mixin float-shadow {
-	@include hacks();
+	@include hacks;
+
 	position: relative;
+
 	@include prefixed(transition-duration, $mediumDuration);
 	@include prefixed(transition-property, transform);
 
-	&:before {
+	&::before {
 	  pointer-events: none;
 	  position: absolute;
 	  z-index: -1;
@@ -15,8 +17,9 @@
 	  height: 10px;
 	  width: 90%;
 	  opacity: 0;
-	  background: -webkit-radial-gradient(center, ellipse, rgba(0,0,0,.35) 0%, rgba(0, 0, 0, 0) 80%);
+	  background: radial-gradient(center, ellipse, rgba(0,0,0,.35) 0%, rgba(0, 0, 0, 0) 80%);
 	  background: radial-gradient(ellipse at center, rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 80%); /* W3C */
+
 		@include prefixed(transition-duration, $mediumDuration);
 		@include prefixed(transition-property, "transform, opacity");
 	}
@@ -26,8 +29,9 @@
 	&:active {
 		@include prefixed(transform, translateY(-5px)); /* move the element up by 5px */
 
-		&:before {
+		&::before {
 			opacity: 1;
+
 			@include prefixed(transform, translateY(5px)); /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 		}
 	}

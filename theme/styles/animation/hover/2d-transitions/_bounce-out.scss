@@ -1,6 +1,6 @@
 /* Bounce Out */
 @mixin bounce-out {
-	@include hacks();
+	@include hacks;
 	@include prefixed(transition-duration, $slowDuration);
 
 	&:hover,

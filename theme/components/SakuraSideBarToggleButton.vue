@@ -17,19 +17,19 @@ const sidebarOpen = useStorage('sidebarOpen', defaultOpen)
 
 onMounted(() => {
   if (persistence)
-    sakuraAppStore.rightSidebar.isOpen = sidebarOpen.value
+    sakuraAppStore.leftSidebar.isOpen = sidebarOpen.value
 
-  sidebarOpen.value = sakuraAppStore.rightSidebar.isOpen
+  sidebarOpen.value = sakuraAppStore.leftSidebar.isOpen
 })
 
-watch(() => sakuraAppStore.rightSidebar.isOpen, (open) => {
+watch(() => sakuraAppStore.leftSidebar.isOpen, (open) => {
   sidebarOpen.value = open
 })
 </script>
 
 <template>
-  <div class="sidebar-toggle" @click="sakuraAppStore.rightSidebar.toggle()">
-    <slot :active="sakuraAppStore.rightSidebar.isOpen" />
+  <div class="sidebar-toggle" @click="sakuraAppStore.leftSidebar.toggle()">
+    <slot :active="sakuraAppStore.leftSidebar.isOpen" />
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 /* Icon Grow */
 @mixin icon-grow {
-	@include hacks();
+	@include hacks;
 	@include prefixed(transition-duration, $mediumDuration);
 
 	.hvr-icon {
@@ -13,7 +13,6 @@
 	&:hover,
 	&:focus,
 	&:active {
-
 		.hvr-icon {
 			@include prefixed(transform, scale(1.3) translateZ(0));
 		}

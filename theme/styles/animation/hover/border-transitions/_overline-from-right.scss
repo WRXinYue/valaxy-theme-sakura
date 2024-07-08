@@ -2,11 +2,12 @@
 @mixin overline-from-right {
 	$duration: $mediumDuration;
 
-	@include hacks();
+	@include hacks;
+
 	position: relative;
 	overflow: hidden;
 
-	&:before {
+	&::before {
 		content: "";
 		position: absolute;
 		z-index: -1;
@@ -15,6 +16,7 @@
 		top: 0;
 		background: $activeColor;
 		height: 4px;
+
 		@include prefixed(transition-property, "left");
 		@include prefixed(transition-duration, $duration);
 		@include prefixed(transition-timing-function, ease-out);
@@ -23,8 +25,7 @@
 	&:hover,
 	&:focus,
 	&:active {
-
-		&:before {
+		&::before {
 			left: 0;
 		}
 	}

@@ -64,7 +64,7 @@ const props = defineProps(['class'])
   grid-template-columns: 0 1fr 0;
   display: grid;
   grid-template-rows: 1fr;
-  gap: 0px 12px;
+  gap: 0 12px;
 
   @include screen('md') {
     grid-template-columns: 250px 1fr 250px;
@@ -75,7 +75,7 @@ const props = defineProps(['class'])
   grid-template-columns: 0 1fr;
   display: grid;
   grid-template-rows: 1fr;
-  gap: 0px 12px;
+  gap: 0 12px;
 
   @include screen('md') {
     grid-template-columns: 330px 1fr;
@@ -86,7 +86,7 @@ const props = defineProps(['class'])
   grid-template-columns: 1fr 0;
   display: grid;
   grid-template-rows: 1fr;
-  gap: 0px 12px;
+  gap: 0 12px;
 
   @include screen('md') {
     grid-template-columns: 1fr 330px;
@@ -97,7 +97,7 @@ const props = defineProps(['class'])
   grid-template-columns: 1fr;
   display: grid;
   grid-template-rows: 1fr;
-  gap: 0px;
+  gap: 0;
 
   @include screen('md') {
     grid-template-columns: 1fr;

@@ -41,10 +41,7 @@ const banner = computed(() => props.banner || themeConfig.value.banner)
   .banner-style::before {
     content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     background-attachment: fixed
   }
 
@@ -53,11 +50,11 @@ const banner = computed(() => props.banner || themeConfig.value.banner)
   }
 
   .banner-style.filter-grid::before {
-    background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/grid.png)
+    background-image: url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/grid.png")
   }
 
   .banner-style.filter-dot::before {
-    background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/dot.gif);
+    background-image: url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/dot.gif");
   }
 }
 </style>

@@ -58,7 +58,7 @@ article {
     color: var(--st-c-text-secondary);
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     margin: 0 20px;
     border-radius: 0;
     box-shadow: none;

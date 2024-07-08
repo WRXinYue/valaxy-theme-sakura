@@ -60,9 +60,9 @@
   }
 }
 
-/*Shrinking for mobile*/
+/* Shrinking for mobile */
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .waves {
     height: 40px;
     min-height: 40px;

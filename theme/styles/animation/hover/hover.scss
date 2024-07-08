@@ -15,694 +15,792 @@
 
 /* 2D TRANSITIONS */
 @import "2d-transitions/grow";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-grow {
-		@include grow();
+		@include grow;
 	}
 }
 
 @import "2d-transitions/shrink";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-shrink {
-		@include shrink();
+		@include shrink;
 	}
 }
 
 @import "2d-transitions/pulse";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-pulse {
-		@include pulse();
+		@include pulse;
 	}
 }
 
 @import "2d-transitions/pulse-grow";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-pulse-grow {
-		@include pulse-grow();
+		@include pulse-grow;
 	}
 }
 
 @import "2d-transitions/pulse-shrink";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-pulse-shrink {
-		@include pulse-shrink();
+		@include pulse-shrink;
 	}
 }
 
 @import "2d-transitions/push";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-push {
-		@include push();
+		@include push;
 	}
 }
 
 @import "2d-transitions/pop";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-pop {
-		@include pop();
+		@include pop;
 	}
 }
 
 @import "2d-transitions/bounce-in";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-bounce-in {
-		@include bounce-in();
+		@include bounce-in;
 	}
 }
 
 @import "2d-transitions/bounce-out";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-bounce-out {
-		@include bounce-out();
+		@include bounce-out;
 	}
 }
 
 @import "2d-transitions/rotate";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-rotate {
-		@include rotate();
+		@include rotate;
 	}
 }
 
 @import "2d-transitions/grow-rotate";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-grow-rotate {
-		@include grow-rotate();
+		@include grow-rotate;
 	}
 }
 
 @import "2d-transitions/float";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-float {
-		@include float();
+		@include float;
 	}
 }
 
 @import "2d-transitions/sink";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-sink {
-		@include sink();
+		@include sink;
 	}
 }
 
 @import "2d-transitions/bob";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-bob {
-		@include bob();
+		@include bob;
 	}
 }
 
 @import "2d-transitions/hang";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-hang {
-		@include hang();
+		@include hang;
 	}
 }
 
 @import "2d-transitions/skew";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-skew {
-		@include skew();
+		@include skew;
 	}
 }
 
 @import "2d-transitions/skew-forward";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-skew-forward {
-		@include skew-forward();
+		@include skew-forward;
 	}
 }
 
 @import "2d-transitions/skew-backward";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-skew-backward {
-	    @include skew-backward();
+	    @include skew-backward;
 	}
 }
 
 @import "2d-transitions/wobble-vertical";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-wobble-vertical {
-		@include wobble-vertical();
+		@include wobble-vertical;
 	}
 }
 
 @import "2d-transitions/wobble-horizontal";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-wobble-horizontal {
-		@include wobble-horizontal();
+		@include wobble-horizontal;
 	}
 }
 
 @import "2d-transitions/wobble-to-bottom-right";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-wobble-to-bottom-right {
-	    @include wobble-to-bottom-right();
+	    @include wobble-to-bottom-right;
 	}
 }
 
 @import "2d-transitions/wobble-to-top-right";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-wobble-to-top-right {
-	    @include wobble-to-top-right();
+	    @include wobble-to-top-right;
 	}
 }
 
 @import "2d-transitions/wobble-top";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-wobble-top {
-		@include wobble-top();
+		@include wobble-top;
 	}
 }
 
 @import "2d-transitions/wobble-bottom";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-wobble-bottom {
-		@include wobble-bottom();
+		@include wobble-bottom;
 	}
 }
 
 @import "2d-transitions/wobble-skew";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-wobble-skew {
-	    @include wobble-skew();
+	    @include wobble-skew;
 	}
 }
 
 @import "2d-transitions/buzz";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-buzz {
-	    @include buzz();
+	    @include buzz;
 	}
 }
 
 @import "2d-transitions/buzz-out";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-buzz-out {
-	    @include buzz-out();
+	    @include buzz-out;
 	}
 }
 
 @import "2d-transitions/forward";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-forward {
-		@include forward();
+		@include forward;
 	}
 }
 
 @import "2d-transitions/backward";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-backward {
-		@include backward();
+		@include backward;
 	}
 }
 
 /* BACKGROUND TRANSITIONS */
 @import "background-transitions/fade";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-fade {
-		@include fade();
+		@include fade;
 	}
 }
 
 @import "background-transitions/back-pulse";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-back-pulse {
-		@include back-pulse();
+		@include back-pulse;
 	}
 }
 
 @import "background-transitions/sweep-to-right";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-sweep-to-right {
-		@include sweep-to-right();
+		@include sweep-to-right;
 	}
 }
 
 @import "background-transitions/sweep-to-left";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-sweep-to-left {
-		@include sweep-to-left();
+		@include sweep-to-left;
 	}
 }
 
 @import "background-transitions/sweep-to-bottom";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-sweep-to-bottom {
-		@include sweep-to-bottom();
+		@include sweep-to-bottom;
 	}
 }
 
 @import "background-transitions/sweep-to-top";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-sweep-to-top {
-		@include sweep-to-top();
+		@include sweep-to-top;
 	}
 }
 
 @import "background-transitions/bounce-to-right";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-bounce-to-right {
-		@include bounce-to-right();
+		@include bounce-to-right;
 	}
 }
 
 @import "background-transitions/bounce-to-left";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-bounce-to-left {
-		@include bounce-to-left();
+		@include bounce-to-left;
 	}
 }
 
 @import "background-transitions/bounce-to-bottom";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-bounce-to-bottom {
-		@include bounce-to-bottom();
+		@include bounce-to-bottom;
 	}
 }
 
 @import "background-transitions/bounce-to-top";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-bounce-to-top {
-		@include bounce-to-top();
+		@include bounce-to-top;
 	}
 }
 
 @import "background-transitions/radial-out";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-radial-out {
-		@include radial-out();
+		@include radial-out;
 	}
 }
 
 @import "background-transitions/radial-in";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-radial-in {
-		@include radial-in();
+		@include radial-in;
 	}
 }
 
 @import "background-transitions/rectangle-in";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-rectangle-in {
-		@include rectangle-in();
+		@include rectangle-in;
 	}
 }
 
 @import "background-transitions/rectangle-out";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-rectangle-out {
-		@include rectangle-out();
+		@include rectangle-out;
 	}
 }
 
 @import "background-transitions/shutter-in-horizontal";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-shutter-in-horizontal {
-		@include shutter-in-horizontal();
+		@include shutter-in-horizontal;
 	}
 }
 
 @import "background-transitions/shutter-out-horizontal";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-shutter-out-horizontal {
-		@include shutter-out-horizontal();
+		@include shutter-out-horizontal;
 	}
 }
 
 @import "background-transitions/shutter-in-vertical";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-shutter-in-vertical {
-		@include shutter-in-vertical();
+		@include shutter-in-vertical;
 	}
 }
 
 @import "background-transitions/shutter-out-vertical";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-shutter-out-vertical {
-		@include shutter-out-vertical();
+		@include shutter-out-vertical;
 	}
 }
 
 
 /* BORDER TRANSITIONS */
 @import "border-transitions/border-fade";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-border-fade {
-		@include border-fade();
+		@include border-fade;
 	}
 }
 
 @import "border-transitions/hollow";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-hollow {
-		@include hollow();
+		@include hollow;
 	}
 }
 
 @import "border-transitions/trim";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-trim {
-		@include trim();
+		@include trim;
 	}
 }
 
 @import "border-transitions/ripple-out";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-ripple-out {
-		@include ripple-out();
+		@include ripple-out;
 	}
 }
 
 @import "border-transitions/ripple-in";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-ripple-in {
-		@include ripple-in();
+		@include ripple-in;
 	}
 }
 
 @import "border-transitions/outline-out";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-outline-out {
-		@include outline-out();
+		@include outline-out;
 	}
 }
 
 @import "border-transitions/outline-in";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-outline-in {
-		@include outline-in();
+		@include outline-in;
 	}
 }
 
 @import "border-transitions/round-corners";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-round-corners {
-		@include round-corners();
+		@include round-corners;
 	}
 }
 
 @import "border-transitions/underline-from-left";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-underline-from-left {
-		@include underline-from-left();
+		@include underline-from-left;
 	}
 }
 
 @import "border-transitions/underline-from-center";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-underline-from-center {
-		@include underline-from-center();
+		@include underline-from-center;
 	}
 }
 
 @import "border-transitions/underline-from-right";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-underline-from-right {
-		@include underline-from-right();
+		@include underline-from-right;
 	}
 }
 
 @import "border-transitions/overline-from-left";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-overline-from-left {
-		@include overline-from-left();
+		@include overline-from-left;
 	}
 }
 
 @import "border-transitions/overline-from-center";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-overline-from-center {
-		@include overline-from-center();
+		@include overline-from-center;
 	}
 }
 
 @import "border-transitions/overline-from-right";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-overline-from-right {
-		@include overline-from-right();
+		@include overline-from-right;
 	}
 }
 
 @import "border-transitions/reveal";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-reveal {
-		@include reveal();
+		@include reveal;
 	}
 }
 
 @import "border-transitions/underline-reveal";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-underline-reveal {
-		@include underline-reveal();
+		@include underline-reveal;
 	}
 }
 
 @import "border-transitions/overline-reveal";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-overline-reveal {
-		@include overline-reveal();
+		@include overline-reveal;
 	}
 }
 
 
 /* SHADOW/GLOW TRANSITIONS */
 @import "shadow-and-glow-transitions/glow";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-glow {
-		@include glow();
+		@include glow;
 	}
 }
 
 @import "shadow-and-glow-transitions/shadow";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-shadow {
-		@include shadow();
+		@include shadow;
 	}
 }
 
 @import "shadow-and-glow-transitions/grow-shadow";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-grow-shadow {
-		@include grow-shadow();
+		@include grow-shadow;
 	}
 }
 
 @import "shadow-and-glow-transitions/box-shadow-outset";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-box-shadow-outset {
-		@include box-shadow-outset();
+		@include box-shadow-outset;
 	}
 }
 
 @import "shadow-and-glow-transitions/box-shadow-inset";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-box-shadow-inset {
-		@include box-shadow-inset();
+		@include box-shadow-inset;
 	}
 }
 
 @import "shadow-and-glow-transitions/float-shadow";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-float-shadow {
-		@include float-shadow();
+		@include float-shadow;
 	}
 }
 
 @import "shadow-and-glow-transitions/shadow-radial";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-shadow-radial {
-		@include shadow-radial();
+		@include shadow-radial;
 	}
 }
 
 
 /* ICONS */
 @import "icons/icon-back";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-back {
-		@include icon-back();
+		@include icon-back;
 	}
 }
 
 @import "icons/icon-forward";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-forward {
-		@include icon-forward();
+		@include icon-forward;
 	}
 }
 
 @import "icons/icon-down";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-down {
-		@include icon-down();
+		@include icon-down;
 	}
 }
 
 @import "icons/icon-up";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-up {
-		@include icon-up();
+		@include icon-up;
 	}
 }
 
 @import "icons/icon-spin";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-spin {
-		@include icon-spin();
+		@include icon-spin;
 	}
 }
 
 @import "icons/icon-drop";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-drop {
-		@include icon-drop();
+		@include icon-drop;
 	}
 }
 
 @import "icons/icon-fade";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-fade {
-		@include icon-fade();
+		@include icon-fade;
 	}
 }
 
 @import "icons/icon-float-away";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-float-away {
-		@include icon-float-away();
+		@include icon-float-away;
 	}
 }
 
 @import "icons/icon-sink-away";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-sink-away {
-		@include icon-sink-away();
+		@include icon-sink-away;
 	}
 }
 
 @import "icons/icon-grow";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-grow {
-		@include icon-grow();
+		@include icon-grow;
 	}
 }
 
 @import "icons/icon-shrink";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-shrink {
-		@include icon-shrink();
+		@include icon-shrink;
 	}
 }
 
 @import "icons/icon-pulse";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-pulse {
-		@include icon-pulse();
+		@include icon-pulse;
 	}
 }
 
 @import "icons/icon-pulse-grow";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-pulse-grow {
-		@include icon-pulse-grow();
+		@include icon-pulse-grow;
 	}
 }
 
 @import "icons/icon-pulse-shrink";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-pulse-shrink {
-		@include icon-pulse-shrink();
+		@include icon-pulse-shrink;
 	}
 }
 
 @import "icons/icon-push";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-push {
-		@include icon-push();
+		@include icon-push;
 	}
 }
 
 @import "icons/icon-pop";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-pop {
-		@include icon-pop();
+		@include icon-pop;
 	}
 }
 
 @import "icons/icon-bounce";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-bounce {
-		@include icon-bounce();
+		@include icon-bounce;
 	}
 }
 
 @import "icons/icon-rotate";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-rotate {
-		@include icon-rotate();
+		@include icon-rotate;
 	}
 }
 
 @import "icons/icon-grow-rotate";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-grow-rotate {
-		@include icon-grow-rotate();
+		@include icon-grow-rotate;
 	}
 }
 
 @import "icons/icon-float";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-float {
-		@include icon-float();
+		@include icon-float;
 	}
 }
 
 @import "icons/icon-sink";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-sink {
-		@include icon-sink();
+		@include icon-sink;
 	}
 }
 
 @import "icons/icon-bob";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-bob {
-		@include icon-bob();
+		@include icon-bob;
 	}
 }
 
 @import "icons/icon-hang";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-hang {
-		@include icon-hang();
+		@include icon-hang;
 	}
 }
 
 @import "icons/icon-wobble-horizontal";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-wobble-horizontal {
-		@include icon-wobble-horizontal();
+		@include icon-wobble-horizontal;
 	}
 }
 
 @import "icons/icon-wobble-vertical";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-wobble-vertical {
-		@include icon-wobble-vertical();
+		@include icon-wobble-vertical;
 	}
 }
 
 @import "icons/icon-buzz";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-buzz {
-		@include icon-buzz();
+		@include icon-buzz;
 	}
 }
 
 @import "icons/icon-buzz-out";
+
 @if $includeClasses {
 	.#{$nameSpace}-hvr-icon-buzz-out {
-		@include icon-buzz-out();
+		@include icon-buzz-out;
 	}
 }

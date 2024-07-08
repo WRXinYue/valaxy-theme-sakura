@@ -30,6 +30,15 @@ importers:
       eslint-plugin-format:
         specifier: ^0.1.2
         version: 0.1.2(eslint@8.57.0)
+      stylelint:
+        specifier: ^16.6.1
+        version: 16.6.1(typescript@5.5.3)
+      stylelint-config-recommended-vue:
+        specifier: ^1.5.0
+        version: 1.5.0(postcss-html@1.7.0)(stylelint@16.6.1(typescript@5.5.3))
+      stylelint-config-standard-scss:
+        specifier: ^13.1.0
+        version: 13.1.0(postcss@8.4.39)(stylelint@16.6.1(typescript@5.5.3))
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -236,7 +245,7 @@ importers:
         version: 1.8.2
       valaxy:
         specifier: latest
-        version: 0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(rollup@4.18.0)(typescript@5.5.3)
+        version: 0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(postcss@8.4.39)(rollup@4.18.0)(typescript@5.5.3)
     devDependencies:
       '@types/gravatar':
         specifier: ^1.8.6
@@ -290,7 +299,7 @@ importers:
     dependencies:
       '@rollup/pluginutils':
         specifier: ^5.1.0
-        version: 5.1.0(rollup@3.29.4)
+        version: 5.1.0(rollup@4.18.0)
       axios:
         specifier: ^1.7.2
         version: 1.7.2(debug@4.3.5)
@@ -333,7 +342,7 @@ importers:
         version: 2.0.0(sass@1.77.6)(typescript@5.5.3)(vue-tsc@2.0.26(typescript@5.5.3))
       unplugin-vue-router:
         specifier: ^0.10.0
-        version: 0.10.0(rollup@3.29.4)(vue-router@4.4.0(vue@3.4.31(typescript@5.5.3)))(vue@3.4.31(typescript@5.5.3))
+        version: 0.10.0(rollup@4.18.0)(vue-router@4.4.0(vue@3.4.31(typescript@5.5.3)))(vue@3.4.31(typescript@5.5.3))
       vite:
         specifier: ^5.3.3
         version: 5.3.3(@types/node@20.14.10)(sass@1.77.6)
@@ -619,10 +628,10 @@ importers:
         version: 3.6.0
       '@docsearch/js':
         specifier: ^3.6.0
-        version: 3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(search-insights@2.14.0)
+        version: 3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)
       valaxy:
         specifier: latest
-        version: 0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(rollup@4.18.0)(typescript@5.5.3)
+        version: 0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(postcss@8.4.39)(rollup@4.18.0)(typescript@5.5.3)
 
   packages/valaxy/packages/valaxy-addon-bangumi:
     dependencies:
@@ -631,7 +640,7 @@ importers:
         version: 0.3.0
       valaxy:
         specifier: latest
-        version: 0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(rollup@4.18.0)(typescript@5.5.3)
+        version: 0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(postcss@8.4.39)(rollup@4.18.0)(typescript@5.5.3)
 
   packages/valaxy/packages/valaxy-addon-components: {}
 
@@ -649,7 +658,7 @@ importers:
     dependencies:
       valaxy:
         specifier: latest
-        version: 0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(rollup@4.18.0)(typescript@5.5.3)
+        version: 0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(postcss@8.4.39)(rollup@4.18.0)(typescript@5.5.3)
 
   packages/valaxy/packages/valaxy-addon-waline:
     dependencies:
@@ -658,7 +667,7 @@ importers:
         version: 3.3.0(typescript@5.5.3)
       valaxy:
         specifier: latest
-        version: 0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(rollup@4.18.0)(typescript@5.5.3)
+        version: 0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(postcss@8.4.39)(rollup@4.18.0)(typescript@5.5.3)
 
   packages/valaxy/packages/valaxy-theme-press:
     dependencies:
@@ -667,7 +676,7 @@ importers:
         version: 3.6.0
       '@docsearch/js':
         specifier: ^3.6.0
-        version: 3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(search-insights@2.14.0)
+        version: 3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)
     devDependencies:
       valaxy:
         specifier: workspace:*
@@ -9009,9 +9018,9 @@ snapshots:
 
   '@docsearch/css@3.6.0': {}
 
-  '@docsearch/js@3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(search-insights@2.14.0)':
+  '@docsearch/js@3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)':
     dependencies:
-      '@docsearch/react': 3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(search-insights@2.14.0)
+      '@docsearch/react': 3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)
       preact: 10.22.1
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -9020,7 +9029,7 @@ snapshots:
       - react-dom
       - search-insights
 
-  '@docsearch/react@3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(search-insights@2.14.0)':
+  '@docsearch/react@3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)':
     dependencies:
       '@algolia/autocomplete-core': 1.9.3(@algolia/client-search@4.24.0)(algoliasearch@4.24.0)(search-insights@2.14.0)
       '@algolia/autocomplete-preset-algolia': 1.9.3(@algolia/client-search@4.24.0)(algoliasearch@4.24.0)
@@ -9028,6 +9037,8 @@ snapshots:
       algoliasearch: 4.24.0
     optionalDependencies:
       '@types/react': 18.3.3
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       search-insights: 2.14.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -10676,19 +10687,6 @@ snapshots:
       '@volar/language-core': 2.4.0-alpha.15
       path-browserify: 1.0.1
       vscode-uri: 3.0.8
-
-  '@vue-macros/common@1.10.4(rollup@3.29.4)(vue@3.4.31(typescript@5.5.3))':
-    dependencies:
-      '@babel/types': 7.24.7
-      '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
-      '@vue/compiler-sfc': 3.4.31
-      ast-kit: 0.12.2
-      local-pkg: 0.5.0
-      magic-string-ast: 0.6.2
-    optionalDependencies:
-      vue: 3.4.31(typescript@5.5.3)
-    transitivePeerDependencies:
-      - rollup
 
   '@vue-macros/common@1.10.4(rollup@4.18.0)(vue@3.4.31(typescript@5.5.3))':
     dependencies:
@@ -17256,27 +17254,6 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  unplugin-vue-router@0.10.0(rollup@3.29.4)(vue-router@4.4.0(vue@3.4.31(typescript@5.5.3)))(vue@3.4.31(typescript@5.5.3)):
-    dependencies:
-      '@babel/types': 7.24.7
-      '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
-      '@vue-macros/common': 1.10.4(rollup@3.29.4)(vue@3.4.31(typescript@5.5.3))
-      ast-walker-scope: 0.6.1
-      chokidar: 3.6.0
-      fast-glob: 3.3.2
-      json5: 2.2.3
-      local-pkg: 0.5.0
-      mlly: 1.7.1
-      pathe: 1.1.2
-      scule: 1.3.0
-      unplugin: 1.11.0
-      yaml: 2.4.5
-    optionalDependencies:
-      vue-router: 4.4.0(vue@3.4.31(typescript@5.5.3))
-    transitivePeerDependencies:
-      - rollup
-      - vue
-
   unplugin-vue-router@0.10.0(rollup@4.18.0)(vue-router@4.4.0(vue@3.4.31(typescript@5.5.3)))(vue@3.4.31(typescript@5.5.3)):
     dependencies:
       '@babel/types': 7.24.7
@@ -17378,7 +17355,7 @@ snapshots:
   valaxy-addon-algolia@0.0.3(valaxy@packages+valaxy+packages+valaxy):
     dependencies:
       '@docsearch/css': 3.6.0
-      '@docsearch/js': 3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(search-insights@2.14.0)
+      '@docsearch/js': 3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)
       valaxy: link:packages/valaxy/packages/valaxy
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -17397,7 +17374,7 @@ snapshots:
 
   valaxy-addon-vercount@0.0.5: {}
 
-  valaxy@0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(rollup@4.18.0)(typescript@5.5.3):
+  valaxy@0.18.10(@babel/parser@7.24.7)(@types/markdown-it@14.1.1)(@types/node@20.14.10)(axios@1.7.2)(focus-trap@7.5.4)(jwt-decode@3.1.2)(postcss@8.4.39)(rollup@4.18.0)(typescript@5.5.3):
     dependencies:
       '@antfu/utils': 0.7.10
       '@ctrl/tinycolor': 4.1.0
@@ -17640,7 +17617,7 @@ snapshots:
   vitepress@1.1.4(@types/node@20.14.10)(axios@1.7.2)(jwt-decode@3.1.2)(nprogress@0.2.0)(postcss@8.4.39)(qrcode@1.5.3)(sass@1.77.6)(typescript@5.5.3):
     dependencies:
       '@docsearch/css': 3.6.0
-      '@docsearch/js': 3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(search-insights@2.14.0)
+      '@docsearch/js': 3.6.0(@algolia/client-search@4.24.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.14.0)
       '@shikijs/core': 1.10.3
       '@shikijs/transformers': 1.10.3
       '@types/markdown-it': 14.1.1

@@ -1,6 +1,6 @@
 /* Icon Back */
 @mixin icon-back {
-	@include hacks();
+	@include hacks;
 	@include prefixed(transition-duration, $fastDuration);
 
 	.hvr-icon {
@@ -13,7 +13,6 @@
 	&:hover,
 	&:focus,
 	&:active {
-
 		.hvr-icon {
 			@include prefixed(transform, translateX(-4px));
 		}

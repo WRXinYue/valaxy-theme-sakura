@@ -1,6 +1,6 @@
 /* Shrink */
 @mixin shrink {
-	@include hacks();
+	@include hacks;
 	@include prefixed(transition-duration, $mediumDuration);
 	@include prefixed(transition-property, transform);
 

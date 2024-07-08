@@ -10,7 +10,7 @@
 }
 
 @mixin push {
-	@include hacks();
+	@include hacks;
 
 	&:hover,
 	&:focus,

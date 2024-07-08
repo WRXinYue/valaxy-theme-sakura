@@ -12,7 +12,7 @@
   background: 0 0;
 }
 
-.prose hr:before {
+.prose hr::before {
   content: '...';
   display: inline-block;
   margin-left: 0.6em;
@@ -61,7 +61,7 @@
   padding-left: 16px;
 }
 
-.prose h2:after {
+.prose h2::after {
   content: '\00B6';
   position: absolute;
   color: var(--st-c-brand);
@@ -71,7 +71,7 @@
   font-size: 1.03em;
 }
 
-.serif .prose h2:after {
+.serif .prose h2::after {
   content: '\00B6';
   position: absolute;
   color: var(--st-c-brand);
@@ -81,21 +81,21 @@
   font-size: 1.13em;
 }
 
-.prose h3:after {
+.prose h3::after {
   content: '#';
   left: 0;
   position: absolute;
   color: var(--st-c-secondary);
 }
 
-.prose h4:after {
+.prose h4::after {
   content: '▌';
   left: 0;
   position: absolute;
   color: var(--st-c-secondary);
 }
 
-.prose h5:after {
+.prose h5::after {
   content: '♯';
   left: 0;
   position: absolute;
@@ -121,7 +121,7 @@
   text-decoration: none;
 }
 
-.prose a:after {
+.prose a::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -134,7 +134,7 @@
   transition: transform 0.25s ease-out;
 }
 
-.prose a:hover:after {
+.prose a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

@@ -134,14 +134,17 @@ function handleMouseEnter(year: number, month: number) {
 .timeline-move, .timeline-enter-active, .timeline-leave-active {
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), opacity 0.5s ease;
 }
+
 .timeline-enter-from, .timeline-leave-to {
   opacity: 0;
   transform: scaleY(0) translateX(40px);
 }
+
 .timeline-enter-to, .timeline-leave-from {
   opacity: 1;
-  transform: scaleY(1) translateX(0px);
+  transform: scaleY(1) translateX(0);
 }
+
 .timeline-leave-active {
   position: absolute;
 }

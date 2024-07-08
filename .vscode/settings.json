@@ -20,6 +20,7 @@
   },
   "svg.preview.background": "editor",
 
+  "stylelint.validate": ["css", "scss", "vue"],
   "prettier.enable": false,
   "editor.formatOnSave": true,
   // Auto fix
@@ -43,7 +44,7 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[scss]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
@@ -64,11 +65,11 @@
     "xml",
     "gql",
     "graphql",
-    "astro",
-    "css",
-    "less",
-    "scss",
-    "pcss",
-    "postcss"
+    "astro"
+    // "css",
+    // "less",
+    // "scss",
+    // "pcss",
+    // "postcss"
   ]
 }

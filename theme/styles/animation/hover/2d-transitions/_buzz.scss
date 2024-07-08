@@ -10,7 +10,7 @@
 }
 
 @mixin buzz {
-	@include hacks();
+	@include hacks;
 
 	&:hover,
 	&:focus,

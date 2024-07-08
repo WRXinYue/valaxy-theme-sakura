@@ -4,32 +4,34 @@
 
 @import "../options";
 @import "../mixins";
-
-
 @import "slide-down";
+
 @if $includeClasses {
 	.#{$nameSpace}-slide-down {
-		@include slide-down();
+		@include slide-down;
 	}
 }
 
 @import "slide-left";
+
 @if $includeClasses {
 	.#{$nameSpace}-slide-left {
-		@include slide-left();
+		@include slide-left;
 	}
 }
 
 @import "slide-right";
+
 @if $includeClasses {
 	.#{$nameSpace}-slide-right {
-		@include slide-right();
+		@include slide-right;
 	}
 }
 
 @import "slide-up";
+
 @if $includeClasses {
 	.#{$nameSpace}-slide-up {
-		@include slide-up();
+		@include slide-up;
 	}
 }

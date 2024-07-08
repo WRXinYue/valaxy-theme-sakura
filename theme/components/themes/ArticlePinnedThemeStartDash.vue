@@ -75,6 +75,7 @@ function toPath(path: string) {
     &::before {
       right: 0;
     }
+
     &::after {
       left: 0;
     }

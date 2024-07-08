@@ -26,7 +26,7 @@
 }
 
 @mixin wobble-horizontal {
-	@include hacks();
+	@include hacks;
 
 	&:hover,
 	&:focus,

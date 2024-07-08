@@ -10,7 +10,7 @@
 }
 
 @mixin pulse {
-	@include hacks();
+	@include hacks;
 
 	&:hover,
 	&:focus,

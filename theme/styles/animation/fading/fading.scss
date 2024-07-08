@@ -4,31 +4,34 @@
 
 @import "../options";
 @import "../mixins";
-
 @import "fade-in-left";
+
 @if $includeClasses {
 	.#{$nameSpace}-fade-in-left {
-		@include fade-in-left();
+		@include fade-in-left;
 	}
 }
 
 @import "fade-in";
+
 @if $includeClasses {
 	.#{$nameSpace}-fade-in {
-		@include fade-in();
+		@include fade-in;
 	}
 }
 
 @import "fade-out-left";
+
 @if $includeClasses {
 	.#{$nameSpace}-fade-out-left {
-		@include fade-out-left();
+		@include fade-out-left;
 	}
 }
 
 @import "fade-up";
+
 @if $includeClasses {
 	.#{$nameSpace}-fade-up {
-		@include fade-up();
+		@include fade-up;
 	}
 }

@@ -7,6 +7,7 @@
 
 	50% {
 		opacity: 0;
+
 		@include prefixed(transform, translateY(-100%));
 	}
 
@@ -18,7 +19,7 @@
 
 /* Icon Drop */
 @mixin icon-drop {
-	@include hacks();
+	@include hacks;
 
 	.hvr-icon {
 		@include prefixed(transform, translateZ(0));
@@ -27,9 +28,9 @@
 	&:hover,
 	&:focus,
 	&:active {
-
 		.hvr-icon {
 			opacity: 0;
+
 			@include prefixed(transition-duration, #{$mediumDuration});
 			@include prefixed(animation-name, #{$nameSpace}-icon-drop);
 			@include prefixed(animation-duration, #{$slowDuration});

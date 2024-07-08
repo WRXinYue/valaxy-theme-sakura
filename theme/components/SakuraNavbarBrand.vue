@@ -58,9 +58,11 @@ const siteConfig = useSiteConfig()
         background-color: var(--st-c-navbar-hover-bg-color);
         color: var(--st-c-navbar-hover-color);
       }
+
       span:nth-of-type(2) {
         animation: rotate 1s linear infinite;
       }
+
       span:not(:first-child) {
         color: var(--st-c-navbar-hover-bg-color);
       }
@@ -68,7 +70,7 @@ const siteConfig = useSiteConfig()
   }
 
   .moe-mashiro {
-    font-family: 'Moe-Mashiro', sans-serif;
+    font-family: Moe-Mashiro, sans-serif;
   }
 }
 </style>

@@ -42,7 +42,7 @@
 }
 
 @mixin buzz-out {
-	@include hacks();
+	@include hacks;
 
 	&:hover,
 	&:focus,

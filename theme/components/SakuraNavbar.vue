@@ -62,7 +62,7 @@ onUnmounted(() => {
           v-if="themeConfig.sidebarOptions?.position === 'left'"
           :class="!themeConfig.navbarOptions?.showSidebarToggleButtonOnPC && 'md:hidden'"
         >
-          <SakuraHamburger class="mr-4" :active="sakuraAppStore.rightSidebar.isOpen" @click="sakuraAppStore.rightSidebar.toggle" />
+          <SakuraHamburger class="mr-4" :active="sakuraAppStore.leftSidebar.isOpen" @click="sakuraAppStore.leftSidebar.toggle" />
         </div>
 
         <SakuraNavbarBrand :favicon="favicon ?? themeConfig.favicon" :navbar-title="title" />
@@ -77,7 +77,7 @@ onUnmounted(() => {
       <div flex>
         <SakuraToggleTheme mr-2 />
         <SakuraToggleLocale mr-2 />
-        <div v-if="themeConfig.sidebarOptions?.position === 'right'" i-ri-menu-4-fill mr-2 @click="sakuraAppStore.rightSidebar.toggle" />
+        <div v-if="themeConfig.sidebarOptions?.position === 'right'" i-ri-menu-4-fill mr-2 @click="sakuraAppStore.leftSidebar.toggle" />
       </div>
     </slot>
   </header>

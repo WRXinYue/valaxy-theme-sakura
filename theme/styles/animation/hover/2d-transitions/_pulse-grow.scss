@@ -6,7 +6,7 @@
 }
 
 @mixin pulse-grow {
-	@include hacks();
+	@include hacks;
 
 	&:hover,
 	&:focus,

@@ -22,25 +22,25 @@
 // prefix keyframes
 @mixin keyframes($name) {
   @if $webkit == true {
-    @-webkit-keyframes #{$name} {
+    @keyframes #{$name} {
       @content;
     }
   }
 
   @if $moz == true {
-    @-moz-keyframes #{$name} {
+    @keyframes #{$name} {
       @content;
     }
   }
 
   @if $ms == true {
-    @-ms-keyframes #{$name} {
+    @keyframes #{$name} {
       @content;
     }
   }
 
   @if $o == true {
-    @-o-keyframes #{$name} {
+    @keyframes #{$name} {
       @content;
     }
   }

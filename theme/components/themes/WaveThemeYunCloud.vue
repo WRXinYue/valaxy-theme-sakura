@@ -33,6 +33,7 @@ withDefaults(defineProps<{
   left: 0;
   right: 0;
   box-sizing: border-box;
+
   // mix-blend-mode: overlay;
 
   .waves {

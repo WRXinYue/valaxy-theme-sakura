@@ -38,11 +38,11 @@ onMounted(() => {
 
 <template>
   <div>
-    <ValaxyOverlay class="z-1 md:hidden" :show="sakuraAppStore.rightSidebar.isOpen" @click="sakuraAppStore.rightSidebar.close" />
+    <ValaxyOverlay class="z-1 md:hidden" :show="sakuraAppStore.leftSidebar.isOpen" @click="sakuraAppStore.leftSidebar.close" />
 
     <aside
       class="sakura-sidebar inset-y-0 overflow-y-auto transition"
-      :class="[sakuraAppStore.rightSidebar.isOpen && 'open', position]"
+      :class="[sakuraAppStore.leftSidebar.isOpen && 'open', position]"
       text="center" bg="contain no-repeat"
     >
       <slot>

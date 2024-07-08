@@ -1,6 +1,6 @@
 /* Round Corners */
 @mixin round-corners {
-	@include hacks();
+	@include hacks;
 	@include prefixed(transition-duration, $mediumDuration);
 	@include prefixed(transition-property, border-radius);
 

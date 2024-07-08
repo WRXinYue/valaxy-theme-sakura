@@ -50,17 +50,17 @@ function cancelHideDropdown() {
       v-if="submenu?.length"
       v-show="isDropdownVisible"
       :class="isDropdownVisible ? animIn : animOut"
-      class="min-w-20 w-auto h-auto z-3 absolute"
+      class="absolute z-3 h-auto min-w-20 w-auto"
       @mouseenter="showDropdown"
       @mouseleave="scheduleHideDropdown"
     >
       <ul
         id="dropdownNavbar"
         aria-labelledby="dropdownLargeButton"
-        class="rounded bg-$st-c-bg-nav mt-3 px-0"
+        class="mt-3 rounded bg-$st-c-bg-nav px-0"
       >
-        <li v-for="subitem in submenu" :key="subitem.text" class="justify-center flex">
-          <AppLink :to="subitem.link" rel="noopener" class="sakura-navbar-link-item flex items-center mx-2">
+        <li v-for="subitem in submenu" :key="subitem.text" class="flex justify-center">
+          <AppLink :to="subitem.link" rel="noopener" class="sakura-navbar-link-item mx-2 flex items-center">
             <div :class="icon" class="mr-0.5" />
             <span truncate py-2>
               {{ subitem.text }}
@@ -74,11 +74,11 @@ function cancelHideDropdown() {
 
 <style lang="scss">
 #dropdownNavbar {
-  box-shadow: 0 1px 40px -8px rgba(0,0,0,.5);
+  box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
 }
 
 #dropdownNavbar::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 4px;
   left: 50%;

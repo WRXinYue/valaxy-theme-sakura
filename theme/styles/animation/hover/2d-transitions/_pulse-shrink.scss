@@ -6,7 +6,7 @@
 }
 
 @mixin pulse-shrink {
-	@include hacks();
+	@include hacks;
 
 	&:hover,
 	&:focus,

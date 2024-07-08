@@ -20,7 +20,7 @@
 }
 
 @mixin hacks() {
-	@include forceBlockLevel();
-	@include hardwareAccel();
-	@include improveAntiAlias();
+	@include forceBlockLevel;
+	@include hardwareAccel;
+	@include improveAntiAlias;
 }

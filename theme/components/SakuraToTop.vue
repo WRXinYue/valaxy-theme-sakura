@@ -62,13 +62,16 @@ onUnmounted(() => {
   transition: top 0.5s ease-in-out;
   animation: float 2s ease-in-out infinite;
 }
+
 @keyframes float {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-6px);
   }
+
   100% {
     transform: translateY(0);
   }

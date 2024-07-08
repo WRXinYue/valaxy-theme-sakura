@@ -12,6 +12,7 @@
 
 @mixin fade-up {
   @include prefixed(animation-name, #{$nameSpace}-fade-up);
+
   animation-duration: 1s;
   animation-fill-mode: both;
 }

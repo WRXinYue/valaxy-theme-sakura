@@ -1,6 +1,6 @@
 /* Grow Rotate */
 @mixin grow-rotate {
-	@include hacks();
+	@include hacks;
 	@include prefixed(transition-duration, $mediumDuration);
 	@include prefixed(transition-property, transform);
 

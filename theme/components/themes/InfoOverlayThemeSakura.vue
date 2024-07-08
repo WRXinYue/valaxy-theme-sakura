@@ -49,8 +49,8 @@ function nextMedia() {
       </slot>
 
       <slot name="social">
-        <div class="flex justify-between mx-5 mt-4">
-          <img class="icon" cursor-pointer rotate-180 src="../../assets/next-b.svg" alt="Previous media" @click="prevMedia">
+        <div class="mx-5 mt-4 flex justify-between">
+          <img class="icon" rotate-180 cursor-pointer src="../../assets/next-b.svg" alt="Previous media" @click="prevMedia">
           <a v-for="s in siteConfig.social" :key="s.name" :style="{ '--st-c-icon': s.color }" class="icon" :href="s.link" aria-label="icon" target="_blank">
             <div :class="[s.icon]" />
           </a>
@@ -75,7 +75,7 @@ function nextMedia() {
     color: white;
     border-radius: 1rem;
     padding: 1rem 0.75rem;
-    background: hsla(0, 0% , 0%, 0.3);
+    background: hsla(0deg, 0%, 0%, 0.3);
 
     @include screen('md') {
       min-width: 500px;
@@ -90,7 +90,7 @@ function nextMedia() {
   }
 }
 
-.sakura-background-display .default-wallpaper{
+.sakura-background-display .default-wallpaper {
   background: linear-gradient(45deg, var(--st-c-brand), var(--st-c-secondary));
   background-size: 600% 600%;
   animation: GradientBackground 10s ease infinite;
@@ -108,5 +108,5 @@ function nextMedia() {
   100% {
     background-position: 0% 50%;
   }
-};
+}
 </style>

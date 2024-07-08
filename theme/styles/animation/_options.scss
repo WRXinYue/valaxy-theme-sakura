@@ -1,43 +1,43 @@
 // DEFAULT OPTIONS
 
 // Prefix for Hover class names
-$nameSpace: 'animation' !default;
+$nameSpace: 'animation' !default;DEFAULTOPTIONSPrefixforHoverclassnames$nameSpaceDEFAULTOPTIONSPrefixforHoverclassnames$nameSpace
 
 // Durations
-$fastDuration: .1s !default;
-$mediumDuration: .3s !default;
+$fastDuration: .1s !default;Durations$fastDurationDurations$fastDuration
+$mediumDuration: .3s !default;$mediumDuration
 $slowDuration: .5s !default;
 
 // Colors
-$primaryColor: #e1e1e1 !default;
-$secondaryColor: #666 !default;
+$primaryColor: #e1e1e1 !default;Colors$primaryColorColors$primaryColor
+$secondaryColor: #666 !default;$secondaryColor
 $highlightColor: #ccc !default;
 $activeColor: var(--st-c-hover-bg) !default;
 $shadowColor: rgba(0, 0, 0, .6) !default;
 
 // Speech bubbles options
-$tipWidth: 10px !default;  //the width of the speech bubble tip
-$tipHeight: 10px !default; //the height of the speech bubble tip
-$tipColor: $primaryColor !default;
+$tipWidth: 10px !default;Speechbubblesoptions$tipWidthSpeechbubblesoptions$tipWidth  //the width of the speech bubble tip
+$tipHeight: 10px !default;//thewidthofthespeechbubbletip$tipHeightwidthofthespeechbubbletip$tipHeight //the height of the speech bubble tip
+$tipColor: $primaryColor !default;//theheightofthespeechbubbletip$tipColorheightofthespeechbubbletip$tipColor
 
 // Arrows options
-$spaceBetweenTextAndArrows: 2.2em !default;
+$spaceBetweenTextAndArrows: 2.2em !default;Arrowsoptions$spaceBetweenTextAndArrowsArrowsoptions$spaceBetweenTextAndArrows
 
 // Curl dimensions
-$curlWidth: 25px !default;
-$curlHeight: 25px !default;
+$curlWidth: 25px !default;Curldimensions$curlWidthCurldimensions$curlWidth
+$curlHeight: 25px !default;$curlHeight
 
 // Curl colors
-$revealAreaColor: white !default;    // reveal area behind the curl
-$curlLineColor: #aaa !default;       // crease line
-$curlTransitionColor: #ccc !default;	// color transitioning from crease line to final color
-$curlLastColor: white !default;		// final color of the back of the curl
+$revealAreaColor: white !default;Curlcolors$revealAreaColorCurlcolors$revealAreaColor    // reveal area behind the curl
+$curlLineColor: #aaa !default;revealareabehindthecurl$curlLineColorrevealareabehindthecurl$curlLineColor       // crease line
+$curlTransitionColor: #ccc !default;creaseline$curlTransitionColorcreaseline$curlTransitionColor	// color transitioning from crease line to final color
+$curlLastColor: white !default;colortransitioningfromcreaselinetofinalcolor$curlLastColorcolortransitioningfromcreaselinetofinalcolor$curlLastColor		// final color of the back of the curl
 
 // Browser Prefixes - Which CSS prefixes should be used?
-$webkit: true !default;
-$moz: false !default;
+$webkit: true !default;finalcolorofthebackofthecurlBrowserPrefixesWhichCSSprefixesshouldbeused?$webkitfinalcolorofthebackofthecurlBrowserPrefixesWhichCSSprefixesshouldbeused?$webkit
+$moz: false !default;$moz
 $ms: false !default;
 $o: false !default;
 
 // Compile with or without classes
-$includeClasses: true !default;
+$includeClasses: true !default;Compilewithorwithoutclasses$includeClassesCompilewithorwithoutclasses$includeClasses

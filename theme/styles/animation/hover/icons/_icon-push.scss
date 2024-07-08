@@ -6,7 +6,7 @@
 }
 
 @mixin icon-push {
-	@include hacks();
+	@include hacks;
 	@include prefixed(transition-duration, $mediumDuration);
 
 	.hvr-icon {
@@ -19,7 +19,6 @@
 	&:hover,
 	&:focus,
 	&:active {
-
 		.hvr-icon {
 			@include prefixed(animation-name, #{$nameSpace}-icon-push);
 			@include prefixed(animation-duration, $mediumDuration);

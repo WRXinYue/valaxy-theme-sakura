@@ -1,20 +1,20 @@
 /* Rectangle In */
 @mixin rectangle-in {
-	@include hacks();
+	@include hacks;
+
 	position: relative;
 	background: $activeColor;
+
 	@include prefixed(transition-property, color);
 	@include prefixed(transition-duration, $mediumDuration);
 
-	&:before {
+	&::before {
 		content: "";
 		position: absolute;
 		z-index: -1;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		inset: 0;
 		background: $primaryColor;
+
 		@include prefixed(transform, scale(1));
 		@include prefixed(transition-property, transform);
 		@include prefixed(transition-duration, $mediumDuration);
@@ -26,7 +26,7 @@
 	&:active {
 		color: white;
 
-		&:before {
+		&::before {
 			@include prefixed(transform, scale(0));
 		}
 	}
