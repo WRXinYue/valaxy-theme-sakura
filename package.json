@@ -7,7 +7,6 @@
     "build": "npm run build:demo",
     "build:demo": "npm -C demo run build",
     "build:docs": "pnpm -C docs run build",
-    "build:valaxy": "pnpm -C packages/valaxy run build",
     "ci:publish": "pnpm -r publish --access public --no-git-checks",
     "dev": "npm run demo",
     "demo": "npm -C demo run dev",
@@ -41,11 +40,6 @@
     "valaxy-theme-sakura": "workspace:*",
     "vitest": "^1.6.0",
     "vue-tsc": "2.0.26"
-  },
-  "pnpm": {
-    "hooks": {
-      "afterAllResolved": "pnpm run build:valaxy"
-    }
   },
   "lint-staged": {
     "{packages,demo,scripts}/**/*.{js,ts,vue,json,yml}": [

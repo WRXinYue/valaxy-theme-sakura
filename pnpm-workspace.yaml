@@ -3,7 +3,3 @@ packages:
   - demo
   - docs
   - packages/*
-
-  # - packages/valaxy/**
-  - packages/valaxy/api
-  - packages/valaxy/packages/*

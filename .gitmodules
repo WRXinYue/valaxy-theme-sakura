@@ -13,6 +13,3 @@
 # [submodule "packages/valaxy-addon-holidays"]
 # 	path = packages/valaxy-addon-holidays
 # 	url = https://github.com/wrxinyue/valaxy-addon-holidays.git
-[submodule "packages/valaxy"]
-	path = packages/valaxy
-	url = https://github.com/YunYouJun/valaxy.git

@@ -17,6 +17,6 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.4",
-    "valaxy": "workspace:*"
+    "valaxy": "^0.19.1"
   }
 }

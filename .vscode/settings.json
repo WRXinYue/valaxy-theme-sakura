@@ -21,6 +21,8 @@
   "svg.preview.background": "editor",
 
   "stylelint.validate": ["css", "scss", "vue"],
+
+  // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": true,
   // Auto fix
