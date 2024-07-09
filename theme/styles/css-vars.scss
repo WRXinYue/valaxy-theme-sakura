@@ -7,6 +7,9 @@
   --un-prose-links: var(--st-c-link);
   --un-prose-body: var(--st-c-text);
 
+  // z-index
+  --va-z-overlay: var(--st-z-backdrop);
+
   @include set-css-var-from-map($light);
   @include set-css-var-from-map($common);
   @include set-css-var-from-map($z-index, 'z');

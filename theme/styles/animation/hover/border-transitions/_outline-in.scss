@@ -1,6 +1,8 @@
 /* Outline In */
 @mixin outline-in {
+	/* stylelint-disable-next-line scss/dollar-variable-pattern */
 	$outerBorderWidth: 4px;
+	/* stylelint-disable-next-line scss/dollar-variable-pattern */
 	$innerBorderWidth: 4px;
 
 	@include hacks;
@@ -12,7 +14,7 @@
 		content: '';
 		position: absolute;
 		border: $primaryColor solid $outerBorderWidth;
-		inset: -($outerBorderWidth + $innerBorderWidth) * 2 -($outerBorderWidth + $innerBorderWidth) * 2 -($outerBorderWidth + $innerBorderWidth) * 2 -($outerBorderWidth + $innerBorderWidth) * 2;
+		inset: -($outerBorderWidth + $innerBorderWidth) * 2 - ($outerBorderWidth + $innerBorderWidth) * 2 - ($outerBorderWidth + $innerBorderWidth) * 2 - ($outerBorderWidth + $innerBorderWidth) * 2;
 		opacity: 0;
 
 		@include prefixed(transition-duration, .3s);

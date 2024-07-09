@@ -112,5 +112,7 @@ $dark: (
 ) !default;
 $dark: map.merge((), $dark);
 
-$z-index: () !default;
+$z-index: (
+  'backdrop': 2,
+) !default;
 $z-index: map.merge((), $z-index);
