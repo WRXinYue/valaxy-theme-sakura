@@ -46,6 +46,6 @@
     "valaxy": "^0.19.1",
     "valaxy-addon-hitokoto": "^0.0.1",
     "valaxy-addon-vercount": "^0.0.5",
-    "valaxy-addon-waline": "^0.1.4"
+    "valaxy-addon-waline": "^0.1.5"
   }
 }
