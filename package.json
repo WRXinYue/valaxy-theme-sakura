@@ -21,7 +21,9 @@
     "e2e:ui": "playwright test --ui",
     "e2e:report": "playwright show-report",
     "test": "vitest",
-    "test:e2e": "npm run e2e"
+    "test:e2e": "npm run e2e",
+    "eslint:debug": "eslint --debug .",
+    "eslint:inspect": "npx @eslint/config-inspector"
   },
   "dependencies": {
     "three": "^0.164.1"
@@ -40,6 +42,9 @@
     "valaxy-theme-sakura": "workspace:*",
     "vitest": "^1.6.0",
     "vue-tsc": "2.0.26"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
     "{packages,demo,scripts}/**/*.{js,ts,vue,json,yml}": [
