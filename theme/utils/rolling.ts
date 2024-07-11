@@ -1,10 +1,13 @@
 import type { Router } from 'vue-router'
 import { nextTick } from 'vue'
 import { scrollTo } from 'valaxy'
+import { useSakuraAppStore } from '../stores'
 
-export function toScrollPosition(router: Router, sakura: any) {
+const sakuraAppStore = useSakuraAppStore()
+
+export function toScrollPosition(router: Router) {
   router.afterEach((to, from) => {
-    const savedPosition = sakura.getScrollPosition(to.path)
+    const savedPosition = sakuraAppStore.getScrollPosition(to.path)
 
     if (to.fullPath !== from.fullPath && !to.hash) {
       nextTick(() => {
