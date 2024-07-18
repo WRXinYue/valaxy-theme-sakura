@@ -47,6 +47,7 @@
     "vue-tsc": "2.0.26"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint --fix && pnpm stylelint --fix && pnpm typecheck"
+    "pre-commit": "pnpm lint --fix && pnpm stylelint --fix && pnpm typecheck",
+    "pre-push": "sh scripts/pre-push.sh"
   }
 }
