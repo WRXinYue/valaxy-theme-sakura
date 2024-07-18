@@ -17,6 +17,6 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.4",
-    "valaxy": "^0.19.1"
+    "valaxy": "^0.19.2"
   }
 }

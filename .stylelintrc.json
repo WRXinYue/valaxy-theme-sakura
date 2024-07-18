@@ -8,6 +8,7 @@
     "no-descending-specificity": null,
     "alpha-value-notation": "number",
     "color-function-notation": "legacy",
-    "scss/dollar-variable-empty-line-before": null
+    "scss/dollar-variable-empty-line-before": null,
+    "custom-property-empty-line-before": null
   }
 }
