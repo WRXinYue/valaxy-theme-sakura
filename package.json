@@ -23,7 +23,8 @@
     "test": "vitest",
     "test:e2e": "npm run e2e",
     "eslint:debug": "eslint --debug .",
-    "eslint:inspect": "npx @eslint/config-inspector"
+    "eslint:inspect": "npx @eslint/config-inspector",
+    "postinstall": "npx simple-git-hooks"
   },
   "dependencies": {
     "three": "^0.164.1"
@@ -35,6 +36,8 @@
     "bumpp": "^9.4.1",
     "eslint": "^8.6.0",
     "eslint-plugin-format": "^0.1.2",
+    "lint-staged": "^15.2.7",
+    "simple-git-hooks": "^2.11.1",
     "stylelint": "^16.6.1",
     "stylelint-config-recommended-vue": "^1.5.0",
     "stylelint-config-standard-scss": "^13.1.0",
@@ -43,18 +46,11 @@
     "vitest": "^1.6.0",
     "vue-tsc": "2.0.26"
   },
-  "pnpm": {
-    "hooks": {
-      "afterAllResolved": "npx simple-git-hooks"
-    }
-  },
   "simple-git-hooks": {
-    "pre-push": "pnpm lint-staged",
-    "pre-commit": "pnpm lint && pnpm typecheck"
+    "pre-commit": "pnpm lint-staged & pnpm lint & pnpm typecheck"
   },
   "lint-staged": {
-    "{packages,demo,scripts}/**/*.{js,ts,vue,json,yml}": [
-      "eslint --fix"
-    ]
+    "*": "eslint --fix",
+    "*.{css,scss}": "stylelint --fix"
   }
 }
