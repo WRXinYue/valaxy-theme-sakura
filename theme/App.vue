@@ -31,8 +31,8 @@ onMounted(() => {
     class="sakura-app-navbar"
     :style="sakuraAppStore.leftSidebar.isOpen ? (
       themeConfig.sidebarOptions?.position === 'left'
-        ? '--_sakura-sidebar-offset: var(--st-c-sidebar-offset)'
-        : '--_sakura-sidebar-offset: calc(var(--st-c-sidebar-offset) * -1)'
+        ? '--sakura-private-sidebar-offset: var(--st-c-sidebar-offset)'
+        : '--sakura-private-sidebar-offset: calc(var(--st-c-sidebar-offset) * -1)'
     ) : ''"
   />
   <SakuraSidebarCustom class="sakura-app-sidebar" />

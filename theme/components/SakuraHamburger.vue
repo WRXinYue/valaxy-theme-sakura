@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <button
-    class="mobile_btn" :class="active ? 'mobile_btn-open' : ''" aria-label="mobile navigation" :aria-expanded="active"
+    class="mobile-btn" :class="active ? 'mobile-btn-open' : ''" aria-label="mobile navigation" :aria-expanded="active"
   >
     <!-- TODO: Add more color configurations? -->
     <span :class="active ? 'bg-$st-c-brand' : 'bg-$st-c-accent'" />
@@ -16,7 +16,7 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
-.mobile_btn {
+.mobile-btn {
   width: 20px;
   height: 22px;
   display: flex;
@@ -45,12 +45,12 @@ defineProps<{
   }
 }
 
-.mobile_btn-open {
+.mobile-btn-open {
   transform: rotate(-45deg);
 }
 
-.mobile_btn-open span:nth-child(1),
-.mobile_btn-open span:nth-child(3) {
+.mobile-btn-open span:nth-child(1),
+.mobile-btn-open span:nth-child(3) {
   transform: rotate(-90deg);
 }
 </style>

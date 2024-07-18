@@ -57,7 +57,7 @@ a {
   &.router-link-exact-active {
     color: var(--st-c-text);
     border-left-width: 1px;
-    border-color: var(--fgColor-accent, var(--st-c-secondary));
+    border-color: var(--st-c-secondary);
 
     // &::after {
     //   position: absolute;

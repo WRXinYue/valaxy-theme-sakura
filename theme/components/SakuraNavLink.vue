@@ -63,7 +63,7 @@ onMounted(() => {
   display: none;
   height: 100%;
   font-size: 0.875rem;
-  color: rgb(107 114 128 / var(--un-text-opacity));
+  color: rgba(107, 114, 128, var(--un-text-opacity));
   line-height: 1.25rem;
   transform: translateX(0);
 

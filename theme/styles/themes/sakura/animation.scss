@@ -1,7 +1,9 @@
 @use '../../animation/slide/slide.scss' as *;
 
 .sakura-page-header {
-  @extend .animation-slide-down;
+  @include slide-down;
+  /* stylelint-disable-next-line scss/double-slash-comment-empty-line-before */
+  // @extend .animation-slide-down;
 }
 
 @media (prefers-reduced-motion: no-preference) {

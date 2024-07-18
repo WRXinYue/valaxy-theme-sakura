@@ -93,10 +93,10 @@ function nextMedia() {
 .sakura-background-display .default-wallpaper {
   background: linear-gradient(45deg, var(--st-c-brand), var(--st-c-secondary));
   background-size: 600% 600%;
-  animation: GradientBackground 10s ease infinite;
+  animation: gradient-background 10s ease infinite;
 }
 
-@keyframes GradientBackground {
+@keyframes gradient-background {
   0% {
     background-position: 0% 50%;
   }

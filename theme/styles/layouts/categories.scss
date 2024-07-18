@@ -1,14 +1,21 @@
-@import '../variables';
+@use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .categories-margin-control {
   margin: 0 10px;
 
-  @include responsive-margin(
-    (
-      md: 0 50px,
-      lg: 0 100px,
-      xl: 0 200px,
-      2xl: 0 400px,
-    )
-  );
+  @include screen('md') {
+    margin: 0 50px;
+  }
+
+  @include screen('lg') {
+    margin: 0 100px;
+  }
+
+  @include screen('xl') {
+    margin: 0 200px;
+  }
+
+  @include screen('2xl') {
+    margin: 0 400px;
+  }
 }

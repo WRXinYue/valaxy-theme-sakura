@@ -42,7 +42,7 @@ function cancelHideDropdown() {
 
 <template>
   <ul>
-    <AppLink id="dropdownNavbarLink" :title="text" :to="link" rel="noopener" class="sakura-navbar-link-item" @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown">
+    <AppLink id="dropdown-navbarLink" :title="text" :to="link" rel="noopener" class="sakura-navbar-link-item" @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown">
       <div :class="icon" class="mr-0.5" />
       <span> {{ text }} </span>
     </AppLink>
@@ -55,7 +55,7 @@ function cancelHideDropdown() {
       @mouseleave="scheduleHideDropdown"
     >
       <ul
-        id="dropdownNavbar"
+        id="dropdown-navbar"
         aria-labelledby="dropdownLargeButton"
         class="mt-3 rounded bg-$st-c-bg-nav px-0"
       >
@@ -73,11 +73,11 @@ function cancelHideDropdown() {
 </template>
 
 <style lang="scss">
-#dropdownNavbar {
+#dropdown-navbar {
   box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
 }
 
-#dropdownNavbar::before {
+#dropdown-navbar::before {
   content: '';
   position: absolute;
   top: 4px;
