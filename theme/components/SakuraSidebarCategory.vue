@@ -36,7 +36,7 @@ function getTitle(post: Post | any) {
     </span>
     <button
       tabindex="0" role="button" aria-label="toggle section"
-      class="caret folder-action inline-flex cursor-pointer"
+      class="folder-action caret inline-flex cursor-pointer"
       @click="collapsable = !collapsable"
     >
       <div class="i-fa6-solid-angle-down mr-4 h-3 w-3" :class="collapsable ? 'angle-down' : 'angle-right'" />

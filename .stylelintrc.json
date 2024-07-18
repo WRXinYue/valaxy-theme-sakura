@@ -4,6 +4,7 @@
     "stylelint-config-standard-scss",
     "stylelint-config-recommended-vue/scss"
   ],
+  "ignoreFiles": ["**/styles/animation/**", "**/styles/markdown/prose.scss", "**/dist/**"],
   "rules": {
     "no-descending-specificity": null,
     "alpha-value-notation": "number",

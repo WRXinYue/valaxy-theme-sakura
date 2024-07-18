@@ -253,7 +253,7 @@ export default defineConfig<ThemeConfig>({
 
   vite: {
     optimizeDeps: {
-      include: ['typewriter-effect/dist/core', 'd3'],
+      include: ['typewriter-effect/dist/core', 'd3', 'valaxy-addon-vercount'],
     },
   },
 })

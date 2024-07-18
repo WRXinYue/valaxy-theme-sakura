@@ -62,7 +62,7 @@ const parts = computed(() => {
     <div v-for="items, idx of parts" :key="idx" flex="~ col gap-4">
       <ArticleThemeGrid
         v-for="({ excerpt, date, cover, path, title }, index) of items" :id="`sakura-article-${index * parts.length + idx}`" :key="date" :link="path" :date="date" :src="cover"
-        :title="title" :excerpt="excerpt" class="sakura-article slide-enter" :style="{ '--enter-stage': idx + 1 }"
+        :title="title" :excerpt="excerpt" class="slide-enter sakura-article" :style="{ '--enter-stage': idx + 1 }"
       />
     </div>
   </div>
