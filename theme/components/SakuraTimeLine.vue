@@ -78,7 +78,7 @@ function handleMouseEnter(year: number, month: number) {
 </script>
 
 <template>
-  <div class="post-collapse px-10 lt-sm:px-5 mx-auto">
+  <div class="post-collapse mx-auto px-10 lt-sm:px-5">
     <div w="full" text="center" class="yun-text-light" p="2">
       {{ t('counter.archives', posts.length) }}
     </div>
@@ -131,16 +131,22 @@ function handleMouseEnter(year: number, month: number) {
 </template>
 
 <style lang="scss">
-.timeline-move, .timeline-enter-active, .timeline-leave-active {
-  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), opacity 0.5s ease;
+.timeline-move,
+.timeline-enter-active,
+.timeline-leave-active {
+  transition:
+    transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    opacity 0.5s ease;
 }
 
-.timeline-enter-from, .timeline-leave-to {
+.timeline-enter-from,
+.timeline-leave-to {
   opacity: 0;
   transform: scaleY(0) translateX(40px);
 }
 
-.timeline-enter-to, .timeline-leave-from {
+.timeline-enter-to,
+.timeline-leave-from {
   opacity: 1;
   transform: scaleY(1) translateX(0);
 }
@@ -217,24 +223,24 @@ function handleMouseEnter(year: number, month: number) {
 
 .hover-indicator {
   &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 10px;
-      height: 10px;
-      margin-left: -4px;
-      border-radius: 50%;
-      border: 1px solid var(--st-c-timeline-color);
-      background-color: var(--va-c-bg-light);
-      z-index: 1;
-      transition: background var(--va-transition-duration);
-    }
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    margin-left: -4px;
+    border-radius: 50%;
+    border: 1px solid var(--st-c-timeline-color);
+    background-color: var(--va-c-bg-light);
+    z-index: 1;
+    transition: background var(--va-transition-duration);
+  }
 
-    &:hover {
-      &::before {
-        background: var(--st-c-timeline-color);
-      }
+  &:hover {
+    &::before {
+      background: var(--st-c-timeline-color);
     }
+  }
 }
 
 .circle-indicator::before {

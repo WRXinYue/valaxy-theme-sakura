@@ -1,21 +1,23 @@
-@use "valaxy/client/styles/mixins/index.scss" as *;
-@use "valaxy-theme-sakura/styles/themes/sakura/css-vars.scss" as *;
+@use 'valaxy/client/styles/mixins/index.scss' as *;
+@use 'valaxy-theme-sakura/styles/themes/sakura/css-vars.scss' as *;
 
 :root {
-  --st-c-text-deeper: var(--st-c-brand)
+  --st-c-text-deeper: var(--st-c-brand);
 }
 
 .sakura-navbar {
   position: sticky;
   background: transparent !important;
 
-  &.active-header{
+  &.active-header {
     box-shadow: none;
   }
 }
 
 .sakura-main {
-  min-height: calc(100vh - var(--st-c-footer-height) - var(--st-c-navbar-height));
+  min-height: calc(
+    100vh - var(--st-c-footer-height) - var(--st-c-navbar-height)
+  );
 }
 
 /* -------------------------------------
@@ -106,7 +108,7 @@ a {
     }
   }
 
-  :where(ol,ul):not(:where(.not-prose,.not-prose *)) {
+  :where(ol, ul):not(:where(.not-prose, .not-prose *)) {
     padding-left: 0;
   }
 
@@ -123,9 +125,9 @@ a {
 }
 
 .wave-theme-pg {
-  background-color: #3ABEF9;
+  background-color: #3abef9;
 }
 
 .dark .wave-theme-pg {
-  background-color: #3572EF;
+  background-color: #3572ef;
 }

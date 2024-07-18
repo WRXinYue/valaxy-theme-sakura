@@ -23,20 +23,20 @@ const filteredThemes = computed(() => {
 </script>
 
 <template>
-  <div class="relative my-4 flex-center" flex="~" rounded>
-    <div class="i-ri-search-line absolute text-slate-400 left-0 pl-12" />
+  <div class="flex-center relative my-4" flex="~" rounded>
+    <div class="i-ri-search-line absolute left-0 pl-12 text-slate-400" />
     <input
       v-model="keyword"
       :placeholder="t('gallery.tip')"
-      pl-10 pr-4
-      class="focus:border-purple-500 b-2 w-full h-12"
+
+      class="h-12 w-full b-2 focus:border-purple-500"
       dark="border-dark-200"
       bg="bg-white dark:bg-dark-500"
-      rounded-lg transition
+      rounded-lg pl-10 pr-4 transition
       type="text" name="search"
     >
   </div>
-  <div class="m-0! p-0! sm:grid-cols-1 lg:grid-cols-2 grid" gap="4">
+  <div class="grid lg:grid-cols-2 sm:grid-cols-1 m-0! p-0!" gap="4">
     <div v-for="theme, i in filteredThemes" :key="i" class="w-fulls m-0!">
       <ArticleThemeGrid :title="theme.name" :link="theme.siteExampleUrl" :src="theme.siteImage" :excerpt="theme.desc" height />
     </div>

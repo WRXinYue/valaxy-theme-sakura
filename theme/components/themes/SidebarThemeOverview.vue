@@ -21,10 +21,10 @@ const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar) as un
 </script>
 
 <template>
-  <nav class="sidebar-theme-overview site-link" text-xl>
+  <nav class="site-link sidebar-theme-overview" text-xl>
     <RouterLink v-for="(item, i) in sidebar" :key="i" class="site-link-item" :to="item.link" :title="item.text || t(item.locale || '')">
       <div class="icon" :class="item.icon" />
-      <span text-base ml-1>
+      <span ml-1 text-base>
         <template v-if="item.locale === 'menu.archives'">
           {{ t('menu.archives') }}
           {{ site.postList.length }}
@@ -48,7 +48,7 @@ const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar) as un
 </template>
 
 <style lang="scss">
-@use "valaxy/client/styles/mixins/index.scss" as *;
+@use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sidebar-theme-overview {
   display: flex;

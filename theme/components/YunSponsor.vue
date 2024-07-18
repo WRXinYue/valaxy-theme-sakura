@@ -21,14 +21,14 @@ const sponsorBtnTitle = computed(() => {
       <div i-ri-heart-line />
     </button>
 
-    <div class="qrcode-container qrcode flex-center flex-col" m="y-4" :class="showQr && 'show'">
+    <div class="flex-center qrcode-container qrcode flex-col" m="y-4" :class="showQr && 'show'">
       <div v-if="siteConfig.sponsor.description" class="sponsor-description" mb="4" text="sm">
         {{ siteConfig.sponsor.description }}
       </div>
       <div class="flex justify-around">
         <a
           v-for="method, i in siteConfig.sponsor.methods" :key="i"
-          class="flex-center flex-col animate-iteration-1 animate-fade-in"
+          class="flex-center flex-col animate-fade-in animate-iteration-1"
           :href="method.url" target="_blank"
           :style="`color:${method.color}`"
         >
@@ -41,7 +41,7 @@ const sponsorBtnTitle = computed(() => {
 </template>
 
 <style lang="scss">
-@use "valaxy/client/styles/mixins/index.scss" as *;
+@use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sponsor-button {
   background-color: rgba(255, 255, 255, 0.1);

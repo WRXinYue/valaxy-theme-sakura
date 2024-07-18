@@ -70,11 +70,11 @@ const title = usePostTitle(frontmatter)
       </template>
       <template #main-content>
         <div class="mx-50">
-          <div class="yun-text-light " text="center" p="2">
+          <div class="yun-text-light" text="center" p="2">
             {{ t('counter.tags', Array.from(tags).length) }}
           </div>
 
-          <div class="justify-center items-end" flex="~ wrap" gap="1">
+          <div class="items-end justify-center" flex="~ wrap" gap="1">
             <SakuraLayoutPostTag
               v-for="[key, tag] in Array.from(tags).sort()"
               :key="key"

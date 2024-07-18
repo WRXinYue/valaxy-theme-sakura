@@ -7,6 +7,9 @@ export default antfu(
     formatters: true,
   },
   {
-    ignores: ['**/dist', '**/public', '**/styles/animation', '**/*.md'],
+    ignores: ['**/dist', '**/public', '**/styles/animation', '**/*.md', 'packages/'],
+    rules: {
+      'ts/no-unused-expressions': 'off',
+    },
   },
 )

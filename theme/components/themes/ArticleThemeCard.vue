@@ -13,7 +13,7 @@ const isMounted = useMounted()
 <template>
   <article v-if="isMounted" :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'md:text-right'">
     <SakuraImageCard
-      v-if="post.cover" class="<md:rounded-3 h-230px md:w-430px" :to="post.path" :src="post.cover"
+      v-if="post.cover" class="h-230px md:w-430px <md:rounded-3" :to="post.path" :src="post.cover"
       rotate="5" space="1.1" transition-duration="0.45s"
     />
 

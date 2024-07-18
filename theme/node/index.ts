@@ -83,7 +83,8 @@ export function generateSafelist(themeConfig: ThemeConfig) {
 
   const footerIcon = themeConfig.footer?.icon?.img
 
-  footerIcon && safelist.push(footerIcon)
+  if (footerIcon)
+    safelist.push(footerIcon)
 
   themeConfig.navbar?.forEach((navItem) => {
     if (navItem.icon)

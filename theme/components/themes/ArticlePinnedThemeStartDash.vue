@@ -53,7 +53,9 @@ function toPath(path: string) {
     justify-content: center;
     align-items: center;
     color: #fff;
-    transition: right 0.35s ease, left 0.5s ease;
+    transition:
+      right 0.35s ease,
+      left 0.5s ease;
     z-index: 1;
   }
 

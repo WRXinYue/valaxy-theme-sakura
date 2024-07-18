@@ -25,7 +25,7 @@ const frontmatter = useFrontmatter()
   <div flex="~ <md:col" justify="center" items="center" py="1" :class="{ 'text-$st-c-text-secondary': !cover }">
     <div class="post-time flex items-center">
       <span class="inline-flex-center">
-        <SakuraImageCard to="/about" class="rounded-full h-30px w-30px mr-3px" :src="siteConfig.author.avatar" alt="author image" />
+        <SakuraImageCard to="/about" class="mr-3px h-30px w-30px rounded-full" :src="siteConfig.author.avatar" alt="author image" />
         <span m="l-1">
           {{ siteConfig.author.name }}
         </span>
@@ -44,13 +44,13 @@ const frontmatter = useFrontmatter()
     </div>
 
     <div v-if="frontmatter" class="post-time flex items-center">
-      <span class="posted-time inline-flex-center" :title="t('post.posted') + frontmatter.date">
+      <span class="inline-flex-center posted-time" :title="t('post.posted') + frontmatter.date">
         <div class="inline-block" i-ri-calendar-line />
         <SakuraDate m="l-1" :date="frontmatter.date" />
       </span>
       <span
         v-if="frontmatter.updated && frontmatter.updated !== frontmatter.date"
-        class="edited-time inline-flex-center" :title="t('post.edited') + frontmatter.updated"
+        class="inline-flex-center edited-time" :title="t('post.edited') + frontmatter.updated"
       >
         <span m="x-2">-</span>
         <div i-ri-calendar-2-line />
@@ -63,7 +63,7 @@ const frontmatter = useFrontmatter()
     <div v-if="siteConfig.statistics.enable" class="post-time flex items-center">
       <span
         v-if="frontmatter.wordCount"
-        class="word-count inline-flex-center" :title="t('statistics.word')"
+        class="inline-flex-center word-count" :title="t('statistics.word')"
       >
         <div class="inline-block" i-ri-file-word-line />
         <span m="l-1">{{ frontmatter.wordCount }}</span>
@@ -71,7 +71,7 @@ const frontmatter = useFrontmatter()
 
       <span
         v-if="frontmatter.readingTime"
-        class="reading-time inline-flex-center"
+        class="inline-flex-center reading-time"
         :title="t('statistics.time')"
       >
         <span m="x-2">-</span>

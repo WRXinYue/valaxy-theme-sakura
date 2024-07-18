@@ -17,7 +17,7 @@ const props = defineProps<{
 </template>
 
 <style lang="scss">
-@use "valaxy/client/styles/mixins/index.scss" as *;
+@use 'valaxy/client/styles/mixins/index.scss' as *;
 
 @mixin glitch-common {
   content: attr(data-text);

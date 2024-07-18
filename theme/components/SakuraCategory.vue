@@ -62,7 +62,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <li class="category-list-item inline-flex items-center cursor-pointer">
+  <li class="category-list-item inline-flex cursor-pointer items-center">
     <span class="folder-action inline-flex" @click="collapse = !collapse">
       <div v-if="collapse" i-ri-folder-add-line />
       <div v-else style="color:var(--st-c-primary)" i-ri-folder-reduce-line />

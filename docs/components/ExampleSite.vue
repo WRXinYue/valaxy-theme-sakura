@@ -40,10 +40,10 @@ withDefaults(
 
 <template>
   <a
-    class="rounded flex! flex-col! justify-center! items-center! shadow p-4 hover:shadow-md transition! decoration-none!"
+    class="rounded p-4 shadow flex! flex-col! items-center! justify-center! decoration-none! hover:shadow-md transition!"
     :href="site.url" target="_blank"
   >
-    <img class="shadow flex rounded rounded-full w-15 h-15" :src="site.avatar">
+    <img class="h-15 w-15 flex rounded rounded-full shadow" :src="site.avatar">
     <sub m="t-3" class="block w-20 truncate whitespace-nowrap" text="xs center" :title="site.desc">
       {{ site.name }}
     </sub>

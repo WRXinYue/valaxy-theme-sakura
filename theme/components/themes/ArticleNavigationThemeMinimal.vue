@@ -6,7 +6,7 @@ const [prev, next] = usePrevNext()
 
 <template>
   <div v-if="prev && prev.path" class="py-8">
-    <h2 class="text-xs tracking-wide uppercase text-gray-500">
+    <h2 class="text-xs text-gray-500 tracking-wide uppercase">
       Previous Article
     </h2>
     <div class="link">
@@ -16,7 +16,7 @@ const [prev, next] = usePrevNext()
     </div>
   </div>
   <div v-if="next && next.path" class="py-8">
-    <h2 class="text-xs tracking-wide uppercase text-gray-500">
+    <h2 class="text-xs text-gray-500 tracking-wide uppercase">
       Next Article
     </h2>
     <div class="link">

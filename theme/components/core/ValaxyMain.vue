@@ -70,7 +70,7 @@ onContentUpdated(() => {
     <slot name="main-content">
       <Transition appear>
         <ValaxyMd class="min-w-0" :frontmatter="frontmatter">
-          <div class="prose max-w-none">
+          <div class="max-w-none prose">
             <slot name="main-content-md" />
           </div>
           <slot />

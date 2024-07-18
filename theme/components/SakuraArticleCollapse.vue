@@ -54,7 +54,7 @@ const sortedYears = computed(() => {
     </div>
 
     <div v-for="year in sortedYears" :key="year" m="b-6">
-      <div class="collection-title" m-0 relative>
+      <div class="collection-title" relative m-0>
         <h2 :id="`#archive-year-${year}`" class="archive-year" text="4xl" p="y-2">
           {{ year }}
         </h2>
@@ -64,7 +64,7 @@ const sortedYears = computed(() => {
         v-for="post, j in sortByDate(postListByYear[year], isDesc)" :key="j"
         class="post-item" relative
       >
-        <header class="post-header" flex items-center relative>
+        <header class="post-header" relative flex items-center>
           <div class="post-meta">
             <time v-if="post.date" class="post-time" font="mono" opacity="80">{{
               formatDate(post.date, 'MM-dd') }}

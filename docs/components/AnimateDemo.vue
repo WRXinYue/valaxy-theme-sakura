@@ -47,7 +47,7 @@ function copyToClipboard(text: string) {
         @click="copyToClipboard(element.class)"
       >
         {{ element.name || element.class }}
-        <span class="i-simple-icons-icloud hvr-icon inline-block" />
+        <span class="hvr-icon i-simple-icons-icloud inline-block" />
       </div>
     </div>
   </div>

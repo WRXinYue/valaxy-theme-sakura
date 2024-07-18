@@ -19,12 +19,14 @@ withDefaults(defineProps<{
   color: var(--st-c-text);
   border-radius: 20px;
   padding: 2px 20px;
-  transition: color 0.3s ease-in-out, border-color 0.2s ease-in-out;
+  transition:
+    color 0.3s ease-in-out,
+    border-color 0.2s ease-in-out;
 
-  &:hover, &.clicked {
+  &:hover,
+  &.clicked {
     color: var(--st-c-secondary);
     border-color: var(--st-c-secondary);
   }
-
 }
 </style>

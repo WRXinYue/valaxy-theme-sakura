@@ -39,7 +39,7 @@ function getTitle(post: Post | any) {
       class="caret folder-action inline-flex cursor-pointer"
       @click="collapsable = !collapsable"
     >
-      <div class="w-3 h-3 i-fa6-solid-angle-down mr-4" :class="collapsable ? 'angle-down' : 'angle-right'" />
+      <div class="i-fa6-solid-angle-down mr-4 h-3 w-3" :class="collapsable ? 'angle-down' : 'angle-right'" />
     </button>
   </li>
 
@@ -65,7 +65,8 @@ function getTitle(post: Post | any) {
   transform: rotate(-90deg);
 }
 
-.angle-right, .angle-down {
+.angle-right,
+.angle-down {
   transition: transform 0.15s cubic-bezier(0.9, 0, 0.2, 0);
 }
 </style>

@@ -31,7 +31,8 @@ defineProps<{
     border-radius: 20px;
   }
 
-  span:nth-child(1), span:nth-child(3) {
+  span:nth-child(1),
+  span:nth-child(3) {
     width: 50%;
     align-self: flex-end;
     transform-origin: left;
@@ -42,14 +43,14 @@ defineProps<{
     align-self: flex-start;
     transform-origin: right;
   }
-
 }
 
 .mobile_btn-open {
   transform: rotate(-45deg);
 }
 
-.mobile_btn-open span:nth-child(1), .mobile_btn-open span:nth-child(3) {
+.mobile_btn-open span:nth-child(1),
+.mobile_btn-open span:nth-child(3) {
   transform: rotate(-90deg);
 }
 </style>

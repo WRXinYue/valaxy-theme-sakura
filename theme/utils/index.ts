@@ -2,7 +2,7 @@ import type { RouteLocationNormalizedLoaded } from 'vue-router'
 import noneImg from '../assets/image-404.png'
 
 export function isVideoUrl(url: string) {
-  return /\.(mp4|webm|ogg)$/i.test(url)
+  return /\.(?:mp4|webm|ogg)$/i.test(url)
 }
 
 /**

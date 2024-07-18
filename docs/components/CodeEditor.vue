@@ -41,7 +41,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="language-ts pt-0!" :style="{ height }">
-    <pre class="p-0! m-0! overflow-hidden!">
+    <pre class="m-0! overflow-hidden! p-0!">
       <div ref="editorContainer" class="editor-container" :style="{ height }" />
     </pre>
   </div>

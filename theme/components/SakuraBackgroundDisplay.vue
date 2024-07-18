@@ -39,16 +39,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="sakura-background-display w-full h-100vh">
+  <div class="sakura-background-display h-100vh w-full">
     <template v-if="isCurrentMediaVideo">
-      <video :key="currentWallpaperUrl" class="object-cover block bg-cover w-full h-full" preload="auto" autoplay loop muted>
+      <video :key="currentWallpaperUrl" class="block h-full w-full bg-cover object-cover" preload="auto" autoplay loop muted>
         <source :src="currentWallpaperUrl" type="video/mp4">
         Your browser does not support video tags
       </video>
     </template>
     <template v-else>
-      <img v-if="currentWallpaperUrl" alt="Image Wallpaper" class="w-full h-full object-cover block bg-cover bg-center" :src="currentWallpaperUrl">
-      <div v-else class="default-wallpaper w-full h-full" />
+      <img v-if="currentWallpaperUrl" alt="Image Wallpaper" class="block h-full w-full bg-cover bg-center object-cover" :src="currentWallpaperUrl">
+      <div v-else class="default-wallpaper h-full w-full" />
     </template>
   </div>
 </template>

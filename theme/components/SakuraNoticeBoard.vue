@@ -15,7 +15,7 @@ const text = computed(() => props.text || themeConfig.value.noticeBoard?.message
 </script>
 
 <template>
-  <div v-if="text" class="border border-dashed rounded-$st-c-rd mt-10 mb-5 p-5 flex items-center">
+  <div v-if="text" class="mb-5 mt-10 flex items-center border rounded-$st-c-rd border-dashed p-5">
     <div :class="icon" mr-2 />
     <div v-html="text" />
   </div>

@@ -38,7 +38,7 @@ onMounted(() => {
   <footer v-if="!loading" class="h-$st-c-footer-height" text="center sm" style="color:var(--va-c-text-light)">
     <div v-if="footer.icp" class="icp" p="y-2" v-html="footer.icp" />
 
-    <div class="copyright flex justify-center items-center" p="1">
+    <div class="copyright flex items-center justify-center" p="1">
       <span>
         &copy;
         <template v-if="!isThisYear">

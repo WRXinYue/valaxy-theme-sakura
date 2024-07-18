@@ -42,7 +42,7 @@ function configUpdate(newConfig: any) {
 </script>
 
 <template>
-  <SakuraNavbar class="playground !relative border rounded-1" :title="config.navbarTitle" :invert="true">
+  <SakuraNavbar class="playground border rounded-1 !relative" :title="config.navbarTitle" :invert="true">
     <template #nav-link>
       <SakuraNavLink :navbar="config.navbar" />
     </template>

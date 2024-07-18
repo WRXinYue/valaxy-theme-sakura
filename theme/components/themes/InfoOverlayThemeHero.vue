@@ -7,7 +7,7 @@ const themeConfig = useThemeConfig()
 </script>
 
 <template>
-  <div class="info-overlay-theme-hero max-w-screen-md px-6 md:px-10 2xl:max-w-7xl">
+  <div class="info-overlay-theme-hero max-w-screen-md px-6 2xl:max-w-7xl md:px-10">
     <p class="animation-fade-up" text="2xl md:5xl" style="animation-delay: 200ms;">
       <slot name="intro-text">
         {{ themeConfig.banner.title }}
@@ -26,7 +26,7 @@ const themeConfig = useThemeConfig()
           :type-string="[
             `${siteConfig.description}`,
             `${siteConfig.author.status.message} ${siteConfig.author.status.emoji}`,
-          ]" delete-all loop :pause-for="[3000, 4000]"
+          ]" loop delete-all :pause-for="[3000, 4000]"
         />
       </slot>
     </p>
@@ -37,9 +37,9 @@ const themeConfig = useThemeConfig()
       </slot>
     </p>
     <slot name="social">
-      <ul class="social animation-fade-up grid gap-3" style="animation-delay: 1200ms;">
+      <ul class="animation-fade-up social grid gap-3" style="animation-delay: 1200ms;">
         <li
-          v-for="s in siteConfig.social" :key="s.name" class="border rounded-xl inline-flex p-2 hover:bg-[hsl(0_0%_96.1%)]"
+          v-for="s in siteConfig.social" :key="s.name" class="inline-flex border rounded-xl p-2 hover:bg-[hsl(0_0%_96.1%)]"
           dark="hover:bg-[hsl(0_0%_14.9%)]"
         >
           <a :style="{ '--st-c-icon': s.color }" :class="[s.icon]" class="icon" :href="s.link" aria-label="icon" target="_blank" />

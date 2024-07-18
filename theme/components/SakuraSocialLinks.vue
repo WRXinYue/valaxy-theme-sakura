@@ -6,7 +6,7 @@ const siteConfig = useSiteConfig()
 
 <template>
   <div class="links-of-author">
-    <a v-for="item, i in siteConfig.social" :key="i" class="links-of-author-item sakura-icon-btn" rel="noopener" :href="item.link" :title="item.name" target="_blank" :style="`color:${item.color}`">
+    <a v-for="item, i in siteConfig.social" :key="i" class="sakura-icon-btn links-of-author-item" rel="noopener" :href="item.link" :title="item.name" target="_blank" :style="`color:${item.color}`">
       <div class="icon" :class="item.icon" />
     </a>
   </div>

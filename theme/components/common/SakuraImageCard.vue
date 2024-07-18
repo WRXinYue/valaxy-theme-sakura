@@ -65,13 +65,13 @@ function onError(e: Event) {
 </script>
 
 <template>
-  <div class="sakura-image-card overflow-hidden relative" @mouseover="isHovering = true" @mouseleave="isHovering = false">
+  <div class="sakura-image-card relative overflow-hidden" @mouseover="isHovering = true" @mouseleave="isHovering = false">
     <AppLink :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
-      <img class="object-cover h-full w-full" loading="lazy" :src="props.src || noneImg" :alt="props.alt || 'cover'" :style="imageStyle" @error="onError">
+      <img class="h-full w-full object-cover" loading="lazy" :src="props.src || noneImg" :alt="props.alt || 'cover'" :style="imageStyle" @error="onError">
       <template v-if="overlay">
         <div class="overlay" :style="overlayStyle" />
       </template>
-      <div v-if="$slots.default" class="absolute top-0 w-full h-full">
+      <div v-if="$slots.default" class="absolute top-0 h-full w-full">
         <slot />
       </div>
     </AppLink>

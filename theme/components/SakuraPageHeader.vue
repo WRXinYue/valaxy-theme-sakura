@@ -11,7 +11,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <header class="sakura-page-header xl:pb-10 space-y-1 text-center">
+  <header class="sakura-page-header text-center space-y-1 xl:pb-10">
     <div class="page-banner" :class="cover ? `h-80` : '<xl:max-h-200px mt-$st-c-navbar-height'" :style="cover && `background-image: url(${cover}`">
       <div class="title-container" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
         <h1 class="text-3xl" :class="!cover && 'text-$st-c-text-deep entry-title'">
@@ -23,7 +23,7 @@ const props = defineProps<{
       </div>
     </div>
 
-    <hr class="max-w-[50%] min-w-[40%] m-auto">
+    <hr class="m-auto max-w-[50%] min-w-[40%]">
   </header>
 </template>
 

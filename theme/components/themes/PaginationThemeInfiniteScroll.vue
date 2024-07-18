@@ -31,8 +31,9 @@ function applySlideUpAnimation(entries: IntersectionObserverEntry[], _observer: 
 
       // Preload content before reaching end to ensure smooth user experience
       if (sakura.paginationElementPositionsNumber === sakura.paginationTargets.length - 1
-        && themeConfig.value.pagination?.infiniteScrollOptions?.preload)
+        && themeConfig.value.pagination?.infiniteScrollOptions?.preload) {
         loadMoreContent()
+      }
     }
   })
 }
@@ -81,7 +82,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <nav class="load-more-container flex justify-center mt-20 mb-17">
+  <nav class="load-more-container mb-17 mt-20 flex justify-center">
     <button v-if="sakura.loadMultiple < totalPages" class="load-more-button px-8 py-2" @click="loadMoreContent">
       Previous
     </button>
@@ -99,11 +100,14 @@ onUnmounted(() => {
 .load-more-button {
   border: 1px solid #d6d6d6;
   border-radius: 50px;
-  transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+  transition:
+    color 0.2s ease-out,
+    border 0.2s ease-out,
+    opacity 0.2s ease-out;
 }
 
 .load-more-button:hover {
-  color: #FE9600;
-  border-color: #FE9600;
+  color: #fe9600;
+  border-color: #fe9600;
 }
 </style>

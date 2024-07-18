@@ -9,7 +9,7 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <div class="pt-24px px-20px flex items-center text-$st-c-text">
+  <div class="flex items-center px-20px pt-24px text-$st-c-text">
     <div :class="icon" class="mr-1" /> {{ text }}
   </div>
   <hr v-if="divider">

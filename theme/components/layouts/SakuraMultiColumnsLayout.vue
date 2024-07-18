@@ -4,7 +4,7 @@ const props = defineProps(['class'])
 
 <template>
   <template v-if="$slots.left && ($slots.default || $slots.content) && $slots.right">
-    <div :class="props.class" class="grid-layout-triple-columns container !max-w-screen-2xl lg:px-6 mx-auto pt-$header-height min-w-0">
+    <div :class="props.class" class="grid-layout-triple-columns mx-auto min-w-0 pt-$header-height container !max-w-screen-2xl lg:px-6">
       <aside>
         <slot name="left" />
       </aside>
@@ -20,7 +20,7 @@ const props = defineProps(['class'])
     </div>
   </template>
   <template v-if="$slots.left && ($slots.default || $slots.content) && !$slots.right">
-    <div :class="props.class" class="grid-layout-two-columns-left container !max-w-screen-2xl lg:px-6 mx-auto pt-$header-height min-w-0">
+    <div :class="props.class" class="grid-layout-two-columns-left mx-auto min-w-0 pt-$header-height container !max-w-screen-2xl lg:px-6">
       <aside>
         <slot name="left" />
       </aside>
@@ -33,7 +33,7 @@ const props = defineProps(['class'])
     </div>
   </template>
   <template v-if="$slots.right && ($slots.default || $slots.content) && !$slots.left">
-    <div :class="props.class" class="grid-layout-two-columns-right container !max-w-screen-2xl lg:px-6 mx-auto pt-$header-height min-w-0">
+    <div :class="props.class" class="grid-layout-two-columns-right mx-auto min-w-0 pt-$header-height container !max-w-screen-2xl lg:px-6">
       <div>
         <template v-if="$slots.default">
           <slot />
@@ -46,7 +46,7 @@ const props = defineProps(['class'])
     </div>
   </template>
   <template v-if="($slots.default || $slots.content) && !$slots.left && !$slots.right">
-    <div :class="props.class" class="grid-layout-one-columns container !max-w-screen-2xl lg:px-6 mx-auto pt-$header-height min-w-0">
+    <div :class="props.class" class="grid-layout-one-columns mx-auto min-w-0 pt-$header-height container !max-w-screen-2xl lg:px-6">
       <div>
         <template v-if="$slots.default">
           <slot />

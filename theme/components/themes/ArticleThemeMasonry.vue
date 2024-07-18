@@ -29,13 +29,13 @@ const { link, src, date } = defineProps({
 <template>
   <div>
     <RouterLink
-      border="~ base rounded-lg" block of-hidden duration-500 transition-all class="group" hover="scale-101 shadow-xl z-10"
-      bg-base relative :to="link" :target="target"
+      border="~ base rounded-lg" class="group" hover="scale-101 shadow-xl z-10"
+      bg-base relative block of-hidden transition-all duration-500 :to="link" :target="target"
     >
-      <video v-if="src && isVideoUrl(src)" :src="src" w-full autoplay loop muted playsinline border="b base" />
+      <video v-if="src && isVideoUrl(src)" :src="src" autoplay loop muted playsinline w-full border="b base" />
       <SakuraImageCard v-else :src="src" :to="link" />
 
-      <div class="prose prose-sm p4 m0 pb3 bg-$st-c-bg max-w-none">
+      <div class="prose-sm m0 max-w-none bg-$st-c-bg p4 pb3 prose">
         <slot>
           <template v-if="title">
             <h2 m-0>
@@ -44,7 +44,7 @@ const { link, src, date } = defineProps({
           </template>
           <div v-html="excerpt" />
         </slot>
-        <div op50 text-sm pt2>
+        <div pt2 text-sm op50>
           {{ formatDate(date) }}
         </div>
       </div>

@@ -3,10 +3,10 @@ defineProps<{ cover?: string }>()
 </script>
 
 <template>
-  <div class="card flex-center rounded-$st-c-rd" flex="col" min-h="100px" bg="$va-c-bg-light">
+  <div class="flex-center card rounded-$st-c-rd" flex="col" min-h="100px" bg="$va-c-bg-light">
     <img
       v-if="cover" width="640" height="360"
-      class="object-cover select-none lazy" h="64 md:sm" w="full"
+      class="lazy select-none object-cover" h="64 md:sm" w="full"
       :src="cover"
     >
 

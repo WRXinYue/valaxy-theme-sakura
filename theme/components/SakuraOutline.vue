@@ -33,7 +33,7 @@ const { headers, handleClick } = useOutline()
         </span>
 
         <SakuraOutlineItem
-          class="va-toc relative z-1 css-i18n-toc"
+          class="va-toc css-i18n-toc relative z-1"
           :headers="headers"
           :on-click="handleClick"
           root
@@ -64,7 +64,10 @@ const { headers, handleClick } = useOutline()
   width: 4px;
   height: 18px;
   background-color: var(--st-c-brand);
-  transition: top 0.25s cubic-bezier(0, 1, 0.5, 1), background-color 0.5s, opacity 0.25s;
+  transition:
+    top 0.25s cubic-bezier(0, 1, 0.5, 1),
+    background-color 0.5s,
+    opacity 0.25s;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }

@@ -17,7 +17,7 @@ const banner = computed(() => props.banner || themeConfig.value.banner)
 <template>
   <header class="sakura-banner <md:px-5">
     <template v-if="isMounted">
-      <div class="absolute h-full w-full top-0 overflow-hidden" :class="[banner.style && 'banner-style', banner.style]">
+      <div class="absolute top-0 h-full w-full overflow-hidden" :class="[banner.style && 'banner-style', banner.style]">
         <slot name="background-display" />
 
         <slot name="overlay-bar" />
@@ -42,19 +42,19 @@ const banner = computed(() => props.banner || themeConfig.value.banner)
     content: '';
     position: absolute;
     inset: 0;
-    background-attachment: fixed
+    background-attachment: fixed;
   }
 
   .banner-style.filter-dim::before {
-    background-color: rgba(0, 0, 0, 0.3)
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   .banner-style.filter-grid::before {
-    background-image: url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/grid.png")
+    background-image: url('https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/grid.png');
   }
 
   .banner-style.filter-dot::before {
-    background-image: url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/dot.gif");
+    background-image: url('https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/dot.gif');
   }
 }
 </style>

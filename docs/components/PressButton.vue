@@ -28,11 +28,11 @@ const { t } = useI18n()
   <AppLink
     :to="link"
     :class="[classes, props.class]"
-    class="btn transition rounded-$st-c-rd decoration-none text-white! flex items-center"
+    class="btn flex items-center rounded-$st-c-rd decoration-none transition text-white!"
     bg="gradient-to-r"
   >
     {{ t(text) }}
-    <div class="inline-flex hvr-icon ml-2" :class="icon" />
+    <div class="hvr-icon ml-2 inline-flex" :class="icon" />
   </AppLink>
 </template>
 

@@ -13,7 +13,7 @@ const siteConfig = useSiteConfig()
 <template>
   <div class="sakura-navbar-brand">
     <template v-if="favicon">
-      <img class="w-40px h-40px" alt="logo" :src="siteConfig.favicon">
+      <img class="h-40px w-40px" alt="logo" :src="siteConfig.favicon">
     </template>
     <RouterLink class="logo-link moe-mashiro" to="/" :aria-label="siteConfig.title">
       <template v-if="typeof navbarTitle === 'string'">
@@ -29,7 +29,7 @@ const siteConfig = useSiteConfig()
 </template>
 
 <style lang="scss">
-@use "valaxy/client/styles/mixins/index.scss" as *;
+@use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-navbar-brand {
   display: flex;
