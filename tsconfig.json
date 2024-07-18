@@ -30,6 +30,7 @@
   ],
   "exclude": [
     "**/dist/**",
-    "node_modules"
+    "node_modules",
+    "packages/valaxy-addon-live2d/"
   ]
 }
