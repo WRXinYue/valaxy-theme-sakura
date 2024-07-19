@@ -1,16 +1,20 @@
-import { defineAppSetup, useAppStore } from 'valaxy'
+// import { defineAppSetup, useAppStore } from 'valaxy'
+import { defineAppSetup } from 'valaxy'
 import { nextTick } from 'vue'
-import { useSakuraAppStore } from '../stores'
+// import { useSakuraAppStore } from '../stores'
+import { useThemeConfig } from '../composables'
+import { defineSakuraSetup } from './sakuraSetup'
 
 export default defineAppSetup(async (ctx) => {
-  const { router, isClient } = ctx
+  const { router, isClient, app } = ctx
+  const { toScrollPosition } = await import('../utils/rolling')
   if (!isClient)
     return
 
-  const { toScrollPosition } = await import('../utils/rolling')
+  const themeConfig = app.runWithContext(() => useThemeConfig().value)
 
-  const sakuraAppStore = useSakuraAppStore()
-  const appStore = useAppStore()
+  // const sakuraAppStore = useSakuraAppStore()
+  // const appStore = useAppStore()
 
   router.afterEach(() => {
     /**
@@ -18,10 +22,13 @@ export default defineAppSetup(async (ctx) => {
      * @see https://pinia.vuejs.org/zh/core-concepts/outside-component-usage.html#single-page-applications
      */
     nextTick(() => {
-      if (appStore.isMobile)
-        sakuraAppStore.leftSidebar.close()
+      // if (sakuraAppStore.sidebar.isOpen)
+      //   sakuraAppStore.sidebar.close()
     })
   })
+
+  // prevent blocking
+  router.isReady().then(() => defineSakuraSetup(themeConfig))
 
   toScrollPosition(router)
 })

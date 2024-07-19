@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, onMounted, ref, watch } from 'vue'
 import { isVideoUrl } from '../utils'
-import { getLocalStorageItem, setLocalStorageItem } from '../utils/localStorage'
+import { getLocalStorageItem, setLocalStorageItem } from '../utils/storage'
 import { useSakuraAppStore } from '../stores'
 import { useThemeConfig } from '../composables'
 
@@ -32,7 +32,7 @@ watch(() => urls.value.length, async (length) => {
 })
 
 onMounted(() => {
-  currentIndex.value = getLocalStorageItem(storageKey, 0) || 0
+  currentIndex.value = getLocalStorageItem(storageKey) || 0
   sakura.wallpaperIndex[storageKey] = currentIndex.value
   sakura.wallpaperLength[storageKey] = urls.value.length
 })
