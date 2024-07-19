@@ -33,6 +33,9 @@ export const defaultThemeConfig: ThemeConfig = {
   sidebar: [],
   sidebarOptions: {
     position: 'left',
+    offset: true,
+    initialState: false,
+    persistence: 'session',
   },
 
   footer: {

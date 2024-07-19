@@ -1,44 +1,20 @@
-import { ref } from 'vue'
-import type { Ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { useDynamicLeftSidebar, useSidebar } from 'valaxy'
+import { useScrollPosition } from './scrollPosition'
+import { usePagination } from './pagination'
+import { useWallpaper } from './wallpaper'
+import { useSidebar } from './sidebar'
 
 export const useSakuraAppStore = defineStore('sakura-app', () => {
-  const positions = ref<Record<string, number>>({})
-  function setScrollPosition(id: string, position: number) {
-    positions.value[id] = position
-  }
-  function getScrollPosition(id: string): number {
-    return positions.value[id] || 0
-  }
-
-  const paginationTargets: Ref<Element[]> = ref([])
-  const paginationObserver = ref<IntersectionObserver>()
-  const paginationElementPositionsNumber = ref(0)
-
-  // Article Pagination
-  const curPage = ref()
-  const loadMultiple = ref(1)
-
-  const wallpaperIndex = ref<{ [key: string]: number }>({})
-  const wallpaperLength = ref<{ [key: string]: number }>({})
-
-  const leftSidebar = useDynamicLeftSidebar()
-  const rightSidebar = useSidebar()
+  const scrollPosition = useScrollPosition()
+  const pagination = usePagination()
+  const wallpaper = useWallpaper()
+  const sidebar = useSidebar()
 
   return {
-    positions,
-    setScrollPosition,
-    getScrollPosition,
-    loadMultiple,
-    paginationTargets,
-    paginationObserver,
-    paginationElementPositionsNumber,
-    curPage,
-    wallpaperIndex,
-    wallpaperLength,
-    leftSidebar,
-    rightSidebar,
+    ...scrollPosition,
+    ...pagination,
+    ...wallpaper,
+    ...sidebar,
   }
 })
 

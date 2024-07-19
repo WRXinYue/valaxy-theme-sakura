@@ -3,33 +3,33 @@ import { onMounted, watch } from 'vue'
 import { useStorage } from '@vueuse/core'
 import { useSakuraAppStore } from '../stores'
 
-const { persistence, defaultOpen } = withDefaults(defineProps<{
+const { persistence, initialState } = withDefaults(defineProps<{
   persistence?: boolean
-  defaultOpen?: boolean
+  initialState?: boolean
 }>(), {
   persistence: false,
-  defaultOpen: false,
+  initialState: false,
 })
 
 const sakuraAppStore = useSakuraAppStore()
 
-const sidebarOpen = useStorage('sidebarOpen', defaultOpen)
+const sidebarOpen = useStorage('sidebarOpen', initialState)
 
 onMounted(() => {
   if (persistence)
-    sakuraAppStore.leftSidebar.isOpen = sidebarOpen.value
+    sakuraAppStore.sidebar.isOpen = sidebarOpen.value
 
-  sidebarOpen.value = sakuraAppStore.leftSidebar.isOpen
+  sidebarOpen.value = sakuraAppStore.sidebar.isOpen
 })
 
-watch(() => sakuraAppStore.leftSidebar.isOpen, (open) => {
+watch(() => sakuraAppStore.sidebar.isOpen, (open) => {
   sidebarOpen.value = open
 })
 </script>
 
 <template>
-  <div class="sidebar-toggle" @click="sakuraAppStore.leftSidebar.toggle()">
-    <slot :active="sakuraAppStore.leftSidebar.isOpen" />
+  <div class="sidebar-toggle" @click="sakuraAppStore.sidebar.toggle()">
+    <slot :active="sakuraAppStore.sidebar.isOpen" />
   </div>
 </template>
 

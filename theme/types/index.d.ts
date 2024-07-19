@@ -36,13 +36,9 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * Sidebar
    */
   sidebar: NavItem[] | SidebarMulti
-  sidebarOptions?: Partial<{
-    /**
-     * 用来决定侧边栏显示位置
-     */
-    position: 'left' | 'right'
-    offset: boolean
-  }>
+  sidebarOptions?: Partial<SidebarOptions>
+  sidebarMobileOptions?: Partial<SidebarOptions>
+  sidebarDesktopOptions?: Partial<SidebarOptions>
 
   /**
    * Navbar
@@ -209,6 +205,53 @@ export interface LinkType {
   blog: string
   desc: string
   rss: string
+}
+
+export interface SidebarOptions {
+  /**
+   * @zh 用来决定侧边栏显示位置
+   * @en Determines the display position of the sidebar
+   */
+  position: 'left' | 'right'
+
+  /**
+   * @zh 侧边栏开启是否进行布局偏移
+   * @en Indicates whether the layout should offset when the sidebar is open
+   * @default true
+   */
+  offset: boolean
+
+  /**
+   * @zh 控制侧边栏默认状态是开启还是关闭
+   * @en Controls whether the sidebar is open or closed by default
+   * @default false
+   */
+  initialState: boolean
+
+  /**
+   * @zh 侧边栏开启或关闭状态持久化方式
+   * @en Persist the open or closed state of the sidebar
+   * @default 'session'
+   */
+  persistence: 'session' | 'permanent' | null
+
+  /**
+   * @zh 如果为true，会在PC端也启用侧边栏
+   * @default false
+   */
+  show: boolean
+
+  /**
+   * @zh 是否始终保持侧边栏开启或关闭
+   * @default false
+   */
+  alwaysState: boolean
+
+  /**
+   * @zh 是否禁用侧边栏状态切换
+   * @default false
+   */
+  disableToggle: boolean
 }
 
 export type ThemeUserConfig = Partial<ThemeConfig>

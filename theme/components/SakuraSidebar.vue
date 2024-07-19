@@ -17,32 +17,28 @@ const position = ref(props.position ?? themeConfig.value.sidebarOptions?.positio
 
 watch(() => route.path, () => {
   nextTick(updateMarker)
-})
+}, { immediate: true })
 
 function updateMarker() {
   const routeActive = document.querySelector('.sakura-sidebar .site-link .router-link-active') as HTMLElement
-  if (!routeActive)
-    return
+  // const sidebarTop = document.querySelector('.sakura-sidebar .site-link') as HTMLElement
 
-  marker.value.style.top = `${routeActive.offsetTop}px`
-  marker.value.style.height = `${routeActive.offsetHeight}px`
+  marker.value.style.top = `${routeActive?.offsetTop || 0}px`
+  marker.value.style.height = `${routeActive?.offsetHeight || 0}px`
 }
 
 onMounted(() => {
-  nextTick(() => {
-    marker.value = document.querySelector('.sakura-sidebar #marker')
-    updateMarker()
-  })
+  marker.value = document.querySelector('.sakura-sidebar #marker')
 })
 </script>
 
 <template>
   <div>
-    <ValaxyOverlay class="md:hidden" :show="sakuraAppStore.leftSidebar.isOpen" @click="sakuraAppStore.leftSidebar.close" />
+    <ValaxyOverlay class="md:hidden" :show="sakuraAppStore.sidebar.isOpen" @click="sakuraAppStore.sidebar.close" />
 
     <aside
       class="sakura-sidebar inset-y-0 overflow-y-auto transition"
-      :class="[sakuraAppStore.leftSidebar.isOpen && 'open', position]"
+      :class="[sakuraAppStore.sidebar.isOpen && 'open', position]"
       text="center" bg="contain no-repeat"
     >
       <slot>

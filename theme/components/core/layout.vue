@@ -9,7 +9,7 @@ const themeConfig = useThemeConfig()
 <template>
   <div
     class="app-container custom-background antialiased"
-    :style="themeConfig.sidebarOptions?.offset && sakuraAppStore.leftSidebar.isOpen ? '--sakura-private-sidebar-offset: var(--st-c-sidebar-offset)' : ''"
+    :style="themeConfig.sidebarOptions?.offset && sakuraAppStore.sidebar.isOpen ? '--sakura-private-sidebar-offset: var(--st-c-sidebar-offset)' : ''"
   >
     <slot name="nav-bar" />
 
