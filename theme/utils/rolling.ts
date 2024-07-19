@@ -3,9 +3,9 @@ import { nextTick } from 'vue'
 import { scrollTo } from 'valaxy'
 import { useSakuraAppStore } from '../stores'
 
-const sakuraAppStore = useSakuraAppStore()
-
 export function toScrollPosition(router: Router) {
+  const sakuraAppStore = useSakuraAppStore()
+
   router.afterEach((to, from) => {
     const savedPosition = sakuraAppStore.getScrollPosition(to.path)
 
