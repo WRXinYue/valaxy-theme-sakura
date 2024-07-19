@@ -21,7 +21,7 @@ const { t } = useI18n()
     </span>
     <button
       tabindex="0" role="button" aria-label="toggle section"
-      class="caret folder-action inline-flex cursor-pointer"
+      class="folder-action caret inline-flex cursor-pointer"
       @click="toggle"
     >
       <div v-if="collapsed" i-ri-folder-add-line />

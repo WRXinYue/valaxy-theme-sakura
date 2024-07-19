@@ -15,9 +15,7 @@ const themeConfig = useThemeConfig()
 const marker = ref()
 const position = ref(props.position ?? themeConfig.value.sidebarOptions?.position)
 
-watch(() => route.path, () => {
-  nextTick(updateMarker)
-}, { immediate: true })
+watch(() => route.path, () => nextTick(updateMarker))
 
 function updateMarker() {
   const routeActive = document.querySelector('.sakura-sidebar .site-link .router-link-active') as HTMLElement
@@ -28,6 +26,7 @@ function updateMarker() {
 }
 
 onMounted(() => {
+  updateMarker()
   marker.value = document.querySelector('.sakura-sidebar #marker')
 })
 </script>
