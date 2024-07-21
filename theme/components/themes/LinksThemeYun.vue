@@ -17,21 +17,27 @@ const { data } = useLinkData(props.links, props.random)
 </script>
 
 <template>
-  <div class="links">
-    <ul class="link-items">
-      <li v-for="link, i in data" :key="i" class="link-item" :style="`--primary-color: ${link.color}`">
-        <a class="link-url" p="x-4 y-2" :href="link.url" :title="link.name" alt="portrait" rel="friend" target="_blank">
-          <div class="link-left">
-            <SakuraImageCard class="link-avatar" width="64" height="64" w="16" h="16" :src="link.avatar || themeConfig.notFoundImage" :alt="link.name" :error-img="props.errorImg" />
-          </div>
-          <div class="link-info" m="l-2">
-            <div class="link-blog" font="serif black">{{ link.blog }}</div>
-            <div class="link-desc">{{ link.desc }}</div>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
+  <RouterView v-slot="{ Component }">
+    <component :is="Component">
+      <template #main-content>
+        <div class="links">
+          <ul class="link-items">
+            <li v-for="link, i in data" :key="i" class="link-item" :style="`--primary-color: ${link.color}`">
+              <a class="link-url" p="x-4 y-2" :href="link.url" :title="link.name" alt="portrait" rel="friend" target="_blank">
+                <div class="link-left">
+                  <SakuraImageCard class="link-avatar" width="64" height="64" w="16" h="16" :src="link.avatar || themeConfig.notFoundImage" :alt="link.name" :error-img="props.errorImg" />
+                </div>
+                <div class="link-info" m="l-2">
+                  <div class="link-blog" font="serif black">{{ link.blog }}</div>
+                  <div class="link-desc">{{ link.desc }}</div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </template>
+    </component>
+  </RouterView>
 </template>
 
 <style lang="scss" scoped>

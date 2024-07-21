@@ -18,7 +18,5 @@ watch(() => pageIndex.value, async (value) => {
 </script>
 
 <template>
-  <Layout>
-    <SakuraHomeLayout />
-  </Layout>
+  <SakuraHomeLayout />
 </template>

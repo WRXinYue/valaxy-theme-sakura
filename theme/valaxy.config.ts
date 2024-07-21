@@ -8,9 +8,7 @@ export default defineTheme<ThemeConfig>((options) => {
   return {
     themeConfig: defaultThemeConfig,
     vite: {
-      plugins: [
-        themePlugin(options),
-      ],
+      plugins: [themePlugin(options)],
     },
     unocss: {
       safelist: generateSafelist(options.config.themeConfig as ThemeConfig),

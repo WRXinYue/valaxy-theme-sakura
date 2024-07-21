@@ -9,7 +9,5 @@ useSchemaOrg([
 </script>
 
 <template>
-  <Layout>
-    <ArchivesThemeSakura />
-  </Layout>
+  <ArchivesThemeSakura />
 </template>

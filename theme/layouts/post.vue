@@ -1,5 +1,3 @@
 <template>
-  <Layout>
-    <PostThemeSakura />
-  </Layout>
+  <PostThemeSakura />
 </template>

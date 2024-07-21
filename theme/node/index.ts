@@ -1,4 +1,4 @@
-import type { Plugin } from 'vite'
+import type { PluginOption } from 'vite'
 import type { ResolvedValaxyOptions } from 'valaxy'
 import type { ThemeConfig } from '../types'
 
@@ -52,9 +52,7 @@ export const defaultThemeConfig: ThemeConfig = {
 
 // write a vite plugin
 // https://vitejs.dev/guide/api-plugin.html
-export function themePlugin(
-  options: ResolvedValaxyOptions<ThemeConfig>,
-): Plugin {
+export function themePlugin(options: ResolvedValaxyOptions<ThemeConfig>): PluginOption {
   const themeConfig = options.config.themeConfig || {}
 
   return {

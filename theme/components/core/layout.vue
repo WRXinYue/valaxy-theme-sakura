@@ -1,6 +1,6 @@
-<script setup lang="ts">
-import { useThemeConfig } from '../../composables'
+<script lang="ts" setup>
 import { useSakuraAppStore } from '../../stores'
+import { useThemeConfig } from '../../composables'
 
 const sakuraAppStore = useSakuraAppStore()
 const themeConfig = useThemeConfig()
@@ -9,11 +9,17 @@ const themeConfig = useThemeConfig()
 <template>
   <div
     class="app-container custom-background antialiased"
-    :style="themeConfig.sidebarOptions?.offset && sakuraAppStore.sidebar.isOpen ? '--sakura-private-sidebar-offset: var(--st-c-sidebar-offset)' : ''"
+    :style="sakuraAppStore.sidebar.isOpen ? (
+      themeConfig.sidebarOptions?.position === 'left'
+        ? '--sakura-private-sidebar-offset: var(--st-c-sidebar-offset)'
+        : '--sakura-private-sidebar-offset: calc(var(--st-c-sidebar-offset) * -1)'
+    ) : ''"
   >
-    <slot name="nav-bar" />
+    <slot name="nav-bar">
+      <SakuraNavbarCustom class="sakura-sidebar-offset" />
+    </slot>
 
-    <main class="sakura-main">
+    <main class="sakura-sidebar-offset sakura-main">
       <slot>
         <RouterView v-slot="{ Component }">
           <component :is="Component">
@@ -51,7 +57,7 @@ const themeConfig = useThemeConfig()
     </main>
 
     <slot name="footer">
-      <SakuraFooterCustom />
+      <SakuraFooterCustom class="sakura-sidebar-offset" />
     </slot>
   </div>
 </template>

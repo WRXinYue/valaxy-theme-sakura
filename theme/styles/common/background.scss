@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-.custom-background {
+.sakura-main {
   @include background-style(var(--st-c-custom-bg-img));
 }
 
