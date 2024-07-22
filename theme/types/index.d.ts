@@ -97,8 +97,8 @@ export interface ThemeConfig extends DefaultTheme.Config {
 
   notFoundImage: string
 
-  noticeBoard: { // TODO: 改为 notice
-    message?: string
+  notice: {
+    message: string
   }
 }
 

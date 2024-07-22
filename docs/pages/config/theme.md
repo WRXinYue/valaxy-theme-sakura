@@ -113,7 +113,7 @@ export interface ThemeConfig {
   /**
    * 公告板
    */
-  noticeBoard?: {
+  notice?: {
     message?: string
   }
 }
