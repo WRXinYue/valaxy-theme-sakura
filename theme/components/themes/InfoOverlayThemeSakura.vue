@@ -41,8 +41,13 @@ function nextMedia() {
         <div class="flex justify-center">
           <span class="inline-block" i-fa6-solid-quote-left />
           <span class="px-2 text-lg">
-            <!-- banner.motto -->
-            <SakuraTypewriter v-if="hitokoto.hitokoto" :type-string="hitokoto.hitokoto" loop :delay="100" :pause-for="10000" :delete-all="100" @typing-finished="fetchHitokoto()" />
+            <template v-if="themeConfig.banner.typewriter">
+              <SakuraTypewriter v-if="!banner.enableHitokoto" :type-string="banner.motto" loop :delay="100" :pause-for="10000" :delete-all="100" />
+              <SakuraTypewriter v-else :type-string="hitokoto.hitokoto" loop :delay="100" :pause-for="10000" :delete-all="100" @typing-finished="fetchHitokoto()" />
+            </template>
+            <template v-else>
+              {{ banner.enableHitokoto ? hitokoto.hitokoto : banner.motto }}
+            </template>
           </span>
           <span class="inline-block" i-fa6-solid-quote-right />
         </div>

@@ -12,7 +12,7 @@ const props = defineProps<{
 
 <template>
   <header class="sakura-page-header text-center space-y-1 xl:pb-10">
-    <div class="page-banner" :class="cover ? `h-80` : '<xl:max-h-200px mt-$st-c-navbar-height'" :style="cover && `background-image: url(${cover}`">
+    <div class="page-banner" :class="cover ? `h-80` : '<xl:max-h-200px mt-$st-c-navbar-spacing'" :style="cover && `background-image: url(${cover}`">
       <div class="title-container" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
         <h1 class="text-3xl" :class="!cover && 'text-$st-c-text-deep entry-title'">
           <div v-if="icon" class="icon" m="r-1" inline-flex align-top :class="icon" />

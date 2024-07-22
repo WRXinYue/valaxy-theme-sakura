@@ -5,7 +5,7 @@ const frontmatter = useFrontmatter()
 </script>
 
 <template>
-  <SakuraMultiColumnsLayout class="mt-$st-c-navbar-height">
+  <SakuraMultiColumnsLayout class="mt-$st-c-navbar-spacing">
     <LinksThemeYun :links="frontmatter.links" :random="frontmatter.random" :error-img="frontmatter.errorImg" />
   </SakuraMultiColumnsLayout>
 </template>

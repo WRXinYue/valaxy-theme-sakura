@@ -29,6 +29,12 @@ export default defineConfig<ThemeConfig>({
         'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
       ],
       style: '',
+
+      typewriter: true,
+      enableHitokoto: true,
+      hitokoto: {
+        api: 'intl',
+      },
     },
 
     notice: {

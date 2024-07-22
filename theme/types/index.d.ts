@@ -116,6 +116,12 @@ export interface Banner {
    */
   typewriter?: boolean
 
+  /**
+   * @zh 启用一言，如果启用则 `motto` 显示为一言
+   * @en Enable Hitokoto, if enabled, `motto` will display as Hitokoto
+   * @default false
+   */
+  enableHitokoto?: boolean
   hitokoto?: HitokotoOptions
 }
 

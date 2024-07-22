@@ -4,6 +4,7 @@ $common: (
   'c-brand': var(--va-c-primary),
   'c-secondary': var(--va-c-primary-lighter),
   'c-navbar-height': 55px,
+  'c-navbar-spacing': calc(var(--st-c-navbar-height) + 20px),
   'c-footer-height': 140px,
   'c-rd': 10px,
   // --------------- SakuraAside ---------------
