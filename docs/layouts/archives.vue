@@ -7,7 +7,5 @@ const theme = route.query.theme || 'sakura'
 </script>
 
 <template>
-  <Layout>
-    <ArchivesThemeSakura v-if="theme === 'sakura'" />
-  </Layout>
+  <ArchivesThemeSakura v-if="theme === 'sakura'" />
 </template>

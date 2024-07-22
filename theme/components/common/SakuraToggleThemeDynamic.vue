@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-import { isDark, toggleDarkWithTransition } from '../../client'
+import { useAppStore } from 'valaxy'
+
+const appStore = useAppStore()
 
 function enhancedToggleDarkWithTransition() {
   const fakeEvent = new MouseEvent('click')
-  toggleDarkWithTransition(fakeEvent)
+  appStore.toggleDarkWithTransition(fakeEvent)
 }
 </script>
 
@@ -11,7 +13,7 @@ function enhancedToggleDarkWithTransition() {
   <button class="switch switch-appearance" type="button" aria-label="Toggle Dark Mode" @click="enhancedToggleDarkWithTransition">
     <span class="check">
       <span class="icon-wrap">
-        <div v-if="!isDark" class="icon" i-ri-sun-line />
+        <div v-if="!appStore.isDark" class="icon" i-ri-sun-line />
         <div v-else class="icon" i-ri-moon-line />
       </span>
     </span>

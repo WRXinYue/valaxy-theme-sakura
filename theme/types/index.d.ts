@@ -1,4 +1,5 @@
 import type { DefaultTheme } from 'valaxy'
+import type { HitokotoOptions } from 'valaxy-addon-hitokoto'
 
 export namespace SakuraTheme {
   export type Config = ThemeConfig
@@ -107,6 +108,15 @@ export interface Banner {
   motto?: string
   urls?: string[] | string
   style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
+
+  /**
+   * @zh 是否启用打字机组件
+   * @en Whether to enable the typewriter component
+   * @default false
+   */
+  typewriter?: boolean
+
+  hitokoto?: HitokotoOptions
 }
 
 export type SidebarMulti = (string | SidebarItem)[]

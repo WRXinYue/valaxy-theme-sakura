@@ -59,9 +59,7 @@ const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar) as un
 }
 
 .site-link-item {
-  display: flex;
   padding: 0 15px;
-  align-items: center;
   color: var(--va-c-text);
 
   .count {

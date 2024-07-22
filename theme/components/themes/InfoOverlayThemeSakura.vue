@@ -17,7 +17,7 @@ const storageKey = `wallpaperKey-${props.wallpaperKey}`
 const siteConfig = useSiteConfig()
 const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
-const { hitokoto, fetchHitokoto } = useAddonHitokoto()
+const { hitokoto, fetchHitokoto } = useAddonHitokoto(themeConfig.value.banner.hitokoto)
 
 const banner = computed(() => props.banner || themeConfig.value.banner)
 
