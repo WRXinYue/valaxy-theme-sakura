@@ -146,6 +146,9 @@ export default defineConfig<ThemeConfig>({
         link: '/tags/',
       },
     ],
+    sidebarOptions: {
+      position: 'left',
+    },
 
     footer: {
       since: 2024,

@@ -60,7 +60,7 @@ onUnmounted(() => {
       <div class="flex items-center">
         <div
           v-if="themeConfig.sidebarOptions?.position === 'left'"
-          :class="!themeConfig.navbarOptions?.showSidebarToggleButtonOnPC && 'md:hidden'"
+          :class="!themeConfig.sidebarOptions.enableOnDesktop && 'md:hidden'"
         >
           <SakuraHamburger class="mr-4" :active="sakuraAppStore.sidebar.isOpen" @click="sakuraAppStore.sidebar.toggle" />
         </div>

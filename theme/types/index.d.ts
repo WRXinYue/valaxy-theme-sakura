@@ -8,7 +8,7 @@ export namespace SakuraTheme {
  * Theme Config
  */
 export interface ThemeConfig extends DefaultTheme.Config {
-  colors?: {
+  colors: {
     /**
      * primary color
      * @default '#0078E7'
@@ -25,7 +25,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
 
   banner: Banner
 
-  articlePinned?: {
+  articlePinned: {
     title?: string
     desc?: string
     img?: string
@@ -36,9 +36,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * Sidebar
    */
   sidebar: NavItem[] | SidebarMulti
-  sidebarOptions?: Partial<SidebarOptions>
-  sidebarMobileOptions?: Partial<SidebarOptions>
-  sidebarDesktopOptions?: Partial<SidebarOptions>
+  sidebarOptions: Partial<SidebarOptions>
 
   /**
    * Navbar
@@ -46,27 +44,26 @@ export interface ThemeConfig extends DefaultTheme.Config {
   favicon: boolean
   navbar: NavItem[]
   navbarTitle: string | string[]
-  navbarOptions?: Partial<{
-    showSidebarToggleButtonOnPC: boolean
-    title: string | string[]
-    invert: boolean
-    col: boolean
-    autoHide: boolean
-    animIn: string
-    animOut: string
-  }>
+  navbarOptions: {
+    title?: string | string[]
+    invert?: boolean
+    col?: boolean
+    autoHide?: boolean
+    animIn?: string
+    animOut?: string
+  }
 
   /**
    * Article
    */
-  article?: {
+  article: {
     navigationMerge?: boolean
   }
 
-  outlineTitle?: string
+  outlineTitle: string
 
   // Pagination configuration
-  pagination?: {
+  pagination: {
     /**
      * Animations are valid only for the 'infinite-scroll' type
      */
@@ -96,11 +93,11 @@ export interface ThemeConfig extends DefaultTheme.Config {
     }
   }
 
-  scrollDamping?: boolean
+  scrollDamping: boolean
 
-  notFoundImage?: string
+  notFoundImage: string
 
-  noticeBoard?: { // TODO: 改为 notice
+  noticeBoard: { // TODO: 改为 notice
     message?: string
   }
 }
@@ -236,22 +233,11 @@ export interface SidebarOptions {
   persistence: 'session' | 'permanent' | null
 
   /**
-   * @zh 如果为true，会在PC端也启用侧边栏
+   * @zh 是否在PC端启用侧边栏
+   * @en Indicates whether the sidebar is enabled on the desktop
    * @default false
    */
-  show: boolean
-
-  /**
-   * @zh 是否始终保持侧边栏开启或关闭
-   * @default false
-   */
-  alwaysState: boolean
-
-  /**
-   * @zh 是否禁用侧边栏状态切换
-   * @default false
-   */
-  disableToggle: boolean
+  enableOnDesktop: boolean
 }
 
 export type ThemeUserConfig = Partial<ThemeConfig>

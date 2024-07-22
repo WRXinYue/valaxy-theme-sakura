@@ -13,7 +13,7 @@ const route = useRoute()
 const themeConfig = useThemeConfig()
 
 const marker = ref()
-const position = ref(props.position ?? themeConfig.value.sidebarOptions?.position)
+const position = ref(props.position ?? themeConfig.value.sidebarOptions.position)
 
 watch(() => route.path, () => nextTick(() => updateMarker()))
 

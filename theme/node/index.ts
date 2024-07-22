@@ -26,9 +26,6 @@ export const defaultThemeConfig: ThemeConfig = {
   },
 
   navbar: [],
-  navbarOptions: {
-    showSidebarToggleButtonOnPC: true,
-  },
 
   sidebar: [],
   sidebarOptions: {
@@ -36,6 +33,7 @@ export const defaultThemeConfig: ThemeConfig = {
     offset: true,
     initialState: false,
     persistence: 'session',
+    enableOnDesktop: false,
   },
 
   footer: {

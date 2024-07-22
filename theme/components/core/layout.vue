@@ -7,6 +7,7 @@ const themeConfig = useThemeConfig()
 </script>
 
 <template>
+  <!-- NOTE: Avoid placing sakura-sidebar-offset at the top; it affects absolute positioning -->
   <div
     class="app-container custom-background antialiased"
     :style="sakuraAppStore.sidebar.isOpen ? (
