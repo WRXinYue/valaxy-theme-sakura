@@ -16,6 +16,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.6] - 2024-07-22
+
+### Added
+
+- 新增 navbar-spacing CSS 变量，优化了导航栏和文章的间距
+- 新增 enableHitokoto 主题配置项，可以在横幅启用一言功能
+- 新增 typewriter 主题配置项，可以在横幅启用打字效果
+- 横幅新增对 valaxy-addon-hitokoto 插件的 hitokoto 配置项支持
+- 集成 valaxy-addon-vercount 插件，实现网站浏览量统计
+- 完善侧边栏样式和主题配置，支持左右布局和状态持久化等功能
+- 优化了 layout.vue，现在用户无需在 layouts 布局中额外添加 layout 组件
+- 提升了页面切换的流畅性
+- 优化了部分页面的样式细节
+
+### Fixed
+
+- 将 SakuraTypewriter 组件的 TypewriterJS v2 替换为 TypeIt，修复依赖兼容性问题
+- 修复页面切换时的加载闪烁问题
+- 兼容 valaxy v0.19.1+ 版本的夜间模式切换
+
 ## [0.6.4] - 2024-06-20
 
 ### Fixed
