@@ -47,7 +47,7 @@ const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar) as un
   </nav>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sidebar-theme-overview {
@@ -59,7 +59,9 @@ const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar) as un
 }
 
 .site-link-item {
-  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
   color: var(--va-c-text);
 
   .count {
