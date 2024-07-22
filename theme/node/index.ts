@@ -1,11 +1,11 @@
 import type { PluginOption } from 'vite'
 import type { ResolvedValaxyOptions } from 'valaxy'
-import type { ThemeConfig } from '../types'
+import type { ThemeConfig, ThemeUserConfig } from '../types'
 
 /**
  * Default Config
  */
-export const defaultThemeConfig: ThemeConfig = {
+export const defaultThemeConfig: ThemeUserConfig = {
   valaxyDarkOptions: {
     circleTransition: true,
   },
