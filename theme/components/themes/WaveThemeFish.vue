@@ -1,15 +1,17 @@
 <script lang="ts" setup>
 import { onMounted, watch } from 'vue'
 import { useCssVar } from '@vueuse/core'
-import { isDark } from '../../client'
+import { useAppStore } from 'valaxy'
 
 const props = withDefaults(defineProps<{
   color?: string
 }>(), { })
 
+const appStore = useAppStore()
+
 let renderer: Renderer
 
-watch(isDark, async () => {
+watch(() => appStore.isDark, async () => {
   setTimeout(() => {
     renderer.setFishColor(useCssVar('--va-c-bg').value)
   }, 0)
