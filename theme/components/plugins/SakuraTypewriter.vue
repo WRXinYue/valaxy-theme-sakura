@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
+import type { Options } from 'typeit'
+import TypeIt from 'typeit'
 
 const props = withDefaults(defineProps<{
   [key: string]: any
@@ -34,12 +36,6 @@ export interface TypewriterProps {
    */
   pauseFor: number | number[]
   /**
-   * @default false
-   *
-   * Whether or not to display console logs
-   */
-  devMode: boolean
-  /**
    * String to type out, it can contain HTML tags
    * Type out a string using the typewriter effect
    */
@@ -54,64 +50,64 @@ export interface TypewriterProps {
 const typewriterElement = ref<HTMLElement | null>(null)
 const refreshNeeded = ref(false)
 
-onMounted(async () => {
-  // @ts-expect-error missing types
-  const TypewriterModule = await import('typewriter-effect/dist/core')
-  const Typewriter = TypewriterModule.default
+onMounted(() => {
+  createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+})
 
-  const createTypewriter = (typeStrings: string[]) => {
-    const options = {
-      delay: props.delay,
-      deleteSpeed: props.deleteSpeed,
-      loop: props.loop,
-      devMode: props.devMode,
-    } as unknown as TypewriterProps
+function createTypewriter(typeStrings: string[]) {
+  const options = {
+    deleteSpeed: props.deleteSpeed,
+    loop: props.loop,
+  } as Options
+
+  const instance = new TypeIt(typewriterElement.value!, options)
+
+  // const typeStrings = Array.isArray(props.typeString) ? props.typeString : [props.typeString]
+
+  typeStrings.forEach((str, index) => {
+    // TODO: Add typing speed config
+    instance.type(str)
 
     if (typeof props.pauseFor === 'number')
-      options.pauseFor = props.pauseFor
+      instance.pause(props.pauseFor)
+    else if (Array.isArray(props.pauseFor))
+      instance.pause(props.pauseFor[index])
 
-    const typewriter = new Typewriter(typewriterElement.value, options)
-
-    // const typeStrings = Array.isArray(props.typeString) ? props.typeString : [props.typeString]
-    const pauseForArray = Array.isArray(props.pauseFor) ? props.pauseFor : [props.pauseFor]
-    const deleteAllArray = Array.isArray(props.deleteAll) ? props.deleteAll : [props.deleteAll]
-
-    typeStrings.forEach((str, index) => {
-      typewriter.typeString(str)
-
-      if (pauseForArray[index] !== undefined)
-        typewriter.pauseFor(pauseForArray[index])
-
-      typewriter.callFunction(() => {
-        emit('typingFinished', str)
-      })
-
-      if (props.deleteAll === true)
-        typewriter.deleteAll()
-      else if (typeof props.deleteAll === 'number')
-        typewriter.deleteAll(props.deleteAll)
-      else if (deleteAllArray[index])
-        typewriter.deleteAll(deleteAllArray[index])
-
-      typewriter.callFunction(() => {
-        emit('deletionFinished', str)
-
-        if (refreshNeeded.value) {
-          refreshNeeded.value = false
-          typewriter.stop()
-          createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
-        }
-      })
+    instance.exec(() => {
+      emit('typingFinished', str)
     })
-    typewriter.start()
-  }
 
-  createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+    if (props.deleteAll === true) {
+      instance.delete()
+    }
+    else if (typeof props.deleteAll === 'number') {
+      for (let i = 0; i < str.length; i++) {
+        instance.delete(1, { delay: props.deleteAll })
+      }
+    }
+    else if (Array.isArray(props.deleteAll)) {
+      for (let i = 0; i < str.length; i++) {
+        instance.delete(1, { delay: props.deleteAll[index] })
+      }
+    }
+  })
+  instance.go()
 
-  watch(() => props.typeString, () => {
-    refreshNeeded.value = true
-  }, { deep: true })
-})
+  instance.flush(() => {
+    emit('deletionFinished')
+
+    if (refreshNeeded.value) {
+      refreshNeeded.value = false
+      instance.empty()
+      instance.destroy()
+      createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+    }
+  })
+}
+
+watch(() => props.typeString, () => {
+  refreshNeeded.value = true
+}, { deep: true })
 </script>
 
 <template>

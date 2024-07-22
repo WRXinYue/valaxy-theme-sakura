@@ -8,7 +8,7 @@ categories:
 
 ## 打字机 SakuraTypewriter <SupTag>0.6.1</SupTag>
 
-SakuraTypewriter 基于 [TypewriterJS v2](https://github.com/tameemsafi/typewriterjs) 实现。如果您需要简单易用的打字机效果，可以使用此组件
+SakuraTypewriter 基于 [TypeIt](https://github.com/alexmacarthur/typeit) 实现。如果您需要简单易用的打字机效果，可以使用此组件
 
 ## 基础使用
 
@@ -87,7 +87,6 @@ SakuraTypewriter 基于 [TypewriterJS v2](https://github.com/tameemsafi/typewrit
 | deleteSpeed | `number` | --- | 删除每个字符之间的延迟 |
 | loop | `boolean` | `false` | 是否循环 |
 | pauseFor | `number` \| `number[]` | `1500` | 使用自动启动模式时，在输入一个字符串后暂停的时间 |
-| devMode | `boolean` | `false` | 是否显示控制台日志 |
 | typeString | `string` \| `string[]` | `undefined` | 使用打字机效果输入字符串 <br /> 要输入的字符串，可以包含 HTML 标签  |
 | deleteAll | `number` \| `boolean` \| `number` | --- | 删除打字机包装元素内所有可见内容 <br />删除所有可见节点的速度，可以是数字或“自然” |
 
@@ -101,7 +100,6 @@ SakuraTypewriter 基于 [TypewriterJS v2](https://github.com/tameemsafi/typewrit
 | deleteSpeed | `number` | --- | The delay between deleting each character |
 | loop | `boolean` | `false` | Whether to keep looping or not |
 | pauseFor | `number` \| `number[]` | `1500` | The pause duration after a string is typed when using autostart mode |
-| devMode | `boolean` | `false` | Whether or not to display console logs |
 | typeString | `string` \| `string[]` | `undefined` | Type out a string using the typewriter effect <br />String to type out, it can contain HTML tags |
 | deleteAll | `number` \| `boolean` \| `number` | --- | Delete everything that is visible inside of the typewriter wrapper element <br /> Speed to delete all visibles nodes, can be number or 'natural' |
 
