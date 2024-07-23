@@ -32,9 +32,6 @@ export default defineConfig<ThemeConfig>({
 
       typewriter: true,
       enableHitokoto: true,
-      hitokoto: {
-        api: 'intl',
-      },
     },
 
     notice: {

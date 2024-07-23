@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import type { Options } from 'typeit'
 import TypeIt from 'typeit'
 
@@ -49,6 +49,8 @@ export interface TypewriterProps {
 
 const typewriterElement = ref<HTMLElement | null>(null)
 const refreshNeeded = ref(false)
+let instance: TypeIt | null = null
+let hasInitialized = false
 
 onMounted(() => {
   createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
@@ -60,34 +62,37 @@ function createTypewriter(typeStrings: string[]) {
     loop: props.loop,
   } as Options
 
-  const instance = new TypeIt(typewriterElement.value!, options)
+  if (instance !== null)
+    destroyTypewriter()
+
+  instance = new TypeIt(typewriterElement.value!, options)
 
   // const typeStrings = Array.isArray(props.typeString) ? props.typeString : [props.typeString]
 
   typeStrings.forEach((str, index) => {
     // TODO: Add typing speed config
-    instance.type(str)
+    instance!.type(str)
 
     if (typeof props.pauseFor === 'number')
-      instance.pause(props.pauseFor)
+      instance!.pause(props.pauseFor)
     else if (Array.isArray(props.pauseFor))
-      instance.pause(props.pauseFor[index])
+      instance!.pause(props.pauseFor[index])
 
-    instance.exec(() => {
+    instance!.exec(() => {
       emit('typingFinished', str)
     })
 
     if (props.deleteAll === true) {
-      instance.delete()
+      instance!.delete()
     }
     else if (typeof props.deleteAll === 'number') {
       for (let i = 0; i < str.length; i++) {
-        instance.delete(1, { delay: props.deleteAll })
+        instance!.delete(1, { delay: props.deleteAll })
       }
     }
     else if (Array.isArray(props.deleteAll)) {
       for (let i = 0; i < str.length; i++) {
-        instance.delete(1, { delay: props.deleteAll[index] })
+        instance!.delete(1, { delay: props.deleteAll[index] })
       }
     }
   })
@@ -96,18 +101,30 @@ function createTypewriter(typeStrings: string[]) {
   instance.flush(() => {
     emit('deletionFinished')
 
-    if (refreshNeeded.value) {
-      refreshNeeded.value = false
-      instance.empty()
-      instance.destroy()
-      createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
-    }
+    refreshNeeded.value = false
+    destroyTypewriter()
+    createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
   })
+}
+
+function destroyTypewriter() {
+  if (instance) {
+    instance.destroy()
+    instance = null
+  }
 }
 
 watch(() => props.typeString, () => {
   refreshNeeded.value = true
-}, { deep: true })
+  if (!hasInitialized) {
+    createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+    hasInitialized = true
+  }
+})
+
+onUnmounted(() => {
+  destroyTypewriter()
+})
 </script>
 
 <template>
