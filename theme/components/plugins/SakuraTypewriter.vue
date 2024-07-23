@@ -48,7 +48,7 @@ export interface TypewriterProps {
 }
 
 const typewriterElement = ref<HTMLElement | null>(null)
-const refreshNeeded = ref(false)
+let refreshNeeded = false
 let instance: TypeIt | null = null
 let hasInitialized = false
 
@@ -101,9 +101,12 @@ function createTypewriter(typeStrings: string[]) {
   instance.flush(() => {
     emit('deletionFinished')
 
-    refreshNeeded.value = false
-    destroyTypewriter()
-    createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+    // If typeString changes, refresh in the next step
+    if (refreshNeeded) {
+      refreshNeeded = false
+      destroyTypewriter()
+      createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+    }
   })
 }
 
@@ -115,7 +118,7 @@ function destroyTypewriter() {
 }
 
 watch(() => props.typeString, () => {
-  refreshNeeded.value = true
+  refreshNeeded = true
   if (!hasInitialized) {
     createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
     hasInitialized = true
