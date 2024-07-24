@@ -43,7 +43,7 @@ function nextMedia() {
           <span class="px-2 text-lg">
             <template v-if="themeConfig.banner.typewriter">
               <SakuraTypewriter v-if="!banner.enableHitokoto" :type-string="banner.motto" loop :delay="100" :pause-for="10000" :delete-all="100" />
-              <SakuraTypewriter v-else :type-string="hitokoto.hitokoto" loop :delay="100" :pause-for="10000" :delete-all="100" @typing-finished="fetchHitokoto()" />
+              <SakuraTypewriter v-else :type-string="hitokoto.hitokoto" loop :delay="100" :pause-for="10000" :delete-all="100" @all-typing-finished="fetchHitokoto()" />
             </template>
             <template v-else>
               {{ banner.enableHitokoto ? hitokoto.hitokoto : banner.motto }}

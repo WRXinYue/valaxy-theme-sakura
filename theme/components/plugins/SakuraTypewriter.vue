@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import type { Options } from 'typeit'
 import TypeIt from 'typeit'
+import { watchOnce } from '@vueuse/core'
 
 const props = withDefaults(defineProps<{
   [key: string]: any
@@ -10,7 +11,7 @@ const props = withDefaults(defineProps<{
   typeString: '',
 })
 
-const emit = defineEmits(['typingFinished', 'deletionFinished'])
+const emit = defineEmits(['typingFinished', 'deletionFinished', 'allTypingFinished'])
 
 export interface TypewriterProps {
   /**
@@ -50,11 +51,6 @@ export interface TypewriterProps {
 const typewriterElement = ref<HTMLElement | null>(null)
 let refreshNeeded = false
 let instance: TypeIt | null = null
-let hasInitialized = false
-
-onMounted(() => {
-  createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
-})
 
 function createTypewriter(typeStrings: string[]) {
   const options = {
@@ -62,12 +58,8 @@ function createTypewriter(typeStrings: string[]) {
     loop: props.loop,
   } as Options
 
-  if (instance !== null)
-    destroyTypewriter()
-
-  instance = new TypeIt(typewriterElement.value!, options)
-
-  // const typeStrings = Array.isArray(props.typeString) ? props.typeString : [props.typeString]
+  if (instance === null)
+    instance = new TypeIt(typewriterElement.value!, options)
 
   typeStrings.forEach((str, index) => {
     // TODO: Add typing speed config
@@ -78,9 +70,10 @@ function createTypewriter(typeStrings: string[]) {
     else if (Array.isArray(props.pauseFor))
       instance!.pause(props.pauseFor[index])
 
-    instance!.exec(() => {
-      emit('typingFinished', str)
-    })
+    instance!.exec(() => emit('typingFinished'))
+
+    if (index === typeStrings.length - 1)
+      instance!.exec(() => emit('allTypingFinished'))
 
     if (props.deleteAll === true) {
       instance!.delete()
@@ -96,38 +89,33 @@ function createTypewriter(typeStrings: string[]) {
       }
     }
   })
-  instance.go()
 
+  // Calling `.flush()` eliminates the need to call `.go()`
   instance.flush(() => {
     emit('deletionFinished')
 
     // If typeString changes, refresh in the next step
     if (refreshNeeded) {
-      refreshNeeded = false
-      destroyTypewriter()
+      // @ts-expect-error missing types
+      instance = instance!.reset()
       createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+      refreshNeeded = false
     }
   })
 }
 
-function destroyTypewriter() {
-  if (instance) {
-    instance.destroy()
-    instance = null
-  }
-}
-
-watch(() => props.typeString, () => {
-  refreshNeeded = true
-  if (!hasInitialized) {
+watch(() => props.typeString, () => refreshNeeded = true)
+onMounted(() => {
+  if (props.typeString) {
     createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
-    hasInitialized = true
+  }
+  else { // If the data is empty, it is likely reactive, enable a one-time watch to ensure reactive data is displayed immediately
+    watchOnce(() => props.typeString, () => {
+      createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+    })
   }
 })
-
-onUnmounted(() => {
-  destroyTypewriter()
-})
+onUnmounted(() => instance?.destroy())
 </script>
 
 <template>
