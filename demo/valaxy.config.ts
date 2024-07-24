@@ -260,7 +260,6 @@ export default defineConfig<ThemeConfig>({
   vite: {
     optimizeDeps: {
       include: [
-        'typewriter-effect/dist/core',
         'd3',
         '@pixi/graphics',
         '@pixi/settings',

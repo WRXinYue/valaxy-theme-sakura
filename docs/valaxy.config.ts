@@ -106,8 +106,7 @@ export default defineValaxyConfig<ThemeConfig>({
   ],
   vite: {
     optimizeDeps: {
-      include: ['typewriter-effect/dist/core', 'd3', 'monaco-editor'],
+      include: ['d3', 'monaco-editor'],
     },
   },
-
 })
