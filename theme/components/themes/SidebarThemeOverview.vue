@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRoute } from 'vue-router'
 import { useCategories, useSiteStore, useTags } from 'valaxy'
 import type { NavItem } from '../../types'
 import { useThemeConfig } from '../../composables'
@@ -10,14 +11,30 @@ const props = defineProps<{
 }>()
 
 const { t } = useI18n()
-
 const site = useSiteStore()
-
 const categories = useCategories()
 const tags = useTags()
 const themeConfig = useThemeConfig()
+const route = useRoute()
+
+const marker = ref()
 
 const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar) as unknown as NavItem[]
+
+watch(() => route.path, () => nextTick(() => updateMarker()))
+
+function updateMarker() {
+  const routeActive = document.querySelector('.sakura-sidebar .site-link .router-link-active') as HTMLElement
+  // const sidebarTop = document.querySelector('.sakura-sidebar .site-link') as HTMLElement
+
+  marker.value.style.top = `${routeActive?.offsetTop || 0}px`
+  marker.value.style.height = `${routeActive?.offsetHeight || 0}px`
+}
+
+onMounted(() => {
+  nextTick(() => updateMarker())
+  marker.value = document.querySelector('.sakura-sidebar #marker')
+})
 </script>
 
 <template>

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { nextTick, onMounted, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref } from 'vue'
 import { useSakuraAppStore } from '../stores'
 import { useThemeConfig } from '../composables'
 
@@ -9,26 +8,9 @@ const props = withDefaults(defineProps<{
 }>(), {})
 
 const sakuraAppStore = useSakuraAppStore()
-const route = useRoute()
 const themeConfig = useThemeConfig()
 
-const marker = ref()
 const position = ref(props.position ?? themeConfig.value.sidebarOptions.position)
-
-watch(() => route.path, () => nextTick(() => updateMarker()))
-
-function updateMarker() {
-  const routeActive = document.querySelector('.sakura-sidebar .site-link .router-link-active') as HTMLElement
-  // const sidebarTop = document.querySelector('.sakura-sidebar .site-link') as HTMLElement
-
-  marker.value.style.top = `${routeActive?.offsetTop || 0}px`
-  marker.value.style.height = `${routeActive?.offsetHeight || 0}px`
-}
-
-onMounted(() => {
-  nextTick(() => updateMarker())
-  marker.value = document.querySelector('.sakura-sidebar #marker')
-})
 </script>
 
 <template>
