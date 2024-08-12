@@ -35,7 +35,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <footer v-if="!loading" class="h-$st-c-footer-height" text="center sm" style="color:var(--va-c-text-light)">
+  <footer v-if="!loading" class="sakura-footer h-$st-c-footer-height" text="center sm" style="color:var(--va-c-text-light)">
     <div v-if="footer.icp" class="icp" p="y-2" v-html="footer.icp" />
 
     <div class="copyright flex items-center justify-center" p="1">

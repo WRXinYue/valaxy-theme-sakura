@@ -7,7 +7,6 @@
 
 .sakura-navbar {
   position: sticky;
-  background: transparent !important;
 
   &.active-header {
     box-shadow: none;
@@ -18,6 +17,23 @@
   min-height: calc(
     100vh - var(--st-c-footer-height) - var(--st-c-navbar-height)
   );
+
+  .sakura-aside,
+  .markdown-body {
+    padding-top: 2rem;
+  }
+}
+
+.sakura-navbar-brand {
+  .logo-link {
+    font-size: 16px;
+    font-weight: 400;
+
+    @include screen('md') {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
 }
 
 /* -------------------------------------

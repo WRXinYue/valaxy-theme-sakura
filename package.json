@@ -13,7 +13,7 @@
     "docs": "pnpm -C docs run dev",
     "preview": "cd demo && vite preview --host",
     "preview:docs": "cd docs && vite preview --host",
-    "lint": "eslint .",
+    "lint": "eslint . --ignore-pattern '**/*.md'",
     "stylelint": "stylelint \"**/*.{css,scss,vue}\"",
     "release": "cd theme && git add -A && bumpp",
     "typecheck": "vue-tsc --noEmit --skipLibCheck",

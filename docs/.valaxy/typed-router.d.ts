@@ -62,7 +62,6 @@ declare module 'vue-router/auto-routes' {
     '/components/StarterAuthor': RouteRecordInfo<'/components/StarterAuthor', '/components/StarterAuthor', Record<never, never>, Record<never, never>>,
     '/components/StarterToggleLocale': RouteRecordInfo<'/components/StarterToggleLocale', '/components/StarterToggleLocale', Record<never, never>, Record<never, never>>,
     '/components/ValaxyCopyright': RouteRecordInfo<'/components/ValaxyCopyright', '/components/ValaxyCopyright', Record<never, never>, Record<never, never>>,
-    '/components/YunSponsor': RouteRecordInfo<'/components/YunSponsor', '/components/YunSponsor', Record<never, never>, Record<never, never>>,
     '/components-custom/': RouteRecordInfo<'/components-custom/', '/components-custom', Record<never, never>, Record<never, never>>,
     '/components-custom/SakuraArticleFooterCustom': RouteRecordInfo<'/components-custom/SakuraArticleFooterCustom', '/components-custom/SakuraArticleFooterCustom', Record<never, never>, Record<never, never>>,
     '/components-custom/SakuraArticleListCustom': RouteRecordInfo<'/components-custom/SakuraArticleListCustom', '/components-custom/SakuraArticleListCustom', Record<never, never>, Record<never, never>>,

@@ -5,7 +5,7 @@ export default antfu(
   {
     unocss: true,
     formatters: true,
-    ignores: ['**/dist', '**/public', '**/styles/animation', '**/*.md', 'packages/'],
+    ignores: ['**/dist', '**/public', '**/styles/animation', 'packages/'],
   },
   {
     rules: {

@@ -14,13 +14,6 @@ themes:
     tags:
       - yun
       - light
-  - name: WRXinYue Blog
-    desc: 个人博客站点，参考Antfu
-    siteImage: https://common.s3.bitiful.net/snapshot/2024-04-11_22-56.png
-    siteExampleUrl: https://www.wrxinyue.org/
-    tags:
-      - docs
-      - press
   - name: Valaxy sakura theme docs
     desc: 没错本文档也是Sakura主题
     siteImage: https://common.s3.bitiful.net/snapshot/2024-04-11_22-56_1.png
@@ -28,13 +21,6 @@ themes:
     tags:
       - starter
       - template
-  - name: Sakura 双栏布局示例站点
-    desc: Sakura 双栏布局示例站点
-    siteImage:
-    siteExampleUrl: https://sakura.dreamscapea.wrxinyue.org/
-    tags:
-      - home
-      - gitlink
 ---
 
 ## Sakura 主题橱窗

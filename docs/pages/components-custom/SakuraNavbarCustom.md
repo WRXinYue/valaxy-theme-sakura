@@ -20,15 +20,37 @@ categories:
 </template>
 ```
 
+### 更改标题文字大小
+
+```scss {1,5-6,9-10}
+@use 'valaxy/client/styles/mixins/index.scss' as *;
+
+.sakura-navbar-brand {
+  .logo-link {
+    font-size: 24px;
+    font-weight: 600;
+
+    @include screen('md') {
+      font-size: 28px;
+      font-weight: 800;
+    }
+  }
+
+  .moe-mashiro {
+    font-family: Moe-Mashiro, sans-serif;
+  }
+}
+```
+
 ## API
 
 ### Slots
 
-| 插槽名 | 说明 |
-| --- | --- |
-| `nav-brand` | --- |
-| `nav-link` | --- |
-| `nav-tool` | --- |
+| 插槽名      | 说明 |
+| ----------- | ---- |
+| `nav-brand` | ---  |
+| `nav-link`  | ---  |
+| `nav-tool`  | ---  |
 
 ## 相关组件
 
