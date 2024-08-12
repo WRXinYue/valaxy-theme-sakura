@@ -66,30 +66,30 @@ categories:
 
 ### Attributes
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| banner | `Banner` | `undefined` | --- |
-| wallpaperKey | `string` | `'banner'` | 壁纸切换唯一键值 |
+| 属性名       | 类型     | 默认值      | 说明             |
+| ------------ | -------- | ----------- | ---------------- |
+| banner       | `Banner` | `undefined` | ---              |
+| wallpaperKey | `string` | `'banner'`  | 壁纸切换唯一键值 |
 
 ### Slots
 
-| 插槽名 | 说明 |
-| --- | --- |
-| highlighted-text | 用于插入自定义的高亮文本。默认显示 `themeConfig.banner.title` |
-| muted-text | 用于插入自定义的浅色文本。默认显示 `themeConfig.banner.motto` |
-| social | 用于插入自定义的社交媒体图标列表。默认根据 `siteConfig.social` 渲染社交媒体图标 |
+| 插槽名           | 说明                                                                            |
+| ---------------- | ------------------------------------------------------------------------------- |
+| highlighted-text | 用于插入自定义的高亮文本。默认显示 `themeConfig.banner.title`                   |
+| muted-text       | 用于插入自定义的浅色文本。默认显示 `themeConfig.banner.motto`                   |
+| social           | 用于插入自定义的社交媒体图标列表。默认根据 `siteConfig.social` 渲染社交媒体图标 |
 
 ### ThemeConfig
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| banner.title | `string` | `'Hello, sakura'` | --- |
-| banner.motto | `string` | `'You got to put the past behind you before you can move on.'` | --- |
+| 属性名       | 类型     | 默认值                                                         | 说明 |
+| ------------ | -------- | -------------------------------------------------------------- | ---- |
+| banner.title | `string` | `'Hello, sakura'`                                              | ---  |
+| banner.motto | `string` | `'You got to put the past behind you before you can move on.'` | ---  |
 
 ### SiteConfig
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+| 属性名 | 类型           | 默认值      | 说明     |
+| ------ | -------------- | ----------- | -------- |
 | social | `SocialLink[]` | `undefined` | 社交链接 |
 
 ## 相关组件

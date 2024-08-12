@@ -138,44 +138,38 @@ categories:
 最小实现例子：
 
 ```html
-<div class="animation-fade-up" style="animation-delay: 200ms;">
-Animation 1
-</div>
+<div class="animation-fade-up" style="animation-delay: 200ms">Animation 1</div>
 
-<div class="animation-fade-up" style="animation-delay: 400ms;">
-Animation 2
-</div>
+<div class="animation-fade-up" style="animation-delay: 400ms">Animation 2</div>
 
-<div class="animation-fade-up" style="animation-delay: 600ms;">
-Animation 3
-</div>
+<div class="animation-fade-up" style="animation-delay: 600ms">Animation 3</div>
 ```
 
 ## API
 
 ### Slots
 
-| 插槽名 | 说明 |
-| --- | --- |
-| intro-text | 用于插入自定义的介绍文本。默认显示 `themeConfig.banner.title` |
-| highlighted-text | 用于插入自定义的高亮文本。默认显示 `I'm {{ siteConfig.author.name }}` |
-| subheading-text | 用于插入自定义的副标题文本。默认显示 `SakuraTypewriter` 组件中 `siteConfig.description` 和 `siteConfig.author.status.message` 结合 `siteConfig.author.status.emoji` |
-| muted-text | 用于插入自定义的浅色文本。默认显示 `themeConfig.banner.motto` |
-| social | 用于插入自定义的社交媒体图标列表。默认根据 `siteConfig.social` 渲染社交媒体图标 |
-| utils | 用于插入自定义的实用工具组件 |
+| 插槽名           | 说明                                                                                                                                                                |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| intro-text       | 用于插入自定义的介绍文本。默认显示 `themeConfig.banner.title`                                                                                                       |
+| highlighted-text | 用于插入自定义的高亮文本。默认显示 `I'm {{ siteConfig.author.name }}`                                                                                               |
+| subheading-text  | 用于插入自定义的副标题文本。默认显示 `SakuraTypewriter` 组件中 `siteConfig.description` 和 `siteConfig.author.status.message` 结合 `siteConfig.author.status.emoji` |
+| muted-text       | 用于插入自定义的浅色文本。默认显示 `themeConfig.banner.motto`                                                                                                       |
+| social           | 用于插入自定义的社交媒体图标列表。默认根据 `siteConfig.social` 渲染社交媒体图标                                                                                     |
+| utils            | 用于插入自定义的实用工具组件                                                                                                                                        |
 
 ### ThemeConfig
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| banner.title | `string` | `'Hello, sakura'` | --- |
-| banner.motto | `string` | `'You got to put the past behind you before you can move on.'` | --- |
+| 属性名       | 类型     | 默认值                                                         | 说明 |
+| ------------ | -------- | -------------------------------------------------------------- | ---- |
+| banner.title | `string` | `'Hello, sakura'`                                              | ---  |
+| banner.motto | `string` | `'You got to put the past behind you before you can move on.'` | ---  |
 
 ### SiteConfig
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| social | `SocialLink[]` | `undefined` | 社交链接 |
-| author.name | `string` | --- | --- |
-| author.status.message | `string` | --- | --- |
-| author.status.emoji | `string` | --- | --- |
+| 属性名                | 类型           | 默认值      | 说明     |
+| --------------------- | -------------- | ----------- | -------- |
+| social                | `SocialLink[]` | `undefined` | 社交链接 |
+| author.name           | `string`       | ---         | ---      |
+| author.status.message | `string`       | ---         | ---      |
+| author.status.emoji   | `string`       | ---         | ---      |

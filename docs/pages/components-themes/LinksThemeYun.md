@@ -77,11 +77,11 @@ comment: false
 
 ### Attributes
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| ---- | ---- | ---- | ---- |
-| links | `string \| LinkType[]` | `undefined` | 友情链接信息（可以是 YAML 数组形式，也可以是一个 JSON 文件链接） |
-| random | `boolean` | `false` | 是否随机展示 |
-| errorImg | `string` | `undefined` | 图片加载失败时的图片链接, 未填写默认使用主题404图片 |
+| 属性名   | 类型                   | 默认值      | 说明                                                             |
+| -------- | ---------------------- | ----------- | ---------------------------------------------------------------- |
+| links    | `string \| LinkType[]` | `undefined` | 友情链接信息（可以是 YAML 数组形式，也可以是一个 JSON 文件链接） |
+| random   | `boolean`              | `false`     | 是否随机展示                                                     |
+| errorImg | `string`               | `undefined` | 图片加载失败时的图片链接, 未填写默认使用主题404图片              |
 
 ### Frontmatter
 

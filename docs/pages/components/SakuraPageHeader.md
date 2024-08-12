@@ -12,24 +12,24 @@ categories:
 
 ### Attributes
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| ---- | ---- | ---- | ---- |
-| color | `string` | `undefined` | --- |
-| icon | `string` | `undefined` | --- |
-| title | `string` | `undefined` | --- |
-| subTitle | `string` | `undefined` | --- |
-| cover | `string` | `undefined` | --- |
-| author | `string` | `undefined` | --- |
-| date | `string` \| `number` \| `Date` | `undefined` | --- |
+| 属性名   | 类型                           | 默认值      | 说明 |
+| -------- | ------------------------------ | ----------- | ---- |
+| color    | `string`                       | `undefined` | ---  |
+| icon     | `string`                       | `undefined` | ---  |
+| title    | `string`                       | `undefined` | ---  |
+| subTitle | `string`                       | `undefined` | ---  |
+| cover    | `string`                       | `undefined` | ---  |
+| author   | `string`                       | `undefined` | ---  |
+| date     | `string` \| `number` \| `Date` | `undefined` | ---  |
 
 ### ThemeConfig
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| ---- | ---- | ---- | ---- |
-| animation | `boolean` | `undefined` | --- |
+| 属性名    | 类型      | 默认值      | 说明 |
+| --------- | --------- | ----------- | ---- |
+| animation | `boolean` | `undefined` | ---  |
 
 ### SiteConfig
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| ---- | ---- | ---- | ---- |
-| author.name | `string` | `undefined` | --- |
+| 属性名      | 类型     | 默认值      | 说明 |
+| ----------- | -------- | ----------- | ---- |
+| author.name | `string` | `undefined` | ---  |

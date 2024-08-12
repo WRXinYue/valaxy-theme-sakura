@@ -18,8 +18,8 @@ categories:
 
 ### Attributes
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| ---- | ---- | ---- | ---- |
-| type | `string` | `undefined` | --- |
-| posts | `Post[]` | `undefined` | --- |
-| curPage | `number` | `undefined` | --- |
+| 属性名  | 类型     | 默认值      | 说明 |
+| ------- | -------- | ----------- | ---- |
+| type    | `string` | `undefined` | ---  |
+| posts   | `Post[]` | `undefined` | ---  |
+| curPage | `number` | `undefined` | ---  |

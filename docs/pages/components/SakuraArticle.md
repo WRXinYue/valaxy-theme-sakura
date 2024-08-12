@@ -22,11 +22,11 @@ categories:
 
 ### Slots
 
-| 插槽名 | 说明 |
-| --- | --- |
-| default \| content | --- |
-| left | --- |
-| right | --- |
+| 插槽名             | 说明 |
+| ------------------ | ---- |
+| default \| content | ---  |
+| left               | ---  |
+| right              | ---  |
 
 ## 相关组件
 

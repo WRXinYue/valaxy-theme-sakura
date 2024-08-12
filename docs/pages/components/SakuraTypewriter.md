@@ -81,26 +81,26 @@ SakuraTypewriter 基于 [TypeIt](https://github.com/alexmacarthur/typeit) 实现
 
 ::: zh-CN
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| delay | `number` | `75` | 输入每个键之间的延迟 |
-| deleteSpeed | `number` | --- | 删除每个字符之间的延迟 |
-| loop | `boolean` | `false` | 是否循环 |
-| pauseFor | `number` \| `number[]` | `1500` | 使用自动启动模式时，在输入一个字符串后暂停的时间 |
-| typeString | `string` \| `string[]` | `undefined` | 使用打字机效果输入字符串 <br /> 要输入的字符串，可以包含 HTML 标签  |
-| deleteAll | `number` \| `boolean` \| `number` | --- | 删除打字机包装元素内所有可见内容 <br />删除所有可见节点的速度，可以是数字或“自然” |
+| 属性名      | 类型                              | 默认值      | 说明                                                                              |
+| ----------- | --------------------------------- | ----------- | --------------------------------------------------------------------------------- |
+| delay       | `number`                          | `75`        | 输入每个键之间的延迟                                                              |
+| deleteSpeed | `number`                          | ---         | 删除每个字符之间的延迟                                                            |
+| loop        | `boolean`                         | `false`     | 是否循环                                                                          |
+| pauseFor    | `number` \| `number[]`            | `1500`      | 使用自动启动模式时，在输入一个字符串后暂停的时间                                  |
+| typeString  | `string` \| `string[]`            | `undefined` | 使用打字机效果输入字符串 <br /> 要输入的字符串，可以包含 HTML 标签                |
+| deleteAll   | `number` \| `boolean` \| `number` | ---         | 删除打字机包装元素内所有可见内容 <br />删除所有可见节点的速度，可以是数字或“自然” |
 
 :::
 
 ::: en
 
-| Name | Type | Default | Description |
-| --- | --- | --- | --- |
-| delay | `number` | `75` | The delay between each key when typing |
-| deleteSpeed | `number` | --- | The delay between deleting each character |
-| loop | `boolean` | `false` | Whether to keep looping or not |
-| pauseFor | `number` \| `number[]` | `1500` | The pause duration after a string is typed when using autostart mode |
-| typeString | `string` \| `string[]` | `undefined` | Type out a string using the typewriter effect <br />String to type out, it can contain HTML tags |
-| deleteAll | `number` \| `boolean` \| `number` | --- | Delete everything that is visible inside of the typewriter wrapper element <br /> Speed to delete all visibles nodes, can be number or 'natural' |
+| Name        | Type                              | Default     | Description                                                                                                                                      |
+| ----------- | --------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| delay       | `number`                          | `75`        | The delay between each key when typing                                                                                                           |
+| deleteSpeed | `number`                          | ---         | The delay between deleting each character                                                                                                        |
+| loop        | `boolean`                         | `false`     | Whether to keep looping or not                                                                                                                   |
+| pauseFor    | `number` \| `number[]`            | `1500`      | The pause duration after a string is typed when using autostart mode                                                                             |
+| typeString  | `string` \| `string[]`            | `undefined` | Type out a string using the typewriter effect <br />String to type out, it can contain HTML tags                                                 |
+| deleteAll   | `number` \| `boolean` \| `number` | ---         | Delete everything that is visible inside of the typewriter wrapper element <br /> Speed to delete all visibles nodes, can be number or 'natural' |
 
 :::

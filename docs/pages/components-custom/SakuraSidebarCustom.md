@@ -20,9 +20,9 @@ categories:
 
 ## 插槽主题
 
-* [SidebarThemeDynamic](/components-themes/SidebarThemeDynamic)
-* [SidebarThemeOverview](/components-themes/SidebarThemeOverview)
+- [SidebarThemeDynamic](/components-themes/SidebarThemeDynamic)
+- [SidebarThemeOverview](/components-themes/SidebarThemeOverview)
 
 ## 相关组件
 
-* [SakuraSidebar](/components/SakuraSidebar)
+- [SakuraSidebar](/components/SakuraSidebar)
