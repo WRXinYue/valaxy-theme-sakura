@@ -11,8 +11,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "monaco-editor": "^0.47.0",
-    "valaxy": "^0.19.4",
+    "monaco-editor": "^0.50.0",
+    "valaxy": "^0.19.7",
     "valaxy-addon-git-log": "workspace:*",
     "valaxy-addon-twikoo": "^0.0.3",
     "valaxy-theme-sakura": "workspace:*",

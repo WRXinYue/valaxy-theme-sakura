@@ -6,7 +6,7 @@ import type { ThemeConfig } from './types'
 
 export default defineTheme<ThemeConfig>((options) => {
   return {
-    themeConfig: defaultThemeConfig,
+    themeConfig: defaultThemeConfig as ThemeConfig,
     vite: {
       plugins: [themePlugin(options)],
     },
