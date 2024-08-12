@@ -20,7 +20,3 @@ categories:
 - [TagsThemeSakura](/components-themes/TagsThemeSakura)
 - [TagsThemeFlaribbit](/components-themes/TagsThemeFlaribbit)
 - [TagsThemeYun](/components-themes/TagsThemeYun)
-
-## 相关组件
-
-- [Layout](/components/layout)

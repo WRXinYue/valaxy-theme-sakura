@@ -20,7 +20,3 @@ categories:
 ## 布局主题
 
 - [ArchivesThemeSakura](/components-themes/ArchivesThemeSakura)
-
-## 相关组件
-
-- [Layout](/components/layout)

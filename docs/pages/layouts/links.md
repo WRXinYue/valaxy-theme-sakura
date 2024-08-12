@@ -58,5 +58,4 @@ comment: false
 
 ## 相关组件
 
-- [Layout](/components/layout)
 - [SakuraMultiColumnsLayout](/components-layout/SakuraMultiColumnsLayout)

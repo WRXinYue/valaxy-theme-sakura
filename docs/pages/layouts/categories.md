@@ -19,7 +19,3 @@ categories:
 
 - [CategoriesThemeSakura](/components-themes/CategoriesThemeSakura)
 - [CategoriesThemeYun](/components-themes/CategoriesThemeYun)
-
-## 相关组件
-
-- [Layout](/components/layout)

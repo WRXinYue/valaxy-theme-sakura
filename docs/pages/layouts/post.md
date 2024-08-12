@@ -18,7 +18,3 @@ categories:
 ## 布局主题
 
 - [PostThemeSakura](/components-themes/PostThemeSakura)
-
-## 相关组件
-
-- [Layout](/components/layout)
