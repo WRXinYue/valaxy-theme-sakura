@@ -37,6 +37,7 @@ export const defaultThemeConfig: ThemeUserConfig = {
     initialState: false,
     persistence: 'session',
     enableOnDesktop: false,
+    showCounts: false,
   },
 
   footer: {
@@ -65,7 +66,7 @@ export function themePlugin(options: ResolvedValaxyOptions<ThemeConfig>): Plugin
           preprocessorOptions: {
             scss: {
               additionalData: `$c-primary: ${themeConfig.colors?.primary || '#0078E7'
-                } !default;`,
+              } !default;`,
             },
           },
         },

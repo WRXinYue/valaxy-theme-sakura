@@ -52,7 +52,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <nav
+  <header
     class="sakura-navbar" :class="{ 'active-header': isHeaderHighlighted, 'col': col }"
     @mouseover="hoverNavbar = true" @mouseleave="hoverNavbar = false"
   >
@@ -74,11 +74,11 @@ onUnmounted(() => {
     </slot>
 
     <slot name="nav-tool">
-      <div flex>
+      <div flex print:op0>
         <SakuraToggleTheme mr-2 />
         <SakuraToggleLocale mr-2 />
         <div v-if="themeConfig.sidebarOptions?.position === 'right'" i-ri-menu-4-fill mr-2 @click="sakuraAppStore.sidebar.toggle" />
       </div>
     </slot>
-  </nav>
+  </header>
 </template>

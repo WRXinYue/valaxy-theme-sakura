@@ -2,7 +2,6 @@
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import { useCategories, useSiteStore, useTags } from 'valaxy'
 import type { NavItem } from '../../types'
 import { useThemeConfig } from '../../composables'
 
@@ -11,9 +10,6 @@ const props = defineProps<{
 }>()
 
 const { t } = useI18n()
-const site = useSiteStore()
-const categories = useCategories()
-const tags = useTags()
 const themeConfig = useThemeConfig()
 const route = useRoute()
 
@@ -24,7 +20,7 @@ const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar) as un
 watch(() => route.path, () => nextTick(() => updateMarker()))
 
 function updateMarker() {
-  const routeActive = document.querySelector('.sakura-sidebar .site-link .router-link-active') as HTMLElement
+  const routeActive = document.querySelector('.sidebar-theme-overview .router-link-active') as HTMLElement
   // const sidebarTop = document.querySelector('.sakura-sidebar .site-link') as HTMLElement
 
   marker.value.style.top = `${routeActive?.offsetTop || 0}px`
@@ -38,63 +34,57 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav class="site-link sidebar-theme-overview" text-xl>
-    <RouterLink v-for="(item, i) in sidebar" :key="i" class="site-link-item" :to="item.link" :title="item.text || t(item.locale || '')">
-      <div class="icon" :class="item.icon" />
-      <span ml-1 text-base>
-        <template v-if="item.locale === 'menu.archives'">
-          {{ t('menu.archives') }}
-          {{ site.postList.length }}
-        </template>
-        <template v-else-if="item.locale === 'menu.categories'">
-          {{ t('menu.categories') }}
-          {{ Array.from(categories.children).length }}
-        </template>
-        <template v-else-if="item.locale === 'menu.tags'">
-          {{ t('menu.tags') }}
-          {{ Array.from(tags).length }}
-        </template>
-        <template v-else>
-          {{ item.text }}
-        </template>
-      </span>
-    </RouterLink>
+  <nav class="sidebar-theme-overview">
+    <ul class="sakura-sidebar-menu">
+      <li v-for="(item, i) in sidebar" :key="i" class="sakura-menu-item">
+        <AppLink :to="item.link" :title="item.locale ? `${item.text} ${t(item.locale)}` : item.text">
+          <span v-if="item.icon" class="icon" inline-block :class="item.icon" />
+          {{ item.locale ? `${item.text} ${t(item.locale)}` : item.text }}
+          <SakuraSidebarCount :locale="item.locale" />
+        </AppLink>
+
+        <ul class="sakura-sub-menu">
+          <li>
+            <AppLink v-for="(itemChildren, i) in item.children" :key="i" :to="itemChildren.link" :title="itemChildren.locale ? `${itemChildren.text} ${t(itemChildren.locale)}` : itemChildren.text">
+              <span v-if="itemChildren.icon" class="icon" inline-block :class="itemChildren.icon" />
+              {{ itemChildren.locale ? `${itemChildren.text} ${t(itemChildren.locale)}` : itemChildren.text }}
+              <SakuraSidebarCount :locale="itemChildren.locale" />
+            </AppLink>
+          </li>
+        </ul>
+      </li>
+    </ul>
 
     <div id="marker" />
   </nav>
 </template>
 
-<style lang="scss" scoped>
-@use 'valaxy/client/styles/mixins/index.scss' as *;
-
+<style lang="scss">
 .sidebar-theme-overview {
   display: flex;
-  flex-direction: column;
   overflow: hidden;
   white-space: nowrap;
   text-align: center;
-}
 
-.site-link-item {
-  display: flex;
-  align-items: center;
-  padding: 8px 15px;
-  color: var(--va-c-text);
+  .sakura-sidebar-menu {
+    .sakura-menu-item a {
+      display: flex;
+      padding: 4px 15px;
 
-  .count {
-    color: var(--va-c-text);
-    font-family: var(--va-font-sans);
-    display: block;
-    text-align: center;
-    font-size: 1rem;
-  }
+      .icon {
+        width: 1.2rem;
+        height: 1.2rem;
 
-  .icon {
-    width: 1.2rem;
-    height: 1.2rem;
+        &:hover {
+          color: var(--va-c-primary-light);
+        }
+      }
+    }
 
-    &:hover {
-      color: var(--va-c-primary-light);
+    .sakura-menu-item > a {
+      color: var(--va-c-text);
+      font-size: 15px;
+      letter-spacing: 0.02em;
     }
   }
 }

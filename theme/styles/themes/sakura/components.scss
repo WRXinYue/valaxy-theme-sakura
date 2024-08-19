@@ -42,24 +42,39 @@
 * ------------------------------------- */
 .sakura-sidebar {
   #marker {
-    width: 90%;
+    width: 2px;
     height: 80px;
     border-radius: var(--st-c-rd);
     background-color: var(--st-c-secondary);
-    left: 50%;
-    transform: translateX(-50%);
   }
 }
 
 .sidebar-theme-overview {
-  .site-link-item {
-    // background: #000;
-    margin: 0 15px;
-    padding: 8px 10px;
-    z-index: 10;
+  .sakura-sidebar-menu {
+    margin: 0 auto;
+    font-family: 'HarmonyOS Sans SC', 'Merriweather Sans', Helvetica, Tahoma,
+      Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei',
+      'WenQuanYi Micro Hei', sans-serif;
+
+    a {
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--st-c-secondary);
+    }
   }
 
-  // .router-link-active {
-  //   background-color: #efefef;
-  // }
+  .sakura-sub-menu {
+    a {
+      font-size: 13px;
+      color: #9cacc5;
+    }
+
+    li {
+      margin-left: 23px;
+    }
+  }
 }

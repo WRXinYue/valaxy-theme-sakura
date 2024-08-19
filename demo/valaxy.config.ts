@@ -98,7 +98,7 @@ export default defineConfig<ThemeConfig>({
       {
         text: '🍻 友情链接',
         link: '/links',
-        submenu: [
+        children: [
           {
             text: 'GitHub',
             icon: 'i-ri-github-fill',
@@ -129,24 +129,57 @@ export default defineConfig<ThemeConfig>({
 
     sidebar: [
       {
-        text: '首页',
-        icon: 'i-ri-home-4-line',
+        text: '🌈 首页',
         link: '/',
       },
       {
+        text: '🗂️',
         locale: 'menu.archives',
-        icon: 'i-ri-archive-line',
         link: '/archives/',
       },
       {
+        text: '📂',
         locale: 'menu.categories',
-        icon: 'i-ri-folder-2-line',
         link: '/categories/',
       },
       {
+        text: '🏷️',
         locale: 'menu.tags',
-        icon: 'i-ri-price-tag-3-line',
         link: '/tags/',
+      },
+      {
+        text: '🎯 清单',
+
+        children: [
+          {
+            text: '电影 🎞️',
+            link: '/movie',
+          },
+          {
+            text: '番剧 🍨',
+            link: '/anime',
+          },
+          {
+            text: '游戏 🎮',
+            link: '/game',
+          },
+          {
+            text: '歌单 🎵',
+            link: '/music',
+          },
+        ],
+      },
+      {
+        text: '📝 留言板',
+      },
+      {
+        text: '🍻 朋友圈',
+      },
+      {
+        text: '❤️ 打赏',
+      },
+      {
+        text: '📌 关于',
       },
     ],
     sidebarOptions: {

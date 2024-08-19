@@ -48,7 +48,7 @@ onMounted(() => {
 <template>
   <nav class="sakura-nav-lick">
     <template v-for="(item, i) in navLinkItems" :key="i">
-      <SakuraNavLinkItem :link="item.link" :icon="item.icon" :text="item.text" :submenu="item.submenu" />
+      <SakuraNavLinkItem :link="item.link" :icon="item.icon" :text="item.text" :submenu="item.children" />
       <span v-if="i !== (navbar?.length || themeConfig.navbar.length) - 1" class="ml-3 mr-3" />
     </template>
 
