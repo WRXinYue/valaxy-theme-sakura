@@ -46,7 +46,7 @@ const frontmatter = useFrontmatter()
     <div v-if="frontmatter" class="post-time flex items-center">
       <span class="inline-flex-center posted-time" :title="t('post.posted') + frontmatter.date">
         <div class="inline-block" i-ri-calendar-line />
-        <SakuraDate m="l-1" :date="frontmatter.date" />
+        <SakuraDate m="l-1" itemprop="datePublished" :date="frontmatter.date" />
       </span>
       <span
         v-if="frontmatter.updated && frontmatter.updated !== frontmatter.date"
@@ -54,7 +54,7 @@ const frontmatter = useFrontmatter()
       >
         <span m="x-2">-</span>
         <div i-ri-calendar-2-line />
-        <SakuraDate m="l-1" :date="frontmatter.updated" />
+        <SakuraDate m="l-1" itemprop="dateModified" :date="frontmatter.updated" />
       </span>
 
       <span mr-4 />

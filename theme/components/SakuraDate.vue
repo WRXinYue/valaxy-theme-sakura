@@ -4,6 +4,7 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   date?: Date | number | string
+  itemprop?: string
 }>()
 
 const datetime = computed(() => formatDate(props.date || ''))
@@ -15,7 +16,7 @@ const datetime = computed(() => formatDate(props.date || ''))
       Published on
     </dt>
     <dd>
-      <time :datetime="datetime">{{ datetime }}</time>
+      <time :itemprop :datetime="datetime">{{ datetime }}</time>
     </dd>
   </dl>
 </template>

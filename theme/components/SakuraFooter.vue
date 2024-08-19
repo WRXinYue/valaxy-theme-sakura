@@ -40,11 +40,13 @@ onMounted(() => {
 
     <div class="copyright flex items-center justify-center" p="1">
       <span>
-        &copy;
-        <template v-if="!isThisYear">
-          {{ footer.since }} -
-        </template>
-        {{ year }}
+        Copyright &copy;
+        <span itemprop="copyrightYear">
+          <template v-if="!isThisYear">
+            {{ footer.since }} -
+          </template>
+          {{ year }}
+        </span>
       </span>
 
       <a v-if="footer.icon?.enable" m="x-2" class="inline-flex animate-pulse" :href="footerIcon.url" target="_blank" :title="footerIcon.title">
@@ -52,7 +54,7 @@ onMounted(() => {
       </a>
       <img v-if="!footer.icon?.enable && footerIcon.img" class="lazy h-6 w-6 inline-flex animate-pulse" :src="footerIcon.img" alt="Footer Icon Description">
 
-      <span>{{ siteConfig.author.name }}</span>
+      <span itemprop="copyrightHolder">{{ siteConfig.author.name }}</span>
     </div>
 
     <div v-if="footer.powered" class="powered" m="2">

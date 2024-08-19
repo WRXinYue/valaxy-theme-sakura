@@ -177,7 +177,7 @@ export interface NavItem {
   locale?: string | number
   link: string
   icon?: string
-  submenu?: NavItem[]
+  children?: NavItem[]
 }
 
 export interface Footer {
@@ -254,6 +254,12 @@ export interface SidebarOptions {
    * @default false
    */
   enableOnDesktop: boolean
+
+  /**
+   * @zh 是否显示计数器
+   * @default false
+   */
+  showCounts: boolean
 }
 
 export type ThemeUserConfig = Partial<ThemeConfig>
