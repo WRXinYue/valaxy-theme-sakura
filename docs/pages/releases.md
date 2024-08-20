@@ -16,6 +16,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- 优化了 SidebarThemeOverview 侧边栏样式
+- banner 新增 waveTheme 配置项
+- 增加了 PWA 支持
+- 调整了导航栏和其他相关样式
+
+### Fixed
+
+- 修复 WaveThemeFish 组件在新版 Valaxy 中导致的报错问题
+- 修复 SakuraTypewriter 一言APi 调用问题及其他问题
+- 修复侧边栏 updateMarker 函数问题
+
+### Changed
+
+- 默认情况下不再启用默认 prose.scss，以避免与主题中的 prose.scss 产生冲突
+- 子菜单 NavItem 中的 submenu 属性更名为 children
+
 ## [0.6.6] - 2024-07-22
 
 ### Added
