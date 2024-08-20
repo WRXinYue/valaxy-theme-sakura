@@ -40,8 +40,12 @@ export default defineTheme<ThemeConfig>((options) => {
           workbox: {
             runtimeCaching: [
               {
+                urlPattern: ({ request }) => request.destination === 'document',
+                handler: 'NetworkFirst',
+              },
+              {
                 urlPattern: ({ request }) => request.destination === 'script' || request.destination === 'style',
-                handler: 'StaleWhileRevalidate',
+                handler: 'NetworkFirst',
                 options: {
                   cacheName: 'static-resources',
                 },
@@ -50,18 +54,18 @@ export default defineTheme<ThemeConfig>((options) => {
                 urlPattern: ({ request }) => request.destination === 'image',
                 handler: 'CacheFirst',
                 options: {
-                  cacheName: 'images-cache',
+                  cacheName: 'img-cache',
                   expiration: {
-                    maxEntries: 10,
+                    maxEntries: 1000,
                     maxAgeSeconds: 60 * 60 * 24 * 30,
                   },
                 },
               },
               {
-                urlPattern: /.*\.mp4$/,
+                urlPattern: ({ request }) => request.destination === 'video',
                 handler: 'CacheFirst',
                 options: {
-                  cacheName: 'media',
+                  cacheName: 'media-cache',
                   expiration: {
                     maxEntries: 500,
                     maxAgeSeconds: 60 * 60 * 24 * 365,
