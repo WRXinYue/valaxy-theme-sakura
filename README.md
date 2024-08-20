@@ -16,23 +16,6 @@
 > [!Note]
 > 该主题尚未完全准备好，我们正在更新主题文档及示例，预计将在 `v0.7.0` 版本会发布到 [Valaxy 主题橱窗](https://valaxy.site/themes/gallery) 。由于时间有限，我们将优先编写中文文档，并将其设为第一语言，因为绝大部分用户为中国用户
 
-## 🌟 特性
-
-- 🌈 **主题化**: 主题化包含 Sakura 及 Ocean 🚧
-- 🌸 **Sakura**: 主题化样式完全支持 [wordpress-theme-sakura](https://github.com/mashirozx/sakura)
-- ❤️ **轻量级**: 未使用组件会通过树摇方式优化，实际使用中非常轻量
-- ⚡️ **快速**: 我们较注重性能优化，确保主题的性能
-- 🎪 **互动文档与演示**: 提供互动性强的[文档和演示](https://sakura.valaxy.site/)功能
-- 🦾 **类型安全**: 完全采用 [TypeScript](https://www.typescriptlang.org/) 编写，并使用 [TS Docs](https://github.com/microsoft/tsdoc) 提供详尽的文档说明
-- 🔩 **高度可定制化**: 主题和功能可根据需求进行高度定制，完全可以利用主题组件构建全新样式
-- 📦 **附加组件**: 集成多种常用插件，且发布主题常用插件，部分插件可通过主题化添加样式
-- 🌍 **多语言支持**: 内置 i18n 中文和英文语言切换功能
-- 🎥 **多媒体横幅**: 支持多种媒体格式的横幅，如图片、视频等，集成横幅组件如打字机效果、一言效果等
-- 🧩 **多列布局**: 可以自由改变文章列表、主页排版及其他页面布局，使主题更加丰富多样
-- 📚 **侧边栏**: 侧边栏可以设置为左侧或右侧打开，甚至可以将导航栏变成侧边栏
-- 🎞 **动画效果**: 集成多种动画效果，用户可以方便地添加动画，不再依赖于主题默认效果
-- 🔮 **其他特性**: 支持文章列表预加载、滚动阻尼、网络图谱等功能
-
 ## 📦 安装
 
 如果您还不清楚如何安装 Valaxy，建议先查看 Valaxy 的[安装文档](https://valaxy.site/guide/getting-started)了解安装过程。关于本主题的详细安装教程，请参考 valaxy-theme-sakura 的 [安装文档](https://sakura.valaxy.site/guide/installation)
@@ -89,7 +72,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 在 `styles` 目录的 `index.scss` 文件，填入以下内容：
 
 ```scss
-@use "valaxy-theme-sakura/styles/themes/sakura/index.scss" as *;
+@use 'valaxy-theme-sakura/styles/themes/sakura/index.scss' as *;
 ```
 
 这样您的主题就添加了 Sakura 样式。关于更多主题配置，请参见[主题化](https://sakura.valaxy.site/styles/theming)
@@ -110,12 +93,12 @@ pnpm add valaxy-theme-sakura@latest
 > [!NOTE]
 > 为了保持项目的轻量化，我们不会添加过多非必要依赖，可以自行安装所需插件
 
-| 插件 | 是否集成 | 描述 |
-| ---- | ---- | ---- |
-| [valaxy-addon-live2d](https://github.com/valaxyjs/valaxy-addon-live2d) | ❌ 否 | 集成萌萌哒 live2d 看板娘 |
-| [valaxy-addon-hitokoto](https://github.com/valaxyjs/valaxy-addon-hitokoto) | ✅ 是 | 主题默认集成的一言插件 |
-| [valaxy-addon-vercount](https://github.com/valaxyjs/valaxy-addon-vercount) | ✅ 是 | 主题默认集成的网站访问统计插件 |
-| [valaxy-addon-git-log](https://github.com/valaxyjs/valaxy-addon-git-log) | ❌ 否 | 主题文档底部贡献者信息 |
+| 插件                                                                       | 是否集成 | 描述                           |
+| -------------------------------------------------------------------------- | -------- | ------------------------------ |
+| [valaxy-addon-live2d](https://github.com/valaxyjs/valaxy-addon-live2d)     | ❌ 否    | 集成萌萌哒 live2d 看板娘       |
+| [valaxy-addon-hitokoto](https://github.com/valaxyjs/valaxy-addon-hitokoto) | ✅ 是    | 主题默认集成的一言插件         |
+| [valaxy-addon-vercount](https://github.com/valaxyjs/valaxy-addon-vercount) | ✅ 是    | 主题默认集成的网站访问统计插件 |
+| [valaxy-addon-git-log](https://github.com/valaxyjs/valaxy-addon-git-log)   | ❌ 否    | 主题文档底部贡献者信息         |
 
 关于更多的插件可以访问 [Valaxy 插件橱窗](https://valaxy.site/addons/gallery)
 

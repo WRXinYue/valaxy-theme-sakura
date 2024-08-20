@@ -24,7 +24,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
 
   // ============== Valaxy Theme Sakura Config ==============
 
-  banner: Banner
+  banner: Partial<Banner>
 
   articlePinned: {
     title?: string
@@ -123,6 +123,12 @@ export interface Banner {
    */
   enableHitokoto?: boolean
   hitokoto?: HitokotoOptions
+  /**
+   * @zh 背景波纹主题
+   * @en Background wave theme
+   * @default undefined
+   */
+  waveTheme?: 'fish' | 'horizontal' | 'ripple' | 'yunCloud'
 }
 
 export type SidebarMulti = (string | SidebarItem)[]
