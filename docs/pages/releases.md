@@ -4,7 +4,6 @@ title_zh-CN: 发布版本
 toc: true
 categories:
   - releases
-codeHeightLimit: 300
 ---
 
 # Release Notes
@@ -25,9 +24,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- 修复 WaveThemeFish 组件在新版 Valaxy 中导致的报错问题
+- 修复 WaveThemeFish 组件在 valaxy v0.19.1+ 中导致的报错问题
 - 修复 SakuraTypewriter 一言APi 调用问题及其他问题
-- 修复侧边栏 updateMarker 函数问题
+- 修复侧边栏组件之间 updateMarker 函数调用问题
 
 ### Changed
 
