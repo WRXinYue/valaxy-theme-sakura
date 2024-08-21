@@ -3,18 +3,19 @@ import { addonVercount } from 'valaxy-addon-vercount'
 import { addonHitokoto } from 'valaxy-addon-hitokoto'
 import { VitePWA } from 'vite-plugin-pwa'
 import type { PluginOption } from 'vite'
+import defu from 'defu'
 import { defaultThemeConfig, generateSafelist, themePlugin } from './node'
 import type { ThemeConfig } from './types'
 
 export default defineTheme<ThemeConfig>((options) => {
-  const themeConfig = options.config.themeConfig || {}
-  const siteConfig = options.config.siteConfig || {}
+  const { siteConfig, themeConfig: userThemeConfig } = options.config
+  const themeConfig = defu(userThemeConfig || {}, defaultThemeConfig)
 
   return {
-    themeConfig: defaultThemeConfig as ThemeConfig,
+    themeConfig: defaultThemeConfig,
     vite: {
       plugins: [
-        themePlugin(options),
+        themePlugin(themeConfig),
         VitePWA({
           registerType: 'autoUpdate',
           injectRegister: 'auto',

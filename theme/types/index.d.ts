@@ -26,7 +26,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
 
   banner: Partial<Banner>
 
-  articlePinned: {
+  articlePinned?: {
     title?: string
     desc?: string
     img?: string
@@ -45,26 +45,26 @@ export interface ThemeConfig extends DefaultTheme.Config {
   favicon: boolean
   navbar: NavItem[]
   navbarTitle: string | string[]
-  navbarOptions: {
-    title?: string | string[]
-    invert?: boolean
-    col?: boolean
-    autoHide?: boolean
-    animIn?: string
-    animOut?: string
-  }
+  navbarOptions?: Partial<{
+    title: string | string[]
+    invert: boolean
+    col: boolean
+    autoHide: boolean
+    animIn: string
+    animOut: string
+  }>
 
   /**
    * Article
    */
-  article: {
+  article?: {
     navigationMerge?: boolean
   }
 
-  outlineTitle: string
+  outlineTitle?: string
 
   // Pagination configuration
-  pagination: {
+  pagination?: {
     /**
      * Animations are valid only for the 'infinite-scroll' type
      */
@@ -96,9 +96,9 @@ export interface ThemeConfig extends DefaultTheme.Config {
 
   scrollDamping: boolean
 
-  notFoundImage: string
+  notFoundImage?: string
 
-  notice: {
+  notice?: {
     message: string
   }
 }
