@@ -22,21 +22,29 @@ const { hitokoto, fetchHitokoto } = useAddonHitokoto(themeConfig.value.banner.hi
 const banner = computed(() => props.banner || themeConfig.value.banner)
 
 function prevMedia() {
+  sakura.wallpaperOperation = 'prevMedia'
   sakura.wallpaperIndex[storageKey] = (sakura.wallpaperIndex[storageKey] - 1 + sakura.wallpaperLength[storageKey]) % sakura.wallpaperLength[storageKey]
+  setTimeout(() => {
+    sakura.wallpaperOperation = ''
+  }, 0)
 }
 
 function nextMedia() {
+  sakura.wallpaperOperation = 'nextMedia'
   sakura.wallpaperIndex[storageKey] = (sakura.wallpaperIndex[storageKey] + 1) % sakura.wallpaperLength[storageKey]
+  setTimeout(() => {
+    sakura.wallpaperOperation = ''
+  }, 0)
 }
 </script>
 
 <template>
   <div class="info-overlay-theme-sakura">
     <slot name="highlighted-text">
-      <SakuraGlitchText :text="banner.title" />
+      <SakuraGlitchText :class="sakura.isPlaying ? 'animation-fade-out-up' : 'animation-fade-in-down'" :text="banner.title" />
     </slot>
 
-    <div class="card-wrapper">
+    <div class="card-wrapper" :class="sakura.isPlaying ? 'animation-slit-out-horizontal' : 'animation-slit-in-horizontal'">
       <slot name="muted-text">
         <div class="flex justify-center">
           <span class="inline-block" i-fa6-solid-quote-left />

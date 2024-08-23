@@ -129,6 +129,14 @@ export interface Banner {
    * @default undefined
    */
   waveTheme?: 'fish' | 'horizontal' | 'ripple' | 'yunCloud'
+
+  /**
+   * @zh 自定义视频, 可以放PV MV之类的
+   * @en Custom Video
+   */
+  playerUrl?: string
+
+  disablePictureInPicture?: boolean
 }
 
 export type SidebarMulti = (string | SidebarItem)[]

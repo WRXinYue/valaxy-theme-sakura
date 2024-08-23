@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useMounted } from '@vueuse/core'
+import { useSakuraAppStore } from '../stores'
 import { useThemeConfig } from '../composables'
 import type { Banner } from '../types/index'
 
@@ -9,19 +10,24 @@ const props = defineProps<{
 }>()
 
 const themeConfig = useThemeConfig()
+const sakura = useSakuraAppStore()
 const isMounted = useMounted()
 
 const banner = computed(() => props.banner || themeConfig.value.banner)
+const overlayBarClass = computed(() => sakura.isPlaying ? 'animation-fade-out-down' : 'animation-fade-in-up')
 </script>
 
 <template>
   <header class="sakura-banner <md:px-5">
     <template v-if="isMounted">
-      <div class="absolute top-0 h-full w-full overflow-hidden" :class="[banner.style && 'banner-style', banner.style]">
+      <div class="absolute inset-0 overflow-hidden" :class="[banner.style && 'banner-style', banner.style]">
         <slot name="background-display" />
 
-        <slot name="overlay-bar" />
+        <div :class="overlayBarClass">
+          <slot name="overlay-bar" />
+        </div>
       </div>
+
       <div z-4>
         <slot name="info-overlay" />
       </div>

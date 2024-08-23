@@ -21,6 +21,8 @@ export const defaultThemeConfig: ThemeConfig = {
 
     typewriter: false,
     enableHitokoto: false,
+
+    disablePictureInPicture: false,
   },
 
   navbar: [],
