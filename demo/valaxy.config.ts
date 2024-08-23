@@ -4,6 +4,7 @@ import type { ThemeConfig } from 'valaxy-theme-sakura'
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
 import { addonLive2d } from 'valaxy-addon-live2d'
+import { addonBangumi } from 'valaxy-addon-bangumi'
 
 /**
  * User Config
@@ -289,6 +290,11 @@ export default defineConfig<ThemeConfig>({
           ],
         },
       },
+    }),
+    addonBangumi({
+      api: 'https://yi_xiao_jiu-bangumi.web.val.run',
+      bilibiliUid: '1579790',
+      bgmEnabled: false,
     }),
   ],
 
