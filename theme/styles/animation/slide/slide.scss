@@ -12,11 +12,75 @@
 	}
 }
 
+@import "slide-in-bottom";
+
+@if $includeClasses {
+	.#{$nameSpace}-slide-in-bottom {
+		@include slide-in-bottom;
+	}
+}
+
+@import "slide-in-left";
+
+@if $includeClasses {
+	.#{$nameSpace}-slide-in-left {
+		@include slide-in-left;
+	}
+}
+
+@import "slide-in-right";
+
+@if $includeClasses {
+	.#{$nameSpace}-slide-in-right {
+		@include slide-in-right;
+	}
+}
+
+@import "slide-in-top";
+
+@if $includeClasses {
+	.#{$nameSpace}-slide-in-top {
+		@include slide-in-top;
+	}
+}
+
 @import "slide-left";
 
 @if $includeClasses {
 	.#{$nameSpace}-slide-left {
 		@include slide-left;
+	}
+}
+
+@import "slide-out-bottom";
+
+@if $includeClasses {
+	.#{$nameSpace}-slide-out-bottom {
+		@include slide-out-bottom;
+	}
+}
+
+@import "slide-out-left";
+
+@if $includeClasses {
+	.#{$nameSpace}-slide-out-left {
+		@include slide-out-left;
+	}
+}
+
+@import "slide-out-right";
+
+@if $includeClasses {
+	.#{$nameSpace}-slide-out-right {
+		@include slide-out-right;
+	}
+}
+
+@import "slide-out-top";
+
+@if $includeClasses {
+	.#{$nameSpace}-slide-out-top {
+		@include slide-out-top;
 	}
 }
 

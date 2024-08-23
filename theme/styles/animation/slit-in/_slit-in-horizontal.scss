@@ -1,0 +1,21 @@
+@include keyframes(#{$nameSpace}-slit-in-horizontal) {
+  0% {
+    transform: translateZ(-800px) rotateX(90deg);
+    opacity: 0;
+  }
+  54% {
+    transform: translateZ(-160px) rotateX(87deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateZ(0) rotateX(0);
+  }
+}
+
+@mixin slit-in-horizontal {
+  @include prefixed(animation-name, #{$nameSpace}-slit-in-horizontal);
+
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}

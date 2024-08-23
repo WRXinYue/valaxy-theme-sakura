@@ -1,0 +1,21 @@
+/* -------------------------------------
+* Loop
+* ------------------------------------- */
+
+@import "../options";
+@import "../mixins";
+@import "_blink";
+
+@if $includeClasses {
+	.#{$nameSpace}-blink {
+		@include blink;
+	}
+}
+
+@import "_fly";
+
+@if $includeClasses {
+	.#{$nameSpace}-fly {
+		@include fly;
+	}
+}

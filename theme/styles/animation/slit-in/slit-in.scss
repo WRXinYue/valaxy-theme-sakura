@@ -1,0 +1,18 @@
+@import "../options";
+@import "../mixins";
+
+@import "slit-in-horizontal";
+
+@if $includeClasses {
+	.#{$nameSpace}-slit-in-horizontal {
+		@include slit-in-horizontal;
+	}
+}
+
+@import "slit-out-horizontal";
+
+@if $includeClasses {
+	.#{$nameSpace}-slit-out-horizontal {
+		@include slit-out-horizontal;
+	}
+}

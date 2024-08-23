@@ -4,11 +4,36 @@
 
 @import "../options";
 @import "../mixins";
+
+@import "fade-in-down";
+
+@if $includeClasses {
+	.#{$nameSpace}-fade-in-down {
+		@include fade-in-down;
+	}
+}
+
+@import "fade-in-up";
+
+@if $includeClasses {
+	.#{$nameSpace}-fade-in-up {
+		@include fade-in-up;
+	}
+}
+
 @import "fade-in-left";
 
 @if $includeClasses {
 	.#{$nameSpace}-fade-in-left {
 		@include fade-in-left;
+	}
+}
+
+@import "fade-in-right";
+
+@if $includeClasses {
+	.#{$nameSpace}-fade-in-right {
+		@include fade-in-right;
 	}
 }
 
@@ -20,11 +45,35 @@
 	}
 }
 
+@import "fade-out-down";
+
+@if $includeClasses {
+	.#{$nameSpace}-fade-out-down {
+		@include fade-out-down;
+	}
+}
+
 @import "fade-out-left";
 
 @if $includeClasses {
 	.#{$nameSpace}-fade-out-left {
 		@include fade-out-left;
+	}
+}
+
+@import "fade-out-right";
+
+@if $includeClasses {
+	.#{$nameSpace}-fade-out-right {
+		@include fade-out-right;
+	}
+}
+
+@import "fade-out-up";
+
+@if $includeClasses {
+	.#{$nameSpace}-fade-out-up {
+		@include fade-out-up;
 	}
 }
 

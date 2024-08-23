@@ -1,0 +1,20 @@
+$translate-distance: 0.5rem;
+
+@include keyframes(#{$nameSpace}-fly) {
+  from {
+    transform: translateY(var(--translate-distance, $translate-distance));
+  }
+
+  to {
+    transform: translateY(calc(var(--translate-distance, $translate-distance) * -1));
+  }
+}
+
+@mixin fly {
+  @include prefixed(animation-name, #{$nameSpace}-fly);
+
+  animation-duration: $mediumDuration;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

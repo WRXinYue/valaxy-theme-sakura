@@ -7,7 +7,8 @@
 @use './animation/fading/fading.scss' as *;
 @use './animation/slide/slide.scss' as *;
 @use './animation/hover/hover.scss' as *;
-@use './animation/blink/blink.scss' as *;
+@use './animation/loop/loop.scss' as *;
+@use './animation/slit-in/slit-in.scss' as *;
 
 // --------------- Common ---------------
 @use './common/button.scss' as *;

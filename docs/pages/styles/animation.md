@@ -5,13 +5,28 @@ toc: true
 categories:
   - styles
 fading:
+  - class: animation-fade-in-down
   - class: animation-fade-in-left
+  - class: animation-fade-in-right
+  - class: animation-fade-in-up
   - class: animation-fade-in
+  - class: animation-fade-out-down
   - class: animation-fade-out-left
+  - class: animation-fade-out-right
+  - class: animation-fade-out-up
   - class: animation-fade-up
 slide:
   - class: animation-slide-down
+  - class: animation-slide-in-bottom
+  - class: animation-slide-in-left
+  - class: animation-slide-in-right
+  - class: animation-slide-in-top
   - class: animation-slide-left
+  - class: animation-slide-down
+  - class: animation-slide-out-bottom
+  - class: animation-slide-out-left
+  - class: animation-slide-out-right
+  - class: animation-slide-out-top
   - class: animation-slide-right
   - class: animation-slide-up
 hover-2d-transitions:
@@ -222,9 +237,7 @@ hover-shadow-and-glow-transitions:
 点击对应的示例即可复制对应 class。除了[Hover](#hover)之外，其他动画在演示时只会在点击时触发。因为是动态添加 class，正常使用会立即触发，例如：
 
 ```html
-<div class="animation-fade-in">
-  animation-fade-in
-</div>
+<div class="animation-fade-in">animation-fade-in</div>
 ```
 
 ## Fading
