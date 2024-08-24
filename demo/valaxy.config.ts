@@ -76,15 +76,18 @@ export default defineConfig<ThemeConfig>({
 
     navbar: [
       {
-        text: '🌈 首页',
+        text: '🌈',
+        locale: 'menu.home',
         link: '/',
       },
       {
-        text: '📁 分类',
+        text: '📁',
+        locale: 'menu.categories',
         link: '/categories',
       },
       {
-        text: '🏷️ 标签',
+        text: '🏷️',
+        locale: 'menu.tags',
         link: '/tags',
       },
       // {
@@ -97,7 +100,8 @@ export default defineConfig<ThemeConfig>({
       //   link: '/',
       // },
       {
-        text: '🔦 时光轴',
+        text: '🔦',
+        locale: 'menu.archives',
         link: '/archives',
       },
       {
@@ -124,7 +128,8 @@ export default defineConfig<ThemeConfig>({
       {
         text: 'RSS',
         icon: 'i-ri-rss-fill',
-        link: 'https://sakura.wrxinyue.org/atom.xml',
+        link: '/atom.xml',
+        target: '_blank',
       },
     ],
     navbarOptions: {
@@ -134,7 +139,8 @@ export default defineConfig<ThemeConfig>({
 
     sidebar: [
       {
-        text: '🌈 首页',
+        text: '🌈',
+        locale: 'menu.home',
         link: '/',
       },
       {
@@ -184,7 +190,8 @@ export default defineConfig<ThemeConfig>({
         text: '❤️ 打赏',
       },
       {
-        text: '📌 关于',
+        text: '📌',
+        locale: 'menu.about',
       },
     ],
     sidebarOptions: {

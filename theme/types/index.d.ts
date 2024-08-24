@@ -187,10 +187,11 @@ export interface SidebarItem {
 }
 
 export interface NavItem {
-  text?: string
+  text: string
   locale?: string | number
   link: string
   icon?: string
+  target?: '_blank' | '_self' | '_parent' | '_top' | ''
   children?: NavItem[]
 }
 

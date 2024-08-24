@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import type { NavItem } from '../types/index'
 import { useThemeConfig } from '../composables'
 
@@ -13,6 +14,7 @@ const { navbar, col } = withDefaults(defineProps<{
 
 const themeConfig = useThemeConfig()
 const route = useRoute()
+const { locale } = useI18n()
 
 const marker = ref()
 
@@ -20,6 +22,10 @@ const navLinkItems = computed(() => (navbar || themeConfig.value.navbar))
 
 watch(() => route.path, () => {
   nextTick(updateMarker)
+})
+
+watch(() => locale.value, () => {
+  setTimeout(() => updateMarker(), 0)
 })
 
 function updateMarker() {
@@ -48,7 +54,7 @@ onMounted(() => {
 <template>
   <nav class="sakura-nav-lick">
     <template v-for="(item, i) in navLinkItems" :key="i">
-      <SakuraNavLinkItem :link="item.link" :icon="item.icon" :text="item.text" :submenu="item.children" />
+      <SakuraNavLinkItem v-bind="item" />
       <span v-if="i !== (navbar?.length || themeConfig.navbar.length) - 1" class="ml-3 mr-3" />
     </template>
 

@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - banner 新增 waveTheme 配置项
 - 增加了 PWA 支持
 - 调整了导航栏和其他相关样式
+- 添加了更多的 animation 动画
+- 添加横幅视频播放组件
+- 导航栏支持了 NavItem locale 配置项
+- NavItem 新增了自定义 target 配置项
 
 ### Fixed
 

@@ -3,7 +3,7 @@ import { useCategories, useSiteStore, useTags } from 'valaxy'
 import { useThemeConfig } from '../composables'
 
 defineProps<{
-  locale: string
+  locale?: string
 }>()
 
 const site = useSiteStore()

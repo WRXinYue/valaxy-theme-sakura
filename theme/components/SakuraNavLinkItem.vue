@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { NavItem } from '../types'
 
 withDefaults(defineProps<{
-  text: string
-  link: string
-  icon?: string
-  submenu?: NavItem[]
   animIn?: string | string[]
   animOut?: string | string[]
-}>(), {
+} & NavItem>(), {
   animIn: 'element-slide-in-gently',
 })
+
+const { t } = useI18n()
 
 const isDropdownVisible = ref(false)
 const hideTimeout = ref<number | null>(null)
@@ -42,12 +41,15 @@ function cancelHideDropdown() {
 
 <template>
   <ul>
-    <AppLink id="dropdown-navbarLink" :title="text" :to="link" rel="noopener" class="sakura-navbar-link-item" @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown">
+    <AppLink
+      id="dropdown-navbarLink" :title="locale ? `${text} ${t(locale)}` : text" :to="link" :target="target" rel="noopener"
+      class="sakura-navbar-link-item" @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown"
+    >
       <div :class="icon" class="mr-0.5" />
-      <span> {{ text }} </span>
+      <span> {{ locale ? `${text} ${t(locale)}` : text }} </span>
     </AppLink>
     <div
-      v-if="submenu?.length"
+      v-if="children?.length"
       v-show="isDropdownVisible"
       :class="isDropdownVisible ? animIn : animOut"
       class="absolute z-3 h-auto min-w-20 w-auto"
@@ -59,11 +61,11 @@ function cancelHideDropdown() {
         aria-labelledby="dropdownLargeButton"
         class="mt-3 rounded bg-$st-c-bg-nav px-0"
       >
-        <li v-for="subitem in submenu" :key="subitem.text" class="flex justify-center">
-          <AppLink :to="subitem.link" rel="noopener" class="sakura-navbar-link-item mx-2 flex items-center">
+        <li v-for="subitem in children" :key="subitem.text" class="flex justify-center">
+          <AppLink :to="subitem.link" :target="subitem.target" rel="noopener" class="sakura-navbar-link-item mx-2 flex items-center">
             <div :class="icon" class="mr-0.5" />
             <span truncate py-2>
-              {{ subitem.text }}
+              {{ subitem.locale ? `${subitem.text} ${t(subitem.locale)}` : subitem.text }}
             </span>
           </AppLink>
         </li>

@@ -37,7 +37,7 @@ onMounted(() => {
   <nav class="sidebar-theme-overview">
     <ul class="sakura-sidebar-menu">
       <li v-for="(item, i) in sidebar" :key="i" class="sakura-menu-item">
-        <AppLink :to="item.link" :title="item.locale ? `${item.text} ${t(item.locale)}` : item.text">
+        <AppLink :to="item.link" :target="item.target" :title="item.locale ? `${item.text} ${t(item.locale)}` : item.text">
           <span v-if="item.icon" class="icon" inline-block :class="item.icon" />
           {{ item.locale ? `${item.text} ${t(item.locale)}` : item.text }}
           <SakuraSidebarCount :locale="item.locale" />
@@ -45,7 +45,10 @@ onMounted(() => {
 
         <ul class="sakura-sub-menu">
           <li>
-            <AppLink v-for="(itemChildren, i) in item.children" :key="i" :to="itemChildren.link" :title="itemChildren.locale ? `${itemChildren.text} ${t(itemChildren.locale)}` : itemChildren.text">
+            <AppLink
+              v-for="(itemChildren, i) in item.children" :key="i" :to="itemChildren.link" :target="itemChildren.target"
+              :title="itemChildren.locale ? `${itemChildren.text} ${t(itemChildren.locale)}` : itemChildren.text"
+            >
               <span v-if="itemChildren.icon" class="icon" inline-block :class="itemChildren.icon" />
               {{ itemChildren.locale ? `${itemChildren.text} ${t(itemChildren.locale)}` : itemChildren.text }}
               <SakuraSidebarCount :locale="itemChildren.locale" />
