@@ -10,11 +10,11 @@ const props = defineProps<{
 }>()
 
 const themeConfig = useThemeConfig()
-const sakura = useSakuraAppStore()
+const { wallpaperIsPlaying, togglePlayPause } = useSakuraAppStore()
 const isMounted = useMounted()
 
 const banner = computed(() => props.banner || themeConfig.value.banner)
-const overlayBarClass = computed(() => sakura.isPlaying ? 'animation-fade-out-down' : 'animation-fade-in-up')
+const overlayBarClass = computed(() => wallpaperIsPlaying ? 'animation-fade-out-down' : 'animation-fade-in-up')
 </script>
 
 <template>
@@ -31,6 +31,8 @@ const overlayBarClass = computed(() => sakura.isPlaying ? 'animation-fade-out-do
       <div z-4>
         <slot name="info-overlay" />
       </div>
+
+      <SakuraPlayer v-if="banner.playerUrl" z-5 class="absolute bottom-2 right-2 h-8 w-8" @click="togglePlayPause" />
     </template>
   </header>
 </template>

@@ -4,8 +4,6 @@ import { isVideoUrl } from '../utils'
 import { getLocalStorageItem, setLocalStorageItem } from '../utils/storage'
 import { useSakuraAppStore } from '../stores'
 import { useThemeConfig } from '../composables'
-import playIconUrl from '../assets/icon/play@32x32.png'
-import pauseIconUrl from '../assets/icon/pause@32x32.png'
 
 const props = withDefaults(defineProps<{
   urls?: string[] | string
@@ -23,7 +21,6 @@ const themeConfig = useThemeConfig()
 const urls = computed(() => props.urls || themeConfig.value.banner.urls || '')
 const currentWallpaperUrl = computed(() => typeof urls.value === 'string' ? urls.value : urls.value[currentIndex.value])
 const isCurrentMediaVideo = computed(() => isVideoUrl(currentWallpaperUrl.value))
-const currentIconUrl = computed(() => sakura.isPlaying ? pauseIconUrl : playIconUrl)
 const banner = computed(() => themeConfig.value.banner)
 
 watch(() => sakura.wallpaperIndex[storageKey], (newIndex) => {
@@ -34,10 +31,6 @@ watch(() => sakura.wallpaperIndex[storageKey], (newIndex) => {
 watch(() => urls.value.length, async (length) => {
   sakura.wallpaperLength[storageKey] = length
 })
-
-function togglePlayPause() {
-  sakura.isPlaying = !sakura.isPlaying
-}
 
 onMounted(() => {
   currentIndex.value = getLocalStorageItem(storageKey) || 0
@@ -54,15 +47,15 @@ onMounted(() => {
           : 'fade'"
       mode="out-in"
     >
-      <template v-if="sakura.isPlaying || isCurrentMediaVideo">
+      <template v-if="sakura.wallpaperIsPlaying || isCurrentMediaVideo">
         <video
-          :key="sakura.isPlaying ? banner.playerUrl : currentWallpaperUrl"
+          :key="sakura.wallpaperIsPlaying ? banner.playerUrl : currentWallpaperUrl"
           class="min-h-full min-w-full object-cover"
-          preload="auto" autoplay :loop="!sakura.isPlaying" :muted="!sakura.isPlaying"
+          preload="auto" autoplay :loop="!sakura.wallpaperIsPlaying" :muted="!sakura.wallpaperIsPlaying"
           :disablePictureInPicture="banner.disablePictureInPicture"
-          @ended="sakura.isPlaying = false"
+          @ended="sakura.wallpaperIsPlaying = false"
         >
-          <source :src="sakura.isPlaying ? banner.playerUrl : currentWallpaperUrl" type="video/mp4">
+          <source :src="sakura.wallpaperIsPlaying ? banner.playerUrl : currentWallpaperUrl" type="video/mp4">
           Your browser does not support video tags
         </video>
       </template>
@@ -72,7 +65,6 @@ onMounted(() => {
       </template>
     </Transition>
   </div>
-  <img :src="currentIconUrl" z-5 class="animation-fly absolute bottom-2 right-2 h-8 w-8 cursor-pointer" style="animation-duration: 2s; --translate-distance: 0.2em" @click="togglePlayPause">
 </template>
 
 <style lang="scss" scoped>
