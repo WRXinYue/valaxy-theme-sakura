@@ -26,12 +26,12 @@ export interface ThemeConfig extends DefaultTheme.Config {
 
   banner: Partial<Banner>
 
-  articlePinned?: {
-    title?: string
-    desc?: string
-    img?: string
-    link?: string
-  }[]
+  articlePinned?: Partial<{
+    title: string
+    desc: string
+    img: string
+    link: string
+  }>[]
 
   /**
    * Sidebar
@@ -45,14 +45,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
   favicon: boolean
   navbar: NavItem[]
   navbarTitle: string | string[]
-  navbarOptions?: Partial<{
-    title: string | string[]
-    invert: boolean
-    col: boolean
-    autoHide: boolean
-    animIn: string
-    animOut: string
-  }>
+  navbarOptions?: Partial<NavbarOptions>
 
   /**
    * Article
@@ -64,35 +57,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
   outlineTitle?: string
 
   // Pagination configuration
-  pagination?: {
-    /**
-     * Animations are valid only for the 'infinite-scroll' type
-     */
-    animation?: boolean
-
-    /**
-     * Items per page - applicable for 'pagination' type.
-     * Specifies how many items/articles to show per page.
-     * Default is siteConfig.pageSize configuration
-     */
-    itemsPerPage?: number
-
-    /**
-     * Optional settings for 'infinite-scroll' type, like threshold for loading more.
-     */
-    infiniteScrollOptions?: {
-      /**
-       * Enable preloading of content before the user actually reaches the end.
-       * This can improve user experience by having the next content ready in advance.
-       */
-      preload?: boolean
-
-      /**
-       * Set threshold for loading new items, based on pixels before end of current items
-       */
-      threshold?: number
-    }
-  }
+  pagination?: Pagination
 
   scrollDamping: boolean
 
@@ -100,6 +65,16 @@ export interface ThemeConfig extends DefaultTheme.Config {
 
   notice?: {
     message: string
+  }
+
+  /**
+   * Layout
+   */
+  tags?: {
+    /**
+     * 是否开启彩色标签
+     */
+    rainbow?: boolean | string[]
   }
 }
 
@@ -137,6 +112,15 @@ export interface Banner {
   playerUrl?: string
 
   disablePictureInPicture?: boolean
+}
+
+export interface NavbarOptions {
+  title: string | string[]
+  invert: boolean
+  col: boolean
+  autoHide: boolean
+  animIn: string
+  animOut: string
 }
 
 export type SidebarMulti = (string | SidebarItem)[]
@@ -275,6 +259,36 @@ export interface SidebarOptions {
    * @default false
    */
   showCounts: boolean
+}
+
+export interface Pagination {
+  /**
+   * Animations are valid only for the 'infinite-scroll' type
+   */
+  animation?: boolean
+
+  /**
+   * Items per page - applicable for 'pagination' type.
+   * Specifies how many items/articles to show per page.
+   * Default is siteConfig.pageSize configuration
+   */
+  itemsPerPage?: number
+
+  /**
+   * Optional settings for 'infinite-scroll' type, like threshold for loading more.
+   */
+  infiniteScrollOptions?: {
+    /**
+     * Enable preloading of content before the user actually reaches the end.
+     * This can improve user experience by having the next content ready in advance.
+     */
+    preload?: boolean
+
+    /**
+     * Set threshold for loading new items, based on pixels before end of current items
+     */
+    threshold?: number
+  }
 }
 
 export type ThemeUserConfig = Partial<ThemeConfig>

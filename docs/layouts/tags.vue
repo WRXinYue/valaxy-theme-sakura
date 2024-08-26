@@ -9,5 +9,4 @@ const theme = route.query.theme || 'sakura'
 <template>
   <TagsThemeSakura v-if="theme === 'sakura'" />
   <TagsThemeYun v-if="theme === 'yun'" />
-  <TagsThemeFlaribbit v-if="theme === 'flaribbit'" />
 </template>

@@ -4,7 +4,11 @@ export function useWallpaper() {
   const wallpaperIndex = ref<{ [key: string]: number }>({})
   const wallpaperLength = ref<{ [key: string]: number }>({})
   const wallpaperOperation = ref<'prevMedia' | 'nextMedia' | ''>()
-  const isPlaying = ref(false)
+  const wallpaperIsPlaying = ref(false)
 
-  return { wallpaperIndex, wallpaperLength, wallpaperOperation, isPlaying }
+  function togglePlayPause() {
+    wallpaperIsPlaying.value = !wallpaperIsPlaying.value
+  }
+
+  return { wallpaperIndex, wallpaperLength, wallpaperOperation, wallpaperIsPlaying, togglePlayPause }
 }

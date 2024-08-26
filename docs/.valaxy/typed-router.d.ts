@@ -100,7 +100,6 @@ declare module 'vue-router/auto-routes' {
     '/components-themes/PostThemeSakura': RouteRecordInfo<'/components-themes/PostThemeSakura', '/components-themes/PostThemeSakura', Record<never, never>, Record<never, never>>,
     '/components-themes/SidebarThemeDynamic': RouteRecordInfo<'/components-themes/SidebarThemeDynamic', '/components-themes/SidebarThemeDynamic', Record<never, never>, Record<never, never>>,
     '/components-themes/SidebarThemeOverview': RouteRecordInfo<'/components-themes/SidebarThemeOverview', '/components-themes/SidebarThemeOverview', Record<never, never>, Record<never, never>>,
-    '/components-themes/TagsThemeFlaribbit': RouteRecordInfo<'/components-themes/TagsThemeFlaribbit', '/components-themes/TagsThemeFlaribbit', Record<never, never>, Record<never, never>>,
     '/components-themes/TagsThemeSakura': RouteRecordInfo<'/components-themes/TagsThemeSakura', '/components-themes/TagsThemeSakura', Record<never, never>, Record<never, never>>,
     '/components-themes/TagsThemeYun': RouteRecordInfo<'/components-themes/TagsThemeYun', '/components-themes/TagsThemeYun', Record<never, never>, Record<never, never>>,
     '/components-themes/WaveThemeFish': RouteRecordInfo<'/components-themes/WaveThemeFish', '/components-themes/WaveThemeFish', Record<never, never>, Record<never, never>>,

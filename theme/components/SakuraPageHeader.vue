@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 const props = defineProps<{
-  color?: string
   icon?: string
   title: string
   subTitle?: string

@@ -48,6 +48,10 @@ export const defaultThemeConfig: ThemeConfig = {
     powered: true,
   },
 
+  tags: {
+    rainbow: false,
+  },
+
   scrollDamping: false,
 }
 

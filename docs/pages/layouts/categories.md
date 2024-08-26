@@ -9,9 +9,7 @@ categories:
 
 ```vue
 <template>
-  <Layout>
-    <CategoriesThemeSakura />
-  </Layout>
+  <CategoriesThemeSakura />
 </template>
 ```
 

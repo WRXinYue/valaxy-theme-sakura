@@ -14,7 +14,6 @@ categories:
 
 | 属性名   | 类型                           | 默认值      | 说明 |
 | -------- | ------------------------------ | ----------- | ---- |
-| color    | `string`                       | `undefined` | ---  |
 | icon     | `string`                       | `undefined` | ---  |
 | title    | `string`                       | `undefined` | ---  |
 | subTitle | `string`                       | `undefined` | ---  |

@@ -15,11 +15,9 @@ const frontmatter = useFrontmatter()
 </script>
 
 <template>
-  <Layout>
-    <SakuraMultiColumnsLayout class="mt-$st-c-navbar-height">
-      <LinksThemeYun :links="frontmatter.links" :random="frontmatter.random" />
-    </SakuraMultiColumnsLayout>
-  </Layout>
+  <SakuraMultiColumnsLayout class="mt-$st-c-navbar-height">
+    <LinksThemeYun :links="frontmatter.links" :random="frontmatter.random" />
+  </SakuraMultiColumnsLayout>
 </template>
 ```
 

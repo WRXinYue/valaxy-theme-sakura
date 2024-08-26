@@ -38,25 +38,26 @@ const title = usePostTitle(frontmatter)
           :title="title || t('menu.categories')"
           :sub-title="curCategory"
           :icon="frontmatter.icon || 'i-ri-tag-line'"
-          :color="frontmatter.color"
+          :class="frontmatter.pageTitleClass"
           :cover="frontmatter.cover"
         />
       </template>
       <template #main-content>
-        <div>
+        <div class="categories-margin-control">
           <div text="center" class="yun-text-light" p="2">
             {{ t('counter.categories', Array.from(categories.children).length) }}
           </div>
           <SakuraCategories :categories="categories.children" />
-
-          <RouterView />
         </div>
       </template>
 
       <template #main-nav-before>
-        <SakuraCard v-if="curCategory" class="post-collapse-container" m="t-4" w="full">
+        <div v-if="curCategory" class="categories-margin-control">
+          <ArticleListThemeCard w="full" :posts="posts" />
+        </div>
+        <!-- <SakuraCard v-if="curCategory" class="post-collapse-container" m="t-4" w="full">
           <SakuraArticleCollapse w="full" m="b-4" p="x-20 lt-sm:x-5" :posts="posts" />
-        </SakuraCard>
+        </SakuraCard> -->
       </template>
     </component>
   </RouterView>

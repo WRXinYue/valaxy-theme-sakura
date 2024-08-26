@@ -12,9 +12,7 @@ categories:
 
 ```vue
 <template>
-  <Layout>
-    <SakuraHomeLayout />
-  </Layout>
+  <SakuraHomeLayout />
 </template>
 ```
 

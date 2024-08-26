@@ -41,10 +41,10 @@ function nextMedia() {
 <template>
   <div class="info-overlay-theme-sakura">
     <slot name="highlighted-text">
-      <SakuraGlitchText :class="sakura.isPlaying ? 'animation-fade-out-up' : 'animation-fade-in-down'" :text="banner.title" />
+      <SakuraGlitchText :class="sakura.wallpaperIsPlaying ? 'animation-fade-out-up' : 'animation-fade-in-down'" :text="banner.title" />
     </slot>
 
-    <div class="card-wrapper" :class="sakura.isPlaying ? 'animation-slit-out-horizontal' : 'animation-slit-in-horizontal'">
+    <div class="card-wrapper" :class="sakura.wallpaperIsPlaying ? 'animation-slit-out-horizontal' : 'animation-slit-in-horizontal'">
       <slot name="muted-text">
         <div class="flex justify-center">
           <span class="inline-block" i-fa6-solid-quote-left />

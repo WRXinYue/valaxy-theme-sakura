@@ -9,14 +9,6 @@ categories:
 
 ```vue
 <template>
-  <Layout>
-    <TagsThemeSakura />
-  </Layout>
+  <SakuraTagsLayout />
 </template>
 ```
-
-## 布局主题
-
-- [TagsThemeSakura](/components-themes/TagsThemeSakura)
-- [TagsThemeFlaribbit](/components-themes/TagsThemeFlaribbit)
-- [TagsThemeYun](/components-themes/TagsThemeYun)

@@ -198,6 +198,10 @@ export default defineConfig<ThemeConfig>({
       position: 'left',
     },
 
+    tags: {
+      rainbow: true,
+    },
+
     footer: {
       since: 2024,
 

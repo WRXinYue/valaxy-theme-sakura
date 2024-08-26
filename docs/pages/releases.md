@@ -17,6 +17,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- 新增 TagsThemeSakura 组件彩虹色标签样式
+
+### Removed
+
+- 弃用 TagsThemeSakura、TagsThemeFlaribbit 及 TagsThemeYun 组件，已和 SakuraTagsLayout 组件样式合并
+- 移除 SakuraLayoutPostTag 组件
+
+## [Unreleased]
+
+### Added
+
 - 优化了 SidebarThemeOverview 侧边栏样式
 - banner 新增 waveTheme 配置项
 - 增加了 PWA 支持

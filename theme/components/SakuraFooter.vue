@@ -52,7 +52,7 @@ onMounted(() => {
       <a v-if="footer.icon?.enable" m="x-2" class="inline-flex animate-pulse" :href="footerIcon.url" target="_blank" :title="footerIcon.title">
         <div :class="footerIcon.name" />
       </a>
-      <img v-if="!footer.icon?.enable && footerIcon.img" class="lazy h-6 w-6 inline-flex animate-pulse" :src="footerIcon.img" alt="Footer Icon Description">
+      <img v-if="!footer.icon?.enable && footerIcon.img" class="lazy h-6 w-6 inline-flex animate-pulse" :src="footerIcon.img" title="Footer Icon Description">
 
       <span itemprop="copyrightHolder">{{ siteConfig.author.name }}</span>
     </div>

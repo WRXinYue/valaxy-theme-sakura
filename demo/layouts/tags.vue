@@ -1,3 +1,0 @@
-<template>
-  <TagsThemeFlaribbit />
-</template>

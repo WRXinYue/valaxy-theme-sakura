@@ -11,9 +11,7 @@ categories:
 
 ```vue
 <template>
-  <Layout>
-    <ArchivesThemeSakura />
-  </Layout>
+  <ArchivesThemeSakura />
 </template>
 ```
 
