@@ -9,11 +9,6 @@ categories:
 
 ```vue
 <template>
-  <CategoriesThemeSakura />
+  <SakuraCategoriesLayout />
 </template>
 ```
-
-## 布局主题
-
-- [CategoriesThemeSakura](/components-themes/CategoriesThemeSakura)
-- [CategoriesThemeYun](/components-themes/CategoriesThemeYun)

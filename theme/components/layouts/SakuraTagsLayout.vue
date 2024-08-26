@@ -57,7 +57,7 @@ function displayTag(tag: string) {
         </slot>
       </template>
       <template #main-content>
-        <slot name="tags">
+        <slot name="content">
           <div class="tags-margin-control">
             <div class="sakura-text-light" text="center" p="2">
               {{ t('counter.tags', Array.from(tags).length) }}

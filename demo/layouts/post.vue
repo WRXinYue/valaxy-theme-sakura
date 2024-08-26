@@ -1,5 +1,5 @@
 <template>
-  <PostThemeSakura>
+  <SakuraPostLayout>
     <template #right>
       <SakuraAsideLayout>
         Interactive graph
@@ -7,5 +7,5 @@
         <SakuraToc />
       </SakuraAsideLayout>
     </template>
-  </PostThemeSakura>
+  </SakuraPostLayout>
 </template>

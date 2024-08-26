@@ -14,10 +14,14 @@ const site = useSiteStore()
   <RouterView v-slot="{ Component }">
     <component :is="Component">
       <template #main-header>
-        <SakuraPageHeader :title="title || t('menu.archives')" :icon="frontmatter.icon || 'i-ri-archive-line'" :class="frontmatter.pageTitleClass" />
+        <slot name="header">
+          <SakuraPageHeader :title="title || t('menu.archives')" :icon="frontmatter.icon || 'i-ri-archive-line'" :class="frontmatter.pageTitleClass" />
+        </slot>
       </template>
       <template #main-content>
-        <SakuraTimeLine :posts="site.postList" />
+        <slot name="content">
+          <SakuraTimeLine :posts="site.postList" />
+        </slot>
       </template>
     </component>
   </RouterView>

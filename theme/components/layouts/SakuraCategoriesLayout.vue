@@ -34,30 +34,36 @@ const title = usePostTitle(frontmatter)
   <RouterView v-slot="{ Component }">
     <component :is="Component">
       <template #main-header>
-        <SakuraPageHeader
-          :title="title || t('menu.categories')"
-          :sub-title="curCategory"
-          :icon="frontmatter.icon || 'i-ri-tag-line'"
-          :class="frontmatter.pageTitleClass"
-          :cover="frontmatter.cover"
-        />
+        <slot name="header">
+          <SakuraPageHeader
+            :title="title || t('menu.categories')"
+            :sub-title="curCategory"
+            :icon="frontmatter.icon || 'i-ri-tag-line'"
+            :class="frontmatter.pageTitleClass"
+            :cover="frontmatter.cover"
+          />
+        </slot>
       </template>
       <template #main-content>
-        <div class="categories-margin-control">
-          <div text="center" class="yun-text-light" p="2">
-            {{ t('counter.categories', Array.from(categories.children).length) }}
+        <slot name="content">
+          <div class="categories-margin-control">
+            <div text="center" class="yun-text-light" p="2">
+              {{ t('counter.categories', Array.from(categories.children).length) }}
+            </div>
+            <SakuraCategories :categories="categories.children" />
           </div>
-          <SakuraCategories :categories="categories.children" />
-        </div>
+        </slot>
       </template>
 
       <template #main-nav-before>
-        <div v-if="curCategory" class="categories-margin-control">
-          <ArticleListThemeCard w="full" :posts="posts" />
-        </div>
-        <!-- <SakuraCard v-if="curCategory" class="post-collapse-container" m="t-4" w="full">
-          <SakuraArticleCollapse w="full" m="b-4" p="x-20 lt-sm:x-5" :posts="posts" />
-        </SakuraCard> -->
+        <slot name="posts">
+          <div v-if="curCategory" class="categories-margin-control">
+            <ArticleListThemeCard w="full" :posts="posts" />
+          </div>
+          <!-- <SakuraCard v-if="curCategory" class="post-collapse-container" m="t-4" w="full">
+            <SakuraArticleCollapse w="full" m="b-4" p="x-20 lt-sm:x-5" :posts="posts" />
+          </SakuraCard> -->
+        </slot>
       </template>
     </component>
   </RouterView>

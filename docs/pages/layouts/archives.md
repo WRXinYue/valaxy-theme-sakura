@@ -11,10 +11,6 @@ categories:
 
 ```vue
 <template>
-  <ArchivesThemeSakura />
+  <SakuraArchivesLayout />
 </template>
 ```
-
-## 布局主题
-
-- [ArchivesThemeSakura](/components-themes/ArchivesThemeSakura)

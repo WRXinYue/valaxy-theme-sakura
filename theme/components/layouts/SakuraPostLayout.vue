@@ -45,17 +45,19 @@ useSchemaOrg(
       <slot name="left" />
     </template>
     <template #content>
-      <RouterView v-slot="{ Component }">
-        <component :is="Component">
-          <template #main-content-after>
-            <YunSponsor v-if="showSponsor" />
-            <ValaxyCopyright v-if="frontmatter.copyright || siteConfig.license.enabled" :url="url" />
-          </template>
-          <template #footer>
-            <SakuraArticleFooterCustom />
-          </template>
-        </component>
-      </RouterView>
+      <slot name="content">
+        <RouterView v-slot="{ Component }">
+          <component :is="Component">
+            <template #main-content-after>
+              <YunSponsor v-if="showSponsor" />
+              <ValaxyCopyright v-if="frontmatter.copyright || siteConfig.license.enabled" :url="url" />
+            </template>
+            <template #footer>
+              <SakuraArticleFooterCustom />
+            </template>
+          </component>
+        </RouterView>
+      </slot>
     </template>
     <template #right>
       <slot name="right">
