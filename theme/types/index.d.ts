@@ -121,6 +121,7 @@ export interface NavbarOptions {
   autoHide: boolean
   animIn: string
   animOut: string
+  showMarker: boolean
 }
 
 export type SidebarMulti = (string | SidebarItem)[]

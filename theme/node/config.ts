@@ -26,6 +26,9 @@ export const defaultThemeConfig: ThemeConfig = {
   },
 
   navbar: [],
+  navbarOptions: {
+    showMarker: true,
+  },
 
   sidebar: [],
   sidebarOptions: {
