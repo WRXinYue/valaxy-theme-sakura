@@ -53,6 +53,40 @@ export default defineValaxyConfig<ThemeConfig>({
       primary: '#ff4e6a',
     },
 
+    navbar: [
+      {
+        text: 'Docs',
+        link: '/guide/installation',
+        children: [
+          {
+            text: 'Quick Start',
+            link: '/guide/installation',
+          },
+          {
+            text: 'Config',
+            link: '/config/theme',
+          },
+          {
+            text: 'Examples',
+            link: '/examples/config',
+          },
+        ],
+      },
+      // {
+      //   text: 'Themes',
+      // },
+      {
+        text: 'Gallery',
+        link: '/examples/gallery',
+      },
+      {
+        text: 'GitHub',
+        link: 'https://github.com/WRXinYue/valaxy-theme-sakura',
+      },
+    ],
+    navbarOptions: {
+      showMarker: false,
+    },
     navbarTitle: ['Valaxy Theme', '', 'Sakura'],
 
     // addons: [

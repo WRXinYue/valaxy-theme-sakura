@@ -16,6 +16,7 @@ const { locale } = useI18n()
 const marker = ref()
 
 const navLinkItems = computed(() => (navbar || themeConfig.value.navbar))
+const showMarker = computed(() => (themeConfig.value.navbarOptions?.showMarker))
 
 watch(() => route.path, () => {
   nextTick(updateMarker)
@@ -26,6 +27,9 @@ watch(() => locale.value, () => {
 })
 
 function updateMarker() {
+  if (!showMarker.value)
+    return
+
   const routeActive = document.querySelector('.sakura-nav-link .router-link-active') as HTMLElement
   if (!routeActive)
     return
@@ -49,7 +53,7 @@ onMounted(() => {
       <span v-if="i !== (navbar?.length || themeConfig.navbar.length) - 1" class="ml-3 mr-3" />
     </template>
 
-    <div id="marker" />
+    <div v-if="showMarker" id="marker" />
   </nav>
 </template>
 

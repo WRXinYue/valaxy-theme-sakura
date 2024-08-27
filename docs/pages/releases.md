@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - 新增 TagsThemeSakura 组件彩虹色标签样式
+- 新增 navbarOptions showMarker 配置项
 
 ### Removed
 
