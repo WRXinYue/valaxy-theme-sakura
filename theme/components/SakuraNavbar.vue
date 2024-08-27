@@ -7,14 +7,12 @@ const props = withDefaults(defineProps<{
   favicon?: boolean
   title?: string | string[]
   invert?: boolean
-  col?: boolean
   autoHide?: boolean
   animIn?: string | string[]
   animOut?: string | string[]
 }>(), {
   favicon: undefined,
   invert: false,
-  col: false,
   autoHide: false,
   animIn: 'animation-fade-in-left',
   animOut: 'animation-fade-out-left',
@@ -28,7 +26,6 @@ const scrolled = ref(false)
 
 const title = computed(() => props.title ?? themeConfig.value.navbarTitle)
 const invert = computed(() => themeConfig.value.navbarOptions?.invert ?? props.invert)
-const col = computed(() => themeConfig.value.navbarOptions?.col ?? props.col)
 const autoHide = computed(() => themeConfig.value.navbarOptions?.autoHide ?? props.autoHide)
 const animIn = computed(() => themeConfig.value.navbarOptions?.animIn ?? props.animIn)
 const animOut = computed(() => themeConfig.value.navbarOptions?.animOut ?? props.animOut)
@@ -53,7 +50,7 @@ onUnmounted(() => {
 
 <template>
   <header
-    class="sakura-navbar" :class="{ 'active-header': isHeaderHighlighted, 'col': col }"
+    class="sakura-navbar" :class="{ 'active-header': isHeaderHighlighted }"
     @mouseover="hoverNavbar = true" @mouseleave="hoverNavbar = false"
   >
     <slot name="nav-brand">
@@ -70,7 +67,7 @@ onUnmounted(() => {
     </slot>
 
     <slot name="nav-link">
-      <SakuraNavLink :class="autoHide && (isHeaderHighlighted ? animIn : animOut)" :col />
+      <SakuraNavLink :class="autoHide && (isHeaderHighlighted ? animIn : animOut)" />
     </slot>
 
     <slot name="nav-tool">

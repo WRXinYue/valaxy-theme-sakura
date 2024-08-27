@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - 弃用 TagsThemeSakura、TagsThemeFlaribbit 及 TagsThemeYun 组件，已和 SakuraTagsLayout 组件样式合并
 - 移除 SakuraLayoutPostTag 组件
+- 废弃 NavbarOptions col 配置项
 
 ## [Unreleased]
 

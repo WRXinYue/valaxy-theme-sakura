@@ -117,7 +117,6 @@ export interface Banner {
 export interface NavbarOptions {
   title: string | string[]
   invert: boolean
-  col: boolean
   autoHide: boolean
   animIn: string
   animOut: string
