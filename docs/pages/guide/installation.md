@@ -7,8 +7,6 @@ end: true
 top: 100
 ---
 
-<TsdocTable />
-
 ## 安装{lang="zh-CN"}
 
 ## installation {lang="en"}
