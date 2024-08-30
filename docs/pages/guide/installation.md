@@ -7,6 +7,8 @@ end: true
 top: 100
 ---
 
+<TsdocTable />
+
 ## 安装{lang="zh-CN"}
 
 ## installation {lang="en"}
@@ -34,13 +36,13 @@ To use Valaxy, your computer must have Node.js installed.
 ::: zh-CN
 | 版本 | Node | valaxy |
 | --- | --- | --- |
-| 0.6.0 + | Node >= 18.12 | valaxy >= 0.18.5 |
+| <Version type="sakura" /> + | Node >= 18.12 | valaxy >= <Version type="valaxy" /> |
 :::
 
 ::: en
 | version | Node | valaxy |
 | --- | --- | --- |
-| 0.6.0 + | Node >= 18.12 | valaxy >= 0.18.5 |
+| <Version type="sakura" /> + | Node >= 18.12 | valaxy >= <Version type="valaxy" /> |
 :::
 
 ### 创建 Valaxy 博客项目{lang="zh-CN"}
@@ -145,14 +147,14 @@ The theme will not be activated after installation. First, enable the `sakura` t
 Open the `valaxy.config.ts` file in the root directory of the Valaxy project, and modify the positions indicated below to ensure that TypeScript's type checking and auto-completion features work correctly:
 :::
 
-~~~ts {2-4}
+```ts {2-4}
 import { defineValaxyConfig } from 'valaxy'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 
 export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura'
 })
-~~~
+```
 
 ::: zh-CN
 ::: tip
@@ -169,25 +171,27 @@ In simple terms, TypeScript can automatically complete code suggestions while yo
 :::
 
 :::zh-CN
+
 > 主题名称自动根据 `valaxy-theme-xxx` 的格式获取，如本主题名为`valaxy-theme-sakura`，所以sakura就是这个主题的名称
 
 在theme选项中填入 `sakura` 来实现主题切换
 :::
 
 :::en
+
 > The theme name is automatically retrieved in the format `valaxy-theme-xxx`. For example, this theme is named `valaxy-theme-sakura`, so sakura is the name of this theme.
 
 Fill in `sakura` in the theme option to switch themes.
 :::
 
-~~~ts {5}
+```ts {5}
 import { defineValaxyConfig } from 'valaxy'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 
 export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura'
 })
-~~~
+```
 
 :::zh-CN
 ::: warning
@@ -200,6 +204,7 @@ Please ensure that you have correctly imported all the necessary types. Incorrec
 :::
 
 :::zh-CN
+
 > 通过遵循上述步骤，您可以顺利地在您的项目中启用 sakura 主题，并利用 TypeScript 提供的类型安全和代码智能提示功能，享受到更加愉快的博客使用体验
 
 如果创建 Valaxy 项目的时候没有安装依赖，那么我们就要手动安装依赖:

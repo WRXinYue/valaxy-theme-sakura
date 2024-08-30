@@ -16,11 +16,13 @@
     "valaxy-addon-git-log": "workspace:*",
     "valaxy-addon-twikoo": "^0.0.3",
     "valaxy-theme-sakura": "workspace:*",
+    "vite-plugin-tsdoc": "workspace:*",
     "vue-toastification": "2.0.0-rc.5"
   },
   "devDependencies": {
     "@iconify-json/simple-icons": "^1.1.92",
     "nodemon": "^3.1.3",
+    "typedoc": "^0.26.6",
     "typescript": "^5.3.3"
   }
 }

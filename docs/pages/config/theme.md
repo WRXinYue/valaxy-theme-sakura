@@ -10,6 +10,8 @@ categories:
 
 如下是主题配置(ThemeConfig)总览，具体效果可以看各个组件的配置说明
 
+<TsdocTable />
+
 <<< @/../theme/types/index.d.ts
 
 ## 示例

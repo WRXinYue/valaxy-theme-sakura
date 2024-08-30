@@ -2,6 +2,7 @@ import { defineValaxyConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
 import { addonWaline } from 'valaxy-addon-waline'
 import { addonGitLog } from 'valaxy-addon-git-log'
+import tsdocPlugin from 'vite-plugin-tsdoc'
 
 export default defineValaxyConfig<ThemeConfig>({
   siteConfig: {
@@ -103,7 +104,6 @@ export default defineValaxyConfig<ThemeConfig>({
       'config',
       'theme',
       'styles',
-      'tutorial', // TODO:
       'layouts',
       'components-custom',
       'components-layout',
@@ -142,5 +142,8 @@ export default defineValaxyConfig<ThemeConfig>({
     optimizeDeps: {
       include: ['d3', 'monaco-editor'],
     },
+    plugins: [
+      tsdocPlugin({ theme: 'sakura' }),
+    ],
   },
 })

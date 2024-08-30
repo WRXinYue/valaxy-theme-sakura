@@ -1,5 +1,6 @@
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 @use 'valaxy-theme-sakura/styles/themes/sakura/css-vars.scss' as *;
+@use 'valaxy-theme-sakura/styles/markdown/prose.scss' as *;
 
 :root {
   --st-c-text-deeper: var(--st-c-brand);

@@ -36,7 +36,7 @@ onMounted(() => {
 <template>
   <nav class="sidebar-theme-overview">
     <ul class="sakura-sidebar-menu">
-      <li v-for="(item, i) in sidebar" :key="i" class="sakura-menu-item">
+      <li v-for="(item, index) in sidebar" :key="index" class="sakura-menu-item">
         <AppLink :to="item.link" :target="item.target" :title="item.locale ? `${item.text} ${t(item.locale)}` : item.text">
           <span v-if="item.icon" class="icon" inline-block :class="item.icon" />
           {{ item.locale ? `${item.text} ${t(item.locale)}` : item.text }}
