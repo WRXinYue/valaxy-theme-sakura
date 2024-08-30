@@ -49,11 +49,7 @@ function resolveType(typeNode: ts.TypeNode, sourceFile: ts.SourceFile): Resolved
     }
   }
   else if (ts.isArrayTypeNode(typeNode) && !ignoredTypes.includes(typeNode.getText().slice(0, -2))) {
-    const elementTypeName = typeNode.getText().slice(0, -2)
-    console.log('elementTypeName', elementTypeName)
-
     const typeName = typeNode.elementType.getText()
-    console.log('typeName', typeName)
 
     if (resolvedTypes.has(typeName)) {
       return {
