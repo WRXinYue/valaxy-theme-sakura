@@ -1,6 +1,6 @@
-import type { Plugin } from 'vite'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
+import type { Plugin } from 'vite'
 import ts from 'typescript'
 import type { MemberDocumentation, ResolvedType } from './types'
 
