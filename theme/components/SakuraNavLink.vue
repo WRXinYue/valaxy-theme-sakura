@@ -5,9 +5,7 @@ import { useI18n } from 'vue-i18n'
 import type { NavItem } from '../types/index'
 import { useThemeConfig } from '../composables'
 
-const { navbar } = withDefaults(defineProps<{
-  navbar?: NavItem[]
-}>(), {})
+const { navbar = [] } = defineProps<{ navbar?: NavItem[] }>()
 
 const themeConfig = useThemeConfig()
 const route = useRoute()

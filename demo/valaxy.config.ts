@@ -12,6 +12,7 @@ import { addonBangumi } from 'valaxy-addon-bangumi'
  */
 export default defineConfig<ThemeConfig>({
   theme: 'sakura',
+  devtools: true,
 
   themeConfig: {
     colors: {

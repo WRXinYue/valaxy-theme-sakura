@@ -1,3 +1,4 @@
+import type { Plugin } from 'vite'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import ts from 'typescript'
@@ -156,7 +157,7 @@ export default function tsdocPlugin(options: { theme: string }) {
   const resolvedVirtualModuleId = `\0${virtualModuleId}`
   let documentation: any
 
-  return {
+  return <Plugin>{
     name: 'vite-plugin-tsdoc',
 
     buildStart() {

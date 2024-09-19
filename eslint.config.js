@@ -5,7 +5,7 @@ export default antfu(
   {
     unocss: true,
     formatters: true,
-    ignores: ['**/dist', '**/public', '**/styles/animation', 'packages/'],
+    ignores: ['**/dist', '**/public', '**/styles/animation', 'packages/valaxy-addon-live2d'],
   },
   {
     rules: {

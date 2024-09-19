@@ -88,7 +88,7 @@ export default defineValaxyConfig<ThemeConfig>({
     navbarOptions: {
       showMarker: false,
     },
-    navbarTitle: ['Valaxy Theme', '', 'Sakura'],
+    navbarTitle: ['𝑽𝒂𝒍𝒂𝒙𝒚 𝑻𝒉𝒆𝒎𝒆', '', '𝑺𝒂𝒌𝒖𝒓𝒂'],
 
     // addons: [
     //   addonAlgolia({
