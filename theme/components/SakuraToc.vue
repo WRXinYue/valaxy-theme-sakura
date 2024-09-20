@@ -2,11 +2,9 @@
 import { useI18n } from 'vue-i18n'
 import { useFrontmatter } from 'valaxy'
 
-const { viewScroll } = withDefaults(defineProps<{
+const { viewScroll = false } = defineProps<{
   viewScroll?: boolean
-}>(), {
-  viewScroll: false,
-})
+}>()
 const frontmatter = useFrontmatter()
 const { t } = useI18n()
 </script>

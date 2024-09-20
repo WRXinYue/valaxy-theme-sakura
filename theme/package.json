@@ -41,6 +41,6 @@
     "@interactjs/types": "^1.10.27",
     "@types/d3": "^7.4.3",
     "@types/d3-force": "^3.0.9",
-    "valaxy": "^0.19.10"
+    "valaxy": "^0.19.11"
   }
 }
