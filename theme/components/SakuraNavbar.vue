@@ -2,8 +2,10 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores'
+import type { NavItem } from '../types/index'
 
 const props = withDefaults(defineProps<{
+  navbar: NavItem
   favicon?: boolean
   title?: string | string[]
   invert?: boolean
@@ -67,7 +69,7 @@ onUnmounted(() => {
     </slot>
 
     <slot name="nav-link">
-      <SakuraNavLink :class="autoHide && (isHeaderHighlighted ? animIn : animOut)" />
+      <SakuraNavLink :class="autoHide && (isHeaderHighlighted ? animIn : animOut)" :navbar />
     </slot>
 
     <slot name="nav-tool">
