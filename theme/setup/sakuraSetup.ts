@@ -1,3 +1,4 @@
+import { useWindowSize } from '@vueuse/core'
 import type { ThemeConfig } from '../types'
 import { startScrollDamping } from '../utils/scrollDamping'
 import { useSakuraAppStore } from '../stores'
@@ -6,8 +7,9 @@ import { StorageKeys } from '../enum'
 
 export function defineSakuraSetup(themeConfig: ThemeConfig) {
   const sakuraAppStore = useSakuraAppStore()
+  const { width } = useWindowSize()
 
-  if (themeConfig.scrollDamping)
+  if (themeConfig.scrollDamping && width.value >= 768)
     startScrollDamping()
 
   // SidebarOptions

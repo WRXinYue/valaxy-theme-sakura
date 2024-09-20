@@ -8,13 +8,11 @@ function raf(time: any) {
 }
 
 export async function startScrollDamping() {
-  if (window.innerWidth >= 768) {
-    const LenisModule = await import('@studio-freight/lenis')
-    const Lenis = LenisModule.default
-    lenis = new Lenis({ lerp: 0.04 })
+  const LenisModule = await import('@studio-freight/lenis')
+  const Lenis = LenisModule.default
+  lenis = new Lenis({ lerp: 0.04 })
 
-    requestAnimationFrame(raf)
-  }
+  requestAnimationFrame(raf)
 }
 
 export function scrollToTop() {
