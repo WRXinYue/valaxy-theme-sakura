@@ -1,6 +1,6 @@
 {
   "name": "valaxy-theme-sakura",
-  "version": "0.6.7-alpha.8",
+  "version": "0.6.7-alpha.12",
   "packageManager": "pnpm@9.5.0",
   "author": {
     "email": "3322543587@qq.com",
@@ -41,6 +41,6 @@
     "@interactjs/types": "^1.10.27",
     "@types/d3": "^7.4.3",
     "@types/d3-force": "^3.0.9",
-    "valaxy": "^0.19.11"
+    "valaxy": "^0.19.12"
   }
 }
