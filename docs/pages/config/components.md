@@ -1,38 +1,25 @@
 ---
-title: Component config
-title_zh-CN: 组件配置
+title: Component
+title_zh-CN: 组件
 toc: true
 categories:
   - config
 ---
-
-## 组件配置{lang="zh-CN"}
-
-### Component configuration{lang="en"}
 
 ## Component 组件{lang="zh-CN"}
 
 ## Component{lang="en"}
 
 ::: zh-CN
-由于 valaxy 是基于 vue 构建的博客框架，我们可以充分利用 Vue 的全部功能和特性，在此，**组件(Component)** 是 Vue 中的一个核心概念，一个页面可以是由多个组件相结合，这样不仅可以将界面分割成独立、可复用的单元，还能够根据个人偏好自由组合这些单元以构建网页。这种做法使得代码变得更加模块化和有序，在这里我们不需要关注 Vue **组件(Component)** 核心机制， 我们只需学会如何配置即可，如果您想深入了解 **组件(Component)** 的相关信息，请参考 [Vue 官方文档](https://vuejs.org/guide/essentials/component-basics)
+组件是UI的必要元素，形成了在界面中的样子，由框架直接提供的称为系统组件，由主题提供的为称为主题组件，由开发者定义的称为自定义组件。开发者可以通过链式调用的方式设置系统内置组件的渲染效果。开发者可以将系统内置组件组合为自定义组件，通过这种方式将页面组件化为一个个独立的UI单元，实现页面不同单元的独立创建、开发和复用，具有更强的工程性。
 :::
+
+<!-- TODO: Need to update document -->
 
 :::en
 Since Valaxy is a blog framework built on Vue, we can fully utilize all the features and functionalities of Vue. Here, **Component** is a core concept in Vue. A page can be composed of multiple components, allowing you to divide the interface into independent, reusable units. These units can be freely combined according to personal preferences to build web pages. This approach makes the code more modular and organized.
 
 In this context, we do not need to focus on the core mechanisms of Vue **Components**; we only need to learn how to configure them. If you want to delve deeper into the related information on **Components**, please refer to the [official Vue documentation](https://vuejs.org/guide/essentials/component-basics).
-:::
-
-## 组件替换{lang="zh-CN"}
-
-### Component replacement{lang="en"}
-::: zh-CN
-要替换组件，您只需创建一个与原主题中相同名称的自定义组件，系统便会自动进行替换。我们推荐通过 **[自定义组件](#自定义组件)** 来进行这种替换操作。详细信息和操作指南，请访问 [Valaxy Components](https://valaxy.site/guide/custom/components) 学习如何替换组件
-:::
-
-::: en
-To replace a component, you simply need to create a custom component with the same name as the one in the original theme, and the system will automatically perform the replacement. We recommend using **[Custom Components](#custom-components)** for this kind of operation. For detailed information and instructions, please visit [Valaxy Components](https://valaxy.site/guide/custom/components) to learn how to replace components.
 :::
 
 ## 系统组件{lang="zh-CN"}
@@ -53,10 +40,16 @@ System components are the most fundamental parts of the framework, akin to the f
 
 ::: zh-CN
 您可以通过自定义组件来调用或替换系统组件。这里，您可以根据自己的需要替换或修改想要的组件。自定义组件通常包括一套与主题相匹配的组件，使得个性化定制成为可能
+
+> 要[替换组件](https://valaxy.site/guide/custom/components)，您只需创建一个与原主题中相同名称的自定义组件，系统便会自动进行替换。
+
 :::
 
 :::en
 You can call or replace system components through custom components. Here, you can replace or modify the desired components according to your needs. Custom components usually include a set of components that match the theme, making personalized customization possible.
+
+> To [replace a component](https://valaxy.site/guide/custom/components), you simply need to create a custom component with the same name as the one in the original theme, and the system will automatically perform the replacement.
+
 :::
 
 ## 布局组件{lang="zh-CN"}
