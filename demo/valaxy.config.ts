@@ -25,15 +25,13 @@ export default defineConfig<ThemeConfig>({
       title: 'Hello, sakura',
       motto: 'You got to put the past behind you before you can move on.',
       urls: [
-        'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper/sam-and-umeru-bahroo-virtual-youtuber-on-boat-desktop-wallpaperwaifu-com.mp4',
-        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/114448705_p0.png',
-        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/optimize/cGZ4kz2q.webp',
-        'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
-        'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg',
+        // Source: https://www.pixiv.net/artworks/72203573
+        'https://valaxy-theme-sakura.s3.bitiful.net/home-wallpaper.jpg',
+        'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper/yae-miko-sunset-sakura-genshin-impact-moewalls-com.mp4',
       ],
       playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/PV/563098369-1-208.mp4',
       // playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/PV/Original PV Little love song MONGOL 800 cover by Amatsuki.mp4',
-      style: '',
+      style: 'filter-dot',
 
       typewriter: true,
       enableHitokoto: true,

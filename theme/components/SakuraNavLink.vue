@@ -5,7 +5,10 @@ import { useI18n } from 'vue-i18n'
 import type { NavItem } from '../types/index'
 import { useThemeConfig } from '../composables'
 
-const { navbar = [] } = defineProps<{ navbar?: NavItem[] }>()
+const props = defineProps<{
+  navbar?: NavItem[]
+  showMarker?: boolean
+}>()
 
 const themeConfig = useThemeConfig()
 const route = useRoute()
@@ -13,8 +16,8 @@ const { locale } = useI18n()
 
 const marker = ref()
 
-const navLinkItems = computed(() => (navbar || themeConfig.value.navbar))
-const showMarker = computed(() => (themeConfig.value.navbarOptions?.showMarker))
+const navLinkItems = computed(() => (props.navbar || themeConfig.value.navbar))
+const showMarker = computed(() => (props.showMarker || themeConfig.value.navbarOptions?.showMarker))
 
 watch(() => route.path, () => {
   nextTick(updateMarker)

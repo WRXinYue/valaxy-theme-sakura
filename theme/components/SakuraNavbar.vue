@@ -5,11 +5,12 @@ import { useSakuraAppStore } from '../stores'
 import type { NavItem } from '../types/index'
 
 const props = withDefaults(defineProps<{
-  navbar: NavItem
+  navbar: NavItem[]
   favicon?: boolean
   title?: string | string[]
   invert?: boolean
   autoHide?: boolean
+  showMarker?: boolean
   animIn?: string | string[]
   animOut?: string | string[]
 }>(), {
@@ -69,7 +70,7 @@ onUnmounted(() => {
     </slot>
 
     <slot name="nav-link">
-      <SakuraNavLink :class="autoHide && (isHeaderHighlighted ? animIn : animOut)" :navbar />
+      <SakuraNavLink :class="autoHide && (isHeaderHighlighted ? animIn : animOut)" :navbar :show-marker />
     </slot>
 
     <slot name="nav-tool">

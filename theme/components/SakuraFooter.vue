@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { capitalize, computed, onMounted, ref } from 'vue'
+import type { Pkg } from 'valaxy'
 import { useSiteConfig, useValaxyConfig } from 'valaxy'
 import { useI18n } from 'vue-i18n'
 import valaxyPkg from 'valaxy/package.json'
@@ -9,6 +10,7 @@ import type { Footer } from '../types'
 
 const props = defineProps<{
   footer?: Footer
+  pkg?: Pkg
 }>()
 
 const { t } = useI18n()
@@ -19,6 +21,7 @@ const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
 
 const footer = computed (() => props.footer || themeConfig.value.footer)
+const pkg = computed (() => props.pkg || config.value.themeConfig.pkg || sakuraPkg)
 
 const year = new Date().getFullYear()
 
@@ -58,7 +61,7 @@ onMounted(() => {
     </div>
 
     <div v-if="footer.powered" class="powered" m="2">
-      <span v-html="poweredHtml" /> | <span>{{ t('footer.theme') }} - <a :href="sakuraPkg.homepage" :title="`valaxy-theme-${config.theme}`" target="_blank">{{ capitalize(config.theme) }}</a> v{{ sakuraPkg.version }}</span>
+      <span v-html="poweredHtml" /> | <span>{{ t('footer.theme') }} - <a :href="pkg.homepage" :title="`valaxy-theme-${config.theme}`" target="_blank">{{ capitalize(config.theme) }}</a> v{{ pkg.version }}</span>
     </div>
 
     <slot />
