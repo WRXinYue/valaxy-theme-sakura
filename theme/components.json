@@ -28,13 +28,11 @@
   "ArticleThemeMinima": "themes/ArticleThemeMinima.vue",
   "InfoOverlayThemeHero": "themes/InfoOverlayThemeHero.vue",
   "InfoOverlayThemeSakura": "themes/InfoOverlayThemeSakura.vue",
-  "LinksThemeYun": "themes/LinksThemeYun.vue",
   "PaginationThemeInfiniteScroll": "themes/PaginationThemeInfiniteScroll.vue",
   "PaginationThemeValaxy": "themes/PaginationThemeValaxy.vue",
   "SidebarThemeDynamic": "themes/SidebarThemeDynamic.vue",
   "SidebarThemeOverview": "themes/SidebarThemeOverview.vue",
   "WaveThemeFish": "themes/WaveThemeFish.vue",
   "WaveThemeHorizontal": "themes/WaveThemeHorizontal.vue",
-  "WaveThemeRipple": "themes/WaveThemeRipple.vue",
-  "WaveThemeYunCloud": "themes/WaveThemeYunCloud.vue"
+  "WaveThemeRipple": "themes/WaveThemeRipple.vue"
 }

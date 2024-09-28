@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useLinkData, useThemeConfig } from '../../composables'
-import type { LinkType } from '../../types'
+import { useLinkData, useThemeConfig } from '../composables'
+import type { LinkType } from '../types'
 
 const props = defineProps<{
   links: string | LinkType[]
