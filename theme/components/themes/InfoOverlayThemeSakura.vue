@@ -85,6 +85,7 @@ function nextMedia() {
   align-items: center;
 
   .card-wrapper {
+    margin-top: 30px;
     color: white;
     border-radius: 1rem;
     padding: 1rem 0.75rem;

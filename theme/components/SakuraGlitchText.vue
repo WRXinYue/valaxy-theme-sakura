@@ -32,12 +32,20 @@ const props = defineProps<{
   position: relative;
   font-weight: bold;
   color: white;
-  font-size: 6rem;
+  font-size: 4rem;
+  line-height: initial;
+  text-align: center;
   text-shadow: rgba(0, 0, 0, 0.2) 4px 4px 8px;
 
-  @include mobile {
+  @include screen('md') {
     & {
-      font-size: 4rem;
+      font-size: 5rem;
+    }
+  }
+
+  @include screen('lg') {
+    & {
+      font-size: 6rem;
     }
   }
 
