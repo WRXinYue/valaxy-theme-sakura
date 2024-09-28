@@ -37,11 +37,12 @@ Create a new `index.scss` file in the `styles` directory and fill in your prefer
 ::: code-group
 
 ```scss [sakura]
-@use "valaxy-theme-sakura/styles/themes/sakura/index.scss" as *;
+@use 'valaxy-theme-sakura/styles/themes/sakura/index.scss' as *;
 ```
 
-```scss [ocean 🚧]
-@use "valaxy-theme-sakura/styles/themes/ocean/index.scss" as *;
+```scss [ocean ❌]
+// 该主题样式已迁移至 oceanus
+@use 'valaxy-theme-sakura/styles/themes/ocean/index.scss' as *;
 ```
 
 :::
@@ -61,10 +62,10 @@ If you only want certain aspects of the theme files, you can import them separat
 ::: code-group
 
 ```scss [sakura]
-@use "valaxy-theme-sakura/styles/themes/sakura/css-vars.scss" as *;
-@use "valaxy-theme-sakura/styles/themes/sakura/prose.scss" as *;
-@use "valaxy-theme-sakura/styles/themes/sakura/components.scss" as *;
-@use "valaxy-theme-sakura/styles/themes/sakura/animation.scss" as *;
+@use 'valaxy-theme-sakura/styles/themes/sakura/css-vars.scss' as *;
+@use 'valaxy-theme-sakura/styles/themes/sakura/prose.scss' as *;
+@use 'valaxy-theme-sakura/styles/themes/sakura/components.scss' as *;
+@use 'valaxy-theme-sakura/styles/themes/sakura/animation.scss' as *;
 ```
 
 :::

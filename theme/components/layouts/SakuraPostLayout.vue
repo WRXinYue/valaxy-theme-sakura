@@ -49,7 +49,7 @@ useSchemaOrg(
         <RouterView v-slot="{ Component }">
           <component :is="Component">
             <template #main-content-after>
-              <YunSponsor v-if="showSponsor" />
+              <SakuraSponsor v-if="showSponsor" />
               <ValaxyCopyright v-if="frontmatter.copyright || siteConfig.license.enabled" :url="url" />
             </template>
             <template #footer>
