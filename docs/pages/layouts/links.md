@@ -16,7 +16,7 @@ const frontmatter = useFrontmatter()
 
 <template>
   <SakuraMultiColumnsLayout class="mt-$st-c-navbar-height">
-    <LinksThemeYun :links="frontmatter.links" :random="frontmatter.random" />
+    <SakuraLinks :links="frontmatter.links" :random="frontmatter.random" />
   </SakuraMultiColumnsLayout>
 </template>
 ```
@@ -50,10 +50,7 @@ comment: false
 
 复制最上面的默认例子，修改`LinksThemeYun`为喜欢自己的主题就行，`SakuraMultiColumnsLayout`作用是保持页面布局，不会让`LinksThemeYun`组件宽度过大
 
-## 主题布局
-
-- [LinksThemeYun](/components-themes/LinksThemeYun)
-
 ## 相关组件
 
+- [SakuraLinks](/components/SakuraLinks)
 - [SakuraMultiColumnsLayout](/components-layout/SakuraMultiColumnsLayout)
