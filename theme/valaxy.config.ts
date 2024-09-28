@@ -1,14 +1,12 @@
 import { defineTheme } from 'valaxy'
 import { addonVercount } from 'valaxy-addon-vercount'
 import { addonHitokoto } from 'valaxy-addon-hitokoto'
-import { VitePWA } from 'vite-plugin-pwa'
-import type { PluginOption } from 'vite'
 import defu from 'defu'
 import { defaultThemeConfig, generateSafelist, themePlugin } from './node'
 import type { ThemeConfig } from './types'
 
 export default defineTheme<ThemeConfig>((options) => {
-  const { siteConfig, themeConfig: userThemeConfig } = options.config
+  const { themeConfig: userThemeConfig } = options.config
   const themeConfig = defu(userThemeConfig || {}, defaultThemeConfig)
 
   return {
@@ -16,90 +14,11 @@ export default defineTheme<ThemeConfig>((options) => {
     vite: {
       plugins: [
         themePlugin(themeConfig),
-        VitePWA({
-          registerType: 'autoUpdate',
-          injectRegister: 'auto',
-          includeAssets: ['favicon.ico'],
-          manifest: {
-            name: siteConfig.title,
-            short_name: siteConfig.subtitle,
-            description: siteConfig.description,
-            theme_color: themeConfig.colors.primary,
-            icons: [
-              {
-                src: 'pwa-192x192.png',
-                type: 'image/png',
-                sizes: '192x192',
-              },
-              {
-                src: 'pwa-512x512.png',
-                type: 'image/png',
-                sizes: '512x512',
-              },
-            ],
-          },
-          workbox: {
-            runtimeCaching: [
-              {
-                urlPattern: ({ request }) => request.destination === 'document',
-                handler: 'NetworkFirst',
-              },
-              {
-                urlPattern: ({ request }) => request.destination === 'script' || request.destination === 'style',
-                handler: 'NetworkFirst',
-                options: {
-                  cacheName: 'static-resources',
-                },
-              },
-              {
-                urlPattern: ({ request }) => request.destination === 'image',
-                handler: 'CacheFirst',
-                options: {
-                  cacheName: 'img-cache',
-                  expiration: {
-                    maxEntries: 1000,
-                    maxAgeSeconds: 60 * 60 * 24 * 30,
-                  },
-                },
-              },
-              {
-                urlPattern: ({ request }) => request.destination === 'video',
-                handler: 'CacheFirst',
-                options: {
-                  cacheName: 'media-cache',
-                  expiration: {
-                    maxEntries: 500,
-                    maxAgeSeconds: 60 * 60 * 24 * 365,
-                  },
-                  cacheableResponse: {
-                    statuses: [200],
-                  },
-                  rangeRequests: true,
-                },
-              },
-            ],
-          },
-          devOptions: {
-            enabled: true,
-          },
-        }) as PluginOption,
       ],
     },
     unocss: {
       safelist: generateSafelist(options.config.themeConfig as ThemeConfig),
     },
-    // markdown: {
-    //   wrapperClasses: (id, code) => code.includes('@layout-full-width')
-    //     ? ''
-    //     : 'prose m-auto slide-enter-content',
-    //   headEnabled: true,
-    //   exportFrontmatter: false,
-    //   exposeFrontmatter: false,
-    //   exposeExcerpt: false,
-    //   markdownItOptions: {
-    //     quotes: '""\'\'',
-    //   },
-    // },
     addons: [
       addonVercount(),
       addonHitokoto(),
