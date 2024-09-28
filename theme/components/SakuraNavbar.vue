@@ -5,7 +5,7 @@ import { useSakuraAppStore } from '../stores'
 import type { NavItem } from '../types/index'
 
 const props = withDefaults(defineProps<{
-  navbar: NavItem[]
+  navbar?: NavItem[]
   favicon?: boolean
   title?: string | string[]
   invert?: boolean

@@ -15,10 +15,10 @@ const { banner } = themeConfig.value
       <WaveThemeFish v-if="banner.waveTheme === 'fish'" />
       <WaveThemeHorizontal v-if="banner.waveTheme === 'horizontal'" />
       <WaveThemeRipple v-if="banner.waveTheme === 'ripple'" />
-      <WaveThemeYunCloud v-if="banner.waveTheme === 'yunCloud'" />
     </template>
     <template #info-overlay>
       <InfoOverlayThemeSakura />
+      <!-- <InfoOverlayThemeHero /> -->
     </template>
   </SakuraBanner>
 </template>
