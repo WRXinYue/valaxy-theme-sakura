@@ -1,49 +1,36 @@
 <script setup lang="ts">
-// import { isClient, useWindowScroll } from '@vueuse/core'
-import { onMounted } from 'vue'
-import LazyLoad from 'vanilla-lazyload'
+import { useWindowScroll, useWindowSize } from '@vueuse/core'
+import { onMounted, ref, watch } from 'vue'
 import interact from 'interactjs'
-// import { useThemeConfig } from '../composables'
-// import { scrollToTop } from '../utils/scrollDamping'
-// import scrollImage from '../assets/scroll.png'
+import { useScroll } from '../composables'
 
-// const themeConfig = useThemeConfig()
-// const { y } = useWindowScroll()
-// const hide = 'top: -900px'
-// const style = ref(hide)
-// const isVisible = ref(false)
+const props = withDefaults(defineProps<{
+  height?: number
+  position?: number
+  mass?: number
+  gravity?: number
+  friction?: number
+}>(), {
+  position: 0.87,
+  height: 600,
+  mass: 2,
+})
 
-// function onScroll() {
-//   if (y.value > 200) {
-//     if (window.innerWidth > 720) {
-//       isVisible.value = false
-//       style.value = `top: ${Math.min(window.innerHeight - 968, 0)}px`
-//     }
-
-//     else {
-//       isVisible.value = true
-//       style.value = `top: -640px`
-//     }
-//   }
-//   else {
-//     style.value = hide
-//   }
-// }
-// function toTop() {
-//   if (isClient)
-//     return
-
-//   if (!themeConfig.value.scrollDamping)
-//     window.scrollTo({ top: 0 })
-//   else
-//     scrollToTop()
-// }
+const { y } = useWindowScroll()
+const { width } = useWindowSize()
+const { toTop: scrollToTop } = useScroll()
 
 let mouseX: number, mouseY: number
 const nodes: Node[] = []
 const constraints: Constraint[] = []
 let drag: Node | null = null
 let touched: boolean = false
+
+const imgRef = ref()
+const nodeRef = ref()
+const constraintRef = ref()
+
+const isVisible = ref(false)
 
 class Node {
   x: number
@@ -65,23 +52,17 @@ class Node {
     this.mass = mass
     this.gravity = gravity
     this.friction = friction
+    this.el = !fixed ? imgRef.value : nodeRef.value
 
-    if (!fixed) {
-      this.el = document.createElement('img') as HTMLImageElement
-      (this.el as HTMLImageElement).src = 'https://common.s3.bitiful.net/scroll.png'
-    }
-    else {
-      this.el = document.createElement('div')
-    }
-    this.el.className = 'node';
-    (this.el as any).nodeRef = this
-    document.body.appendChild(this.el)
+    if (isVisible.value)
+      imgRef.value.classList.add('float')
 
     interact(this.el)
       .draggable({})
       .on('dragstart', (event: any) => {
-        drag = event.target.nodeRef
+        drag = this!
         touched = true
+        event.target.classList.remove('float')
       })
       .on('dragmove', (event: any) => {
         if (touched) {
@@ -90,6 +71,10 @@ class Node {
         }
       })
       .on('dragend', () => {
+        if (drag && isVisible.value) {
+          scrollToTop()
+          drag.el.classList.add('float')
+        }
         drag = null
         touched = false
       })
@@ -99,6 +84,7 @@ class Node {
     if (!this.fixed) {
       const tempX = this.x
       const tempY = this.y
+
       this.x += (this.x - this.oldX) * this.friction
       this.y += (this.y - this.oldY) * this.friction + this.gravity
       this.oldX = tempX
@@ -110,6 +96,11 @@ class Node {
   updateElement() {
     this.el.style.left = `${this.x}px`
     this.el.style.top = `${this.y - 20}px`
+  }
+
+  reset() {
+    this.x = 0
+    this.y = 0
   }
 }
 
@@ -125,10 +116,7 @@ class Constraint {
     const dx = n1.x - n2.x
     const dy = n1.y - n2.y
     this.dist = Math.sqrt(dx * dx + dy * dy)
-    this.el = document.createElement('img')
-    this.el.src = 'https://common.s3.bitiful.net/scroll-line.png'
-    this.el.className = 'line'
-    document.body.appendChild(this.el)
+    this.el = constraintRef.value
   }
 
   solve() {
@@ -155,7 +143,6 @@ class Constraint {
     this.updateElement()
   }
 
-  // TODO:
   updateElement() {
     const x1 = this.n1.x
     const y1 = this.n1.y
@@ -170,9 +157,10 @@ class Constraint {
   }
 }
 
-function setup() {
-  const n1 = new Node(window.innerWidth * 0.5, -100, true)
-  const n2 = new Node(window.innerWidth * 0.5 + 400, -100, false, 2)
+function init() {
+  const { height, position, mass, gravity, friction } = props
+  const n1 = new Node(width.value * position, -100, true)
+  const n2 = new Node(width.value * position + height, -100, false, mass, gravity, friction)
   const c1 = new Constraint(n1, n2)
 
   nodes.push(n1)
@@ -188,8 +176,6 @@ function update() {
   }
 
   if (drag) {
-    // drag.x += (mouseX - drag.x - dx) * 0.6;
-    // drag.y += (mouseY - drag.y - dy) * 0.6;
     drag.x += (mouseX - drag.x) * 0.6
     drag.y += (mouseY - drag.y) * 0.6
   }
@@ -208,30 +194,68 @@ window.addEventListener('resize', () => {
   }
 })
 
-onMounted(() => {
-  // window.addEventListener('scroll', onScroll)
-  setup()
-  // eslint-disable-next-line no-new
-  new LazyLoad({ })
-})
+watch([y, width], ([newY, newWidth]) => {
+  if (newY > 200) {
+    if (newWidth <= 720) {
+      isVisible.value = false
+    }
+    else {
+      if (isVisible.value === true)
+        return
 
-// onUnmounted(() => {
-//   window.removeEventListener('scroll', onScroll)
-// })
+      nodes[1]?.reset()
+      isVisible.value = true
+    }
+  }
+  else {
+    isVisible.value = false
+  }
+}, { immediate: true })
+
+let debounceTimer: ReturnType<typeof setTimeout>
+
+watch(width, () => {
+  clearTimeout(debounceTimer)
+
+  debounceTimer = setTimeout(() => {
+    nodes[0].x = window.innerWidth * 0.85
+    nodes[1]?.reset()
+  }, 200)
+})
+onMounted(() => setTimeout(() => init(), 0))
 </script>
 
 <template>
-  <!-- <a href="#" class="lazy to-top z-1" :data-bg="scrollImage" :shadow="isVisible" :style="style" aria-label="to-top" @click="toTop" /> -->
-  <div />
+  <div v-show="isVisible">
+    <div ref="nodeRef" />
+    <img ref="imgRef" class="sakura-to-top-node" src="https://common.s3.bitiful.net/scroll.png">
+    <img ref="constraintRef" class="sakura-to-top-line" src="https://common.s3.bitiful.net/scroll-line.png">
+  </div>
 </template>
 
 <style lang="scss">
-.to-top {
-  position: fixed;
-  width: 70px;
-  height: 900px;
-  right: 25px;
-  transition: top 0.5s ease-in-out;
+.sakura-to-top {
+  &-node,
+  &-line {
+    position: fixed;
+    width: 70px;
+  }
+
+  &-node {
+    z-index: 4;
+    transform-origin: center;
+    /* stylelint-disable-next-line comment-empty-line-before */
+    /* https://github.com/taye/interact.js/issues/595 */
+    touch-action: none;
+  }
+
+  &-line {
+    z-index: 3;
+    transform-origin: top center;
+  }
+}
+
+.float {
   animation: float 2s ease-in-out infinite;
 }
 
@@ -247,21 +271,5 @@ onMounted(() => {
   100% {
     transform: translateY(0);
   }
-}
-
-.node {
-  position: fixed;
-  transform-origin: center;
-  /* stylelint-disable-next-line comment-empty-line-before */
-  /* https://github.com/taye/interact.js/issues/595 */
-  touch-action: none;
-  width: 70px;
-  z-index: 100;
-}
-
-.line {
-  position: fixed;
-  width: 70px;
-  transform-origin: top center;
 }
 </style>

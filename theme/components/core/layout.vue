@@ -57,6 +57,10 @@ const themeConfig = useThemeConfig()
       </slot>
     </main>
 
+    <slot name="to-top">
+      <SakuraToTop />
+    </slot>
+
     <slot name="footer">
       <SakuraFooterCustom class="sakura-sidebar-offset" />
     </slot>
