@@ -32,7 +32,7 @@ const overlayBarClass = computed(() => appStore.wallpaperIsPlaying ? 'animation-
         <slot name="info-overlay" />
       </div>
 
-      <SakuraPlayer v-if="banner.playerUrl" z-5 class="absolute bottom-2 right-2 h-8 w-8" @click="appStore.togglePlayPause" />
+      <SakuraPlayer v-if="banner.playerUrl" class="absolute bottom-2 right-2 h-8 w-8" @click="appStore.togglePlayPause" />
     </template>
   </header>
 </template>

@@ -15,3 +15,9 @@ const currentIconUrl = computed(() => wallpaperIsPlaying ? pauseIconUrl : playIc
     style="animation-duration: 2s; --translate-distance: 0.2em"
   >
 </template>
+
+<style lang="scss">
+.sakura-player {
+  z-index: 4;
+}
+</style>
