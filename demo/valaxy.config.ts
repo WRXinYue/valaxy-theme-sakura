@@ -73,6 +73,8 @@ export default defineConfig<ThemeConfig>({
       navigationMerge: true,
     },
 
+    scrollToTop: true,
+
     navbar: [
       {
         text: '🌈',

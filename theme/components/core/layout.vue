@@ -58,7 +58,7 @@ const themeConfig = useThemeConfig()
     </main>
 
     <slot name="to-top">
-      <SakuraToTop />
+      <SakuraScrollToTop v-if="themeConfig.scrollToTop" />
     </slot>
 
     <slot name="footer">

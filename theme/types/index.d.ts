@@ -92,6 +92,12 @@ export interface ThemeConfig extends DefaultTheme.Config {
    */
   scrollDamping: boolean
   /**
+   * @zh 是否显示滚动到顶部组件
+   * @en  Whether to show the scroll to top component
+   * @default false
+   */
+  scrollToTop: boolean
+  /**
    * @zh 404图片
    * @en Image for the 404
    */

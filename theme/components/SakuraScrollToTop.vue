@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<{
 
 const { y } = useWindowScroll()
 const { width } = useWindowSize()
-const { toTop: scrollToTop } = useScroll('smooth')
+const { toTop: scrollToTop } = useScroll()
 
 let mouseX: number, mouseY: number
 const nodes: Node[] = []

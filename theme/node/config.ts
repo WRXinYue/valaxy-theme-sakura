@@ -56,6 +56,7 @@ export const defaultThemeConfig: ThemeConfig = {
   },
 
   scrollDamping: false,
+  scrollToTop: false,
 }
 
 /**
