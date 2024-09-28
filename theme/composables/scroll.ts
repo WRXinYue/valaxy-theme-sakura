@@ -1,22 +1,17 @@
-import { isClient } from '@vueuse/core'
+import { useScroll as useVUScroll } from '@vueuse/core'
 import { scrollToTop } from '../utils/scrollDamping'
 import { useThemeConfig } from '.'
 
-export function useScroll(smooth = false) {
+export function useScroll(smooth?: 'smooth' | 'auto') {
   const themeConfig = useThemeConfig()
 
   function toTop() {
     if (!themeConfig.value.scrollDamping) {
-      if (!smooth) {
-        window.scrollTo({ top: 0 })
-      }
-      else {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      }
+      const { y } = useVUScroll(window, { behavior: smooth })
+      y.value = 0
     }
     else {
-      if (isClient)
-        scrollToTop()
+      scrollToTop()
     }
   }
 

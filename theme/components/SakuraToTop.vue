@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<{
 
 const { y } = useWindowScroll()
 const { width } = useWindowSize()
-const { toTop: scrollToTop } = useScroll()
+const { toTop: scrollToTop } = useScroll('smooth')
 
 let mouseX: number, mouseY: number
 const nodes: Node[] = []
@@ -188,11 +188,11 @@ function update() {
   requestAnimationFrame(update)
 }
 
-window.addEventListener('resize', () => {
+function updateElements() {
   for (const c of constraints) {
     c.updateElement()
   }
-})
+}
 
 watch([y, width], ([newY, newWidth]) => {
   if (newY > 200) {
@@ -214,12 +214,13 @@ watch([y, width], ([newY, newWidth]) => {
 
 let debounceTimer: ReturnType<typeof setTimeout>
 
-watch(width, () => {
+watch(width, (width) => {
   clearTimeout(debounceTimer)
 
   debounceTimer = setTimeout(() => {
-    nodes[0].x = window.innerWidth * 0.85
+    nodes[0].x = width * 0.85
     nodes[1]?.reset()
+    updateElements()
   }, 200)
 })
 onMounted(() => setTimeout(() => init(), 0))
