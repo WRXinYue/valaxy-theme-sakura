@@ -7,7 +7,7 @@
     "build": "npm run build:demo",
     "build:demo": "npm -C demo run build",
     "build:docs": "pnpm -C docs run build",
-    "ci:publish": "tsx scripts/prepublish.ts && pnpm -r publish --access public --no-git-checks",
+    "ci:publish": "tsx scripts/prepublish.ts && cd theme && pnpm publish --access public --no-git-checks",
     "dev": "npm run demo",
     "demo": "npm -C demo run dev",
     "docs": "pnpm -C docs run dev",

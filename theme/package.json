@@ -1,6 +1,6 @@
 {
   "name": "valaxy-theme-sakura",
-  "version": "0.6.7-alpha.12",
+  "version": "0.6.8-alpha.2",
   "packageManager": "pnpm@9.5.0",
   "author": {
     "email": "3322543587@qq.com",
@@ -24,9 +24,8 @@
   "main": "client/index.ts",
   "types": "types/index.d.ts",
   "peerDependencies": {
-    "d3-force": "^3.0.0",
     "valaxy-addon-hitokoto": "^0.0.1",
-    "valaxy-addon-vercount": "workspace:*",
+    "valaxy-addon-vercount": "^0.0.5",
     "valaxy-addon-waline": "^0.1.5"
   },
   "dependencies": {
@@ -34,13 +33,10 @@
     "@iconify-json/mdi": "^1.1.64",
     "@studio-freight/lenis": "^1.0.37",
     "interactjs": "^1.10.27",
-    "typeit": "^8.8.3",
-    "vite-plugin-pwa": "^0.20.1"
+    "typeit": "^8.8.3"
   },
   "devDependencies": {
     "@interactjs/types": "^1.10.27",
-    "@types/d3": "^7.4.3",
-    "@types/d3-force": "^3.0.9",
     "valaxy": "^0.19.12"
   }
 }

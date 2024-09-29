@@ -11,7 +11,7 @@
   "dependencies": {
     "valaxy-addon-algolia": "^0.0.3",
     "valaxy-addon-bangumi": "^0.2.1",
-    "valaxy-addon-live2d": "workspace:*",
+    "valaxy-addon-live2d": "^0.2.2",
     "valaxy-addon-meting": "^0.1.3",
     "valaxy-addon-twikoo": "^0.0.3",
     "valaxy-theme-sakura": "workspace:*"

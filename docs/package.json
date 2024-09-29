@@ -13,7 +13,7 @@
   "dependencies": {
     "monaco-editor": "^0.50.0",
     "valaxy": "^0.19.12",
-    "valaxy-addon-git-log": "workspace:*",
+    "valaxy-addon-git-log": "^0.1.0",
     "valaxy-addon-twikoo": "^0.0.3",
     "valaxy-theme-sakura": "workspace:*",
     "vite-plugin-tsdoc": "workspace:*",
