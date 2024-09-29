@@ -7,7 +7,8 @@
 <style lang="scss">
 .sakura-aside {
   position: sticky;
-  top: var(--st-c-navbar-height);
+  top: calc(var(--st-c-navbar-height) + var(--st-c-navbar-mt));
+  margin-top: var(--st-c-navbar-mt);
 
   // width: var(--st-c-aside-width);
   max-height: calc(100vh - var(--st-c-navbar-height));

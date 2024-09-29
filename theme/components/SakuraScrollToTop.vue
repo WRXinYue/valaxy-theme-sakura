@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<{
   gravity?: number
   friction?: number
 }>(), {
-  position: 0.87,
+  position: 0.9,
   height: 600,
   mass: 2,
 })

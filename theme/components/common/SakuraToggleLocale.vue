@@ -7,7 +7,7 @@ const { toggleLocales } = useLocale()
 </script>
 
 <template>
-  <button :title="t('button.toggle_langs')" @click="toggleLocales">
+  <button class="sakura-icon-btn sakura-toggle-locale" :title="t('button.toggle_langs')" @click="toggleLocales">
     <div i-ri-translate class="transform transition" :class="locale === 'en' ? 'rotate-y-180' : ''" />
   </button>
 </template>
