@@ -9,7 +9,7 @@ codeHeightLimit: 300
 themes:
   - name: valaxy theme sakura
     desc: 主题配置示例样式，风格参考 WordPress 的 Sakura 主题
-    siteImage: https://common.s3.bitiful.net/snapshot/2024-04-11_22-55.png
+    siteImage: https://valaxy-theme-sakura.s3.bitiful.net/demo.png
     siteExampleUrl: https://sakura.wrxinyue.org/
     tags:
       - yun
