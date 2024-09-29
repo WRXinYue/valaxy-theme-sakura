@@ -1,15 +1,11 @@
 import { defineConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
-
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
 import { addonLive2d } from 'valaxy-addon-live2d'
 import { addonBangumi } from 'valaxy-addon-bangumi'
+import { addonTwikoo } from 'valaxy-addon-twikoo'
 
-/**
- * User Config
- * do not use export const config to avoid defu conflict
- */
 export default defineConfig<ThemeConfig>({
   theme: 'sakura',
   devtools: true,
@@ -220,6 +216,9 @@ export default defineConfig<ThemeConfig>({
       serverURL: 'https://waline.wrxinyue.org',
       pageview: true,
       comment: true,
+    }),
+    addonTwikoo({
+      envId: 'https://wrxinyue-twikoo.hf.space',
     }),
     addonMeting({
       global: true,

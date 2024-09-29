@@ -1,13 +1,13 @@
 :root {
-  --st-c-brand: #ff4e6a;
-  --st-c-secondary: #fe9600;
+  --st-c-brand: #ff5c5c;
+  --st-c-secondary: #ff6f91;
   --st-c-sidebar-width: 240px;
   --st-c-sidebar-marker-h: 4px;
   --st-c-navbar-height: 3.75rem;
   --st-c-text: #797979;
   --st-c-text-muted: #737373;
-  --st-c-text-code: #e67474;
+  --st-c-text-code: var(--st-c-brand);
   --st-c-bg-mute: rgb(254, 250, 199);
-  --st-c-link: #e67474;
+  --st-c-link: var(--st-c-brand);
   --st-c-navbar-text: #504e4e;
 }

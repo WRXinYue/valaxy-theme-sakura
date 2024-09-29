@@ -60,8 +60,8 @@ importers:
   demo:
     dependencies:
       valaxy-addon-algolia:
-        specifier: ^0.0.3
-        version: 0.0.3(@algolia/client-search@4.24.0)(search-insights@2.17.2)(valaxy@0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2))
+        specifier: ^0.1.0
+        version: 0.1.0(@algolia/client-search@4.24.0)(search-insights@2.17.2)(valaxy@0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2))
       valaxy-addon-bangumi:
         specifier: ^0.2.1
         version: 0.2.2(valaxy@0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2))
@@ -4835,8 +4835,8 @@ packages:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
 
-  valaxy-addon-algolia@0.0.3:
-    resolution: {integrity: sha512-FGwJgtlVmYcFxu732bKKnTigWbiiuJGRwegifptHKFxAaYMZreadcaCcxjZUffQk2EHbaQp8T/WuRo0R5+mBzA==}
+  valaxy-addon-algolia@0.1.0:
+    resolution: {integrity: sha512-gvYGZmJb0KqkBrOJ+jPoi4BQg9eYodvYzmRgELlDprsxoFjcb4h1hs7KRZPqlIvwt4YWkXMUpO84EMCYviIIDg==}
     peerDependencies:
       valaxy: latest
 
@@ -10310,7 +10310,7 @@ snapshots:
 
   uuid@9.0.1: {}
 
-  valaxy-addon-algolia@0.0.3(@algolia/client-search@4.24.0)(search-insights@2.17.2)(valaxy@0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2)):
+  valaxy-addon-algolia@0.1.0(@algolia/client-search@4.24.0)(search-insights@2.17.2)(valaxy@0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2)):
     dependencies:
       '@docsearch/css': 3.6.2
       '@docsearch/js': 3.6.2(@algolia/client-search@4.24.0)(search-insights@2.17.2)

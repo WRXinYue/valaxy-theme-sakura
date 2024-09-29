@@ -1,21 +1,47 @@
 <script lang="ts" setup>
+import { computed, onMounted, ref } from 'vue'
 import { useRuntimeConfig } from 'valaxy'
 
 const runtimeConfig = useRuntimeConfig()
+
+const hasWaline = computed(() => runtimeConfig.value.addons['valaxy-addon-waline'])
+const hasTwikoo = computed(() => runtimeConfig.value.addons['valaxy-addon-twikoo'])
+
+const currentCommentSystem = ref<'waline' | 'twikoo'>()
+
+const showCommentToggle = computed(() => hasWaline.value && hasTwikoo.value)
+
+function toggleCommentSystem(value: 'waline' | 'twikoo') {
+  currentCommentSystem.value = value
+  localStorage.setItem('currentCommentSystem', value)
+}
+
+onMounted(() => {
+  currentCommentSystem.value = localStorage.getItem('currentCommentSystem') as 'waline' | 'twikoo' || 'waline'
+})
 </script>
 
 <template>
-  <SakuraCard w="full" class="comment sakura-comment" mt-6>
+  <SakuraCard w="full" class="sakura-comment" mt-6>
     <ClientOnly>
-      <YunWaline v-if="runtimeConfig.addons['valaxy-addon-waline']" />
-      <!-- <YunTwikoo v-if="runtimeConfig.addons['valaxy-addon-twikoo']" /> -->
+      <div v-if="showCommentToggle" class="sakura-comment-toggle mb-4 mt-5 flex justify-center">
+        <button class="sakura-comment-button" :class="[{ active: currentCommentSystem === 'waline' }]" @click="toggleCommentSystem('waline')">
+          Waline
+        </button>
+        <button class="sakura-comment-button" :class="[{ active: currentCommentSystem === 'twikoo' }]" @click="toggleCommentSystem('twikoo')">
+          Twikoo
+        </button>
+      </div>
+
+      <SakuraWaline v-if="hasWaline" v-show="!showCommentToggle || currentCommentSystem === 'waline'" />
+      <SakuraTwikoo v-if="hasTwikoo" v-show="!showCommentToggle || currentCommentSystem === 'twikoo'" />
       <slot />
     </ClientOnly>
   </SakuraCard>
 </template>
 
 <style lang="scss">
-.comment {
+.sakura-comment {
   h1 {
     font-size: 2rem;
     font-weight: 600;
@@ -62,6 +88,29 @@ const runtimeConfig = useRuntimeConfig()
     list-style: decimal;
     margin-left: 1rem;
     margin-bottom: 1rem;
+  }
+}
+
+.sakura-comment-toggle {
+  overflow: hidden;
+  border-radius: 0.375rem;
+}
+
+.sakura-comment-button {
+  padding: 0.1rem 1rem;
+  border: none;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+
+  &.active {
+    background-color: var(--st-c-secondary);
+    color: white;
   }
 }
 </style>

@@ -53,7 +53,7 @@ $light: (
   // --------------- SakuraNavbar ---------------
   'c-navbar-text': var(--st-c-text),
   'c-navbar-hover-color': #fff,
-  'c-navbar-hover-bg-color': var(--st-c-secondary),
+  'c-navbar-hover-bg-color': var(--st-c-brand),
 ) !default;
 $light: map.merge((), $light);
 
@@ -86,7 +86,7 @@ $dark: (
   // --------------- SakuraNavbar ---------------
   'c-navbar-text': var(--st-c-text),
   'c-navbar-hover-color': var(--va-c-bg-alt),
-  'c-navbar-hover-bg-color': var(--st-c-secondary),
+  'c-navbar-hover-bg-color': var(--st-c-brand),
 ) !default;
 $dark: map.merge((), $dark);
 
