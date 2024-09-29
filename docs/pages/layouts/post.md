@@ -23,10 +23,10 @@ categories:
 
 ### Frontmatter
 
-| 属性名    | 类型      | 默认值      | 说明                                         |
-| --------- | --------- | ----------- | -------------------------------------------- |
+| 属性名    | 类型      | 默认值      | 说明                                            |
+| --------- | --------- | ----------- | ----------------------------------------------- |
 | sponsor   | `boolean` | `undefined` | 是否开启赞助，如果开启则显示`SakuraSponsor`组件 |
-| copyright | `boolean` | `undefined` | 是否在**本页**显示文章底部版权信息           |
+| copyright | `boolean` | `undefined` | 是否在**本页**显示文章底部版权信息              |
 
 ### SiteConfig
 
@@ -45,7 +45,6 @@ categories:
 ## 相关组件
 
 - [SakuraArticle](/components/SakuraArticle)
-- [ValaxyCopyright](/components/ValaxyCopyright)
 - [SakuraArticleFooterCustom](/components-custom/SakuraArticleFooterCustom)
 - [SakuraAsideLayout](/components-layout/SakuraAsideLayout)
 - [SakuraToc](/components/SakuraToc)

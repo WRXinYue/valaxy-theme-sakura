@@ -10,10 +10,14 @@ const props = withDefaults(defineProps<{
   mass?: number
   gravity?: number
   friction?: number
+  floatAmplitude?: number
+  floatSpeed?: number
 }>(), {
   position: 0.9,
   height: 600,
   mass: 2,
+  floatAmplitude: 1.3,
+  floatSpeed: 0.03,
 })
 
 const { y } = useWindowScroll()
@@ -54,15 +58,11 @@ class Node {
     this.friction = friction
     this.el = !fixed ? imgRef.value : nodeRef.value
 
-    if (isVisible.value)
-      imgRef.value.classList.add('float')
-
     interact(this.el)
       .draggable({})
-      .on('dragstart', (event: any) => {
+      .on('dragstart', () => {
         drag = this!
         touched = true
-        event.target.classList.remove('float')
       })
       .on('dragmove', (event: any) => {
         if (touched) {
@@ -73,7 +73,6 @@ class Node {
       .on('dragend', () => {
         if (drag && isVisible.value) {
           scrollToTop()
-          drag.el.classList.add('float')
         }
         drag = null
         touched = false
@@ -170,6 +169,8 @@ function init() {
   requestAnimationFrame(update)
 }
 
+let float = 0
+
 function update() {
   for (const node of nodes) {
     node.update()
@@ -183,6 +184,12 @@ function update() {
   for (const c of constraints) {
     c.solve()
     c.updateElement()
+  }
+
+  // float
+  if (!touched) {
+    float += props.floatSpeed
+    nodes[1].y += Math.sin(float) * props.floatAmplitude
   }
 
   requestAnimationFrame(update)
@@ -218,11 +225,12 @@ watch(width, (width) => {
   clearTimeout(debounceTimer)
 
   debounceTimer = setTimeout(() => {
-    nodes[0].x = width * 0.85
+    nodes[0].x = width * props.position
     nodes[1]?.reset()
     updateElements()
   }, 200)
 })
+
 onMounted(() => setTimeout(() => init(), 0))
 </script>
 
@@ -253,24 +261,6 @@ onMounted(() => setTimeout(() => init(), 0))
   &-line {
     z-index: 3;
     transform-origin: top center;
-  }
-}
-
-.float {
-  animation: float 2s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-6px);
-  }
-
-  100% {
-    transform: translateY(0);
   }
 }
 </style>

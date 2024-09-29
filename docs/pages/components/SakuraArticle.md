@@ -32,4 +32,3 @@ categories:
 
 - [SakuraPageHeader](/components/SakuraPageHeader)
 - [SakuraMultiColumnsLayout](/components-layout/SakuraMultiColumnsLayout)
-- [StarterAuthor](/components/StarterAuthor)

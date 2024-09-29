@@ -19,3 +19,12 @@
 		@include fly;
 	}
 }
+
+
+@import "_float";
+
+@if $includeClasses {
+	.#{$nameSpace}-float {
+		@include float;
+	}
+}
