@@ -99,6 +99,7 @@ onMounted(() => {
 .sakura-comment-button {
   padding: 0.1rem 1rem;
   border: none;
+  color: var(--st-c-text-muted);
   background-color: #f0f0f0;
   transition: background-color 0.3s ease;
   cursor: pointer;
