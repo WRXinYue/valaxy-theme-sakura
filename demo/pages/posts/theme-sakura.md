@@ -1,9 +1,12 @@
 ---
 title: Valaxy 主题 Sakura 🌸
 tags: [sakura]
-cover: https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/optimize/60651947_p0.webp
+cover: https://valaxy-theme-sakura.s3.bitiful.net/demo/2024-09-29.png
 date: 2024-12-31
+codeHeightLimit: 600
 ---
+
+![sakura](https://valaxy-theme-sakura.s3.bitiful.net/demo/2024-09-29.png 'valaxy-theme-sakura')
 
 ### 如何使用
 
@@ -14,10 +17,6 @@ date: 2024-12-31
 pnpm create valaxy
 
 # 如果没有pnpm使用 npm install -g pnpm 来进行安装
-# npm
-# npm init valaxy
-# yarn
-# yarn create valaxy
 pnpm add valaxy-theme-sakura
 ```
 
@@ -41,5 +40,4 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
 ```bash
 pnpm up valaxy-theme-sakura --latest
-# npm update valaxy-theme-sakura --latest
 ```
