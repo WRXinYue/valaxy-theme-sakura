@@ -5,7 +5,7 @@ import consola from 'consola'
 
 const rootFolder = path.join(process.cwd())
 
-const filesToCopy = ['README.md', 'README.en.md']
+const filesToCopy = ['README.md', 'README.zh-CN.md']
 const destinationFolder = path.join(rootFolder, 'theme')
 
 if (!fs.existsSync(destinationFolder)) {
