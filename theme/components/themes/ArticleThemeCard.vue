@@ -23,10 +23,10 @@ const isMounted = useMounted()
         <SakuraDate :date="post.date" />
       </div>
       <RouterLink :to="post.path || ''" :aria-label="`Read more about ${post.title}`">
-        <div class="title my-2">
+        <div class="title">
           {{ post.title }}
         </div>
-        <div class="mb-3 text-[var(--st-c-text-secondary)] dark:text-[var(--st-c-text-secondary)]" v-html="post.excerpt" />
+        <div class="mb-2.25 text-[var(--st-c-text-secondary)] dark:text-[var(--st-c-text-secondary)]" v-html="post.excerpt" />
       </RouterLink>
 
       <div class="inline-flex">
