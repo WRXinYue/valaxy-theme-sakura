@@ -15,18 +15,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.8] - 2024-10-02
+
 ### Added
 
+- 新增 SakuraPlayer 组件及配置，可以在首页启用播放器
 - 新增 TagsThemeSakura 组件彩虹色标签样式
 - 新增 navbarOptions showMarker 配置项
+- 重构 SakuraToTop 组件及新增 scrollToTop 配置项
+- 增强 SakuraNavbar 等组件属性扩展性
+- 增强 SakuraScrollToTop 浮动动画
+- 添加 Twikoo 及 Wanline 评论组件支持
+
+### Fixed
+
+- 修复状态管理导致播放组件等响应式失效问题
+- 修复构建时 withDefaults 相关警告
+
+### Changed
+
+- 调整卡片以及其他组件的样式细节
 
 ### Removed
 
-- 弃用 TagsThemeSakura、TagsThemeFlaribbit 及 TagsThemeYun 组件，已和 SakuraTagsLayout 组件样式合并
-- 移除 SakuraLayoutPostTag 组件
+- 弃用布局主题
+- 删除 SakuraNavLinkItem
 - 废弃 NavbarOptions col 配置项
+- 移除默认集成 PWA
 
-## [Unreleased]
+## [0.6.7] - 2024-08-25
 
 ### Added
 
