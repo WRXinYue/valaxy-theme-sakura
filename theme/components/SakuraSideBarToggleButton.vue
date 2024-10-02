@@ -3,7 +3,7 @@ import { onMounted, watch } from 'vue'
 import { useStorage } from '@vueuse/core'
 import { useSakuraAppStore } from '../stores'
 
-const { persistence, initialState } = withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
   persistence?: boolean
   initialState?: boolean
 }>(), {
@@ -13,10 +13,10 @@ const { persistence, initialState } = withDefaults(defineProps<{
 
 const sakuraAppStore = useSakuraAppStore()
 
-const sidebarOpen = useStorage('sidebarOpen', initialState)
+const sidebarOpen = useStorage('sidebarOpen', props.initialState)
 
 onMounted(() => {
-  if (persistence)
+  if (props.persistence)
     sakuraAppStore.sidebar.isOpen = sidebarOpen.value
 
   sidebarOpen.value = sakuraAppStore.sidebar.isOpen

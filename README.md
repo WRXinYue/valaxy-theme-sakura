@@ -1,6 +1,6 @@
 <h1 align="center">valaxy-theme-sakura</h1>
 <pre align="center">
-A simple, personalized, and cute anime-style blog theme 💖
+A simple, personalized, and cute anime-style blog theme ～(∠・ω< )⌒★
 </pre>
 
 <p align="center">

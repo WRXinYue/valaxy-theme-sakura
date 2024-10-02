@@ -1,6 +1,6 @@
 <h1 align="center">valaxy-theme-sakura</h1>
 <pre align="center">
-一个简单、个性化、可爱的动漫风格博客主题 💖
+一个简单、个性化、可爱的动漫风格博客主题 Ciallo～(∠・ω< )⌒★
 </pre>
 
 <p align="center">

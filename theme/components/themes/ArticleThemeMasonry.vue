@@ -33,7 +33,7 @@ const { link, src, date } = defineProps({
       bg-base relative block of-hidden transition-all duration-500 :to="link" :target="target"
     >
       <video v-if="src && isVideoUrl(src)" :src="src" autoplay loop muted playsinline w-full border="b base" />
-      <SakuraImageCard v-else :src="src" :to="link" />
+      <SakuraImageCard v-else :src="src" :to="link" @click.prevent />
 
       <div class="prose-sm m0 max-w-none bg-$st-c-bg p4 pb3 prose">
         <slot>

@@ -12,15 +12,15 @@ themes:
     siteImage: https://valaxy-theme-sakura.s3.bitiful.net/demo.png
     siteExampleUrl: https://sakura.wrxinyue.org/
     tags:
-      - yun
-      - light
+      - sakura
   - name: Valaxy sakura theme docs
     desc: 没错本文档也是Sakura主题
     siteImage: https://common.s3.bitiful.net/snapshot/2024-04-11_22-56_1.png
     siteExampleUrl: https://sakura.valaxy.site/
-    tags:
-      - starter
-      - template
+  - name: default
+    desc: 默认安装样式
+    siteImage: https://common.s3.bitiful.net/snapshot/2024-09-30.png
+    siteExampleUrl: https://sakura.default.wrxinyue.org/
 ---
 
 ## Sakura 主题橱窗
