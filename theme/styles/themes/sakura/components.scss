@@ -1,6 +1,10 @@
 .sakura-navbar {
   &.active-header {
+    background: hsla(0deg, 0%, 100%, 0.7);
     box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: saturate(180%) blur(3.2px);
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
   }
 }
 

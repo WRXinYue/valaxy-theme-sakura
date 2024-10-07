@@ -15,6 +15,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- 新增 navbar.animated 配置项，可以进行配置导航栏动画
+
+### Changed
+
+- 调整导航栏的样式
+
 ## [0.6.8] - 2024-10-02
 
 ### Added

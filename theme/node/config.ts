@@ -27,6 +27,7 @@ export const defaultThemeConfig: ThemeConfig = {
 
   navbar: [],
   navbarOptions: {
+    title: '',
     showMarker: true,
   },
 

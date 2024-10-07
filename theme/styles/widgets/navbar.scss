@@ -53,8 +53,8 @@
   align-items: center;
   justify-content: space-between;
   transition: all 0.4s ease;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: max(40px, env(safe-area-inset-left));
+  padding-right: max(40px, env(safe-area-inset-right));
 
   &.active-header {
     background: var(--st-c-bg-nav);

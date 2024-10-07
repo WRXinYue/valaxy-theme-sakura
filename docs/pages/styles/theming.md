@@ -40,11 +40,6 @@ Create a new `index.scss` file in the `styles` directory and fill in your prefer
 @use 'valaxy-theme-sakura/styles/themes/sakura/index.scss' as *;
 ```
 
-```scss [ocean ❌]
-// 该主题样式已迁移至 oceanus
-@use 'valaxy-theme-sakura/styles/themes/ocean/index.scss' as *;
-```
-
 :::
 
 ### 拆分导入 <SupTag>0.6.2</SupTag> {lang="zh-CN"}

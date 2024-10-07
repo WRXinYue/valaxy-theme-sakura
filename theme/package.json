@@ -25,8 +25,7 @@
   "types": "types/index.d.ts",
   "peerDependencies": {
     "valaxy-addon-hitokoto": "^0.0.1",
-    "valaxy-addon-vercount": "^0.0.5",
-    "valaxy-addon-waline": "^0.1.5"
+    "valaxy-addon-vercount": "^0.0.5"
   },
   "dependencies": {
     "@iconify-json/fa6-solid": "^1.1.20",

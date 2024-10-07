@@ -43,9 +43,9 @@ function cancelHideDropdown() {
     :aria-haspopup="!!children" :aria-expanded="!isDropdownVisible"
     @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown"
   >
-    <AppLink id="dropdown-navbarLink" :title="locale ? `${text} ${t(locale)}` : text" :to="link" :target="target" rel="noopener">
-      <span :class="icon" inline-flex class="mr-0.5" />
-      <span> {{ locale ? `${text} ${t(locale)}` : text }} </span>
+    <AppLink id="dropdown-navbarLink" :title="locale ? `${text ?? ''} ${t(locale)}` : text" :to="link" :target="target" rel="noopener" :class="animated">
+      <span :class="icon" inline-flex class="hvr-icon mr-0.5" />
+      <span v-if="locale || text"> {{ locale ? `${text ?? ''} ${t(locale)}` : text }} </span>
     </AppLink>
     <div
       v-if="children?.length"

@@ -5,6 +5,7 @@ import { addonWaline } from 'valaxy-addon-waline'
 import { addonLive2d } from 'valaxy-addon-live2d'
 import { addonBangumi } from 'valaxy-addon-bangumi'
 import { addonTwikoo } from 'valaxy-addon-twikoo'
+import pkg from '../theme/package.json'
 
 export default defineConfig<ThemeConfig>({
   theme: 'sakura',
@@ -14,8 +15,6 @@ export default defineConfig<ThemeConfig>({
     colors: {
       primary: '#ff4e6a',
     },
-
-    navbarTitle: ['かなしい', 'の', '心悦'],
 
     banner: {
       title: 'Hello, sakura',
@@ -73,46 +72,50 @@ export default defineConfig<ThemeConfig>({
 
     navbar: [
       {
-        text: '🌈',
+        icon: 'i-line-md-home-md-twotone',
         locale: 'menu.home',
         link: '/',
+        animated: 'animation-hvr-grow',
       },
       {
-        text: '📁',
+        icon: 'i-line-md-folder-twotone',
         locale: 'menu.categories',
         link: '/categories',
+        animated: 'animation-hvr-grow',
       },
       {
-        text: '🏷️',
-        locale: 'menu.tags',
-        link: '/tags',
-      },
-      // {
-      //   text: '☄️ 其他',
-      //   link: '/',
-      //   submenu: [],
-      // },
-      // {
-      //   text: '📌 关于我',
-      //   link: '/',
-      // },
-      {
-        text: '🔦',
+        icon: 'i-line-md-folder-plus-twotone',
         locale: 'menu.archives',
         link: '/archives',
+        animated: 'animation-hvr-grow',
       },
       {
-        text: '🍻 友情链接',
+        icon: 'i-line-md-hash-small',
+        locale: 'menu.tags',
+        link: '/tags',
+        animated: 'animation-hvr-grow',
+      },
+      {
+        text: pkg.author.name,
+        icon: 'i-line-md-hazard-lights-filled',
+        link: pkg.author.url,
+        target: '_blank',
+        animated: 'animation-hvr-icon-bounce',
+      },
+      {
+        text: '友情链接',
+        icon: 'i-line-md-link',
         link: '/links',
+        animated: 'animation-hvr-icon-buzz-out',
         children: [
           {
             text: 'GitHub',
-            icon: 'i-ri-github-fill',
+            icon: 'i-line-md-github-twotone',
             link: 'https://github.com/WRXinYue/valaxy-theme-sakura',
           },
           {
             text: 'Discord',
-            icon: 'i-ri-discord-fill',
+            icon: 'i-line-md-discord-twotone',
             link: 'https://discord.gg/sGe4U4p4CK',
           },
           {
@@ -124,13 +127,15 @@ export default defineConfig<ThemeConfig>({
       },
       {
         text: 'RSS',
-        icon: 'i-ri-rss-fill',
+        icon: 'i-line-md-rss',
         link: '/atom.xml',
         target: '_blank',
+        animated: 'animation-hvr-icon-up',
       },
     ],
     navbarOptions: {
-      invert: true,
+      title: ['さくら', 'の', '夢'],
+      // invert: true,
       autoHide: true,
     },
 

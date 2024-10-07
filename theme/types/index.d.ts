@@ -56,6 +56,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
   /**
    * @zh 导航栏标题
    * @en Navbar title
+   * @deprecated Use NavbarOptions.title instead
    */
   navbarTitle: string | string[]
   /**
@@ -259,11 +260,40 @@ export interface SidebarItem {
 }
 
 export interface NavItem {
+  /**
+   * @zh 文本
+   * @en Text
+   */
   text: string
+  /**
+   * @zh i18n 国际化
+   * @en i18n localization
+   */
   locale?: string | number
+  /**
+   * @zh 链接
+   * @en Link
+   */
   link: string
+  /**
+   * @zh 图标
+   * @en Icon
+   */
   icon?: string
+  /**
+   * @zh 图标动画
+   * @en Icon animation
+   */
+  animated?: string
+  /**
+   * @zh a 标签的 target 属性，用于指定链接打开的方式
+   * @en The target attribute of the <a> tag, specifying how to open the link
+   */
   target?: '_blank' | '_self' | '_parent' | '_top' | ''
+  /**
+   * @zh 子菜单项
+   * @en Submenu Items
+   */
   children?: NavItem[]
 }
 

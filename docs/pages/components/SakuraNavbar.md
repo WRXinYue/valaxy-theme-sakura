@@ -47,11 +47,10 @@ categories:
 
 ### ThemeConfig
 
-| 属性名      | 类型                   | 默认值      | 说明                 |
-| ----------- | ---------------------- | ----------- | -------------------- |
-| favicon     | `boolean`              | `false`     | 导航栏图标, 默认关闭 |
-| navbar      | `NavItem[]`            | `undefined` | 导航栏               |
-| navbarTitle | `string` \| `string[]` | `''`        | 导航栏标题           |
+| 属性名  | 类型        | 默认值      | 说明                 |
+| ------- | ----------- | ----------- | -------------------- |
+| favicon | `boolean`   | `false`     | 导航栏图标, 默认关闭 |
+| navbar  | `NavItem[]` | `undefined` | 导航栏               |
 
 **NavItem:**
 

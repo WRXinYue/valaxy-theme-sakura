@@ -54,7 +54,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura',
 
   themeConfig: {
-    navbarTitle: ['かなしい', 'の', '心悦'],
     banner: {
       title: 'Hello, sakura',
       motto: 'You got to put the past behind you before you can move on.',

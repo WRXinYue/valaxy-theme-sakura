@@ -59,6 +59,9 @@ importers:
 
   demo:
     dependencies:
+      '@iconify-json/line-md':
+        specifier: ^1.2.1
+        version: 1.2.1
       valaxy-addon-algolia:
         specifier: ^0.1.0
         version: 0.1.0(@algolia/client-search@4.24.0)(search-insights@2.17.2)(valaxy@0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2))
@@ -74,6 +77,9 @@ importers:
       valaxy-addon-twikoo:
         specifier: ^0.0.3
         version: 0.0.3(valaxy@0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2))
+      valaxy-addon-waline:
+        specifier: ^0.2.0
+        version: 0.2.0(typescript@5.6.2)(valaxy@0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2))
       valaxy-theme-sakura:
         specifier: workspace:*
         version: link:../theme
@@ -147,9 +153,6 @@ importers:
       valaxy-addon-vercount:
         specifier: ^0.0.5
         version: 0.0.5
-      valaxy-addon-waline:
-        specifier: ^0.1.5
-        version: 0.1.5(typescript@5.6.2)(valaxy@0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2))
     devDependencies:
       '@interactjs/types':
         specifier: ^1.10.27
@@ -852,6 +855,9 @@ packages:
 
   '@iconify-json/fa6-solid@1.2.0':
     resolution: {integrity: sha512-hywmSkhPqay1lBtEltuGhawtUpq18Yyko8H2e3/artvTv5Eey1hz7OdBA2cXRwiES17KrkmXGoLDwNtkcpN4cw==}
+
+  '@iconify-json/line-md@1.2.1':
+    resolution: {integrity: sha512-XMga2q5PiQ2LrU7K06hfqSYOA+7UFhRwhl52xvPCPAiLmtdfWBeX38nA46mcaLj7sdNo+DK+BJy9iTrzQ0ewNw==}
 
   '@iconify-json/mdi@1.2.0':
     resolution: {integrity: sha512-E9/3l5Syg3wfuarorFodhn4s8YorxhH3U3U20LaNBNiqw1kFNIDWhF6HymuzAD35k7RH0OBasJ+ZUyFtVVV6eg==}
@@ -4867,8 +4873,8 @@ packages:
   valaxy-addon-vercount@0.0.5:
     resolution: {integrity: sha512-MjopdhKeeRBJ3ecMbhyuYv/Hi2YjXFAYcGCygxwwXMUatiDYX72/EmjgUwTC7sU1NdiyYC0dj+N1ROMd6O34+w==}
 
-  valaxy-addon-waline@0.1.5:
-    resolution: {integrity: sha512-FVo9q6P0rFIsVBNsMNKgrCBzTabiU9JjLyi5hO4nlch5cn7k1TN/nrqLPJE0mbXeLJ3UCUaaSsMXMg6O/bLzyA==}
+  valaxy-addon-waline@0.2.0:
+    resolution: {integrity: sha512-/aJ4XkMaKPVcZYdvzlJQVgbZ0KYZ24/BncJRmSdt33+rkRm8OeSvyQkwfXDnTJSyrbM3jL5qtLL9Bvl9JTHzTg==}
     peerDependencies:
       valaxy: latest
 
@@ -5879,6 +5885,10 @@ snapshots:
   '@humanwhocodes/object-schema@2.0.3': {}
 
   '@iconify-json/fa6-solid@1.2.0':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/line-md@1.2.1':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -10355,7 +10365,7 @@ snapshots:
 
   valaxy-addon-vercount@0.0.5: {}
 
-  valaxy-addon-waline@0.1.5(typescript@5.6.2)(valaxy@0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2)):
+  valaxy-addon-waline@0.2.0(typescript@5.6.2)(valaxy@0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2)):
     dependencies:
       '@waline/client': 3.3.2(typescript@5.6.2)
       valaxy: 0.19.12(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2)
