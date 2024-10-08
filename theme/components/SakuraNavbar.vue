@@ -82,3 +82,23 @@ onUnmounted(() => {
     </slot>
   </header>
 </template>
+
+<style lang="scss" scoped>
+.sakura-navbar {
+  position: fixed;
+  z-index: 5;
+  height: var(--st-c-navbar-height);
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s ease !important;
+  padding-left: max(40px, env(safe-area-inset-left));
+  padding-right: max(40px, env(safe-area-inset-right));
+
+  &.active-header {
+    background: var(--st-c-bg-nav);
+  }
+}
+</style>

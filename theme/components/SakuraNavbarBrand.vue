@@ -16,7 +16,7 @@ const siteConfig = useSiteConfig()
       <img class="h-40px w-40px" alt="logo" :src="siteConfig.favicon">
     </template>
     <template v-if="navbarTitle">
-      <RouterLink class="logo-link moe-mashiro" to="/" :aria-label="siteConfig.title">
+      <RouterLink class="sakura-logo-link" to="/" :aria-label="siteConfig.title">
         <template v-if="typeof navbarTitle === 'string'">
           <span mr-1>{{ navbarTitle }}</span>
         </template>
@@ -29,3 +29,46 @@ const siteConfig = useSiteConfig()
     </template>
   </div>
 </template>
+
+<style lang="scss" scoped>
+@use 'valaxy/client/styles/mixins/index.scss' as *;
+
+.sakura-navbar-brand {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+
+  .sakura-logo-link {
+    color: var(--st-c-navbar-text);
+    font-size: 24px;
+    font-weight: 600;
+
+    @include screen('md') {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    span:first-child {
+      border-radius: 9px;
+      padding-bottom: 2px;
+      padding-top: 5px;
+    }
+
+    &:hover {
+      span:first-child {
+        background-color: var(--st-c-navbar-hover-bg-color);
+        color: var(--st-c-navbar-hover-color);
+      }
+
+      span:nth-of-type(2) {
+        animation: rotate 1s linear infinite;
+      }
+
+      span:not(:first-child) {
+        color: var(--st-c-navbar-hover-bg-color);
+      }
+    }
+  }
+}
+</style>
