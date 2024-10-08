@@ -36,7 +36,6 @@ declare module 'vue-router/auto-routes' {
     '/posts/katex': RouteRecordInfo<'/posts/katex', '/posts/katex', Record<never, never>, Record<never, never>>,
     '/posts/long-toc': RouteRecordInfo<'/posts/long-toc', '/posts/long-toc', Record<never, never>, Record<never, never>>,
     '/posts/lots-of-images': RouteRecordInfo<'/posts/lots-of-images', '/posts/lots-of-images', Record<never, never>, Record<never, never>>,
-    '/posts/markdown': RouteRecordInfo<'/posts/markdown', '/posts/markdown', Record<never, never>, Record<never, never>>,
     '/posts/mermaid': RouteRecordInfo<'/posts/mermaid', '/posts/mermaid', Record<never, never>, Record<never, never>>,
     '/posts/nested/a/b/c': RouteRecordInfo<'/posts/nested/a/b/c', '/posts/nested/a/b/c', Record<never, never>, Record<never, never>>,
     '/posts/test': RouteRecordInfo<'/posts/test', '/posts/test', Record<never, never>, Record<never, never>>,

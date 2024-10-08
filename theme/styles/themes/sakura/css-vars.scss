@@ -1,34 +1,22 @@
-@use 'valaxy/client/styles/mixins/index.scss' as * with (
-  $namespace: 'sakura'
-);
-
-$common: (
-  c-brand: #ff5c5c,
-  c-secondary: #ff6f91,
-  c-sidebar-width: 240px,
-  c-sidebar-marker-h: 4px,
-  c-navbar-height: 3.75rem,
-  c-text: #797979,
-  c-text-muted: #737373,
-  c-text-code: var(--sakura-c-brand),
-  c-bg-mute: rgb(254, 250, 199),
-  c-link: var(--sakura-c-brand),
-  c-navbar-text: #504e4e,
-) !default;
-
-$light: (
-  c-bg-nav: hsla(0deg, 0%, 100%, 0.7),
-) !default;
-
-$dark: (
-  c-bg-nav: hsla(240deg, 2.33%, 8.43%, 0.72),
-) !default;
-
 :root {
-  @include set-css-var-from-map($light);
-  @include set-css-var-from-map($common);
+  /* Light theme variables */
+  --sakura-c-bg-nav: hsla(0deg, 0%, 100%, 0.7);
+
+  /* Common variables */
+  --sakura-c-brand: #ff5c5c;
+  --sakura-c-secondary: #ff6f91;
+  --sakura-c-sidebar-width: 240px;
+  --sakura-c-sidebar-marker-h: 4px;
+  --sakura-c-navbar-height: 3.75rem;
+  --sakura-c-text: #797979;
+  --sakura-c-text-muted: #737373;
+  --sakura-c-text-code: var(--sakura-c-brand);
+  --sakura-c-bg-mute: rgb(254, 250, 199);
+  --sakura-c-link: var(--sakura-c-brand);
+  --sakura-c-navbar-text: #504e4e;
 }
 
 html.dark {
-  @include set-css-var-from-map($dark);
+  /* Dark theme variables */
+  --sakura-c-bg-nav: hsla(240deg, 2.33%, 8.43%, 0.72);
 }
