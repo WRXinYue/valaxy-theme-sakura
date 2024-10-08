@@ -27,7 +27,7 @@ const themeConfig = useThemeConfig()
 const hoverNavbar = ref(false)
 const scrolled = ref(false)
 
-const title = computed(() => props.title ?? themeConfig.value.navbarOptions?.title ?? themeConfig.value.navbarTitle)
+const title = computed(() => props.title || themeConfig.value.navbarOptions?.title || themeConfig.value.navbarTitle)
 const invert = computed(() => themeConfig.value.navbarOptions?.invert ?? props.invert)
 const autoHide = computed(() => themeConfig.value.navbarOptions?.autoHide ?? props.autoHide)
 const animIn = computed(() => themeConfig.value.navbarOptions?.animIn ?? props.animIn)
