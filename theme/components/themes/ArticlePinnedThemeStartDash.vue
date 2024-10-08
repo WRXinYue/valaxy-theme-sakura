@@ -41,7 +41,7 @@ function toPath(path: string) {
   position: relative;
   flex: 1;
   margin: 0 3px;
-  border-radius: var(--st-c-article-card-rd);
+  border-radius: var(--sakura-c-article-card-rd);
   overflow: hidden;
 
   &::before,

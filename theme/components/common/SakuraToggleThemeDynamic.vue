@@ -28,15 +28,15 @@ function enhancedToggleDarkWithTransition() {
   width: 40px;
   height: 22px;
   border-radius: 11px;
-  border: 1px solid var(--st-c-border);
-  background-color: var(--st-c-bg-brand);
+  border: 1px solid var(--sakura-c-border);
+  background-color: var(--sakura-c-bg-brand);
   transition:
     border-color 0.25s,
     background-color 0.25s;
 }
 
 .switch:hover {
-  border-color: var(--st-c-hover-border);
+  border-color: var(--sakura-c-hover-border);
 }
 
 .check {

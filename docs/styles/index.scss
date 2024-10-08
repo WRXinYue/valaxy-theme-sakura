@@ -3,7 +3,7 @@
 @use 'valaxy-theme-sakura/styles/markdown/prose.scss' as *;
 
 :root {
-  --st-c-text-deeper: var(--st-c-brand);
+  --sakura-c-text-deeper: var(--sakura-c-brand);
 }
 
 .sakura-navbar {
@@ -16,7 +16,7 @@
 
 .sakura-main {
   min-height: calc(
-    100vh - var(--st-c-footer-height) - var(--st-c-navbar-height)
+    100vh - var(--sakura-c-footer-height) - var(--sakura-c-navbar-height)
   );
 
   .sakura-aside,
@@ -67,27 +67,27 @@ a {
 }
 
 .sakura-sidebar-item-link {
-  color: var(--st-c-text);
+  color: var(--sakura-c-text);
   transition: all 0.5s;
-  border-left: 1px solid var(--st-c-surface-border);
+  border-left: 1px solid var(--sakura-c-surface-border);
 
   &.router-link-exact-active {
-    color: var(--st-c-text);
+    color: var(--sakura-c-text);
     border-left-width: 1px;
-    border-color: var(--st-c-secondary);
+    border-color: var(--sakura-c-secondary);
 
     // &::after {
     //   position: absolute;
     //   width: 4px;
     //   height: 24px;
     //   content: "";
-    //   background-color: var(--fgColor-accent, var(--st-c-secondary));
+    //   background-color: var(--fgColor-accent, var(--sakura-c-secondary));
     //   border-radius: 6px;
     // }
   }
 }
 
-.moe-mashiro {
+.sakura-logo-link {
   @include mobile {
     & {
       display: none;

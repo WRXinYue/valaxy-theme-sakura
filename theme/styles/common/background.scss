@@ -1,5 +1,5 @@
 @mixin background-style($image) {
-  background-color: var(--st-c-bg);
+  background-color: var(--sakura-c-bg);
   background-image: $image;
   background-size: cover;
   background-position: center;
@@ -9,9 +9,9 @@
 }
 
 .sakura-main {
-  @include background-style(var(--st-c-custom-bg-img));
+  @include background-style(var(--sakura-c-custom-bg-img));
 }
 
 body {
-  @include background-style(var(--st-c-body-bg-img));
+  @include background-style(var(--sakura-c-body-bg-img));
 }

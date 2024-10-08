@@ -65,7 +65,7 @@ const { data } = useLinkData(props.links, props.random)
     transition: 0.2s;
     color: var(--primary-color, black);
     border: 1px solid var(--primary-color, gray);
-    border-radius: var(--st-c-rd);
+    border-radius: var(--sakura-c-rd);
 
     &:hover {
       color: white;

@@ -1,6 +1,5 @@
 .sakura-navbar {
   &.active-header {
-    background: hsla(0deg, 0%, 100%, 0.7);
     box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
     backdrop-filter: saturate(180%) blur(3.2px);
     padding-left: max(0.75rem, env(safe-area-inset-left));
@@ -12,7 +11,7 @@
   .entry-title {
     &::before {
       content: ' {';
-      color: var(--st-c-secondary);
+      color: var(--sakura-c-secondary);
       font-size: 1.2em;
       margin-right: 6px;
       font-family: Helvetica, sans-serif;
@@ -20,7 +19,7 @@
 
     &::after {
       content: '}';
-      color: var(--st-c-secondary);
+      color: var(--sakura-c-secondary);
       font-size: 1.2em;
       margin-left: 6px;
       font-family: Helvetica, sans-serif;
@@ -31,8 +30,8 @@
 .wl-comment {
   .wl-panel textarea {
     background-image: var(
-      --st-c-waline-bg-img,
-      var(--st-c-comment-bg)
+      --sakura-c-waline-bg-img,
+      var(--sakura-c-comment-bg)
     ) !important;
     background-size: contain;
     background-repeat: no-repeat;
@@ -48,8 +47,8 @@
   #marker {
     width: 2px;
     height: 80px;
-    border-radius: var(--st-c-rd);
-    background-color: var(--st-c-secondary);
+    border-radius: var(--sakura-c-rd);
+    background-color: var(--sakura-c-secondary);
   }
 }
 
@@ -67,7 +66,7 @@
     }
 
     a:hover {
-      color: var(--st-c-secondary);
+      color: var(--sakura-c-secondary);
     }
   }
 

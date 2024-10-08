@@ -8,7 +8,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <SakuraBanner class="h-[calc(100vh-var(--st-c-footer-height)-var(--st-c-navbar-height))]!">
+  <SakuraBanner class="h-[calc(100vh-var(--sakura-c-footer-height)-var(--sakura-c-navbar-height))]!">
     <template #info-overlay>
       <InfoOverlayThemeHero>
         <template #intro-text>

@@ -54,6 +54,6 @@ onMounted(() => {
 
 <style lang="scss">
 .article-card {
-  background: var(--st-c-article-card-bg);
+  background: var(--sakura-c-article-card-bg);
 }
 </style>

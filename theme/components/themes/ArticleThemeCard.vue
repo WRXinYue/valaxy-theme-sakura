@@ -26,7 +26,7 @@ const isMounted = useMounted()
         <div class="title">
           {{ post.title }}
         </div>
-        <div class="mb-2.25 text-[var(--st-c-text-secondary)] dark:text-[var(--st-c-text-secondary)]" v-html="post.excerpt" />
+        <div class="mb-2.25 text-[var(--sakura-c-text-secondary)] dark:text-[var(--sakura-c-text-secondary)]" v-html="post.excerpt" />
       </RouterLink>
 
       <div class="inline-flex">
@@ -42,9 +42,9 @@ article {
   display: flex;
   overflow: hidden;
   justify-content: space-between;
-  color: var(--st-c-text-secondary);
+  color: var(--sakura-c-text-secondary);
   margin: 20px 0;
-  border-radius: var(--st-c-article-card-rd);
+  border-radius: var(--sakura-c-article-card-rd);
   box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease;
   min-height: 230px;
@@ -54,8 +54,8 @@ article {
   }
 
   .font-secondary {
-    font-size: var(--st-c-article-card-font-size-secondary);
-    color: var(--st-c-text-secondary);
+    font-size: var(--sakura-c-article-card-font-size-secondary);
+    color: var(--sakura-c-text-secondary);
   }
 
   @media (width <= 768px) {
@@ -71,12 +71,12 @@ article {
 }
 
 .title {
-  color: var(--st-c-text);
+  color: var(--sakura-c-text);
   font-size: 24px;
   transition: color 0.2s ease-out;
 
   &:hover {
-    color: var(--st-c-accent);
+    color: var(--sakura-c-accent);
   }
 }
 </style>

@@ -14,7 +14,7 @@ const props = defineProps<{
 const classes = computed(() => {
   const arr = []
   if (props.theme === 'brand')
-    arr.push('from-$st-c-brand', 'to-$st-c-secondary')
+    arr.push('from-$sakura-c-brand', 'to-$sakura-c-secondary')
   else
     arr.push('from-gray-700', 'to-dark-300')
 
@@ -28,7 +28,7 @@ const { t } = useI18n()
   <AppLink
     :to="link"
     :class="[classes, props.class]"
-    class="btn flex items-center rounded-$st-c-rd decoration-none transition text-white!"
+    class="btn flex items-center rounded-$sakura-c-rd decoration-none transition text-white!"
     bg="gradient-to-r"
   >
     {{ t(text) }}

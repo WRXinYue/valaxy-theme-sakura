@@ -52,14 +52,14 @@ function cancelHideDropdown() {
       v-show="isDropdownVisible"
       :class="isDropdownVisible ? animIn : animOut"
       class="absolute z-3 min-w-20 w-auto"
-      style="transform: translateY(var(--st-c-navbar-height))"
+      style="transform: translateY(var(--sakura-c-navbar-height))"
       @mouseenter="showDropdown"
       @mouseleave="scheduleHideDropdown"
     >
       <ul
         id="dropdown-navbar"
         aria-labelledby="dropdownLargeButton"
-        class="mt-3 rounded bg-$st-c-bg-nav px-0"
+        class="mt-3 rounded bg-$sakura-c-bg-nav px-0"
       >
         <li v-for="subitem in children" :key="subitem.text" class="flex justify-center">
           <AppLink :to="subitem.link" :target="subitem.target" rel="noopener" class="sakura-navbar-link-item mx-2 flex items-center">
@@ -86,7 +86,7 @@ function cancelHideDropdown() {
     transform: translateX(-50%);
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid var(--st-c-bg-nav);
+    border-bottom: 10px solid var(--sakura-c-bg-nav);
   }
 }
 
@@ -95,10 +95,10 @@ function cancelHideDropdown() {
   justify-content: center;
 
   a {
-    color: var(--st-c-text);
+    color: var(--sakura-c-text);
 
     &:hover {
-      color: var(--st-c-secondary);
+      color: var(--sakura-c-secondary);
     }
   }
 
@@ -118,8 +118,8 @@ function cancelHideDropdown() {
       bottom: 0;
       left: 0;
       width: 0;
-      height: var(--st-c-sidebar-marker-h);
-      background-color: var(--st-c-secondary);
+      height: var(--sakura-c-sidebar-marker-h);
+      background-color: var(--sakura-c-secondary);
       transition: width 0.3s ease;
     }
   }

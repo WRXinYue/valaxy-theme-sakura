@@ -5,7 +5,7 @@ $common: (
   'c-secondary': var(--va-c-primary-lighter),
   'c-navbar-height': 55px,
   'c-navbar-mt': 20px,
-  'c-navbar-spacing': calc(var(--st-c-navbar-height) + 20px),
+  'c-navbar-spacing': calc(var(--sakura-c-navbar-height) + 20px),
   'c-footer-height': 140px,
   'c-rd': 10px,
   // --------------- SakuraAside ---------------
@@ -13,10 +13,10 @@ $common: (
   // --------------- SakuraSidebar ---------------
   'c-sidebar-width': var(--va-sidebar-width),
   'c-sidebar-marker-h': 2px,
-  'c-sidebar-bg-color': var(--st-c-bg),
-  'c-sidebar-offset': var(--st-c-sidebar-width),
+  'c-sidebar-bg-color': var(--sakura-c-bg),
+  'c-sidebar-offset': var(--sakura-c-sidebar-width),
   // --------------- Other ---------------
-  'c-text-code': var(--st-c-brand),
+  'c-text-code': var(--sakura-c-brand),
   'c-bg-mute': var(--va-c-bg-mute),
   // --------------- Default static assets ---------------
   'c-comment-bg': url('../assets/comment-bg.png'),
@@ -24,69 +24,69 @@ $common: (
 $common: map.merge((), $common);
 
 $light: (
-  'c-accent': var(--st-c-secondary),
+  'c-accent': var(--sakura-c-secondary),
   'c-bg': var(--va-c-bg),
   'c-bg-nav': #fff,
-  'c-link': var(--st-c-brand),
+  'c-link': var(--sakura-c-brand),
   'c-text': #504e4e,
   'c-text-muted': hsl(0deg, 0%, 45.1%),
   'c-text-deep': #404040,
   'c-text-deeper': #303030,
-  'c-text-brand': var(--st-c-brand),
+  'c-text-brand': var(--sakura-c-brand),
   'c-text-secondary': rgba(60, 60, 60, 0.7),
   'c-border': #d0d7de,
   'c-surface-border': #e2e8f0,
   'c-hover-border': #f1c484,
-  'c-hover-bg': var(--st-c-secondary),
+  'c-hover-bg': var(--sakura-c-secondary),
   'c-icon': #fff,
   // --------------- SakuraTimeLine ---------------
   'c-timeline-color': #49b1f5,
   'c-timeline-text-color': #0bf,
   'c-timeline-height': 30px,
   // --------------- ArticleThemeCard ---------------
-  'c-article-card-bg': var(--st-c-bg),
-  'c-article-card-rd': var(--st-c-rd),
+  'c-article-card-bg': var(--sakura-c-bg),
+  'c-article-card-rd': var(--sakura-c-rd),
   'c-article-card-font-size': 1.17em,
   'c-article-card-font-size-secondary': 12px,
   // --------------- ArticleNavigation ---------------
   'c-article-navigation-text': #f0f8ff,
   // --------------- SakuraNavbar ---------------
-  'c-navbar-text': var(--st-c-text),
+  'c-navbar-text': var(--sakura-c-text),
   'c-navbar-hover-color': #fff,
-  'c-navbar-hover-bg-color': var(--st-c-brand),
+  'c-navbar-hover-bg-color': var(--sakura-c-brand),
 ) !default;
 $light: map.merge((), $light);
 
 $dark: (
-  'c-accent': var(--st-c-secondary),
+  'c-accent': var(--sakura-c-secondary),
   'c-bg': var(--va-c-bg),
   'c-bg-nav': var(--va-c-bg-alt),
-  'c-link': var(--st-c-brand),
+  'c-link': var(--sakura-c-brand),
   'c-text': #f0f8ff,
   'c-text-muted': hsl(0deg, 0%, 63.9%),
-  'c-text-deep': var(--st-c-text),
-  'c-text-deeper': var(--st-c-text),
-  'c-text-brand': var(--st-c-brand),
+  'c-text-deep': var(--sakura-c-text),
+  'c-text-deeper': var(--sakura-c-text),
+  'c-text-brand': var(--sakura-c-brand),
   'c-text-secondary': #fff,
   'c-border': #d0d7de,
   'c-hover-border': #f1c484,
-  'c-hover-bg': var(--st-c-secondary),
+  'c-hover-bg': var(--sakura-c-secondary),
   'c-icon': #fff,
   // --------------- SakuraTimeLine ---------------
   'c-timeline-color': #49b1f5,
   'c-timeline-text-color': #0bf,
   'c-timeline-height': 30px,
   // --------------- ArticleThemeCard ---------------
-  'c-article-card-bg': var(--st-c-bg),
-  'c-article-card-rd': var(--st-c-rd),
+  'c-article-card-bg': var(--sakura-c-bg),
+  'c-article-card-rd': var(--sakura-c-rd),
   'c-article-card-font-size': 1.17em,
   'c-article-card-font-size-secondary': 12px,
   // --------------- ArticleNavigation ---------------
   'c-article-navigation-text': #f0f8ff,
   // --------------- SakuraNavbar ---------------
-  'c-navbar-text': var(--st-c-text),
+  'c-navbar-text': var(--sakura-c-text),
   'c-navbar-hover-color': var(--va-c-bg-alt),
-  'c-navbar-hover-bg-color': var(--st-c-brand),
+  'c-navbar-hover-bg-color': var(--sakura-c-brand),
 ) !default;
 $dark: map.merge((), $dark);
 

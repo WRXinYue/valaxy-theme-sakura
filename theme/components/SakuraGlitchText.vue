@@ -53,24 +53,24 @@ const props = defineProps<{
     @include glitch-common;
 
     left: -1px;
-    text-shadow: 1px 0 var(--st-c-brand);
+    text-shadow: 1px 0 var(--sakura-c-brand);
   }
 
   &::after {
     @include glitch-common;
 
     left: 1px;
-    text-shadow: -1px 0 var(--st-c-secondary);
+    text-shadow: -1px 0 var(--sakura-c-secondary);
   }
 
   &:hover {
     &::before {
-      text-shadow: 4px 0 var(--st-c-brand);
+      text-shadow: 4px 0 var(--sakura-c-brand);
       animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
     }
 
     &::after {
-      text-shadow: -4px 0 var(--st-c-secondary);
+      text-shadow: -4px 0 var(--sakura-c-secondary);
       animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse;
     }
   }

@@ -24,13 +24,13 @@ categories:
 
 ```scss
 .app-container {
-  margin-top: calc(-1 * var(--st-c-navbar-height));
+  margin-top: calc(-1 * var(--sakura-c-navbar-height));
 }
 ```
 
 ## 自定义高度
 
-修改css全局变量`--st-c-navbar-height`即可
+修改css全局变量`--sakura-c-navbar-height`即可
 
 ## API
 

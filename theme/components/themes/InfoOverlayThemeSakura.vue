@@ -64,7 +64,7 @@ function nextMedia() {
       <slot name="social">
         <div class="mx-5 mt-4 flex justify-between">
           <img class="icon" rotate-180 cursor-pointer src="../../assets/next-b.svg" alt="Previous media" @click="prevMedia">
-          <a v-for="s in siteConfig.social" :key="s.name" :style="{ '--st-c-icon': s.color }" class="icon" :href="s.link" aria-label="icon" target="_blank">
+          <a v-for="s in siteConfig.social" :key="s.name" :style="{ '--sakura-c-icon': s.color }" class="icon" :href="s.link" aria-label="icon" target="_blank">
             <div :class="[s.icon]" />
           </a>
           <img class="icon" cursor-pointer src="../../assets/next-b.svg" alt="Next media" @click="nextMedia">
@@ -100,12 +100,16 @@ function nextMedia() {
   .icon {
     height: 22px;
     width: 22px;
-    color: var(--st-c-icon);
+    color: var(--sakura-c-icon);
   }
 }
 
 .sakura-background-display .default-wallpaper {
-  background: linear-gradient(45deg, var(--st-c-brand), var(--st-c-secondary));
+  background: linear-gradient(
+    45deg,
+    var(--sakura-c-brand),
+    var(--sakura-c-secondary)
+  );
   background-size: 600% 600%;
   animation: gradient-background 10s ease infinite;
 }

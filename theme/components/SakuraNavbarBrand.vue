@@ -40,7 +40,7 @@ const siteConfig = useSiteConfig()
   white-space: nowrap;
 
   .sakura-logo-link {
-    color: var(--st-c-navbar-text);
+    color: var(--sakura-c-navbar-text);
     font-size: 24px;
     font-weight: 600;
 
@@ -57,8 +57,8 @@ const siteConfig = useSiteConfig()
 
     &:hover {
       span:first-child {
-        background-color: var(--st-c-navbar-hover-bg-color);
-        color: var(--st-c-navbar-hover-color);
+        background-color: var(--sakura-c-navbar-hover-bg-color);
+        color: var(--sakura-c-navbar-hover-color);
       }
 
       span:nth-of-type(2) {
@@ -66,7 +66,7 @@ const siteConfig = useSiteConfig()
       }
 
       span:not(:first-child) {
-        color: var(--st-c-navbar-hover-bg-color);
+        color: var(--sakura-c-navbar-hover-bg-color);
       }
     }
   }

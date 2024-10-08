@@ -33,4 +33,4 @@ categories:
 
 | 属性名 | 类型     | 默认值             | 说明     |
 | ------ | -------- | ------------------ | -------- |
-| color  | `string` | `'var(--st-c-bg)'` | 鱼的颜色 |
+| color  | `string` | `'var(--sakura-c-bg)'` | 鱼的颜色 |

@@ -44,8 +44,8 @@ html.dark {
   }
 
   code:not(pre > code) {
-    color: var(--st-c-text-code);
-    background-color: var(--st-c-bg-mute);
+    color: var(--sakura-c-text-code);
+    background-color: var(--sakura-c-bg-mute);
     padding: 3px 6px;
     border-radius: 4px;
     font-weight: 500;
@@ -80,7 +80,7 @@ div[class*='language-'] {
   font-family: var(--code-font-family);
   flex-direction: row-reverse;
   border-radius: 8px;
-  border: 1px solid var(--st-c-border);
+  border: 1px solid var(--sakura-c-border);
   padding-top: 32px;
   overflow: hidden;
 
@@ -98,7 +98,7 @@ div[class*='language-'] {
     background-position: 50%;
     border-radius: 4px;
     opacity: 0;
-    border: 1px solid var(--st-c-border);
+    border: 1px solid var(--sakura-c-border);
   }
 
   &:hover button.copy {
@@ -133,7 +133,7 @@ div[class*='language-'] {
     top: 0;
     height: 32px;
     background: #f6f8fa;
-    border-bottom: 1px solid var(--st-c-border);
+    border-bottom: 1px solid var(--sakura-c-border);
   }
 
   &::after {
@@ -153,6 +153,6 @@ div[class*='language-'] {
 
 .line-numbers-wrapper {
   padding-left: 16px;
-  color: var(--st-c-text-secondary);
+  color: var(--sakura-c-text-secondary);
   user-select: none;
 }
