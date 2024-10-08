@@ -115,10 +115,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
     message: string
   }
 
-  /**
-   * @zh 布局配置
-   * @en Layout configuration
-   */
+  // Layout
 
   tags?: {
     /**
@@ -127,6 +124,28 @@ export interface ThemeConfig extends DefaultTheme.Config {
      * @default false
      */
     rainbow?: boolean | string[]
+  }
+
+  /**
+   * @zh 语言切换按钮图标
+   * @en The icon for the language switch button
+   */
+  translateIcon?: string
+  /**
+   * @zh 主题切换按钮图标（明/暗模式）
+   * @en Icon for the light/dark mode toggle button
+   */
+  toggleThemeIcon?: {
+    /**
+     * @zh 暗模式图标
+     * @en Dark mode icon
+     */
+    darkIcon?: string
+    /**
+     * @zh 亮模式图标
+     * @en Light mode icon
+     */
+    lightIcon?: string
   }
 }
 

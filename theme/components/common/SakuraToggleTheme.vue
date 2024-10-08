@@ -1,15 +1,18 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useAppStore } from 'valaxy'
+import { useThemeConfig } from '../../composables'
 
-withDefaults(defineProps<{
+const props = defineProps<{
   darkIcon?: string
   lightIcon?: string
-}>(), {
-  darkIcon: 'i-ri-moon-line',
-  lightIcon: 'i-ri-sun-line',
-})
+}>()
 
+const themeConfig = useThemeConfig()
 const appStore = useAppStore()
+
+const darkIcon = computed(() => props.darkIcon || themeConfig.value.toggleThemeIcon?.darkIcon)
+const lightIcon = computed(() => props.lightIcon || themeConfig.value.toggleThemeIcon?.lightIcon)
 </script>
 
 <template>

@@ -58,6 +58,12 @@ export const defaultThemeConfig: ThemeConfig = {
 
   scrollDamping: false,
   scrollToTop: false,
+
+  translateIcon: 'i-ri-translate',
+  toggleThemeIcon: {
+    darkIcon: 'i-ri-moon-line',
+    lightIcon: 'i-ri-sun-line',
+  },
 }
 
 /**
@@ -65,22 +71,31 @@ export const defaultThemeConfig: ThemeConfig = {
  * @param themeConfig
  */
 export function generateSafelist(themeConfig: ThemeConfig) {
-  const safelist: string[] = []
+  const { navbar, sidebar, footer, translateIcon, toggleThemeIcon } = themeConfig
+  const footerIcon = footer?.icon?.img
 
-  const footerIcon = themeConfig.footer?.icon?.img
+  const safelist: string[] = []
 
   if (footerIcon)
     safelist.push(footerIcon)
 
-  themeConfig.navbar?.forEach((navItem) => {
+  navbar?.forEach((navItem) => {
     if (navItem.icon)
       safelist.push(navItem.icon)
   })
 
-  themeConfig.sidebar?.forEach((sidebarItem) => {
+  sidebar?.forEach((sidebarItem) => {
     if (typeof sidebarItem !== 'string' && sidebarItem.icon)
       safelist.push(sidebarItem.icon)
   })
+
+  if (translateIcon)
+    safelist.push(translateIcon)
+
+  if (toggleThemeIcon?.darkIcon)
+    safelist.push(toggleThemeIcon.darkIcon)
+  if (toggleThemeIcon?.lightIcon)
+    safelist.push(toggleThemeIcon.lightIcon)
 
   return safelist
 }

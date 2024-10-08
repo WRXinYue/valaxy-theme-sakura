@@ -1,20 +1,31 @@
 <script lang="ts" setup>
+import { computed } from 'vue'
 import { useAppStore } from 'valaxy'
+import { useThemeConfig } from '../../composables'
+
+const props = defineProps<{
+  darkIcon?: string
+  lightIcon?: string
+}>()
 
 const appStore = useAppStore()
+const themeConfig = useThemeConfig()
 
 function enhancedToggleDarkWithTransition() {
   const fakeEvent = new MouseEvent('click')
   appStore.toggleDarkWithTransition(fakeEvent)
 }
+
+const darkIcon = computed(() => props.darkIcon || themeConfig.value.toggleThemeIcon?.darkIcon)
+const lightIcon = computed(() => props.lightIcon || themeConfig.value.toggleThemeIcon?.lightIcon)
 </script>
 
 <template>
   <button class="switch switch-appearance" type="button" aria-label="Toggle Dark Mode" @click="enhancedToggleDarkWithTransition">
     <span class="check">
       <span class="icon-wrap">
-        <div v-if="!appStore.isDark" class="icon" i-ri-sun-line />
-        <div v-else class="icon" i-ri-moon-line />
+        <div v-if="!appStore.isDark" class="icon" :class="lightIcon" />
+        <div v-else class="icon" :class="darkIcon" />
       </span>
     </span>
   </button>

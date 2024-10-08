@@ -1,6 +1,7 @@
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
+  mode: 'light',
   lang: 'zh-CN',
   title: 'Valaxy Theme Sakura',
   favicon: '/favicon-32x32.ico',

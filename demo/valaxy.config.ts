@@ -214,6 +214,11 @@ export default defineConfig<ThemeConfig>({
         title: 'WRXinYue',
       },
     },
+
+    toggleThemeIcon: {
+      lightIcon: 'i-line-md-moon-alt-to-sunny-outline-loop-transition',
+      darkIcon: 'i-line-md-sunny-outline-to-moon-loop-transition',
+    },
   },
 
   addons: [

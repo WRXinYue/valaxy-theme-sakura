@@ -17,7 +17,7 @@ export default defineTheme<ThemeConfig>((options) => {
       ],
     },
     unocss: {
-      safelist: generateSafelist(options.config.themeConfig as ThemeConfig),
+      safelist: generateSafelist(themeConfig),
     },
     addons: [
       addonVercount(),

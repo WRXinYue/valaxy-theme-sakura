@@ -1,15 +1,18 @@
 <script lang="ts" setup>
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useLocale } from 'valaxy'
+import { useThemeConfig } from '../../composables'
 
-withDefaults(defineProps<{
+const props = defineProps<{
   translateIcon?: string
-}>(), {
-  translateIcon: 'i-ri-translate',
-})
+}>()
 
 const { t, locale } = useI18n()
 const { toggleLocales } = useLocale()
+const themeConfig = useThemeConfig()
+
+const translateIcon = computed(() => props.translateIcon || themeConfig.value.translateIcon)
 </script>
 
 <template>
