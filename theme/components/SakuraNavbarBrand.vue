@@ -30,7 +30,7 @@ const siteConfig = useSiteConfig()
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-navbar-brand {

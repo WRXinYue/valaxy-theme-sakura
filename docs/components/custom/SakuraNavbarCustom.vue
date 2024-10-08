@@ -7,7 +7,7 @@ const isHome = useLayout('home')
 <template>
   <SakuraNavbar :class="isHome ? 'line-shrink' : 'line-expand'" :invert-scrolled="true">
     <template #nav-tool>
-      <div flex>
+      <div class="flex items-center">
         <SakuraToggleLocale mr-2 />
         <SakuraToggleThemeDynamic />
       </div>

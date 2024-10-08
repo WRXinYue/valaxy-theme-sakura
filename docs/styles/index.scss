@@ -7,7 +7,7 @@
 }
 
 .sakura-navbar {
-  position: sticky;
+  position: sticky !important;
 
   &.active-header {
     box-shadow: none;
@@ -26,13 +26,13 @@
 }
 
 .sakura-navbar-brand {
-  .logo-link {
-    font-size: 16px;
-    font-weight: 400;
+  .sakura-logo-link {
+    font-size: 16px !important;
+    font-weight: 400 !important;
 
     @include screen('md') {
-      font-size: 20px;
-      font-weight: 600;
+      font-size: 20px !important;
+      font-weight: 600 !important;
     }
   }
 }
@@ -93,6 +93,11 @@ a {
       display: none;
     }
   }
+}
+
+.sakura-gradient-text {
+  // Prevents incomplete display of fonts
+  line-height: 1.2 !important;
 }
 
 /* -------------------------------------
