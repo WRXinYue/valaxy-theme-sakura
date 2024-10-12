@@ -75,8 +75,8 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: Build:demo
-        run: pnpm run build:demo
+      - name: Build:sakura
+        run: pnpm run build:sakura
 
       - name: Build:docs
         run: pnpm run build:docs
