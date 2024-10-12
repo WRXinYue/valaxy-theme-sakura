@@ -15,7 +15,7 @@ const convertedCategories = computed(() => {
 </script>
 
 <template>
-  <div class="categories">
+  <div class="sakura-article-categories">
     <RouterLink
       v-for="(category, index) in convertedCategories"
       :key="index"
@@ -28,8 +28,8 @@ const convertedCategories = computed(() => {
   </div>
 </template>
 
-<style last="scss" scoped>
-.categories {
+<style last="scss">
+.sakura-article-categories {
   font-size: 14px;
 
   a {

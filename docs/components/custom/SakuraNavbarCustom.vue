@@ -9,7 +9,7 @@ const isHome = useLayout('home')
     <template #nav-tool>
       <div class="flex items-center">
         <SakuraToggleLocale mr-2 />
-        <SakuraToggleThemeDynamic />
+        <ToggleThemeDynamic />
       </div>
     </template>
   </SakuraNavbar>

@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { usePrevNext } from 'valaxy'
 import { useThemeConfig } from '../../composables'
-import type { SakuraImageCardProps } from '.././common/SakuraImageCard.vue'
+import type { SakuraImageCardProps } from '../SakuraImageCard.vue'
 
 const props = withDefaults(defineProps<{
   [key: string]: any

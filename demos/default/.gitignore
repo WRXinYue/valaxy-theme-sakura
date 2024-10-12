@@ -1,0 +1,39 @@
+# vite-ssg
+.vite-ssg-dist
+.vite-ssg-temp
+
+temp/
+
+.DS_Store
+*.local
+dist
+dist-ssr
+.idea/
+
+components.d.ts
+
+Thumbs.db
+
+# lock
+yarn.lock
+package-lock.json
+pnpm-global/
+
+# dev
+node_modules/
+*.log
+
+# hexo
+db.json
+
+# valaxy
+public/valaxy-fuse-list.json
+
+# valaxy rss
+public/feed.xml
+
+# valaxy rss
+public/atom.xml
+
+# valaxy rss
+public/feed.json

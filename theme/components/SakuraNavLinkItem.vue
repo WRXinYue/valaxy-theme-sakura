@@ -112,16 +112,16 @@ function cancelHideDropdown() {
       width: 100%;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: var(--sakura-c-sidebar-marker-h);
-      background-color: var(--sakura-c-secondary);
-      transition: width 0.3s ease;
-    }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 0;
+    //   height: var(--sakura-c-sidebar-marker-h);
+    //   background-color: var(--sakura-c-secondary);
+    //   transition: width 0.3s ease;
+    // }
   }
 }
 </style>

@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="tags">
+  <div class="sakura-article-tags">
     <RouterLink v-for="(tag, index) in tags" :key="tag" :to="{ path: '/tags/', query: { tag } }" class="inline-flex items-center align-top">
       <div v-if="index === 0" class="mr-1" i-mdi-tag-multiple />
       <span v-if="index > 0" class="non-hoverable mx-1">·</span> {{ tag }}
@@ -15,8 +15,8 @@ defineProps<{
   </div>
 </template>
 
-<style lang="scss" scoped>
-.tags {
+<style lang="scss">
+.sakura-article-tags {
   font-size: 14px;
 
   a {

@@ -10,7 +10,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <header class="sakura-page-header text-center space-y-1 xl:pb-10">
+  <header class="sakura-page-header mt-$sakura-c-navbar-height text-center space-y-1 xl:pb-10">
     <div class="page-banner" :class="cover ? `h-80` : '<xl:max-h-200px mt-$sakura-c-navbar-spacing'" :style="cover && `background-image: url(${cover}`">
       <div class="title-container" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
         <h1 class="text-3xl" :class="!cover && 'text-$sakura-c-text-deep entry-title'">
@@ -21,8 +21,6 @@ const props = defineProps<{
         <SakuraArticleMeta v-bind="props" />
       </div>
     </div>
-
-    <hr class="m-auto max-w-[50%] min-w-[40%]">
   </header>
 </template>
 

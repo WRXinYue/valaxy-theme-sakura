@@ -8,17 +8,19 @@ defineProps<{
 }>()
 
 const isMounted = useMounted()
+
+// props.post.cover = props.post.cover || 'https://img.xjh.me/random_img.php?type=bg&return=302'
 </script>
 
 <template>
-  <article v-if="isMounted" :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'md:text-right'">
+  <article v-if="isMounted" class="sakura-article-card" :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'md:text-right'">
     <SakuraImageCard
       v-if="post.cover" class="h-230px md:w-430px <md:rounded-3" :to="post.path" :src="post.cover"
       rotate="5" space="1.1" transition-duration="0.45s"
     />
 
-    <div class="m-4">
-      <div class="font-secondary" inline-flex items-center>
+    <div class="sakura-article-meta m-4">
+      <div class="sakura-article-publish-info font-secondary" inline-flex items-center>
         <div i-mdi:clock-outline class="mr-1" /> 发布于
         <SakuraDate :date="post.date" />
       </div>
@@ -37,8 +39,8 @@ const isMounted = useMounted()
   </article>
 </template>
 
-<style lang="scss" scoped>
-article {
+<style lang="scss">
+.sakura-article-card {
   display: flex;
   overflow: hidden;
   justify-content: space-between;
@@ -68,15 +70,15 @@ article {
       box-shadow: none;
     }
   }
-}
 
-.title {
-  color: var(--sakura-c-text);
-  font-size: 24px;
-  transition: color 0.2s ease-out;
+  .title {
+    color: var(--sakura-c-text);
+    font-size: 24px;
+    transition: color 0.2s ease-out;
 
-  &:hover {
-    color: var(--sakura-c-accent);
+    &:hover {
+      color: var(--sakura-c-accent);
+    }
   }
 }
 </style>

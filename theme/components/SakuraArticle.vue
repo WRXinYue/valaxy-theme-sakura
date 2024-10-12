@@ -15,7 +15,7 @@ const frontmatter = useFrontmatter()
 
       <template #content>
         <!-- This 'content' cannot be change. For more information, see https://github.com/YunYouJun/valaxy/blob/a7d24dfabb1022e20ec12bb1938fd272fd1e19e6/packages/valaxy/client/composables/outline/anchor.ts#L42 -->
-        <div class="content article-content grid divide-y divide-gray-200 dark:divide-gray-700">
+        <div class="content article-content grid">
           <slot name="content" />
           <slot />
         </div>

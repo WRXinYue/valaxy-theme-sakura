@@ -32,7 +32,8 @@ const overlayBarClass = computed(() => appStore.wallpaperIsPlaying ? 'animation-
         <slot name="info-overlay" />
       </div>
 
-      <SakuraPlayer v-if="banner.playerUrl" class="absolute bottom-2 right-2 h-8 w-8" />
+      <SakuraPlayer v-if="banner.playerUrl" class="absolute bottom-2 right-2 z-4 h-8 w-8" />
+      <SakuraScrollDown class="absolute bottom-12 right-50% z-4" />
     </template>
   </header>
 </template>

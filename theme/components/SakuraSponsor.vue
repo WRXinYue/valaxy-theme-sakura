@@ -14,11 +14,8 @@ const sponsorBtnTitle = computed(() => {
 
 <template>
   <div class="flex-center flex-col">
-    <button
-      class="shadow hover:shadow-md"
-      :title="sponsorBtnTitle" text="red-400" @click="showQr = !showQr"
-    >
-      <div i-ri-heart-line />
+    <button :title="sponsorBtnTitle" @click="showQr = !showQr">
+      <div i-ri-heart-line class="animation-hvr-bounce-in color-red-400" />
     </button>
 
     <div class="flex-center qrcode-container qrcode flex-col" m="y-4" :class="showQr && 'show'">
