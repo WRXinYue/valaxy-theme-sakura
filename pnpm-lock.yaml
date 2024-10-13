@@ -76,24 +76,14 @@ importers:
         specifier: ^5.5.3
         version: 5.6.2
 
-  demos/default:
-    dependencies:
-      valaxy:
-        specifier: ^0.19.12
-        version: 0.19.13(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2)
-      valaxy-theme-sakura:
-        specifier: 0.6.8-alpha.4
-        version: 0.6.8-alpha.4(valaxy-addon-hitokoto@0.0.1)(valaxy-addon-vercount@0.0.5)(valaxy-addon-waline@0.2.0(typescript@5.6.2)(valaxy@0.19.13(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2)))
-    devDependencies:
-      typescript:
-        specifier: ^5.5.3
-        version: 5.6.2
-
   demos/sakura:
     dependencies:
       '@iconify-json/line-md':
         specifier: ^1.2.1
         version: 1.2.1
+      '@valaxy-theme-sakura/default':
+        specifier: workspace:*
+        version: link:../../packages/default
       valaxy-addon-algolia:
         specifier: ^0.1.0
         version: 0.1.0(@algolia/client-search@4.24.0)(search-insights@2.17.2)(valaxy@0.20.0(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2))
@@ -123,8 +113,30 @@ importers:
         specifier: ^0.20.0
         version: 0.20.0(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2)
 
+  demos/sakurairo:
+    dependencies:
+      '@iconify-json/line-md':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@valaxy-theme-sakura/sakurairo':
+        specifier: workspace:*
+        version: link:../../packages/sakurairo
+      valaxy-theme-sakura:
+        specifier: workspace:*
+        version: link:../../theme
+    devDependencies:
+      nodemon:
+        specifier: ^3.1.4
+        version: 3.1.7
+      valaxy:
+        specifier: ^0.20.0
+        version: 0.20.0(@babel/parser@7.25.6)(@types/markdown-it@14.1.2)(@types/node@22.7.4)(axios@1.7.7)(postcss@8.4.47)(rollup@4.22.5)(typescript@5.6.2)
+
   docs:
     dependencies:
+      '@valaxy-theme-sakura/default':
+        specifier: workspace:*
+        version: link:../packages/default
       monaco-editor:
         specifier: ^0.50.0
         version: 0.50.0
@@ -159,6 +171,24 @@ importers:
       typescript:
         specifier: ^5.3.3
         version: 5.6.2
+
+  packages/default:
+    devDependencies:
+      valaxy-theme-sakura:
+        specifier: workspace:*
+        version: link:../../theme
+
+  packages/mashiro:
+    devDependencies:
+      valaxy-theme-sakura:
+        specifier: workspace:*
+        version: link:../../theme
+
+  packages/sakurairo:
+    devDependencies:
+      valaxy-theme-sakura:
+        specifier: workspace:*
+        version: link:../../theme
 
   packages/vite-plugin-tsdoc: {}
 

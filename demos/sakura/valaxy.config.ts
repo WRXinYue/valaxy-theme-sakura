@@ -1,4 +1,4 @@
-import { defineConfig } from 'valaxy'
+import { defineValaxyConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
@@ -6,7 +6,7 @@ import { addonLive2d } from 'valaxy-addon-live2d'
 import { addonBangumi } from 'valaxy-addon-bangumi'
 import pkg from 'valaxy-theme-sakura/package.json'
 
-export default defineConfig<ThemeConfig>({
+export default defineValaxyConfig<ThemeConfig>({
   theme: 'sakura',
   devtools: true,
 

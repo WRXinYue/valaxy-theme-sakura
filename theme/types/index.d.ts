@@ -225,6 +225,12 @@ export interface NavbarOptions {
    * @default false
    */
   showMarker: boolean
+  activeHeader: Partial<{
+  /**
+   * @default true
+   */
+    enableHover: boolean
+  }>
 }
 
 export type SidebarMulti = (string | SidebarItem)[]
@@ -436,4 +442,7 @@ export interface ArticlePinned {
 }
 
 export type ThemeUserConfig = Partial<ThemeConfig>
+/**
+ * @deprecated Use ThemeUserConfig instead
+ */
 export type UserThemeConfig = ThemeUserConfig

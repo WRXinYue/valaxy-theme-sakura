@@ -2,7 +2,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores'
-import type { NavItem } from '../types/index'
+import type { NavItem, NavbarOptions } from '../types/index'
 
 const props = withDefaults(defineProps<{
   navbar?: NavItem[]
@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
   showMarker?: boolean
   animIn?: string | string[]
   animOut?: string | string[]
-}>(), {
+} & NavbarOptions>(), {
   favicon: undefined,
   invert: false,
   autoHide: false,
@@ -35,7 +35,10 @@ const animOut = computed(() => themeConfig.value.navbarOptions?.animOut ?? props
 const isHeaderHighlighted = computed(() => {
   if (!autoHide.value)
     return true
-  return hoverNavbar.value || (invert.value ? scrolled.value : !scrolled.value)
+  if (themeConfig.value.navbarOptions?.activeHeader?.enableHover) {
+    return hoverNavbar.value || (invert.value ? scrolled.value : !scrolled.value)
+  }
+  return invert.value ? scrolled.value : !scrolled.value
 })
 
 function handleScroll() {

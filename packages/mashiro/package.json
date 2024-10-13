@@ -1,0 +1,14 @@
+{
+  "name": "@valaxy-theme-sakura/mashiro",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "keywords": [
+    "sakurairo"
+  ],
+  "main": "index.ts",
+  "devDependencies": {
+    "valaxy-theme-sakura": "workspace:*"
+  }
+}

@@ -29,6 +29,9 @@ export const defaultThemeConfig: ThemeConfig = {
   navbarOptions: {
     title: '',
     showMarker: true,
+    activeHeader: {
+      enableHover: true,
+    },
   },
 
   sidebar: [],

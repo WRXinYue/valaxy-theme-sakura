@@ -1,0 +1,26 @@
+:root {
+  --text: 123;
+}
+
+/* ======= NavBar ======= */
+.sakura-navbar {
+  padding-left: max(0.75rem, env(safe-area-inset-left));
+  padding-right: max(0.75rem, env(safe-area-inset-right));
+  transition: all 1s ease-in-out !important;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  &:not(.active-header) {
+    width: 95%;
+    top: 2.5%;
+    left: 2.5%;
+    border-radius: 15px;
+  }
+
+  &.active-header {
+    left: 0;
+    backdrop-filter: saturate(180%) blur(3.2px);
+  }
+}

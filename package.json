@@ -12,6 +12,7 @@
     "ci:publish": "tsx scripts/prepublish.ts && cd theme && pnpm publish --access public --no-git-checks",
     "dev": "pnpm run dev:sakura",
     "dev:sakura": "pnpm -C demos/sakura run dev",
+    "dev:sakurairo": "pnpm -C demos/sakurairo run dev",
     "docs": "pnpm -C docs run dev",
     "preview": "cd demo && vite preview --host",
     "preview:docs": "cd docs && vite preview --host",

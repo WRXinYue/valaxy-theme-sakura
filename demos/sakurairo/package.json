@@ -1,5 +1,5 @@
 {
-  "name": "sakura",
+  "name": "sakurairo",
   "private": true,
   "scripts": {
     "build": "npm run build:ssg && npm run rss",
@@ -11,13 +11,7 @@
   },
   "dependencies": {
     "@iconify-json/line-md": "^1.2.1",
-    "@valaxy-theme-sakura/default": "workspace:*",
-    "valaxy-addon-algolia": "^0.1.0",
-    "valaxy-addon-bangumi": "^0.2.1",
-    "valaxy-addon-live2d": "^0.2.2",
-    "valaxy-addon-meting": "^0.1.3",
-    "valaxy-addon-twikoo": "^0.0.3",
-    "valaxy-addon-waline": "^0.2.0",
+    "@valaxy-theme-sakura/sakurairo": "workspace:*",
     "valaxy-theme-sakura": "workspace:*"
   },
   "devDependencies": {
