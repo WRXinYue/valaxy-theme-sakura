@@ -1,7 +1,4 @@
 :root {
   --sakura-c-footer-height: 120px;
-}
-
-html.dark {
-  --sakura-c-brand: #e67474;
+  --sakura-c-text-deeper: var(--sakura-c-brand);
 }

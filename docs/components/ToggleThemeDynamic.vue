@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useAppStore } from 'valaxy'
-import { useThemeConfig } from 'valaxy-theme-sakura/composables'
+import { useAppStore, useThemeConfig } from 'valaxy'
+import type { ThemeConfig } from 'valaxy-theme-sakura'
 
 const props = defineProps<{
   darkIcon?: string
@@ -9,7 +9,7 @@ const props = defineProps<{
 }>()
 
 const appStore = useAppStore()
-const themeConfig = useThemeConfig()
+const themeConfig = useThemeConfig<ThemeConfig>()
 
 function enhancedToggleDarkWithTransition() {
   const fakeEvent = new MouseEvent('click')
