@@ -19,7 +19,7 @@ useHead({
 </script>
 
 <template>
-  <SakuraSidebarCustom class="sakura-app-sidebar" />
+  <SakuraSidebar class="sakura-app-sidebar" />
   <Layout>
     <RouterView />
   </Layout>

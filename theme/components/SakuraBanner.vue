@@ -21,15 +21,23 @@ const overlayBarClass = computed(() => appStore.wallpaperIsPlaying ? 'animation-
   <header class="sakura-banner <md:px-5">
     <template v-if="isMounted">
       <div class="absolute inset-0 overflow-hidden" :class="[!appStore.wallpaperIsPlaying && banner.style && 'banner-style', banner.style]">
-        <slot name="background-display" />
+        <slot name="background-display">
+          <SakuraBackgroundDisplay />
+        </slot>
 
         <div :class="overlayBarClass">
-          <slot name="overlay-bar" />
+          <slot name="overlay-bar">
+            <WaveThemeFish v-if="banner.waveTheme === 'fish'" />
+            <WaveThemeHorizontal v-if="banner.waveTheme === 'horizontal'" />
+            <WaveThemeRipple v-if="banner.waveTheme === 'ripple'" />
+          </slot>
         </div>
       </div>
 
       <div z-4>
-        <slot name="info-overlay" />
+        <slot name="info-overlay">
+          <InfoOverlayThemeSakura />
+        </slot>
       </div>
 
       <SakuraPlayer v-if="banner.playerUrl" class="absolute bottom-2 right-2 z-4 h-8 w-8" />

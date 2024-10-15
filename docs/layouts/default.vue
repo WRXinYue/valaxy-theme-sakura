@@ -5,11 +5,11 @@ const isHome = useLayout('home')
 </script>
 
 <template>
-  <SakuraMultiColumnsLayout class="article-grid-layout">
+  <SakuraMultiColumns class="article-grid-layout">
     <template #left>
-      <SakuraAsideLayout>
+      <SakuraAside>
         <SidebarThemeDynamic />
-      </SakuraAsideLayout>
+      </SakuraAside>
     </template>
     <template #content>
       <div class="content grid">
@@ -30,11 +30,11 @@ const isHome = useLayout('home')
       </div>
     </template>
     <template #right>
-      <SakuraAsideLayout>
+      <SakuraAside>
         <SakuraToc v-if="!isHome" />
-      </SakuraAsideLayout>
+      </SakuraAside>
     </template>
-  </SakuraMultiColumnsLayout>
+  </SakuraMultiColumns>
 </template>
 
 <style lang="scss">

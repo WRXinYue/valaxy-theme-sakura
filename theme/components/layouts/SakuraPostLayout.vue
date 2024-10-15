@@ -53,7 +53,7 @@ useSchemaOrg(
               <ValaxyCopyright v-if="frontmatter.copyright || siteConfig.license.enabled" :url="url" />
             </template>
             <template #footer>
-              <SakuraArticleFooterCustom />
+              <SakuraArticleFooter />
             </template>
           </component>
         </RouterView>
@@ -61,9 +61,9 @@ useSchemaOrg(
     </template>
     <template #right>
       <slot name="right">
-        <SakuraAsideLayout>
+        <SakuraAside>
           <SakuraToc />
-        </SakuraAsideLayout>
+        </SakuraAside>
       </slot>
     </template>
   </SakuraArticle>

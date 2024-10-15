@@ -15,9 +15,9 @@ const frontmatter = useFrontmatter()
 </script>
 
 <template>
-  <SakuraMultiColumnsLayout class="mt-$sakura-c-navbar-height">
+  <SakuraMultiColumns class="mt-$sakura-c-navbar-height">
     <SakuraLinks :links="frontmatter.links" :random="frontmatter.random" />
-  </SakuraMultiColumnsLayout>
+  </SakuraMultiColumns>
 </template>
 ```
 
@@ -48,9 +48,9 @@ comment: false
 
 新建 `layouts/links.vue` 文件
 
-复制最上面的默认例子，修改`LinksThemeYun`为喜欢自己的主题就行，`SakuraMultiColumnsLayout`作用是保持页面布局，不会让`LinksThemeYun`组件宽度过大
+复制最上面的默认例子，修改`LinksThemeYun`为喜欢自己的主题就行，`SakuraMultiColumns`作用是保持页面布局，不会让`LinksThemeYun`组件宽度过大
 
 ## 相关组件
 
 - [SakuraLinks](/components/SakuraLinks)
-- [SakuraMultiColumnsLayout](/components-layout/SakuraMultiColumnsLayout)
+- [SakuraMultiColumns](/components-layout/SakuraMultiColumns)

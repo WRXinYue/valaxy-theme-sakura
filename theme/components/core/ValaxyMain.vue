@@ -86,7 +86,7 @@ onContentUpdated(() => {
     <slot name="main-nav-after" />
 
     <slot v-if="siteConfig.comment.enable && frontmatter.comment !== false" name="comment">
-      <SakuraCommentCustom />
+      <SakuraComment />
     </slot>
 
     <slot name="footer" />

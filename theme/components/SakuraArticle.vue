@@ -8,7 +8,7 @@ const frontmatter = useFrontmatter()
   <article>
     <SakuraPageHeader :title="frontmatter.title ?? 'Default Title'" :cover="frontmatter.cover" :author="frontmatter.author" :date="frontmatter.date" />
 
-    <SakuraMultiColumnsLayout class="article-grid-layout mx-auto min-w-0 pt-$header-height container !max-w-screen-2xl lg:px-6">
+    <SakuraMultiColumns class="article-grid-layout mx-auto min-w-0 pt-$header-height container !max-w-screen-2xl lg:px-6">
       <template #left>
         <slot name="left" />
       </template>
@@ -24,7 +24,7 @@ const frontmatter = useFrontmatter()
       <template #right>
         <slot name="right" />
       </template>
-    </SakuraMultiColumnsLayout>
+    </SakuraMultiColumns>
   </article>
 </template>
 

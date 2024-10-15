@@ -69,7 +69,7 @@ function onError(e: Event) {
     <AppLink :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
       <img class="h-full w-full object-cover" loading="lazy" :src="props.src || noneImg" :alt="props.alt || 'cover'" :style="imageStyle" @error="onError">
       <template v-if="overlay">
-        <div class="overlay" :style="overlayStyle" />
+        <div class="sakura-image-card-overlay" :style="overlayStyle" />
       </template>
       <div v-if="$slots.default" class="absolute top-0 h-full w-full">
         <slot />
@@ -78,14 +78,16 @@ function onError(e: Event) {
   </div>
 </template>
 
-<style lang="scss" scoped>
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+<style lang="scss">
+.sakura-image-card {
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
 }
 </style>

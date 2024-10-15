@@ -4,14 +4,14 @@ import { useThemeConfig } from '../composables'
 
 const props = withDefaults(defineProps<{
   icon?: string
-  text?: string
+  message?: string
 }>(), {
   icon: 'i-fa6-solid:bullhorn',
 })
 
 const themeConfig = useThemeConfig()
 
-const noticeMessage = computed(() => props.text || themeConfig.value.notice?.message)
+const noticeMessage = computed(() => props.message || themeConfig.value.notice?.message)
 </script>
 
 <template>

@@ -31,4 +31,4 @@ categories:
 ## 相关组件
 
 - [SakuraPageHeader](/components/SakuraPageHeader)
-- [SakuraMultiColumnsLayout](/components-layout/SakuraMultiColumnsLayout)
+- [SakuraMultiColumns](/components-layout/SakuraMultiColumns)

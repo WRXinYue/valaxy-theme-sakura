@@ -11,20 +11,20 @@ const isMounted = useMounted()
     <SakuraBannerCustom />
   </slot>
 
-  <SakuraMultiColumnsLayout class="sakura-home-layout">
+  <SakuraMultiColumns class="sakura-home-layout">
     <slot name="notice-board">
-      <SakuraNoticeBoardCustom v-if="isMounted" />
+      <SakuraNoticeBoard v-if="isMounted" />
     </slot>
 
     <template v-if="isMounted">
       <slot name="article-pinned">
-        <SakuraArticlePinnedCustom v-if="themeConfig.articlePinned" />
+        <SakuraArticlePinned v-if="themeConfig.articlePinned" />
       </slot>
     </template>
 
     <template v-if="isMounted">
       <slot name="article-list">
-        <SakuraArticleListCustom />
+        <SakuraArticleList />
       </slot>
     </template>
 
@@ -41,7 +41,7 @@ const isMounted = useMounted()
     <template v-if="isMounted" #left>
       <slot name="left" />
     </template>
-  </SakuraMultiColumnsLayout>
+  </SakuraMultiColumns>
 </template>
 
 <style lang="scss">

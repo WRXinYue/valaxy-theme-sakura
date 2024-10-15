@@ -4,8 +4,8 @@ import { computed } from 'vue'
 import { usePostList, useSiteConfig } from 'valaxy'
 import type { Post } from 'valaxy'
 
-import { useSakuraAppStore } from '../../stores'
-import { useThemeConfig } from '../../composables'
+import { useSakuraAppStore } from '../stores'
+import { useThemeConfig } from '../composables'
 
 const props = withDefaults(defineProps<{
   type?: string
@@ -60,9 +60,9 @@ const parts = computed(() => {
 <template>
   <div grid="~ cols-1 lg:cols-2 xl:cols-3 gap-4">
     <div v-for="items, idx of parts" :key="idx" flex="~ col gap-4">
-      <ArticleThemeMasonry
-        v-for="{ excerpt, date, cover, path, title } of items" :key="date" :link="path" :date="date" :src="cover" :title="title"
-        :excerpt="excerpt" class="slide-enter" :style="{ '--enter-stage': idx + 1 }"
+      <ArticleThemeGrid
+        v-for="({ excerpt, date, cover, path, title }, index) of items" :id="`sakura-article-${index * parts.length + idx}`" :key="date" :link="path" :date="date" :src="cover"
+        :title="title" :excerpt="excerpt" class="sakura-article slide-enter" :style="{ '--enter-stage': idx + 1 }"
       />
     </div>
   </div>

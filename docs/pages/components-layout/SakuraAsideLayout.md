@@ -1,25 +1,25 @@
 ---
-title: SakuraAsideLayout
-title_zh-CN: 侧边 (SakuraAsideLayout)
+title: SakuraAside
+title_zh-CN: 侧边 (SakuraAside)
 toc: true
 categories:
   - components-layout
 ---
 
-## 侧边 SakuraAsideLayout
+## 侧边 SakuraAside
 
 ## 基础用法
 
 ```vue
 <template>
-  <SakuraMultiColumnsLayout>
+  <SakuraMultiColumns>
     <template #content />
     <template #right>
-      <SakuraAsideLayout>
+      <SakuraAside>
         <!-- components -->
-      </SakuraAsideLayout>
+      </SakuraAside>
     </template>
-  </SakuraMultiColumnsLayout>
+  </SakuraMultiColumns>
 </template>
 ```
 
@@ -34,21 +34,21 @@ const isHome = useLayout('home')
 
 <template>
   <Layout>
-    <SakuraMultiColumnsLayout>
+    <SakuraMultiColumns>
       <template #left>
-        <SakuraAsideLayout>
+        <SakuraAside>
           <SidebarThemeDynamic />
-        </SakuraAsideLayout>
+        </SakuraAside>
       </template>
       <template #content>
         <RouterView />
       </template>
       <template #right>
-        <SakuraAsideLayout>
+        <SakuraAside>
           <SakuraToc v-if="!isHome" />
-        </SakuraAsideLayout>
+        </SakuraAside>
       </template>
-    </SakuraMultiColumnsLayout>
+    </SakuraMultiColumns>
   </Layout>
 </template>
 ```

@@ -1,12 +1,12 @@
 ---
-title: SakuraMultiColumnsLayout
-title_zh-CN: 多列 (SakuraMultiColumnsLayout)
+title: SakuraMultiColumns
+title_zh-CN: 多列 (SakuraMultiColumns)
 toc: true
 categories:
   - components-layout
 ---
 
-## 多列 SakuraMultiColumnsLayout
+## 多列 SakuraMultiColumns
 
 插槽(Slots) 填充两个元素实现双列布局，三个元素实现三列布局
 
@@ -14,14 +14,14 @@ categories:
 
 ```vue
 <template>
-  <SakuraMultiColumnsLayout>
+  <SakuraMultiColumns>
     <template #content />
     <template #right>
-      <SakuraAsideLayout>
+      <SakuraAside>
         <!-- components -->
-      </SakuraAsideLayout>
+      </SakuraAside>
     </template>
-  </SakuraMultiColumnsLayout>
+  </SakuraMultiColumns>
 </template>
 ```
 
@@ -36,21 +36,21 @@ const isHome = useLayout('home')
 
 <template>
   <Layout>
-    <SakuraMultiColumnsLayout>
+    <SakuraMultiColumns>
       <template #left>
-        <SakuraAsideLayout>
+        <SakuraAside>
           <SidebarThemeDynamic />
-        </SakuraAsideLayout>
+        </SakuraAside>
       </template>
       <template #content>
         <RouterView />
       </template>
       <template #right>
-        <SakuraAsideLayout>
+        <SakuraAside>
           <SakuraToc v-if="!isHome" />
-        </SakuraAsideLayout>
+        </SakuraAside>
       </template>
-    </SakuraMultiColumnsLayout>
+    </SakuraMultiColumns>
   </Layout>
 </template>
 ```

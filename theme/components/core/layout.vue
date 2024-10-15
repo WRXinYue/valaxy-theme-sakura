@@ -17,7 +17,7 @@ const themeConfig = useThemeConfig()
     ) : ''"
   >
     <slot name="nav-bar">
-      <SakuraNavbarCustom class="sakura-sidebar-offset" />
+      <SakuraNavbar class="sakura-sidebar-offset" />
     </slot>
 
     <main class="sakura-sidebar-offset sakura-main">
@@ -62,7 +62,7 @@ const themeConfig = useThemeConfig()
     </slot>
 
     <slot name="footer">
-      <SakuraFooterCustom class="sakura-sidebar-offset" />
+      <SakuraFooter class="sakura-sidebar-offset" />
     </slot>
   </div>
 </template>

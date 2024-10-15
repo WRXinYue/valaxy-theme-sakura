@@ -77,7 +77,7 @@ function displayTag(tag: string) {
               </SakuraButton>
             </div>
 
-            <SakuraIconTextDivider icon="i-fa6-solid:water" text="文章列表" :divider="false" />
+            <SakuraDivider icon="i-fa6-solid:water" text="文章列表" :divider="false" />
           </div>
         </slot>
       </template>
