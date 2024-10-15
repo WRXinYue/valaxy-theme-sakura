@@ -9,9 +9,9 @@ defineProps<{
     class="mobile-btn" :class="active ? 'mobile-btn-open' : ''" aria-label="mobile navigation" :aria-expanded="active"
   >
     <!-- TODO: Add more color configurations? -->
-    <span :class="active ? 'bg-$sakura-c-brand' : 'bg-$sakura-c-accent'" />
-    <span :class="active ? 'bg-$sakura-c-brand' : 'bg-$sakura-c-accent'" />
-    <span :class="active ? 'bg-$sakura-c-brand' : 'bg-$sakura-c-accent'" />
+    <span :class="active ? 'bg-$sakura-primary-color' : 'bg-$sakura-accent-color'" />
+    <span :class="active ? 'bg-$sakura-primary-color' : 'bg-$sakura-accent-color'" />
+    <span :class="active ? 'bg-$sakura-primary-color' : 'bg-$sakura-accent-color'" />
   </button>
 </template>
 

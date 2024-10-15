@@ -4,4 +4,4 @@ keywords: Bangumi
 description: Bangumi 追番列表
 ---
 
-<ValaxyBangumi class="mt-$sakura-c-navbar-height" />
+<ValaxyBangumi class="mt-$sakura-navbar-height" />

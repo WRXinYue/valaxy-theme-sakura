@@ -96,7 +96,7 @@ const sortedYears = computed(() => {
     }
 
     .archive-year {
-      color: var(--sakura-c-brand);
+      color: var(--sakura-primary-color);
       margin: 0 1.5rem;
 
       &::before {
@@ -108,7 +108,7 @@ const sortedYears = computed(() => {
         margin-top: -4px;
         width: 1.5rem;
         height: 1.5rem;
-        background: var(--sakura-c-brand);
+        background: var(--sakura-primary-color);
         border-radius: 50%;
       }
     }
@@ -135,7 +135,7 @@ const sortedYears = computed(() => {
       height: 10px;
       margin-left: -4px;
       border-radius: 50%;
-      border: 1px solid var(--sakura-c-brand);
+      border: 1px solid var(--sakura-primary-color);
       background-color: var(--va-c-bg-light);
       z-index: 1;
       transition: background var(--va-transition-duration);
@@ -143,7 +143,7 @@ const sortedYears = computed(() => {
 
     &:hover {
       &::before {
-        background: var(--sakura-c-brand);
+        background: var(--sakura-primary-color);
       }
     }
 

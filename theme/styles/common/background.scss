@@ -1,5 +1,5 @@
 @mixin background-style($image) {
-  background-color: var(--sakura-c-bg);
+  background-color: var(--sakura-bg-color);
   background-image: $image;
   background-size: cover;
   background-position: center;

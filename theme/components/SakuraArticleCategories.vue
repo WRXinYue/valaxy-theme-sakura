@@ -33,11 +33,11 @@ const convertedCategories = computed(() => {
   font-size: 14px;
 
   a {
-    color: var(--sakura-c-text-secondary);
+    color: var(--sakura-text-muted-color);
     transition: color 0.2s ease-out;
 
     &:hover {
-      color: var(--sakura-c-accent);
+      color: var(--sakura-accent-color);
     }
   }
 }

@@ -47,7 +47,7 @@ function getTitle(post: Post | any) {
     <li v-for="categoryItem, i in category.children.values()" :key="i" class="sakura-sidebar-item">
       <template v-if="!isCategoryList(categoryItem)">
         <RouterLink v-if="categoryItem.title" :to="categoryItem.path || ''" class="sakura-sidebar-item-link inline-flex items-center" active-class="active">
-          <span text="sm" class="color-$sakura-c-text-secondary hover:color-$sakura-c-text">{{ getTitle(categoryItem) }}</span>
+          <span text="sm" class="color-$sakura-c-text-secondary hover:color-$sakura-text-color">{{ getTitle(categoryItem) }}</span>
         </RouterLink>
       </template>
 

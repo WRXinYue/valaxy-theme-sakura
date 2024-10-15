@@ -39,7 +39,7 @@ const { link, src, date } = defineProps({
       <video v-if="src && isVideoUrl(src)" :src="src" autoplay loop muted playsinline w-full border="b base" />
       <SakuraImageCard v-else :style="{ height }" :src="src" :to="link" @click.prevent />
 
-      <div class="prose-sm m0 h-150px max-w-none bg-$sakura-c-bg p4 pb3 prose">
+      <div class="prose-sm m0 h-150px max-w-none bg-$sakura-bg-color p4 pb3 prose">
         <slot>
           <template v-if="title">
             <h2 m-0>

@@ -12,7 +12,7 @@
 
 .sakura-main {
   min-height: calc(
-    100vh - var(--sakura-c-footer-height) - var(--sakura-c-navbar-height)
+    100vh - var(--sakura-footer-height) - var(--sakura-navbar-height)
   );
 
   .sakura-aside,
@@ -63,21 +63,21 @@ a {
 }
 
 .sakura-sidebar-item-link {
-  color: var(--sakura-c-text);
+  color: var(--sakura-text-color);
   transition: all 0.5s;
-  border-left: 1px solid var(--sakura-c-surface-border);
+  border-left: 1px solid var(--sakura-border-surface-color);
 
   &.router-link-exact-active {
-    color: var(--sakura-c-text);
+    color: var(--sakura-text-color);
     border-left-width: 1px;
-    border-color: var(--sakura-c-secondary);
+    border-color: var(--sakura-secondary-color);
 
     // &::after {
     //   position: absolute;
     //   width: 4px;
     //   height: 24px;
     //   content: "";
-    //   background-color: var(--fgColor-accent, var(--sakura-c-secondary));
+    //   background-color: var(--fgColor-accent, var(--sakura-secondary-color));
     //   border-radius: 6px;
     // }
   }

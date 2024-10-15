@@ -46,7 +46,7 @@ const { locale } = useI18n()
 
   &:hover,
   &.active {
-    color: var(--sakura-c-brand);
+    color: var(--sakura-primary-color);
     transition: color 0.25s;
   }
 

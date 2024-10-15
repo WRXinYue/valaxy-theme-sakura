@@ -1,5 +1,5 @@
 .prose p {
-  color: var(--sakura-c-text);
+  color: var(--sakura-text-color);
   line-height: 30px;
 }
 
@@ -52,7 +52,7 @@
 .prose h3 {
   padding-bottom: 8px;
   border-bottom: 1px dashed #ddd;
-  color: var(--sakura-c-text-muted);
+  color: var(--sakura-text-muted-color);
 }
 
 .prose h3,
@@ -64,7 +64,7 @@
 .prose h2::after {
   content: '\00B6';
   position: absolute;
-  color: var(--sakura-c-brand);
+  color: var(--sakura-primary-color);
   font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
     'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
   padding-left: 6px;
@@ -74,7 +74,7 @@
 .serif .prose h2::after {
   content: '\00B6';
   position: absolute;
-  color: var(--sakura-c-brand);
+  color: var(--sakura-primary-color);
   font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
     'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
   padding-left: 6px;
@@ -85,21 +85,21 @@
   content: '#';
   left: 0;
   position: absolute;
-  color: var(--sakura-c-secondary);
+  color: var(--sakura-secondary-color);
 }
 
 .prose h4::after {
   content: '▌';
   left: 0;
   position: absolute;
-  color: var(--sakura-c-secondary);
+  color: var(--sakura-secondary-color);
 }
 
 .prose h5::after {
   content: '♯';
   left: 0;
   position: absolute;
-  color: var(--sakura-c-secondary);
+  color: var(--sakura-secondary-color);
 }
 
 .prose code {
@@ -112,12 +112,12 @@
 }
 
 .prose a {
-  color: var(--sakura-c-link);
+  color: var(--sakura-link-color);
   position: relative;
 }
 
 .prose a:hover {
-  color: var(--sakura-c-secondary);
+  color: var(--sakura-secondary-color);
   text-decoration: none;
 }
 
@@ -129,7 +129,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--sakura-c-secondary);
+  background-color: var(--sakura-secondary-color);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }

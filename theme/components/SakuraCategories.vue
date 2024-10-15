@@ -40,7 +40,7 @@ const categoryList = computed(() => {
     color: var(--va-c-text-lighter);
 
     &:hover {
-      color: var(--sakura-c-brand);
+      color: var(--sakura-primary-color);
     }
   }
 }
@@ -48,13 +48,13 @@ const categoryList = computed(() => {
 .category-list-item {
   .folder-action {
     &:hover {
-      color: var(--sakura-c-brand);
+      color: var(--sakura-primary-color);
     }
   }
 
   .category-name {
     &:hover {
-      color: var(--sakura-c-brand);
+      color: var(--sakura-primary-color);
     }
   }
 }

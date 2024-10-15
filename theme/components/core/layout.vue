@@ -12,8 +12,8 @@ const themeConfig = useThemeConfig()
     class="app-container custom-background antialiased"
     :style="sakuraAppStore.sidebar.isOpen ? (
       themeConfig.sidebarOptions?.position === 'left'
-        ? '--sakura-private-sidebar-offset: var(--sakura-c-sidebar-offset)'
-        : '--sakura-private-sidebar-offset: calc(var(--sakura-c-sidebar-offset) * -1)'
+        ? '--sakura-private-sidebar-offset: var(--sakura-sidebar-offset)'
+        : '--sakura-private-sidebar-offset: calc(var(--sakura-sidebar-offset) * -1)'
     ) : ''"
   >
     <slot name="nav-bar">

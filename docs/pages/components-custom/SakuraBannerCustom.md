@@ -34,11 +34,11 @@ Banner 横幅当中可以配置博客首页大屏壁纸或者标题之类的
 
 ## 固定横幅高度
 
-通过添加`h-[calc(100vh-var(--sakura-c-footer-height))]!`，可以使横幅和页脚的高度总和等于100vh
+通过添加`h-[calc(100vh-var(--sakura-footer-height))]!`，可以使横幅和页脚的高度总和等于100vh
 
 ```vue
 <template>
-  <SakuraBanner class="h-[calc(100vh-var(--sakura-c-footer-height))]!">
+  <SakuraBanner class="h-[calc(100vh-var(--sakura-footer-height))]!">
     <template #info-overlay>
       <InfoOverlayThemeHero />
     </template>

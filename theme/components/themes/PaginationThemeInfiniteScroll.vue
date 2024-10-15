@@ -94,7 +94,7 @@ onUnmounted(() => {
 
 <style lang="scss">
 .load-more-container {
-  color: var(--sakura-c-text-secondary);
+  color: var(--sakura-secondary-text-color);
 }
 
 .load-more-button {

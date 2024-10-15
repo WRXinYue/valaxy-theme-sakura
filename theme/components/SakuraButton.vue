@@ -17,7 +17,7 @@ withDefaults(defineProps<{
   border-width: 1px;
   padding: 2px 20px;
   border-radius: 20px;
-  color: var(--sakura-c-text);
+  color: var(--sakura-text-color);
   transition:
     color 0.3s ease-in-out,
     border-color 0.2s ease-in-out;
@@ -27,8 +27,8 @@ withDefaults(defineProps<{
 
     &:hover,
     &.clicked {
-      color: var(--sakura-c-secondary);
-      border-color: var(--sakura-c-secondary);
+      color: var(--sakura-secondary-color);
+      border-color: var(--sakura-secondary-color);
     }
   }
 }

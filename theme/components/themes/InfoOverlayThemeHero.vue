@@ -31,7 +31,7 @@ const themeConfig = useThemeConfig()
       </slot>
     </p>
 
-    <p class="animation-fade-up color-$sakura-c-text-muted" text="base md:2xl" style="animation-delay: 1000ms;">
+    <p class="animation-fade-up color-$sakura-text-muted-color" text="base md:2xl" style="animation-delay: 1000ms;">
       <slot name="muted-text">
         {{ themeConfig.banner.motto }}
       </slot>
@@ -42,7 +42,7 @@ const themeConfig = useThemeConfig()
           v-for="s in siteConfig.social" :key="s.name" class="inline-flex border rounded-xl p-2 hover:bg-[hsl(0_0%_96.1%)]"
           dark="hover:bg-[hsl(0_0%_14.9%)]"
         >
-          <a :style="{ '--sakura-c-icon': s.color }" :class="[s.icon]" class="icon" :href="s.link" aria-label="icon" target="_blank" />
+          <a :style="{ '--sakura-icon-color': s.color }" :class="[s.icon]" class="icon" :href="s.link" aria-label="icon" target="_blank" />
         </li>
       </ul>
     </slot>
@@ -63,7 +63,7 @@ const themeConfig = useThemeConfig()
   .icon {
     height: 30px;
     width: 30px;
-    color: var(--sakura-c-icon);
+    color: var(--sakura-icon-color);
   }
 
   .social {

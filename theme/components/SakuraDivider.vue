@@ -22,7 +22,7 @@ withDefaults(defineProps<{
   padding-top: 24px;
   padding-bottom: 5px;
   margin-bottom: 30px;
-  color: var(--sakura-c-text);
+  color: var(--sakura-text-color);
   border-bottom: 1px dashed #ececec;
 
   &-icon {

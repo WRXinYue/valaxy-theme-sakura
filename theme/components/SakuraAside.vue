@@ -7,11 +7,11 @@
 <style lang="scss">
 .sakura-aside {
   position: sticky;
-  top: calc(var(--sakura-c-navbar-height) + var(--sakura-c-navbar-mt));
-  margin-top: var(--sakura-c-navbar-mt);
+  top: calc(var(--sakura-navbar-height) + var(--sakura-navbar-mt));
+  margin-top: var(--sakura-navbar-mt);
 
-  // width: var(--sakura-c-aside-width);
-  max-height: calc(100vh - var(--sakura-c-navbar-height));
+  // width: var(--sakura-aside-width);
+  max-height: calc(100vh - var(--sakura-navbar-height));
   transition:
     box-shadow var(--va-transition-duration),
     background-color var(--va-transition-duration),

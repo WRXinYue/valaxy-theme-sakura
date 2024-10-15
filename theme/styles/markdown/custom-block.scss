@@ -29,8 +29,8 @@
   // tip
   --va-custom-block-tip-border: transparent;
   --va-custom-block-tip-text: var(--va-c-text-1);
-  --va-custom-block-tip-bg: var(--va-c-brand-soft);
-  --va-custom-block-tip-code-bg: var(--va-c-brand-soft);
+  --va-custom-block-tip-bg: var(--va-primary-color-soft);
+  --va-custom-block-tip-code-bg: var(--va-primary-color-soft);
 
   // warning
   --va-custom-block-warning-border: transparent;
@@ -69,11 +69,11 @@
 
 .custom-block.info a,
 .custom-block.info code {
-  color: var(--va-c-brand-1);
+  color: var(--va-primary-color-1);
 }
 
 .custom-block.info a:hover {
-  color: var(--va-c-brand-2);
+  color: var(--va-primary-color-2);
 }
 
 .custom-block.info code {
@@ -88,11 +88,11 @@
 
 .custom-block.tip a,
 .custom-block.tip code {
-  color: var(--va-c-brand-1);
+  color: var(--va-primary-color-1);
 }
 
 .custom-block.tip a:hover {
-  color: var(--va-c-brand-2);
+  color: var(--va-primary-color-2);
 }
 
 .custom-block.tip code {
@@ -144,11 +144,11 @@
 }
 
 .custom-block.details a {
-  color: var(--va-c-brand-1);
+  color: var(--va-primary-color-1);
 }
 
 .custom-block.details a:hover {
-  color: var(--va-c-brand-2);
+  color: var(--va-primary-color-2);
 }
 
 .custom-block.details code {

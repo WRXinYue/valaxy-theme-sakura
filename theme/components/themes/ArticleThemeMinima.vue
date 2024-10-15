@@ -17,19 +17,19 @@ const isMounted = useMounted()
         {{ post.title }}
       </div>
     </RouterLink>
-    <div class="mb-3 text-[var(--sakura-c-text-secondary)] dark:text-[var(--sakura-c-text-secondary)]" v-html="post.excerpt" />
+    <div class="mb-3 text-[var(--sakura-secondary-text-color)] dark:text-[var(--sakura-secondary-text-color)]" v-html="post.excerpt" />
   </article>
 </template>
 
 <style lang="scss" scoped>
 article {
-  color: var(--sakura-c-text-secondary);
+  color: var(--sakura-secondary-text-color);
   margin: 20px 0;
   transition: box-shadow 0.3s ease;
 
   .font-secondary {
-    font-size: var(--sakura-c-article-card-font-size-secondary);
-    color: var(--sakura-c-text-secondary);
+    font-size: var(--sakura-article-card-font-secondary-size);
+    color: var(--sakura-secondary-text-color);
   }
 
   @media (width <= 768px) {
@@ -45,17 +45,17 @@ article {
 }
 
 .title {
-  color: var(--sakura-c-text);
+  color: var(--sakura-text-color);
   font-size: 24px;
   transition: color 0.2s ease-out;
 
   // &:hover {
-  //   color: var(--sakura-c-accent);
+  //   color: var(--sakura-accent-color);
   // }
 }
 
 .sakura-minima-date {
-  color: var(--sakura-c-text);
+  color: var(--sakura-text-color);
   font-size: 36px;
   transition: color 0.2s ease-out;
 }

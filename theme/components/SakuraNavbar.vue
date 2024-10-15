@@ -90,7 +90,7 @@ onUnmounted(() => {
 .sakura-navbar {
   position: fixed;
   z-index: 100;
-  height: var(--sakura-c-navbar-height);
+  height: var(--sakura-navbar-height);
   width: 100%;
   top: 0;
   display: flex;
@@ -101,7 +101,7 @@ onUnmounted(() => {
   padding-right: max(40px, env(safe-area-inset-right));
 
   &.active-header {
-    background: var(--sakura-c-bg-nav);
+    background: var(--sakura-nav-bg-color);
   }
 }
 </style>

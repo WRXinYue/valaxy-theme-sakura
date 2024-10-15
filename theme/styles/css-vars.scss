@@ -4,15 +4,14 @@
 );
 
 :root {
-  --un-prose-links: var(--sakura-c-link);
-  --un-prose-body: var(--sakura-c-text);
+  --un-prose-links: var(--sakura-link-color);
+  --un-prose-body: var(--sakura-text-color);
 
   // z-index
-  --va-z-overlay: var(--sakura-z-backdrop);
+  --va-z-overlay: var(--sakura-backdrop-z, 2);
 
   @include set-css-var-from-map($light);
   @include set-css-var-from-map($common);
-  @include set-css-var-from-map($z-index, 'z');
 
   --va-font-family-base: 'Chinese Quotes', 'Inter var', 'Inter', ui-sans-serif,
     system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,

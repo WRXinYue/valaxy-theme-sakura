@@ -22,7 +22,7 @@ const { t } = useI18n()
 
 <style lang="scss">
 .toc-btn {
-  color: var(--sakura-c-brand);
+  color: var(--sakura-primary-color);
   background-color: white;
   z-index: var(--yun-z-toc-btn);
 }

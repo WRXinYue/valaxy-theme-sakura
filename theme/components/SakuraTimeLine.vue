@@ -101,23 +101,23 @@ function handleMouseEnter(year: number, month: number) {
               class="post-header" flex items-center
               :class="[
                 j === 0 ? 'circle-indicator' : 'hover-indicator',
-                j !== postListByYear[year][month].length && 'h-$sakura-c-timeline-height',
+                j !== postListByYear[year][month].length && 'h-$sakura-timeline-height',
               ]"
             >
               <div v-if="j === 0" class="post-meta absolute left--40">
                 <time v-if="post.date" class="post-time" font="mono" opacity="80">{{
                   formatDate(post.date, 'MM') }}月
                 </time>
-                <span class="text-$sakura-c-text">
+                <span class="text-$sakura-text-color">
                   ({{ originalPostListByYear[year][month].length }} 篇文章)
                 </span>
               </div>
               <div v-if="j !== 0" class="post-meta">
-                <time v-if="post.date" class="post-time text-$sakura-c-timeline-text-color" font="mono" opacity="80">{{
+                <time v-if="post.date" class="post-time text-$sakura-timeline-text-color" font="mono" opacity="80">{{
                   formatDate(post.date, 'dd') }}日
                 </time>
                 <h2 class="post-title" inline-flex items-center font="serif black">
-                  <RouterLink :to="post.path || ''" class="post-title-link text-$sakura-c-text hover:text-$sakura-c-accent">
+                  <RouterLink :to="post.path || ''" class="post-title-link text-$sakura-text-color hover:text-$sakura-accent-color">
                     {{ post.title }}
                   </RouterLink>
                 </h2>
@@ -167,7 +167,7 @@ function handleMouseEnter(year: number, month: number) {
     }
 
     .archive-year {
-      color: var(--sakura-c-timeline-color);
+      color: var(--sakura-timeline-color);
       margin: 0 1.5rem;
 
       &::before {
@@ -179,7 +179,7 @@ function handleMouseEnter(year: number, month: number) {
         margin-top: 14px;
         width: 1rem;
         height: 1rem;
-        background: var(--sakura-c-brand);
+        background: var(--sakura-primary-color);
         border-radius: 50%;
       }
     }
@@ -192,7 +192,7 @@ function handleMouseEnter(year: number, month: number) {
       width: 3px;
       height: 100%;
       box-sizing: border-box;
-      background: var(--sakura-c-timeline-color);
+      background: var(--sakura-timeline-color);
     }
   }
 
@@ -230,7 +230,7 @@ function handleMouseEnter(year: number, month: number) {
     height: 10px;
     margin-left: -4px;
     border-radius: 50%;
-    border: 1px solid var(--sakura-c-timeline-color);
+    border: 1px solid var(--sakura-timeline-color);
     background-color: var(--va-c-bg-light);
     z-index: 1;
     transition: background var(--va-transition-duration);
@@ -238,7 +238,7 @@ function handleMouseEnter(year: number, month: number) {
 
   &:hover {
     &::before {
-      background: var(--sakura-c-timeline-color);
+      background: var(--sakura-timeline-color);
     }
   }
 }
@@ -251,7 +251,7 @@ function handleMouseEnter(year: number, month: number) {
   margin-left: -7px;
   width: 1rem;
   height: 1rem;
-  background: var(--sakura-c-timeline-color);
+  background: var(--sakura-timeline-color);
   border-radius: 50%;
   border: 2px solid white;
   box-shadow: 1px 1px 1px #bbb;

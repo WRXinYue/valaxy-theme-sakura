@@ -1,3 +1,3 @@
 <template>
-  <SakuraNavbar col bg="$st-c-bg-nav" />
+  <SakuraNavbar col bg="$st-nav-bg-color" />
 </template>

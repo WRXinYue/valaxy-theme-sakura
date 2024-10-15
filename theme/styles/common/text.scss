@@ -1,9 +1,9 @@
 .sakura-gradient-text {
   background: linear-gradient(
     to right,
-    var(--sakura-c-brand),
+    var(--sakura-primary-color),
     60%,
-    var(--sakura-c-secondary)
+    var(--sakura-secondary-color)
   );
   background-clip: text;
   color: transparent;

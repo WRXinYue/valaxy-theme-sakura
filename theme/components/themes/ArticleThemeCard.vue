@@ -28,7 +28,7 @@ const isMounted = useMounted()
         <div class="title">
           {{ post.title }}
         </div>
-        <div class="mb-2.25 text-[var(--sakura-c-text-secondary)] dark:text-[var(--sakura-c-text-secondary)]" v-html="post.excerpt" />
+        <div class="mb-2.25 text-[var(--sakura-text-muted-color)]" v-html="post.excerpt" />
       </RouterLink>
 
       <div class="inline-flex">
@@ -44,9 +44,9 @@ const isMounted = useMounted()
   display: flex;
   overflow: hidden;
   justify-content: space-between;
-  color: var(--sakura-c-text-secondary);
+  color: var(--sakura-text-muted-color);
   margin: 20px 0;
-  border-radius: var(--sakura-c-article-card-rd);
+  border-radius: var(--sakura-article-card-rd);
   box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease;
   min-height: 230px;
@@ -56,8 +56,8 @@ const isMounted = useMounted()
   }
 
   .font-secondary {
-    font-size: var(--sakura-c-article-card-font-size-secondary);
-    color: var(--sakura-c-text-secondary);
+    font-size: var(--sakura-article-card-font-secondary-size);
+    color: var(--sakura-text-muted-color);
   }
 
   @media (width <= 768px) {
@@ -72,12 +72,12 @@ const isMounted = useMounted()
   }
 
   .title {
-    color: var(--sakura-c-text);
+    color: var(--sakura-text-deep-color);
     font-size: 24px;
     transition: color 0.2s ease-out;
 
     &:hover {
-      color: var(--sakura-c-accent);
+      color: var(--sakura-accent-color);
     }
   }
 }

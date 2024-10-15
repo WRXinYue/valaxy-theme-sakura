@@ -63,7 +63,7 @@ const { headers, handleClick } = useOutline()
   opacity: 0;
   width: 4px;
   height: 18px;
-  background-color: var(--sakura-c-brand);
+  background-color: var(--sakura-primary-color);
   transition:
     top 0.25s cubic-bezier(0, 1, 0.5, 1),
     background-color 0.5s,
@@ -91,7 +91,7 @@ const { headers, handleClick } = useOutline()
 
 .outline-link:hover,
 .outline-link.active {
-  color: var(--sakura-c-brand);
+  color: var(--sakura-primary-color);
   transition: color 0.25s;
 }
 

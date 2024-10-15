@@ -71,8 +71,8 @@ onMounted(() => {
 
   #marker {
     position: absolute;
-    border-bottom: var(--sakura-c-sidebar-marker-h) solid
-      var(--sakura-c-secondary);
+    border-bottom: var(--sakura-sidebar-marker-height) solid
+      var(--sakura-secondary-color);
     transition-property: opacity, left, top;
     transition-duration: 0.5s;
     pointer-events: none;

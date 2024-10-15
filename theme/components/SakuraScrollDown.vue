@@ -4,7 +4,7 @@
 
 <style lang="scss">
 .sakura-scroll-down {
-  color: var(--sakura-c-bg);
+  color: var(--sakura-bg-color);
   font-size: 28px;
 }
 </style>

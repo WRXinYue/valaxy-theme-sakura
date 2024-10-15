@@ -36,10 +36,10 @@ const position = ref(props.position ?? themeConfig.value.sidebarOptions.position
   position: fixed;
   z-index: 1000;
   padding-top: 30px;
-  width: var(--sakura-c-sidebar-width);
+  width: var(--sakura-sidebar-width);
   background-image: var(--sakura-c-sidebar-bg-img);
   background-position: bottom 1rem center;
-  background-color: var(--sakura-c-sidebar-bg-color);
+  background-color: var(--sakura-sidebar-bg-color);
   transition:
     box-shadow var(--va-transition-duration),
     background-color var(--va-transition-duration),

@@ -24,7 +24,7 @@ const isHome = useLayout('home')
     left: 50%;
     width: $from-width;
     height: 1px;
-    background-color: var(--sakura-c-border);
+    background-color: var(--sakura-border-color);
     animation: #{$name} 0.75s forwards;
     transform: translateX(-50%);
   }

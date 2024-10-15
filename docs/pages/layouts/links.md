@@ -15,7 +15,7 @@ const frontmatter = useFrontmatter()
 </script>
 
 <template>
-  <SakuraMultiColumns class="mt-$sakura-c-navbar-height">
+  <SakuraMultiColumns class="mt-$sakura-navbar-height">
     <SakuraLinks :links="frontmatter.links" :random="frontmatter.random" />
   </SakuraMultiColumns>
 </template>
