@@ -8,6 +8,9 @@
     "sakurairo"
   ],
   "main": "index.ts",
+  "dependencies": {
+    "@iconify-json/fa": "^1.2.0"
+  },
   "devDependencies": {
     "valaxy-theme-sakura": "workspace:*"
   }

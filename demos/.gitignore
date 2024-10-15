@@ -1,0 +1,27 @@
+# vite-ssg
+.vite-ssg-dist
+.vite-ssg-temp
+
+temp/
+
+.DS_Store
+*.local
+dist
+dist-ssr
+node_modules
+.idea/
+*.log
+
+components.d.ts
+
+# valaxy rss
+public/atom.xml
+
+# valaxy rss
+public/feed.json
+
+# valaxy rss
+public/feed.xml
+
+# valaxy fuse
+public/valaxy-fuse-list.json

@@ -1,0 +1,31 @@
+/* ======= NavBar ======= */
+.sakura-navbar {
+  &.active-header {
+    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
+
+    // backdrop-filter: saturate(180%) blur(3.2px);
+    // padding-left: max(0.75rem, env(safe-area-inset-left));
+    // padding-right: max(0.75rem, env(safe-area-inset-right));
+  }
+}
+
+.sakura-logo-link {
+  font-family: Moe-Mashiro, sans-serif;
+}
+
+.info-overlay-theme-sakura {
+  .card-wrapper {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 20%;
+    margin-left: -15px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.5);
+  }
+}

@@ -1,6 +1,7 @@
 {
   "name": "vite-plugin-tsdoc",
   "version": "0.0.1",
+  "private": true,
   "description": "",
   "repository": "https://github.com/wrxinyue/valaxy-theme-sakura/packages/vite-plugin-tsdoc",
   "keywords": [

@@ -14,7 +14,7 @@ const entries = computed(() => props.entries ?? themeConfig.value.articlePinned?
 </script>
 
 <template>
-  <div class="sakura-article-pinned <md:hidden">
+  <div v-if="entries" class="sakura-article-pinned <md:hidden">
     <SakuraDivider :icon :text />
     <div class="sakura-article-pinned-card flex">
       <SakuraImageCard

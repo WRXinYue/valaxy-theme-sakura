@@ -8,7 +8,7 @@ const isMounted = useMounted()
 
 <template>
   <slot name="banner">
-    <SakuraBannerCustom />
+    <SakuraBanner />
   </slot>
 
   <SakuraMultiColumns class="sakura-home-layout">
