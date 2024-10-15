@@ -2,7 +2,7 @@ import { defineTheme } from 'valaxy'
 import { addonVercount } from 'valaxy-addon-vercount'
 import { addonHitokoto } from 'valaxy-addon-hitokoto'
 import defu from 'defu'
-import { defaultThemeConfig, generateSafelist, themePlugin } from './node'
+import { SakuraStyleResolver, defaultThemeConfig, generateSafelist, themePlugin } from './node'
 import type { ThemeConfig } from './types'
 
 export default defineTheme<ThemeConfig>((options) => {
@@ -18,6 +18,9 @@ export default defineTheme<ThemeConfig>((options) => {
     },
     unocss: {
       safelist: generateSafelist(themeConfig),
+    },
+    components: {
+      resolvers: [SakuraStyleResolver(themeConfig)],
     },
     addons: [
       addonVercount(),
