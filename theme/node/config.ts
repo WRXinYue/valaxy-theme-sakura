@@ -44,6 +44,16 @@ export const defaultThemeConfig: ThemeConfig = {
     showCounts: false,
   },
 
+  articleList: {
+    icon: 'i-fa6-solid:water',
+    text: '文章列表',
+  },
+
+  articlePinned: {
+    icon: 'i-fa6-solid:anchor',
+    text: 'START:DASH!!',
+  },
+
   footer: {
     since: 2024,
     icon: {
@@ -74,7 +84,7 @@ export const defaultThemeConfig: ThemeConfig = {
  * @param themeConfig
  */
 export function generateSafelist(themeConfig: ThemeConfig) {
-  const { navbar, sidebar, footer, translateIcon, toggleThemeIcon } = themeConfig
+  const { navbar, sidebar, footer, translateIcon, toggleThemeIcon, articlePinned, articleList } = themeConfig
   const footerIcon = footer?.icon?.img
 
   const safelist: string[] = []
@@ -99,6 +109,12 @@ export function generateSafelist(themeConfig: ThemeConfig) {
     safelist.push(toggleThemeIcon.darkIcon)
   if (toggleThemeIcon?.lightIcon)
     safelist.push(toggleThemeIcon.lightIcon)
+
+  if (articleList?.icon)
+    safelist.push(articleList.icon)
+
+  if (articlePinned?.icon)
+    safelist.push(articlePinned?.icon)
 
   return safelist
 }

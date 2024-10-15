@@ -9,6 +9,7 @@ export namespace SakuraTheme {
  * Theme Config
  */
 export interface ThemeConfig extends DefaultTheme.Config {
+  theming?: string
   colors: {
     /**
      * @zh 主题的主色调
@@ -27,11 +28,12 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * @en Banner configuration
    */
   banner: Partial<Banner>
+  articleList?: Partial<ArticleList>
   /**
    * @zh 置顶文章
    * @en Pinned articles
    */
-  articlePinned?: Partial<ArticlePinned>[]
+  articlePinned?: Partial<ArticlePinned>
   /**
    * @zh 侧边栏配置
    * @en Sidebar configuration
@@ -246,6 +248,11 @@ export interface SidebarItem {
    */
   text?: string
   /**
+   * @zh i18n 国际化
+   * @en i18n localization
+   */
+  locale?: string | number
+  /**
    * @zh 侧边栏图标
    * @en The icon of the item
    */
@@ -289,7 +296,7 @@ export interface NavItem {
    * @zh 文本
    * @en Text
    */
-  text: string
+  text?: string
   /**
    * @zh i18n 国际化
    * @en i18n localization
@@ -434,7 +441,18 @@ export interface Pagination {
   }
 }
 
+export interface ArticleList {
+  icon: string
+  text: string
+}
+
 export interface ArticlePinned {
+  icon: string
+  text: string
+  entries: Partial<ArticlePinnedRow>[]
+}
+
+export interface ArticlePinnedRow {
   title: string
   desc: string
   img: string
