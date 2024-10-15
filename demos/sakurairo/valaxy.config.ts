@@ -17,6 +17,7 @@ export default defineValaxyConfig<ThemeConfig>({
       motto: 'You got to put the past behind you before you can move on.',
       urls: [
         'https://w.wallhaven.cc/full/gp/wallhaven-gpeolq.jpg',
+        'https://w.wallhaven.cc/full/7p/wallhaven-7pz66y.jpg',
         // 'https://w.wallhaven.cc/full/x6/wallhaven-x6mg8d.jpg'
       ],
       style: 'filter-dot',

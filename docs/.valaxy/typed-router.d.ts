@@ -68,7 +68,7 @@ declare module 'vue-router/auto-routes' {
     '/components-custom/SakuraSidebarCustom': RouteRecordInfo<'/components-custom/SakuraSidebarCustom', '/components-custom/SakuraSidebarCustom', Record<never, never>, Record<never, never>>,
     '/components-layout/': RouteRecordInfo<'/components-layout/', '/components-layout', Record<never, never>, Record<never, never>>,
     '/components-layout/SakuraAsideLayout': RouteRecordInfo<'/components-layout/SakuraAsideLayout', '/components-layout/SakuraAsideLayout', Record<never, never>, Record<never, never>>,
-    '/components-layout/SakuraMultiColumnsLayout': RouteRecordInfo<'/components-layout/SakuraMultiColumnsLayout', '/components-layout/SakuraMultiColumnsLayout', Record<never, never>, Record<never, never>>,
+    '/components-layout/SakuraMultiColumns': RouteRecordInfo<'/components-layout/SakuraMultiColumns', '/components-layout/SakuraMultiColumns', Record<never, never>, Record<never, never>>,
     '/components-themes/': RouteRecordInfo<'/components-themes/', '/components-themes', Record<never, never>, Record<never, never>>,
     '/components-themes/ArticleListThemeCard': RouteRecordInfo<'/components-themes/ArticleListThemeCard', '/components-themes/ArticleListThemeCard', Record<never, never>, Record<never, never>>,
     '/components-themes/ArticleListThemeGrid': RouteRecordInfo<'/components-themes/ArticleListThemeGrid', '/components-themes/ArticleListThemeGrid', Record<never, never>, Record<never, never>>,

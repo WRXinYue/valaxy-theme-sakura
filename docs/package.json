@@ -16,7 +16,7 @@
     "valaxy": "^0.20.0",
     "valaxy-addon-git-log": "^0.1.0",
     "valaxy-addon-twikoo": "^0.0.3",
-    "valaxy-theme-sakura": "workspace:*",
+    "valaxy-theme-sakura": "~0.6.8",
     "vite-plugin-tsdoc": "workspace:*",
     "vue-toastification": "2.0.0-rc.5"
   },

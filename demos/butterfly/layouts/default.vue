@@ -6,20 +6,20 @@ const isHome = useLayout('home')
 
 <template>
   <Layout>
-    <SakuraMultiColumnsLayout>
+    <SakuraMultiColumns>
       <template #left>
-        <SakuraAsideLayout>
+        <SakuraAside>
           <SidebarThemeDynamic />
-        </SakuraAsideLayout>
+        </SakuraAside>
       </template>
       <template #content>
         <RouterView />
       </template>
       <template #right>
-        <SakuraAsideLayout>
+        <SakuraAside>
           <SakuraToc v-if="!isHome" />
-        </SakuraAsideLayout>
+        </SakuraAside>
       </template>
-    </SakuraMultiColumnsLayout>
+    </SakuraMultiColumns>
   </Layout>
 </template>

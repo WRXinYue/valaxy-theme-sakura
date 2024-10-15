@@ -2,9 +2,9 @@
   <Layout>
     <SakuraHomeLayout>
       <template #right>
-        <SakuraAsideLayout>
+        <SakuraAside>
           <SakuraSiteInfoCard />
-        </SakuraAsideLayout>
+        </SakuraAside>
       </template>
     </SakuraHomeLayout>
   </Layout>

@@ -36,15 +36,14 @@ categories:
 
 ### Slots
 
-| 插槽名  | 说明                                                           |
-| ------- | -------------------------------------------------------------- |
-| left    | 默认没有内容，如果启用left插槽就代表启用三栏布局               |
-| content | 通常不建议修改，主要显示文章主体内容                           |
+| 插槽名  | 说明                                                     |
+| ------- | -------------------------------------------------------- |
+| left    | 默认没有内容，如果启用left插槽就代表启用三栏布局         |
+| content | 通常不建议修改，主要显示文章主体内容                     |
 | right   | 默认包含`SakuraAside`及`SakuraToc`组件，实现文章目录功能 |
 
 ## 相关组件
 
 - [SakuraArticle](/components/SakuraArticle)
 - [SakuraArticleFooterCustom](/components-custom/SakuraArticleFooterCustom)
-- [SakuraAside](/components-layout/SakuraAside)
 - [SakuraToc](/components/SakuraToc)

@@ -327,13 +327,6 @@ export default defineValaxyConfig<ThemeConfig>({
     optimizeDeps: {
       include: [
         'd3',
-        '@pixi/graphics',
-        '@pixi/settings',
-        '@pixi/app',
-        '@pixi/core',
-        '@pixi/extract',
-        '@pixi/interaction',
-        '@pixi/ticker',
         'lodash-es',
       ],
     },
