@@ -10,14 +10,12 @@ export namespace SakuraTheme {
  */
 export interface ThemeConfig extends DefaultTheme.Config {
   theming?: string
-  colors: {
-    /**
-     * @zh 主题的主色调
-     * @en Primary color of the theme
-     * @default '#0078E7'
-     */
-    primary: string
-  }
+  /**
+   * @zh 主题的主色调
+   * @en Primary color of the theme
+   * @default '#0078E7'
+   */
+  primaryColor: string
   /**
    * @zh 页脚配置
    * @en Footer configuration
@@ -100,6 +98,10 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * @default true
    */
   scrollAnimation: boolean
+  /**
+   * @default false
+   */
+  scrollIndicator: boolean
   /**
    * @zh 是否显示滚动到顶部组件，默认为按钮样式
    * @en Whether to display the scroll-to-top component. The default is a button style.

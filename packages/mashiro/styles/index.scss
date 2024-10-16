@@ -1,9 +1,2 @@
 @use 'css-vars' as *;
 @use 'components' as *;
-
-/* ======= NavBar ======= */
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: #fe9600;
-}

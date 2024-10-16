@@ -5,9 +5,7 @@ export const defaultThemeConfig: ThemeConfig = {
     circleTransition: true,
   },
 
-  colors: {
-    primary: '#0078E7',
-  },
+  primaryColor: '#0078E7',
 
   navbarTitle: '',
 
@@ -78,6 +76,7 @@ export const defaultThemeConfig: ThemeConfig = {
 
   scrollDamping: false,
   scrollAnimation: true,
+  scrollIndicator: false,
   scrollToTop: false,
   scrollDown: {
     enable: true,

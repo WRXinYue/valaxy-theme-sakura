@@ -1,5 +1,10 @@
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
+body::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: var(--sakura-primary-color);
+}
+
 /* ======= NavBar ======= */
 .sakura-navbar {
   &.active-header {
@@ -80,4 +85,16 @@
   .sakura-image-card {
     border-radius: 0 !important;
   }
+}
+
+.sakura-scroll-down {
+  transform: scale(1.5, 1);
+
+  &-icon {
+    font-size: 19px !important;
+  }
+}
+
+.sakura-scroll-indicator {
+  transition: width 1s cubic-bezier(0.33, 1, 0.68, 1) !important;
 }

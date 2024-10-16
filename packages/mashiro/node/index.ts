@@ -2,12 +2,15 @@ import defu from 'defu'
 import type { ThemeConfig } from '../types'
 
 export const defaultThemeConfig: ThemeConfig = {
+  primaryColor: '#fe9500',
+
   banner: {
     waveTheme: 'horizontal',
     style: 'filter-dot',
   },
   navbarOptions: {
     invert: true,
+    showMarker: false,
   },
   articleList: {
     icon: 'i-fa-envira',
@@ -25,6 +28,11 @@ export const defaultThemeConfig: ThemeConfig = {
     text: 'START:DASH!!',
   },
 
+  pagination: {
+    infiniteScrollOptions: { preload: false },
+  },
+
+  scrollIndicator: true,
   scrollDown: {
     icon: 'i-fa-chevron-down',
   },

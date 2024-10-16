@@ -16,7 +16,11 @@ const themeConfig = useThemeConfig()
         : '--sakura-private-sidebar-offset: calc(var(--sakura-sidebar-offset) * -1)'
     ) : ''"
   >
-    <slot name="nav-bar">
+    <slot name="scroll-indicator">
+      <SakuraScrollIndicator v-if="themeConfig.scrollIndicator" />
+    </slot>
+
+    <slot name="navbar">
       <SakuraNavbar class="sakura-sidebar-offset" />
     </slot>
 

@@ -13,12 +13,17 @@ const icon = computed(() => props.icon || themeConfig.value.scrollDown.icon)
 </script>
 
 <template>
-  <i :class="icon" class="sakura-scroll-down animation-float inline-block cursor-pointer" @click="toDown" />
+  <button class="sakura-scroll-down" @click="toDown">
+    <span :class="icon" class="sakura-scroll-down-icon animation-float inline-block" />
+  </button>
 </template>
 
 <style lang="scss">
 .sakura-scroll-down {
-  color: var(--sakura-bg-color);
-  font-size: 28px;
+  &-icon {
+    color: var(--sakura-bg-color);
+    font-size: 28px;
+    cursor: pointer;
+  }
 }
 </style>

@@ -10,7 +10,7 @@ export function themePlugin(themeConfig: ThemeConfig): PluginOption {
         css: {
           preprocessorOptions: {
             scss: {
-              additionalData: `$c-primary: ${themeConfig.colors?.primary} !default;`,
+              additionalData: `$c-primary: ${themeConfig.primaryColor} !default;`,
             },
           },
         },
