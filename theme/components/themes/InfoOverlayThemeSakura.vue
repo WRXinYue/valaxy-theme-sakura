@@ -108,7 +108,7 @@ function nextMedia() {
   background: linear-gradient(
     45deg,
     var(--sakura-primary-color),
-    var(--sakura-secondary-color)
+    var(--sakura-primary-color)
   );
   background-size: 600% 600%;
   animation: gradient-background 10s ease infinite;

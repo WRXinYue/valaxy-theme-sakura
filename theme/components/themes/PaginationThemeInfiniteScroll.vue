@@ -40,7 +40,7 @@ function applySlideUpAnimation(entries: IntersectionObserverEntry[], _observer: 
 
 function registerTargets() {
   setTimeout(() => {
-    sakura.paginationTargets = Array.from(document.querySelectorAll('.sakura-article'))
+    sakura.paginationTargets = Array.from(document.querySelectorAll('.article-list'))
 
     for (let i = sakura.paginationElementPositionsNumber; i < sakura.paginationTargets.length; i++) {
       const target = document.getElementById(`sakura-article-${i}`)
@@ -94,7 +94,7 @@ onUnmounted(() => {
 
 <style lang="scss">
 .load-more-container {
-  color: var(--sakura-secondary-text-color);
+  color: var(--sakura-text-muted-color);
 }
 
 .load-more-button {
@@ -107,7 +107,7 @@ onUnmounted(() => {
 }
 
 .load-more-button:hover {
-  color: #fe9600;
-  border-color: #fe9600;
+  color: var(--sakura-primary-color);
+  border-color: var(--sakura-primary-color);
 }
 </style>

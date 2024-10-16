@@ -110,7 +110,7 @@ onMounted(() => {
   }
 
   &.active {
-    background-color: var(--sakura-secondary-color);
+    background-color: var(--sakura-primary-color);
     color: white;
   }
 }

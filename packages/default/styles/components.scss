@@ -12,7 +12,7 @@
   .entry-title {
     &::before {
       content: ' {';
-      color: var(--sakura-secondary-color);
+      color: var(--sakura-primary-color);
       font-size: 1.2em;
       margin-right: 6px;
       font-family: Helvetica, sans-serif;
@@ -20,7 +20,7 @@
 
     &::after {
       content: '}';
-      color: var(--sakura-secondary-color);
+      color: var(--sakura-primary-color);
       font-size: 1.2em;
       margin-left: 6px;
       font-family: Helvetica, sans-serif;
@@ -47,7 +47,7 @@
     width: 2px;
     height: 80px;
     border-radius: var(--sakura-rd);
-    background-color: var(--sakura-secondary-color);
+    background-color: var(--sakura-primary-color);
   }
 }
 
@@ -65,7 +65,7 @@
     }
 
     a:hover {
-      color: var(--sakura-secondary-color);
+      color: var(--sakura-primary-color);
     }
   }
 

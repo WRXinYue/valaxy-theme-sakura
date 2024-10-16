@@ -70,14 +70,14 @@ a {
   &.router-link-exact-active {
     color: var(--sakura-text-color);
     border-left-width: 1px;
-    border-color: var(--sakura-secondary-color);
+    border-color: var(--sakura-primary-color);
 
     // &::after {
     //   position: absolute;
     //   width: 4px;
     //   height: 24px;
     //   content: "";
-    //   background-color: var(--fgColor-accent, var(--sakura-secondary-color));
+    //   background-color: var(--fgColor-accent, var(--sakura-primary-color));
     //   border-radius: 6px;
     // }
   }

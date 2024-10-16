@@ -1,17 +1,22 @@
 @use 'sass:map';
 
 $common: (
-  // --------------- Root ---------------
+  // --------------- Primary ---------------
   'primary-color': var(--va-c-primary),
   'primary-text-color': var(--sakura-primary-color),
-  'secondary-color': var(--va-c-primary-lighter),
-  'secondary-text-color': var(--sakura-secondary-color),
   // --------------- Navbar ---------------
   'navbar-height': 55px,
+  'navbar-marker-height': 2px,
   'navbar-mt': 20px,
   'navbar-spacing': calc(var(--sakura-navbar-height) + 20px),
   // --------------- Footer ---------------
   'footer-height': 140px,
+  // --------------- ArticleCard ---------------
+  'article-card-height': 230px,
+  'article-card-bg-color': var(--sakura-bg-color),
+  'article-card-img-width': 55%,
+  'article-card-rd': var(--sakura-rd),
+  'article-card-font-size': 1.17em,
   // --------------- Aside ---------------
   'aside-width': var(--va-sidebar-width),
   // --------------- Sidebar ---------------
@@ -19,11 +24,15 @@ $common: (
   'sidebar-marker-height': 2px,
   'sidebar-bg-color': var(--sakura-bg-color),
   'sidebar-offset': var(--sakura-sidebar-width),
+  // --------------- Glitch Text ---------------
+  'glitch-before-text-color': var(--va-c-primary-lighter),
+  'glitch-after-text-color': var(--va-c-primary-dark),
   // --------------- Other ---------------
   'bg-color': var(--va-c-bg),
   'bg-mute-color': var(--va-bg-mute-color),
-  'accent-color': var(--sakura-secondary-color),
+  'accent-color': var(--sakura-primary-color),
   'code-text-color': var(--sakura-primary-color),
+  'link-color': var(--sakura-primary-color),
   'rd': 10px,
   // border-radius or rounded corners
   'comment-bg-url': url('../assets/comment-bg.png'),
@@ -47,11 +56,6 @@ $light: (
   'timeline-color': #49b1f5,
   'timeline-text-color': #0bf,
   'timeline-height': 30px,
-  // --------------- ArticleThemeCard ---------------
-  'article-card-bg-color': var(--sakura-bg-color),
-  'article-card-rd': var(--sakura-rd),
-  'article-card-font-size': 1.17em,
-  'article-card-font-secondary-size': 12px,
   // --------------- ArticleNavigation ---------------
   'article-navigation-text-color': #f0f8ff,
   // --------------- SakuraNavbar ---------------
@@ -76,11 +80,6 @@ $dark: (
   'timeline-color': #49b1f5,
   'timeline-text-color': #0bf,
   'timeline-height': 30px,
-  // --------------- ArticleThemeCard ---------------
-  'article-card-bg-color': var(--sakura-bg-color),
-  'article-card-rd': var(--sakura-rd),
-  'article-card-font-size': 1.17em,
-  'article-card-font-secondary-size': 12px,
   // --------------- ArticleNavigation ---------------
   'article-navigation-text-color': #f0f8ff,
   // --------------- SakuraNavbar ---------------

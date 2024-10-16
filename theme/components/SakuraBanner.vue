@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { useMounted } from '@vueuse/core'
 import { useSakuraAppStore } from '../stores'
 import { useThemeConfig } from '../composables'
@@ -15,6 +15,22 @@ const isMounted = useMounted()
 
 const banner = computed(() => props.banner || themeConfig.value.banner)
 const overlayBarClass = computed(() => appStore.wallpaperIsPlaying ? 'animation-fade-out-down' : 'animation-fade-in-up')
+
+watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
+  const navbarElement = document.querySelector('.sakura-navbar')
+
+  navbarElement?.classList.toggle('animation-fade-in-down', !isPlaying)
+  navbarElement?.classList.toggle('animation-fade-out-up', isPlaying)
+
+  const live2dToolQuitElement = document.querySelector('#live2d-tool-quit')
+  const live2dToolElement = document.querySelector('#live2d-tools')
+
+  const shouldClickQuit = (isPlaying && live2dToolElement?.className === 'show')
+    || (!isPlaying && live2dToolElement?.className === 'hide')
+
+  if (shouldClickQuit && live2dToolQuitElement instanceof HTMLElement)
+    live2dToolQuitElement.click()
+})
 </script>
 
 <template>

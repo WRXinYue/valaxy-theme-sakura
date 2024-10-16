@@ -103,13 +103,13 @@ function displayTag(tag: string) {
     border-color 0.2s ease-in-out;
 
   &:hover {
-    color: var(--sakura-tag-color, var(--sakura-secondary-color)) !important;
-    border-color: var(--sakura-tag-color, var(--sakura-secondary-color));
+    color: var(--sakura-tag-color, var(--sakura-primary-color)) !important;
+    border-color: var(--sakura-tag-color, var(--sakura-primary-color));
   }
 
   &.clicked {
-    color: var(--sakura-tag-color, var(--sakura-secondary-color)) !important;
-    border-color: var(--sakura-tag-color, var(--sakura-secondary-color));
+    color: var(--sakura-tag-color, var(--sakura-primary-color)) !important;
+    border-color: var(--sakura-tag-color, var(--sakura-primary-color));
   }
 
   &::before {

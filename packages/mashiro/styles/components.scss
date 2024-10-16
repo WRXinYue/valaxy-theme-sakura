@@ -73,5 +73,11 @@
 }
 
 .sakura-article-card {
-  box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5) !important;
+  @include screen('md') {
+    box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .sakura-image-card {
+    border-radius: 0 !important;
+  }
 }

@@ -13,7 +13,7 @@ const props = defineProps<{
   <header class="sakura-page-header mt-$sakura-navbar-height text-center space-y-1 xl:pb-10">
     <div class="page-banner" :class="cover ? `h-80` : '<xl:max-h-200px mt-$sakura-navbar-spacing'" :style="cover && `background-image: url(${cover}`">
       <div class="title-container" :class="cover && 'text-shadow-[2px_2px_10px_black]'">
-        <h1 class="text-3xl" :class="!cover && 'text-$sakura-c-text-deep entry-title'">
+        <h1 class="text-3xl" :class="!cover && 'text-[var(--sakura-text-deep-color)] entry-title'">
           <div v-if="icon" class="icon" m="r-1" inline-flex align-top :class="icon" />
           {{ title }}
           <span v-if="subTitle">· {{ subTitle }}</span>

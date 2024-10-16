@@ -20,7 +20,7 @@ addonTwikoo.useTwikooWithOptions()
 
 .sakura-twikoo {
   .twikoo svg {
-    color: var(--sakura-secondary-color);
+    color: var(--sakura-primary-color);
   }
 
   .tk-action-link {
@@ -41,7 +41,7 @@ addonTwikoo.useTwikooWithOptions()
   .twikoo .el-button:not(.el-button--primary .el-button--text):focus,
   .twikoo .el-button:not(.el-button--primary .el-button--text):hover {
     color: var(--sakura-primary-color) !important;
-    border-color: var(--sakura-secondary-color) !important;
+    border-color: var(--sakura-primary-color) !important;
   }
 }
 </style>

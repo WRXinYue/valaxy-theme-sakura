@@ -85,21 +85,21 @@
   content: '#';
   left: 0;
   position: absolute;
-  color: var(--sakura-secondary-color);
+  color: var(--sakura-primary-color);
 }
 
 .prose h4::after {
   content: '▌';
   left: 0;
   position: absolute;
-  color: var(--sakura-secondary-color);
+  color: var(--sakura-primary-color);
 }
 
 .prose h5::after {
   content: '♯';
   left: 0;
   position: absolute;
-  color: var(--sakura-secondary-color);
+  color: var(--sakura-primary-color);
 }
 
 .prose code {
@@ -117,7 +117,7 @@
 }
 
 .prose a:hover {
-  color: var(--sakura-secondary-color);
+  color: var(--sakura-primary-color);
   text-decoration: none;
 }
 
@@ -129,7 +129,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--sakura-secondary-color);
+  background-color: var(--sakura-primary-color);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }

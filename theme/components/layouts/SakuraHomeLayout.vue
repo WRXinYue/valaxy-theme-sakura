@@ -30,7 +30,7 @@ const isMounted = useMounted()
 
     <template v-if="isMounted">
       <slot name="pagination">
-        <SakuraPaginationCustom />
+        <SakuraPagination />
       </slot>
     </template>
 

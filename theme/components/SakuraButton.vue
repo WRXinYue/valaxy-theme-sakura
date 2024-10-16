@@ -27,8 +27,8 @@ withDefaults(defineProps<{
 
     &:hover,
     &.clicked {
-      color: var(--sakura-secondary-color);
-      border-color: var(--sakura-secondary-color);
+      color: var(--sakura-primary-color);
+      border-color: var(--sakura-primary-color);
     }
   }
 }

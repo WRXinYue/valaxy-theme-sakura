@@ -98,7 +98,7 @@ function cancelHideDropdown() {
     color: var(--sakura-text-color);
 
     &:hover {
-      color: var(--sakura-secondary-color);
+      color: var(--sakura-primary-color);
     }
   }
 
@@ -119,7 +119,7 @@ function cancelHideDropdown() {
     //   left: 0;
     //   width: 0;
     //   height: var(--sakura-sidebar-marker-height);
-    //   background-color: var(--sakura-secondary-color);
+    //   background-color: var(--sakura-primary-color);
     //   transition: width 0.3s ease;
     // }
   }

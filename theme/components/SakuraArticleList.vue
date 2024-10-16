@@ -12,6 +12,8 @@ const text = computed(() => props.text ?? themeConfig.value.articleList?.text)
 </script>
 
 <template>
-  <SakuraDivider :icon :text />
-  <SakuraArticleListCard />
+  <div class="sakura-article-list">
+    <SakuraDivider :icon :text />
+    <SakuraArticleListCard />
+  </div>
 </template>

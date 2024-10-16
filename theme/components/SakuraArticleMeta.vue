@@ -22,7 +22,7 @@ const frontmatter = useFrontmatter()
 </script>
 
 <template>
-  <div flex="~ <md:col" justify="center" items="center" py="1" :class="{ 'text-$sakura-c-text-secondary': !cover }">
+  <div flex="~ <md:col" justify="center" items="center" py="1" :class="{ 'text-$sakura-text-muted-color': !cover }">
     <div class="post-time flex items-center">
       <span class="inline-flex-center">
         <SakuraImageCard to="/about" class="mr-3px h-30px w-30px rounded-full" :src="siteConfig.author.avatar" alt="author image" />

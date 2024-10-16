@@ -14,7 +14,7 @@ const props = defineProps<{
 const classes = computed(() => {
   const arr = []
   if (props.theme === 'brand')
-    arr.push('from-$sakura-primary-color', 'to-$sakura-secondary-color')
+    arr.push('from-$sakura-primary-color', 'to-$sakura-primary-color')
   else
     arr.push('from-gray-700', 'to-dark-300')
 
