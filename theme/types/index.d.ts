@@ -106,6 +106,10 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * @default true
    */
   scrollToTop: boolean | 'button' | 'cord'
+  scrollDown: Partial<{
+    enable: boolean
+    icon: string
+  }>
   /**
    * @zh 404图片
    * @en Image for the 404

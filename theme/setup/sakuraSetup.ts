@@ -9,7 +9,7 @@ export function defineSakuraSetup(themeConfig: ThemeConfig) {
   const sakuraAppStore = useSakuraAppStore()
   const { width } = useWindowSize()
 
-  if (!themeConfig.scrollDamping && width.value >= 768)
+  if (themeConfig.scrollDamping && width.value >= 768)
     initLenis()
 
   // SidebarOptions

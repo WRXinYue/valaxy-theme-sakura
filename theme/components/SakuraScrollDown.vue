@@ -1,11 +1,19 @@
 <script setup lang="ts">
-import { useScroll } from '../composables'
+import { computed } from 'vue'
+import { useScroll, useThemeConfig } from '../composables'
 
+const props = defineProps<{
+  icon?: string
+}>()
+
+const themeConfig = useThemeConfig()
 const { toDown } = useScroll()
+
+const icon = computed(() => props.icon || themeConfig.value.scrollDown.icon)
 </script>
 
 <template>
-  <i i-fa6-solid-angle-down class="sakura-scroll-down animation-float inline-block cursor-pointer" @click="toDown" />
+  <i :class="icon" class="sakura-scroll-down animation-float inline-block cursor-pointer" @click="toDown" />
 </template>
 
 <style lang="scss">

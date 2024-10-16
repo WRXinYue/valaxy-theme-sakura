@@ -79,6 +79,10 @@ export const defaultThemeConfig: ThemeConfig = {
   scrollDamping: false,
   scrollAnimation: true,
   scrollToTop: false,
+  scrollDown: {
+    enable: true,
+    icon: 'i-fa6-solid-angle-down',
+  },
 
   translateIcon: 'i-ri-translate',
   toggleThemeIcon: {
@@ -109,6 +113,9 @@ export function generateSafelist(themeConfig: ThemeConfig) {
     if (typeof sidebarItem !== 'string' && sidebarItem.icon)
       safelist.push(sidebarItem.icon)
   })
+
+  if (themeConfig.scrollDown?.icon)
+    safelist.push(themeConfig.scrollDown.icon)
 
   if (translateIcon)
     safelist.push(translateIcon)

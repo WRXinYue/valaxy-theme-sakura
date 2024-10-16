@@ -9,7 +9,7 @@ export function useScroll(options: Partial<{
 }> = {}) {
   const themeConfig = useThemeConfig()
   const { percentage, show } = useBackToTop({ offset: 100 })
-  const scrollAnimation = options.scrollAnimation ?? themeConfig.value.scrollDamping
+  const scrollAnimation = options.scrollAnimation ?? themeConfig.value.scrollAnimation
   const scrollDamping = options.scrollDamping ?? themeConfig.value.scrollDamping
 
   function scrollTo(top: number) {

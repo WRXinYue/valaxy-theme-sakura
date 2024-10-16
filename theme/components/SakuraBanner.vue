@@ -57,7 +57,7 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
       </div>
 
       <SakuraPlayer v-if="banner.playerUrl" class="absolute bottom-2 right-2 z-4 h-8 w-8" />
-      <SakuraScrollDown class="absolute bottom-12 right-50% z-4" />
+      <SakuraScrollDown v-if="themeConfig.scrollDown.enable" class="absolute bottom-12 right-50% z-4" />
     </template>
   </header>
 </template>

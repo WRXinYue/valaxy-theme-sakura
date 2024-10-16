@@ -24,6 +24,10 @@ export const defaultThemeConfig: ThemeConfig = {
     icon: 'i-fa-anchor',
     text: 'START:DASH!!',
   },
+
+  scrollDown: {
+    icon: 'i-fa-chevron-down',
+  },
 }
 
 export function baseConfig(userThemeConfig?: ThemeConfig) {
