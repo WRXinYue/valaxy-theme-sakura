@@ -31,8 +31,8 @@
     "@ctrl/tinycolor": "^4.1.0",
     "@iconify-json/fa6-solid": "^1.1.20",
     "@iconify-json/mdi": "^1.1.64",
-    "@studio-freight/lenis": "^1.0.37",
     "interactjs": "^1.10.27",
+    "lenis": "^1.1.14",
     "typeit": "^8.8.3"
   },
   "devDependencies": {

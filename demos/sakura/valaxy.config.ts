@@ -36,31 +36,26 @@ export default defineValaxyConfig<ThemeConfig>({
       message: '<b>这是一个公告信息, 主题开源地址请见: <a href="https://github.com/WRXinYue/valaxy-theme-sakura">https://github.com/WRXinYue/valaxy-theme-sakura</a></br>',
     },
 
-    articlePinned: [
-      {
-        title: 'Valaxy Theme Sakura',
-        desc: '本站使用的 valaxy sakura 主题',
-        img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-d6mryl.jpg',
-        link: '/posts/theme-sakura',
-      },
-      {
-        title: 'Valaxy sakura theme docs',
-        desc: '主题文档',
-        img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-gpxyed.jpg',
-        link: 'https://sakura.valaxy.site',
-      },
-      {
-        title: '示例站点',
-        desc: '(暂无)',
-        img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-jxqgjw.jpg',
-      },
-    ],
-
-    pagination: {
-      animation: true,
-      infiniteScrollOptions: {
-        preload: true,
-      },
+    articlePinned: {
+      entries: [
+        {
+          title: 'Valaxy Theme Sakura',
+          desc: '本站使用的 valaxy sakura 主题',
+          img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-d6mryl.jpg',
+          link: '/posts/theme-sakura',
+        },
+        {
+          title: 'Valaxy sakura theme docs',
+          desc: '主题文档',
+          img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-gpxyed.jpg',
+          link: 'https://sakura.valaxy.site',
+        },
+        {
+          title: '示例站点',
+          desc: '(暂无)',
+          img: 'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-jxqgjw.jpg',
+        },
+      ],
     },
 
     article: {

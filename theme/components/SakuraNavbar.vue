@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
   showMarker?: boolean
   animIn?: string | string[]
   animOut?: string | string[]
-} & NavbarOptions>(), {
+} & Partial<NavbarOptions>>(), {
   favicon: undefined,
   invert: false,
   autoHide: false,

@@ -15,14 +15,14 @@ export default defineValaxyConfig<ThemeConfig>({
     theming: 'mashiro',
 
     banner: {
-      title: 'Hello, sakura',
+      title: 'Hi, Mashiro!',
       motto: 'You got to put the past behind you before you can move on.',
       urls: [
         // Source: https://www.pixiv.net/artworks/72203573
         'https://w.wallhaven.cc/full/5g/wallhaven-5gx725.jpg',
         'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper/yae-miko-sunset-sakura-genshin-impact-moewalls-com.mp4',
       ],
-      playerUrl: 'https://jsdelivr.2heng.xin/gh/moezx/cdn@3.1.3/The%20Pet%20Girl%20of%20Sakurasou.mp4',
+      playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/The Pet Girl of Sakurasou.mp4',
     },
 
     articlePinned: {

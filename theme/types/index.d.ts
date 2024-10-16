@@ -24,16 +24,28 @@ export interface ThemeConfig extends DefaultTheme.Config {
    */
   footer: Footer
   /**
-   * @zh 横幅配置
-   * @en Banner configuration
+   * @zh 文章配置
+   * @en Article configuration
    */
-  banner: Partial<Banner>
+  article?: {
+    /**
+     * @zh 是否合并导航
+     * @en Whether to merge navigation
+     * @default false
+     */
+    navigationMerge?: boolean
+  }
   articleList?: Partial<ArticleList>
   /**
    * @zh 置顶文章
    * @en Pinned articles
    */
   articlePinned?: Partial<ArticlePinned>
+  /**
+   * @zh 横幅配置
+   * @en Banner configuration
+   */
+  banner: Partial<Banner>
   /**
    * @zh 侧边栏配置
    * @en Sidebar configuration
@@ -67,18 +79,6 @@ export interface ThemeConfig extends DefaultTheme.Config {
    */
   navbarOptions?: Partial<NavbarOptions>
   /**
-   * @zh 文章配置
-   * @en Article configuration
-   */
-  article?: {
-    /**
-     * @zh 是否合并导航
-     * @en Whether to merge navigation
-     * @default false
-     */
-    navigationMerge?: boolean
-  }
-  /**
    * @zh 大纲标题
    * @en Outline title
    */
@@ -94,6 +94,12 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * @default false
    */
   scrollDamping: boolean
+  /**
+   * @zh 滚动动画
+   * @en Scroll animation
+   * @default true
+   */
+  scrollAnimation: boolean
   /**
    * @zh 是否显示滚动到顶部组件，默认为按钮样式
    * @en Whether to display the scroll-to-top component. The default is a button style.
@@ -441,9 +447,27 @@ export interface Pagination {
   }
 }
 
+export interface ArticleListCard {
+  isImageReversed: boolean
+  defaultImage: string
+}
+
+export interface ArticleListGrid {
+}
+
+export interface ArticleListMasonry {
+}
+
 export interface ArticleList {
   icon: string
   text: string
+  mode: 'card' | 'grid' | 'masonry'
+
+  settings: {
+    card?: ArticleListCard
+    grid?: ArticleListGrid
+    masonry?: ArticleListMasonry
+  }
 }
 
 export interface ArticlePinned {

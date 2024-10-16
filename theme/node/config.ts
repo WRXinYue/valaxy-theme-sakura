@@ -69,7 +69,15 @@ export const defaultThemeConfig: ThemeConfig = {
     rainbow: false,
   },
 
+  pagination: {
+    animation: true,
+    infiniteScrollOptions: {
+      preload: true,
+    },
+  },
+
   scrollDamping: false,
+  scrollAnimation: true,
   scrollToTop: false,
 
   translateIcon: 'i-ri-translate',

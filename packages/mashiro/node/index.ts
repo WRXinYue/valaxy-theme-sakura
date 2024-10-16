@@ -12,6 +12,13 @@ export const defaultThemeConfig: ThemeConfig = {
   articleList: {
     icon: 'i-fa-envira',
     text: 'Discovery',
+
+    settings: {
+      card: {
+        isImageReversed: true,
+        defaultImage: 'https://img.xjh.me/random_img.php?type=bg&return=302',
+      },
+    },
   },
   articlePinned: {
     icon: 'i-fa-anchor',
