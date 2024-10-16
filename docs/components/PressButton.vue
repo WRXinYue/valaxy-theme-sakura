@@ -28,7 +28,7 @@ const { t } = useI18n()
   <AppLink
     :to="link"
     :class="[classes, props.class]"
-    class="btn flex items-center rounded-$sakura-rd decoration-none transition text-white!"
+    class="btn flex items-center rounded-$sakura-border-radius decoration-none transition text-white!"
     bg="gradient-to-r"
   >
     {{ t(text) }}

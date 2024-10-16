@@ -26,3 +26,7 @@
 
 // --------------- Widgets ---------------
 @use './widgets/sidebar.scss' as *;
+
+// --------------- Plugins ---------------
+@use './plugins/aplayer.scss' as *;
+@use './plugins/live2d.scss' as *;

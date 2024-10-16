@@ -33,7 +33,7 @@ const frontmatter = useFrontmatter()
 
 .article-content {
   background: var(--va-c-bg);
-  border-radius: var(--sakura-rd);
+  border-radius: var(--sakura-border-radius);
   padding: 0 30px;
 }
 

@@ -1,0 +1,8 @@
+.aplayer {
+  --sakura-aplayer-br: var(--sakura-border-radius-small);
+
+  .aplayer-body {
+    border-radius: 0 var(--sakura-aplayer-br) var(--sakura-aplayer-br) 0 !important;
+    overflow: hidden;
+  }
+}

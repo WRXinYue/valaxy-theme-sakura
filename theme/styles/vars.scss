@@ -15,7 +15,7 @@ $common: (
   'article-card-height': 230px,
   'article-card-bg-color': var(--sakura-bg-color),
   'article-card-img-width': 55%,
-  'article-card-rd': var(--sakura-rd),
+  'article-card-rd': var(--sakura-border-radius),
   'article-card-font-size': 1.17em,
   // --------------- Aside ---------------
   'aside-width': var(--va-sidebar-width),
@@ -33,7 +33,9 @@ $common: (
   'accent-color': var(--sakura-primary-color),
   'code-text-color': var(--sakura-primary-color),
   'link-color': var(--sakura-primary-color),
-  'rd': 10px,
+  'border-radius': 10px,
+  'border-radius-large': 15px,
+  'border-radius-small': 5px,
   // border-radius or rounded corners
   'comment-bg-url': url('../assets/comment-bg.png'),
   // 'sakura-article-card'

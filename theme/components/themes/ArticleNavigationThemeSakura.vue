@@ -24,8 +24,8 @@ const navigationMerge = computed(() => themeConfig.value.article?.navigationMerg
       v-if="prev?.path" v-bind="{ ...props, src: prev.cover, to: prev.path }"
       class="card-prev" :class="{
         'mt-10': !navigationMerge,
-        'w-1/2 rounded-l-$sakura-rd': next?.path && navigationMerge,
-        'rounded-$sakura-rd': (navigationMerge && !next?.path) || !navigationMerge,
+        'w-1/2 rounded-l-$sakura-border-radius': next?.path && navigationMerge,
+        'rounded-$sakura-border-radius': (navigationMerge && !next?.path) || !navigationMerge,
       }"
     >
       <div class="article-navigation-content">
@@ -42,8 +42,8 @@ const navigationMerge = computed(() => themeConfig.value.article?.navigationMerg
     <SakuraImageCard
       v-if="next?.path" v-bind="{ ...props, src: next.cover, to: next.path }"
       class="card-next" :class="{
-        'w-1/2 rounded-r-$sakura-rd': prev?.path && navigationMerge,
-        'rounded-$sakura-rd': (navigationMerge && !prev?.path) || !navigationMerge,
+        'w-1/2 rounded-r-$sakura-border-radius': prev?.path && navigationMerge,
+        'rounded-$sakura-border-radius': (navigationMerge && !prev?.path) || !navigationMerge,
       }"
     >
       <div class="article-navigation-content">
