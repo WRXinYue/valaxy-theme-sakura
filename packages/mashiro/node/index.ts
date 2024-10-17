@@ -7,6 +7,7 @@ export const defaultThemeConfig: ThemeConfig = {
   banner: {
     waveTheme: 'horizontal',
     style: 'filter-dot',
+    fixedImg: true,
   },
   navbarOptions: {
     invert: true,

@@ -105,28 +105,4 @@ function nextMedia() {
     color: var(--sakura-icon-color);
   }
 }
-
-.sakura-hero-background .default-wallpaper {
-  background: linear-gradient(
-    45deg,
-    var(--sakura-primary-color),
-    var(--sakura-primary-color)
-  );
-  background-size: 600% 600%;
-  animation: gradient-background 10s ease infinite;
-}
-
-@keyframes gradient-background {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
 </style>

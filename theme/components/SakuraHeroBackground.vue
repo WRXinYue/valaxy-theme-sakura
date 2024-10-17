@@ -40,7 +40,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="sakura-hero-background h-100vh w-full overflow-hidden">
+  <div class="sakura-hero-background">
     <Transition
       :name="sakura.wallpaperOperation === 'nextMedia' ? 'slide-right'
         : sakura.wallpaperOperation === 'prevMedia' ? 'slide-left'
@@ -60,48 +60,89 @@ onMounted(() => {
         </video>
       </template>
       <template v-else>
-        <img v-if="currentWallpaperUrl" :key="currentWallpaperUrl" alt="Image Wallpaper" class="block h-full w-full bg-cover bg-center object-cover" :src="currentWallpaperUrl">
-        <div v-else class="default-wallpaper h-full w-full" />
+        <div
+          v-if="currentWallpaperUrl" :key="currentWallpaperUrl" class="sakura-hero-background-img"
+          :style="{ backgroundImage: `url(${currentWallpaperUrl})`, backgroundAttachment: banner.fixedImg ? 'fixed' : 'scroll' }"
+        />
+        <div v-else class="sakura-hero-background-default h-full w-full" />
       </template>
     </Transition>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
+<style lang="scss">
+.sakura-hero-background {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
+  &-img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+  }
 
-.slide-right {
-  &-enter-active,
-  &-leave-active {
+  &-default {
+    background: linear-gradient(
+      45deg,
+      var(--sakura-primary-color),
+      var(--sakura-primary-color)
+    );
+    background-size: 600% 600%;
+    animation: gradient-background 10s ease infinite;
+  }
+
+  @keyframes gradient-background {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .slide-right {
+    &-enter-active,
+    &-leave-active {
+      transition: transform 1s ease;
+    }
+
+    &-enter-from,
+    &-leave-to {
+      transform: translateX(-100%);
+    }
+
+    &-enter-to,
+    &-leave-from {
+      transform: translateX(0);
+    }
+  }
+
+  .slide-left-enter-active,
+  .slide-left-leave-active {
     transition: transform 1s ease;
   }
 
-  &-enter-from,
-  &-leave-to {
-    transform: translateX(-100%);
+  .slide-left-enter,
+  .slide-left-leave-to {
+    transform: translateX(100%);
   }
-
-  &-enter-to,
-  &-leave-from {
-    transform: translateX(0);
-  }
-}
-
-.slide-left-enter-active,
-.slide-left-leave-active {
-  transition: transform 1s ease;
-}
-
-.slide-left-enter,
-.slide-left-leave-to {
-  transform: translateX(100%);
 }
 </style>

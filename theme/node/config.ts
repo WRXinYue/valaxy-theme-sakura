@@ -15,6 +15,7 @@ export const defaultThemeConfig: ThemeConfig = {
     title: 'Hello, sakura',
     motto: 'You got to put the past behind you before you can move on.',
     urls: [],
+    fixedImg: false,
     style: '',
 
     typewriter: false,

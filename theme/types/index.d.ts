@@ -164,10 +164,11 @@ export interface ThemeConfig extends DefaultTheme.Config {
 }
 
 export interface Banner {
-  title?: string
-  motto?: string
-  urls?: string[] | string
-  style?: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
+  title: string
+  motto: string
+  urls: string[] | string
+  fixedImg: boolean
+  style: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
 
   /**
    * @zh 是否启用打字机组件

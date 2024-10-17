@@ -44,7 +44,7 @@ function cancelHideDropdown() {
     @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown"
   >
     <AppLink id="dropdown-navbarLink" :title="locale ? `${text ?? ''} ${t(locale)}` : text" :to="link" :target="target" rel="noopener" :class="animated">
-      <span :class="icon" inline-flex class="sakura-navbar-link-item-icon hvr-icon mr-0.5" />
+      <span :class="icon" inline-flex class="hvr-icon sakura-navbar-link-item-icon mr-0.5" />
       <span v-if="locale || text"> {{ locale ? `${text ?? ''} ${t(locale)}` : text }} </span>
     </AppLink>
     <div
