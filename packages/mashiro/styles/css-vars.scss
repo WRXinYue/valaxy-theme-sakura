@@ -2,10 +2,13 @@
   /* Light theme variables */
 
   /* Common variables */
-  // --sakura-primary-color: orange;
+  --sakura-primary-color: var(--va-c-primary);
   --sakura-secondary-color: #ff6f91;
   --sakura-navbar-height: 75px;
+  --sakura-navbar-text-color: var(--sakura-text-deep-color);
   --sakura-article-card-height: 300px;
+  --sakura-text-color: #797979;
+  --sakura-text-muted-color: #666;
 
   // --------------- Glitch Text ---------------
   --sakura-glitch-before-text-color: #ff3f1a;

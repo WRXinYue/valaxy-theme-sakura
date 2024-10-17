@@ -15,7 +15,7 @@ test.describe('Create Valaxy Demo', () => {
   })
 
   test('banner', async ({ page }) => {
-    await page.waitForSelector('#sakura-banner')
+    await page.waitForSelector('#sakura-hero')
     await expect(page.locator('.char-box')).toHaveCount(6)
     await expect(page.locator('.char-box').nth(0)).toHaveText('云')
   })

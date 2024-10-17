@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { usePostList, useSiteConfig } from 'valaxy'
-import { useSakuraAppStore } from '../../stores'
-import { useThemeConfig } from '../../composables'
+import { useSakuraAppStore } from '../stores'
+import { useThemeConfig } from '../composables'
 
 const siteConfig = useSiteConfig()
 const sakura = useSakuraAppStore()
@@ -82,7 +82,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <nav class="load-more-container mb-17 mt-20 flex justify-center">
+  <nav class="sakura-pagination-scroll mb-17 mt-20 flex justify-center">
     <button v-if="sakura.loadMultiple < totalPages" class="load-more-button px-8 py-2" @click="loadMoreContent">
       Previous
     </button>
@@ -93,7 +93,7 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss">
-.load-more-container {
+.sakura-pagination-scroll {
   color: var(--sakura-text-muted-color);
 }
 

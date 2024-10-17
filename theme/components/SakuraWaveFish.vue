@@ -13,7 +13,7 @@ let renderer: Renderer
 
 watch(() => appStore.isDark, async () => {
   setTimeout(() => {
-    renderer.setFishColor(useCssVar('--va-c-bg').value)
+    renderer.setFishColor(useCssVar('--va-c-bg').value!)
   }, 0)
 })
 
@@ -55,7 +55,7 @@ class Renderer {
   }
 
   setFishColor(color?: string): void {
-    color ? this.fishColor = color : this.fishColor = useCssVar('--sakura-bg-color').value
+    color ? this.fishColor = color : this.fishColor = useCssVar('--sakura-bg-color').value!
   }
 
   setParameters(): void {

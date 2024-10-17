@@ -25,7 +25,7 @@ const position = ref(props.position ?? themeConfig.value.sidebarOptions.position
       <slot>
         <SakuraSiteInfoCard />
         <SakuraSocialLinks />
-        <SidebarThemeOverview class="mt-4" />
+        <SakuraSidebarMenu class="mt-4" />
       </slot>
     </aside>
   </div>

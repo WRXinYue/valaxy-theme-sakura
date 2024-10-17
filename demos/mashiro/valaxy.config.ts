@@ -15,7 +15,7 @@ export default defineValaxyConfig<ThemeConfig>({
     theming: 'mashiro',
 
     banner: {
-      title: 'Hi, Mashiro!',
+      title: 'HI, MASHIRO!',
       motto: 'You got to put the past behind you before you can move on.',
       urls: [
         // Source: https://www.pixiv.net/artworks/72203573
@@ -23,6 +23,41 @@ export default defineValaxyConfig<ThemeConfig>({
         'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper/yae-miko-sunset-sakura-genshin-impact-moewalls-com.mp4',
       ],
       playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/The Pet Girl of Sakurasou.mp4',
+
+      socials: [
+        {
+          img: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/github.png',
+          link: 'http://github.com/mashirozx',
+        },
+        {
+          img: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/sina.png',
+          link: 'http://weibo.com/mashirozx?is_all=1',
+        },
+        {
+          img: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/telegram.svg',
+          link: 'https://t.me/SakurasoNoMashiro',
+        },
+        {
+          img: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/Mastodon_Logotype_Simple.svg',
+          link: 'https://hello.2heng.xin/@mashiro',
+        },
+        {
+          img: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/wangyiyun.png',
+          link: 'https://music.163.com/m/user/home?id=2655217',
+        },
+        {
+          img: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/twitter.png',
+          link: 'https://x.com/2hengxin',
+        },
+        {
+          img: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/zhihu.png',
+          link: 'https://www.zhihu.com/people/young-dolphin',
+        },
+        {
+          img: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/email.svg',
+          link: 'mailto:me@moezx.cc',
+        },
+      ],
     },
 
     articlePinned: {
@@ -62,68 +97,52 @@ export default defineValaxyConfig<ThemeConfig>({
 
     navbar: [
       {
-        icon: 'i-line-md-home-md-twotone',
+        icon: 'i-fa-fort-awesome',
         locale: 'menu.home',
         link: '/',
         animated: 'animation-hvr-grow',
       },
       {
-        icon: 'i-line-md-folder-twotone',
-        locale: 'menu.categories',
-        link: '/categories',
-        animated: 'animation-hvr-grow',
-      },
-      {
-        icon: 'i-line-md-folder-plus-twotone',
+        icon: 'i-fa-archive',
         locale: 'menu.archives',
         link: '/archives',
         animated: 'animation-hvr-grow',
       },
       {
-        icon: 'i-line-md-hash-small',
-        locale: 'menu.tags',
+        icon: 'i-fa-list-ul',
+        text: '清单',
+        link: '/categories',
+        animated: 'animation-hvr-grow',
+      },
+      {
+        icon: 'i-fa-edit',
+        text: '留言板',
         link: '/tags',
         animated: 'animation-hvr-grow',
       },
       {
-        icon: 'i-line-md-hash-small',
-        locale: 'menu.anime',
+        icon: 'i-fa-chain',
+        text: '友人账',
         link: '/anime',
         animated: 'animation-hvr-grow',
       },
       {
-        text: pkg.author.name,
-        icon: 'i-line-md-hazard-lights-filled',
+        text: '赞赏',
+        icon: 'i-fa-heart',
         link: pkg.author.url,
         target: '_blank',
         animated: 'animation-hvr-icon-bounce',
       },
       {
-        text: '友情链接',
-        icon: 'i-line-md-link',
-        link: '/links',
-        animated: 'animation-hvr-icon-buzz-out',
-        children: [
-          {
-            text: 'GitHub',
-            icon: 'i-line-md-github-twotone',
-            link: 'https://github.com/WRXinYue/valaxy-theme-sakura',
-          },
-          {
-            text: 'Discord',
-            icon: 'i-line-md-discord-twotone',
-            link: 'https://discord.gg/sGe4U4p4CK',
-          },
-          {
-            text: 'Valaxy →',
-            icon: 'i-ri-cloud-fill',
-            link: 'https://github.com/YunYouJun/valaxy',
-          },
-        ],
+        text: '关于',
+        icon: 'i-fa-leaf',
+        link: pkg.author.url,
+        target: '_blank',
+        animated: 'animation-hvr-icon-bounce',
       },
       {
         text: 'RSS',
-        icon: 'i-line-md-rss',
+        icon: 'i-fa-feed',
         link: '/atom.xml',
         target: '_blank',
         animated: 'animation-hvr-icon-up',

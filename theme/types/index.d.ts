@@ -1,4 +1,4 @@
-import type { DefaultTheme } from 'valaxy'
+import type { DefaultTheme, SocialLink } from 'valaxy'
 import type { HitokotoOptions } from 'valaxy-addon-hitokoto'
 
 export namespace SakuraTheme {
@@ -144,7 +144,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * @zh 语言切换按钮图标
    * @en The icon for the language switch button
    */
-  translateIcon?: string
+  toggleLocaleIcon?: string
   /**
    * @zh 主题切换按钮图标（明/暗模式）
    * @en Icon for the light/dark mode toggle button
@@ -203,6 +203,11 @@ export interface Banner {
    * @default undefined
    */
   disablePictureInPicture?: boolean
+  socials: Partial<BannerSocialLink[]>
+}
+
+export interface BannerSocialLink extends Partial<SocialLink> {
+  img?: string
 }
 
 export interface NavbarOptions {
@@ -239,6 +244,8 @@ export interface NavbarOptions {
    * @default false
    */
   showMarker: boolean
+  toggleLocaleButton: boolean
+  toggleThemeButton: boolean
   activeHeader: Partial<{
   /**
    * @default true

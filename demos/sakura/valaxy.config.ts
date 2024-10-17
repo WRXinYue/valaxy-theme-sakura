@@ -11,10 +11,6 @@ export default defineValaxyConfig<ThemeConfig>({
   devtools: true,
 
   themeConfig: {
-    colors: {
-      primary: '#ff4e6a',
-    },
-
     banner: {
       title: 'Hello, sakura',
       motto: 'You got to put the past behind you before you can move on.',

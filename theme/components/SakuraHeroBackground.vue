@@ -40,7 +40,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="sakura-background-display h-100vh w-full overflow-hidden">
+  <div class="sakura-hero-background h-100vh w-full overflow-hidden">
     <Transition
       :name="sakura.wallpaperOperation === 'nextMedia' ? 'slide-right'
         : sakura.wallpaperOperation === 'prevMedia' ? 'slide-left'

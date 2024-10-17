@@ -34,36 +34,43 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
 </script>
 
 <template>
-  <header class="sakura-banner <md:px-5">
+  <header class="sakura-hero <md:px-5">
     <template v-if="isMounted">
       <div class="absolute inset-0 overflow-hidden" :class="[!appStore.wallpaperIsPlaying && banner.style && 'banner-style', banner.style]">
-        <slot name="background-display">
-          <SakuraBackgroundDisplay />
+        <slot name="background">
+          <SakuraHeroBackground />
         </slot>
 
         <div :class="overlayBarClass">
           <slot name="overlay-bar">
-            <WaveThemeFish v-if="banner.waveTheme === 'fish'" />
-            <WaveThemeHorizontal v-if="banner.waveTheme === 'horizontal'" />
-            <WaveThemeRipple v-if="banner.waveTheme === 'ripple'" />
+            <SakuraWaveFish v-if="banner.waveTheme === 'fish'" />
+            <SakuraWaveHorizontal v-else-if="banner.waveTheme === 'horizontal'" />
+            <SakuraWaveRipple v-else-if="banner.waveTheme === 'ripple'" />
           </slot>
         </div>
       </div>
 
       <div z-4>
         <slot name="info-overlay">
-          <InfoOverlayThemeSakura />
+          <SakuraHeroInfoOverlay />
         </slot>
       </div>
 
-      <SakuraPlayer v-if="banner.playerUrl" class="absolute bottom-2 right-2 z-4 h-8 w-8" />
-      <SakuraScrollDown v-if="themeConfig.scrollDown.enable" class="absolute bottom-12 right-50% z-4" />
+      <slot name="player">
+        <SakuraPlayer v-if="banner.playerUrl" class="absolute bottom-2 right-2 z-4 h-8 w-8" />
+      </slot>
+
+      <div :class="overlayBarClass" class="absolute bottom-12 right-50% z-4">
+        <slot name="scroll-down">
+          <SakuraScrollDown v-if="themeConfig.scrollDown.enable" />
+        </slot>
+      </div>
     </template>
   </header>
 </template>
 
 <style lang="scss">
-.sakura-banner {
+.sakura-hero {
   position: relative;
   display: flex;
   justify-content: center;

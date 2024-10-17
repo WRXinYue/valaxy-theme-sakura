@@ -37,7 +37,7 @@ export function useScroll(options: Partial<{
   }
 
   const toTop = () => scrollTo(0)
-  const toDown = () => to('.sakura-banner')
+  const toDown = () => to('.sakura-hero')
 
   return { to, toTop, toDown, percentage, show }
 }

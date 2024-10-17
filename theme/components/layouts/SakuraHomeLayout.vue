@@ -1,44 +1,36 @@
 <script setup lang="ts">
-import { useMounted } from '@vueuse/core'
 import { useThemeConfig } from '../../composables'
 
 const themeConfig = useThemeConfig()
-const isMounted = useMounted()
 </script>
 
 <template>
-  <slot name="banner">
-    <SakuraBanner />
+  <slot name="hero">
+    <SakuraHero />
   </slot>
 
   <SakuraMultiColumns class="sakura-home-layout">
     <slot name="notice-board">
-      <SakuraNoticeBoard v-if="isMounted" />
+      <SakuraNoticeBoard />
     </slot>
 
-    <template v-if="isMounted">
-      <slot name="article-pinned">
-        <SakuraArticlePinned v-if="themeConfig.articlePinned" />
-      </slot>
-    </template>
+    <slot name="article-pinned">
+      <SakuraArticlePinned v-if="themeConfig.articlePinned" />
+    </slot>
 
-    <template v-if="isMounted">
-      <slot name="article-list">
-        <SakuraArticleList />
-      </slot>
-    </template>
+    <slot name="article-list">
+      <SakuraArticleList />
+    </slot>
 
-    <template v-if="isMounted">
-      <slot name="pagination">
-        <SakuraPagination />
-      </slot>
-    </template>
+    <slot name="pagination">
+      <SakuraPagination />
+    </slot>
 
-    <template v-if="isMounted" #right>
+    <template #right>
       <slot name="right" />
     </template>
 
-    <template v-if="isMounted" #left>
+    <template #left>
       <slot name="left" />
     </template>
   </SakuraMultiColumns>

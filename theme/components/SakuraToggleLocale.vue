@@ -5,18 +5,18 @@ import { useLocale } from 'valaxy'
 import { useThemeConfig } from '../composables'
 
 const props = defineProps<{
-  translateIcon?: string
+  toggleLocaleIcon?: string
 }>()
 
 const { t, locale } = useI18n()
 const { toggleLocales } = useLocale()
 const themeConfig = useThemeConfig()
 
-const translateIcon = computed(() => props.translateIcon || themeConfig.value.translateIcon)
+const toggleLocaleIcon = computed(() => props.toggleLocaleIcon || themeConfig.value.toggleLocaleIcon)
 </script>
 
 <template>
   <button class="sakura-icon-btn sakura-toggle-locale" :title="t('button.toggle_langs')" @click="toggleLocales">
-    <div class="transform transition" :class="[translateIcon, locale === 'en' ? 'rotate-y-180' : '']" />
+    <div class="transform transition" :class="[toggleLocaleIcon, locale === 'en' ? 'rotate-y-180' : '']" />
   </button>
 </template>

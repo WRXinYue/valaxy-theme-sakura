@@ -78,8 +78,8 @@ onUnmounted(() => {
 
     <slot name="nav-tool">
       <div flex print:op0>
-        <SakuraToggleTheme mr-2 />
-        <SakuraToggleLocale mr-2 />
+        <SakuraToggleTheme v-if="themeConfig.navbarOptions?.toggleThemeButton" mr-2 />
+        <SakuraToggleLocale v-if="themeConfig.navbarOptions?.toggleLocaleButton" mr-2 />
         <div v-if="themeConfig.sidebarOptions?.position === 'right'" i-ri-menu-4-fill mr-2 @click="sakuraAppStore.sidebar.toggle" />
       </div>
     </slot>

@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - 增加 `navbar.animated` 配置项，支持导航栏动画效果的自定义配置
-- 增加 `translateIcon` 和 `toggleThemeIcon` 配置项，允许用户自定义相应的按钮图标
+- 增加 `toggleLocaleIcon` 和 `toggleThemeIcon` 配置项，允许用户自定义相应的按钮图标
 
 ### Changed
 

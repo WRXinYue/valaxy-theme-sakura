@@ -2,9 +2,9 @@
 import { computed } from 'vue'
 import { useSiteConfig } from 'valaxy'
 import { useAddonHitokoto } from 'valaxy-addon-hitokoto'
-import { useSakuraAppStore } from '../../stores'
-import type { Banner } from '../../types/index'
-import { useThemeConfig } from '../../composables'
+import { useSakuraAppStore } from '../stores'
+import type { Banner, BannerSocialLink } from '../types/index'
+import { useThemeConfig } from '../composables'
 
 const props = withDefaults(defineProps<{
   banner?: Banner
@@ -20,6 +20,7 @@ const themeConfig = useThemeConfig()
 const { hitokoto, fetchHitokoto } = useAddonHitokoto(themeConfig.value.banner.hitokoto)
 
 const banner = computed(() => props.banner || themeConfig.value.banner)
+const socials = computed(() => (banner.value.socials || siteConfig.value.social) as BannerSocialLink[])
 
 function prevMedia() {
   sakura.wallpaperOperation = 'prevMedia'
@@ -39,7 +40,7 @@ function nextMedia() {
 </script>
 
 <template>
-  <div class="info-overlay-theme-sakura">
+  <div class="sakura-hero-info-overlay">
     <slot name="highlighted-text">
       <SakuraGlitchText :class="sakura.wallpaperIsPlaying ? 'animation-fade-out-up' : 'animation-fade-in-down'" :text="banner.title" />
     </slot>
@@ -63,11 +64,12 @@ function nextMedia() {
 
       <slot name="social">
         <div class="mx-5 mt-4 flex justify-between">
-          <img class="icon" rotate-180 cursor-pointer src="../../assets/next-b.svg" alt="Previous media" @click="prevMedia">
-          <a v-for="s in siteConfig.social" :key="s.name" :style="{ '--sakura-icon-color': s.color }" class="icon" :href="s.link" aria-label="icon" target="_blank">
-            <div :class="[s.icon]" />
+          <img class="icon" rotate-180 cursor-pointer src="../assets/next-b.svg" alt="Previous media" @click="prevMedia">
+          <a v-for="social in socials" :key="social?.name" :style="{ '--sakura-icon-color': social?.color }" class="icon" :href="social?.link" aria-label="icon" target="_blank">
+            <div v-if="social?.icon" :class="[social.icon]" />
+            <img v-else-if="social?.img" :src="social.img">
           </a>
-          <img class="icon" cursor-pointer src="../../assets/next-b.svg" alt="Next media" @click="nextMedia">
+          <img class="icon" cursor-pointer src="../assets/next-b.svg" alt="Next media" @click="nextMedia">
         </div>
       </slot>
     </div>
@@ -77,7 +79,7 @@ function nextMedia() {
 <style lang="scss">
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
-.info-overlay-theme-sakura {
+.sakura-hero-info-overlay {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   display: flex;
@@ -104,7 +106,7 @@ function nextMedia() {
   }
 }
 
-.sakura-background-display .default-wallpaper {
+.sakura-hero-background .default-wallpaper {
   background: linear-gradient(
     45deg,
     var(--sakura-primary-color),

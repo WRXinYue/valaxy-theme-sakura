@@ -27,6 +27,8 @@ export const defaultThemeConfig: ThemeConfig = {
   navbarOptions: {
     title: '',
     showMarker: true,
+    toggleLocaleButton: false,
+    toggleThemeButton: true,
     activeHeader: {
       enableHover: true,
     },
@@ -83,7 +85,7 @@ export const defaultThemeConfig: ThemeConfig = {
     icon: 'i-fa6-solid-angle-down',
   },
 
-  translateIcon: 'i-ri-translate',
+  toggleLocaleIcon: 'i-ri-translate',
   toggleThemeIcon: {
     darkIcon: 'i-ri-moon-line',
     lightIcon: 'i-ri-sun-line',
@@ -95,7 +97,7 @@ export const defaultThemeConfig: ThemeConfig = {
  * @param themeConfig
  */
 export function generateSafelist(themeConfig: ThemeConfig) {
-  const { navbar, sidebar, footer, translateIcon, toggleThemeIcon, articlePinned, articleList } = themeConfig
+  const { navbar, sidebar, footer, toggleLocaleIcon, toggleThemeIcon, articlePinned, articleList } = themeConfig
   const footerIcon = footer?.icon?.img
 
   const safelist: string[] = []
@@ -116,8 +118,8 @@ export function generateSafelist(themeConfig: ThemeConfig) {
   if (themeConfig.scrollDown?.icon)
     safelist.push(themeConfig.scrollDown.icon)
 
-  if (translateIcon)
-    safelist.push(translateIcon)
+  if (toggleLocaleIcon)
+    safelist.push(toggleLocaleIcon)
 
   if (toggleThemeIcon?.darkIcon)
     safelist.push(toggleThemeIcon.darkIcon)

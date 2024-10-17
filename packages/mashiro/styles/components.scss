@@ -1,5 +1,9 @@
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
+body {
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
 body::-webkit-scrollbar-thumb {
   border-radius: 0;
   background: var(--sakura-primary-color);
@@ -14,13 +18,30 @@ body::-webkit-scrollbar-thumb {
     // padding-left: max(0.75rem, env(safe-area-inset-left));
     // padding-right: max(0.75rem, env(safe-area-inset-right));
   }
+
+  .sakura-logo-link span:first-child {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .sakura-navbar-link-item {
+    a {
+      font-size: 15px;
+      color: var(--sakura-text-muted-color);
+    }
+
+    &-icon {
+      height: 1em;
+      width: 1em;
+      margin-right: 0.2rem;
+    }
+  }
 }
 
 .sakura-logo-link {
   font-family: Moe-Mashiro, sans-serif;
 }
 
-.info-overlay-theme-sakura {
+.sakura-hero-info-overlay {
   .card-wrapper {
     background-color: rgba(0, 0, 0, 0.5) !important;
   }
@@ -97,4 +118,10 @@ body::-webkit-scrollbar-thumb {
 
 .sakura-scroll-indicator {
   transition: width 1s cubic-bezier(0.33, 1, 0.68, 1) !important;
+}
+
+.sakura-hero {
+  .sakura-glitch-text {
+    font-family: Ubuntu, sans-serif;
+  }
 }

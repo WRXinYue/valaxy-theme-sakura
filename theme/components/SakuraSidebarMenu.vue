@@ -2,8 +2,8 @@
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import type { NavItem } from '../../types'
-import { useThemeConfig } from '../../composables'
+import type { NavItem } from '../types'
+import { useThemeConfig } from '../composables'
 
 const props = defineProps<{
   sidebar?: NavItem[]
@@ -20,7 +20,7 @@ const sidebar = computed(() => props.sidebar || themeConfig.value.sidebar) as un
 watch(() => route.path, () => nextTick(() => updateMarker()))
 
 function updateMarker() {
-  const routeActive = document.querySelector('.sidebar-theme-overview .router-link-active') as HTMLElement
+  const routeActive = document.querySelector('.sakura-sidebar-menu .router-link-active') as HTMLElement
   // const sidebarTop = document.querySelector('.sakura-sidebar .site-link') as HTMLElement
 
   marker.value.style.top = `${routeActive?.offsetTop || 0}px`
@@ -34,8 +34,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav class="sidebar-theme-overview">
-    <ul class="sakura-sidebar-menu">
+  <nav class="sakura-sidebar-menu">
+    <ul>
       <li v-for="(item, index) in sidebar" :key="index" class="sakura-menu-item">
         <AppLink :to="item.link" :target="item.target" :title="item.locale ? `${item.text} ${t(item.locale)}` : item.text">
           <span v-if="item.icon" class="icon" inline-block :class="item.icon" />
@@ -63,32 +63,30 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-.sidebar-theme-overview {
+.sakura-sidebar-menu {
   display: flex;
   overflow: hidden;
   white-space: nowrap;
   text-align: center;
 
-  .sakura-sidebar-menu {
-    .sakura-menu-item a {
-      display: flex;
-      padding: 4px 15px;
+  .sakura-menu-item a {
+    display: flex;
+    padding: 4px 15px;
 
-      .icon {
-        width: 1.2rem;
-        height: 1.2rem;
+    .icon {
+      width: 1.2rem;
+      height: 1.2rem;
 
-        &:hover {
-          color: var(--va-c-primary-light);
-        }
+      &:hover {
+        color: var(--va-c-primary-light);
       }
     }
+  }
 
-    .sakura-menu-item > a {
-      color: var(--va-c-text);
-      font-size: 15px;
-      letter-spacing: 0.02em;
-    }
+  .sakura-menu-item > a {
+    color: var(--va-c-text);
+    font-size: 15px;
+    letter-spacing: 0.02em;
   }
 }
 </style>
