@@ -38,7 +38,7 @@ const filteredThemes = computed(() => {
   </div>
   <div class="grid lg:grid-cols-2 sm:grid-cols-1 m-0! p-0!" gap="4">
     <div v-for="theme, i in filteredThemes" :key="i" class="w-fulls m-0!">
-      <ArticleThemeGrid :title="theme.name" :link="theme.siteExampleUrl" :src="theme.siteImage" :excerpt="theme.desc" height />
+      <PostThemeGrid :title="theme.name" :link="theme.siteExampleUrl" :src="theme.siteImage" :excerpt="theme.desc" height />
     </div>
   </div>
 </template>

@@ -11,12 +11,15 @@ $common: (
   'navbar-spacing': calc(var(--sakura-navbar-height) + 20px),
   // --------------- Footer ---------------
   'footer-height': 140px,
-  // --------------- ArticleCard ---------------
-  'article-card-height': 230px,
-  'article-card-bg-color': var(--sakura-bg-color),
-  'article-card-img-width': 55%,
-  'article-card-rd': var(--sakura-border-radius),
-  'article-card-font-size': 1.17em,
+  // --------------- PostCard ---------------
+  'post-card-height': 230px,
+  'post-card-bg-color': var(--sakura-bg-color),
+  'post-card-img-width': 55%,
+  'post-card-rd': var(--sakura-border-radius),
+  'post-card-font-size': 1.17em,
+  'post-card-date-ml': 18px,
+  'post-card-content-px': 30px,
+  'post-card-content-py': 20px,
   // --------------- Aside ---------------
   'aside-width': var(--va-sidebar-width),
   // --------------- Sidebar ---------------
@@ -38,7 +41,7 @@ $common: (
   'border-radius-small': 5px,
   // border-radius or rounded corners
   'comment-bg-url': url('../assets/comment-bg.png'),
-  // 'sakura-article-card'
+  // 'sakura-post-card'
 ) !default;
 $common: map.merge((), $common);
 
@@ -58,8 +61,9 @@ $light: (
   'timeline-color': #49b1f5,
   'timeline-text-color': #0bf,
   'timeline-height': 30px,
-  // --------------- ArticleNavigation ---------------
-  'article-navigation-text-color': #f0f8ff,
+  // --------------- PostNavigation ---------------
+  'post-navigation-title-color': #f0f8ff,
+  'post-navigation-label-color': rgba(255, 255, 255, 0.7),
   // --------------- SakuraNavbar ---------------
   'navbar-text-color': var(--sakura-text-color),
   'navbar-text-hover-color': #fff,
@@ -82,8 +86,10 @@ $dark: (
   'timeline-color': #49b1f5,
   'timeline-text-color': #0bf,
   'timeline-height': 30px,
-  // --------------- ArticleNavigation ---------------
-  'article-navigation-text-color': #f0f8ff,
+  // --------------- PostNavigation ---------------
+  'post-navigation-height': 12.5rem,
+  'post-navigation-title-color': #f0f8ff,
+  'post-navigation-label-color': rgba(255, 255, 255, 0.7),
   // --------------- SakuraNavbar ---------------
   'navbar-text-color': var(--sakura-text-color),
   'navbar-text-hover-color': var(--va-c-bg-alt),

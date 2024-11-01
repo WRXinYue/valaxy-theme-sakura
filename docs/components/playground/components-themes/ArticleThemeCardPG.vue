@@ -15,6 +15,6 @@ function configUpdate(newConfig: any) {
 </script>
 
 <template>
-  <ArticleThemeCard :post="config.post" :image-position="config.imagePosition" />
+  <PostThemeCard :post="config.post" :image-position="config.imagePosition" />
   <CodeEditor :config="config" @update:config="configUpdate" />
 </template>

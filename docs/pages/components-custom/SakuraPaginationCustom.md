@@ -20,7 +20,7 @@ categories:
 
 分页方式为滚动
 
-<ArticleListThemeCard />
+<PostListThemeCard />
 <PaginationThemeInfiniteScroll />
 
 #### PaginationThemeValaxy

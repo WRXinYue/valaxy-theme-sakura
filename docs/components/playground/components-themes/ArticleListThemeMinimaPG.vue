@@ -1,3 +1,3 @@
 <template>
-  <ArticleListThemeMinima />
+  <PostListThemeMinima />
 </template>

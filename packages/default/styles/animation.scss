@@ -1,6 +1,6 @@
 @use 'valaxy-theme-sakura/styles/animation/slide/slide.scss' as *;
 
-.sakura-page-header {
+.sakura-post-header {
   @include slide-down;
   /* stylelint-disable-next-line scss/double-slash-comment-empty-line-before */
   // @extend .animation-slide-down;

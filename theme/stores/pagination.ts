@@ -2,7 +2,7 @@ import type { Ref } from 'vue'
 import { ref } from 'vue'
 
 export function usePagination() {
-  // Article Pagination
+  // Post Pagination
   const curPage = ref()
   const loadMultiple = ref(1)
 

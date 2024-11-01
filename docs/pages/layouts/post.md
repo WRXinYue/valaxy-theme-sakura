@@ -17,7 +17,7 @@ categories:
 
 在文章页内部包含组件无需太大关注，`SakuraSponsor`及`ValaxyCopyright`是通过配置项来触发是否展示的
 
-比如我们在这里想要修改文章底部，需要先新增`SakuraArticleFooterCustom`组件替换修改即可
+比如我们在这里想要修改文章底部，需要先新增`SakuraPostFooterCustom`组件替换修改即可
 
 ## API
 
@@ -44,6 +44,6 @@ categories:
 
 ## 相关组件
 
-- [SakuraArticle](/components/SakuraArticle)
-- [SakuraArticleFooterCustom](/components-custom/SakuraArticleFooterCustom)
+- [SakuraPost](/components/SakuraPost)
+- [SakuraPostFooterCustom](/components-custom/SakuraPostFooterCustom)
 - [SakuraToc](/components/SakuraToc)

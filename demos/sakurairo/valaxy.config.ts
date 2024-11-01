@@ -1,9 +1,9 @@
 import { defineValaxyConfig } from 'valaxy'
-import type { ThemeConfig } from 'valaxy-theme-sakura'
+import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 import pkg from 'valaxy-theme-sakura/package.json'
 import { baseConfig } from '@valaxy-theme-sakura/sakurairo'
 
-export default defineValaxyConfig<ThemeConfig>({
+export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura',
   devtools: true,
 

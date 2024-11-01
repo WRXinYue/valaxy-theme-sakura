@@ -8,22 +8,28 @@
 }
 
 /* ======= Page Section ======= */
-.sakura-page-header {
-  .entry-title {
-    &::before {
-      content: ' {';
-      color: var(--sakura-primary-color);
-      font-size: 1.2em;
-      margin-right: 6px;
-      font-family: Helvetica, sans-serif;
-    }
 
-    &::after {
-      content: '}';
-      color: var(--sakura-primary-color);
-      font-size: 1.2em;
-      margin-left: 6px;
-      font-family: Helvetica, sans-serif;
+.sakura-post-header {
+  &-banner:not(.has-cover) {
+    margin-top: var(--sakura-navbar-spacing);
+    max-height: 200px;
+
+    .sakura-post-header-container-title {
+      &::before {
+        content: ' {';
+        color: var(--sakura-primary-color);
+        font-size: 1.2em;
+        margin-right: 6px;
+        font-family: Helvetica, sans-serif;
+      }
+
+      &::after {
+        content: '}';
+        color: var(--sakura-primary-color);
+        font-size: 1.2em;
+        margin-left: 6px;
+        font-family: Helvetica, sans-serif;
+      }
     }
   }
 }

@@ -15,7 +15,7 @@
     "valaxy-theme-sakura": "workspace:*"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4",
-    "valaxy": "^0.20.0"
+    "nodemon": "catalog:",
+    "valaxy": "catalog:"
   }
 }

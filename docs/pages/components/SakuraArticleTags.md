@@ -1,6 +1,6 @@
 ---
-title: SakuraArticleTags 🚧
-title_zh-CN: SakuraArticleTags 🚧
+title: SakuraPostTags 🚧
+title_zh-CN: SakuraPostTags 🚧
 toc: true
 categories:
   - components

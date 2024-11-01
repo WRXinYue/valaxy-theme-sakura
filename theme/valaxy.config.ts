@@ -3,11 +3,11 @@ import { addonVercount } from 'valaxy-addon-vercount'
 import { addonHitokoto } from 'valaxy-addon-hitokoto'
 import defu from 'defu'
 import { SakuraStyleResolver, defaultThemeConfig, generateSafelist, themePlugin } from './node'
-import type { ThemeConfig } from './types'
+import type { ThemeConfig, ThemeUserConfig } from './types'
 
-export default defineTheme<ThemeConfig>((options) => {
+export default defineTheme<ThemeUserConfig>((options) => {
   const { themeConfig: userThemeConfig } = options.config
-  const themeConfig = defu(userThemeConfig || {}, defaultThemeConfig)
+  const themeConfig = defu(userThemeConfig || {}, defaultThemeConfig) as ThemeConfig
 
   return {
     themeConfig: defaultThemeConfig,
@@ -26,5 +26,8 @@ export default defineTheme<ThemeConfig>((options) => {
       addonVercount(),
       addonHitokoto(),
     ],
+    fuse: {
+      extendKeys: ['cover', 'date'],
+    },
   }
 })

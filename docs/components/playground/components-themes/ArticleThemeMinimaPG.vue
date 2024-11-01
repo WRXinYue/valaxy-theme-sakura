@@ -14,6 +14,6 @@ function configUpdate(newConfig: any) {
 </script>
 
 <template>
-  <ArticleThemeMinima :post="config.post" />
+  <PostThemeMinima :post="config.post" />
   <CodeEditor :config="config" @update:config="configUpdate" />
 </template>

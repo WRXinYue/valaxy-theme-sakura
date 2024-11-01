@@ -1,6 +1,6 @@
 import { useBackToTop } from 'valaxy'
-import { useCssVar } from '@vueuse/core'
-import { lenis } from '../plugins/lenis'
+import { isClient, useCssVar, useScrollLock as useScrollLockCore } from '@vueuse/core'
+import { lenisRef } from '../plugins/lenis'
 import { useThemeConfig } from '.'
 
 export function useScroll(options: Partial<{
@@ -14,7 +14,7 @@ export function useScroll(options: Partial<{
 
   function scrollTo(top: number) {
     if (scrollDamping) {
-      lenis.value?.scrollTo(top, { offset: 0, immediate: !scrollAnimation })
+      lenisRef.value?.scrollTo(top, { offset: 0, immediate: !scrollAnimation })
     }
     else {
       window.scrollTo({ top, behavior: scrollAnimation ? 'smooth' : 'auto' })
@@ -40,4 +40,15 @@ export function useScroll(options: Partial<{
   const toDown = () => to('.sakura-hero')
 
   return { to, toTop, toDown, percentage, show }
+}
+
+export function useScrollLock() {
+  const themeConfig = useThemeConfig()
+
+  if (!themeConfig.value.scrollLock)
+    return
+
+  const isLocked = useScrollLockCore(isClient ? document.body : null)
+
+  return isLocked
 }

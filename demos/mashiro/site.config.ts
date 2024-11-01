@@ -24,6 +24,10 @@ export default defineSiteConfig({
     enable: true,
   },
 
+  search: {
+    enable: true,
+  },
+
   vanillaLazyload: {
     enable: true,
   },

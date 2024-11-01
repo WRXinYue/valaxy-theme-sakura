@@ -7,18 +7,14 @@
   border: none;
   width: 2rem;
   height: 2rem;
-  border-radius: 50%;
-  transition: background-color var(--va-transition-duration);
+  transition: color var(--va-transition-duration);
 
   div {
     font-size: 1.2rem;
   }
 
-  &:hover {
-    background-color: rgba(var(--va-c-primary-rgb), 0.08);
-  }
-
+  &:hover,
   &:active {
-    background-color: rgba(var(--va-c-primary-rgb), 0.16);
+    color: var(--sakura-primary-color);
   }
 }

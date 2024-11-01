@@ -1,16 +1,16 @@
 ---
-title: ArticlePinnedThemeStartDash
-title_zh-CN: ArticlePinnedThemeStartDash
+title: PostPinnedThemeStartDash
+title_zh-CN: PostPinnedThemeStartDash
 toc: true
 categories:
   - components-themes
 ---
 
-## ArticlePinnedThemeStartDash
+## PostPinnedThemeStartDash
 
 ## 预览
 
-<ArticlePinnedThemeStartDashPG />
+<PostPinnedThemeStartDashPG />
 
 ## API
 

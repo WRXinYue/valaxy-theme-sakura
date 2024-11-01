@@ -1,6 +1,6 @@
-import type { ThemeConfig } from '../types'
+import type { ThemeConfig, ThemeUserConfig } from '../types'
 
-export const defaultThemeConfig: ThemeConfig = {
+export const defaultThemeConfig: ThemeUserConfig = {
   valaxyDarkOptions: {
     circleTransition: true,
   },
@@ -27,12 +27,12 @@ export const defaultThemeConfig: ThemeConfig = {
   navbar: [],
   navbarOptions: {
     title: '',
+    animIn: 'animation-fade-in-left',
+    animOut: 'animation-fade-out-left',
     showMarker: true,
-    toggleLocaleButton: false,
-    toggleThemeButton: true,
-    activeHeader: {
-      enableHover: true,
-    },
+    offset: 100,
+    enableHover: true,
+    tools: ['toggleTheme', 'search'],
   },
 
   sidebar: [],
@@ -71,6 +71,7 @@ export const defaultThemeConfig: ThemeConfig = {
   },
 
   pagination: {
+    type: 'infinite-scroll',
     animation: true,
     infiniteScrollOptions: {
       preload: true,
@@ -80,6 +81,7 @@ export const defaultThemeConfig: ThemeConfig = {
   scrollDamping: false,
   scrollAnimation: true,
   scrollIndicator: false,
+  scrollLock: true,
   scrollToTop: false,
   scrollDown: {
     enable: true,

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, defineAsyncComponent, onMounted, ref } from 'vue'
 import { useRuntimeConfig } from 'valaxy'
 
 const runtimeConfig = useRuntimeConfig()
@@ -19,10 +19,17 @@ function toggleCommentSystem(value: 'waline' | 'twikoo') {
 onMounted(() => {
   currentCommentSystem.value = localStorage.getItem('currentCommentSystem') as 'waline' | 'twikoo' || 'waline'
 })
+
+const SakuraWaline = hasWaline.value
+  ? defineAsyncComponent(() => import('./plugins/SakuraWaline.vue'))
+  : () => null
+const SakuraTwikoo = hasTwikoo.value
+  ? defineAsyncComponent(() => import('./plugins/SakuraTwikoo.vue'))
+  : () => null
 </script>
 
 <template>
-  <SakuraCard w="full" class="sakura-comment" mt-6>
+  <SakuraCard v-if="hasWaline || hasTwikoo" w="full" class="sakura-comment" mt-6>
     <ClientOnly>
       <div v-if="showCommentToggle" class="sakura-comment-toggle mb-4 mt-5 flex justify-center">
         <button class="sakura-comment-button" :class="[{ active: currentCommentSystem === 'waline' }]" @click="toggleCommentSystem('waline')">

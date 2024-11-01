@@ -1,3 +1,3 @@
 <template>
-  <ArticleListThemeGrid />
+  <PostListThemeGrid />
 </template>

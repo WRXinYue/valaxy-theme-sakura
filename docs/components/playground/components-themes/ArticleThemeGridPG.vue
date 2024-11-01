@@ -22,7 +22,7 @@ function configUpdate(newConfig: any) {
 </script>
 
 <template>
-  <ArticleThemeGrid
+  <PostThemeGrid
     :link="config.link" :date="config.date" :src="config.src"
     :title="config.title" :excerpt="config.excerpt" :target="config.target" :height="config.height"
   />

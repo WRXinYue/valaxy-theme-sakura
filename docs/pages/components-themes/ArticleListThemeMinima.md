@@ -1,18 +1,18 @@
 ---
-title: ArticleListThemeMinima
-title_zh-CN: ArticleListThemeMinima
+title: PostListThemeMinima
+title_zh-CN: PostListThemeMinima
 toc: true
 categories:
   - components-themes
 ---
 
-## ArticleListThemeMinima
+## PostListThemeMinima
 
 极简风格，适合主要首页突出文字的板块
 
 ## 预览
 
-<ArticleListThemeMinimaPG />
+<PostListThemeMinimaPG />
 
 ## API
 

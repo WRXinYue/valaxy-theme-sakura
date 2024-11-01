@@ -119,7 +119,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - 修复 `valaxy.config.ts` favicon 选项配置失效问题
 - 修复 typewriter-effect 依赖加载问题 [Issue #6](https://github.com/WRXinYue/valaxy-theme-sakura/issues/6)
-- 修复开启 SakuraArticlePinnedCustom 组件导致自适应问题
+- 修复开启 SakuraPostPinnedCustom 组件导致自适应问题
 
 ### Changed
 
@@ -149,7 +149,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SakuraInfoOverlay 组件重名为 InfoOverlayThemeSakura 主题组件
 - SakuraBanner 组件 banner-overlay-bar 插槽 重命名为 overlay-bar
 - 更改默认主题色为 #0078E7 ，原主题色已经迁移至 sakura styles
-- ArticleNavigation 系列组件从系统组件迁移至主题组件
+- PostNavigation 系列组件从系统组件迁移至主题组件
 
 ### Removed
 
@@ -193,19 +193,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 新增首页组件替换功能
 - 引入更多 Wane 组件
 - 对导航栏的样式和性能进行了优化
-- 将 SakuraArticle 的布局从 flex 改为 grid，并允许在 grid 布局的左右 aside 区域添加自定义组件
+- 将 SakuraPost 的布局从 flex 改为 grid，并允许在 grid 布局的左右 aside 区域添加自定义组件
 - 支持瀑布流文章列表布局自动预加载
 
 ### Fixed
 
-- 随着 SakuraArticle 布局的调整，解决了在一些设备上，文章目录(toc)会阻止页面滚动到底部的问题
+- 随着 SakuraPost 布局的调整，解决了在一些设备上，文章目录(toc)会阻止页面滚动到底部的问题
 
 ## [0.4.4] - 2024-03-21
 
 ### Added
 
 - 支持 social 彩色图标
-- 添加了文章目录（ArticleToc）支持
+- 添加了文章目录（PostToc）支持
 - 添加进入页面时执行的锚点定位功能
 - 新增多种 categories 和 tags 的布局样式
 - 添加组件化配置支持

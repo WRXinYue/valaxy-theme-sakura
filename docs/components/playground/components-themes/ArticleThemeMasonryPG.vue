@@ -21,7 +21,7 @@ function configUpdate(newConfig: any) {
 </script>
 
 <template>
-  <ArticleThemeMasonry
+  <PostThemeMasonry
     :link="config.link" :date="config.date" :src="config.src"
     :title="config.title" :excerpt="config.excerpt" :target="config.target"
   />

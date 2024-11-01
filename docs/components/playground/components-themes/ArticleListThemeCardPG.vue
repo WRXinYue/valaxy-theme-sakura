@@ -1,3 +1,3 @@
 <template>
-  <ArticleListThemeCard />
+  <PostListThemeCard />
 </template>

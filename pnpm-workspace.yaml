@@ -3,3 +3,14 @@ packages:
   - docs
   - demos/*
   - packages/*
+catalog:
+  valaxy: ^0.20.1
+  valaxy-addon-algolia: ^0.1.0
+  valaxy-addon-bangumi: ^0.2.1
+  valaxy-addon-live2d: ^0.3.0
+  valaxy-addon-meting: ^0.1.3
+  valaxy-addon-git-log: ^0.1.0
+  valaxy-addon-twikoo: ^0.0.3
+  valaxy-addon-waline: ^0.2.0
+  nodemon: ^3.1.4
+  typescript: ^5.3.3

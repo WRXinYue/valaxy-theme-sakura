@@ -1,16 +1,16 @@
 ---
-title: ArticleThemeGrid
-title_zh-CN: ArticleThemeGrid
+title: PostThemeGrid
+title_zh-CN: PostThemeGrid
 toc: true
 categories:
   - components-themes
 ---
 
-## ArticleThemeGrid
+## PostThemeGrid
 
 ## 预览
 
-<ArticleThemeGridPG />
+<PostThemeGridPG />
 
 ## API
 

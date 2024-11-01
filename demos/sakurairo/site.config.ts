@@ -71,4 +71,6 @@ export default defineSiteConfig({
       },
     },
   },
+
+  fuse: {},
 })

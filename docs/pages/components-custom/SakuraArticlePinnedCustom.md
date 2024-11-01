@@ -1,12 +1,12 @@
 ---
-title: SakuraArticlePinnedCustom
-title_zh-CN: 置顶 (SakuraArticlePinnedCustom)
+title: SakuraPostPinnedCustom
+title_zh-CN: 置顶 (SakuraPostPinnedCustom)
 toc: true
 categories:
   - components-custom
 ---
 
-## 置顶 SakuraArticlePinnedCustom
+## 置顶 SakuraPostPinnedCustom
 
 常见于 Home 页 Banner(横幅) 底部的置顶文章
 
@@ -14,16 +14,16 @@ categories:
 <template>
   <div class="<md:hidden">
     <SakuraIconTextDivider icon="i-fa6-solid:anchor" text="START:DASH!!" />
-    <ArticlePinnedThemeStartDash />
+    <PostPinnedThemeStartDash />
   </div>
 </template>
 ```
 
-<SakuraArticlePinnedCustomPG />
+<SakuraPostPinnedCustomPG />
 
 ## 插槽主题
 
-- [ArticlePinnedThemeStartDash](/components-themes/ArticlePinnedThemeStartDash)
+- [PostPinnedThemeStartDash](/components-themes/PostPinnedThemeStartDash)
 
 ## 相关组件
 

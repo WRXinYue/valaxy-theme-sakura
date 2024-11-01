@@ -1,29 +1,29 @@
 ---
-title: SakuraArticleListCustom
-title_zh-CN: 文章列表 (SakuraArticleListCustom)
+title: SakuraPostListCustom
+title_zh-CN: 文章列表 (SakuraPostListCustom)
 toc: true
 categories:
   - components-custom
 ---
 
-## 文章列表 SakuraArticleListCustom
+## 文章列表 SakuraPostListCustom
 
 ```vue
 <template>
   <SakuraIconTextDivider icon="i-fa6-solid:water" text="文章列表" />
-  <ArticleListThemeCard />
+  <PostListThemeCard />
 </template>
 ```
 
 <SakuraIconTextDivider icon="i-fa6-solid:water" text="文章列表" />
-<ArticleListThemeCard />
+<PostListThemeCard />
 
 ## 插槽主题
 
-- [ArticleListThemeCard](/components-themes/ArticleListThemeCard)
-- [ArticleListThemeMasonry](/components-themes/ArticleListThemeGrid)
-- [ArticleListThemeGrid](/components-themes/ArticleListThemeMasonry)
-- [ArticleListThemeMinima](/components-themes/ArticleListThemeMinima)
+- [PostListThemeCard](/components-themes/PostListThemeCard)
+- [PostListThemeMasonry](/components-themes/PostListThemeGrid)
+- [PostListThemeGrid](/components-themes/PostListThemeMasonry)
+- [PostListThemeMinima](/components-themes/PostListThemeMinima)
 
 ## 相关组件
 

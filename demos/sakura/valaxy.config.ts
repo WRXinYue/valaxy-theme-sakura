@@ -1,12 +1,12 @@
 import { defineValaxyConfig } from 'valaxy'
-import type { ThemeConfig } from 'valaxy-theme-sakura'
+import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
 import { addonLive2d } from 'valaxy-addon-live2d'
 import { addonBangumi } from 'valaxy-addon-bangumi'
 import pkg from 'valaxy-theme-sakura/package.json'
 
-export default defineValaxyConfig<ThemeConfig>({
+export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura',
   devtools: true,
 
@@ -103,7 +103,7 @@ export default defineValaxyConfig<ThemeConfig>({
         icon: 'i-line-md-link',
         link: '/links',
         animated: 'animation-hvr-icon-buzz-out',
-        children: [
+        items: [
           {
             text: 'GitHub',
             icon: 'i-line-md-github-twotone',
@@ -159,7 +159,7 @@ export default defineValaxyConfig<ThemeConfig>({
       {
         text: '🎯 清单',
 
-        children: [
+        items: [
           {
             text: '电影 🎞️',
             link: '/movie',

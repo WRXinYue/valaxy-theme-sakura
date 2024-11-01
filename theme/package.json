@@ -37,6 +37,6 @@
   },
   "devDependencies": {
     "@interactjs/types": "^1.10.27",
-    "valaxy": "^0.20.0"
+    "valaxy": "catalog:"
   }
 }

@@ -1,16 +1,16 @@
 ---
-title: ArticleThemeCard
-title_zh-CN: ArticleThemeCard
+title: PostThemeCard
+title_zh-CN: PostThemeCard
 toc: true
 categories:
   - components-themes
 ---
 
-## ArticleThemeCard
+## PostThemeCard
 
 ## 预览
 
-<ArticleThemeCardPG />
+<PostThemeCardPG />
 
 ## API
 

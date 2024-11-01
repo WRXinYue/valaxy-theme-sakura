@@ -28,6 +28,6 @@ function configUpdate(newConfig: any) {
 </script>
 
 <template>
-  <ArticlePinnedThemeStartDash :article-pinned="config.articlePinned" />
+  <PostPinnedThemeStartDash :article-pinned="config.articlePinned" />
   <CodeEditor :config="config" @update:config="configUpdate" />
 </template>

@@ -1,16 +1,16 @@
 ---
-title: ArticleThemeMinima
-title_zh-CN: ArticleThemeMinima
+title: PostThemeMinima
+title_zh-CN: PostThemeMinima
 toc: true
 categories:
   - components-themes
 ---
 
-## ArticleThemeMinima
+## PostThemeMinima
 
 ## 预览
 
-<ArticleThemeMinimaPG />
+<PostThemeMinimaPG />
 
 ## API
 

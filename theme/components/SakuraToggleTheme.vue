@@ -16,7 +16,7 @@ const lightIcon = computed(() => props.lightIcon || themeConfig.value.toggleThem
 </script>
 
 <template>
-  <button type="button" aria-label="Toggle Dark Mode" @click="appStore.toggleDarkWithTransition">
+  <button class="sakura-icon-btn sakura-toggle-theme" type="button" aria-label="Toggle Dark Mode" @click="appStore.toggleDarkWithTransition">
     <div :class="appStore.isDark ? darkIcon : lightIcon" />
   </button>
 </template>

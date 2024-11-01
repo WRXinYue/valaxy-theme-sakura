@@ -45,8 +45,8 @@ categories:
 | -------------- | ----------------------------------------------------- |
 | banner         | 横幅插槽，默认组件`<SakuraBannerCustom />`            |
 | notice-board   | 公告板插槽，默认组件`<SakuraNoticeBoardCustom />`     |
-| article-pinned | 置顶文章插槽，默认组件`<SakuraArticlePinnedCustom />` |
-| article-list   | 文章列表插槽，默认组件`<SakuraArticleListCustom />`   |
+| article-pinned | 置顶文章插槽，默认组件`<SakuraPostPinnedCustom />` |
+| article-list   | 文章列表插槽，默认组件`<SakuraPostListCustom />`   |
 | pagination     | 分页插槽，默认组件`<SakuraPaginationCustom />`        |
 | right          | ---                                                   |
 | left           | ---                                                   |
@@ -55,6 +55,6 @@ categories:
 
 - [SakuraBannerCustom](/components-custom/SakuraBannerCustom)
 - [SakuraNoticeBoardCustom](/components-custom/SakuraNoticeBoardCustom)
-- [SakuraArticlePinnedCustom](/components-custom/SakuraArticlePinnedCustom)
-- [SakuraArticleListCustom](/components-custom/SakuraArticleListCustom)
+- [SakuraPostPinnedCustom](/components-custom/SakuraPostPinnedCustom)
+- [SakuraPostListCustom](/components-custom/SakuraPostListCustom)
 - [SakuraPaginationCustom](/components-custom/SakuraPaginationCustom)

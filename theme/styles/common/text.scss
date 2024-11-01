@@ -8,3 +8,19 @@
   background-clip: text;
   color: transparent;
 }
+
+.sakura-braced-text {
+  &::before {
+    content: '{';
+    color: var(--sakura-primary-color);
+    margin-right: 6px;
+    font-family: Helvetica, sans-serif;
+  }
+
+  &::after {
+    content: '}';
+    color: var(--sakura-primary-color);
+    margin-left: 6px;
+    font-family: Helvetica, sans-serif;
+  }
+}

@@ -1,3 +1,8 @@
+import { computed } from 'vue'
+import { useSiteConfig, usePostList as useValaxyPostList } from 'valaxy'
+import { useThemeConfig } from '../composables'
+import { useSakuraAppStore } from '../stores'
+
 // import type { ComputedRef, StyleValue } from 'vue'
 // import { computed } from 'vue'
 // import { useThemeConfig } from './config'
@@ -41,3 +46,34 @@
 //     styles,
 //   }
 // }
+
+export function usePostList(params: {
+  type?: string
+} = {}) {
+  const siteConfig = useSiteConfig()
+  const themeConfig = useThemeConfig()
+  const sakura = useSakuraAppStore()
+  const pageSize = computed(() => themeConfig.value.pagination?.itemsPerPage || siteConfig.value.pageSize)
+
+  const posts = useValaxyPostList(params)
+  const curPage = computed(() => sakura.curPage || 1)
+
+  const displayedPosts = computed(() =>
+    posts.value.slice(
+      (curPage.value - 1) * pageSize.value,
+      curPage.value * pageSize.value * sakura.loadMultiple,
+    ),
+  )
+
+  const postsWithLimitedTags = computed(() => {
+    return displayedPosts.value.map((post) => {
+      post.cover = post.cover || themeConfig.value.articleList?.settings?.card?.defaultImage
+      if (post.tags && post.tags.length > 3)
+        return { ...post, tags: post.tags.slice(0, 3) }
+
+      return post
+    })
+  })
+
+  return postsWithLimitedTags
+}

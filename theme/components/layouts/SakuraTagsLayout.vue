@@ -1,16 +1,14 @@
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
-import { useFrontmatter, useInvisibleElement, usePostTitle, useSiteStore, useTags } from 'valaxy'
+import { computed } from 'vue'
+import { useSiteStore, useTags } from 'valaxy'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import { useSakuraTags } from '../../composables'
 
 const route = useRoute()
 const router = useRouter()
-const frontmatter = useFrontmatter()
 const site = useSiteStore()
 const tags = useTags()
-const title = usePostTitle(frontmatter)
 const { t } = useI18n()
 const { getTagStyle } = useSakuraTags()
 
@@ -28,69 +26,51 @@ const posts = computed(() => {
   return list
 })
 
-const collapse = ref()
-const { show } = useInvisibleElement(collapse)
-
 function displayTag(tag: string) {
-  router.push({
-    query: {
-      tag,
-    },
-  })
-
-  show()
+  router.push({ query: { tag } })
 }
 </script>
 
 <template>
-  <RouterView v-slot="{ Component }">
-    <component :is="Component">
-      <template #main-header>
-        <slot name="header">
-          <SakuraPageHeader
-            :title="title || t('menu.tags')"
-            :sub-title="curTag"
-            :icon="frontmatter.icon || 'i-ri-tag-line'"
-            :class="frontmatter.pageTitleClass"
-            :cover="frontmatter.cover"
-          />
-        </slot>
-      </template>
-      <template #main-content>
-        <slot name="content">
-          <div class="tags-margin-control">
-            <div class="sakura-text-light" text="center" p="2">
-              {{ t('counter.tags', Array.from(tags).length) }}
+  <SakuraPage>
+    <RouterView v-slot="{ Component }">
+      <component :is="Component">
+        <template #main-content>
+          <slot name="content">
+            <div>
+              <div class="sakura-text-light" text="center" p="2">
+                {{ t('counter.tags', Array.from(tags).length) }}
+              </div>
+
+              <div class="items-end justify-center" flex="~ wrap" gap="1">
+                <SakuraButton
+                  v-for="([key, tag], index) in Array.from(tags).sort()"
+                  :key="key"
+                  class="sakura-tag-button"
+                  :style="getTagStyle(index)"
+                  :class="{ clicked: curTag === key.toString() }"
+                  @click="displayTag(key.toString())"
+                >
+                  <span mx-1 inline-flex>{{ key }}</span>
+                  <span inline-flex text="xs">[{{ tag.count }}]</span>
+                </SakuraButton>
+              </div>
+
+              <SakuraDivider icon="i-fa6-solid:water" text="文章列表" :divider="false" />
             </div>
+          </slot>
+        </template>
 
-            <div class="items-end justify-center" flex="~ wrap" gap="1">
-              <SakuraButton
-                v-for="([key, tag], index) in Array.from(tags).sort()"
-                :key="key"
-                class="sakura-tag-button"
-                :style="getTagStyle(index)"
-                :class="{ clicked: curTag === key.toString() }"
-                @click="displayTag(key.toString())"
-              >
-                <span mx-1 inline-flex>{{ key }}</span>
-                <span inline-flex text="xs">[{{ tag.count }}]</span>
-              </SakuraButton>
+        <template #main-nav-before>
+          <slot name="post">
+            <div v-if="curTag">
+              <SakuraPostListCard :posts="posts" />
             </div>
-
-            <SakuraDivider icon="i-fa6-solid:water" text="文章列表" :divider="false" />
-          </div>
-        </slot>
-      </template>
-
-      <template #main-nav-before>
-        <slot name="post">
-          <div v-if="curTag" class="tags-margin-control">
-            <ArticleListThemeCard :posts="posts" />
-          </div>
-        </slot>
-      </template>
-    </component>
-  </RouterView>
+          </slot>
+        </template>
+      </component>
+    </RouterView>
+  </SakuraPage>
 </template>
 
 <style lang="scss">

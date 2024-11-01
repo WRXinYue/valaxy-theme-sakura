@@ -1,16 +1,16 @@
 ---
-title: ArticleThemeMasonry
-title_zh-CN: ArticleThemeMasonry
+title: PostThemeMasonry
+title_zh-CN: PostThemeMasonry
 toc: true
 categories:
   - components-themes
 ---
 
-## ArticleThemeMasonry
+## PostThemeMasonry
 
 ## 预览
 
-<ArticleThemeMasonryPG />
+<PostThemeMasonryPG />
 
 ## API
 

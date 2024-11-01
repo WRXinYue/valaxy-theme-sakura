@@ -15,11 +15,11 @@ const themeConfig = useThemeConfig()
     </slot>
 
     <slot name="article-pinned">
-      <SakuraArticlePinned v-if="themeConfig.articlePinned" />
+      <SakuraPinnedPost v-if="themeConfig.articlePinned" />
     </slot>
 
     <slot name="article-list">
-      <SakuraArticleList />
+      <SakuraPostList />
     </slot>
 
     <slot name="pagination">

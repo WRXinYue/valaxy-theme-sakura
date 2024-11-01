@@ -1,3 +1,3 @@
 <template>
-  <SakuraArticleFooter />
+  <SakuraPostFooter />
 </template>

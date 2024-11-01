@@ -3,7 +3,7 @@ import { useSiteConfig } from 'valaxy'
 
 defineProps<{
   favicon?: boolean
-  navbarTitle?: string | string[]
+  title?: string | string[]
   hamburger?: boolean
 }>()
 
@@ -15,15 +15,15 @@ const siteConfig = useSiteConfig()
     <template v-if="favicon">
       <img class="h-40px w-40px" alt="logo" :src="siteConfig.favicon">
     </template>
-    <template v-if="navbarTitle">
+    <template v-if="title">
       <RouterLink class="sakura-logo-link" to="/" :aria-label="siteConfig.title">
-        <template v-if="typeof navbarTitle === 'string'">
-          <span mr-1>{{ navbarTitle }}</span>
+        <template v-if="typeof title === 'string'">
+          <span mr-1>{{ title }}</span>
         </template>
         <template v-else>
-          <span mr-1>{{ navbarTitle![0] }}</span>
-          <span inline-block>{{ navbarTitle![1] }}</span>
-          <span>{{ navbarTitle![2] }}</span>
+          <span mr-1>{{ title![0] }}</span>
+          <span inline-block>{{ title![1] }}</span>
+          <span>{{ title![2] }}</span>
         </template>
       </RouterLink>
     </template>

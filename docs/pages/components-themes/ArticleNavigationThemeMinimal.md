@@ -1,6 +1,6 @@
 ---
-title: ArticleNavigationThemeMinimal 🚧
-title_zh-CN: ArticleNavigationThemeMinimal 🚧
+title: PostNavigationThemeMinimal 🚧
+title_zh-CN: PostNavigationThemeMinimal 🚧
 toc: true
 categories:
   - components-themes

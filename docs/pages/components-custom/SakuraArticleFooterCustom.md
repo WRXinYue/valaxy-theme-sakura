@@ -1,21 +1,21 @@
 ---
-title: SakuraArticleFooterCustom
-title_zh-CN: 文章底部 (SakuraArticleFooterCustom)
+title: SakuraPostFooterCustom
+title_zh-CN: 文章底部 (SakuraPostFooterCustom)
 toc: true
 categories:
   - components-custom
 ---
 
-## 文章底部 SakuraArticleFooterCustom
+## 文章底部 SakuraPostFooterCustom
 
 ```vue
 <template>
-  <SakuraArticleFooter />
+  <SakuraPostFooter />
 </template>
 ```
 
-<SakuraArticleFooterCustomPG />
+<SakuraPostFooterCustomPG />
 
 ## 相关组件
 
-- [SakuraArticleFooter](/components/SakuraArticleFooter)
+- [SakuraPostFooter](/components/SakuraPostFooter)

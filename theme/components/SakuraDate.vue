@@ -7,7 +7,7 @@ const props = defineProps<{
   itemprop?: string
 }>()
 
-const datetime = computed(() => formatDate(props.date || ''))
+const datetime = computed(() => formatDate(props.date ?? ''))
 </script>
 
 <template>

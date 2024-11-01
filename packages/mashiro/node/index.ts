@@ -1,17 +1,23 @@
 import defu from 'defu'
-import type { ThemeConfig } from '../types'
+import type { ThemeUserConfig } from '../types'
 
-export const defaultThemeConfig: ThemeConfig = {
+export const defaultThemeConfig: ThemeUserConfig = {
   primaryColor: '#fe9500',
 
+  article: {
+    navigationMerge: true,
+  },
   banner: {
     waveTheme: 'horizontal',
     style: 'filter-dot',
     fixedImg: true,
   },
   navbarOptions: {
-    invert: true,
+    offset: 0,
+    invert: ['home'],
     showMarker: false,
+    autoHide: ['home'],
+    tools: ['toggleTheme', 'search'],
   },
   articleList: {
     icon: 'i-fa-envira',
@@ -30,16 +36,18 @@ export const defaultThemeConfig: ThemeConfig = {
   },
 
   pagination: {
+    animation: true,
     infiniteScrollOptions: { preload: false },
   },
 
   scrollIndicator: true,
+  scrollLock: false,
   scrollDown: {
     icon: 'i-fa-chevron-down',
   },
 }
 
-export function baseConfig(userThemeConfig?: ThemeConfig) {
+export function baseConfig(userThemeConfig?: ThemeUserConfig) {
   const themeConfig = defu(userThemeConfig || {}, defaultThemeConfig)
   return themeConfig
 }

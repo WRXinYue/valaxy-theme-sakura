@@ -1,6 +1,6 @@
 ---
-title: SakuraArticleCollapse 🚧
-title_zh-CN: SakuraArticleCollapse 🚧
+title: SakuraPostCollapse 🚧
+title_zh-CN: SakuraPostCollapse 🚧
 toc: true
 categories:
   - components

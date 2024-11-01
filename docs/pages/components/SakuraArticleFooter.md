@@ -1,6 +1,6 @@
 ---
-title: SakuraArticleFooter 🚧
-title_zh-CN: SakuraArticleFooter 🚧
+title: SakuraPostFooter 🚧
+title_zh-CN: SakuraPostFooter 🚧
 toc: true
 categories:
   - components

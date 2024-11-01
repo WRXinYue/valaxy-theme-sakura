@@ -1,13 +1,20 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useSiteConfig } from 'valaxy'
+import { useThemeConfig } from '../composables'
+import type { ThemeConfig } from '../types'
 
 defineProps<{
   favicon?: boolean
-  navbarTitle?: string | string[]
+  title?: string | string[]
   hamburger?: boolean
+  subtitle?: string
 }>()
 
+const themeConfig = useThemeConfig<ThemeConfig>()
 const siteConfig = useSiteConfig()
+
+const subtitle = computed(() => themeConfig.value.navbarOptions?.subtitle)
 </script>
 
 <template>
@@ -15,19 +22,19 @@ const siteConfig = useSiteConfig()
     <template v-if="favicon">
       <img class="h-40px w-40px" alt="logo" :src="siteConfig.favicon">
     </template>
-    <template v-if="navbarTitle">
+    <template v-if="title">
       <ruby class="mashiro-navbar-title">
         <RouterLink class="sakura-logo-link" to="/" :aria-label="siteConfig.title">
-          <template v-if="typeof navbarTitle === 'string'">
-            <span mr-1>{{ navbarTitle }}</span>
+          <template v-if="typeof title === 'string'">
+            <span mr-1>{{ title }}</span>
           </template>
           <template v-else>
-            <span mr-1>{{ navbarTitle![0] }}</span>
-            <span inline-block>{{ navbarTitle![1] }}</span>
-            <span>{{ navbarTitle![2] }}</span>
+            <span mr-1>{{ title![0] }}</span>
+            <span inline-block>{{ title![1] }}</span>
+            <span>{{ title![2] }}</span>
           </template>
         </RouterLink>
-        <rt>樱花庄的白猫</rt>
+        <rt v-if="subtitle" class="mashiro-navbar-subtitle">{{ subtitle }}</rt>
       </ruby>
     </template>
   </div>

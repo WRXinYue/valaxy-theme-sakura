@@ -1,5 +1,5 @@
 import { defineValaxyConfig } from 'valaxy'
-import type { ThemeConfig } from 'valaxy-theme-sakura'
+import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
 import { addonLive2d } from 'valaxy-addon-live2d'
@@ -7,7 +7,7 @@ import { addonBangumi } from 'valaxy-addon-bangumi'
 import pkg from 'valaxy-theme-sakura/package.json'
 import { baseConfig } from '@valaxy-theme-sakura/mashiro'
 
-export default defineValaxyConfig<ThemeConfig>({
+export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura',
   devtools: true,
 
@@ -83,14 +83,9 @@ export default defineValaxyConfig<ThemeConfig>({
     },
 
     pagination: {
-      animation: true,
       infiniteScrollOptions: {
         preload: true,
       },
-    },
-
-    article: {
-      navigationMerge: true,
     },
 
     scrollToTop: true,
@@ -111,19 +106,25 @@ export default defineValaxyConfig<ThemeConfig>({
       {
         icon: 'i-fa-list-ul',
         text: '清单',
-        link: '/categories',
+        link: '',
         animated: 'animation-hvr-grow',
+        items: [
+          {
+            text: '番剧',
+            link: '/anime',
+          },
+        ],
       },
       {
         icon: 'i-fa-edit',
         text: '留言板',
-        link: '/tags',
+        link: '/comment',
         animated: 'animation-hvr-grow',
       },
       {
         icon: 'i-fa-chain',
         text: '友人账',
-        link: '/anime',
+        link: '/friends',
         animated: 'animation-hvr-grow',
       },
       {
@@ -150,8 +151,7 @@ export default defineValaxyConfig<ThemeConfig>({
     ],
     navbarOptions: {
       title: ['さくら荘', 'の', '白猫'],
-      // invert: true,
-      autoHide: true,
+      subtitle: '樱花庄的白猫',
     },
 
     sidebar: [
@@ -310,4 +310,11 @@ export default defineValaxyConfig<ThemeConfig>({
       bgmEnabled: false,
     }),
   ],
+  vite: {
+    resolve: {
+      alias: {
+        'valaxy-theme-sakura': 'valaxy-theme-sakura',
+      },
+    },
+  },
 })

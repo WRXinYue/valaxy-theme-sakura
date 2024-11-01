@@ -1,4 +1,4 @@
-import { useWindowSize } from '@vueuse/core'
+import { useScreenSize } from 'valaxy'
 import type { ThemeConfig } from '../types'
 import { initLenis } from '../plugins/lenis'
 import { useSakuraAppStore } from '../stores'
@@ -7,9 +7,9 @@ import { StorageKeys } from '../enum'
 
 export function defineSakuraSetup(themeConfig: ThemeConfig) {
   const sakuraAppStore = useSakuraAppStore()
-  const { width } = useWindowSize()
+  const { isMd } = useScreenSize()
 
-  if (themeConfig.scrollDamping && width.value >= 768)
+  if (themeConfig.scrollDamping && !isMd)
     initLenis()
 
   // SidebarOptions

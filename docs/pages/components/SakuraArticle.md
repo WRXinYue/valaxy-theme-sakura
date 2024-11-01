@@ -1,20 +1,20 @@
 ---
-title: SakuraArticle
-title_zh-CN: 文章 (SakuraArticle)
+title: SakuraPost
+title_zh-CN: 文章 (SakuraPost)
 toc: true
 categories:
   - components
 ---
 
-## 文章 SakuraArticle
+## 文章 SakuraPost
 
 ## 基础用法
 
 ```vue
 <template>
-  <SakuraArticle>
+  <SakuraPost>
     <RouterView />
-  </SakuraArticle>
+  </SakuraPost>
 </template>
 ```
 

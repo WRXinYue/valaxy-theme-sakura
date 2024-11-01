@@ -1,15 +1,15 @@
 import { ref } from 'vue'
 import Lenis from 'lenis'
 
-export const lenis = ref<Lenis>()
+export const lenisRef = ref<Lenis>()
 
 function raf(time: any) {
-  lenis.value!.raf(time)
+  lenisRef.value!.raf(time)
   requestAnimationFrame(raf)
 }
 
 export async function initLenis() {
-  lenis.value = new Lenis({ lerp: 0.04 })
+  lenisRef.value = new Lenis({ lerp: 0.04 })
 
   requestAnimationFrame(raf)
 }

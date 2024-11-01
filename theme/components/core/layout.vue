@@ -1,15 +1,18 @@
 <script lang="ts" setup>
+import { useLayout } from 'valaxy'
 import { useSakuraAppStore } from '../../stores'
 import { useThemeConfig } from '../../composables'
 
 const sakuraAppStore = useSakuraAppStore()
 const themeConfig = useThemeConfig()
+const layout = useLayout()
 </script>
 
 <template>
   <!-- NOTE: Avoid placing sakura-sidebar-offset at the top; it affects absolute positioning -->
   <div
     class="app-container custom-background antialiased"
+    :class="`has-${layout}-layout`"
     :style="sakuraAppStore.sidebar.isOpen ? (
       themeConfig.sidebarOptions?.position === 'left'
         ? '--sakura-private-sidebar-offset: var(--sakura-sidebar-offset)'

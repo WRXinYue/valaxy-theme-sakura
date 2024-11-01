@@ -5,7 +5,7 @@ const isHome = useLayout('home')
 </script>
 
 <template>
-  <SakuraMultiColumns class="article-grid-layout">
+  <SakuraMultiColumns class="sakura-post-grid-layout">
     <template #left>
       <SakuraAside>
         <SidebarThemeDynamic />
@@ -40,7 +40,7 @@ const isHome = useLayout('home')
 <style lang="scss">
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
-.article-grid-layout {
+.sakura-post-grid-layout {
   transition: grid-template-columns 0.3s ease;
 
   @include screen('md') {
