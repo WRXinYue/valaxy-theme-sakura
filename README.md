@@ -50,7 +50,7 @@ For detailed configuration and explanations, see [Theme Configuration](https://s
 import { defineConfig } from 'valaxy'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 
-export default defineValaxyConfig<ThemeUserConfig>({
+export default defineConfig<ThemeUserConfig>({
   theme: 'sakura',
 
   themeConfig: {
