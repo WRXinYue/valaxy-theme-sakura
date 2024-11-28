@@ -50,7 +50,7 @@ pnpm add valaxy-theme-sakura
 import { defineConfig } from 'valaxy'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 
-export default defineValaxyConfig<ThemeUserConfig>({
+export default defineConfig<ThemeUserConfig>({
   theme: 'sakura',
 
   themeConfig: {
