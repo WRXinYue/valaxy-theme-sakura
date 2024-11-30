@@ -18,7 +18,6 @@ export const MashiroConfig: ThemeUserConfig = {
     invert: ['home'],
     showMarker: false,
     autoHide: ['home'],
-    tools: ['toggleTheme', 'search'],
   },
   postList: {
     icon: 'i-fa-envira',
