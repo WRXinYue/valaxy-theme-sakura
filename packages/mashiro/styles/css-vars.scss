@@ -1,25 +1,10 @@
+@use './vars' as *;
+
 :root {
-  /* Light theme variables */
-
-  /* Common variables */
-  --sakura-primary-color: var(--va-c-primary);
-  --sakura-secondary-color: #ff6f91;
-  --sakura-navbar-height: 75px;
-  --sakura-navbar-text-color: var(--sakura-text-deep-color);
-  --sakura-post-card-height: 300px;
-  --sakura-text-color: #797979;
-  --sakura-text-deep-color: #404040;
-  --sakura-text-muted-color: #888;
-  --sakura-post-card-content-px: 39px;
-  --sakura-post-navigation-height: 150px;
-  --mashiro-navbar-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
-
-  // --------------- Glitch Text ---------------
-  --sakura-glitch-before-text-color: #ff3f1a;
-  --sakura-glitch-after-text-color: #00a7e0;
+  @include mashiro-light;
+  @include mashiro-common;
 }
 
 html.dark {
-  /* Dark theme variables */
-  --sakura-nav-bg-color: hsla(240deg, 2.33%, 8.43%, 0.72);
+  @include mashiro-dark;
 }

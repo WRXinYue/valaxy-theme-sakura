@@ -1,0 +1,12 @@
+.wl-comment {
+  .wl-panel textarea {
+    background-image: var(
+      --sakura-waline-bg-img,
+      var(--sakura-comment-bg-url)
+    ) !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    resize: vertical;
+  }
+}

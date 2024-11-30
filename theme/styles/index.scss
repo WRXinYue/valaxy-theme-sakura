@@ -1,5 +1,7 @@
 // --------------- Layouts ---------------
 @use './layouts/layout.scss' as *;
+@use './layouts/page.scss' as *;
+@use './layouts/home.scss' as *;
 
 // --------------- Animation ---------------
 @use './animation/fading/fading.scss' as *;
@@ -17,7 +19,8 @@
 @use './common/text.scss' as *;
 
 // --------------- Markdown ---------------
-@use './markdown/markdown.scss' as *;
+@use './markdown/prose.scss' as *;
+@use './markdown/animation.scss' as *;
 @use './markdown/code.scss' as *;
 @use './markdown/code-group.scss' as *;
 @use './markdown/custom-block.scss' as *;

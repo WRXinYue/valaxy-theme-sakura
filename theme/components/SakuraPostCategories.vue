@@ -22,7 +22,7 @@ const convertedCategories = computed(() => {
       :to="{ path: '/categories', query: { category: Array.isArray(categories) ? categories.join('/') : categories } }"
       class="inline-flex items-center align-top"
     >
-      <div v-if="index === 0" class="mr-1" i-mdi-folder-open-outline />
+      <span v-if="index === 0" class="sakura-icon mr-1 inline-block" i-mdi-folder-open-outline />
       <span v-if="index > 0" class="mx-1">/</span> {{ category }}
     </RouterLink>
   </div>

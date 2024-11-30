@@ -18,10 +18,10 @@ const currentIndex = ref<number>(0)
 const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
 
-const urls = computed(() => props.urls || themeConfig.value.banner.urls || '')
+const urls = computed(() => props.urls || themeConfig.value.hero.urls || '')
 const currentWallpaperUrl = computed(() => typeof urls.value === 'string' ? urls.value : urls.value[currentIndex.value])
 const isCurrentMediaVideo = computed(() => isVideoUrl(currentWallpaperUrl.value))
-const banner = computed(() => themeConfig.value.banner)
+const hero = computed(() => themeConfig.value.hero)
 
 watch(() => sakura.wallpaperIndex[storageKey], (newIndex) => {
   setLocalStorageItem(storageKey, newIndex!)
@@ -49,20 +49,20 @@ onMounted(() => {
     >
       <template v-if="sakura.wallpaperIsPlaying || isCurrentMediaVideo">
         <video
-          :key="sakura.wallpaperIsPlaying ? banner.playerUrl : currentWallpaperUrl"
+          :key="sakura.wallpaperIsPlaying ? hero.playerUrl : currentWallpaperUrl"
           class="min-h-full min-w-full object-cover"
           preload="auto" autoplay :loop="!sakura.wallpaperIsPlaying" :muted="!sakura.wallpaperIsPlaying"
-          :disablePictureInPicture="banner.disablePictureInPicture"
+          :disablePictureInPicture="hero.disablePictureInPicture"
           @ended="sakura.wallpaperIsPlaying = false"
         >
-          <source :src="sakura.wallpaperIsPlaying ? banner.playerUrl : currentWallpaperUrl" type="video/mp4">
+          <source :src="sakura.wallpaperIsPlaying ? hero.playerUrl : currentWallpaperUrl" type="video/mp4">
           Your browser does not support video tags
         </video>
       </template>
       <template v-else>
         <div
           v-if="currentWallpaperUrl" :key="currentWallpaperUrl" class="sakura-hero-background-img"
-          :style="{ backgroundImage: `url(${currentWallpaperUrl})`, backgroundAttachment: banner.fixedImg ? 'fixed' : 'scroll' }"
+          :style="{ backgroundImage: `url(${currentWallpaperUrl})`, backgroundAttachment: hero.fixedImg ? 'fixed' : 'scroll' }"
         />
         <div v-else class="sakura-hero-background-default h-full w-full" />
       </template>

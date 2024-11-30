@@ -9,7 +9,7 @@ const router = useRouter()
 <template>
   <div class="site-info flex flex-col items-center">
     <RouterLink class="site-author-avatar" to="/about">
-      <img class="rounded-full" :src="siteConfig.author.avatar" alt="avatar">
+      <SakuraImageCard class="rounded-full" :src="siteConfig.author.avatar" alt="avatar" />
       <span class="site-author-status" :title="siteConfig.author.status.message">{{ siteConfig.author.status.emoji }}</span>
     </RouterLink>
     <div

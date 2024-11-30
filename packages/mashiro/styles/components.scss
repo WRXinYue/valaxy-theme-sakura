@@ -1,175 +1,177 @@
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
-body {
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-}
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: var(--sakura-primary-color);
-}
-
-/* ======= NavBar ======= */
-
-.sakura-navbar {
-  &.active-header {
-    &.has-scrolled {
-      box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
-    }
+@mixin mashiro-components {
+  body {
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
   }
 
-  .sakura-logo-link span:first-child {
-    background-color: rgba(255, 255, 255, 0.5);
+  body::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: var(--sakura-primary-color);
   }
 
-  .sakura-navbar-link-item {
-    a {
-      font-size: 15px;
-      color: var(--sakura-text-muted-color);
+  /* ======= NavBar ======= */
+
+  .sakura-navbar {
+    &.active-header {
+      &.has-scrolled {
+        box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
+      }
     }
 
-    &-icon {
+    .sakura-logo-link span:first-child {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .sakura-nav-link-icon {
       height: 1em;
       width: 1em;
       margin-right: 0.2rem;
     }
-  }
-}
 
-.has-home-layout .sakura-navbar {
-  &.active-header {
-    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
-  }
-}
-
-.sakura-logo-link {
-  font-family: Moe-Mashiro, sans-serif;
-}
-
-.sakura-hero-info-overlay {
-  .card-wrapper {
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    .sakura-navbar-link-item {
+      a {
+        font-size: 15px;
+        color: var(--sakura-text-muted-color);
+      }
+    }
   }
 
-  .card-wrapper::before {
-    content: '';
-    position: absolute;
-    top: -30px;
-    left: 20%;
-    margin-left: -15px;
-    border-width: 15px;
-    border-style: solid;
-    border-color: transparent transparent rgba(0, 0, 0, 0.5);
-  }
-}
-
-/* ======= Home ======= */
-
-.sakura-home-layout {
-  @include screen('md') {
-    padding: 0 40px;
+  .has-home-layout .sakura-navbar {
+    &.active-header {
+      box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
+    }
   }
 
-  @include screen('lg') {
-    padding: 0 110px;
+  .sakura-logo-link {
+    font-family: Moe-Mashiro, sans-serif;
   }
 
-  @include screen('xl') {
-    padding: 0;
+  .sakura-hero-info-overlay {
+    .card-wrapper {
+      background-color: rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .card-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 20%;
+      margin-left: -15px;
+      border-width: 15px;
+      border-style: solid;
+      border-color: transparent transparent rgba(0, 0, 0, 0.5);
+    }
   }
 
-  &.grid-layout-triple-columns {
+  /* ======= Home ======= */
+
+  .sakura-home-layout {
     @include screen('md') {
-      grid-template-columns: 0 1fr 0;
+      padding: 0 40px;
     }
 
     @include screen('lg') {
-      grid-template-columns: 1fr 800px 1fr !important;
+      padding: 0 110px;
     }
 
     @include screen('xl') {
-      grid-template-columns: 1fr 800px 1fr !important;
-    }
-  }
-}
-
-/* ======= Post ======= */
-
-.sakura-post-pinned-card {
-  height: 160px;
-
-  .sakura-image-card {
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  }
-}
-
-.sakura-post-card {
-  @include screen('md') {
-    box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5) !important;
-  }
-
-  .sakura-image-card {
-    border-radius: 0 !important;
-  }
-}
-
-.sakura-scroll-down {
-  transform: scale(1.5, 1);
-
-  &-icon {
-    font-size: 19px !important;
-  }
-}
-
-.sakura-scroll-indicator {
-  transition: width 1s cubic-bezier(0.33, 1, 0.68, 1) !important;
-}
-
-.sakura-hero {
-  .sakura-glitch-text {
-    font-family: Ubuntu, sans-serif;
-  }
-}
-
-.sakura-post-header {
-  .has-cover {
-    height: 400px !important;
-  }
-}
-
-.sakura-post-navigation {
-  &-content > * {
-    z-index: 2;
-  }
-
-  .sakura-image-card {
-    border-radius: 0;
-
-    &::before {
-      content: '';
-      transition: opacity 0.3s ease-in-out;
-      background-color: #000;
-      opacity: 0.6;
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
+      padding: 0;
     }
 
-    &:hover::before {
-      opacity: 0.4;
+    &.sakura-triple-columns {
+      @include screen('md') {
+        grid-template-columns: 0 1fr 0;
+      }
+
+      @include screen('lg') {
+        grid-template-columns: 1fr 800px 1fr !important;
+      }
+
+      @include screen('xl') {
+        grid-template-columns: 1fr 800px 1fr !important;
+      }
     }
   }
-}
 
-.sakura-post {
-  &-grid-layout {
+  /* ======= Post ======= */
+
+  .sakura-post-pinned-card {
+    height: 160px;
+
+    .sakura-image-card {
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .sakura-post-card {
     @include screen('md') {
-      grid-template-columns: 150px minmax(0, 800px) 150px !important;
+      box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5) !important;
     }
 
-    @include screen('lg') {
-      grid-template-columns: 250px minmax(0, 800px) 250px !important;
+    .sakura-image-card {
+      border-radius: 0 !important;
+    }
+  }
+
+  .sakura-scroll-down {
+    transform: scale(1.5, 1);
+
+    &-icon {
+      font-size: 19px !important;
+    }
+  }
+
+  .sakura-scroll-indicator {
+    transition: width 1s cubic-bezier(0.33, 1, 0.68, 1) !important;
+  }
+
+  .sakura-hero {
+    .sakura-glitch-text {
+      font-family: Ubuntu, sans-serif;
+    }
+  }
+
+  .sakura-post-header {
+    .has-cover {
+      height: 400px !important;
+    }
+  }
+
+  .sakura-post-nav {
+    &-content > * {
+      z-index: 2;
+    }
+
+    .sakura-image-card {
+      border-radius: 0;
+
+      &::before {
+        content: '';
+        transition: opacity 0.3s ease-in-out;
+        background-color: #000;
+        opacity: 0.6;
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      &:hover::before {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .sakura-post {
+    &-grid-layout {
+      @include screen('md') {
+        grid-template-columns: 150px minmax(0, 800px) 150px !important;
+      }
+
+      @include screen('lg') {
+        grid-template-columns: 250px minmax(0, 800px) 250px !important;
+      }
     }
   }
 }

@@ -1,0 +1,19 @@
+@use 'components.scss' as *;
+@use 'vars.scss' as *;
+
+[data-theme='mashiro'] {
+  @include mashiro-components;
+}
+
+:root[data-theme='mashiro'] {
+  /* Light theme variables */
+  @include mashiro-light;
+
+  /* Common variables */
+  @include mashiro-common;
+}
+
+html.dark[data-theme='mashiro'] {
+  /* Dark theme variables */
+  @include mashiro-dark;
+}

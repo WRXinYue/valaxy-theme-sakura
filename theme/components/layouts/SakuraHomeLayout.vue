@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { useThemeConfig } from '../../composables'
+import { useComponent, useThemeConfig } from '../../composables'
 
 const themeConfig = useThemeConfig()
+const { loader } = useComponent()
 </script>
 
 <template>
@@ -14,12 +15,12 @@ const themeConfig = useThemeConfig()
       <SakuraNoticeBoard />
     </slot>
 
-    <slot name="article-pinned">
-      <SakuraPinnedPost v-if="themeConfig.articlePinned" />
+    <slot name="post-pinned">
+      <SakuraPinnedPost v-if="themeConfig.postPinned" />
     </slot>
 
-    <slot name="article-list">
-      <SakuraPostList />
+    <slot name="post-list">
+      <component :is="loader('PostList')" />
     </slot>
 
     <slot name="pagination">
@@ -52,7 +53,7 @@ const themeConfig = useThemeConfig()
     padding: 0;
   }
 
-  &.grid-layout-triple-columns {
+  &.sakura-triple-columns {
     @include screen('md') {
       grid-template-columns: 0 1fr 0;
     }

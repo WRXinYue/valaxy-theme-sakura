@@ -12,10 +12,7 @@ defineProps<{
     <SakuraImageCard v-if="post.cover" :to="post.path" :src="post.cover" rotate="5" space="1.1" transition-duration="0.45s" />
 
     <div class="sakura-post-card-content flex flex-col" :class="post.cover && 'has-cover'">
-      <div class="sakura-post-card-date order-1">
-        <span i-mdi:clock-outline class="sakura-icon inline-block" /> 发布于
-        <SakuraDate :date="post.date" class="inline-block" />
-      </div>
+      <SakuraPostDate :date="post.date" class="order-1" />
       <RouterLink class="sakura-post-card-title order-2" :to="post.path || ''" :aria-label="`Read more about ${post.title}`">
         {{ post.title }}
       </RouterLink>
@@ -73,24 +70,12 @@ defineProps<{
     }
   }
 
-  &-date,
+  .sakura-post-date,
   &-meta {
     font-size: 12px;
 
     & * {
       font-size: inherit;
-    }
-  }
-
-  &-date {
-    position: relative;
-    margin-left: var(--sakura-post-card-date-ml);
-
-    .sakura-icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%)
-        translateX(calc(-1 * var(--sakura-post-card-date-ml)));
     }
   }
 
@@ -114,6 +99,18 @@ defineProps<{
 
     &.has-cover {
       width: calc(100% - var(--sakura-post-card-img-width));
+    }
+  }
+
+  .sakura-post-date {
+    position: relative;
+    margin-left: var(--sakura-post-card-date-ml);
+
+    .sakura-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%)
+        translateX(calc(-1 * var(--sakura-post-card-date-ml)));
     }
   }
 

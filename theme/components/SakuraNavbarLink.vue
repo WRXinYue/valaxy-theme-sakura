@@ -26,7 +26,7 @@ function updateMarker() {
   if (!props.showMarker)
     return
 
-  const routeActive = document.querySelector('.sakura-nav-link .router-link-active') as HTMLElement
+  const routeActive = document.querySelector('.sakura-navbar-link .router-link-active') as HTMLElement
   if (!routeActive)
     return
 
@@ -62,13 +62,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav class="sakura-nav-link">
+  <nav class="sakura-navbar-link">
     <template v-if="show">
-      <template v-for="(item, i) in navbar" :key="i">
-        <SakuraNavbarLinkItem v-bind="item" />
-        <span v-if="i !== navbar.length - 1" class="ml-3 mr-3" />
-      </template>
-
+      <SakuraNavbarLinkItem v-for="(item, i) in navbar" :key="i" v-bind="item" />
       <div v-if="showMarker" ref="marker" class="marker" />
     </template>
   </nav>
@@ -77,7 +73,7 @@ onMounted(() => {
 <style lang="scss">
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
-.sakura-nav-link {
+.sakura-navbar-link {
   display: none;
   height: 100%;
   font-size: 0.875rem;
@@ -85,7 +81,7 @@ onMounted(() => {
   line-height: 1.25rem;
   transform: translateX(0);
 
-  #marker {
+  .marker {
     position: absolute;
     border-bottom: var(--sakura-navbar-marker-height) solid
       var(--sakura-primary-color);
@@ -97,6 +93,11 @@ onMounted(() => {
 
   @include screen('md') {
     display: flex;
+  }
+
+  .sakura-navbar-link-item:not(:last-child) {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
   }
 }
 </style>

@@ -4,7 +4,7 @@ packages:
   - demos/*
   - packages/*
 catalog:
-  valaxy: ^0.20.1
+  valaxy: ^0.20.4
   valaxy-addon-algolia: ^0.1.0
   valaxy-addon-bangumi: ^0.2.1
   valaxy-addon-live2d: ^0.3.0

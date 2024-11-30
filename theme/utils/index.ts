@@ -1,9 +1,6 @@
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import noneImg from '../assets/image-404.png'
 
-export function isVideoUrl(url: string) {
-  return /\.(?:mp4|webm|ogg)$/i.test(url)
-}
+export * from './media'
 
 /**
  * Evaluates if the given route matches specified conditions, including exclusive conditions.
@@ -41,16 +38,6 @@ export function checkCurrentRouter(route: RouteLocationNormalizedLoaded, path: s
   if (path === 'home')
     return route.path.replace(/index.html$/, '') === '/'
   return route.path.includes(`/${path}`)
-}
-
-/**
- * set default img
- * @param e
- */
-export function onImgError(e: Event, defaultImg = noneImg) {
-  const targetEl = e.target as HTMLImageElement
-  targetEl.setAttribute('data-src', targetEl.src)
-  targetEl.src = defaultImg
 }
 
 export function scrollTo(el: HTMLElement, hash: string, smooth = false) {

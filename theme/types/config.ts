@@ -1,19 +1,14 @@
 import type { DefaultTheme } from 'valaxy'
-import type { Banner } from './banner'
+import type { Theme } from './theme'
+import type { Hero } from './hero'
 import type { NavItem, NavbarOptions } from './navbar'
 import type { SidebarMulti, SidebarOptions } from './sidebar'
 import type { Footer } from './footer'
-import type { Post, PostList, PostPinned } from './article'
+import type { PostFooter, PostList, PostPinned } from './article'
 import type { Pagination } from './pagination'
 
 export interface ThemeConfig extends DefaultTheme.Config {
-  theming?: string
-  /**
-   * @zh 主题的主色调
-   * @en Primary color of the theme
-   * @default '#0078E7'
-   */
-  primaryColor: string
+  theme?: Theme
   /**
    * @zh 页脚配置
    * @en Footer configuration
@@ -23,18 +18,22 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * @zh 文章配置
    * @en Post configuration
    */
-  article?: Post
-  articleList?: PostList
+  postList?: PostList
   /**
    * @zh 置顶文章
    * @en Pinned articles
    */
-  articlePinned?: PostPinned
+  postPinned?: PostPinned
+  postFooter?: PostFooter
+  /**
+   * @deprecated Use hero instead
+   */
+  banner: Hero
   /**
    * @zh 横幅配置
    * @en Banner configuration
    */
-  banner: Banner
+  hero: Hero
   /**
    * @zh 侧边栏配置
    * @en Sidebar configuration

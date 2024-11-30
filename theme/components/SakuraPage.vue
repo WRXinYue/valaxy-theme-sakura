@@ -10,7 +10,7 @@ const frontmatter = useFrontmatter()
       <SakuraPageHeader :fm="frontmatter" />
     </slot>
 
-    <SakuraMultiColumns class="sakura-page-grid-layout">
+    <SakuraMultiColumns class="sakura-page-layout">
       <template #left>
         <slot name="left" />
       </template>

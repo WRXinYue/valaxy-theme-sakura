@@ -1,4 +1,5 @@
 export * from './config'
+export * from './component'
 export * from './post'
 export * from './helper'
 export * from './tags'

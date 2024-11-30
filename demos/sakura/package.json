@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@iconify-json/line-md": "^1.2.1",
-    "@valaxy-theme-sakura/default": "workspace:*",
     "valaxy-addon-algolia": "catalog:",
     "valaxy-addon-bangumi": "catalog:",
     "valaxy-addon-live2d": "catalog:",

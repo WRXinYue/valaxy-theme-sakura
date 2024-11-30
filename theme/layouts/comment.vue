@@ -1,0 +1,3 @@
+<template>
+  <SakuraCommentLayout />
+</template>

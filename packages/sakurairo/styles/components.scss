@@ -1,0 +1,64 @@
+@mixin sakurairo-components {
+  /* ======= NavBar ======= */
+  .sakura-navbar {
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+    transition: all 1s ease-in-out !important;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    &:not(.active-header) {
+      width: 95%;
+      top: 2.5%;
+      left: 2.5%;
+      border-radius: 15px;
+    }
+
+    &.active-header {
+      left: 0;
+      backdrop-filter: saturate(180%) blur(3.2px);
+    }
+  }
+
+  // .sakura-navbar {
+  //   &.active-header {
+  //     backdrop-filter: saturate(180%) blur(3.2px);
+  //     padding-left: max(0.75rem, env(safe-area-inset-left));
+  //     padding-right: max(0.75rem, env(safe-area-inset-right));
+  //   }
+  // }
+
+  /* ======= Sidebar ======= */
+  .sakura-sidebar {
+    #marker {
+      width: 2px;
+      height: 80px;
+      border-radius: var(--sakura-border-radius);
+      background-color: var(--sakura-primary-color);
+    }
+  }
+
+  .sakura-post-date {
+    font-size: 12px;
+    width: max-content;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+    font-weight: var(--global-font-weight);
+    backdrop-filter: saturate(180%) blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 3;
+    transition: all 0.6s ease-in-out;
+  }
+}
+
+body {
+  background-image: url('https://w.wallhaven.cc/full/zy/wallhaven-zyj8gw.jpg');
+}

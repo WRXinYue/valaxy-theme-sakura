@@ -47,7 +47,7 @@ pnpm add valaxy-theme-sakura
 For detailed configuration and explanations, see [Theme Configuration](https://sakura.valaxy.site/config/theme).
 
 ```ts
-import { defineConfig } from 'valaxy'
+import { defineValaxyConfig } from 'valaxy'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 
 export default defineValaxyConfig<ThemeUserConfig>({

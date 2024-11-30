@@ -7,6 +7,7 @@ $common: (
   // --------------- Navbar ---------------
   'navbar-height': 55px,
   'navbar-marker-height': 2px,
+  'navbar-marker-color': var(--sakura-primary-color),
   'navbar-mt': 20px,
   'navbar-spacing': calc(var(--sakura-navbar-height) + 20px),
   // --------------- Footer ---------------
@@ -20,6 +21,8 @@ $common: (
   'post-card-date-ml': 18px,
   'post-card-content-px': 30px,
   'post-card-content-py': 20px,
+  // --------------- PostNavigation ---------------
+  'post-nav-height': 12.5rem,
   // --------------- Aside ---------------
   'aside-width': var(--va-sidebar-width),
   // --------------- Sidebar ---------------
@@ -47,7 +50,7 @@ $common: map.merge((), $common);
 
 $light: (
   // --------------- Navbar ---------------
-  'nav-bg-color': #fff,
+  'navbar-bg-color': #fff,
   // --------------- Text ---------------
   'text-color': #504e4e,
   'text-muted-color': hsl(0deg, 0%, 45.1%),
@@ -62,8 +65,8 @@ $light: (
   'timeline-text-color': #0bf,
   'timeline-height': 30px,
   // --------------- PostNavigation ---------------
-  'post-navigation-title-color': #f0f8ff,
-  'post-navigation-label-color': rgba(255, 255, 255, 0.7),
+  'post-nav-title-color': #f0f8ff,
+  'post-nav-label-color': rgba(255, 255, 255, 0.7),
   // --------------- SakuraNavbar ---------------
   'navbar-text-color': var(--sakura-text-color),
   'navbar-text-hover-color': #fff,
@@ -73,7 +76,7 @@ $light: map.merge((), $light);
 
 $dark: (
   // --------------- Navbar ---------------
-  'nav-bg-color': var(--va-c-bg-alt),
+  'navbar-bg-color': var(--va-c-bg-alt),
   // --------------- Text ---------------
   'text-color': #f0f8ff,
   'text-muted-color': hsl(0deg, 0%, 63.9%),
@@ -87,9 +90,8 @@ $dark: (
   'timeline-text-color': #0bf,
   'timeline-height': 30px,
   // --------------- PostNavigation ---------------
-  'post-navigation-height': 12.5rem,
-  'post-navigation-title-color': #f0f8ff,
-  'post-navigation-label-color': rgba(255, 255, 255, 0.7),
+  'post-nav-title-color': #f0f8ff,
+  'post-nav-label-color': rgba(255, 255, 255, 0.7),
   // --------------- SakuraNavbar ---------------
   'navbar-text-color': var(--sakura-text-color),
   'navbar-text-hover-color': var(--va-c-bg-alt),

@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <div class="sakura-post-tags">
     <RouterLink v-for="(tag, index) in tags" :key="tag" :to="{ path: '/tags/', query: { tag } }" class="inline-flex items-center align-top">
-      <div v-if="index === 0" class="mr-1" i-mdi-tag-multiple />
+      <span v-if="index === 0" class="sakura-icon mr-1 inline-block" i-mdi-tag-multiple />
       <span v-if="index > 0" class="non-hoverable mx-1">·</span> {{ tag }}
     </RouterLink>
   </div>

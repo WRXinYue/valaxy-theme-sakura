@@ -1,7 +1,7 @@
 <template>
   <footer class="sakura-post-footer">
-    <slot name="navigation">
-      <SakuraPostNavigation />
+    <slot name="nav">
+      <SakuraPostNav />
     </slot>
 
     <slot name="back">

@@ -1,6 +1,6 @@
 {
   "name": "valaxy-theme-sakura",
-  "version": "0.6.8",
+  "version": "0.8.0-alpha.9",
   "packageManager": "pnpm@9.11.0",
   "author": {
     "email": "3322543587@qq.com",
@@ -24,7 +24,10 @@
   "main": "client/index.ts",
   "types": "types/index.d.ts",
   "peerDependencies": {
+    "@valaxy-theme-sakura/mashiro": "workspace:*",
+    "@valaxy-theme-sakura/sakurairo": "workspace:*",
     "valaxy-addon-hitokoto": "^0.0.1",
+    "valaxy-addon-sakura": "workspace:*",
     "valaxy-addon-vercount": "^0.0.5"
   },
   "dependencies": {

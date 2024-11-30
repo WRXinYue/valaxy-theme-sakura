@@ -1,9 +1,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useFrontmatter, useFullUrl, useSiteConfig } from 'valaxy'
+import { formatDate, useFrontmatter, useFullUrl, useSiteConfig } from 'valaxy'
 import type { Article } from '@unhead/schema-org'
 import { defineArticle, useSchemaOrg } from '@unhead/schema-org'
-import { toDate } from 'date-fns'
 
 const siteConfig = useSiteConfig()
 const frontmatter = useFrontmatter()
@@ -26,8 +25,8 @@ const article: Article = {
       url: siteConfig.value.author.link,
     },
   ],
-  'datePublished': toDate(frontmatter.value.date || 0),
-  'dateModified': toDate(frontmatter.value.updated || 0),
+  'datePublished': formatDate(frontmatter.value.date || 0),
+  'dateModified': formatDate(frontmatter.value.updated || 0),
   'image': frontmatter.value.image || frontmatter.value.cover,
 }
 
@@ -69,3 +68,12 @@ useSchemaOrg(
     </template>
   </SakuraPage>
 </template>
+
+<style lang="scss">
+.sakura-post {
+  .content {
+    max-width: 800px;
+    padding: 0 10px;
+  }
+}
+</style>

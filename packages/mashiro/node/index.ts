@@ -1,12 +1,13 @@
-import defu from 'defu'
+/// <reference types="vite/client" />
+
+import type { ThemeExtend } from 'valaxy-theme-sakura'
 import type { ThemeUserConfig } from '../types'
 
-export const defaultThemeConfig: ThemeUserConfig = {
-  primaryColor: '#fe9500',
-
-  article: {
-    navigationMerge: true,
+export const MashiroConfig: ThemeUserConfig = {
+  theme: {
+    primary: '#fe9500',
   },
+
   banner: {
     waveTheme: 'horizontal',
     style: 'filter-dot',
@@ -19,7 +20,7 @@ export const defaultThemeConfig: ThemeUserConfig = {
     autoHide: ['home'],
     tools: ['toggleTheme', 'search'],
   },
-  articleList: {
+  postList: {
     icon: 'i-fa-envira',
     text: 'Discovery',
 
@@ -30,7 +31,11 @@ export const defaultThemeConfig: ThemeUserConfig = {
       },
     },
   },
-  articlePinned: {
+
+  postFooter: {
+    navigationMerge: true,
+  },
+  postPinned: {
     icon: 'i-fa-anchor',
     text: 'START:DASH!!',
   },
@@ -47,7 +52,7 @@ export const defaultThemeConfig: ThemeUserConfig = {
   },
 }
 
-export function baseConfig(userThemeConfig?: ThemeUserConfig) {
-  const themeConfig = defu(userThemeConfig || {}, defaultThemeConfig)
-  return themeConfig
+export const Mashiro: ThemeExtend = {
+  name: 'mashiro',
+  preset: MashiroConfig,
 }

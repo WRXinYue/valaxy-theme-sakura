@@ -3,17 +3,17 @@ import { computed, watch } from 'vue'
 import { useMounted } from '@vueuse/core'
 import { useSakuraAppStore } from '../stores'
 import { useThemeConfig } from '../composables'
-import type { Banner } from '../types/index'
+import type { Hero } from '../types/index'
 
 const props = defineProps<{
-  banner?: Banner
+  hero?: Hero
 }>()
 
 const themeConfig = useThemeConfig()
 const appStore = useSakuraAppStore()
 const isMounted = useMounted()
 
-const banner = computed(() => props.banner || themeConfig.value.banner)
+const banner = computed(() => props.hero || themeConfig.value.hero)
 const overlayBarClass = computed(() => appStore.wallpaperIsPlaying ? 'animation-fade-out-down' : 'animation-fade-in-up')
 
 watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {

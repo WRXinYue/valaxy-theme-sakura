@@ -8,13 +8,13 @@ defineProps<{
 
 <template>
   <header class="sakura-page-header space-y-1 xl:pb-10" :class="fm.cover && `has-cover`">
-    <SakuraImageCard v-if="fm.cover" :src="fm.cover" />
+    <SakuraImageCard v-if="fm.cover" :src="fm.cover" class="w-full" />
     <div class="sakura-header-container">
       <slot name="title">
         <div class="sakura-header-title">
           <div v-if="fm.icon" class="icon" m="r-1" inline-flex align-top :class="fm.icon" />
-          {{ fm.title }}
-          <span v-if="fm.subTitle">· {{ fm.subTitle }}</span>
+          <span>{{ fm.title }}</span>
+          <span v-if="fm.subTitle"> · {{ fm.subTitle }}</span>
         </div>
       </slot>
       <slot />
@@ -57,6 +57,8 @@ defineProps<{
 
   .sakura-header-title {
     font-size: 2.3rem;
+    display: flex;
+    align-items: center;
   }
 }
 </style>

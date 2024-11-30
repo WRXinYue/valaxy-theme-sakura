@@ -23,4 +23,10 @@ export function defineSakuraSetup(themeConfig: ThemeConfig) {
   else {
     sakuraAppStore.sidebar.isOpen = sidebarOptions.initialState!
   }
+
+  themeConfig.theme?.extends?.forEach(({ name }) => {
+    sakuraAppStore.themes.push(name)
+  })
+
+  sakuraAppStore.toggleTheme(themeConfig.theme?.default || sakuraAppStore.curTheme)
 }

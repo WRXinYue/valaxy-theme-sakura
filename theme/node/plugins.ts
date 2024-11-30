@@ -6,11 +6,20 @@ export function themePlugin(themeConfig: ThemeConfig): PluginOption {
     name: 'valaxy-theme-sakura',
 
     config() {
+      let primaryColor: string = themeConfig.theme!.primary
+
+      if (themeConfig.theme?.default) {
+        themeConfig.theme.extends.forEach(({ name, primary }) => {
+          if (name === themeConfig.theme?.default && primary)
+            primaryColor = primary
+        })
+      }
+
       return {
         css: {
           preprocessorOptions: {
             scss: {
-              additionalData: `$c-primary: ${themeConfig.primaryColor} !default;`,
+              additionalData: `$c-primary: ${primaryColor} !default;`,
             },
           },
         },

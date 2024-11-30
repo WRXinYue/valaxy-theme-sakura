@@ -87,7 +87,7 @@ export interface NavbarOptions {
   /**
    * @zh 导航栏的工具按钮
    * @en Tool buttons to include in the navbar, like search or settings
-   * @default []
+   * @default ['toggleDark', 'search']
    */
-  tools: ('toggleLocale' | 'toggleTheme' | 'search')[]
+  tools: ('toggleLocale' | 'toggleDark' | 'toggleTheme' | 'search')[]
 }

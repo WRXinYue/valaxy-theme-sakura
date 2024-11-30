@@ -1,3 +1,5 @@
+@use 'valaxy-theme-sakura/styles/animation/slide/slide.scss' as *;
+
 .link {
   color: var(--sakura-primary-color);
 }
@@ -10,10 +12,10 @@ a {
   color: var(--sakura-link-color);
 }
 
-.st-text {
-  color: var(--sakura-text-color);
+@media (prefers-reduced-motion: no-preference) {
+  .sakura-post-header {
+    @include slide-down;
+    /* stylelint-disable-next-line scss/double-slash-comment-empty-line-before */
+    // @extend .animation-slide-down;
+  }
 }
-
-// .app-container {
-//   min-height: 100vh;
-// }

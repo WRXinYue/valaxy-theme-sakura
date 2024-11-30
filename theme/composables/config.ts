@@ -1,11 +1,13 @@
-import { computed } from 'vue'
-import { useConfig } from 'valaxy'
+import { useSakuraThemeConfig } from 'valaxy-addon-sakura'
 import type { ThemeConfig } from '../types'
+import { useSakuraAppStore } from '../stores'
 
 /**
  * getThemeConfig
  */
 export function useThemeConfig<T = ThemeConfig>() {
-  const config = useConfig<T>()
-  return computed(() => config!.value.themeConfig)
+  const sakura = useSakuraAppStore()
+  const themeConfig = useSakuraThemeConfig<T>(sakura.curTheme)
+
+  return themeConfig
 }

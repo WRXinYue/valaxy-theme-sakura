@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useSiteConfig } from 'valaxy'
 import { computed, ref } from 'vue'
 import { useWindowScroll } from '@vueuse/core'
 import { useLayout, useThemeConfig } from '../composables'
@@ -13,7 +12,6 @@ const props = defineProps<{
 
 const sakuraAppStore = useSakuraAppStore()
 const themeConfig = useThemeConfig()
-const siteConfig = useSiteConfig()
 const { isIncludes } = useLayout()
 const { y } = useWindowScroll()
 
@@ -42,18 +40,18 @@ const isHeaderHighlighted = computed(() => {
 </script>
 
 <template>
+  <!-- NOTE: Dynamic :class switching affects triggering the component loader for some reason, not sure why. -->
   <header
     class="sakura-navbar" :class="{ 'active-header': isHeaderHighlighted, 'has-scrolled': isScrolled, 'no-animation': noAnimation }"
     @mouseover="hoverNavbar = true" @mouseleave="hoverNavbar = false"
   >
     <slot name="brand">
       <div class="flex items-center">
-        <div
-          v-if="themeConfig.sidebarOptions?.position === 'left'"
-          :class="!themeConfig.sidebarOptions.enableOnDesktop && 'md:hidden'"
-        >
-          <SakuraHamburger class="mr-4" :active="sakuraAppStore.sidebar.isOpen" @click="sakuraAppStore.sidebar.toggle" />
-        </div>
+        <template v-if="themeConfig.sidebarOptions?.position === 'left'">
+          <div class="flex-center" :class="!themeConfig.sidebarOptions.enableOnDesktop && 'md:hidden'">
+            <SakuraHamburger class="mr-4" :active="sakuraAppStore.sidebar.isOpen" @click="sakuraAppStore.sidebar.toggle" />
+          </div>
+        </template>
 
         <SakuraNavbarBrand :favicon :title />
       </div>
@@ -64,11 +62,13 @@ const isHeaderHighlighted = computed(() => {
     </slot>
 
     <slot name="tool">
-      <div flex print:op0>
-        <SakuraToggleTheme v-if="navbarOptions.tools.includes('toggleTheme')" mr-2 />
-        <SakuraToggleLocale v-if="navbarOptions.tools.includes('toggleLocale')" mr-2 />
-        <SakuraSearchTrigger v-if="siteConfig.search.enable ?? navbarOptions.tools.includes('search')" />
-        <div v-if="themeConfig.sidebarOptions?.position === 'right'" i-ri-menu-4-fill mr-2 @click="sakuraAppStore.sidebar.toggle" />
+      <div h-full print:op0 flex="~ center" class="sakura-navbar-tools">
+        <SakuraToggleDark v-if="navbarOptions.tools.includes('toggleDark')" />
+        <SakuraToggleLocale v-if="navbarOptions.tools.includes('toggleLocale')" />
+        <SakuraToggleTheme v-if="navbarOptions.tools.includes('toggleTheme')" />
+        <SakuraSearchTrigger v-if="navbarOptions.tools.includes('search')" />
+        <div v-if="themeConfig.sidebarOptions?.position === 'right'" i-ri-menu-4-fill @click="sakuraAppStore.sidebar.toggle" />
+        <slot name="tool-ext" />
       </div>
     </slot>
   </header>
@@ -89,7 +89,13 @@ const isHeaderHighlighted = computed(() => {
   padding-right: max(40px, env(safe-area-inset-right));
 
   &.active-header {
-    background: var(--sakura-nav-bg-color);
+    background: var(--sakura-navbar-bg-color);
+  }
+
+  &-tools {
+    & > *:not(:last-child) {
+      margin-right: 8px;
+    }
   }
 
   // &:not(&.active-header) {

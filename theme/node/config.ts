@@ -5,13 +5,15 @@ export const defaultThemeConfig: ThemeUserConfig = {
     circleTransition: true,
   },
 
-  primaryColor: '#0078E7',
+  theme: {
+    primary: '#0078E7',
+  },
 
   navbarTitle: '',
 
   favicon: false,
 
-  banner: {
+  hero: {
     title: 'Hello, sakura',
     motto: 'You got to put the past behind you before you can move on.',
     urls: [],
@@ -22,6 +24,8 @@ export const defaultThemeConfig: ThemeUserConfig = {
     enableHitokoto: false,
 
     disablePictureInPicture: false,
+
+    socialStyle: 'merge',
   },
 
   navbar: [],
@@ -32,7 +36,7 @@ export const defaultThemeConfig: ThemeUserConfig = {
     showMarker: true,
     offset: 100,
     enableHover: true,
-    tools: ['toggleTheme', 'search'],
+    tools: ['toggleDark', 'search'],
   },
 
   sidebar: [],
@@ -45,12 +49,18 @@ export const defaultThemeConfig: ThemeUserConfig = {
     showCounts: false,
   },
 
-  articleList: {
+  postList: {
     icon: 'i-fa6-solid:water',
     text: '文章列表',
+
+    settings: {
+      card: {},
+      grid: {},
+      masonry: {},
+    },
   },
 
-  articlePinned: {
+  postPinned: {
     icon: 'i-fa6-solid:anchor',
     text: 'START:DASH!!',
   },
@@ -100,7 +110,7 @@ export const defaultThemeConfig: ThemeUserConfig = {
  * @param themeConfig
  */
 export function generateSafelist(themeConfig: ThemeConfig) {
-  const { navbar, sidebar, footer, toggleLocaleIcon, toggleThemeIcon, articlePinned, articleList } = themeConfig
+  const { navbar, sidebar, footer, toggleLocaleIcon, toggleThemeIcon, postPinned, postList } = themeConfig
   const footerIcon = footer?.icon?.img
 
   const safelist: string[] = []
@@ -108,9 +118,16 @@ export function generateSafelist(themeConfig: ThemeConfig) {
   if (footerIcon)
     safelist.push(footerIcon)
 
-  navbar?.forEach((navItem) => {
-    if (navItem.icon)
-      safelist.push(navItem.icon)
+  navbar?.forEach((navbarItem) => {
+    if (navbarItem.icon)
+      safelist.push(navbarItem.icon)
+
+    if (Array.isArray(navbarItem.items)) {
+      navbarItem.items.forEach((item) => {
+        if (item.icon)
+          safelist.push(item.icon)
+      })
+    }
   })
 
   sidebar?.forEach((sidebarItem) => {
@@ -129,11 +146,17 @@ export function generateSafelist(themeConfig: ThemeConfig) {
   if (toggleThemeIcon?.lightIcon)
     safelist.push(toggleThemeIcon.lightIcon)
 
-  if (articleList?.icon)
-    safelist.push(articleList.icon)
+  if (postList?.icon)
+    safelist.push(postList.icon)
 
-  if (articlePinned?.icon)
-    safelist.push(articlePinned?.icon)
+  if (postPinned?.icon)
+    safelist.push(postPinned?.icon)
+
+  if (themeConfig.theme?.extends) {
+    themeConfig.theme.extends.forEach(({ preset }) => {
+      safelist.push(...generateSafelist(preset as ThemeConfig))
+    })
+  }
 
   return safelist
 }

@@ -1,18 +1,21 @@
 import { defineValaxyConfig } from 'valaxy'
-import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
 import { addonLive2d } from 'valaxy-addon-live2d'
 import { addonBangumi } from 'valaxy-addon-bangumi'
 import pkg from 'valaxy-theme-sakura/package.json'
-import { baseConfig } from '@valaxy-theme-sakura/mashiro'
+import type { ThemeUserConfig } from '@valaxy-theme-sakura/mashiro'
+import { Mashiro } from '@valaxy-theme-sakura/mashiro'
 
 export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura',
   devtools: true,
 
-  themeConfig: baseConfig({
-    theming: 'mashiro',
+  themeConfig: {
+    theme: {
+      default: Mashiro.name,
+      extends: [Mashiro],
+    },
 
     banner: {
       title: 'HI, MASHIRO!',
@@ -60,7 +63,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
       ],
     },
 
-    articlePinned: {
+    postPinned: {
       entries: [
         {
           title: 'Valaxy Theme Sakura',
@@ -110,6 +113,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
         animated: 'animation-hvr-grow',
         items: [
           {
+            icon: 'i-fa-film',
             text: '番剧',
             link: '/anime',
           },
@@ -154,41 +158,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
       subtitle: '樱花庄的白猫',
     },
 
-    sidebar: [
-      {
-        text: '🌈',
-        locale: 'menu.home',
-        link: '/',
-      },
-      {
-        text: '🗂️',
-        locale: 'menu.archives',
-        link: '/archives/',
-      },
-      {
-        text: '📂',
-        locale: 'menu.categories',
-        link: '/categories/',
-      },
-      {
-        text: '🏷️',
-        locale: 'menu.tags',
-        link: '/tags/',
-      },
-      {
-        text: '📝 留言板',
-      },
-      {
-        text: '🍻 朋友圈',
-      },
-      {
-        text: '❤️ 打赏',
-      },
-      {
-        text: '📌',
-        locale: 'menu.about',
-      },
-    ],
     sidebarOptions: {
       position: 'left',
     },
@@ -212,7 +181,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
       lightIcon: 'i-line-md-moon-alt-to-sunny-outline-loop-transition',
       darkIcon: 'i-line-md-sunny-outline-to-moon-loop-transition',
     },
-  }),
+  },
 
   addons: [
     addonWaline({

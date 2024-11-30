@@ -11,7 +11,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
   devtools: true,
 
   themeConfig: {
-    banner: {
+    hero: {
       title: 'Hello, sakura',
       motto: 'You got to put the past behind you before you can move on.',
       urls: [
@@ -32,7 +32,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
       message: '<b>这是一个公告信息, 主题开源地址请见: <a href="https://github.com/WRXinYue/valaxy-theme-sakura">https://github.com/WRXinYue/valaxy-theme-sakura</a></br>',
     },
 
-    articlePinned: {
+    postPinned: {
       entries: [
         {
           title: 'Valaxy Theme Sakura',
@@ -54,7 +54,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
       ],
     },
 
-    article: {
+    postFooter: {
       navigationMerge: true,
     },
 

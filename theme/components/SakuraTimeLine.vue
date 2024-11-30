@@ -84,7 +84,7 @@ function handleMouseEnter(year: number, month: number) {
     </div>
 
     <div class="post-collapse-action" text="center">
-      <button class="yun-icon-btn shadow hover:shadow-md" @click="isDesc = !isDesc">
+      <button @click="isDesc = !isDesc">
         <div v-if="isDesc" i-ri-sort-desc />
         <div v-else i-ri-sort-asc />
       </button>

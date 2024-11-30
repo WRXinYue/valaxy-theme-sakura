@@ -1,18 +1,19 @@
 import { defineValaxyConfig } from 'valaxy'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 import pkg from 'valaxy-theme-sakura/package.json'
-import { baseConfig } from '@valaxy-theme-sakura/sakurairo'
+import { Sakurairo } from '@valaxy-theme-sakura/sakurairo'
 
 export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura',
   devtools: true,
 
-  themeConfig: baseConfig({
-    colors: {
-      primary: '#ff4e6a',
+  themeConfig: {
+    theme: {
+      default: Sakurairo.name,
+      extends: [Sakurairo],
     },
 
-    banner: {
+    hero: {
       title: 'Hello, sakura',
       motto: 'You got to put the past behind you before you can move on.',
       urls: [
@@ -33,8 +34,12 @@ export default defineValaxyConfig<ThemeUserConfig>({
       },
     },
 
-    article: {
-      navigationMerge: true,
+    postList: {
+      settings: {
+        card: {
+          defaultImage: ['https://www.dmoe.cc/random.php', 'https://www.loliapi.com/acg/pc/'],
+        },
+      },
     },
 
     scrollToTop: true,
@@ -82,7 +87,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
         icon: 'i-line-md-link',
         link: '/links',
         animated: 'animation-hvr-icon-buzz-out',
-        children: [
+        items: [
           {
             text: 'GitHub',
             icon: 'i-line-md-github-twotone',
@@ -138,7 +143,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
       {
         text: '🎯 清单',
 
-        children: [
+        items: [
           {
             text: '电影 🎞️',
             link: '/movie',
@@ -194,5 +199,5 @@ export default defineValaxyConfig<ThemeUserConfig>({
       lightIcon: 'i-line-md-moon-alt-to-sunny-outline-loop-transition',
       darkIcon: 'i-line-md-sunny-outline-to-moon-loop-transition',
     },
-  }),
+  },
 })

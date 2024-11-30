@@ -1,0 +1,10 @@
+@use './vars' as *;
+
+:root {
+  @include sakura-light;
+  @include sakura-common;
+}
+
+html.dark {
+  @include sakura-dark;
+}

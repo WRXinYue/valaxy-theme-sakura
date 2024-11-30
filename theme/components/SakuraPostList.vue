@@ -12,8 +12,8 @@ const props = defineProps<{
 const themeConfig = useThemeConfig()
 const postsList = usePostList()
 
-const icon = computed(() => props.icon ?? themeConfig.value.articleList?.icon)
-const text = computed(() => props.text ?? themeConfig.value.articleList?.text)
+const icon = computed(() => props.icon ?? themeConfig.value.postList?.icon)
+const text = computed(() => props.text ?? themeConfig.value.postList?.text)
 const posts = computed(() => props.posts || postsList.value)
 </script>
 

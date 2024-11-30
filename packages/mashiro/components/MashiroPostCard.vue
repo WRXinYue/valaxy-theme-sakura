@@ -1,11 +1,16 @@
+<script setup lang="ts">
+import SakuraPostCard from 'valaxy-theme-sakura/components/SakuraPostCard.vue'
+import MashiroDots from './MashiroDots.vue'
+</script>
+
 <template>
-  <SakuraPostCardCustom>
+  <SakuraPostCard>
     <template #content-extend>
       <div class="mashiro-dots-container absolute!">
         <MashiroDots />
       </div>
     </template>
-  </SakuraPostCardCustom>
+  </SakuraPostCard>
 </template>
 
 <style lang="scss">
@@ -25,10 +30,6 @@
       right: var(--sakura-post-card-content-px);
     }
   }
-
-  // .sakura-post-card-content {
-  //   colo
-  // }
 
   .sakura-post-card-title {
     padding: 10px 0;

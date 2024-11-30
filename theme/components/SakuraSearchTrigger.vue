@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { useSiteConfig } from 'valaxy'
 import { computed, defineAsyncComponent } from 'vue'
-import { useSearch } from '../composables'
+import { useSakuraAppStore } from '../stores'
 
+const sakura = useSakuraAppStore()
 const siteConfig = useSiteConfig()
-const search = useSearch()
 
 const isAlgolia = computed(() => siteConfig.value.search.type === 'algolia')
 const isFuse = computed(() => siteConfig.value.search.type === 'fuse')
@@ -16,8 +16,10 @@ const SakuraAlgoliaSearch = isAlgolia.value && defineAsyncComponent({
 </script>
 
 <template>
-  <SakuraSearchBtn :open="search.isOpen && !isAlgolia" @open="search.open" @close="search.close" />
+  <div flex="center">
+    <SakuraSearchBtn :open="sakura.search.isOpen && !isAlgolia" @open="sakura.search.open" @close="sakura.search.close" />
 
-  <SakuraAlgoliaSearch v-if="isAlgolia" :open="search.isOpen" @close="search.close" />
-  <SakuraSearch v-else-if="isFuse" :open="search.isOpen" @close="search.close" />
+    <SakuraAlgoliaSearch v-if="isAlgolia" :open="sakura.search.isOpen" @close="sakura.search.close" />
+    <SakuraSearch v-else-if="isFuse" :open="sakura.search.isOpen" @close="sakura.search.close" />
+  </div>
 </template>
