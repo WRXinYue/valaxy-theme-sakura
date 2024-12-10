@@ -1,7 +1,7 @@
 {
   "name": "valaxy-theme-sakura",
   "version": "0.8.0-alpha.9",
-  "packageManager": "pnpm@9.11.0",
+  "packageManager": "pnpm@9.15.0",
   "author": {
     "email": "3322543587@qq.com",
     "name": "WRXinYue",
@@ -23,20 +23,20 @@
   ],
   "main": "client/index.ts",
   "types": "types/index.d.ts",
+  "scripts": {
+    "release": "bumpp && npm publish"
+  },
   "peerDependencies": {
-    "@valaxy-theme-sakura/mashiro": "workspace:*",
-    "@valaxy-theme-sakura/sakurairo": "workspace:*",
     "valaxy-addon-hitokoto": "^0.0.1",
-    "valaxy-addon-sakura": "workspace:*",
     "valaxy-addon-vercount": "^0.0.5"
   },
   "dependencies": {
     "@ctrl/tinycolor": "^4.1.0",
-    "@iconify-json/fa6-solid": "^1.1.20",
-    "@iconify-json/mdi": "^1.1.64",
+    "@iconify-json/fa6-solid": "^1.2.2",
+    "@iconify-json/mdi": "^1.2.1",
     "interactjs": "^1.10.27",
-    "lenis": "^1.1.14",
-    "typeit": "^8.8.3"
+    "lenis": "^1.1.18",
+    "typeit": "^8.8.7"
   },
   "devDependencies": {
     "@interactjs/types": "^1.10.27",

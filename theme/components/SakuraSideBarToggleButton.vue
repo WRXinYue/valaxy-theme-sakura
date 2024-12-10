@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onMounted, watch } from 'vue'
 import { useStorage } from '@vueuse/core'
+import { onMounted, watch } from 'vue'
 import { useSakuraAppStore } from '../stores'
 
 const props = withDefaults(defineProps<{
@@ -33,7 +33,7 @@ watch(() => sakuraAppStore.sidebar.isOpen, (open) => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sidebar.open {
   grid-template-columns: 250px 1fr 250px !important;
 }

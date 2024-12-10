@@ -20,8 +20,7 @@
     "vue-toastification": "2.0.0-rc.5"
   },
   "devDependencies": {
-    "@iconify-json/simple-icons": "^1.1.92",
-    "nodemon": "catalog:",
+    "@iconify-json/simple-icons": "^1.2.15",
     "typescript": "catalog:"
   }
 }

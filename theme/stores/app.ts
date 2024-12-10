@@ -1,10 +1,10 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { useTheme } from './theme'
-import { useScrollPosition } from './scrollPosition'
 import { usePagination } from './pagination'
-import { useWallpaper } from './wallpaper'
-import { useSidebar } from './sidebar'
+import { useScrollPosition } from './scrollPosition'
 import { useSearch } from './search'
+import { useSidebar } from './sidebar'
+import { useTheme } from './theme'
+import { useWallpaper } from './wallpaper'
 
 export const useSakuraAppStore = defineStore('sakura-app', () => {
   const theme = useTheme()

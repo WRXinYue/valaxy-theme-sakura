@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { onImgError } from '../utils'
 import noneImg from '../assets/image-404.png'
+import { onImgError } from '../utils'
 
 const props = withDefaults(defineProps<{
   [key: string]: any
@@ -78,7 +78,7 @@ function onError(e: Event) {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-image-card {
   .overlay {
     position: absolute;

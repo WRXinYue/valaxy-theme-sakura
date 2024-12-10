@@ -1,5 +1,5 @@
-import { useBackToTop } from 'valaxy'
 import { isClient, useCssVar, useScrollLock as useScrollLockCore } from '@vueuse/core'
+import { useBackToTop } from 'valaxy'
 import { lenisRef } from '../plugins/lenis'
 import { useThemeConfig } from '.'
 

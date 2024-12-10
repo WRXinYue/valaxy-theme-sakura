@@ -14,7 +14,7 @@
   </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-post-footer {
   border-style: none;
 }

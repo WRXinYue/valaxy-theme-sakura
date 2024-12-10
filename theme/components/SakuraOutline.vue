@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useOutline } from 'valaxy'
+import { ref } from 'vue'
 import { useActiveAnchor } from '../client'
 import { useThemeConfig } from '../composables'
 

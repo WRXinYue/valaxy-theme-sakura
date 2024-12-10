@@ -2,16 +2,15 @@
 import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
 
-const props = withDefaults(defineProps<{
+const props = defineProps<{
   icon?: string
   message?: string
-}>(), {
-  icon: 'i-fa6-solid:bullhorn',
-})
+}>()
 
 const themeConfig = useThemeConfig()
 
 const noticeMessage = computed(() => props.message || themeConfig.value.notice?.message)
+const icon = computed(() => props.icon || themeConfig.value.ui.notice?.icon)
 </script>
 
 <template>

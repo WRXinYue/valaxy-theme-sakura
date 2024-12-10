@@ -10,7 +10,7 @@ const frontmatter = useFrontmatter()
       <SakuraPageHeader :fm="frontmatter" />
     </slot>
 
-    <SakuraMultiColumns class="sakura-page-layout">
+    <SakuraMultiColumns>
       <template #left>
         <slot name="left" />
       </template>
@@ -40,7 +40,7 @@ const frontmatter = useFrontmatter()
     padding: 0 30px;
   }
 
-  &-grid-layout {
+  .sakura-triple-columns {
     @include screen('md') {
       grid-template-columns: 150px 1fr 150px;
     }

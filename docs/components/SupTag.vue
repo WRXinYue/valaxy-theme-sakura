@@ -4,7 +4,7 @@
   </sup>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sup-tag {
   color: #fff;
   border-radius: 6px;

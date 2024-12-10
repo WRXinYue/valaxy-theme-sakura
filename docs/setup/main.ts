@@ -1,5 +1,5 @@
-import { defineAppSetup } from 'valaxy'
 import type { PluginOptions } from 'vue-toastification'
+import { defineAppSetup } from 'valaxy'
 import Toast from 'vue-toastification'
 import 'vue-toastification/dist/index.css'
 

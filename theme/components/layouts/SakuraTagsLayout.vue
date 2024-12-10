@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
 import { useSiteStore, useTags } from 'valaxy'
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import { useSakuraTags } from '../../composables'
@@ -56,6 +56,7 @@ function displayTag(tag: string) {
                 </SakuraButton>
               </div>
 
+              <!-- TODO: icon -->
               <SakuraDivider icon="i-fa6-solid:water" text="文章列表" :divider="false" />
             </div>
           </slot>
@@ -73,7 +74,7 @@ function displayTag(tag: string) {
   </SakuraPage>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-tag-button {
   color: var(--sakura-tag-color) !important;
   background-color: var(--sakura-tag-bg-color);

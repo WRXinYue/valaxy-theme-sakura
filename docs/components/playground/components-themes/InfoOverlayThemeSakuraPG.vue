@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useThemeConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
+import { useThemeConfig } from 'valaxy'
 
 defineProps<{
   demo: number

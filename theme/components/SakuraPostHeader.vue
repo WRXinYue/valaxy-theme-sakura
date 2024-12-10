@@ -13,3 +13,11 @@ defineProps<{
     </div>
   </SakuraPageHeader>
 </template>
+
+<style lang="scss">
+.sakura-post-header {
+  .has-cover {
+    height: 400px;
+  }
+}
+</style>

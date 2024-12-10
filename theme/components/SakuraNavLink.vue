@@ -15,7 +15,7 @@ const { t } = useI18n()
   </AppLink>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-nav-link {
   display: flex;
   align-items: center;

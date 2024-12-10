@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { useSakuraAppStore } from '../stores'
 import { useThemeConfig } from '../composables'
+import { useSakuraAppStore } from '../stores'
 
 const props = withDefaults(defineProps<{
   position?: 'left' | 'right'
@@ -35,7 +35,7 @@ const position = ref(props.position ?? themeConfig.value.sidebarOptions.position
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-sidebar {
   position: fixed;
   z-index: 1000;

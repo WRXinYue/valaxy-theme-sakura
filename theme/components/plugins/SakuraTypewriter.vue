@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, watch } from 'vue'
 import type { Options } from 'typeit'
-import TypeIt from 'typeit'
 import { watchOnce } from '@vueuse/core'
+import TypeIt from 'typeit'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 
 const props = withDefaults(defineProps<{
   [key: string]: any

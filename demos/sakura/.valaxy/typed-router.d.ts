@@ -24,6 +24,7 @@ declare module 'vue-router/auto-routes' {
     '/anime/': RouteRecordInfo<'/anime/', '/anime', Record<never, never>, Record<never, never>>,
     '/archives/': RouteRecordInfo<'/archives/', '/archives', Record<never, never>, Record<never, never>>,
     '/categories/': RouteRecordInfo<'/categories/', '/categories', Record<never, never>, Record<never, never>>,
+    '/comment/': RouteRecordInfo<'/comment/', '/comment', Record<never, never>, Record<never, never>>,
     '/links/': RouteRecordInfo<'/links/', '/links', Record<never, never>, Record<never, never>>,
     '/notes/': RouteRecordInfo<'/notes/', '/notes', Record<never, never>, Record<never, never>>,
     '/page/[page]': RouteRecordInfo<'/page/[page]', '/page/:page', { page: ParamValue<true> }, { page: ParamValue<false> }>,
@@ -41,6 +42,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/test': RouteRecordInfo<'/posts/test', '/posts/test', Record<never, never>, Record<never, never>>,
     '/posts/test-tags': RouteRecordInfo<'/posts/test-tags', '/posts/test-tags', Record<never, never>, Record<never, never>>,
     '/posts/theme-sakura': RouteRecordInfo<'/posts/theme-sakura', '/posts/theme-sakura', Record<never, never>, Record<never, never>>,
+    '/search/': RouteRecordInfo<'/search/', '/search', Record<never, never>, Record<never, never>>,
     '/tags/': RouteRecordInfo<'/tags/', '/tags', Record<never, never>, Record<never, never>>,
   }
 }

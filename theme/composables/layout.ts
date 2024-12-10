@@ -1,5 +1,5 @@
-import { useRoute } from 'vue-router'
 import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 
 export function useLayout() {
   const route = useRoute()

@@ -10,7 +10,7 @@ defineProps<{
   </button>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .mashiro-burger-menu {
   position: relative;
   width: 30px;

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { nextTick } from 'vue'
 import type { PageData, Post } from 'valaxy'
 import { onContentUpdated, scrollTo, useSiteConfig } from 'valaxy'
+import { nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 defineProps<{

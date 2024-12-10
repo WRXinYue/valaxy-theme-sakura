@@ -19,7 +19,7 @@ const isOpen = ref(false)
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-dropdown {
   position: relative;
   display: inline-block;

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import { useFuseSearch } from 'valaxy'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { useFuseSearch } from 'valaxy'
 
 const input = ref()
 
@@ -75,7 +75,7 @@ watch(() => route.query.q as string, (query) => {
   </RouterView>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-search {
   padding-top: 4rem;
   margin-top: var(--sakura-navbar-height);
@@ -135,8 +135,8 @@ watch(() => route.query.q as string, (query) => {
       font-weight: 400;
       line-height: 50px;
       font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Source Han Serif',
-        source-han-serif-sc, 'PT Serif', 'SongTi SC', 'MicroSoft Yahei', Georgia,
-        serif;
+        source-han-serif-sc, 'PT Serif', 'SongTi SC', 'MicroSoft Yahei',
+        Georgia, serif;
 
       &:hover {
         color: var(--sakura-primary-text-color);

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useFrontmatter } from 'valaxy'
+import { ref } from 'vue'
 import { POSITION, useToast } from 'vue-toastification'
 
 const { type } = defineProps<{
@@ -11,7 +11,7 @@ const frontmatter = useFrontmatter()
 
 const elements = frontmatter.value[type]
 
-const showElements = ref(Array(elements.length).fill(false))
+const showElements = ref(Array.from({ length: elements.length }).fill(false))
 
 // function setAllElements(value: boolean) {
 //   showElements.value = Array(elements.length).fill(value)

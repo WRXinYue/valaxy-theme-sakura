@@ -5,8 +5,28 @@ export const defaultThemeConfig: ThemeUserConfig = {
     circleTransition: true,
   },
 
-  theme: {
-    primary: '#0078E7',
+  ui: {
+    primary: '#fe9500',
+
+    notice: {
+      icon: 'i-fa6-solid:bullhorn',
+    },
+    postList: {
+      icon: 'i-fa6-solid:water',
+    },
+    pinnedPost: {
+      icon: 'i-fa6-solid:anchor',
+    },
+    scrollDown: {
+      icon: 'i-fa6-solid-angle-down',
+    },
+    toggleLocaleButton: {
+      icon: 'i-ri-translate',
+    },
+    toggleDarkButton: {
+      darkIcon: 'i-ri-moon-line',
+      lightIcon: 'i-ri-sun-line',
+    },
   },
 
   navbarTitle: '',
@@ -50,7 +70,6 @@ export const defaultThemeConfig: ThemeUserConfig = {
   },
 
   postList: {
-    icon: 'i-fa6-solid:water',
     text: '文章列表',
 
     settings: {
@@ -60,8 +79,7 @@ export const defaultThemeConfig: ThemeUserConfig = {
     },
   },
 
-  postPinned: {
-    icon: 'i-fa6-solid:anchor',
+  pinnedPost: {
     text: 'START:DASH!!',
   },
 
@@ -95,13 +113,6 @@ export const defaultThemeConfig: ThemeUserConfig = {
   scrollToTop: false,
   scrollDown: {
     enable: true,
-    icon: 'i-fa6-solid-angle-down',
-  },
-
-  toggleLocaleIcon: 'i-ri-translate',
-  toggleThemeIcon: {
-    darkIcon: 'i-ri-moon-line',
-    lightIcon: 'i-ri-sun-line',
   },
 }
 
@@ -110,7 +121,7 @@ export const defaultThemeConfig: ThemeUserConfig = {
  * @param themeConfig
  */
 export function generateSafelist(themeConfig: ThemeConfig) {
-  const { navbar, sidebar, footer, toggleLocaleIcon, toggleThemeIcon, postPinned, postList } = themeConfig
+  const { navbar, sidebar, footer, ui } = themeConfig
   const footerIcon = footer?.icon?.img
 
   const safelist: string[] = []
@@ -135,28 +146,25 @@ export function generateSafelist(themeConfig: ThemeConfig) {
       safelist.push(sidebarItem.icon)
   })
 
-  if (themeConfig.scrollDown?.icon)
-    safelist.push(themeConfig.scrollDown.icon)
+  if (ui.notice?.icon)
+    safelist.push(ui.notice.icon)
 
-  if (toggleLocaleIcon)
-    safelist.push(toggleLocaleIcon)
+  if (ui.scrollDown?.icon)
+    safelist.push(ui.scrollDown.icon)
 
-  if (toggleThemeIcon?.darkIcon)
-    safelist.push(toggleThemeIcon.darkIcon)
-  if (toggleThemeIcon?.lightIcon)
-    safelist.push(toggleThemeIcon.lightIcon)
+  if (ui.toggleLocaleButton?.icon)
+    safelist.push(ui.toggleLocaleButton.icon)
 
-  if (postList?.icon)
-    safelist.push(postList.icon)
+  if (ui.toggleDarkButton?.darkIcon)
+    safelist.push(ui.toggleDarkButton.darkIcon)
+  if (ui.toggleDarkButton?.lightIcon)
+    safelist.push(ui.toggleDarkButton.lightIcon)
 
-  if (postPinned?.icon)
-    safelist.push(postPinned?.icon)
+  if (ui.postList?.icon)
+    safelist.push(ui.postList.icon)
 
-  if (themeConfig.theme?.extends) {
-    themeConfig.theme.extends.forEach(({ preset }) => {
-      safelist.push(...generateSafelist(preset as ThemeConfig))
-    })
-  }
+  if (ui.pinnedPost?.icon)
+    safelist.push(ui.pinnedPost?.icon)
 
   return safelist
 }

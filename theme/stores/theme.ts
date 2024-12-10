@@ -1,5 +1,5 @@
-import { ref } from 'vue'
 import { isClient } from '@vueuse/core'
+import { ref } from 'vue'
 
 export function useTheme() {
   const themes = ref(['sakura'])

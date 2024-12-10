@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useWindowScroll, useWindowSize } from '@vueuse/core'
-import { onMounted, ref, watch } from 'vue'
 import interact from 'interactjs'
+import { onMounted, ref, watch } from 'vue'
 import { useScroll } from '../composables'
 
 const props = withDefaults(defineProps<{
@@ -242,7 +242,7 @@ onMounted(() => setTimeout(() => init(), 0))
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-to-top {
   &-node,
   &-line {

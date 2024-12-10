@@ -17,7 +17,7 @@ withDefaults(defineProps<{
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-divider {
   padding-top: 24px;
   padding-bottom: 5px;

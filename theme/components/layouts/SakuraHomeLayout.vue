@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useComponent, useThemeConfig } from '../../composables'
+import { useThemeConfig } from '../../composables'
 
 const themeConfig = useThemeConfig()
-const { loader } = useComponent()
 </script>
 
 <template>
@@ -16,11 +15,11 @@ const { loader } = useComponent()
     </slot>
 
     <slot name="post-pinned">
-      <SakuraPinnedPost v-if="themeConfig.postPinned" />
+      <SakuraPinnedPost v-if="themeConfig.pinnedPost" />
     </slot>
 
     <slot name="post-list">
-      <component :is="loader('PostList')" />
+      <SakuraPostList />
     </slot>
 
     <slot name="pagination">
@@ -37,7 +36,7 @@ const { loader } = useComponent()
   </SakuraMultiColumns>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-home-layout {

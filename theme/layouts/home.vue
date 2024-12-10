@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { onBeforeRouteLeave, useRoute } from 'vue-router'
 import { computed, watch } from 'vue'
+import { onBeforeRouteLeave, useRoute } from 'vue-router'
 import { useSakuraAppStore } from '../stores'
 
 const route = useRoute()

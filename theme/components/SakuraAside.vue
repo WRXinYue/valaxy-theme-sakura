@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-aside {
   position: sticky;
   top: calc(var(--sakura-navbar-height) + var(--sakura-navbar-mt));

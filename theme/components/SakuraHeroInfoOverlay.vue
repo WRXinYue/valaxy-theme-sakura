@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useSiteConfig } from 'valaxy'
 import { useAddonHitokoto } from 'valaxy-addon-hitokoto'
-import { useSakuraAppStore } from '../stores'
+import { computed } from 'vue'
 import type { Hero, HeroSocialLink } from '../types/index'
 import { useThemeConfig } from '../composables'
+import { useSakuraAppStore } from '../stores'
 
 const props = withDefaults(defineProps<{
   banner?: Hero
@@ -46,32 +46,34 @@ function nextMedia() {
     </slot>
 
     <div class="sakura-info-card" :class="sakura.wallpaperIsPlaying ? 'animation-slit-out-horizontal' : 'animation-slit-in-horizontal'">
-      <slot name="muted-text">
-        <div class="sakura-social-card sakura-social-card-style-merge flex justify-center">
-          <span class="inline-block" i-fa6-solid-quote-left />
-          <span class="px-2 text-lg">
-            <template v-if="themeConfig.hero.typewriter">
-              <SakuraTypewriter v-if="!banner.enableHitokoto" :type-string="banner.motto" loop :delay="100" :pause-for="10000" :delete-all="100" />
-              <SakuraTypewriter v-else :type-string="hitokoto.hitokoto" loop :delay="100" :pause-for="10000" :delete-all="100" @all-typing-finished="fetchHitokoto()" />
-            </template>
-            <template v-else>
-              {{ banner.enableHitokoto ? hitokoto.hitokoto : banner.motto }}
-            </template>
-          </span>
-          <span class="inline-block" i-fa6-solid-quote-right />
-        </div>
-      </slot>
+      <div :class="themeConfig.hero.socialStyle === 'merge' && 'sakura-social-card'">
+        <slot name="muted-text">
+          <div class="flex justify-center" :class="themeConfig.hero.socialStyle === 'separate' && 'sakura-social-card'">
+            <span class="inline-block" i-fa6-solid-quote-left />
+            <span class="px-2 text-lg">
+              <template v-if="themeConfig.hero.typewriter">
+                <SakuraTypewriter v-if="!banner.enableHitokoto" :type-string="banner.motto" loop :delay="100" :pause-for="10000" :delete-all="100" />
+                <SakuraTypewriter v-else :type-string="hitokoto.hitokoto" loop :delay="100" :pause-for="10000" :delete-all="100" @all-typing-finished="fetchHitokoto()" />
+              </template>
+              <template v-else>
+                {{ banner.enableHitokoto ? hitokoto.hitokoto : banner.motto }}
+              </template>
+            </span>
+            <span class="inline-block" i-fa6-solid-quote-right />
+          </div>
+        </slot>
 
-      <slot v-if="themeConfig.hero.socialStyle === 'merge'" name="social">
-        <div class="mx-5 mt-4 flex justify-between">
-          <img class="sakura-icon" rotate-180 cursor-pointer src="../assets/next-b.svg" alt="Previous media" @click="prevMedia">
-          <a v-for="social in socials" :key="social?.name" :style="{ '--sakura-icon-color': social?.color }" :href="social?.link" aria-label="icon" target="_blank">
-            <div v-if="social?.icon" :class="[social.icon]" class="sakura-icon" />
-            <img v-else-if="social?.img" :src="social.img" class="sakura-icon">
-          </a>
-          <img class="sakura-icon" cursor-pointer src="../assets/next-b.svg" alt="Next media" @click="nextMedia">
-        </div>
-      </slot>
+        <slot v-if="themeConfig.hero.socialStyle === 'merge'" name="social">
+          <div class="mx-5 mt-4 flex justify-between">
+            <img class="sakura-icon" rotate-180 cursor-pointer src="../assets/next-b.svg" alt="Previous media" @click="prevMedia">
+            <a v-for="social in socials" :key="social?.name" :style="{ '--sakura-icon-color': social?.color }" :href="social?.link" aria-label="icon" target="_blank">
+              <div v-if="social?.icon" :class="[social.icon]" class="sakura-icon" />
+              <img v-else-if="social?.img" :src="social.img" class="sakura-icon">
+            </a>
+            <img class="sakura-icon" cursor-pointer src="../assets/next-b.svg" alt="Next media" @click="nextMedia">
+          </div>
+        </slot>
+      </div>
     </div>
 
     <slot v-if="themeConfig.hero.socialStyle === 'separate' || themeConfig.hero.socialStyle === 'single'" name="social">
@@ -93,7 +95,7 @@ function nextMedia() {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-hero-info-overlay {
@@ -104,7 +106,7 @@ function nextMedia() {
   align-items: center;
 
   .sakura-social-card {
-    padding: 8px 10px;
+    padding: 15px 16px;
     border-radius: 1rem;
     background: hsla(0deg, 0%, 0%, 0.3);
 
@@ -127,6 +129,21 @@ function nextMedia() {
     height: 22px;
     width: 22px;
     color: var(--sakura-icon-color);
+  }
+
+  .card-wrapper {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 20%;
+    margin-left: -15px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.5);
   }
 }
 </style>

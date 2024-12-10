@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { usePostList, useSiteConfig } from 'valaxy'
-import { useSakuraAppStore } from '../stores'
+import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
+import { useSakuraAppStore } from '../stores'
 
 const props = defineProps<{
   pageSize?: number

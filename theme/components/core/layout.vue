@@ -1,12 +1,11 @@
 <script lang="ts" setup>
 import { useLayout } from 'valaxy'
+import { useThemeConfig } from '../../composables'
 import { useSakuraAppStore } from '../../stores'
-import { useComponent, useThemeConfig } from '../../composables'
 
 const sakuraAppStore = useSakuraAppStore()
 const themeConfig = useThemeConfig()
 const layout = useLayout()
-const { loader } = useComponent()
 </script>
 
 <template>
@@ -25,7 +24,7 @@ const { loader } = useComponent()
     </slot>
 
     <slot name="navbar">
-      <component :is="loader('Navbar')" class="sakura-sidebar-offset" />
+      <SakuraNavbar class="sakura-sidebar-offset" />
     </slot>
 
     <main class="sakura-sidebar-offset sakura-main">
@@ -75,7 +74,7 @@ const { loader } = useComponent()
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // translation navbar
 .sakura-sidebar-offset {
   transform: translateX(var(--sakura-private-sidebar-offset));

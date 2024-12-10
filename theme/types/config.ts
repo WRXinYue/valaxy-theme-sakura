@@ -1,29 +1,30 @@
 import type { DefaultTheme } from 'valaxy'
-import type { Theme } from './theme'
+import type { Footer } from './footer'
 import type { Hero } from './hero'
 import type { NavItem, NavbarOptions } from './navbar'
-import type { SidebarMulti, SidebarOptions } from './sidebar'
-import type { Footer } from './footer'
-import type { PostFooter, PostList, PostPinned } from './article'
 import type { Pagination } from './pagination'
+import type { PinnedPost } from './pinned'
+import type { PostFooter, PostList } from './post'
+import type { SidebarMulti, SidebarOptions } from './sidebar'
+import type { UI } from './ui'
 
 export interface ThemeConfig extends DefaultTheme.Config {
-  theme?: Theme
+  ui: UI
   /**
    * @zh 页脚配置
    * @en Footer configuration
    */
   footer: Footer
   /**
+   * @zh 置顶文章
+   * @en Pinned articles
+   */
+  pinnedPost?: PinnedPost
+  /**
    * @zh 文章配置
    * @en Post configuration
    */
   postList?: PostList
-  /**
-   * @zh 置顶文章
-   * @en Pinned articles
-   */
-  postPinned?: PostPinned
   postFooter?: PostFooter
   /**
    * @deprecated Use hero instead
@@ -105,7 +106,6 @@ export interface ThemeConfig extends DefaultTheme.Config {
   scrollToTop: boolean | 'button' | 'cord'
   scrollDown: {
     enable: boolean
-    icon: string
   }
   /**
    * @zh 404图片
@@ -131,28 +131,6 @@ export interface ThemeConfig extends DefaultTheme.Config {
      * @default false
      */
     rainbow?: boolean | string[]
-  }
-
-  /**
-   * @zh 语言切换按钮图标
-   * @en The icon for the language switch button
-   */
-  toggleLocaleIcon?: string
-  /**
-   * @zh 主题切换按钮图标（明/暗模式）
-   * @en Icon for the light/dark mode toggle button
-   */
-  toggleThemeIcon?: {
-    /**
-     * @zh 暗模式图标
-     * @en Dark mode icon
-     */
-    darkIcon?: string
-    /**
-     * @zh 亮模式图标
-     * @en Light mode icon
-     */
-    lightIcon?: string
   }
 }
 

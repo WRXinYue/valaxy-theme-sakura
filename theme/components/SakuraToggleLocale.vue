@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import { useLocale } from 'valaxy'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useLocale } from 'valaxy'
 import { useThemeConfig } from '../composables'
 
 const props = defineProps<{
@@ -12,7 +12,7 @@ const { t, locale } = useI18n()
 const { toggleLocales } = useLocale()
 const themeConfig = useThemeConfig()
 
-const toggleLocaleIcon = computed(() => props.toggleLocaleIcon || themeConfig.value.toggleLocaleIcon)
+const toggleLocaleIcon = computed(() => props.toggleLocaleIcon || themeConfig.value.ui.toggleLocaleButton?.icon)
 </script>
 
 <template>

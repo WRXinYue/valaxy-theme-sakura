@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useAppStore } from 'valaxy'
+import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
 
 const props = defineProps<{
@@ -11,8 +11,8 @@ const props = defineProps<{
 const themeConfig = useThemeConfig()
 const appStore = useAppStore()
 
-const darkIcon = computed(() => props.darkIcon || themeConfig.value.toggleThemeIcon?.darkIcon)
-const lightIcon = computed(() => props.lightIcon || themeConfig.value.toggleThemeIcon?.lightIcon)
+const darkIcon = computed(() => props.darkIcon || themeConfig.value.ui.toggleDarkButton?.darkIcon)
+const lightIcon = computed(() => props.lightIcon || themeConfig.value.ui.toggleDarkButton?.lightIcon)
 </script>
 
 <template>

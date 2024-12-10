@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { computed, watch } from 'vue'
 import { useMounted } from '@vueuse/core'
-import { useSakuraAppStore } from '../stores'
-import { useThemeConfig } from '../composables'
+import { computed, watch } from 'vue'
 import type { Hero } from '../types/index'
+import { useThemeConfig } from '../composables'
+import { useSakuraAppStore } from '../stores'
 
 const props = defineProps<{
   hero?: Hero
@@ -77,6 +77,10 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
   align-items: center;
   width: 100%;
   height: 100vh;
+
+  .sakura-glitch-text {
+    font-family: Ubuntu, sans-serif;
+  }
 
   .banner-style::before {
     content: '';

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n'
 import { useFrontmatter } from 'valaxy'
+import { useI18n } from 'vue-i18n'
 
 const { viewScroll = false } = defineProps<{
   viewScroll?: boolean
@@ -20,7 +20,7 @@ const { t } = useI18n()
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .toc-btn {
   color: var(--sakura-primary-color);
   background-color: white;

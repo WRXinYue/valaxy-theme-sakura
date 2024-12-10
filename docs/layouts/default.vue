@@ -37,7 +37,7 @@ const isHome = useLayout('home')
   </SakuraMultiColumns>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-post-grid-layout {

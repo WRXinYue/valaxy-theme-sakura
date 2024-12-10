@@ -16,7 +16,7 @@ const props = defineProps<{
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 @mixin glitch-common {

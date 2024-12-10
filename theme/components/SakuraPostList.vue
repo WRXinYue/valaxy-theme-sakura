@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import type { Post } from 'valaxy'
+import { computed } from 'vue'
 import { usePostList, useThemeConfig } from '../composables'
 
 const props = defineProps<{
@@ -12,7 +12,7 @@ const props = defineProps<{
 const themeConfig = useThemeConfig()
 const postsList = usePostList()
 
-const icon = computed(() => props.icon ?? themeConfig.value.postList?.icon)
+const icon = computed(() => props.icon ?? themeConfig.value.ui.postList?.icon)
 const text = computed(() => props.text ?? themeConfig.value.postList?.text)
 const posts = computed(() => props.posts || postsList.value)
 </script>

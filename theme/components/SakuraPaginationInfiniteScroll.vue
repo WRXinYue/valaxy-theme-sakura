@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { usePostList, useSiteConfig } from 'valaxy'
-import { useSakuraAppStore } from '../stores'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useThemeConfig } from '../composables'
+import { useSakuraAppStore } from '../stores'
 
 const siteConfig = useSiteConfig()
 const sakura = useSakuraAppStore()
@@ -94,7 +94,7 @@ onUnmounted(() => {
   </nav>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-pagination-scroll {
   color: var(--sakura-text-muted-color);
 }

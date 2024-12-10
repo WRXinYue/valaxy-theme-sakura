@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { computed, ref, watch } from 'vue'
 import type { Post } from 'valaxy'
 import { formatDate, sortByDate } from 'valaxy'
+import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{
@@ -130,7 +130,7 @@ function handleMouseEnter(year: number, month: number) {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .timeline-move,
 .timeline-enter-active,
 .timeline-leave-active {

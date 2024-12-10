@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
 import type { Post } from 'valaxy'
+import { computed } from 'vue'
 
 const props = defineProps<{
   categories: Post['categories']

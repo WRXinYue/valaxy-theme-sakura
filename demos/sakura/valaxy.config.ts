@@ -1,9 +1,9 @@
-import { defineValaxyConfig } from 'valaxy'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
+import { defineValaxyConfig } from 'valaxy'
+import { addonBangumi } from 'valaxy-addon-bangumi'
+import { addonLive2d } from 'valaxy-addon-live2d'
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
-import { addonLive2d } from 'valaxy-addon-live2d'
-import { addonBangumi } from 'valaxy-addon-bangumi'
 import pkg from 'valaxy-theme-sakura/package.json'
 
 export default defineValaxyConfig<ThemeUserConfig>({
@@ -11,8 +11,15 @@ export default defineValaxyConfig<ThemeUserConfig>({
   devtools: true,
 
   themeConfig: {
+    ui: {
+      toggleDarkButton: {
+        lightIcon: 'i-line-md-moon-alt-to-sunny-outline-loop-transition',
+        darkIcon: 'i-line-md-sunny-outline-to-moon-loop-transition',
+      },
+    },
+
     hero: {
-      title: 'Hello, sakura',
+      title: 'HI, SAKURA!',
       motto: 'You got to put the past behind you before you can move on.',
       urls: [
         // Source: https://www.pixiv.net/artworks/72203573
@@ -20,6 +27,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
         'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper/yae-miko-sunset-sakura-genshin-impact-moewalls-com.mp4',
       ],
       // playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/PV/563098369-1-208.mp4',
+      // playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/The Pet Girl of Sakurasou.mp4',
       playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/PV/Original PV Little love song MONGOL 800 cover by Amatsuki.mp4',
       style: 'filter-dot',
 
@@ -32,7 +40,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
       message: '<b>这是一个公告信息, 主题开源地址请见: <a href="https://github.com/WRXinYue/valaxy-theme-sakura">https://github.com/WRXinYue/valaxy-theme-sakura</a></br>',
     },
 
-    postPinned: {
+    pinnedPost: {
       entries: [
         {
           title: 'Valaxy Theme Sakura',
@@ -54,6 +62,22 @@ export default defineValaxyConfig<ThemeUserConfig>({
       ],
     },
 
+    pagination: {
+      animation: true,
+      infiniteScrollOptions: {
+        preload: true,
+      },
+    },
+
+    postList: {
+      settings: {
+        card: {
+          // defaultImage: ['https://www.dmoe.cc/random.php', 'https://www.loliapi.com/acg/pc/'],
+          defaultImage: 'https://www.dmoe.cc/random.php',
+        },
+      },
+    },
+
     postFooter: {
       navigationMerge: true,
     },
@@ -62,7 +86,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
     navbar: [
       {
-        icon: 'i-line-md-home-md-twotone',
+        icon: 'i-fa-fort-awesome',
         locale: 'menu.home',
         link: '/',
         animated: 'animation-hvr-grow',
@@ -74,20 +98,15 @@ export default defineValaxyConfig<ThemeUserConfig>({
         animated: 'animation-hvr-grow',
       },
       {
-        icon: 'i-line-md-folder-plus-twotone',
+        icon: 'i-fa-archive',
         locale: 'menu.archives',
         link: '/archives',
         animated: 'animation-hvr-grow',
       },
       {
-        icon: 'i-line-md-hash-small',
-        locale: 'menu.tags',
-        link: '/tags',
-        animated: 'animation-hvr-grow',
-      },
-      {
-        icon: 'i-line-md-hash-small',
-        locale: 'menu.anime',
+        icon: 'i-fa-film',
+        text: '番剧',
+        // locale: 'menu.anime',
         link: '/anime',
         animated: 'animation-hvr-grow',
       },
@@ -99,8 +118,14 @@ export default defineValaxyConfig<ThemeUserConfig>({
         animated: 'animation-hvr-icon-bounce',
       },
       {
+        icon: 'i-fa-edit',
+        text: '留言板',
+        link: '/comment',
+        animated: 'animation-hvr-grow',
+      },
+      {
         text: '友情链接',
-        icon: 'i-line-md-link',
+        icon: 'i-fa-chain',
         link: '/links',
         animated: 'animation-hvr-icon-buzz-out',
         items: [
@@ -122,8 +147,22 @@ export default defineValaxyConfig<ThemeUserConfig>({
         ],
       },
       {
+        text: '赞赏',
+        icon: 'i-fa-heart',
+        link: pkg.author.url,
+        target: '_blank',
+        animated: 'animation-hvr-icon-bounce',
+      },
+      {
+        text: '关于',
+        icon: 'i-fa-leaf',
+        link: pkg.author.url,
+        target: '_blank',
+        animated: 'animation-hvr-icon-bounce',
+      },
+      {
         text: 'RSS',
-        icon: 'i-line-md-rss',
+        icon: 'i-fa-feed',
         link: '/atom.xml',
         target: '_blank',
         animated: 'animation-hvr-icon-up',
@@ -131,6 +170,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
     ],
     navbarOptions: {
       title: ['さくら', 'の', '夢'],
+      subTitle: '这是一个副标题',
       // invert: true,
       autoHide: true,
     },
@@ -209,11 +249,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
         url: 'https://wrxinyue.org',
         title: 'WRXinYue',
       },
-    },
-
-    toggleThemeIcon: {
-      lightIcon: 'i-line-md-moon-alt-to-sunny-outline-loop-transition',
-      darkIcon: 'i-line-md-sunny-outline-to-moon-loop-transition',
     },
   },
 

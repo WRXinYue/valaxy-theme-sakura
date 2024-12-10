@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { capitalize, computed } from 'vue'
 import type { Pkg } from 'valaxy'
 import { useValaxyConfig } from 'valaxy'
-import { useI18n } from 'vue-i18n'
 import valaxyPkg from 'valaxy/package.json'
+import { capitalize, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import sakuraPkg from '../package.json'
 
 const props = defineProps<{

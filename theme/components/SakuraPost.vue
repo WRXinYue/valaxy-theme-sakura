@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
-import { formatDate, useFrontmatter, useFullUrl, useSiteConfig } from 'valaxy'
 import type { Article } from '@unhead/schema-org'
 import { defineArticle, useSchemaOrg } from '@unhead/schema-org'
+import { formatDate, useFrontmatter, useFullUrl, useSiteConfig } from 'valaxy'
+import { computed } from 'vue'
 
 const siteConfig = useSiteConfig()
 const frontmatter = useFrontmatter()
@@ -70,10 +70,22 @@ useSchemaOrg(
 </template>
 
 <style lang="scss">
+@use 'valaxy/client/styles/mixins/index.scss' as *;
+
 .sakura-post {
   .content {
     max-width: 800px;
     padding: 0 10px;
+  }
+
+  .sakura-triple-columns {
+    @include screen('md') {
+      grid-template-columns: 150px minmax(0, 800px) 150px !important;
+    }
+
+    @include screen('lg') {
+      grid-template-columns: 250px minmax(0, 800px) 250px !important;
+    }
   }
 }
 </style>

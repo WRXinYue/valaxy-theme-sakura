@@ -20,7 +20,7 @@ defineProps<{
   </ul>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-sidebar-link-items {
   .sakura-sidebar-link-item {
     padding: 6px 15px;

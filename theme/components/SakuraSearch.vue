@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import { useFuseSearch } from 'valaxy'
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useFuseSearch } from 'valaxy'
 import { useScrollLock } from '../composables'
 
 const props = defineProps<{
@@ -9,20 +9,20 @@ const props = defineProps<{
 }>()
 const emit = defineEmits(['close'])
 
-const input = ref()
+const input = ref('')
 
 const isLocked = useScrollLock()
-const { results } = useFuseSearch(input)
 const { t } = useI18n()
+const { results, fetchFuseListData } = useFuseSearch(input)
 
 const searchContainer = ref<HTMLElement>()
 const searchInputRef = ref<HTMLInputElement>()
 
-watch(() => props.open, async () => {
-  if (!props.open)
-    return
-
-  searchInputRef.value?.focus()
+watch(() => props.open, () => {
+  if (props.open) {
+    fetchFuseListData()
+    searchInputRef.value?.focus()
+  }
 })
 </script>
 

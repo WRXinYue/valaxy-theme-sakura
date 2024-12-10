@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { computed, ref, watch } from 'vue'
 import type { Post } from 'valaxy'
 import { formatDate, sortByDate } from 'valaxy'
+import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{
@@ -81,7 +81,7 @@ const sortedYears = computed(() => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .post-collapse {
   .collection-title {
     border-bottom: 2px solid rgba(var(--va-c-primary-rgb), 0.6);

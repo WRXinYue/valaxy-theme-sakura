@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { computed, onMounted, ref, watch } from 'vue'
+import { useThemeConfig } from '../composables'
+import { useSakuraAppStore } from '../stores'
 import { isVideoUrl } from '../utils'
 import { getLocalStorageItem, setLocalStorageItem } from '../utils/storage'
-import { useSakuraAppStore } from '../stores'
-import { useThemeConfig } from '../composables'
 
 const props = withDefaults(defineProps<{
   urls?: string[] | string

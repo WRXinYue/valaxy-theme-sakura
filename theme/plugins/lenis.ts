@@ -1,5 +1,5 @@
-import { ref } from 'vue'
 import Lenis from 'lenis'
+import { ref } from 'vue'
 
 export const lenisRef = ref<Lenis>()
 

@@ -5,24 +5,25 @@ $common: (
   'primary-color': var(--va-c-primary),
   'primary-text-color': var(--sakura-primary-color),
   // --------------- Navbar ---------------
-  'navbar-height': 55px,
+  'navbar-height': 75px,
+  'navbar-text-color:': var(--sakura-text-deep-color),
   'navbar-marker-height': 2px,
   'navbar-marker-color': var(--sakura-primary-color),
   'navbar-mt': 20px,
   'navbar-spacing': calc(var(--sakura-navbar-height) + 20px),
+  'navbar-shadow': 0 1px 40px -8px rgba(0, 0, 0, 0.5),
   // --------------- Footer ---------------
   'footer-height': 140px,
   // --------------- PostCard ---------------
-  'post-card-height': 230px,
+  'post-card-height': 300px,
   'post-card-bg-color': var(--sakura-bg-color),
   'post-card-img-width': 55%,
   'post-card-rd': var(--sakura-border-radius),
   'post-card-font-size': 1.17em,
-  'post-card-date-ml': 18px,
-  'post-card-content-px': 30px,
+  'post-card-content-px': 39px,
   'post-card-content-py': 20px,
   // --------------- PostNavigation ---------------
-  'post-nav-height': 12.5rem,
+  'post-nav-height': 150px,
   // --------------- Aside ---------------
   'aside-width': var(--va-sidebar-width),
   // --------------- Sidebar ---------------
@@ -31,8 +32,8 @@ $common: (
   'sidebar-bg-color': var(--sakura-bg-color),
   'sidebar-offset': var(--sakura-sidebar-width),
   // --------------- Glitch Text ---------------
-  'glitch-before-text-color': var(--va-c-primary-lighter),
-  'glitch-after-text-color': var(--va-c-primary-dark),
+  'glitch-before-text-color': #ff3f1a,
+  'glitch-after-text-color': #00a7e0,
   // --------------- Other ---------------
   'bg-color': var(--va-c-bg),
   'bg-mute-color': var(--va-bg-mute-color),
@@ -43,8 +44,7 @@ $common: (
   'border-radius-large': 15px,
   'border-radius-small': 5px,
   // border-radius or rounded corners
-  'comment-bg-url': url('../assets/comment-bg.png'),
-  // 'sakura-post-card'
+  'comment-bg-url': url('../assets/comment-bg.png') // 'sakura-post-card'
 ) !default;
 $common: map.merge((), $common);
 
@@ -52,9 +52,9 @@ $light: (
   // --------------- Navbar ---------------
   'navbar-bg-color': #fff,
   // --------------- Text ---------------
-  'text-color': #504e4e,
+  'text-color': #797979,
   'text-muted-color': hsl(0deg, 0%, 45.1%),
-  'text-deep-color': #504e4e,
+  'text-deep-color': #404040,
   'text-deeper-color': #303030,
   'border-color': #d0d7de,
   'border-surface-color': #e2e8f0,

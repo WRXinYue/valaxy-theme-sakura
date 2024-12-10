@@ -1,11 +1,11 @@
-import { computed, onMounted, ref, watchEffect } from 'vue'
-import { useSiteConfig } from 'valaxy'
 import { useEventListener } from '@vueuse/core'
+import { useSiteConfig } from 'valaxy'
+import { computed, onMounted, ref, watchEffect } from 'vue'
+import { loadAlgolia } from '../plugins/algolia'
 // import type { UseFuseOptions } from '@vueuse/integrations/useFuse'
 // import { useFuse } from '@vueuse/integrations/useFuse'
 // import type { FuseListItem } from 'valaxy/types'
 import { useSakuraAppStore } from '../stores'
-import { loadAlgolia } from '../plugins/algolia'
 
 export function useSearchHotKey(togglePopup: () => void) {
   function handleSearchHotKey(event: KeyboardEvent) {

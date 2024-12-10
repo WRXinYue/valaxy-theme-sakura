@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useLinkData, useThemeConfig } from '../composables'
 import type { LinkItem } from '../types'
+import { useLinkData, useThemeConfig } from '../composables'
 
 const props = defineProps<{
   links: string | LinkItem[]

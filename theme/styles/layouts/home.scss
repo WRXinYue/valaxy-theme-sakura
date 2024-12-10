@@ -1,21 +1,36 @@
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-home-layout {
-  @include screen('md') {
-    padding: 0 20px;
-  }
+  // @include screen('md') {
+  //   padding: 0 20px;
+  // }
 
-  @include screen('lg') {
+  // @include screen('lg') {
+  //   padding: 0 40px;
+  // }
+
+  // @include screen('xl') {
+  //   padding: 0 60px;
+  // }
+
+  @include screen('md') {
     padding: 0 40px;
   }
 
+  @include screen('lg') {
+    padding: 0 110px;
+  }
+
   @include screen('xl') {
-    padding: 0 60px;
+    padding: 0;
   }
 
   &.sakura-triple-columns {
+    // @include screen('md') {
+    //   grid-template-columns: 1fr;
+    // }
     @include screen('md') {
-      grid-template-columns: 1fr;
+      grid-template-columns: 0 1fr 0;
     }
 
     @include screen('lg') {

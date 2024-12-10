@@ -45,7 +45,7 @@ function cancelHideDropdown() {
   </SakuraDropdown>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-navbar-link-item {
   display: flex;
   justify-content: center;

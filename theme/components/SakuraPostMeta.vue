@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { useSiteConfig } from 'valaxy'
 import type { PostFrontMatter } from 'valaxy'
-import { useI18n } from 'vue-i18n'
+import { useSiteConfig } from 'valaxy'
 import { useAddonVercount } from 'valaxy-addon-vercount'
+import { useI18n } from 'vue-i18n'
 
 defineProps<{
   fm: PostFrontMatter
@@ -16,7 +16,7 @@ const siteConfig = useSiteConfig()
 </script>
 
 <template>
-  <div flex="~ <md:col" justify="center" items="center" py="1" :class="{ 'text-$sakura-text-muted-color': !fm.cover }">
+  <div class="sakura-post-meta" flex="~ <md:col" justify="center" items="center" py="1" :class="{ 'text-$sakura-text-muted-color': !fm.cover }">
     <div class="post-time flex items-center">
       <span class="inline-flex-center">
         <SakuraImageCard to="/about" class="mr-3px h-30px w-30px rounded-full" :src="siteConfig.author.avatar" alt="author image" />

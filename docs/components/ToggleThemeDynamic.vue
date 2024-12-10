@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
-import { useAppStore, useThemeConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
+import { useAppStore, useThemeConfig } from 'valaxy'
+import { computed } from 'vue'
 
 const props = defineProps<{
   darkIcon?: string

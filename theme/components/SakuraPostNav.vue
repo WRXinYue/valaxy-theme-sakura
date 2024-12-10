@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { usePrevNext } from 'valaxy'
+import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
 import type { SakuraImageCardProps } from './SakuraImageCard.vue'
 
@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<{
 const themeConfig = useThemeConfig()
 const [prev, next] = usePrevNext()
 
-const navigationMerge = computed(() => themeConfig.value.article?.navigationMerge || false)
+const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationMerge || false)
 </script>
 
 <template>
@@ -56,7 +56,7 @@ const navigationMerge = computed(() => themeConfig.value.article?.navigationMerg
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-post-nav {
   width: 100%;
 
@@ -67,6 +67,10 @@ const navigationMerge = computed(() => themeConfig.value.article?.navigationMerg
     height: 100%;
     margin-left: 2.5rem;
     margin-right: 2.5rem;
+  }
+
+  &-content > * {
+    z-index: 2;
   }
 
   &-label {
@@ -85,6 +89,22 @@ const navigationMerge = computed(() => themeConfig.value.article?.navigationMerg
   .sakura-image-card {
     height: var(--sakura-post-nav-height);
     width: 100%;
+    border-radius: 0;
+
+    &::before {
+      content: '';
+      transition: opacity 0.3s ease-in-out;
+      background-color: #000;
+      opacity: 0.6;
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    &:hover::before {
+      opacity: 0.4;
+    }
   }
 }
 </style>

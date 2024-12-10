@@ -13,10 +13,7 @@
   },
   "dependencies": {
     "ribbon.js": "^1.0.2",
-    "valaxy": "^0.19.12",
+    "valaxy": "^0.19.13",
     "valaxy-theme-sakura": "0.6.8-alpha.4"
-  },
-  "devDependencies": {
-    "typescript": "catalog:"
   }
 }

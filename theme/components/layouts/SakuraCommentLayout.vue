@@ -4,7 +4,7 @@
       <RouterView v-slot="{ Component }">
         <component :is="Component">
           <template #main-content-after>
-            <MashiroVerse />
+            <SakuraVerse />
           </template>
         </component>
       </RouterView>

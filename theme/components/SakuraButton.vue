@@ -12,7 +12,7 @@ withDefaults(defineProps<{
   </button>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-button {
   border-width: 1px;
   padding: 2px 20px;

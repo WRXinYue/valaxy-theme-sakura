@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useSakuraAppStore } from '../stores'
-import playIconUrl from '../assets/icon/play@32x32.png'
 import pauseIconUrl from '../assets/icon/pause@32x32.png'
+import playIconUrl from '../assets/icon/play@32x32.png'
+import { useSakuraAppStore } from '../stores'
 
 const appStore = useSakuraAppStore()
 

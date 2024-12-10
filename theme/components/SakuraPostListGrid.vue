@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import type { Post } from 'valaxy'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { computed } from 'vue'
-import type { Post } from 'valaxy'
 
 const props = defineProps<{
   posts: Post[]

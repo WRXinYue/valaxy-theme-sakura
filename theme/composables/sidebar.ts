@@ -1,4 +1,5 @@
 import { isClient } from '@vueuse/core'
+
 import {
   type ComputedRef,
   type Ref,
@@ -12,7 +13,6 @@ import {
 } from 'vue'
 
 import { useRoute } from 'vue-router'
-
 import type { SidebarItem } from '../types'
 
 export interface SidebarControl {

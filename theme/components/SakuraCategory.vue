@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { computed, onMounted, ref } from 'vue'
 import type { CategoryList, Post } from 'valaxy'
 import { isCategoryList, useInvisibleElement } from 'valaxy'
+import { computed, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 

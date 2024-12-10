@@ -1,6 +1,6 @@
 import type { Ref } from 'vue'
-import { onMounted, onUnmounted, onUpdated } from 'vue'
 import { throttleAndDebounce } from 'valaxy'
+import { onMounted, onUnmounted, onUpdated } from 'vue'
 import { useAside } from './aside'
 
 // magic number to avoid repeated retrieval
@@ -39,13 +39,11 @@ export function useActiveAnchor(
       container.value.querySelectorAll('.outline-link'),
     ) as HTMLAnchorElement[]
 
-    const anchors = [].slice
-      .call(document.querySelectorAll('.content .header-anchor'))
-      .filter((anchor: HTMLAnchorElement) => {
-        return links.some((link) => {
-          return link.hash === anchor.hash && anchor.offsetParent !== null
-        })
-      }) as HTMLAnchorElement[]
+    const anchors = [].slice.call(document.querySelectorAll('.content .header-anchor')).filter((anchor: HTMLAnchorElement) => {
+      return links.some((link) => {
+        return link.hash === anchor.hash && anchor.offsetParent !== null
+      })
+    }) as HTMLAnchorElement[]
 
     const scrollY = window.scrollY
     const innerHeight = window.innerHeight

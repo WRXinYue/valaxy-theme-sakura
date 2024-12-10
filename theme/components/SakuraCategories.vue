@@ -34,7 +34,7 @@ const categoryList = computed(() => {
   </ul>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-sidebar-item {
   a {
     color: var(--va-c-text-lighter);

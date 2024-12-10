@@ -20,7 +20,7 @@ const themeConfig = useThemeConfig()
   </template>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-count {
   color: var(--va-c-text);
   font-family: var(--va-font-sans);

@@ -1,5 +1,5 @@
-import { ref, watch } from 'vue'
 import { isClient } from '@vueuse/core'
+import { ref, watch } from 'vue'
 
 export function fetchData<T>(source: string | T[]) {
   const data = ref<T[]>()

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { onMounted, watch } from 'vue'
 import { useCssVar } from '@vueuse/core'
 import { useAppStore } from 'valaxy'
+import { onMounted, watch } from 'vue'
 
 const props = withDefaults(defineProps<{
   color?: string

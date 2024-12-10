@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { useRoute } from 'vue-router'
 import type { NavItem } from '../types/index'
 import { useLayout, useThemeConfig } from '../composables'
 
@@ -70,7 +70,7 @@ onMounted(() => {
   </nav>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-navbar-link {

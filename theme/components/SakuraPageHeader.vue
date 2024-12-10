@@ -11,7 +11,7 @@ defineProps<{
     <SakuraImageCard v-if="fm.cover" :src="fm.cover" class="w-full" />
     <div class="sakura-header-container">
       <slot name="title">
-        <div class="sakura-header-title">
+        <div class="sakura-header-title" :class="!fm.cover && 'sakura-braced-text flex-center'">
           <div v-if="fm.icon" class="icon" m="r-1" inline-flex align-top :class="fm.icon" />
           <span>{{ fm.title }}</span>
           <span v-if="fm.subTitle"> · {{ fm.subTitle }}</span>
@@ -22,7 +22,7 @@ defineProps<{
   </header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-page-header {
   margin-top: var(--sakura-navbar-height);
   display: flex;
@@ -32,7 +32,7 @@ defineProps<{
 
   &:not(.has-cover) {
     margin-top: var(--sakura-navbar-spacing);
-    height: 200px;
+    height: 150px;
 
     .sakura-header-title {
       color: var(--sakura-text-deep-color);

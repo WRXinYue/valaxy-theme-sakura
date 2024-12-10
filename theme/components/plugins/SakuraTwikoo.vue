@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import { isEmptyAddon } from 'valaxy'
 import * as addonTwikoo from 'valaxy-addon-twikoo'
 import 'valaxy-addon-twikoo/client/styles/index.scss'
-import { isEmptyAddon } from 'valaxy'
 
 if (isEmptyAddon(addonTwikoo))
   throw new Error('Please install valaxy-addon-twikoo')
@@ -15,7 +15,7 @@ addonTwikoo.useTwikooWithOptions()
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 /* stylelint-disable selector-class-pattern */
 
 .sakura-twikoo {

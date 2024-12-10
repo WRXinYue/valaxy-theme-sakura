@@ -48,6 +48,7 @@ export interface NavbarOptions {
    * @en The title of the navbar, can be a string or an array of strings
    */
   title: string | string[]
+  subTitle: string
   /**
    * @zh 是否反转导航栏
    * @en Whether to invert the navbar
@@ -89,5 +90,5 @@ export interface NavbarOptions {
    * @en Tool buttons to include in the navbar, like search or settings
    * @default ['toggleDark', 'search']
    */
-  tools: ('toggleLocale' | 'toggleDark' | 'toggleTheme' | 'search')[]
+  tools: ('toggleLocale' | 'toggleDark' | 'search')[]
 }

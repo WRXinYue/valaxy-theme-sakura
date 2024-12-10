@@ -9,7 +9,7 @@ const props = defineProps<{
 const themeConfig = useThemeConfig()
 const { toDown } = useScroll()
 
-const icon = computed(() => props.icon || themeConfig.value.scrollDown.icon)
+const icon = computed(() => props.icon || themeConfig.value.ui.scrollDown.icon)
 </script>
 
 <template>
@@ -18,11 +18,13 @@ const icon = computed(() => props.icon || themeConfig.value.scrollDown.icon)
   </button>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-scroll-down {
+  transform: scale(1.5, 1);
+
   &-icon {
     color: var(--sakura-bg-color);
-    font-size: 28px;
+    font-size: 19px;
     cursor: pointer;
   }
 }

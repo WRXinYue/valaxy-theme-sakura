@@ -1,7 +1,7 @@
-import { defineValaxyConfig } from 'valaxy'
 import type { ThemeConfig } from 'valaxy-theme-sakura'
-import { addonWaline } from 'valaxy-addon-waline'
+import { defineValaxyConfig } from 'valaxy'
 import { addonGitLog } from 'valaxy-addon-git-log'
+import { addonWaline } from 'valaxy-addon-waline'
 import tsdocPlugin from 'vite-plugin-tsdoc'
 
 export default defineValaxyConfig<ThemeConfig>({

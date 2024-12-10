@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
 import { useWindowScroll } from '@vueuse/core'
+import { computed, ref } from 'vue'
+import type { NavItem, NavbarOptions } from '../types/index'
 import { useLayout, useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores'
-import type { NavItem, NavbarOptions } from '../types/index'
 
 const props = defineProps<{
   navbar?: NavItem[]
@@ -65,7 +65,6 @@ const isHeaderHighlighted = computed(() => {
       <div h-full print:op0 flex="~ center" class="sakura-navbar-tools">
         <SakuraToggleDark v-if="navbarOptions.tools.includes('toggleDark')" />
         <SakuraToggleLocale v-if="navbarOptions.tools.includes('toggleLocale')" />
-        <SakuraToggleTheme v-if="navbarOptions.tools.includes('toggleTheme')" />
         <SakuraSearchTrigger v-if="navbarOptions.tools.includes('search')" />
         <div v-if="themeConfig.sidebarOptions?.position === 'right'" i-ri-menu-4-fill @click="sakuraAppStore.sidebar.toggle" />
         <slot name="tool-ext" />
@@ -90,6 +89,10 @@ const isHeaderHighlighted = computed(() => {
 
   &.active-header {
     background: var(--sakura-navbar-bg-color);
+
+    &.has-scrolled {
+      box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
+    }
   }
 
   &-tools {
@@ -98,10 +101,34 @@ const isHeaderHighlighted = computed(() => {
     }
   }
 
+  .sakura-logo-link span:first-child {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .sakura-nav-link-icon {
+    height: 1em;
+    width: 1em;
+    margin-right: 0.2rem;
+  }
+
+  .sakura-navbar-link-item {
+    a {
+      font-size: 15px;
+      color: var(--sakura-text-muted-color);
+    }
+  }
+
   // &:not(&.active-header) {
   //   .sakura-nav-link {
   //     display: none;
   //   }
   // }
+}
+
+// TODO:
+.has-home-layout .sakura-navbar {
+  &.active-header {
+    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
+  }
 }
 </style>

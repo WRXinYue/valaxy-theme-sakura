@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { computed, defineAsyncComponent, onMounted, ref } from 'vue'
 import { useRuntimeConfig } from 'valaxy'
+import { computed, defineAsyncComponent, onMounted, ref } from 'vue'
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -47,7 +47,7 @@ const SakuraTwikoo = hasTwikoo.value
   </SakuraCard>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-comment {
   h1 {
     font-size: 2rem;

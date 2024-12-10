@@ -12,7 +12,7 @@ const siteConfig = useSiteConfig()
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .links-of-author {
   display: flex;
   flex-wrap: wrap;

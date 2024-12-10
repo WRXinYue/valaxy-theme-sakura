@@ -57,7 +57,7 @@ const props = defineProps(['class'])
   </template>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-triple-columns {
   grid-template-columns: 0 1fr 0;
   display: grid;

@@ -24,12 +24,16 @@ defineProps<{
           <slot name="meta-extend" />
         </slot>
       </div>
-      <slot name="content-extend" />
+      <slot name="content-extend">
+        <div class="mashiro-dots-container absolute!">
+          <SakuraDots />
+        </div>
+      </slot>
     </div>
   </article>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-post-card {
@@ -44,6 +48,10 @@ defineProps<{
   box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease;
   min-height: var(--sakura-post-card-height);
+
+  @include screen('md') {
+    box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5) !important;
+  }
 
   &:hover {
     box-shadow: 0 5px 10px 5px rgb(0, 0, 0, 0.2);
@@ -102,26 +110,38 @@ defineProps<{
     }
   }
 
-  .sakura-post-date {
-    position: relative;
-    margin-left: var(--sakura-post-card-date-ml);
-
-    .sakura-icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%)
-        translateX(calc(-1 * var(--sakura-post-card-date-ml)));
-    }
-  }
-
   .sakura-image-card {
     height: var(--sakura-post-card-height);
     width: var(--sakura-post-card-img-width);
-    border-radius: 0.75rem;
 
     @include mobile {
       width: 100%;
     }
+  }
+
+  .mashiro-dots-container {
+    bottom: var(--sakura-post-card-content-px);
+  }
+
+  &.flex-row-reverse {
+    .mashiro-dots-container {
+      left: var(--sakura-post-card-content-px);
+    }
+  }
+
+  &:not(.flex-row-reverse) {
+    .mashiro-dots-container {
+      right: var(--sakura-post-card-content-px);
+    }
+  }
+
+  .sakura-post-card-title {
+    padding: 10px 0;
+  }
+
+  .sakura-post-card-meta {
+    order: 2;
+    padding-bottom: 10px;
   }
 }
 </style>

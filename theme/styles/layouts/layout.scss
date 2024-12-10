@@ -8,6 +8,14 @@ html {
   color: var(--sakura-text-color);
 }
 
+body {
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sakura-primary-color);
+}
+
 a {
   color: var(--sakura-link-color);
 }

@@ -5,6 +5,7 @@ defineProps<{
   favicon?: boolean
   title?: string | string[]
   hamburger?: boolean
+  subtitle?: string
 }>()
 
 const siteConfig = useSiteConfig()
@@ -16,21 +17,26 @@ const siteConfig = useSiteConfig()
       <img class="h-40px w-40px" alt="logo" :src="siteConfig.favicon">
     </template>
     <template v-if="title">
-      <RouterLink class="sakura-logo-link" to="/" :aria-label="siteConfig.title">
-        <template v-if="typeof title === 'string'">
-          <span mr-1>{{ title }}</span>
-        </template>
-        <template v-else>
-          <span mr-1>{{ title![0] }}</span>
-          <span inline-block>{{ title![1] }}</span>
-          <span>{{ title![2] }}</span>
-        </template>
-      </RouterLink>
+      <ruby class="sakura-navbar-title">
+        <RouterLink class="sakura-logo-link" to="/" :aria-label="siteConfig.title">
+          <template v-if="typeof title === 'string'">
+            <span mr-1>{{ title }}</span>
+          </template>
+          <template v-else>
+            <span mr-1>{{ title![0] }}</span>
+            <span inline-block>{{ title![1] }}</span>
+            <span>{{ title![2] }}</span>
+          </template>
+        </RouterLink>
+        <rt v-if="subtitle" class="sakura-navbar-subtitle">
+          {{ subtitle }}
+        </rt>
+      </ruby>
     </template>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-navbar-brand {
@@ -41,6 +47,7 @@ const siteConfig = useSiteConfig()
 
   .sakura-logo-link {
     color: var(--sakura-navbar-text-color);
+    font-family: Moe-Mashiro, sans-serif;
     font-size: 24px;
     font-weight: 600;
 
@@ -67,6 +74,32 @@ const siteConfig = useSiteConfig()
 
       span:not(:first-child) {
         color: var(--sakura-navbar-bg-hover-color);
+      }
+    }
+  }
+
+  .sakura-navbar-title {
+    position: absolute;
+    ruby-position: under;
+
+    rt {
+      position: absolute;
+      width: 100%;
+      font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
+        'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+      font-size: 10px;
+      text-align: justify;
+      text-align-last: justify;
+      transform: translateY(-8px);
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: 0.5s, 0.5s;
+    }
+
+    &:hover {
+      rt {
+        color: orange;
+        opacity: 1;
       }
     }
   }

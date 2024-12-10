@@ -4,7 +4,7 @@
   </SupTag>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .experimental {
   background: #ffc517;
 }

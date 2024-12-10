@@ -1,5 +1,5 @@
-import { ref, watch } from 'vue'
 import { isClient } from '@vueuse/core'
+import { ref, watch } from 'vue'
 import type { LinkType } from '../types'
 
 /**

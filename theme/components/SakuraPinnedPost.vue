@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
+import type { PinnedPost } from '../types'
 import { useNavigate, useThemeConfig } from '../composables'
-import type { PostPinned } from '../types'
 
-const props = defineProps<Partial<PostPinned>>()
+const props = defineProps<Partial<PinnedPost & { icon: string }>>()
 
 const themeConfig = useThemeConfig()
 const navigate = useNavigate()
 
-const icon = computed(() => props.icon ?? themeConfig.value.articlePinned?.icon)
-const text = computed(() => props.text ?? themeConfig.value.articlePinned?.text)
-const entries = computed(() => props.entries ?? themeConfig.value.articlePinned?.entries)
+const icon = computed(() => props.icon ?? themeConfig.value.ui.pinnedPost?.icon)
+const text = computed(() => props.text ?? themeConfig.value.pinnedPost?.text)
+const entries = computed(() => props.entries ?? themeConfig.value.pinnedPost?.entries)
 </script>
 
 <template>
@@ -26,7 +26,7 @@ const entries = computed(() => props.entries ?? themeConfig.value.articlePinned?
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sakura-pinned-post {
   &-card {
     justify-content: space-between;
@@ -39,6 +39,7 @@ const entries = computed(() => props.entries ?? themeConfig.value.articlePinned?
     margin: 0 3px;
     border-radius: var(--sakura-post-card-rd);
     overflow: hidden;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 
     &::before,
     &::after {

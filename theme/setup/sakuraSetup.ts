@@ -1,9 +1,9 @@
 import { useScreenSize } from 'valaxy'
 import type { ThemeConfig } from '../types'
+import { StorageKeys } from '../enum'
 import { initLenis } from '../plugins/lenis'
 import { useSakuraAppStore } from '../stores'
 import { getLocalStorageItem, getSessionStorageItem } from '../utils/storage'
-import { StorageKeys } from '../enum'
 
 export function defineSakuraSetup(themeConfig: ThemeConfig) {
   const sakuraAppStore = useSakuraAppStore()
