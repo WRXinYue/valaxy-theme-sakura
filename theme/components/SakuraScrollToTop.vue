@@ -3,6 +3,8 @@ import { useWindowScroll, useWindowSize } from '@vueuse/core'
 import interact from 'interactjs'
 import { onMounted, ref, watch } from 'vue'
 import { useScroll } from '../composables'
+import scrollCat from '../assets/scroll-cat.png'
+import scrollLine from '../assets/scroll-line.png'
 
 const props = withDefaults(defineProps<{
   height?: number
@@ -237,8 +239,8 @@ onMounted(() => setTimeout(() => init(), 0))
 <template>
   <div v-show="isVisible">
     <div ref="nodeRef" />
-    <img ref="imgRef" class="sakura-to-top-node" src="https://common.s3.bitiful.net/scroll.png">
-    <img ref="constraintRef" class="sakura-to-top-line" src="https://common.s3.bitiful.net/scroll-line.png">
+    <img ref="imgRef" class="sakura-to-top-node" :src="scrollCat">
+    <img ref="constraintRef" class="sakura-to-top-line" :src="scrollLine">
   </div>
 </template>
 

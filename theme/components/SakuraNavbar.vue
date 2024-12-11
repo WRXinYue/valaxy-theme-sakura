@@ -22,7 +22,7 @@ const hoverNavbar = ref(false)
 const navbar = computed(() => props.navbar || themeConfig.value.navbar)
 const navbarOptions = computed(() => props.options || themeConfig.value.navbarOptions)
 
-const { autoHide, favicon, animIn, animOut, showMarker, title, enableHover, offset } = navbarOptions.value
+const { autoHide, favicon, animIn, animOut, showMarker, title, subTitle, enableHover, offset } = navbarOptions.value
 
 const isScrolled = computed(() => y.value > offset)
 
@@ -53,7 +53,7 @@ const isHeaderHighlighted = computed(() => {
           </div>
         </template>
 
-        <SakuraNavbarBrand :favicon :title />
+        <SakuraNavbarBrand :favicon :title :sub-title />
       </div>
     </slot>
 

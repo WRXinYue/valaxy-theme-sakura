@@ -15,6 +15,10 @@ export interface PostListMasonry {
 export interface PostList {
   text: string
   mode: 'card' | 'grid' | 'masonry'
+  /**
+   * 对 settings 所有布局生效；true 默认使用 notFoundImage， false 不显示默认图片， string 数组随机选择
+   */
+  defaultImage: string | string[] | boolean
 
   settings: {
     card?: Partial<PostListCard>

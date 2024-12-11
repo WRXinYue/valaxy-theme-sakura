@@ -72,8 +72,8 @@ export default defineValaxyConfig<ThemeUserConfig>({
     postList: {
       settings: {
         card: {
-          // defaultImage: ['https://www.dmoe.cc/random.php', 'https://www.loliapi.com/acg/pc/'],
-          defaultImage: 'https://www.dmoe.cc/random.php',
+          // defaultImage: ['https://www.dmoe.cc/random.php?random', 'https://www.loliapi.com/acg/pc/?random'],
+          defaultImage: ['https://www.dmoe.cc/random.php?random'],
         },
       },
     },
@@ -83,6 +83,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
     },
 
     scrollToTop: true,
+    scrollIndicator: true,
 
     navbar: [
       {

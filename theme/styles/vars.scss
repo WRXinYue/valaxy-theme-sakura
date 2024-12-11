@@ -6,7 +6,7 @@ $common: (
   'primary-text-color': var(--sakura-primary-color),
   // --------------- Navbar ---------------
   'navbar-height': 75px,
-  'navbar-text-color:': var(--sakura-text-deep-color),
+  'navbar-text-color': var(--sakura-text-deep-color),
   'navbar-marker-height': 2px,
   'navbar-marker-color': var(--sakura-primary-color),
   'navbar-mt': 20px,
@@ -68,7 +68,6 @@ $light: (
   'post-nav-title-color': #f0f8ff,
   'post-nav-label-color': rgba(255, 255, 255, 0.7),
   // --------------- SakuraNavbar ---------------
-  'navbar-text-color': var(--sakura-text-color),
   'navbar-text-hover-color': #fff,
   'navbar-bg-hover-color': var(--sakura-primary-color)
 ) !default;
@@ -93,7 +92,6 @@ $dark: (
   'post-nav-title-color': #f0f8ff,
   'post-nav-label-color': rgba(255, 255, 255, 0.7),
   // --------------- SakuraNavbar ---------------
-  'navbar-text-color': var(--sakura-text-color),
   'navbar-text-hover-color': var(--va-c-bg-alt),
   'navbar-bg-hover-color': var(--sakura-primary-color)
 ) !default;

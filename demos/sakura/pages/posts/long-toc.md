@@ -4,9 +4,8 @@ categories: Test
 ---
 
 ::: zh-CN
-[[toc]]
 
-标题是一级标题
+# 一级标题 {lang="zh-CN"}
 
 ## 二级标题 {lang="zh-CN"}
 
@@ -78,7 +77,7 @@ categories: Test
 ### 有序列表
 
 1. 一级
-    1. TEST
+   1. TEST
 2. 二级
 3. 三級
 
@@ -86,12 +85,11 @@ categories: Test
 
 - [ ] FLAG
 - [x] FLAG
-:::
+      :::
 
 ::: en
-[[toc]]
 
-The title is a primary title
+# primary title {lang="en"}
 
 ## Secondary title {lang="en"}
 
@@ -117,7 +115,7 @@ The title is a primary title
 
 - [ ] FLAG
 - [x] FLAG
-:::
+      :::
 
 ![]()
 _a_

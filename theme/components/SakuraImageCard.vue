@@ -62,12 +62,18 @@ const overlayStyle = computed(() => ({
 function onError(e: Event) {
   onImgError(e, props.errorImg || noneImg)
 }
+
+const getSrc = computed(() => {
+  return props.src && props.src.includes('?random')
+    ? props.src.replace('?random', `?random=${Math.random()}`)
+    : props.src
+})
 </script>
 
 <template>
   <div class="sakura-image-card relative overflow-hidden" @mouseover="isHovering = true" @mouseleave="isHovering = false">
     <AppLink :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
-      <img class="h-full w-full object-cover" loading="lazy" :src="props.src || noneImg" :alt="props.alt || 'cover'" :style="imageStyle" @error="onError">
+      <img class="h-full w-full object-cover" loading="lazy" :src="getSrc || noneImg " :alt="props.alt || 'cover'" :style="imageStyle" @error="onError">
       <template v-if="overlay">
         <div class="sakura-image-card-overlay" :style="overlayStyle" />
       </template>

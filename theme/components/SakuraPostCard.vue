@@ -1,17 +1,25 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
+import { computed } from 'vue'
+import { useThemeConfig } from '../composables'
+import { resolveImage } from '../utils'
 
-defineProps<{
+const props = defineProps<{
   post: Post
   imagePosition: boolean
 }>()
+
+const themeConfig = useThemeConfig()
+
+const defaultImage = computed(() => resolveImage(themeConfig.value.postList?.settings?.card?.defaultImage ?? ''))
+const cover = computed(() => props.post.cover || defaultImage.value)
 </script>
 
 <template>
-  <article class="sakura-post-card" :class="imagePosition && post.cover && 'flex-row-reverse' || post.cover && 'md:text-right'">
-    <SakuraImageCard v-if="post.cover" :to="post.path" :src="post.cover" rotate="5" space="1.1" transition-duration="0.45s" />
+  <article class="sakura-post-card" :class="imagePosition && cover && 'flex-row-reverse' || cover && 'md:text-right'">
+    <SakuraImageCard v-if="cover" :to="post.path" :src="cover || defaultImage" rotate="5" space="1.1" transition-duration="0.45s" />
 
-    <div class="sakura-post-card-content flex flex-col" :class="post.cover && 'has-cover'">
+    <div class="sakura-post-card-content flex flex-col" :class="cover && 'has-cover'">
       <SakuraPostDate :date="post.date" class="order-1" />
       <RouterLink class="sakura-post-card-title order-2" :to="post.path || ''" :aria-label="`Read more about ${post.title}`">
         {{ post.title }}

@@ -103,7 +103,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * @en Whether to display the scroll-to-top component. The default is a button style.
    * @default true
    */
-  scrollToTop: boolean | 'button' | 'cord'
+  scrollToTop: boolean | 'cord'
   scrollDown: {
     enable: boolean
   }

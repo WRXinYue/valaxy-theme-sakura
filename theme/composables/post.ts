@@ -2,6 +2,7 @@ import { useSiteConfig, usePostList as useValaxyPostList } from 'valaxy'
 import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores'
+import { resolveImage } from '../utils'
 
 // import type { ComputedRef, StyleValue } from 'vue'
 // import { computed } from 'vue'
@@ -67,7 +68,9 @@ export function usePostList(params: {
 
   const postsWithLimitedTags = computed(() => {
     return displayedPosts.value.map((post) => {
-      post.cover = post.cover || themeConfig.value.postList?.settings?.card?.defaultImage
+      if (themeConfig.value.postList?.defaultImage)
+        post.cover = post.cover || resolveImage(themeConfig.value.postList.defaultImage)
+
       if (post.tags && post.tags.length > 3)
         return { ...post, tags: post.tags.slice(0, 3) }
 

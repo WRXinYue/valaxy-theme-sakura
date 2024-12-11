@@ -5,10 +5,11 @@ import { useRoute } from 'vue-router'
 
 const input = ref()
 
-const { results } = useFuseSearch(input)
+const { results, fetchFuseListData } = useFuseSearch(input)
 const route = useRoute()
 
 watch(() => route.query.q as string, (query) => {
+  fetchFuseListData()
   input.value = query || ''
 }, { immediate: true })
 </script>

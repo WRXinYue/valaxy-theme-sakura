@@ -5,7 +5,7 @@ defineProps<{
   favicon?: boolean
   title?: string | string[]
   hamburger?: boolean
-  subtitle?: string
+  subTitle?: string
 }>()
 
 const siteConfig = useSiteConfig()
@@ -28,8 +28,8 @@ const siteConfig = useSiteConfig()
             <span>{{ title![2] }}</span>
           </template>
         </RouterLink>
-        <rt v-if="subtitle" class="sakura-navbar-subtitle">
-          {{ subtitle }}
+        <rt v-if="subTitle" class="sakura-navbar-subtitle">
+          {{ subTitle }}
         </rt>
       </ruby>
     </template>
