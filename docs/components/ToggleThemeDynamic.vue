@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import type { ThemeConfig } from 'valaxy-theme-sakura'
-import { useAppStore, useThemeConfig } from 'valaxy'
+import { useAppStore } from 'valaxy'
 import { computed } from 'vue'
 
 const props = defineProps<{
@@ -9,15 +8,14 @@ const props = defineProps<{
 }>()
 
 const appStore = useAppStore()
-const themeConfig = useThemeConfig<ThemeConfig>()
 
 function enhancedToggleDarkWithTransition() {
   const fakeEvent = new MouseEvent('click')
   appStore.toggleDarkWithTransition(fakeEvent)
 }
 
-const darkIcon = computed(() => props.darkIcon || themeConfig.value.toggleThemeIcon?.darkIcon)
-const lightIcon = computed(() => props.lightIcon || themeConfig.value.toggleThemeIcon?.lightIcon)
+const darkIcon = computed(() => props.darkIcon)
+const lightIcon = computed(() => props.lightIcon)
 </script>
 
 <template>

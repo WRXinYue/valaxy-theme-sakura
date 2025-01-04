@@ -1,8 +1,8 @@
-import type { ThemeConfig } from 'valaxy-theme-sakura'
+import type { ThemeConfig } from 'valaxy-theme-oceanus'
 import { defineValaxyConfig } from 'valaxy'
 import { addonGitLog } from 'valaxy-addon-git-log'
 import { addonWaline } from 'valaxy-addon-waline'
-import tsdocPlugin from 'vite-plugin-tsdoc'
+import { ValaxyThemesResolver } from 'valaxy-addon-components'
 
 export default defineValaxyConfig<ThemeConfig>({
   siteConfig: {
@@ -48,46 +48,67 @@ export default defineValaxyConfig<ThemeConfig>({
     },
   },
 
-  theme: 'sakura',
+  theme: 'oceanus',
   themeConfig: {
-    colors: {
+    ui: {
       primary: '#ff4e6a',
     },
 
-    navbar: [
-      {
-        text: 'Docs',
-        link: '/guide/installation',
-        children: [
-          {
-            text: 'Quick Start',
-            link: '/guide/installation',
-          },
-          {
-            text: 'Config',
-            link: '/config/theme',
-          },
-          {
-            text: 'Examples',
-            link: '/examples/config',
-          },
-        ],
-      },
-      // {
-      //   text: 'Themes',
-      // },
-      {
-        text: 'Gallery',
-        link: '/examples/gallery',
-      },
-      {
-        text: 'GitHub',
-        link: 'https://github.com/WRXinYue/valaxy-theme-sakura',
-      },
-    ],
-    navbarOptions: {
-      title: ['𝑽𝒂𝒍𝒂𝒙𝒚 𝑻𝒉𝒆𝒎𝒆', '', '𝑺𝒂𝒌𝒖𝒓𝒂'],
-      showMarker: false,
+    header: {
+      title: '𝑽𝒂𝒍𝒂𝒙𝒚 𝑻𝒉𝒆𝒎𝒆 𝑺𝒂𝒌𝒖𝒓𝒂',
+
+      nav: [
+        {
+          text: '主页',
+          link: '/',
+        },
+        {
+          text: '指南',
+          link: '/guide/getting-started/installation',
+          sidebar: ['getting-started', 'theme-config'],
+          subNav: [
+            {
+              text: '安装',
+              link: '/guide/getting-started/installation',
+            },
+            {
+              text: '更新 ',
+              link: '/guide/getting-started/update',
+            },
+            {
+              text: '主题配置',
+              link: '/guide/getting-started/theme-config',
+            },
+            {
+              text: '站点配置',
+              link: '/guide/getting-started/site-config',
+            },
+            {
+              text: 'frontmatter 配置',
+              link: '/guide/getting-started/frontmatter-config',
+            },
+          ],
+        },
+        {
+          text: '示例',
+          link: '/examples/config',
+        },
+        {
+          text: '组件',
+          link: '/components',
+        },
+        // {
+        //   text: 'Gallery',
+        //   link: '/examples/gallery',
+        // },
+      ],
+
+      github: 'https://github.com/WRXinYue/valaxy-theme-sakura',
+    },
+
+    hero: {
+      title: 'VALAXY THEME SAKURA',
+      motto: '开放、高自由、功能丰富的 valaxy 主题',
     },
 
     // addons: [
@@ -114,10 +135,6 @@ export default defineValaxyConfig<ThemeConfig>({
       'dev',
     ],
 
-    pagination: {
-      itemsPerPage: 6,
-    },
-
     footer: {
       since: 2024,
       icp: '<a href="https://icp.gov.moe/?keyword=20240132" target="_blank">萌ICP备20240132号</a>',
@@ -130,7 +147,6 @@ export default defineValaxyConfig<ThemeConfig>({
       comment: true,
     }),
     addonGitLog({
-      debug: true,
       contributor: {
         mode: 'api',
         // logArgs: '--first-parent --follow',
@@ -138,12 +154,12 @@ export default defineValaxyConfig<ThemeConfig>({
       repositoryUrl: 'https://github.com/WRXinYue/valaxy-theme-sakura.git',
     }),
   ],
+  components: {
+    resolvers: [ValaxyThemesResolver({ themes: ['sakura'] })],
+  },
   vite: {
     optimizeDeps: {
       include: ['d3', 'monaco-editor'],
     },
-    plugins: [
-      tsdocPlugin({ theme: 'sakura' }),
-    ],
   },
 })

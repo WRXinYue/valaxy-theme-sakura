@@ -1,3 +1,0 @@
-<template>
-  <PostListThemeMinima />
-</template>

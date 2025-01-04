@@ -1,3 +1,0 @@
-<template>
-  <PostListThemeCard />
-</template>

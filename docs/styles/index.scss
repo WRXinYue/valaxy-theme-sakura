@@ -1,6 +1,15 @@
 @use 'valaxy/client/styles/mixins/index.scss' as *;
-@use '@valaxy-theme-sakura/sakura/styles/css-vars.scss' as *;
-@use 'valaxy-theme-sakura/styles/markdown/prose.scss' as *;
+@use 'valaxy-theme-sakura/styles/animation/fading/fading.scss' as *;
+@use 'valaxy-theme-sakura/styles/animation/slide/slide.scss' as *;
+@use 'valaxy-theme-sakura/styles/animation/hover/hover.scss' as *;
+@use 'valaxy-theme-sakura/styles/animation/loop/loop.scss' as *;
+@use 'valaxy-theme-sakura/styles/animation/slit-in/slit-in.scss' as *;
+@use 'valaxy-theme-sakura/styles/markdown/reset-markdown.scss' as *;
+@use 'valaxy-theme-sakura/styles/markdown/animation.scss' as *;
+@use 'valaxy-theme-sakura/styles/markdown/sakura-prose.scss' as *;
+@use 'valaxy-theme-sakura/styles/markdown/code.scss' as *;
+@use 'valaxy-theme-sakura/styles/markdown/code-group.scss' as *;
+@use 'valaxy-theme-sakura/styles/markdown/custom-block.scss' as *;
 
 .sakura-navbar {
   position: sticky !important;

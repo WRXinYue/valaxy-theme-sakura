@@ -1,3 +1,0 @@
-<template>
-  <SakuraNoticeBoard />
-</template>

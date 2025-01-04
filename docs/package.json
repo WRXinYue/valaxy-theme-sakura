@@ -11,16 +11,17 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "monaco-editor": "^0.50.0",
+    "monaco-editor": "^0.52.2",
     "valaxy": "catalog:",
+    "valaxy-addon-components": "^0.1.0",
     "valaxy-addon-git-log": "catalog:",
     "valaxy-addon-twikoo": "catalog:",
-    "valaxy-theme-sakura": "~0.6.8",
-    "vite-plugin-tsdoc": "workspace:*",
+    "valaxy-theme-oceanus": "^0.0.2",
+    "valaxy-theme-sakura": "workspace:*",
     "vue-toastification": "2.0.0-rc.5"
   },
   "devDependencies": {
-    "@iconify-json/simple-icons": "^1.2.15",
+    "@iconify-json/simple-icons": "^1.2.18",
     "typescript": "catalog:"
   }
 }

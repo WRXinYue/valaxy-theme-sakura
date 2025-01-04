@@ -6,8 +6,6 @@ categories:
   - components
 ---
 
-## 打字机 SakuraTypewriter <SupTag>0.6.1</SupTag>
-
 SakuraTypewriter 基于 [TypeIt](https://github.com/alexmacarthur/typeit) 实现。如果您需要简单易用的打字机效果，可以使用此组件
 
 ## 基础使用

@@ -8,7 +8,7 @@
 .sup-tag {
   color: #fff;
   border-radius: 6px;
-  background-color: var(--sakura-primary-color);
+  background-color: var(--va-c-brand);
   font-size: 0.875rem;
   padding: 0.15em 0.3em 0.1em;
   user-select: none;

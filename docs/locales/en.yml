@@ -33,17 +33,11 @@ category:
   getting-started: Getting Started
   guide: Guide
   config: Configuration
-  migration: Migration
-  third: Third
+  components: Components
   custom: Customize
   examples: Examples
-  theme: Theme
-  addon: Addon
-  dev: Dev
-  components: Components
   releases: releases
-  layouts: Layouts
-  styles: Styles
+  theme-config: Theme Config
 
 banner:
   next-generation: Next Generation

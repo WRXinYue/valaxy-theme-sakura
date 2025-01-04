@@ -6,8 +6,6 @@ categories:
   - components
 ---
 
-## 故障文字 SakuraGlitchText
-
 ## 基础使用
 
 <SakuraGlitchTextPG :demo="0" />
@@ -34,10 +32,10 @@ categories:
 
 ### Attributes
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| text | `string` | `undefined` | 静态文本效果 |
-| `[key: string]` | `TypewriterProps` | --- | 同 `TypewriterProps` 组件 |
+| 属性名          | 类型              | 默认值      | 说明                      |
+| --------------- | ----------------- | ----------- | ------------------------- |
+| text            | `string`          | `undefined` | 静态文本效果              |
+| `[key: string]` | `TypewriterProps` | ---         | 同 `TypewriterProps` 组件 |
 
 ## 相关组件
 

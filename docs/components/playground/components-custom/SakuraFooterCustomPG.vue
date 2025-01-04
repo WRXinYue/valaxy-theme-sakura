@@ -1,3 +1,0 @@
-<template>
-  <SakuraFooter />
-</template>

@@ -33,20 +33,10 @@ category:
   getting-started: 快速起步
   guide: 指南
   config: 配置
-  migration: 迁移
-  third: 第三方
-  components: 系统组件
-  components-common: 通用组件
-  components-custom: 自定义组件
-  components-layout: 布局组件
-  components-themes: 主题组件
+  components: 组件
   examples: 示例
-  theme: 主题
-  addon: 插件
-  dev: 开发
   releases: 发行
-  layouts: 布局
-  styles: 样式
+  theme-config: 主题配置
 
 banner:
   introduction: 开放、高自由、功能丰富的 valaxy 主题
