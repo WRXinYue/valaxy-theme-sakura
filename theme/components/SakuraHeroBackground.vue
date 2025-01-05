@@ -1,41 +1,65 @@
 <script lang="ts" setup>
 import { computed, onMounted, ref, watch } from 'vue'
+import { useStorage } from '@vueuse/core'
 import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores'
 import { isVideoUrl } from '../utils'
-import { getLocalStorageItem, setLocalStorageItem } from '../utils/storage'
 
 const props = withDefaults(defineProps<{
   urls?: string[] | string
   wallpaperKey?: string
 }>(), {
-  wallpaperKey: 'banner',
+  wallpaperKey: 'hero',
 })
 
 const storageKey = `wallpaperKey-${props.wallpaperKey}`
-const currentIndex = ref<number>(0)
+const visitedUrls = ref<number[]>([])
+
+const currentIndex = useStorage(storageKey, 0)
 
 const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
 
 const urls = computed(() => props.urls || themeConfig.value.hero.urls || '')
-const currentWallpaperUrl = computed(() => typeof urls.value === 'string' ? urls.value : urls.value[currentIndex.value])
-const isCurrentMediaVideo = computed(() => isVideoUrl(currentWallpaperUrl.value))
 const hero = computed(() => themeConfig.value.hero)
 
-watch(() => sakura.wallpaperIndex[storageKey], (newIndex) => {
-  setLocalStorageItem(storageKey, newIndex!)
-  currentIndex.value = newIndex
+const currentWallpaperUrl = computed(() => {
+  if (typeof urls.value === 'string')
+    return urls.value
+
+  if (hero.value.randomUrls) {
+    let randomIndex: number | null = null
+
+    // Avoid repeating the previous wallpaper
+    do {
+      const urlsLength = hero.value.urls.length
+      randomIndex = Math.floor(Math.random() * urlsLength)
+    } while (visitedUrls.value.includes(randomIndex))
+
+    // visitedUrls.value.push(randomIndex)
+    return urls.value[randomIndex]
+  }
+
+  return urls.value[currentIndex.value]
 })
 
-watch(() => urls.value.length, async (length) => {
-  sakura.wallpaperLength[storageKey] = length
+const isCurrentMediaVideo = computed(() => isVideoUrl(currentWallpaperUrl.value))
+
+watch(() => sakura.wallpaperIndex[storageKey], (newIndex, oldIndex) => {
+  currentIndex.value = newIndex
+
+  const urlsLength = hero.value.urls.length
+  if (visitedUrls.value.length === urlsLength)
+    visitedUrls.value = []
+  visitedUrls.value.push(oldIndex)
 })
+
+watch(() => urls.value.length, (length) => {
+  sakura.wallpaperLength[storageKey] = length
+}, { immediate: true })
 
 onMounted(() => {
-  currentIndex.value = getLocalStorageItem(storageKey) || 0
   sakura.wallpaperIndex[storageKey] = currentIndex.value
-  sakura.wallpaperLength[storageKey] = urls.value.length
 })
 </script>
 

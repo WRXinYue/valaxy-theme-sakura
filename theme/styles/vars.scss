@@ -61,8 +61,8 @@ $light: (
   'border-hover-color': #f1c484,
   'icon-color': #fff,
   // --------------- SakuraTimeLine ---------------
-  'timeline-color': #49b1f5,
-  'timeline-text-color': #0bf,
+  'timeline-color': var(--sakura-primary-color),
+  'timeline-text-color': var(--sakura-primary-color),
   'timeline-height': 30px,
   // --------------- PostNavigation ---------------
   'post-nav-title-color': #f0f8ff,
@@ -85,8 +85,8 @@ $dark: (
   'border-hover-color': #f1c484,
   'icon-color': #fff,
   // --------------- SakuraTimeLine ---------------
-  'timeline-color': #49b1f5,
-  'timeline-text-color': #0bf,
+  'timeline-color': var(--sakura-primary-color),
+  'timeline-text-color': var(--sakura-primary-color),
   'timeline-height': 30px,
   // --------------- PostNavigation ---------------
   'post-nav-title-color': #f0f8ff,

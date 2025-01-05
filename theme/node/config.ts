@@ -37,6 +37,7 @@ export const defaultThemeConfig: ThemeUserConfig = {
     title: 'Hello, sakura',
     motto: 'You got to put the past behind you before you can move on.',
     urls: [],
+    randomUrls: false,
     fixedImg: false,
     style: '',
 
@@ -57,6 +58,7 @@ export const defaultThemeConfig: ThemeUserConfig = {
     offset: 100,
     enableHover: true,
     tools: ['toggleDark', 'search'],
+    hamburgerStyle: 'uneven',
   },
 
   sidebar: [],

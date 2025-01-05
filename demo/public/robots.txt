@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /private/
+Sitemap: http://sakura.wrxinyue.org/sitemap.xml

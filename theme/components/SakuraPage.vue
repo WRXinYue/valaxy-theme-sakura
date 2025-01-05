@@ -41,6 +41,8 @@ const frontmatter = useFrontmatter()
   }
 
   .sakura-triple-columns {
+    width: 100%;
+
     @include screen('md') {
       grid-template-columns: 150px 1fr 150px;
     }

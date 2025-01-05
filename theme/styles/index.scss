@@ -1,6 +1,8 @@
+// --------------- Valaxy ---------------
+@use 'valaxy/client/styles/common/code.scss' as *;
+
 // --------------- Layouts ---------------
 @use './layouts/layout.scss' as *;
-@use './layouts/page.scss' as *;
 @use './layouts/home.scss' as *;
 
 // --------------- Animation ---------------
@@ -33,3 +35,4 @@
 // --------------- Plugins ---------------
 @use './plugins/aplayer.scss' as *;
 @use './plugins/live2d.scss' as *;
+@use './plugins/bangumi.scss' as *;

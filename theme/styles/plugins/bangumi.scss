@@ -1,0 +1,22 @@
+bilibili-bangumi {
+  --bbc-primary-color: var(--sakura-primary-color);
+  --bbc-label-color: var(--sakura-primary-color);
+  --bbc-text-base-color: var(--sakura-text-color);
+}
+
+.bbc-header-platform {
+  /** 0 elements **/
+  &:not(:has(*)) {
+    display: none;
+  }
+
+  /** 1 elements **/
+  &:has(> :last-child:nth-child(1)) {
+    display: none;
+  }
+
+  /** >= 2 elements **/
+  &:has(> :last-child:nth-child(2)) {
+    display: flex;
+  }
+}

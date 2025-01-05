@@ -1,7 +1,7 @@
 {
   "name": "valaxy-theme-sakura",
-  "version": "0.8.0-alpha.11",
-  "packageManager": "pnpm@9.15.0",
+  "version": "0.8.0-alpha.12",
+  "packageManager": "pnpm@9.15.2",
   "author": {
     "email": "3322543587@qq.com",
     "name": "WRXinYue",
@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "@ctrl/tinycolor": "^4.1.0",
-    "@iconify-json/fa6-solid": "^1.2.2",
-    "@iconify-json/mdi": "^1.2.1",
+    "@iconify-json/fa6-solid": "^1.2.3",
+    "@iconify-json/mdi": "^1.2.2",
     "interactjs": "^1.10.27",
     "lenis": "^1.1.18",
     "typeit": "^8.8.7"

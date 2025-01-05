@@ -74,7 +74,7 @@ onMounted(() => {
 
   <template v-if="!collapse">
     <ul>
-      <li v-for="categoryItem, i in category.children.values()" :key="i" class="sakura-sidebar-item" m="l-4">
+      <li v-for="categoryItem, i in category.children.values()" :key="i" class="sakura-sidebar-item" m="l-4 y-1">
         <template v-if="isCategoryList(categoryItem)">
           <SakuraCategory
             :parent-key="parentKey ? `${parentKey}/${categoryItem.name}` : categoryItem.name"

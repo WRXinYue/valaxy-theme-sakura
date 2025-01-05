@@ -91,4 +91,14 @@ export interface NavbarOptions {
    * @default ['toggleDark', 'search']
    */
   tools: ('toggleLocale' | 'toggleDark' | 'search')[]
+  /**
+   * @zh 导航栏汉堡按钮的样式。
+   * - 'uneven': 具有一条不一样长的样式
+   * - 'old': 三条长度相同的经典样式
+   * @en The style of the hamburger button in the navigation bar
+   * - 'uneven': A style where one line is different in length
+   * - 'old': The classic style with three equal-length lines
+   * @default 'uneven'
+   */
+  hamburgerStyle: 'uneven' | 'old'
 }

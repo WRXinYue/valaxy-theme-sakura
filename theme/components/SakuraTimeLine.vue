@@ -78,7 +78,7 @@ function handleMouseEnter(year: number, month: number) {
 </script>
 
 <template>
-  <div class="post-collapse mx-auto px-10 lt-sm:px-5">
+  <div w="full" class="post-collapse mx-auto px-10 lt-sm:px-5">
     <div w="full" text="center" class="yun-text-light" p="2">
       {{ t('counter.archives', posts.length) }}
     </div>
@@ -104,7 +104,7 @@ function handleMouseEnter(year: number, month: number) {
                 j !== postListByYear[year][month].length && 'h-$sakura-timeline-height',
               ]"
             >
-              <div v-if="j === 0" class="post-meta absolute left--40">
+              <div v-if="j === 0" class="post-meta absolute right-100% my-[1rem] mr-[1.2rem]">
                 <time v-if="post.date" class="post-time" font="mono" opacity="80">{{
                   formatDate(post.date, 'MM') }}月
                 </time>
@@ -112,7 +112,7 @@ function handleMouseEnter(year: number, month: number) {
                   ({{ originalPostListByYear[year][month].length }} 篇文章)
                 </span>
               </div>
-              <div v-if="j !== 0" class="post-meta">
+              <div v-if="j !== 0" class="post-meta my-[1rem] ml-[1.2rem]">
                 <time v-if="post.date" class="post-time text-$sakura-timeline-text-color" font="mono" opacity="80">{{
                   formatDate(post.date, 'dd') }}日
                 </time>
@@ -215,7 +215,6 @@ function handleMouseEnter(year: number, month: number) {
 
     .post-meta {
       font-size: 1rem;
-      margin: 1rem 0 1rem 1.2rem;
       white-space: nowrap;
     }
   }

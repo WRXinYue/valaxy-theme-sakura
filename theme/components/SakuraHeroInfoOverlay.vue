@@ -7,10 +7,10 @@ import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores'
 
 const props = withDefaults(defineProps<{
-  banner?: Hero
+  hero?: Hero
   wallpaperKey?: string
 }>(), {
-  wallpaperKey: 'banner',
+  wallpaperKey: 'hero',
 })
 
 const storageKey = `wallpaperKey-${props.wallpaperKey}`
@@ -19,7 +19,7 @@ const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
 const { hitokoto, fetchHitokoto } = useAddonHitokoto(themeConfig.value.hero.hitokoto)
 
-const banner = computed(() => props.banner || themeConfig.value.hero)
+const banner = computed(() => props.hero || themeConfig.value.hero)
 const socials = computed(() => (banner.value.socials || siteConfig.value.social) as HeroSocialLink[])
 
 function prevMedia() {

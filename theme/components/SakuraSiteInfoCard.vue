@@ -7,9 +7,9 @@ const router = useRouter()
 </script>
 
 <template>
-  <div class="site-info flex flex-col items-center">
+  <SakuraCard class="sakura-site-info-card">
     <RouterLink class="site-author-avatar" to="/about">
-      <SakuraImageCard class="rounded-full" :src="siteConfig.author.avatar" alt="avatar" />
+      <img class="rounded-full" :src="siteConfig.author.avatar" alt="avatar">
       <span class="site-author-status" :title="siteConfig.author.status.message">{{ siteConfig.author.status.emoji }}</span>
     </RouterLink>
     <div
@@ -30,5 +30,39 @@ const router = useRouter()
     <div v-if="siteConfig.description" class="site-description my-1">
       {{ siteConfig.description }}
     </div>
-  </div>
+
+    <div class="content-container grid grid-cols-3 gap-x-8">
+      <div class="article">
+        <span class="content-text">文章</span><br>
+        <span class="content-number">23</span>
+      </div>
+      <div class="label">
+        <span class="content-text">标签</span><br>
+        <span class="content-number">44</span>
+      </div>
+      <div class="category">
+        <span class="content-text">分类</span><br>
+        <span class="content-number">15</span>
+      </div>
+    </div>
+  </SakuraCard>
 </template>
+
+<style lang="scss" scoped>
+.content-container {
+  text-align: center;
+  margin-top: 14px;
+}
+
+.content-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.content-number {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+}
+</style>

@@ -49,7 +49,12 @@ const isHeaderHighlighted = computed(() => {
       <div class="flex items-center">
         <template v-if="themeConfig.sidebarOptions?.position === 'left'">
           <div class="flex-center" :class="!themeConfig.sidebarOptions.enableOnDesktop && 'md:hidden'">
-            <SakuraHamburger class="mr-4" :active="sakuraAppStore.sidebar.isOpen" @click="sakuraAppStore.sidebar.toggle" />
+            <template v-if="themeConfig.navbarOptions.hamburgerStyle === 'old'">
+              <SakuraHamburgerOld class="mr-4" :active="sakuraAppStore.sidebar.isOpen" @click="sakuraAppStore.sidebar.toggle" />
+            </template>
+            <template v-if="themeConfig.navbarOptions.hamburgerStyle === 'uneven'">
+              <SakuraHamburgerUneven class="mr-4" :active="sakuraAppStore.sidebar.isOpen" @click="sakuraAppStore.sidebar.toggle" />
+            </template>
           </div>
         </template>
 

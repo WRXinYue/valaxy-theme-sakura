@@ -12,4 +12,4 @@ top: 500
 
 <https://github.com/WRXinYue/valaxy-theme-sakura/blob/main/demo/valaxy.config.ts>
 
-<<< @/../demos/valaxy.config.ts
+<<< @/../demo/valaxy.config.ts

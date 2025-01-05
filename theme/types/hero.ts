@@ -5,6 +5,11 @@ export interface Hero {
   title: string
   motto: string
   urls: string[] | string
+  /**
+   * @zh 是否随机 urls，开启此项切换 url 也会进行随机
+   * @default false
+   */
+  randomUrls: boolean
   fixedImg: boolean
   style: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
 
