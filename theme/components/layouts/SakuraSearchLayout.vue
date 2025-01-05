@@ -2,6 +2,7 @@
 import { useFuseSearch } from 'valaxy'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { isClient } from '@vueuse/core'
 
 const input = ref()
 
@@ -9,7 +10,9 @@ const { results, fetchFuseListData } = useFuseSearch(input)
 const route = useRoute()
 
 watch(() => route.query.q as string, (query) => {
-  fetchFuseListData()
+  if (isClient)
+    fetchFuseListData()
+
   input.value = query || ''
 }, { immediate: true })
 </script>
@@ -61,7 +64,7 @@ watch(() => route.query.q as string, (query) => {
 
                     <div class="post-more">
                       <AppLink :to="result.item.link">
-                        <MashiroDots class="float-right mt-10px" />
+                        <SakuraDots class="float-right mt-10px" />
                       </AppLink>
                     </div>
                     <hr style="border-bottom: 1px #ccc; width: 30%;" class="mx-auto mb-62px mt-69px">
