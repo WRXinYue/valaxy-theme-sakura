@@ -12,7 +12,7 @@
 
 <p align="center">
 <a href="https://sakura.wrxinyue.org" target="_blank">
-<img src="https://valaxy-theme-sakura.s3.bitiful.net/demo/2024-09-29.png" alt="valaxy-theme-sakura" />
+<img src="https://valaxy-theme-sakura.s3.bitiful.net/demo%2F2025-01-05.png" alt="valaxy-theme-sakura" />
 </a>
 </p>
 
@@ -54,7 +54,11 @@ export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura',
 
   themeConfig: {
-    banner: {
+    ui: {
+      primary: '#ff4e6a',
+    },
+
+    hero: {
       title: 'Hello, sakura',
       motto: 'You got to put the past behind you before you can move on.',
       urls: [
@@ -68,14 +72,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
 ```
 
 <br></details>
-
-在 `styles` 目录的 `index.scss` 文件，填入以下内容：
-
-```scss
-@use 'valaxy-theme-sakura/styles/themes/sakura/index.scss' as *;
-```
-
-Sakura 以轻量化为首要目的在默认配置中没有包含 Sakura 的样式，详情参见[主题化](https://sakura.valaxy.site/styles/theming)
 
 ## 更新
 

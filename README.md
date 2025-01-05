@@ -12,7 +12,7 @@ A simple, personalized, and cute anime-style blog theme ～(∠・ω< )⌒★
 
 <p align="center">
 <a href="https://sakura.wrxinyue.org" target="_blank">
-<img src="https://valaxy-theme-sakura.s3.bitiful.net/demo/2024-09-29.png" alt="valaxy-theme-sakura" />
+<img src="https://valaxy-theme-sakura.s3.bitiful.net/demo%2F2025-01-05.png" alt="valaxy-theme-sakura" />
 </a>
 </p>
 
@@ -54,7 +54,11 @@ export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura',
 
   themeConfig: {
-    banner: {
+    ui: {
+      primary: '#ff4e6a',
+    },
+
+    hero: {
       title: 'Hello, sakura',
       motto: 'You got to put the past behind you before you can move on.',
       urls: [
@@ -68,14 +72,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
 ```
 
 <br></details>
-
-In the `styles` directory, add the following to the `index.scss` file:
-
-```scss
-@use 'valaxy-theme-sakura/styles/themes/sakura/index.scss' as *;
-```
-
-Sakura prioritizes lightweight design, so the default configuration does not include Sakura's styles. For details, see [Theming](https://sakura.valaxy.site/styles/theming).
 
 ## Updates
 
