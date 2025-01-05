@@ -46,7 +46,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
       // playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/PV/563098369-1-208.mp4',
       // playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/The Pet Girl of Sakurasou.mp4',
       playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/PV/Original PV Little love song MONGOL 800 cover by Amatsuki.mp4',
-      style: 'filter-dot',
+      style: 'filter-grid',
       fixedImg: true,
       typewriter: true,
       enableHitokoto: true,

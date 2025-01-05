@@ -12,7 +12,7 @@
 
 <p align="center">
 <a href="https://sakura.wrxinyue.org" target="_blank">
-<img src="https://valaxy-theme-sakura.s3.bitiful.net/demo%2F2025-01-05.png" alt="valaxy-theme-sakura" />
+<img src="https://valaxy-theme-sakura.s3.bitiful.net/demo%2F2025-01-05%20222200.png" alt="valaxy-theme-sakura" />
 </a>
 </p>
 
