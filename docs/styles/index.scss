@@ -74,7 +74,7 @@ a {
 .sakura-sidebar-item-link {
   color: var(--sakura-text-color);
   transition: all 0.5s;
-  border-left: 1px solid var(--sakura-border-surface-color);
+  border-left: 1px solid var(--sakura-border-color);
 
   &.router-link-exact-active {
     color: var(--sakura-text-color);

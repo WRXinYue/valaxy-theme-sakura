@@ -56,8 +56,7 @@ $light: (
   'text-muted-color': hsl(0deg, 0%, 45.1%),
   'text-deep-color': #404040,
   'text-deeper-color': #303030,
-  'border-color': #d0d7de,
-  'border-surface-color': #e2e8f0,
+  'border-color': rgb(238, 238, 238),
   'border-hover-color': #f1c484,
   'icon-color': #fff,
   // --------------- SakuraTimeLine ---------------
@@ -81,7 +80,7 @@ $dark: (
   'text-muted-color': hsl(0deg, 0%, 63.9%),
   'text-deep-color': var(--sakura-text-color),
   'text-deeper-color': var(--sakura-text-color),
-  'border-color': #d0d7de,
+  'border-color': rgb(17, 17, 17),
   'border-hover-color': #f1c484,
   'icon-color': #fff,
   // --------------- SakuraTimeLine ---------------
