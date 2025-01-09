@@ -3,6 +3,7 @@ import { defineValaxyConfig } from 'valaxy'
 import { addonGitLog } from 'valaxy-addon-git-log'
 import { addonWaline } from 'valaxy-addon-waline'
 import { ValaxyThemesResolver } from 'valaxy-addon-components'
+import demoThemeConfig from '../demo/valaxy.config'
 
 export default defineValaxyConfig<ThemeConfig>({
   siteConfig: {
@@ -54,60 +55,62 @@ export default defineValaxyConfig<ThemeConfig>({
       primary: '#ff4e6a',
     },
 
-    header: {
-      title: '𝑽𝒂𝒍𝒂𝒙𝒚 𝑻𝒉𝒆𝒎𝒆 𝑺𝒂𝒌𝒖𝒓𝒂',
+    navTitle: '𝑽𝒂𝒍𝒂𝒙𝒚 𝑻𝒉𝒆𝒎𝒆 𝑺𝒂𝒌𝒖𝒓𝒂',
 
-      nav: [
-        {
-          text: '主页',
-          link: '/',
-        },
-        {
-          text: '指南',
-          link: '/guide/getting-started/installation',
-          sidebar: ['getting-started', 'theme-config'],
-          subNav: [
-            {
-              text: '安装',
-              link: '/guide/getting-started/installation',
-            },
-            {
-              text: '更新 ',
-              link: '/guide/getting-started/update',
-            },
-            {
-              text: '主题配置',
-              link: '/guide/getting-started/theme-config',
-            },
-            {
-              text: '站点配置',
-              link: '/guide/getting-started/site-config',
-            },
-            {
-              text: 'frontmatter 配置',
-              link: '/guide/getting-started/frontmatter-config',
-            },
-          ],
-        },
-        {
-          text: '示例',
-          link: '/examples/config',
-        },
-        {
-          text: '组件',
-          link: '/components',
-        },
-        // {
-        //   text: 'Gallery',
-        //   link: '/examples/gallery',
-        // },
-      ],
+    nav: [
+      {
+        text: '主页',
+        link: '/',
+      },
+      {
+        text: '指南',
+        link: '/guide/getting-started/installation',
+        sidebar: ['getting-started', 'theme-config'],
+        subNav: [
+          {
+            text: '安装',
+            link: '/guide/getting-started/installation',
+          },
+          {
+            text: '更新 ',
+            link: '/guide/getting-started/update',
+          },
+          {
+            text: '主题配置',
+            link: '/guide/getting-started/theme-config',
+          },
+          {
+            text: '站点配置',
+            link: '/guide/getting-started/site-config',
+          },
+          {
+            text: 'frontmatter 配置',
+            link: '/guide/getting-started/frontmatter-config',
+          },
+        ],
+      },
+      {
+        text: '示例',
+        link: '/examples/config',
+      },
+      {
+        text: '组件',
+        link: '/components',
+      },
+      // {
+      //   text: 'Gallery',
+      //   link: '/examples/gallery',
+      // },
+    ],
 
-      github: 'https://github.com/WRXinYue/valaxy-theme-sakura',
-    },
+    navTools: [
+      ['togglTheme', { icon: 'i-ri-github-fill', link: 'https://github.com/WRXinYue/valaxy-theme-sakura' }],
+      ['search'],
+    ],
 
     hero: {
       title: 'VALAXY THEME SAKURA',
+      img: demoThemeConfig.themeConfig!.hero!.urls![0],
       motto: '开放、高自由、功能丰富的 valaxy 主题',
     },
 

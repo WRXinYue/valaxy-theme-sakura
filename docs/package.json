@@ -16,7 +16,7 @@
     "valaxy-addon-components": "^0.1.0",
     "valaxy-addon-git-log": "catalog:",
     "valaxy-addon-twikoo": "catalog:",
-    "valaxy-theme-oceanus": "^0.0.2",
+    "valaxy-theme-oceanus": "0.0.4",
     "valaxy-theme-sakura": "workspace:*",
     "vue-toastification": "2.0.0-rc.5"
   },
