@@ -14,8 +14,8 @@ const icon = computed(() => props.icon || themeConfig.value.ui.notice?.icon)
 </script>
 
 <template>
-  <div v-if="noticeMessage" class="mb-5 mt-10 flex items-center border rounded-$sakura-border-radius border-dashed p-5">
-    <div :class="icon" mr-2 />
-    <div v-html="noticeMessage" />
+  <div v-if="noticeMessage" class="mb-5 mt-10 border rounded-$sakura-border-radius border-dashed p-5" flex="~ <md:col items-center">
+    <span :class="icon" mr-2 class="inline-block <md:mb-2" />
+    <span v-html="noticeMessage" />
   </div>
 </template>
