@@ -1,7 +1,6 @@
 ---
 title: valaxy-theme-sakura
 tags: [sakura]
-cover: https://valaxy-theme-sakura.s3.bitiful.net/demo/2024-09-29.png
 date: 2024-12-31
 codeHeightLimit: 600
 ---
