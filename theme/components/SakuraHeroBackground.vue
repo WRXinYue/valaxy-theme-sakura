@@ -1,21 +1,14 @@
 <script lang="ts" setup>
-import { computed, onMounted, ref, watch } from 'vue'
-import { useStorage } from '@vueuse/core'
+import { computed, ref, watch } from 'vue'
 import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores'
 import { isVideoUrl } from '../utils'
 
 const props = withDefaults(defineProps<{
   urls?: string[] | string
-  wallpaperKey?: string
-}>(), {
-  wallpaperKey: 'hero',
-})
+}>(), {})
 
-const storageKey = `wallpaperKey-${props.wallpaperKey}`
 const visitedUrls = ref<number[]>([])
-
-const currentIndex = useStorage(storageKey, 0)
 
 const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
@@ -40,13 +33,13 @@ const currentWallpaperUrl = computed(() => {
     return urls.value[randomIndex]
   }
 
-  return urls.value[currentIndex.value]
+  return urls.value[sakura.wallpaperIndex]
 })
 
 const isCurrentMediaVideo = computed(() => isVideoUrl(currentWallpaperUrl.value))
 
-watch(() => sakura.wallpaperIndex[storageKey], (newIndex, oldIndex) => {
-  currentIndex.value = newIndex
+watch(() => sakura.wallpaperIndex, (newIndex, oldIndex) => {
+  // currentIndex.value = newIndex
 
   const urlsLength = hero.value.urls.length
   if (visitedUrls.value.length === urlsLength)
@@ -55,12 +48,8 @@ watch(() => sakura.wallpaperIndex[storageKey], (newIndex, oldIndex) => {
 })
 
 watch(() => urls.value.length, (length) => {
-  sakura.wallpaperLength[storageKey] = length
+  sakura.wallpaperLength = length
 }, { immediate: true })
-
-onMounted(() => {
-  sakura.wallpaperIndex[storageKey] = currentIndex.value
-})
 </script>
 
 <template>

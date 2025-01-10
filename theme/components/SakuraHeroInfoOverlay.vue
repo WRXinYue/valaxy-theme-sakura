@@ -8,12 +8,8 @@ import { useSakuraAppStore } from '../stores'
 
 const props = withDefaults(defineProps<{
   hero?: Hero
-  wallpaperKey?: string
-}>(), {
-  wallpaperKey: 'hero',
-})
+}>(), {})
 
-const storageKey = `wallpaperKey-${props.wallpaperKey}`
 const siteConfig = useSiteConfig()
 const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
@@ -21,22 +17,6 @@ const { hitokoto, fetchHitokoto } = useAddonHitokoto(themeConfig.value.hero.hito
 
 const banner = computed(() => props.hero || themeConfig.value.hero)
 const socials = computed(() => (banner.value.socials || siteConfig.value.social) as HeroSocialLink[])
-
-function prevMedia() {
-  sakura.wallpaperOperation = 'prevMedia'
-  sakura.wallpaperIndex[storageKey] = (sakura.wallpaperIndex[storageKey] - 1 + sakura.wallpaperLength[storageKey]) % sakura.wallpaperLength[storageKey]
-  setTimeout(() => {
-    sakura.wallpaperOperation = ''
-  }, 0)
-}
-
-function nextMedia() {
-  sakura.wallpaperOperation = 'nextMedia'
-  sakura.wallpaperIndex[storageKey] = (sakura.wallpaperIndex[storageKey] + 1) % sakura.wallpaperLength[storageKey]
-  setTimeout(() => {
-    sakura.wallpaperOperation = ''
-  }, 0)
-}
 </script>
 
 <template>
@@ -65,12 +45,12 @@ function nextMedia() {
 
         <slot v-if="themeConfig.hero.socialStyle === 'merge'" name="social">
           <div class="mx-5 mt-4 flex justify-between">
-            <img class="sakura-icon" rotate-180 cursor-pointer src="../assets/next-b.svg" alt="Previous media" @click="prevMedia">
+            <img class="sakura-icon" rotate-180 cursor-pointer src="../assets/next-b.svg" alt="Previous media" @click="sakura.prevWallpaper">
             <a v-for="social in socials" :key="social?.name" :style="{ '--sakura-icon-color': social?.color }" :href="social?.link" aria-label="icon" target="_blank">
               <div v-if="social?.icon" :class="[social.icon]" class="sakura-icon" />
               <img v-else-if="social?.img" :src="social.img" class="sakura-icon">
             </a>
-            <img class="sakura-icon" cursor-pointer src="../assets/next-b.svg" alt="Next media" @click="nextMedia">
+            <img class="sakura-icon" cursor-pointer src="../assets/next-b.svg" alt="Next media" @click="sakura.nextWallpaper">
           </div>
         </slot>
       </div>
@@ -79,7 +59,7 @@ function nextMedia() {
     <slot v-if="themeConfig.hero.socialStyle === 'separate' || themeConfig.hero.socialStyle === 'single'" name="social">
       <div class="sakura-info-card" :class="themeConfig.hero.socialStyle === 'separate' && 'sakura-social-card'">
         <div class="mx-5 justify-between" flex="~ center">
-          <img class="sakura-icon" rotate-180 cursor-pointer src="../assets/next-b.svg" alt="Previous media" @click="prevMedia">
+          <img class="sakura-icon" rotate-180 cursor-pointer src="../assets/next-b.svg" alt="Previous media" @click="sakura.prevWallpaper">
           <a
             v-for="social in socials"
             :key="social?.name"
@@ -88,7 +68,7 @@ function nextMedia() {
             <div v-if="social?.icon" :class="[social.icon]" class="sakura-icon" />
             <img v-else-if="social?.img" :src="social.img" class="sakura-icon">
           </a>
-          <img class="sakura-icon" cursor-pointer src="../assets/next-b.svg" alt="Next media" @click="nextMedia">
+          <img class="sakura-icon" cursor-pointer src="../assets/next-b.svg" alt="Next media" @click="sakura.nextWallpaper">
         </div>
       </div>
     </slot>
