@@ -33,7 +33,7 @@ const cover = computed(() => props.post.cover || defaultImage.value)
         </slot>
       </div>
       <slot name="content-extend">
-        <div class="mashiro-dots-container absolute!">
+        <div class="mashiro-dots-container absolute! <md:hidden">
           <SakuraDots />
         </div>
       </slot>
@@ -113,8 +113,16 @@ const cover = computed(() => props.post.cover || defaultImage.value)
     padding: var(--sakura-post-card-content-py)
       var(--sakura-post-card-content-px);
 
+    @include mobile {
+      padding-inline: var(--sakura-post-card-content-py);
+    }
+
     &.has-cover {
       width: calc(100% - var(--sakura-post-card-img-width));
+
+      @include mobile {
+        width: 100%;
+      }
     }
   }
 
@@ -124,6 +132,7 @@ const cover = computed(() => props.post.cover || defaultImage.value)
 
     @include mobile {
       width: 100%;
+      border-radius: var(--sakura-post-card-rd);
     }
   }
 
