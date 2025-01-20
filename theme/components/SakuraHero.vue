@@ -50,7 +50,7 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
         </div>
       </div>
 
-      <div z-4>
+      <div z-4 class="info-overlay">
         <slot name="info-overlay">
           <SakuraHeroInfoOverlay />
         </slot>
@@ -76,7 +76,7 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
 
   .sakura-glitch-text {
     font-family: Ubuntu, sans-serif;
@@ -90,15 +90,50 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
   }
 
   .banner-style.filter-dim::before {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: oklch(0% 0 0 / 30%);
   }
 
   .banner-style.filter-grid::before {
-    background-image: url('https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/grid.png');
+    background-image: linear-gradient(
+      to bottom,
+      oklch(0% 0 0 / 50%) 0%,
+      oklch(0% 0 0 / 50%) 50%,
+      oklch(0% 0 0 / 0%) 50%,
+      oklch(0% 0 0 / 0%) 100%
+    );
+    background-size: 100% 2px;
+  }
+
+  .banner-style.filter-grid:hover::before {
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      transparent 50%,
+      fadeout(oklch(25.2% 0 0), 50) 50%,
+      fadeout(oklch(25.2% 0 0), 50)
+    );
+    animation: wobble 250ms linear infinite;
+    background-size: 100% 4px;
   }
 
   .banner-style.filter-dot::before {
-    background-image: url('https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/dot.gif');
+    background: radial-gradient(
+      circle at center,
+      oklch(0% 0 0 / 20%) 0%,
+      transparent 100%
+    );
+    background-size: 3px 3px;
+  }
+
+  @keyframes wobble {
+    0%,
+    100% {
+      background-size: 100% 4px;
+    }
+
+    50% {
+      background-size: 100% 2px;
+    }
   }
 }
 </style>
