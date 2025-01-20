@@ -73,7 +73,10 @@ const getSrc = computed(() => {
 <template>
   <div class="sakura-image-card relative overflow-hidden" @mouseover="isHovering = true" @mouseleave="isHovering = false">
     <AppLink :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
-      <img class="h-full w-full object-cover" loading="lazy" :src="getSrc || noneImg " :alt="props.alt || 'cover'" :style="imageStyle" @error="onError">
+      <img v-if="getSrc" class="h-full w-full object-cover" loading="lazy" :src="getSrc" :alt="props.alt || 'cover'" :style="imageStyle" @error="onError">
+      <div v-else class="h-full w-full bg-$sakura-color-background opacity-70" :style="imageStyle" flex="~ center">
+        <div i-fa6-solid-image w="30%" h="30%" />
+      </div>
       <template v-if="overlay">
         <div class="sakura-image-card-overlay" :style="overlayStyle" />
       </template>
