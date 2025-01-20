@@ -12,6 +12,7 @@ const visitedUrls = ref<number[]>([])
 
 const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
+// const rootBackground = useCssVar('--sakura-custom-bg')
 
 const urls = computed(() => props.urls || themeConfig.value.hero.urls || '')
 const hero = computed(() => themeConfig.value.hero)
@@ -50,6 +51,10 @@ watch(() => sakura.wallpaperIndex, (newIndex, oldIndex) => {
 watch(() => urls.value.length, (length) => {
   sakura.wallpaperLength = length
 }, { immediate: true })
+
+// onMounted(() => {
+//   rootBackground.value = `url(${currentWallpaperUrl.value})`
+// })
 </script>
 
 <template>
@@ -85,7 +90,7 @@ watch(() => urls.value.length, (length) => {
 
 <style lang="scss">
 .sakura-hero-background {
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   overflow: hidden;
 
@@ -100,8 +105,8 @@ watch(() => urls.value.length, (length) => {
   &-default {
     background: linear-gradient(
       45deg,
-      var(--sakura-primary-color),
-      var(--sakura-primary-color)
+      var(--sakura-color-primary),
+      var(--sakura-color-primary)
     );
     background-size: 600% 600%;
     animation: gradient-background 10s ease infinite;

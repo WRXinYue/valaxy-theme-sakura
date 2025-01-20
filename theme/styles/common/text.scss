@@ -1,9 +1,9 @@
 .sakura-gradient-text {
   background: linear-gradient(
     to right,
-    var(--sakura-primary-color),
+    var(--sakura-color-primary),
     60%,
-    var(--sakura-primary-color)
+    var(--sakura-color-primary)
   );
   background-clip: text;
   color: transparent;
@@ -12,14 +12,14 @@
 .sakura-braced-text {
   &::before {
     content: '{';
-    color: var(--sakura-primary-color);
+    color: var(--sakura-color-primary);
     margin-right: 6px;
     font-family: Helvetica, sans-serif;
   }
 
   &::after {
     content: '}';
-    color: var(--sakura-primary-color);
+    color: var(--sakura-color-primary);
     margin-left: 6px;
     font-family: Helvetica, sans-serif;
   }

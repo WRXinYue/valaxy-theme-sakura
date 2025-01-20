@@ -25,14 +25,14 @@ const { hitokoto } = useAddonHitokoto({ args: [HitokotoType.Poetry] })
   width: 730px;
   max-width: 80%;
   margin: 80px auto;
-  border: 2px solid #797979;
+  border: 2px solid oklch(57.61% 0 0);
   border-top: none;
   text-align: center;
 
   h1 {
     top: -20px;
     display: inline-block;
-    color: #797979;
+    color: oklch(57.61% 0 0);
     font-weight: bold;
     font-size: 2em;
     letter-spacing: 4px;
@@ -42,13 +42,13 @@ const { hitokoto } = useAddonHitokoto({ args: [HitokotoType.Poetry] })
     width: 70%;
     margin: auto;
     line-height: 30px;
-    color: #797979;
+    color: oklch(57.61% 0 0);
   }
 
   .poem-info {
     font-size: 15px;
     margin: 15px auto;
-    color: #797979;
+    color: oklch(57.61% 0 0);
   }
 }
 
@@ -56,7 +56,7 @@ const { hitokoto } = useAddonHitokoto({ args: [HitokotoType.Poetry] })
   position: absolute;
   height: 2px;
   width: 27%;
-  background-color: #797979;
+  background-color: oklch(57.61% 0 0);
 
   &.poem-left {
     left: 0;

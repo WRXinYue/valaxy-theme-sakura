@@ -20,19 +20,19 @@ addonTwikoo.useTwikooWithOptions()
 
 .sakura-twikoo {
   .twikoo svg {
-    color: var(--sakura-primary-color);
+    color: var(--sakura-color-primary);
   }
 
   .tk-action-link {
-    color: var(--sakura-primary-color);
+    color: var(--sakura-color-primary);
   }
 
   .twikoo .el-button--primary.is-disabled {
-    background: var(--sakura-primary-color);
+    background: var(--sakura-color-primary);
     opacity: 0.6;
 
     &:hover {
-      background: var(--sakura-primary-color);
+      background: var(--sakura-color-primary);
       opacity: 0.8;
     }
   }
@@ -40,8 +40,8 @@ addonTwikoo.useTwikooWithOptions()
   .twikoo .el-button:not(.el-button--primary .el-button--text):active,
   .twikoo .el-button:not(.el-button--primary .el-button--text):focus,
   .twikoo .el-button:not(.el-button--primary .el-button--text):hover {
-    color: var(--sakura-primary-color) !important;
-    border-color: var(--sakura-primary-color) !important;
+    color: var(--sakura-color-primary) !important;
+    border-color: var(--sakura-color-primary) !important;
   }
 }
 </style>

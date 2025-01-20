@@ -84,7 +84,7 @@ const sortedYears = computed(() => {
 <style lang="scss" scoped>
 .post-collapse {
   .collection-title {
-    border-bottom: 2px solid rgba(var(--va-c-primary-rgb), 0.6);
+    border-bottom: var(--sakura-color-primary);
 
     &::before {
       content: '';
@@ -92,11 +92,11 @@ const sortedYears = computed(() => {
       top: 50%;
       width: 2px;
       height: 50%;
-      background: rgba(var(--va-c-primary-rgb), 0.3);
+      background: var(--sakura-color-primary);
     }
 
     .archive-year {
-      color: var(--sakura-primary-color);
+      color: var(--sakura-color-primary);
       margin: 0 1.5rem;
 
       &::before {
@@ -108,7 +108,7 @@ const sortedYears = computed(() => {
         margin-top: -4px;
         width: 1.5rem;
         height: 1.5rem;
-        background: var(--sakura-primary-color);
+        background: var(--sakura-color-primary);
         border-radius: 50%;
       }
     }
@@ -120,12 +120,12 @@ const sortedYears = computed(() => {
       position: absolute;
       width: 2px;
       height: 100%;
-      background: rgba(var(--va-c-primary-rgb), 0.3);
+      background: var(--sakura-color-primary);
     }
   }
 
   .post-header {
-    border-bottom: 1px solid rgba(var(--va-c-primary-rgb), 0.3);
+    border-bottom: 1px solid var(--sakura-color-primary);
 
     &::before {
       content: '';
@@ -135,7 +135,7 @@ const sortedYears = computed(() => {
       height: 10px;
       margin-left: -4px;
       border-radius: 50%;
-      border: 1px solid var(--sakura-primary-color);
+      border: 1px solid var(--sakura-color-primary);
       background-color: var(--va-c-bg-light);
       z-index: 1;
       transition: background var(--va-transition-duration);
@@ -143,7 +143,7 @@ const sortedYears = computed(() => {
 
     &:hover {
       &::before {
-        background: var(--sakura-primary-color);
+        background: var(--sakura-color-primary);
       }
     }
 

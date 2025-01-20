@@ -15,7 +15,7 @@ const scroll = useScroll()
   left: 0;
   top: 0;
   height: 3px;
-  background: var(--sakura-primary-color);
+  background: var(--sakura-color-primary);
 
   // transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   transition: width 1s cubic-bezier(0.33, 1, 0.68, 1);

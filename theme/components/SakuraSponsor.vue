@@ -41,7 +41,7 @@ const sponsorBtnTitle = computed(() => {
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sponsor-button {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: roklch(100% 0 0 / 10%);
 
   div {
     transform: scale(1.1);
@@ -49,7 +49,7 @@ const sponsorBtnTitle = computed(() => {
   }
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: oklch(100% 0 0 / 90%);
 
     div {
       transform: scale(1.2);

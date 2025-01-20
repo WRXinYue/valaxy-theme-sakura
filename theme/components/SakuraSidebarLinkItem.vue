@@ -13,9 +13,9 @@ defineProps<{
   </SakuraNavLink>
 
   <ul v-else-if="items?.length" class="sakura-sidebar-link-items">
-    <li v-for="(item, index) in items" :key="index">
+    <li v-for="(_item, index) in items" :key="index">
       <SakuraSidebarLinkItem :key="index" :item="item" class="sakura-sidebar-link-item" />
-      <SakuraSidebarLinkItem v-if="item.items" :items="item.items" class="sakura-sidebar-link-sub-items" />
+      <SakuraSidebarLinkItem v-if="_item.items" :items="_item.items" class="sakura-sidebar-link-sub-items" />
     </li>
   </ul>
 </template>
@@ -24,12 +24,12 @@ defineProps<{
 .sakura-sidebar-link-items {
   .sakura-sidebar-link-item {
     padding: 6px 15px;
-    color: var(--sakura-text-deep-color);
+    color: var(--sakura-color-text);
     font-size: 14px;
     letter-spacing: 0.02em;
 
     &:hover {
-      color: var(--sakura-primary-color);
+      color: var(--sakura-color-primary);
     }
   }
 
@@ -38,19 +38,19 @@ defineProps<{
     height: 1rem;
     margin-right: 6px;
   }
-}
 
-.sakura-sidebar-link-sub-items {
-  padding-left: 20px;
+  .sakura-sidebar-link-sub-items {
+    padding-left: 20px;
 
-  .sakura-sidebar-link-item {
-    font-size: 13px;
-    color: var(--sakura-text-muted-color);
-  }
+    .sakura-sidebar-link-item {
+      font-size: 13px;
+      color: var(--sakura-color-text);
+    }
 
-  .sakura-icon {
-    width: 0.9rem;
-    height: 0.9rem;
+    .sakura-icon {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
   }
 }
 </style>

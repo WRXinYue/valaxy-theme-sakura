@@ -24,6 +24,22 @@ const isOpen = ref(false)
   position: relative;
   display: inline-block;
 
+  .sakura-dropdown-menu {
+    position: absolute;
+    z-index: 3;
+    top: 100%;
+    left: 0;
+    background-color: var(--sakura-navbar-bg);
+    border-radius: 4px;
+    box-shadow: 0 8px 16px oklch(0% 0 0 / 20%);
+    padding: 11px 8px;
+    transition:
+      background-color 0.5s,
+      opacity 0.25s,
+      visibility 0.25s,
+      transform 0.25s;
+  }
+
   &[aria-expanded='true'] .sakura-dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -35,21 +51,5 @@ const isOpen = ref(false)
     visibility: hidden;
     transform: translateY(0);
   }
-}
-
-.sakura-dropdown-menu {
-  position: absolute;
-  z-index: 3;
-  top: 100%;
-  left: 0;
-  background-color: var(--sakura-navbar-bg-color);
-  border-radius: 4px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  padding: 11px 8px;
-  transition:
-    background-color 0.5s,
-    opacity 0.25s,
-    visibility 0.25s,
-    transform 0.25s;
 }
 </style>

@@ -20,7 +20,7 @@ defineProps<{
 
 .mashiro-burger {
   position: absolute;
-  background: rgba(111, 111, 111, 1);
+  background: oklch(54.17% 0 0);
   width: 100%;
   height: 4px;
   top: 50%;
@@ -31,7 +31,7 @@ defineProps<{
 
 .mashiro-burger::before {
   position: absolute;
-  background: rgba(111, 111, 111, 1);
+  background: oklch(54.17% 0 0);
   width: 100%;
   height: 4px;
   top: 8px;
@@ -41,7 +41,7 @@ defineProps<{
 
 .mashiro-burger::after {
   position: absolute;
-  background: rgba(111, 111, 111, 1);
+  background: oklch(54.17% 0 0);
   width: 100%;
   height: 4px;
   bottom: 8px;
@@ -66,6 +66,6 @@ defineProps<{
 }
 
 .mashiro-burger-menu.mashiro-menu-on .mashiro-burger {
-  background: rgba(111, 111, 111, 0);
+  background: oklch(54.17% 0 0 / 0%);
 }
 </style>

@@ -8,9 +8,9 @@
 }
 
 .sakura-sidebar-item-link {
-  color: var(--sakura-text-color);
+  color: var(--sakura-color-text);
 }
 
 .sakura-sidebar-item-link.router-link-exact-active {
-  color: var(--sakura-primary-color);
+  color: var(--sakura-color-primary);
 }

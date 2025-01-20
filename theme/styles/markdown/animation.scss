@@ -15,83 +15,11 @@
     );
   }
 
-  .markdown-body .prose > *:nth-child(1) {
-    --enter-stage: 1 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(2) {
-    --enter-stage: 2 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(3) {
-    --enter-stage: 3 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(4) {
-    --enter-stage: 4 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(5) {
-    --enter-stage: 5 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(6) {
-    --enter-stage: 6 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(7) {
-    --enter-stage: 7 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(8) {
-    --enter-stage: 8 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(9) {
-    --enter-stage: 9 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(10) {
-    --enter-stage: 10 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(11) {
-    --enter-stage: 11 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(12) {
-    --enter-stage: 12 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(13) {
-    --enter-stage: 13 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(14) {
-    --enter-stage: 14 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(15) {
-    --enter-stage: 15 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(16) {
-    --enter-stage: 16 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(17) {
-    --enter-stage: 17 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(18) {
-    --enter-stage: 18 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(19) {
-    --enter-stage: 19 !important;
-  }
-
-  .markdown-body .prose > *:nth-child(20) {
-    --enter-stage: 20 !important;
+  .markdown-body .prose > * {
+    @for $i from 1 to 20 {
+      &:nth-child(#{$i}) {
+        --enter-stage: #{$i} !important;
+      }
+    }
   }
 }

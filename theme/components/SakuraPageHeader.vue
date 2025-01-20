@@ -7,11 +7,11 @@ defineProps<{
 </script>
 
 <template>
-  <header class="sakura-page-header space-y-1 xl:pb-10" :class="fm.cover && `has-cover`">
-    <SakuraImageCard v-if="fm.cover" :src="fm.cover" class="w-full" />
+  <header class="sakura-page-header space-y-1" :class="fm.cover && `has-cover`" flex="~ center items-end justify-center">
+    <SakuraImageCard v-if="fm.cover" :src="fm.cover" h="full" w="full" />
     <div class="sakura-header-container">
       <slot name="title">
-        <div class="sakura-header-title" :class="!fm.cover && 'sakura-braced-text flex-center'">
+        <div class="sakura-header-title" flex="~ items-center" :class="!fm.cover && 'sakura-braced-text flex-center'">
           <div v-if="fm.icon" class="icon" m="r-1" inline-flex align-top :class="fm.icon" />
           <span>{{ fm.title }}</span>
           <span v-if="fm.subTitle"> · {{ fm.subTitle }}</span>
@@ -25,17 +25,19 @@ defineProps<{
 <style lang="scss" scoped>
 .sakura-page-header {
   margin-top: var(--sakura-navbar-height);
-  display: flex;
-  align-items: flex-end;
   width: 100%;
   position: relative;
+
+  .sakura-header-title {
+    font-size: 2.3rem;
+  }
 
   &:not(.has-cover) {
     margin-top: var(--sakura-navbar-spacing);
     height: 150px;
 
     .sakura-header-title {
-      color: var(--sakura-text-deep-color);
+      color: var(--sakura-color-text-deep);
     }
   }
 
@@ -49,16 +51,9 @@ defineProps<{
 
   .sakura-header-container {
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, -30%);
     color: white;
     font-weight: 700;
-  }
-
-  .sakura-header-title {
-    font-size: 2.3rem;
-    display: flex;
-    align-items: center;
+    bottom: 25px;
   }
 }
 </style>

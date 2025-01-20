@@ -8,12 +8,12 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="sakura-glitch-text" :data-text="props.text || props.typeString">
+  <h1 class="sakura-glitch-text" :data-text="props.text || props.typeString">
     <template v-if="props.text">
       {{ props.text }}
     </template>
     <SakuraTypewriter v-else-if="props.typeString" v-bind="props" />
-  </div>
+  </h1>
 </template>
 
 <style lang="scss" scoped>
@@ -35,7 +35,7 @@ const props = defineProps<{
   font-size: 4rem;
   line-height: initial;
   text-align: center;
-  text-shadow: rgba(0, 0, 0, 0.2) 4px 4px 8px;
+  text-shadow: oklch(0% 0 0 / 20%) 4px 4px 8px;
 
   @include screen('md') {
     & {
@@ -53,24 +53,24 @@ const props = defineProps<{
     @include glitch-common;
 
     left: -1px;
-    text-shadow: 1px 0 var(--sakura-glitch-before-text-color);
+    text-shadow: 1px 0 var(--sakura-color-glitch-before);
   }
 
   &::after {
     @include glitch-common;
 
     left: 1px;
-    text-shadow: -1px 0 var(--sakura-glitch-after-text-color);
+    text-shadow: -1px 0 var(--sakura-color-glitch-after);
   }
 
   &:hover {
     &::before {
-      text-shadow: 4px 0 var(--sakura-glitch-before-text-color);
+      text-shadow: 4px 0 var(--sakura-color-glitch-before);
       animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
     }
 
     &::after {
-      text-shadow: -4px 0 var(--sakura-glitch-after-text-color);
+      text-shadow: -4px 0 var(--sakura-color-glitch-after);
       animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse;
     }
   }

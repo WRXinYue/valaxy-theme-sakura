@@ -3,7 +3,7 @@ defineProps<{ cover?: string }>()
 </script>
 
 <template>
-  <div class="flex-center card rounded-$sakura-border-radius" flex="col" min-h="100px" bg="$va-c-bg-light">
+  <div class="flex-center card rounded-$sakura-radius" flex="col" min-h="100px" bg="$sakura-color-background">
     <img
       v-if="cover" width="640" height="360"
       class="lazy select-none object-cover" h="64 md:sm" w="full"

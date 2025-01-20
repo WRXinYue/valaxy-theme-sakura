@@ -15,11 +15,11 @@
 .mashiro-dots span {
   width: 0.3rem;
   height: 0.3rem;
-  background-color: #666;
+  background-color: var(--sakura-color-text);
   border-radius: 50%;
 }
 
 .mashiro-dots:hover span {
-  background-color: var(--sakura-primary-color);
+  background-color: var(--sakura-color-primary);
 }
 </style>

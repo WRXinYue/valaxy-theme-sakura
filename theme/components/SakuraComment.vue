@@ -106,18 +106,18 @@ const SakuraTwikoo = hasTwikoo.value
 .sakura-comment-button {
   padding: 0.1rem 1rem;
   border: none;
-  color: var(--sakura-text-muted-color);
-  background-color: #f0f0f0;
+  color: var(--sakura-color-text);
+  background-color: oklch(95.51% 0 0);
   transition: background-color 0.3s ease;
   cursor: pointer;
   font-weight: bold;
 
   &:hover {
-    background-color: #e0e0e0;
+    background-color: oklch(90.67% 0 0);
   }
 
   &.active {
-    background-color: var(--sakura-primary-color);
+    background-color: var(--sakura-color-primary);
     color: white;
   }
 }

@@ -10,7 +10,7 @@ const frontmatter = useFrontmatter()
       <SakuraPageHeader :fm="frontmatter" />
     </slot>
 
-    <SakuraMultiColumns>
+    <SakuraMultiColumns base>
       <template #left>
         <slot name="left" />
       </template>
@@ -35,8 +35,8 @@ const frontmatter = useFrontmatter()
 
 .sakura-page {
   &-content {
-    background: var(--sakura-bg-color);
-    border-radius: var(--sakura-border-radius);
+    background: var(--sakura-color-background);
+    border-radius: var(--sakura-radius);
     padding: 0 30px;
   }
 

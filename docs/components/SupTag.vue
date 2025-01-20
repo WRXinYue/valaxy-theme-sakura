@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 .sup-tag {
-  color: #fff;
+  color: oklch(100% 0 0);
   border-radius: 6px;
   background-color: var(--va-c-brand);
   font-size: 0.875rem;

@@ -39,7 +39,7 @@ export function useSakuraTags(options: {
 
     return {
       '--sakura-tag-color': textColor,
-      '--sakura-tag-bg-color': backgroundColor,
+      '--sakura-tag-bg': backgroundColor,
     }
   }
 

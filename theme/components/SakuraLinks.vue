@@ -59,7 +59,7 @@ const { data } = useLinkData(props.links, props.random)
     transition: 0.2s;
     color: var(--primary-color, black);
     border: 1px solid var(--primary-color, gray);
-    border-radius: var(--sakura-border-radius);
+    border-radius: var(--sakura-radius);
 
     &:hover {
       color: white;
@@ -77,12 +77,12 @@ const { data } = useLinkData(props.links, props.random)
         display: inline-flex;
         max-width: 100%;
         border-radius: 50%;
-        background-color: #fff;
+        background-color: oklch(100% 0 0);
         border: 1px solid var(--primary-color, gray);
         transition: 0.5s;
 
         &:hover {
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 20px oklch(0% 0 0 / 10%);
         }
       }
 

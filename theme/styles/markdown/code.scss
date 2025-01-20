@@ -26,7 +26,7 @@ html {
     margin: 16px 0;
     border-left: 4px solid var(--va-c-divider);
     padding-left: 12px;
-    transition: border-color 0.5s;
+    transition: color-border 0.5s;
 
     p {
       margin: 0;
@@ -41,12 +41,12 @@ html {
     font-size: var(--code-font-size);
     border-radius: 4px;
     padding: 0.2em 0.4em;
-    background-color: rgba(27, 31, 35, 0.05);
+    background-color: oklch(23.69% 0.0097 248.24 / 5%);
   }
 
   code:not(pre > code) {
-    color: var(--sakura-code-text-color);
-    background-color: var(--sakura-bg-mute-color);
+    color: var(--sakura-color-primary);
+    background-color: var(--sakura-color-muted-background);
     padding: 3px 6px;
     border-radius: 4px;
     font-weight: 500;
@@ -67,7 +67,7 @@ html {
     font-family: var(--code-font-family);
     flex-direction: row-reverse;
     border-radius: 8px;
-    border: 1px solid var(--sakura-border-color);
+    border: 1px solid var(--sakura-color-border);
     padding-top: 32px;
     overflow: hidden;
 
@@ -85,7 +85,7 @@ html {
       background-position: 50%;
       border-radius: 4px;
       opacity: 0;
-      border: 1px solid var(--sakura-border-color);
+      border: 1px solid var(--sakura-color-border);
     }
 
     &:hover button.copy {
@@ -118,8 +118,8 @@ html {
       right: 0;
       top: 0;
       height: 32px;
-      background: #f6f8fa;
-      border-bottom: 1px solid var(--sakura-border-color);
+      background: oklch(97.82% 0.0034 247.86);
+      border-bottom: 1px solid var(--sakura-color-border);
     }
 
     &::after {
@@ -130,16 +130,16 @@ html {
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: #fc625d;
+      background: oklch(69.35% 0.1893 25.17);
       box-shadow:
-        20px 0 #fdbc40,
-        40px 0 #35cd4b;
+        20px 0 oklch(83.48% 0.1524 79.44),
+        40px 0 oklch(74.46% 0.2122 145.06);
     }
   }
 
   .line-numbers-wrapper {
     padding-left: 16px;
-    color: var(--sakura-primary-text-color);
+    color: var(--sakura-color-primary);
     user-select: none;
   }
 }

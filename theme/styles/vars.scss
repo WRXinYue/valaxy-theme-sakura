@@ -1,24 +1,39 @@
 @use 'sass:map';
 
 $common: (
-  // --------------- Primary ---------------
-  'primary-color': var(--va-c-primary),
-  'primary-text-color': var(--sakura-primary-color),
+  'font-family': 'Rubik, sans-serif',
+  'font-family-spicy': '"Moe-Mashiro",sans-serif',
+  'color-primary': var(--va-c-primary),
+  'color-action': var(--va-c-primary-dark),
+  'color-background': var(--va-c-bg),
+  'color-muted-background': var(--va-bg-mute-color),
+  'color-overlay-background': oklch(16.83% 0.0061 248.19 / 75%),
+  'color-divider': oklch(94.31% 0 0),
+  'scrollbar-bg': var(--sakura-color-background),
+  'scrollbar-thumb': var(--sakura-color-primary),
+  'scrollbar-thumb-hover': oklch(67.17% 0.0163 271.17),
+  'radius': 10px,
+  'radius-large': 15px,
+  'radius-small': 5px,
   // --------------- Navbar ---------------
-  'navbar-height': 75px,
-  'navbar-text-color': var(--sakura-text-deep-color),
+  'navbar-height': 65px,
   'navbar-marker-height': 2px,
-  'navbar-marker-color': var(--sakura-primary-color),
+  'navbar-marker-color': var(--sakura-color-primary),
   'navbar-mt': 20px,
   'navbar-spacing': calc(var(--sakura-navbar-height) + 20px),
-  'navbar-shadow': 0 1px 40px -8px rgba(0, 0, 0, 0.5),
+  'navbar-shadow': 0 10px 20px -8px oklch(0% 0 0 / 50%),
+  'navbar-title-color': var(--sakura-color-text-deep),
+  'navbar-item-color': var(--sakura-color-text),
   // --------------- Footer ---------------
   'footer-height': 140px,
+  // --------------- Card ---------------
+  'card-bg': var(--sakura-color-background),
+  'card-shadow': 0px 20px 26px oklch(33% 0.0014 17.23 / 30%),
   // --------------- PostCard ---------------
-  'post-card-height': 300px,
-  'post-card-bg-color': var(--sakura-bg-color),
+  'post-card-height': 250px,
+  'post-card-bg': var(--sakura-card-bg),
   'post-card-img-width': 55%,
-  'post-card-rd': var(--sakura-border-radius),
+  'post-card-rd': var(--sakura-radius),
   'post-card-font-size': 1.17em,
   'post-card-content-px': 39px,
   'post-card-content-py': 20px,
@@ -29,69 +44,39 @@ $common: (
   // --------------- Sidebar ---------------
   'sidebar-width': var(--va-sidebar-width),
   'sidebar-marker-height': 2px,
-  'sidebar-bg-color': var(--sakura-bg-color),
+  'sidebar-bg': var(--sakura-color-background),
   'sidebar-offset': var(--sakura-sidebar-width),
+  // --------------- SakuraTimeLine ---------------
+  'timeline-color': var(--sakura-color-primary),
+  'timeline-text-color': var(--sakura-color-primary),
+  'timeline-height': 30px,
   // --------------- Glitch Text ---------------
-  'glitch-before-text-color': #ff3f1a,
-  'glitch-after-text-color': #00a7e0,
-  // --------------- Other ---------------
-  'bg-color': var(--va-c-bg),
-  'bg-mute-color': var(--va-bg-mute-color),
-  'accent-color': var(--sakura-primary-color),
-  'code-text-color': var(--sakura-primary-color),
-  'link-color': var(--sakura-primary-color),
-  'border-radius': 10px,
-  'border-radius-large': 15px,
-  'border-radius-small': 5px,
-  // border-radius or rounded corners
-  'comment-bg-url': url('../assets/comment-bg.png') // 'sakura-post-card'
+  'color-glitch-before': oklch(66% 0.2 32.5),
+  'color-glitch-after': oklch(66% 0.2 252),
+  // --------------- Comment ---------------
+  'comment-bg-url': url('../assets/comment-bg.png'),
 ) !default;
 $common: map.merge((), $common);
 
 $light: (
+  'color-text-muted': oklch(70% 0 0),
+  'color-text': oklch(55.55% 0 0),
+  'color-text-deep': oklch(37.15% 0 0),
+  'color-border': oklch(94.91% 0 0),
+  'color-icon': oklch(100% 0 0),
   // --------------- Navbar ---------------
-  'navbar-bg-color': #fff,
-  // --------------- Text ---------------
-  'text-color': #797979,
-  'text-muted-color': hsl(0deg, 0%, 45.1%),
-  'text-deep-color': #404040,
-  'text-deeper-color': #303030,
-  'border-color': rgb(238, 238, 238),
-  'border-hover-color': #f1c484,
-  'icon-color': #fff,
-  // --------------- SakuraTimeLine ---------------
-  'timeline-color': var(--sakura-primary-color),
-  'timeline-text-color': var(--sakura-primary-color),
-  'timeline-height': 30px,
-  // --------------- PostNavigation ---------------
-  'post-nav-title-color': #f0f8ff,
-  'post-nav-label-color': rgba(255, 255, 255, 0.7),
-  // --------------- SakuraNavbar ---------------
-  'navbar-text-hover-color': #fff,
-  'navbar-bg-hover-color': var(--sakura-primary-color)
+  'navbar-bg': oklch(100% 0 0 / 98%),
 ) !default;
 $light: map.merge((), $light);
 
 $dark: (
-  // --------------- Navbar ---------------
-  'navbar-bg-color': var(--va-c-bg-alt),
   // --------------- Text ---------------
-  'text-color': #f0f8ff,
-  'text-muted-color': hsl(0deg, 0%, 63.9%),
-  'text-deep-color': var(--sakura-text-color),
-  'text-deeper-color': var(--sakura-text-color),
-  'border-color': rgb(17, 17, 17),
-  'border-hover-color': #f1c484,
-  'icon-color': #fff,
-  // --------------- SakuraTimeLine ---------------
-  'timeline-color': var(--sakura-primary-color),
-  'timeline-text-color': var(--sakura-primary-color),
-  'timeline-height': 30px,
-  // --------------- PostNavigation ---------------
-  'post-nav-title-color': #f0f8ff,
-  'post-nav-label-color': rgba(255, 255, 255, 0.7),
-  // --------------- SakuraNavbar ---------------
-  'navbar-text-hover-color': var(--va-c-bg-alt),
-  'navbar-bg-hover-color': var(--sakura-primary-color)
+  'color-text-muted': oklch(70% 0.0044 247.87),
+  'color-text': oklch(92.22% 0.0044 247.87),
+  'color-text-deep': oklch(100% 0 0),
+  'color-border': oklch(17.76% 0 0),
+  'color-icon': oklch(100% 0 0),
+  // --------------- Navbar ---------------
+  'navbar-bg': var(--va-c-bg-alt)
 ) !default;
 $dark: map.merge((), $dark);

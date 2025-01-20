@@ -24,8 +24,8 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
       v-if="prev?.path" v-bind="{ ...props, src: prev.cover, to: prev.path }"
       class="card-prev" :class="{
         'mt-10': !navigationMerge,
-        'w-1/2 rounded-l-$sakura-border-radius': next?.path && navigationMerge,
-        'rounded-$sakura-border-radius': (navigationMerge && !next?.path) || !navigationMerge,
+        'w-1/2 rounded-l-$sakura-radius': next?.path && navigationMerge,
+        'rounded-$sakura-radius': (navigationMerge && !next?.path) || !navigationMerge,
       }"
     >
       <div class="sakura-post-nav-content">
@@ -40,8 +40,8 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
     <SakuraImageCard
       v-if="next?.path" v-bind="{ ...props, src: next.cover, to: next.path }"
       class="card-next" :class="{
-        'w-1/2 rounded-r-$sakura-border-radius': prev?.path && navigationMerge,
-        'rounded-$sakura-border-radius': (navigationMerge && !prev?.path) || !navigationMerge,
+        'w-1/2 rounded-r-$sakura-radius': prev?.path && navigationMerge,
+        'rounded-$sakura-radius': (navigationMerge && !prev?.path) || !navigationMerge,
       }"
     >
       <div class="sakura-post-nav-content">
@@ -78,11 +78,11 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
     line-height: 1rem;
     letter-spacing: 0.025em;
     text-transform: uppercase;
-    color: var(--sakura-post-nav-label-color);
+    color: oklch(100% 0 0 / 70%);
   }
 
   &-title {
-    color: var(--sakura-post-nav-title-color);
+    color: oklch(97.51% 0.01 244.25);
     font-weight: bold;
   }
 
@@ -94,7 +94,7 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
     &::before {
       content: '';
       transition: opacity 0.3s ease-in-out;
-      background-color: #000;
+      background-color: var(--sakura-color-overlay-background);
       opacity: 0.6;
       position: absolute;
       inset: 0;

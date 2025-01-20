@@ -1,5 +1,5 @@
 .prose {
-  color: var(--sakura-text-color);
+  color: var(--sakura-color-text);
   max-width: 65ch;
   font-size: 1rem;
   line-height: 1.75;
@@ -20,7 +20,7 @@
 }
 
 .prose strong {
-  color: var(--sakura-text-deep-color);
+  color: var(--sakura-color-text-deep);
   font-weight: 600;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .prose h1 {
-  color: var(--sakura-text-deeper-color);
+  color: var(--sakura-color-text-deep);
   font-weight: 800;
   font-size: 2.25em;
   margin-top: 0;
@@ -125,7 +125,7 @@
 }
 
 .prose h2 {
-  color: var(--sakura-text-deep-color);
+  color: var(--sakura-color-text-deep);
   font-weight: 700;
   font-size: 1.5em;
   margin-top: 2em;
@@ -159,7 +159,7 @@
 }
 
 .prose code {
-  color: var(--sakura-text-deep-color);
+  color: var(--sakura-color-text-deep);
   font-weight: 600;
   font-size: 0.875em;
 }
@@ -218,7 +218,7 @@
 }
 
 .prose thead {
-  color: var(--sakura-text-deep-color);
+  color: var(--sakura-color-text-deep);
   font-weight: 600;
   border-bottom-width: 1px;
   border-bottom-color: #8882;
@@ -366,7 +366,7 @@
 }
 
 .prose b {
-  color: var(--sakura-text-deep-color);
+  color: var(--sakura-color-text-deep);
 }
 
 .prose em {

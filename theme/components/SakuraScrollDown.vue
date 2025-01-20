@@ -23,7 +23,7 @@ const icon = computed(() => props.icon || themeConfig.value.ui.scrollDown.icon)
   transform: scale(1.5, 1);
 
   &-icon {
-    color: var(--sakura-bg-color);
+    color: var(--sakura-color-background);
     font-size: 19px;
     cursor: pointer;
   }

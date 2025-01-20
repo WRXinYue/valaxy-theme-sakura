@@ -65,7 +65,7 @@ function displayTag(tag: string) {
         <template #main-nav-before>
           <slot name="post">
             <div v-if="curTag">
-              <SakuraPostListCard :posts="posts" />
+              <SakuraPostList :posts />
             </div>
           </slot>
         </template>
@@ -77,20 +77,20 @@ function displayTag(tag: string) {
 <style lang="scss" scoped>
 .sakura-tag-button {
   color: var(--sakura-tag-color) !important;
-  background-color: var(--sakura-tag-bg-color);
+  background-color: var(--sakura-tag-bg);
   line-height: 1.75rem;
   transition:
     color 0.3s ease-in-out,
-    border-color 0.2s ease-in-out;
+    color-border 0.2s ease-in-out;
 
   &:hover {
-    color: var(--sakura-tag-color, var(--sakura-primary-color)) !important;
-    border-color: var(--sakura-tag-color, var(--sakura-primary-color));
+    color: var(--sakura-tag-color, var(--sakura-color-primary)) !important;
+    border-color: var(--sakura-tag-color, var(--sakura-color-primary));
   }
 
   &.clicked {
-    color: var(--sakura-tag-color, var(--sakura-primary-color)) !important;
-    border-color: var(--sakura-tag-color, var(--sakura-primary-color));
+    color: var(--sakura-tag-color, var(--sakura-color-primary)) !important;
+    border-color: var(--sakura-tag-color, var(--sakura-color-primary));
   }
 
   &::before {

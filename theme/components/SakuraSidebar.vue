@@ -15,7 +15,7 @@ const position = ref(props.position ?? themeConfig.value.sidebarOptions.position
 
 <template>
   <div>
-    <ValaxyOverlay class="md:hidden" :show="sakuraAppStore.sidebar.isOpen" @click="sakuraAppStore.sidebar.close" />
+    <ValaxyOverlay class="bg-$sakura-color-overlay-background md:hidden" :show="sakuraAppStore.sidebar.isOpen" @click="sakuraAppStore.sidebar.close" />
 
     <aside
       class="sakura-sidebar inset-y-0 overflow-y-auto transition"
@@ -43,7 +43,7 @@ const position = ref(props.position ?? themeConfig.value.sidebarOptions.position
   width: var(--sakura-sidebar-width);
   background-image: var(--sakura-c-sidebar-bg-img);
   background-position: bottom 1rem center;
-  background-color: var(--sakura-sidebar-bg-color);
+  background-color: var(--sakura-sidebar-bg);
   transition:
     box-shadow var(--va-transition-duration),
     background-color var(--va-transition-duration),

@@ -10,9 +10,14 @@
     position: relative;
   }
 
+  p {
+    color: var(--sakura-color-text);
+    line-height: 30px;
+  }
+
   a {
     position: relative;
-    color: var(--sakura-link-color);
+    color: var(--sakura-color-action);
     text-decoration: none;
     transition:
       color 0.2s ease-out,
@@ -20,12 +25,7 @@
       opacity 0.2s ease-out;
 
     &:hover {
-      color: var(--sakura-primary-color);
-    }
-
-    &:hover::after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
+      color: var(--sakura-color-primary);
     }
 
     &::after {
@@ -36,17 +36,22 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: var(--sakura-primary-color);
+      background-color: var(--sakura-color-primary);
       transform-origin: bottom right;
       transition: transform 0.25s ease-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
     }
   }
 
   ul,
   ol {
-    border: 1px dashed #e4e4e4;
+    border: 1px dashed var(--sakura-color-divider);
     padding: 15px 10px 15px 50px;
-    color: #616161;
+    color: var(--sakura-color-text);
     margin-left: 0;
     border-radius: 10px;
   }
@@ -75,8 +80,7 @@
 
   h3 {
     padding-bottom: 8px;
-    border-bottom: 1px dashed #ddd;
-    color: var(--sakura-text-muted-color);
+    border-bottom: 1px dashed var(--sakura-color-divider);
   }
 
   h3,
@@ -88,7 +92,7 @@
   h2::after {
     content: '\00B6';
     position: absolute;
-    color: #ff6d6d;
+    color: oklch(71.45% 0.1788 22.7);
     font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
       'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
     padding-left: 6px;
@@ -98,7 +102,7 @@
   .serif h2::after {
     content: '\00B6';
     position: absolute;
-    color: var(--sakura-primary-color);
+    color: var(--sakura-color-primary);
     font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
       'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
     padding-left: 6px;
@@ -109,21 +113,21 @@
     content: '#';
     left: 0;
     position: absolute;
-    color: var(--sakura-primary-color);
+    color: var(--sakura-color-primary);
   }
 
   h4::after {
     content: '▌';
     left: 0;
     position: absolute;
-    color: var(--sakura-primary-color);
+    color: var(--sakura-color-primary);
   }
 
   h5::after {
     content: '♯';
     left: 0;
     position: absolute;
-    color: var(--sakura-primary-color);
+    color: var(--sakura-color-primary);
   }
 
   h1.entry-title {
@@ -151,16 +155,11 @@
     content: '...';
     display: inline-block;
     margin-left: 0.6em;
-    color: rgba(0, 0, 0, 0.8);
+    color: oklch(0% 0 0 / 80%);
     position: relative;
     top: -30px;
     font-size: 28px;
     letter-spacing: 0.6em;
-  }
-
-  p {
-    color: var(--sakura-text-color);
-    line-height: 30px;
   }
 
   code {

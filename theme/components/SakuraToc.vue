@@ -22,7 +22,7 @@ const { t } = useI18n()
 
 <style lang="scss" scoped>
 .toc-btn {
-  color: var(--sakura-primary-color);
+  color: var(--sakura-color-primary);
   background-color: white;
   z-index: var(--yun-z-toc-btn);
 }

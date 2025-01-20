@@ -45,10 +45,10 @@ function registerTargets() {
     sakura.paginationTargets = Array.from(document.querySelectorAll('.article-list'))
 
     for (let i = sakura.paginationElementPositionsNumber; i < sakura.paginationTargets.length; i++) {
-      const target = document.getElementById(`sakura-post-${i}`)
+      const target = document.getElementById(`article-${i}`)
 
       if (target === null) {
-        console.error(`Element with ID 'sakura-post-${i}' not found. This may prevent preload from working properly.`)
+        console.error(`Element with ID 'article-${i}' not found. This may prevent preload from working properly.`)
         return
       }
 
@@ -95,12 +95,8 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
-.sakura-pagination-scroll {
-  color: var(--sakura-text-muted-color);
-}
-
 .load-more-button {
-  border: 1px solid #d6d6d6;
+  border: 1px solid var(--sakura-color-divider);
   border-radius: 50px;
   transition:
     color 0.2s ease-out,
@@ -109,7 +105,7 @@ onUnmounted(() => {
 }
 
 .load-more-button:hover {
-  color: var(--sakura-primary-color);
-  border-color: var(--sakura-primary-color);
+  color: var(--sakura-color-primary);
+  border-color: var(--sakura-color-primary);
 }
 </style>

@@ -16,7 +16,7 @@ const entries = computed(() => props.entries ?? themeConfig.value.pinnedPost?.en
 <template>
   <div v-if="entries?.length" class="sakura-pinned-post <md:hidden">
     <SakuraDivider :icon :text />
-    <div class="sakura-pinned-post-card flex">
+    <div class="sakura-card sakura-pinned-post-card flex">
       <SakuraImageCard
         v-for="(entry, i) in entries" :key="i" :data-title="entry.title" :to="entry.link"
         :data-desc="entry.desc" :overlay="true" :src="entry.img"
@@ -39,7 +39,6 @@ const entries = computed(() => props.entries ?? themeConfig.value.pinnedPost?.en
     margin: 0 3px;
     border-radius: var(--sakura-post-card-rd);
     overflow: hidden;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 
     &::before,
     &::after {
@@ -49,7 +48,7 @@ const entries = computed(() => props.entries ?? themeConfig.value.pinnedPost?.en
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #fff;
+      color: oklch(100% 0 0);
       transition:
         right 0.35s ease,
         left 0.5s ease;
@@ -60,7 +59,7 @@ const entries = computed(() => props.entries ?? themeConfig.value.pinnedPost?.en
       content: attr(data-title);
       top: 30px;
       right: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: var(--sakura-color-overlay-background);
     }
 
     &::after {

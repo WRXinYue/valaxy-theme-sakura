@@ -17,18 +17,18 @@ withDefaults(defineProps<{
   border-width: 1px;
   padding: 2px 20px;
   border-radius: 20px;
-  color: var(--sakura-text-color);
+  color: var(--sakura-color-text);
   transition:
     color 0.3s ease-in-out,
-    border-color 0.2s ease-in-out;
+    color-border 0.2s ease-in-out;
 
   &-primary {
     background-color: transparent;
 
     &:hover,
     &.clicked {
-      color: var(--sakura-primary-color);
-      border-color: var(--sakura-primary-color);
+      color: var(--sakura-color-primary);
+      border-color: var(--sakura-color-primary);
     }
   }
 }

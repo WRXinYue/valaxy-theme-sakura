@@ -40,7 +40,7 @@ const lightIcon = computed(() => props.lightIcon)
   border: 1px solid var(--sakura-c-border);
   background-color: var(--sakura-c-bg-brand);
   transition:
-    border-color 0.25s,
+    color-border 0.25s,
     background-color 0.25s;
 }
 
@@ -55,17 +55,17 @@ const lightIcon = computed(() => props.lightIcon)
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: oklch(100% 0 0);
   box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.04),
-    0 1px 2px rgba(0, 0, 0, 0.06);
+    0 1px 2px oklch(0% 0 0 / 4%),
+    0 1px 2px oklch(0% 0 0 / 6%);
   transition:
     background-color 0.25s,
     transform 0.25s;
 }
 
 .dark .check {
-  background-color: #1a1a1a;
+  background-color: oklch(21.78% 0 0);
 }
 
 .icon-wrap {
@@ -80,11 +80,11 @@ const lightIcon = computed(() => props.lightIcon)
 .icon {
   width: 12px;
   height: 12px;
-  background-color: rgba(60, 60, 60, 0.7);
+  background-color: oklch(35.62% 0 0 / 70%);
 }
 
 .dark .icon {
-  background-color: rgba(255, 255, 255, 0.87);
+  background-color: oklch(100% 0 0 / 87%);
 }
 
 .dark .switch-appearance :deep(.check) {

@@ -57,7 +57,7 @@ function toSearch() {
   padding-top: 2.4rem;
   margin: 0;
   z-index: 150;
-  background-color: var(--sakura-bg-color);
+  background-color: var(--sakura-color-background);
   overflow-y: scroll;
   pointer-events: auto;
   transition: color 0.2s ease;
@@ -94,28 +94,28 @@ function toSearch() {
   &-input {
     width: 100%;
     background: transparent;
-    color: var(--sakura-text-color);
+    color: var(--sakura-color-text);
     font-size: 1.5rem;
     border-radius: 3rem;
     padding: 6px 24px 6px 50px;
-    border: 1px solid var(--sakura-border-color);
+    border: 1px solid var(--sakura-color-border);
     box-sizing: border-box;
     font-weight: 900;
     transition: all 0.2s;
 
     &:focus {
-      border-color: var(--sakura-primary-color);
+      border-color: var(--sakura-color-primary);
     }
   }
 
   &-result-item {
     padding: 0.5rem;
-    color: var(--sakura-text-color);
+    color: var(--sakura-color-text);
     cursor: pointer;
-    border-top: 1px dashed #ccc;
+    border-top: 1px dashed var(--sakura-color-divider);
 
     &:hover {
-      color: var(--sakura-primary-text-color);
+      color: var(--sakura-color-primary);
     }
   }
 }

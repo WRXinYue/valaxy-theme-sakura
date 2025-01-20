@@ -1,23 +1,29 @@
 @use 'valaxy-theme-sakura/styles/animation/slide/slide.scss' as *;
 
 .link {
-  color: var(--sakura-primary-color);
+  color: var(--sakura-color-primary);
 }
 
 html {
-  color: var(--sakura-text-color);
+  color: var(--sakura-color-text);
 }
 
 body {
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  font-family: var(--sakura-font-family);
+  text-shadow: 0 0 1px oklch(0% 0 0 / 10%);
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--sakura-primary-color);
+  background: var(--sakura-color-primary);
 }
 
 a {
-  color: var(--sakura-link-color);
+  color: var(--sakura-color-primary);
+  transition: color 0.2s ease-out;
+
+  &:hover {
+    color: var(--sakura-color-action);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,4 +32,8 @@ a {
     /* stylelint-disable-next-line scss/double-slash-comment-empty-line-before */
     // @extend .animation-slide-down;
   }
+}
+
+.site-content {
+  padding-inline: 20px;
 }

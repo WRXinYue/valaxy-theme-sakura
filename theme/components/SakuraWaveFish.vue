@@ -55,7 +55,7 @@ class Renderer {
   }
 
   setFishColor(color?: string): void {
-    color ? this.fishColor = color : this.fishColor = useCssVar('--sakura-bg-color').value!
+    color ? this.fishColor = color : this.fishColor = useCssVar('--sakura-color-background').value!
   }
 
   setParameters(): void {

@@ -108,7 +108,7 @@ function handleMouseEnter(year: number, month: number) {
                 <time v-if="post.date" class="post-time" font="mono" opacity="80">{{
                   formatDate(post.date, 'MM') }}月
                 </time>
-                <span class="text-$sakura-text-color">
+                <span class="text-$sakura-color-text">
                   ({{ originalPostListByYear[year][month].length }} 篇文章)
                 </span>
               </div>
@@ -117,7 +117,7 @@ function handleMouseEnter(year: number, month: number) {
                   formatDate(post.date, 'dd') }}日
                 </time>
                 <h2 class="post-title" inline-flex items-center font="serif black">
-                  <RouterLink :to="post.path || ''" class="post-title-link text-$sakura-text-color hover:text-$sakura-accent-color">
+                  <RouterLink :to="post.path || ''" class="post-title-link text-$sakura-color-text hover:text-$sakura-color-action">
                     {{ post.title }}
                   </RouterLink>
                 </h2>
@@ -163,7 +163,7 @@ function handleMouseEnter(year: number, month: number) {
       top: 50%;
       width: 2px;
       height: 50%;
-      background: rgba(var(--va-c-primary-rgb), 0.3);
+      background: var(--sakura-color-primary);
     }
 
     .archive-year {
@@ -179,7 +179,7 @@ function handleMouseEnter(year: number, month: number) {
         margin-top: 14px;
         width: 1rem;
         height: 1rem;
-        background: var(--sakura-primary-color);
+        background: var(--sakura-color-primary);
         border-radius: 50%;
       }
     }
@@ -253,6 +253,6 @@ function handleMouseEnter(year: number, month: number) {
   background: var(--sakura-timeline-color);
   border-radius: 50%;
   border: 2px solid white;
-  box-shadow: 1px 1px 1px #bbb;
+  box-shadow: 1px 1px 1px var(--sakura-color-divider);
 }
 </style>

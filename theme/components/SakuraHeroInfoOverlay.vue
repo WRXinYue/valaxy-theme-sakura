@@ -46,7 +46,7 @@ const socials = computed(() => (banner.value.socials || siteConfig.value.social)
         <slot v-if="themeConfig.hero.socialStyle === 'merge'" name="social">
           <div class="mx-5 mt-4 flex justify-between">
             <img class="sakura-icon" rotate-180 cursor-pointer src="../assets/next-b.svg" alt="Previous media" @click="sakura.prevWallpaper">
-            <a v-for="social in socials" :key="social?.name" :style="{ '--sakura-icon-color': social?.color }" :href="social?.link" aria-label="icon" target="_blank">
+            <a v-for="social in socials" :key="social?.name" :style="{ '--sakura-color-icon': social?.color }" :href="social?.link" aria-label="icon" target="_blank">
               <div v-if="social?.icon" :class="[social.icon]" class="sakura-icon" />
               <img v-else-if="social?.img" :src="social.img" class="sakura-icon">
             </a>
@@ -63,7 +63,7 @@ const socials = computed(() => (banner.value.socials || siteConfig.value.social)
           <a
             v-for="social in socials"
             :key="social?.name"
-            flex="~ center" :class="themeConfig.hero.socialStyle === 'single' && 'sakura-social-card'" :style="{ '--sakura-icon-color': social?.color }" :href="social?.link" aria-label="icon" target="_blank"
+            flex="~ center" :class="themeConfig.hero.socialStyle === 'single' && 'sakura-social-card'" :style="{ '--sakura-color-icon': social?.color }" :href="social?.link" aria-label="icon" target="_blank"
           >
             <div v-if="social?.icon" :class="[social.icon]" class="sakura-icon" />
             <img v-else-if="social?.img" :src="social.img" class="sakura-icon">
@@ -88,7 +88,8 @@ const socials = computed(() => (banner.value.socials || siteConfig.value.social)
   .sakura-social-card {
     padding: 15px 16px;
     border-radius: 1rem;
-    background: hsla(0deg, 0%, 0%, 0.3);
+    background: var(--sakura-color-overlay-background);
+    opacity: 0.8;
 
     &-style-merge {
       padding: 1rem 0.75rem;
@@ -108,11 +109,11 @@ const socials = computed(() => (banner.value.socials || siteConfig.value.social)
   .sakura-icon {
     height: 22px;
     width: 22px;
-    color: var(--sakura-icon-color);
+    color: var(--sakura-color-icon);
   }
 
   .card-wrapper {
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-color: oklch(0% 0 0 / 50%) !important;
   }
 
   .card-wrapper::before {
@@ -123,7 +124,7 @@ const socials = computed(() => (banner.value.socials || siteConfig.value.social)
     margin-left: -15px;
     border-width: 15px;
     border-style: solid;
-    border-color: transparent transparent rgba(0, 0, 0, 0.5);
+    border-color: transparent transparent oklch(0% 0 0 / 50%);
   }
 }
 </style>

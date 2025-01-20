@@ -4,8 +4,8 @@
 );
 
 :root {
-  --un-prose-links: var(--sakura-link-color);
-  --un-prose-body: var(--sakura-text-color);
+  --un-prose-links: var(--sakura-color-action);
+  --un-prose-body: var(--sakura-color-text);
 
   // z-index
   --va-z-overlay: var(--sakura-backdrop-z, 2);
