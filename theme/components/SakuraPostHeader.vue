@@ -8,9 +8,7 @@ defineProps<{
 
 <template>
   <SakuraPageHeader :fm class="sakura-post-header">
-    <div class="flex flex-col">
-      <SakuraPostMeta :fm />
-    </div>
+    <SakuraPostHeaderMeta :fm />
   </SakuraPageHeader>
 </template>
 
