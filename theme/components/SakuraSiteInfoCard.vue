@@ -7,7 +7,7 @@ const router = useRouter()
 </script>
 
 <template>
-  <SakuraCard class="sakura-site-info-card">
+  <SakuraCard class="sakura-card sakura-site-info-card">
     <RouterLink class="site-author-avatar" to="/about">
       <img class="rounded-full" :src="siteConfig.author.avatar" alt="avatar">
       <span class="site-author-status" :title="siteConfig.author.status.message">{{ siteConfig.author.status.emoji }}</span>
@@ -49,6 +49,10 @@ const router = useRouter()
 </template>
 
 <style lang="scss" scoped>
+.sakura-site-info-card {
+  padding: 20px 24px;
+}
+
 .content-container {
   text-align: center;
   margin-top: 14px;

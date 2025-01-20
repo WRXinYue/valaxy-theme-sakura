@@ -3,7 +3,6 @@
 
 // --------------- Layouts ---------------
 @use './layouts/layout.scss' as *;
-@use './layouts/home.scss' as *;
 
 // --------------- Animation ---------------
 @use './animation/fading/fading.scss' as *;
@@ -19,6 +18,8 @@
 @use './common/site.scss' as *;
 @use './common/text.scss' as *;
 @use './common/scrollbar.scss' as *;
+@use './common/card.scss' as *;
+@use './common/animation.scss' as *;
 
 // --------------- Markdown ---------------
 // Reset valaxy markdown style

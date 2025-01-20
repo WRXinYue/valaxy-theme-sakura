@@ -1,13 +1,38 @@
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-  background-color: var(--sakura-border-color);
-}
+@media (device-width >= 600px) {
+  /*
+    Ugh, so this property OVERRULES the webkit properties in Windows, causing the nice scrollbars to be replaced with standard square ones. They do inherit the correct colors, but none of the other styles.
 
-::-webkit-scrollbar-track {
-  background-color: var(--sakura-border-color);
-}
+    That said, without this property, Firefox gets no scrollbar colors at all. And maybe I should be respecting platform defaults.
+  */
+  * {
+    scrollbar-color: var(--sakura-scrollbar-thumb) var(--sakura-scrollbar-bg);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--sakura-primary-color);
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+    background-color: var(--sakura-scrollbar-bg);
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: var(--sakura-scrollbar-bg);
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background-color: var(--sakura-scrollbar-bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--sakura-scrollbar-thumb);
+    border: 2px solid var(--sakura-scrollbar-bg);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--sakura-scrollbar-thumb-hover);
+  }
 }

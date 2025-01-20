@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const props = defineProps(['class'])
+const props = defineProps<{ class?: string, base?: boolean }>()
 </script>
 
 <template>
   <template v-if="$slots.left && ($slots.default || $slots.content) && $slots.right">
-    <div :class="props.class" class="sakura-triple-columns">
+    <div class="sakura-triple-columns" :class="[{ 'sakura-triple-columns-base': base }, props.class]">
       <aside>
         <slot name="left" />
       </aside>
@@ -20,7 +20,7 @@ const props = defineProps(['class'])
     </div>
   </template>
   <template v-if="$slots.left && ($slots.default || $slots.content) && !$slots.right">
-    <div :class="props.class" class="sakura-two-columns-left">
+    <div class="sakura-two-columns-left" :class="[{ 'sakura-triple-columns-base': base }, props.class]">
       <aside>
         <slot name="left" />
       </aside>
@@ -33,7 +33,7 @@ const props = defineProps(['class'])
     </div>
   </template>
   <template v-if="$slots.right && ($slots.default || $slots.content) && !$slots.left">
-    <div :class="props.class" class="sakura-two-columns-right">
+    <div class="sakura-two-columns-right" :class="[{ 'sakura-triple-columns-base': base }, props.class]">
       <div>
         <template v-if="$slots.default">
           <slot />
@@ -46,7 +46,7 @@ const props = defineProps(['class'])
     </div>
   </template>
   <template v-if="($slots.default || $slots.content) && !$slots.left && !$slots.right">
-    <div :class="props.class" class="sakura-one-columns">
+    <div class="sakura-one-columns" :class="[{ 'sakura-triple-columns-base': base }, props.class]">
       <div>
         <template v-if="$slots.default">
           <slot />
@@ -57,32 +57,34 @@ const props = defineProps(['class'])
   </template>
 </template>
 
-<style lang="scss" scoped>
-.sakura-triple-columns {
-  grid-template-columns: 0 1fr 0;
-  display: grid;
-  grid-template-rows: 1fr;
-  gap: 0 12px;
-}
+<style lang="scss">
+.sakura-triple-columns-base {
+  &.sakura-triple-columns {
+    grid-template-columns: 0 1fr 0;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 0 12px;
+  }
 
-.sakura-two-columns-left {
-  grid-template-columns: 0 1fr;
-  display: grid;
-  grid-template-rows: 1fr;
-  gap: 0 12px;
-}
+  &.sakura-two-columns-left {
+    grid-template-columns: 0 1fr;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 0 12px;
+  }
 
-.sakura-two-columns-right {
-  grid-template-columns: 1fr 0;
-  display: grid;
-  grid-template-rows: 1fr;
-  gap: 0 12px;
-}
+  &.sakura-two-columns-right {
+    grid-template-columns: 1fr 0;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 0 12px;
+  }
 
-.sakura-one-columns {
-  grid-template-columns: 1fr;
-  display: grid;
-  grid-template-rows: 1fr;
-  gap: 0;
+  &.sakura-one-columns {
+    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 0;
+  }
 }
 </style>

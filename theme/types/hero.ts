@@ -12,6 +12,7 @@ export interface Hero {
   randomUrls: boolean
   fixedImg: boolean
   style: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
+  mode: 'dim' | 'dot' | 'scanline'
 
   /**
    * @zh 是否启用打字机组件

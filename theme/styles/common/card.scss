@@ -1,0 +1,10 @@
+.sakura-card {
+  will-change: filter;
+  transition: filter 0.3s ease-out;
+  filter: drop-shadow(0 1px 3px oklch(0% 0 0 / 20%));
+  border-radius: var(--sakura-post-card-rd);
+
+  &:hover {
+    filter: drop-shadow(0 5px 10px oklch(0% 0 0 / 20%));
+  }
+}
