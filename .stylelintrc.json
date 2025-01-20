@@ -1,4 +1,7 @@
 {
+  "plugins": [
+    "stylelint-gamut"
+  ],
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-standard-scss",
@@ -6,10 +9,11 @@
   ],
   "ignoreFiles": ["**/styles/animation/**", "**/styles/markdown/prose.scss", "**/dist/**"],
   "rules": {
-    "no-descending-specificity": null,
-    "alpha-value-notation": "number",
-    "color-function-notation": "legacy",
-    "scss/dollar-variable-empty-line-before": null,
-    "custom-property-empty-line-before": null
+    "gamut/color-no-out-gamut-range": true,
+    "function-disallowed-list": ["rgba", "hsla", "rgb", "hsl"],
+    "color-function-notation": "modern",
+    "color-no-hex": true,
+    "hue-degree-notation": null,
+    "scss/dollar-variable-empty-line-before": null
   }
 }
