@@ -67,7 +67,7 @@ watch(() => route.query.q as string, (query) => {
                         <SakuraDots class="float-right mt-10px" />
                       </AppLink>
                     </div>
-                    <hr style="border-bottom: 1px #ccc; width: 30%;" class="mx-auto mb-62px mt-69px">
+                    <hr w="1/3" class="mx-auto mb-62px mt-69px" border="~ $sakura-color-divider">
                   </div>
                 </div>
               </div>
@@ -92,27 +92,27 @@ watch(() => route.query.q as string, (query) => {
 
   &-input {
     background: transparent;
-    color: var(--sakura-text-color);
+    color: var(--sakura-color-text);
     font-size: 1.5rem;
     border-radius: 3rem;
     padding: 1rem 1.5rem;
-    border: 1px solid var(--sakura-border-color);
+    border: 1px solid var(--sakura-color-border);
     box-sizing: border-box;
     font-weight: 900;
     text-align: center;
     transition: all 0.2s;
 
     &:focus {
-      border-color: var(--sakura-primary-color);
+      border-color: var(--sakura-color-primary);
     }
   }
 
   &-result-item {
-    color: var(--sakura-text-color);
+    color: var(--sakura-color-text);
     cursor: pointer;
 
     &:hover {
-      color: var(--sakura-primary-text-color);
+      color: var(--sakura-color-primary);
     }
   }
 
@@ -120,21 +120,20 @@ watch(() => route.query.q as string, (query) => {
     position: relative;
     text-align: center;
     margin-bottom: 50px;
-    color: #9c9c9c;
-  }
 
-  h1.page-title {
-    font-size: 20px;
-    font-weight: 400;
-    border: 1px dashed #ddd;
-    padding: 10px 15px;
-    color: #828282;
-    margin-bottom: 30px;
+    .page-title {
+      font-size: 20px;
+      font-weight: 400;
+      border: 1px dashed var(--sakura-color-divider);
+      padding: 10px 15px;
+      color: var(--sakura-color-text);
+      margin-bottom: 30px;
+    }
   }
 
   .entry-title {
     a {
-      color: #504e4e;
+      color: var(--sakura-color-text-deep);
       font-size: 20px;
       font-weight: 400;
       line-height: 50px;
@@ -143,42 +142,37 @@ watch(() => route.query.q as string, (query) => {
         Georgia, serif;
 
       &:hover {
-        color: var(--sakura-primary-text-color);
+        color: var(--sakura-color-primary);
       }
     }
   }
 
   .sakura-search-result-excerpt {
     font-size: 15px;
-    color: rgba(0, 0, 0, 0.66);
+    color: var(--sakura-color-text);
     letter-spacing: 0;
     line-height: 30px;
   }
 
   .p-time {
     font-size: 12px;
-    color: #989898;
+    color: var(--sakura-color-text);
     letter-spacing: 0;
   }
 
   .post-more {
     font-size: 25px;
-    color: #666;
+    color: var(--sakura-color-text);
   }
 
   .feature {
     border-radius: 50%;
     padding: 2px;
     position: relative;
-    border: 1px solid #dadada;
+    border: 1px solid var(--sakura-color-divider);
     height: 100px;
     width: 100px;
     overflow: hidden;
-  }
-
-  .feature:hover .overlay {
-    opacity: 1;
-    pointer-events: auto;
   }
 
   .overlay {
@@ -192,9 +186,14 @@ watch(() => route.query.q as string, (query) => {
 
     div {
       font-size: 25px;
-      color: #fff;
+      color: oklch(100% 0 0);
       line-height: 94px;
     }
+  }
+
+  .feature:hover .overlay {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 </style>
