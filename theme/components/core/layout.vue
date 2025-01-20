@@ -71,6 +71,8 @@ const layout = useLayout()
     <slot name="footer">
       <SakuraFooter class="sakura-sidebar-offset" />
     </slot>
+
+    <!-- <SakuraChangSkin /> -->
   </div>
 </template>
 

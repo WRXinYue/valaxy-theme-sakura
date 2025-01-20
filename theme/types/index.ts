@@ -1,5 +1,4 @@
 export * from './config'
-export * from './config'
 export * from './footer'
 export * from './hero'
 export * from './link'

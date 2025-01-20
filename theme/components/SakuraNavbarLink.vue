@@ -77,14 +77,14 @@ onMounted(() => {
   display: none;
   height: 100%;
   font-size: 0.875rem;
-  color: rgba(107, 114, 128, var(--un-text-opacity));
+  color: var(--sakura-navbar-item-color);
   line-height: 1.25rem;
   transform: translateX(0);
 
   .marker {
     position: absolute;
     border-bottom: var(--sakura-navbar-marker-height) solid
-      var(--sakura-primary-color);
+      var(--sakura-color-primary);
     transition-property: opacity, left, top;
     transition-duration: 0.5s;
     pointer-events: none;
@@ -93,11 +93,6 @@ onMounted(() => {
 
   @include screen('md') {
     display: flex;
-  }
-
-  .sakura-navbar-link-item:not(:last-child) {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
   }
 }
 </style>

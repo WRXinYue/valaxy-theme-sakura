@@ -83,6 +83,7 @@ const isHeaderHighlighted = computed(() => {
   position: fixed;
   z-index: 100;
   height: var(--sakura-navbar-height);
+  color: var(--sakura-color-navigation);
   width: 100%;
   top: 0;
   display: flex;
@@ -93,10 +94,10 @@ const isHeaderHighlighted = computed(() => {
   padding-right: max(40px, env(safe-area-inset-right));
 
   &.active-header {
-    background: var(--sakura-navbar-bg-color);
+    background: var(--sakura-navbar-bg);
 
     &.has-scrolled {
-      box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 1px 40px -8px oklch(0% 0 0 / 50%);
     }
   }
 
@@ -107,7 +108,7 @@ const isHeaderHighlighted = computed(() => {
   }
 
   .sakura-logo-link span:first-child {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: oklch(100% 0 0 / 50%);
   }
 
   .sakura-nav-link-icon {
@@ -116,24 +117,21 @@ const isHeaderHighlighted = computed(() => {
     margin-right: 0.2rem;
   }
 
-  .sakura-navbar-link-item {
-    a {
-      font-size: 15px;
-      color: var(--sakura-text-muted-color);
-    }
-  }
-
   // &:not(&.active-header) {
   //   .sakura-nav-link {
   //     display: none;
   //   }
   // }
+
+  .sakura-navbar-tools {
+    color: var(--sakura-navbar-item-color);
+  }
 }
 
 // TODO:
 .has-home-layout .sakura-navbar {
   &.active-header {
-    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 40px -8px oklch(0% 0 0 / 50%);
   }
 }
 </style>

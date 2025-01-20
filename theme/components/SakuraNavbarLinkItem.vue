@@ -49,20 +49,11 @@ function cancelHideDropdown() {
 .sakura-navbar-link-item {
   display: flex;
   justify-content: center;
-
-  a {
-    color: var(--sakura-text-color);
-
-    &:hover {
-      color: var(--sakura-primary-color);
-    }
-  }
+  font-size: 15px;
+  color: inherit;
+  margin-inline: 0.75rem;
 
   & > .sakura-nav-link {
-    &:hover::after {
-      width: 100%;
-    }
-
     &::after {
       content: '';
       position: absolute;
@@ -72,6 +63,10 @@ function cancelHideDropdown() {
       height: var(--sakura-navbar-marker-height);
       background-color: var(--sakura-navbar-marker-color);
       transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
     }
   }
 

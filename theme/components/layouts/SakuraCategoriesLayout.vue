@@ -28,7 +28,7 @@ const posts = computed(() => {
 </script>
 
 <template>
-  <SakuraPage>
+  <SakuraPage class="sakura-categories-page">
     <RouterView v-slot="{ Component }">
       <component :is="Component">
         <template #main-content>
@@ -45,7 +45,7 @@ const posts = computed(() => {
         <template #main-nav-before>
           <slot name="posts">
             <div v-if="curCategory">
-              <SakuraPostListCard w="full" :posts="posts" />
+              <SakuraPostList w="full" :posts />
             </div>
           <!-- <SakuraCard v-if="curCategory" class="post-collapse-container" m="t-4" w="full">
             <SakuraPostCollapse w="full" m="b-4" p="x-20 lt-sm:x-5" :posts="posts" />
@@ -56,3 +56,12 @@ const posts = computed(() => {
     </RouterView>
   </SakuraPage>
 </template>
+
+<style lang="scss">
+.sakura-categories-page {
+  .sakura-triple-columns {
+    // Preventing TimeLine component distortion
+    width: 100%;
+  }
+}
+</style>

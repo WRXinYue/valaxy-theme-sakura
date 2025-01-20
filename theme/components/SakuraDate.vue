@@ -5,18 +5,21 @@ import { computed } from 'vue'
 const props = defineProps<{
   date?: Date | number | string
   itemprop?: string
+  label?: string
 }>()
 
 const datetime = computed(() => formatDate(props.date ?? ''))
 </script>
 
 <template>
-  <dl>
+  <dl v-if="label">
     <dt class="sr-only">
-      Published on
+      {{ props.label }}
     </dt>
     <dd>
-      <time :itemprop :datetime="datetime">{{ datetime }}</time>
+      {{ datetime }}
     </dd>
   </dl>
+
+  <time v-else :itemprop :datetime>{{ datetime }}</time>
 </template>

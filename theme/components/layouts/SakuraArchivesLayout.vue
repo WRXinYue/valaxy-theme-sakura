@@ -5,7 +5,7 @@ const site = useSiteStore()
 </script>
 
 <template>
-  <SakuraPage>
+  <SakuraPage class="sakura-archivers-page">
     <RouterView v-slot="{ Component }">
       <component :is="Component">
         <template #main-content>

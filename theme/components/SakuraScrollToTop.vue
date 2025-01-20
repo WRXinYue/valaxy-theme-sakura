@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useWindowScroll, useWindowSize } from '@vueuse/core'
+import { breakpointsTailwind, useWindowScroll, useWindowSize } from '@vueuse/core'
 import interact from 'interactjs'
 import { onMounted, ref, watch } from 'vue'
 import { useScroll } from '../composables'
@@ -205,7 +205,7 @@ function updateElements() {
 
 watch([y, width], ([newY, newWidth]) => {
   if (newY > 200) {
-    if (newWidth <= 720) {
+    if (newWidth <= breakpointsTailwind.lg) {
       isVisible.value = false
     }
     else {

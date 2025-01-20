@@ -14,8 +14,19 @@ const icon = computed(() => props.icon || themeConfig.value.ui.notice?.icon)
 </script>
 
 <template>
-  <div v-if="noticeMessage" class="mb-5 mt-10 border rounded-$sakura-border-radius border-dashed p-5" flex="~ <md:col items-center">
-    <span :class="icon" mr-2 class="inline-block <md:mb-2" />
-    <span v-html="noticeMessage" />
+  <div v-if="noticeMessage" m="b-5 t-10" p5 class="sakura-notice-board sakura-card" flex="~ items-center">
+    <div class="notice-board-content relative px-8 transition-all duration-500 <md:pt-6">
+      <span :class="icon" class="notice-icon absolute left-1 top-1.3 inline-block transition-all duration-500 <md:left-50% <md:top-0" />
+      <span class="notice-message" v-html="noticeMessage" />
+    </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.sakura-notice-board {
+  width: 100%;
+  background: var(--sakura-card-bg);
+  color: var(--font-color);
+  cursor: pointer;
+}
+</style>

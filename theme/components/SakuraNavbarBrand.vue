@@ -17,18 +17,18 @@ const siteConfig = useSiteConfig()
       <img class="h-40px w-40px" alt="logo" :src="siteConfig.favicon">
     </template>
     <template v-if="title">
-      <ruby class="sakura-navbar-title">
-        <RouterLink class="sakura-logo-link" to="/" :aria-label="siteConfig.title">
+      <ruby class="navbar-title relative">
+        <RouterLink class="logo-link" to="/" :aria-label="siteConfig.title">
           <template v-if="typeof title === 'string'">
-            <span mr-1>{{ title }}</span>
+            <span>{{ title }}</span>
           </template>
           <template v-else>
-            <span mr-1>{{ title![0] }}</span>
-            <span inline-block>{{ title![1] }}</span>
+            <span mr1>{{ title![0] }}</span>
+            <span mr1 class="sakura-rotate">{{ title![1] }}</span>
             <span>{{ title![2] }}</span>
           </template>
         </RouterLink>
-        <rt v-if="subTitle" class="sakura-navbar-subtitle">
+        <rt v-if="subTitle" class="navbar-subtitle">
           {{ subTitle }}
         </rt>
       </ruby>
@@ -42,55 +42,62 @@ const siteConfig = useSiteConfig()
 .sakura-navbar-brand {
   display: flex;
   align-items: center;
-  overflow: hidden;
   white-space: nowrap;
 
-  .sakura-logo-link {
-    color: var(--sakura-navbar-text-color);
-    font-family: Moe-Mashiro, sans-serif;
-    font-size: 24px;
+  .logo-link {
+    color: var(--sakura-navbar-title-color);
+    font-family: var(--sakura-font-family-spicy);
+    font-size: 20px;
     font-weight: 600;
+    line-height: normal;
+    transition:
+      font-size 0.3s ease,
+      font-weight 0.3s ease;
 
     @include screen('md') {
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 800;
+    }
+
+    @include screen('lg') {
+      font-size: 24px;
+    }
+
+    span {
+      display: inline-block;
     }
 
     span:first-child {
       border-radius: 9px;
-      padding-bottom: 2px;
-      padding-top: 5px;
     }
 
     &:hover {
       span:first-child {
-        background-color: var(--sakura-navbar-bg-hover-color);
-        color: var(--sakura-navbar-text-hover-color);
+        background-color: var(--sakura-color-primary);
+        color: var(--sakura-navbar-bg);
       }
 
-      span:nth-of-type(2) {
-        animation: rotate 1s linear infinite;
-      }
+      // span:nth-of-type(2) {
+      //   animation: rotate 1s linear infinite;
+      // }
 
       span:not(:first-child) {
-        color: var(--sakura-navbar-bg-hover-color);
+        color: var(--sakura-color-primary);
       }
     }
   }
 
-  .sakura-navbar-title {
-    position: absolute;
+  .navbar-title {
     ruby-position: under;
+    font-variant-ligatures: no-common-ligatures;
 
-    rt {
+    .navbar-subtitle {
       position: absolute;
       width: 100%;
-      font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
-        'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
-      font-size: 10px;
+      font-size: 12px;
       text-align: justify;
       text-align-last: justify;
-      transform: translateY(-8px);
+      transform: translateY(-0.2em);
       opacity: 0;
       transition-property: opacity;
       transition-duration: 0.5s, 0.5s;
