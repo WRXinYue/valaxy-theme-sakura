@@ -73,9 +73,9 @@ useSchemaOrg(
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-post {
-  .content {
+  .sakura-page-content {
     max-width: 800px;
-    padding: 0 10px;
+    padding: 24px 10px;
   }
 
   .sakura-triple-columns {

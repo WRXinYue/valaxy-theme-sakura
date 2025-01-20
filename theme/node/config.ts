@@ -13,6 +13,9 @@ export const defaultThemeConfig: ThemeUserConfig = {
     },
     postList: {
       icon: 'i-fa6-solid:water',
+
+      responsive: {
+      },
     },
     pinnedPost: {
       icon: 'i-fa6-solid:anchor',
@@ -73,12 +76,6 @@ export const defaultThemeConfig: ThemeUserConfig = {
 
   postList: {
     text: '文章列表',
-
-    settings: {
-      card: {},
-      grid: {},
-      masonry: {},
-    },
   },
 
   pinnedPost: {

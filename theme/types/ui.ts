@@ -12,6 +12,19 @@ export interface UI {
 
   postList: {
     icon: string
+
+    /**
+     * Breakpoints from Tailwind V2
+     *
+     * @see https://tailwindcss.com/docs/breakpoints
+     */
+    responsive: Partial<{
+      'sm': number
+      'md': number
+      'lg': number
+      'xl': number
+      '2xl': number
+    }>
   }
 
   notice: {
@@ -42,4 +55,8 @@ export interface UI {
      */
     lightIcon?: string
   }
+}
+
+export type UserUI = {
+  [K in keyof UI]?: Partial<UI[K]>
 }

@@ -12,7 +12,9 @@ const currentIconUrl = computed(() => appStore.wallpaperIsPlaying ? pauseIconUrl
 <template>
   <img
     :src="currentIconUrl" z-5 class="sakura-player animation-fly cursor-pointer"
-    style="animation-duration: 2s; --translate-distance: 0.2em"
+    style="animation-duration: 2s;
+
+ --translate-distance: 0.2em"
     @click="appStore.togglePlayPause"
   >
 </template>

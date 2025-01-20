@@ -6,10 +6,10 @@ import type { Pagination } from './pagination'
 import type { PinnedPost } from './pinned'
 import type { PostFooter, PostList } from './post'
 import type { SidebarMulti, SidebarOptions } from './sidebar'
-import type { UI } from './ui'
+import type { UserUI } from './ui'
 
 export interface ThemeConfig extends DefaultTheme.Config {
-  ui: UI
+  ui: UserUI
   /**
    * @zh 页脚配置
    * @en Footer configuration

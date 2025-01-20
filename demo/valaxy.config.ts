@@ -80,13 +80,9 @@ export default defineValaxyConfig<ThemeUserConfig>({
     postList: {
       text: 'Discovery',
 
-      settings: {
-        card: {
-          isImageReversed: true,
-          // defaultImage: ['https://www.dmoe.cc/random.php?random', 'https://www.loliapi.com/acg/pc/?random'],
-          defaultImage: ['https://www.dmoe.cc/random.php?random', 'https://img.xjh.me/random_img.php?random?type=bg&return=302'],
-        },
-      },
+      isImageReversed: true,
+      // defaultImage: ['https://www.dmoe.cc/random.php?random', 'https://www.loliapi.com/acg/pc/?random'],
+      defaultImage: ['https://www.dmoe.cc/random.php?random', 'https://img.xjh.me/random_img.php?random?type=bg&return=302'],
     },
 
     postFooter: {
@@ -171,8 +167,8 @@ export default defineValaxyConfig<ThemeUserConfig>({
       },
     ],
     navbarOptions: {
-      title: ['さくら', 'の', '夢'],
-      subTitle: '这是一个副标题',
+      title: ['Valaxy Theme', 'Sakura'],
+      subTitle: '一个基于 valaxy 的 sakura 主题',
       offset: 0,
       invert: ['home'],
       showMarker: false,
