@@ -56,35 +56,3 @@ const props = defineProps<{ class?: string, base?: boolean }>()
     </div>
   </template>
 </template>
-
-<style lang="scss">
-.sakura-triple-columns-base {
-  &.sakura-triple-columns {
-    grid-template-columns: 0 1fr 0;
-    display: grid;
-    grid-template-rows: 1fr;
-    gap: 0 12px;
-  }
-
-  &.sakura-two-columns-left {
-    grid-template-columns: 0 1fr;
-    display: grid;
-    grid-template-rows: 1fr;
-    gap: 0 12px;
-  }
-
-  &.sakura-two-columns-right {
-    grid-template-columns: 1fr 0;
-    display: grid;
-    grid-template-rows: 1fr;
-    gap: 0 12px;
-  }
-
-  &.sakura-one-columns {
-    grid-template-columns: 1fr;
-    display: grid;
-    grid-template-rows: 1fr;
-    gap: 0;
-  }
-}
-</style>
