@@ -9,8 +9,8 @@ const themeConfig = useThemeConfig()
     <SakuraHero />
   </slot>
 
-  <div flex="~ col center">
-    <SakuraMultiColumns class="sakura-home-layout site-content" base>
+  <div class="sakura-home" flex="~ col center">
+    <SakuraMultiColumns class="sakura-safe-padding sakura-home-layout site-content" base>
       <slot name="notice-board">
         <SakuraNoticeBoard />
       </slot>
@@ -63,30 +63,6 @@ const themeConfig = useThemeConfig()
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-home-layout {
-  // @include screen('md') {
-  //   padding: 0 20px;
-  // }
-
-  // @include screen('lg') {
-  //   padding: 0 40px;
-  // }
-
-  // @include screen('xl') {
-  //   padding: 0 60px;
-  // }
-
-  @include screen('md') {
-    padding: 0 40px;
-  }
-
-  @include screen('lg') {
-    padding: 0 110px;
-  }
-
-  @include screen('xl') {
-    padding: 0;
-  }
-
   &.sakura-triple-columns {
     @include screen('md') {
       // grid-template-columns: 1fr;

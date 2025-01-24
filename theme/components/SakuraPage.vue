@@ -17,7 +17,7 @@ const frontmatter = useFrontmatter()
 
       <template #content>
         <!-- This 'content' cannot be change. For more information, see https://github.com/YunYouJun/valaxy/blob/a7d24dfabb1022e20ec12bb1938fd272fd1e19e6/packages/valaxy/client/composables/outline/anchor.ts#L42 -->
-        <div class="content sakura-page-content grid">
+        <div class="sakura-safe-padding content sakura-page-content grid">
           <slot name="content" />
           <slot />
         </div>
@@ -37,7 +37,6 @@ const frontmatter = useFrontmatter()
   &-content {
     background: var(--sakura-color-background);
     border-radius: var(--sakura-radius);
-    padding: 0 30px;
   }
 
   .sakura-triple-columns {

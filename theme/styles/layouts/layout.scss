@@ -1,3 +1,4 @@
+@use 'valaxy/client/styles/mixins/index.scss' as *;
 @use 'valaxy-theme-sakura/styles/animation/slide/slide.scss' as *;
 
 .link {
@@ -40,4 +41,13 @@ a {
 
 .site-content {
   padding-inline: 20px;
+}
+
+.sakura-safe-padding {
+  padding-inline: max(20px, env(safe-area-inset-left));
+  transition: padding var(--va-transition-duration) ease;
+
+  @include screen('sm') {
+    padding-inline: max(40px, env(safe-area-inset-left));
+  }
 }
