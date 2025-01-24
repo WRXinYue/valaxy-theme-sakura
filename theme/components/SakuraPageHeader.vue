@@ -8,11 +8,13 @@ defineProps<{
 
 <template>
   <header class="sakura-page-header space-y-1" :class="fm.cover && `has-cover`" flex="~ center items-end justify-center">
-    <SakuraImageCard v-if="fm.cover" :src="fm.cover" h="full" w="full" />
-    <div class="sakura-header-container">
+    <SakuraImageCard v-if="fm.cover" :src="fm.cover" h="full" w="full" absolute="!" z="-1" />
+    <div class="sakura-safe-padding sakura-header-container pb-25px">
       <slot name="title">
-        <div class="sakura-header-title" flex="~ items-center" :class="!fm.cover && 'sakura-braced-text flex-center'">
-          <div v-if="fm.icon" class="icon" m="r-1" inline-flex align-top :class="fm.icon" />
+        <div class="sakura-header-title" flex="~ items-center" :class="!fm.cover && 'sakura-braced-text flex-center mx-6%'">
+          <slot name="icon">
+            <div v-if="fm.icon" class="icon" m="r-1" inline-flex align-top :class="fm.icon" />
+          </slot>
           <span>{{ fm.title }}</span>
           <span v-if="fm.subTitle"> · {{ fm.subTitle }}</span>
         </div>
@@ -23,18 +25,24 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
+@use 'valaxy/client/styles/mixins/index.scss' as *;
+
 .sakura-page-header {
   margin-top: var(--sakura-navbar-height);
   width: 100%;
   position: relative;
 
   .sakura-header-title {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    @include screen('sm') {
+      font-size: 2.3rem;
+    }
   }
 
   &:not(.has-cover) {
     margin-top: var(--sakura-navbar-spacing);
-    height: 150px;
 
     .sakura-header-title {
       color: var(--sakura-color-text-deep);
@@ -50,10 +58,7 @@ defineProps<{
   }
 
   .sakura-header-container {
-    position: absolute;
     color: white;
-    font-weight: 700;
-    bottom: 25px;
   }
 }
 </style>

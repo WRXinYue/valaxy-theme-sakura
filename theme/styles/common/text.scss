@@ -10,17 +10,26 @@
 }
 
 .sakura-braced-text {
+  position: relative;
+  padding-inline: calc(1rem + 6px);
+  word-break: break-all;
+  hyphens: auto;
+
   &::before {
     content: '{';
     color: var(--sakura-color-primary);
-    margin-right: 6px;
     font-family: Helvetica, sans-serif;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
   &::after {
     content: '}';
     color: var(--sakura-color-primary);
-    margin-left: 6px;
     font-family: Helvetica, sans-serif;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }

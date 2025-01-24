@@ -75,7 +75,7 @@ useSchemaOrg(
 .sakura-post {
   .sakura-page-content {
     max-width: 800px;
-    padding: 24px 10px;
+    padding-block: 24px;
   }
 
   .sakura-triple-columns {
