@@ -17,7 +17,7 @@
     padding: 4px;
     background-color: white;
     box-shadow: 0 0 10px oklch(0% 0 0 / 20%);
-    transition: 0.4s;
+    transition: var(--va-transition-duration);
 
     &:hover {
       box-shadow: 0 0 30px var(--sakura-color-primary);

@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
   opacity: 1,
   translateX: 0,
   translateY: 0,
-  transitionDuration: '0.4s',
+  transitionDuration: 'var(--va-transition-duration)',
   transitionTimingFunction: 'ease',
   overlay: false,
   overlayColor: 'rgba(0, 0, 0, 0.5)',
@@ -96,7 +96,7 @@ const getSrc = computed(() => {
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity var(--va-transition-duration) ease;
   }
 }
 </style>
