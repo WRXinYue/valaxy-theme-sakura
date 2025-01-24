@@ -1,24 +1,38 @@
+@use 'valaxy/client/styles/mixins/index.scss' as *;
+
 // NOTE: Do not move this class into the component, as it may cause style precedence issues during the build process
 .sakura-triple-columns-base {
   &.sakura-triple-columns {
     grid-template-columns: 0 1fr 0;
     display: grid;
     grid-template-rows: 1fr;
-    gap: 0 12px;
+    gap: 0;
+
+    @include screen('md') {
+      gap: 0 12px;
+    }
   }
 
   &.sakura-two-columns-left {
     grid-template-columns: 0 1fr;
     display: grid;
     grid-template-rows: 1fr;
-    gap: 0 12px;
+    gap: 0;
+
+    @include screen('md') {
+      gap: 0 12px;
+    }
   }
 
   &.sakura-two-columns-right {
     grid-template-columns: 1fr 0;
     display: grid;
     grid-template-rows: 1fr;
-    gap: 0 12px;
+    gap: 0;
+
+    @include screen('md') {
+      gap: 0 12px;
+    }
   }
 
   &.sakura-one-columns {
