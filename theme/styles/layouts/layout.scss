@@ -11,6 +11,10 @@ html {
 body {
   font-family: var(--sakura-font-family);
   text-shadow: 0 0 1px oklch(0% 0 0 / 10%);
+
+  @media (width <= 767px) {
+    min-width: 320px;
+  }
 }
 
 body::-webkit-scrollbar-thumb {

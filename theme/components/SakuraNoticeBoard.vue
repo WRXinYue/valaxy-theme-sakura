@@ -15,7 +15,7 @@ const icon = computed(() => props.icon || themeConfig.value.ui.notice?.icon)
 
 <template>
   <div v-if="noticeMessage" m="b-5 t-10" p5 class="sakura-notice-board sakura-card" flex="~ items-center">
-    <div class="notice-board-content relative px-8 transition-all duration-500 <md:pt-6">
+    <div class="notice-board-content relative transition-all duration-500 md:px-8 <md:pt-6">
       <span :class="icon" class="notice-icon absolute left-1 top-1.3 inline-block transition-all duration-500 <md:left-50% <md:top-0" />
       <span class="notice-message" v-html="noticeMessage" />
     </div>

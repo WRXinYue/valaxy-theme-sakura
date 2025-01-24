@@ -28,7 +28,7 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
   >
     <SakuraImageCard v-if="cover" class="aspect-video" :to="post.path" :src="cover || defaultImage" rotate="5" space="1.1" transition-duration="0.45s" />
 
-    <div flex="~ col" class="post-card-content h-160px" :class="cover && 'has-cover'">
+    <div flex="~ col" class="post-card-content" :class="cover && 'has-cover'">
       <slot>
         <SakuraPostCardInfo :post />
       </slot>
@@ -52,13 +52,7 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
   border-style: solid;
 
   .post-card-content {
-    padding: var(--sakura-post-card-content-py)
-      var(--sakura-post-card-content-px);
-  }
-
-  .sakura-image-card {
-    height: var(--sakura-post-card-height);
-    width: var(--sakura-post-card-img-width);
+    padding: 20px 39px;
   }
 
   @at-root html.dark & {
@@ -73,7 +67,7 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
     flex-direction: column;
 
     .post-card-content {
-      padding-inline: var(--sakura-post-card-content-py);
+      padding-inline: 20px;
 
       &.has-cover {
         width: 100%;
@@ -86,9 +80,10 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
   }
 
   &:not(&.is-col) {
+    height: var(--sakura-post-card-height);
+
     .post-card-content {
-      padding: var(--sakura-post-card-content-py)
-        var(--sakura-post-card-content-px);
+      padding: 20px 39px;
 
       &.has-cover {
         width: calc(100% - var(--sakura-post-card-img-width));
