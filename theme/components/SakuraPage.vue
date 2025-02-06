@@ -34,6 +34,9 @@ const frontmatter = useFrontmatter()
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-page {
+  // If flattened, the children will not exist on their own in the 3D-space. – transform-style by MDN
+  transform-style: preserve-3d;
+
   &-content {
     background: var(--sakura-color-background);
     border-radius: var(--sakura-radius);
