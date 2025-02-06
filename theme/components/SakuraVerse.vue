@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { HitokotoType, useAddonHitokoto } from 'valaxy-addon-hitokoto'
+import addonHitokoto from '../plugins/hitokoto'
 
-const { hitokoto } = useAddonHitokoto({ args: [HitokotoType.Poetry] })
+const { hitokoto } = addonHitokoto?.useAddonHitokoto({ args: [addonHitokoto?.HitokotoType.Poetry] })
 </script>
 
 <template>
@@ -11,10 +11,10 @@ const { hitokoto } = useAddonHitokoto({ args: [HitokotoType.Poetry] })
 
     <h1>念两句诗</h1>
     <p class="poem-text">
-      {{ hitokoto.hitokoto }}
+      {{ hitokoto?.hitokoto }}
     </p>
     <p class="poem-info">
-      {{ hitokoto.fromWho }} 《{{ hitokoto.from }}》
+      {{ hitokoto?.fromWho }} 《{{ hitokoto?.from }}》
     </p>
   </div>
 </template>

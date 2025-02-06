@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useSiteConfig } from 'valaxy'
-import { useAddonHitokoto } from 'valaxy-addon-hitokoto'
 import { computed } from 'vue'
+import addonHitokoto from '../plugins/hitokoto'
 import type { Hero, HeroSocialLink } from '../types/index'
 import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores'
@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
 const siteConfig = useSiteConfig()
 const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
-const { hitokoto, fetchHitokoto } = useAddonHitokoto(themeConfig.value.hero.hitokoto)
+const { hitokoto, fetchHitokoto } = addonHitokoto?.useAddonHitokoto(themeConfig.value.hero.hitokoto)
 
 const banner = computed(() => props.hero || themeConfig.value.hero)
 const socials = computed(() => (banner.value.socials || siteConfig.value.social) as HeroSocialLink[])

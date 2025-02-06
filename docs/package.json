@@ -14,7 +14,7 @@
     "monaco-editor": "^0.52.2",
     "valaxy": "catalog:",
     "valaxy-addon-components": "^0.1.0",
-    "valaxy-addon-git-log": "catalog:",
+    "valaxy-addon-git-log": "^0.2.0",
     "valaxy-addon-twikoo": "catalog:",
     "valaxy-theme-oceanus": "0.0.4",
     "valaxy-theme-sakura": "workspace:*",
