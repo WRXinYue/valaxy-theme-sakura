@@ -13,6 +13,8 @@ top: 900
 
 Hero 当中可以配置博客首页大屏壁纸或者标题之类的
 
+<SakuraHeroPG />
+
 ### ThemeConfig
 
 | 名称  | 类型                                                      | 默认值                                                         | 说明                                                                                                                                                                                                   |

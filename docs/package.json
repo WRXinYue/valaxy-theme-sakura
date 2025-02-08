@@ -21,6 +21,7 @@
     "vue-toastification": "2.0.0-rc.5"
   },
   "devDependencies": {
+    "@iconify-json/qlementine-icons": "^1.2.1",
     "@iconify-json/simple-icons": "^1.2.18",
     "typescript": "catalog:"
   }

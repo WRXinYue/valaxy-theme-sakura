@@ -151,6 +151,9 @@ importers:
         specifier: 2.0.0-rc.5
         version: 2.0.0-rc.5(vue@3.5.13(typescript@5.7.3))
     devDependencies:
+      '@iconify-json/qlementine-icons':
+        specifier: ^1.2.1
+        version: 1.2.1
       '@iconify-json/simple-icons':
         specifier: ^1.2.18
         version: 1.2.18
@@ -1085,6 +1088,9 @@ packages:
 
   '@iconify-json/mdi@1.2.2':
     resolution: {integrity: sha512-84aznJXzfGdbOXGe8xB7E5uNAb7Yo5IABwTgq2X3kczb819qZeS9eL31bTVn7wJdCLK5ieaoUc2GTS3QYIkJ6g==}
+
+  '@iconify-json/qlementine-icons@1.2.1':
+    resolution: {integrity: sha512-DScWKjayaTwHvJhY3mHDimCOhxx4vDcxYCHmyYcqYMjDADGgw1P1u7osVnLo5K0DAdgjXW+/Q9v0u1u87+ZqOA==}
 
   '@iconify-json/ri@1.2.5':
     resolution: {integrity: sha512-kWGimOXMZrlYusjBKKXYOWcKhbOHusFsmrmRGmjS7rH0BpML5A9/fy8KHZqFOwZfC4M6amObQYbh8BqO5cMC3w==}
@@ -6583,6 +6589,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/mdi@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/qlementine-icons@1.2.1':
     dependencies:
       '@iconify/types': 2.0.0
 

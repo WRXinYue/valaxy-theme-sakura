@@ -4,7 +4,6 @@ title_zh-CN: 安装
 categories:
   - getting-started
 end: true
-cover: https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/d3451fd5c958008e3798970d3dc2c4ee.gif
 top: 500
 ---
 

@@ -1,4 +1,7 @@
-@use 'valaxy/client/styles/mixins/index.scss' as *;
+@use 'valaxy/client/styles/mixins/index.scss' as * with (
+  $namespace: 'sakura'
+);
+@use 'valaxy-theme-sakura/styles/vars' as *;
 @use 'valaxy-theme-sakura/styles/animation/fading/fading.scss' as *;
 @use 'valaxy-theme-sakura/styles/animation/slide/slide.scss' as *;
 @use 'valaxy-theme-sakura/styles/animation/hover/hover.scss' as *;
@@ -10,6 +13,15 @@
 @use 'valaxy-theme-sakura/styles/markdown/code.scss' as *;
 @use 'valaxy-theme-sakura/styles/markdown/code-group.scss' as *;
 @use 'valaxy-theme-sakura/styles/markdown/custom-block.scss' as *;
+
+:root {
+  @include set-css-var-from-map($light);
+  @include set-css-var-from-map($common);
+}
+
+html.dark {
+  @include set-css-var-from-map($dark);
+}
 
 /* -------------------------------------
 * Markdown components styles reset
