@@ -38,10 +38,10 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
     <template v-if="isMounted">
       <div class="absolute inset-0 overflow-hidden" :class="[!appStore.wallpaperIsPlaying && banner.style && 'banner-style', banner.style]">
         <slot name="background">
-          <SakuraHeroBackground />
+          <SakuraHeroBackground :urls="hero?.urls" />
         </slot>
 
-        <div :class="overlayBarClass">
+        <div v-if="banner?.waveTheme" :class="overlayBarClass">
           <slot name="overlay-bar">
             <SakuraWaveFish v-if="banner.waveTheme === 'fish'" />
             <SakuraWaveHorizontal v-else-if="banner.waveTheme === 'horizontal'" />
@@ -52,17 +52,17 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
 
       <div z-4 class="info-overlay">
         <slot name="info-overlay">
-          <SakuraHeroInfoOverlay />
+          <SakuraHeroInfoOverlay :hero />
         </slot>
       </div>
 
       <slot name="player">
-        <SakuraPlayer v-if="banner.playerUrl" class="absolute bottom-2 right-2 z-4 h-8 w-8" />
+        <SakuraPlayer v-if="banner?.playerUrl" class="absolute bottom-2 right-2 z-4 h-8 w-8" />
       </slot>
 
       <div :class="overlayBarClass" class="absolute bottom-12 right-50% z-4">
         <slot name="scroll-down">
-          <SakuraScrollDown v-if="themeConfig.scrollDown.enable" />
+          <SakuraScrollDown v-if="themeConfig.scrollDown?.enable" />
         </slot>
       </div>
     </template>

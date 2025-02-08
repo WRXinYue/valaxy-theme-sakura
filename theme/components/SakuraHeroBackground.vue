@@ -33,7 +33,6 @@ const currentWallpaperUrl = computed(() => {
     // visitedUrls.value.push(randomIndex)
     return urls.value[randomIndex]
   }
-
   return urls.value[sakura.wallpaperIndex]
 })
 
@@ -47,6 +46,11 @@ watch(() => sakura.wallpaperIndex, (newIndex, oldIndex) => {
     visitedUrls.value = []
   visitedUrls.value.push(oldIndex)
 })
+
+watch(() => sakura.wallpaperIndex, () => {
+  if (sakura.wallpaperIndex >= urls.value.length)
+    sakura.wallpaperIndex = 0
+}, { immediate: true })
 
 watch(() => urls.value.length, (length) => {
   sakura.wallpaperLength = length
