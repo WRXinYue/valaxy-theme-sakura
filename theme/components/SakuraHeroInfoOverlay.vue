@@ -13,10 +13,16 @@ const props = withDefaults(defineProps<{
 const siteConfig = useSiteConfig()
 const sakura = useSakuraAppStore()
 const themeConfig = useThemeConfig()
-const { hitokoto, fetchHitokoto } = addonHitokoto?.useAddonHitokoto(themeConfig.value.hero.hitokoto)
 
 const banner = computed(() => props.hero || themeConfig.value.hero)
 const socials = computed(() => (banner.value.socials || siteConfig.value.social) as HeroSocialLink[])
+
+const { hitokoto, fetchHitokoto } = computed(() => {
+  if (banner.value.enableHitokoto) {
+    return addonHitokoto?.useAddonHitokoto(themeConfig.value.hero.hitokoto) || {}
+  }
+  return { hitokoto: undefined, fetchHitokoto: () => {} }
+}).value
 </script>
 
 <template>
@@ -33,10 +39,10 @@ const socials = computed(() => (banner.value.socials || siteConfig.value.social)
             <span class="px-2 text-lg">
               <template v-if="themeConfig.hero.typewriter">
                 <SakuraTypewriter v-if="!banner.enableHitokoto" :type-string="banner.motto" loop :delay="100" :pause-for="10000" :delete-all="100" />
-                <SakuraTypewriter v-else :type-string="hitokoto.hitokoto" loop :delay="100" :pause-for="10000" :delete-all="100" @all-typing-finished="fetchHitokoto()" />
+                <SakuraTypewriter v-else :type-string="hitokoto?.hitokoto" loop :delay="100" :pause-for="10000" :delete-all="100" @all-typing-finished="fetchHitokoto()" />
               </template>
               <template v-else>
-                {{ banner.enableHitokoto ? hitokoto.hitokoto : banner.motto }}
+                {{ banner.enableHitokoto ? hitokoto?.hitokoto : banner.motto }}
               </template>
             </span>
             <span class="inline-block" i-fa6-solid-quote-right />
