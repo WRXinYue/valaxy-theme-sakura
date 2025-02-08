@@ -1,6 +1,5 @@
 import type { ThemeConfig } from 'valaxy-theme-oceanus'
 import { defineValaxyConfig } from 'valaxy'
-import { addonGitLog } from 'valaxy-addon-git-log'
 import { addonWaline } from 'valaxy-addon-waline'
 import { ValaxyThemesResolver } from 'valaxy-addon-components'
 import demoThemeConfig from '../demo/valaxy.config'
@@ -142,19 +141,20 @@ export default defineValaxyConfig<ThemeConfig>({
       since: 2024,
       icp: '<a href="https://icp.gov.moe/?keyword=20240132" target="_blank">萌ICP备20240132号</a>',
     },
+
+    gitLog: {
+      repositoryUrl: 'https://github.com/WRXinYue/valaxy-theme-sakura.git',
+      contributor: {
+        mode: 'api',
+        // logArgs: '--first-parent --follow',
+      },
+    },
   },
   addons: [
     addonWaline({
       serverURL: 'https://waline.wrxinyue.org',
       pageview: true,
       comment: true,
-    }),
-    addonGitLog({
-      contributor: {
-        mode: 'api',
-        // logArgs: '--first-parent --follow',
-      },
-      repositoryUrl: 'https://github.com/WRXinYue/valaxy-theme-sakura.git',
     }),
   ],
   components: {

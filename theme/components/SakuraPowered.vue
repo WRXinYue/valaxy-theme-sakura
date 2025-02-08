@@ -19,7 +19,7 @@ const poweredHtml = computed(() => t('footer.powered', [`<a href="${valaxyPkg.re
 </script>
 
 <template>
-  <div class="powered" m="2">
+  <div class="powered" m="2" translate="no">
     <span v-html="poweredHtml" /> | <span>{{ t('footer.theme') }} <a :href="pkg.homepage" :title="`valaxy-theme-${config.theme}`" target="_blank">{{ capitalize(config.theme) }}</a> v{{ pkg.version }}</span>
   </div>
 </template>
