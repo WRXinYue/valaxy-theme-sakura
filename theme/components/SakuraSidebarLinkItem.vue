@@ -8,14 +8,16 @@ defineProps<{
 </script>
 
 <template>
-  <SakuraNavLink v-if="item" v-bind="item">
-    <SakuraSidebarCount :locale="item.locale" />
-  </SakuraNavLink>
+  <template v-if="item">
+    <SakuraNavLink v-bind="item">
+      <SakuraSidebarCount :locale="item.locale" />
+    </SakuraNavLink>
+  </template>
 
   <ul v-else-if="items?.length" class="sakura-sidebar-link-items">
-    <li v-for="(_item, index) in items" :key="index">
-      <SakuraSidebarLinkItem :key="index" :item="item" class="sakura-sidebar-link-item" />
-      <SakuraSidebarLinkItem v-if="_item.items" :items="_item.items" class="sakura-sidebar-link-sub-items" />
+    <li v-for="(navItem, index) in items" :key="index">
+      <SakuraSidebarLinkItem :item="navItem" class="sakura-sidebar-link-item" />
+      <SakuraSidebarLinkItem v-if="navItem.items" :items="navItem.items" class="sakura-sidebar-link-sub-items" />
     </li>
   </ul>
 </template>
