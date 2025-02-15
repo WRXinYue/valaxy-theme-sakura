@@ -11,6 +11,7 @@ const navigate = useNavigate()
 const icon = computed(() => props.icon ?? themeConfig.value.ui.pinnedPost?.icon)
 const text = computed(() => props.text ?? themeConfig.value.pinnedPost?.text)
 const entries = computed(() => props.entries ?? themeConfig.value.pinnedPost?.entries)
+const imageCard = computed(() => themeConfig.value.ui.pinnedPost?.image)
 </script>
 
 <template>
@@ -18,8 +19,8 @@ const entries = computed(() => props.entries ?? themeConfig.value.pinnedPost?.en
     <SakuraDivider :icon :text />
     <div class="sakura-card sakura-pinned-post-card flex">
       <SakuraImageCard
-        v-for="(entry, i) in entries" :key="i" :data-title="entry.title" :to="entry.link"
-        :data-desc="entry.desc" :overlay="true" :src="entry.img"
+        v-for="(entry, i) in entries" :key="i" v-bind="imageCard" :data-title="entry.title"
+        :to="entry.link" :data-desc="entry.desc" :overlay="true" :src="entry.img"
         :class="entry.link ? 'cursor-pointer' : ''" @click="navigate.to(entry.link || '')"
       />
     </div>

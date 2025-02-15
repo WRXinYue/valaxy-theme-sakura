@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import noneImg from '../assets/image-404.png'
-import { onImgError } from '../utils'
+import { useThemeConfig } from '../composables'
+import { resolveImage } from '../utils'
 
 const props = withDefaults(defineProps<{
   [key: string]: any
@@ -22,10 +22,10 @@ const props = withDefaults(defineProps<{
 })
 
 export interface SakuraImageCardProps {
-  src: string
+  src: string | string[]
   to: string
   alt: string
-  errorImg: string
+  errorImg: string | string[]
   scale: number | string
   rotate: number | string
   skewX: number | string
@@ -41,7 +41,12 @@ export interface SakuraImageCardProps {
   overlayOpacityInitial: number | string
 }
 
+const themeConfig = useThemeConfig()
+
 const isHovering = ref(false)
+const showNotFondIcon = ref(false)
+
+const defaultImg = computed(() => props.errorImg ? resolveImage(props.errorImg) : themeConfig.value?.notFoundImage)
 
 const imageStyle = computed(() => {
   if (isHovering.value) {
@@ -59,22 +64,32 @@ const overlayStyle = computed(() => ({
   backgroundColor: props.overlayColor,
 }))
 
-function onError(e: Event) {
-  onImgError(e, props.errorImg || noneImg)
+function onImgError(e: Event) {
+  const targetEl = e.target as HTMLImageElement
+  targetEl.setAttribute('data-src', targetEl.src)
+
+  if (!defaultImg.value) {
+    showNotFondIcon.value = true
+    return
+  }
+
+  showNotFondIcon.value = false
+
+  targetEl.src = defaultImg.value
 }
 
-const getSrc = computed(() => {
-  return props.src && props.src.includes('?random')
-    ? props.src.replace('?random', `?random=${Math.random()}`)
-    : props.src
+const src = computed(() => {
+  const img = props.src ? resolveImage(props.src) : ''
+
+  return img && img.includes('?random') ? img.replace('?random', `?random=${Math.random()}`) : img
 })
 </script>
 
 <template>
   <div class="sakura-image-card relative overflow-hidden" @mouseover="isHovering = true" @mouseleave="isHovering = false">
-    <AppLink :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
-      <img v-if="getSrc" class="h-full w-full object-cover" loading="lazy" :src="getSrc" :alt="props.alt || 'cover'" :style="imageStyle" @error="onError">
-      <div v-else class="h-full w-full bg-$sakura-color-background opacity-70" :style="imageStyle" flex="~ center">
+    <AppLink w="full" h="full" :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
+      <img v-if="src" v-show="!showNotFondIcon" class="h-full w-full object-cover" loading="lazy" :src :alt="props.alt || 'cover'" :style="imageStyle" @error="onImgError">
+      <div v-show="showNotFondIcon || !src" class="h-full w-full bg-$sakura-color-background opacity-70" :style="imageStyle" flex="~ center">
         <div i-fa6-solid-image w="30%" h="30%" />
       </div>
       <template v-if="overlay">

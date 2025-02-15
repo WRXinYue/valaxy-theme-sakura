@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { computed } from 'vue'
 import type { LinkItem } from '../types'
 import { useLinkData, useThemeConfig } from '../composables'
 
@@ -12,8 +13,9 @@ const props = defineProps<{
 }>()
 
 const themeConfig = useThemeConfig()
-
 const { data } = useLinkData(props.links, props.random)
+
+const imageCard = computed(() => themeConfig.value.ui.links?.image)
 </script>
 
 <template>
@@ -22,7 +24,7 @@ const { data } = useLinkData(props.links, props.random)
       <li v-for="link, i in data" :key="i" class="link-item" :style="`--primary-color: ${link.color}`">
         <a class="link-url" p="x-4 y-2" :href="link.url" :title="link.name" alt="portrait" rel="friend" target="_blank">
           <div class="link-left">
-            <SakuraImageCard class="link-avatar" width="64" height="64" w="16" h="16" :src="link.avatar || themeConfig.notFoundImage" :alt="link.name" :error-img="props.errorImg" />
+            <SakuraImageCard v-bind="imageCard" class="link-avatar" width="64" height="64" w="16" h="16" :src="link.avatar" :alt="link.name" :error-img="errorImg" />
           </div>
           <div class="link-info" m="l-2">
             <div class="link-blog" font="serif black">{{ link.blog }}</div>

@@ -1,3 +1,5 @@
+import type { SakuraImageCardProps } from './component'
+
 export interface UI {
   /**
    * @zh 主题的主色调，会覆盖 ThemeExtend 的主题色调
@@ -8,10 +10,22 @@ export interface UI {
 
   pinnedPost: {
     icon: string
+
+    image: Partial<SakuraImageCardProps>
+  }
+
+  pageHeader: {
+    image: Partial<SakuraImageCardProps>
+  }
+
+  postHeader: {
+    image: Partial<SakuraImageCardProps>
   }
 
   postList: {
     icon: string
+
+    image: Partial<SakuraImageCardProps>
 
     /**
      * Breakpoints from Tailwind V2
@@ -29,6 +43,10 @@ export interface UI {
 
   notice: {
     icon: string
+  }
+
+  links: {
+    image: Partial<SakuraImageCardProps>
   }
 
   scrollDown: {

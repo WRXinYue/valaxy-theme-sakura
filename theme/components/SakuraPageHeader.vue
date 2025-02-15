@@ -1,14 +1,22 @@
 <script lang="ts" setup>
 import type { PostFrontMatter } from 'valaxy'
+import { computed } from 'vue'
+import type { SakuraImageCardProps } from '../types'
+import { useThemeConfig } from '../composables'
 
-defineProps<{
+const props = defineProps<{
   fm: PostFrontMatter
+  imageCard?: SakuraImageCardProps
 }>()
+
+const themeConfig = useThemeConfig()
+
+const imageCard = computed(() => props.imageCard || themeConfig.value.ui.pageHeader?.image)
 </script>
 
 <template>
   <header class="sakura-page-header space-y-1" :class="fm.cover && `has-cover`" flex="~ center items-end justify-center">
-    <SakuraImageCard v-if="fm.cover" :src="fm.cover" h="full" w="full" absolute="!" z="-1" />
+    <SakuraImageCard v-if="fm.cover" v-bind="imageCard" :src="fm.cover" h="full" w="full" absolute="!" z="-1" />
     <div class="sakura-safe-padding sakura-header-container pb-25px">
       <slot name="title">
         <div flex="~" class="sakura-header-title">

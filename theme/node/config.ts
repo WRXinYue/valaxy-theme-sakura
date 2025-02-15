@@ -11,14 +11,35 @@ export const defaultThemeConfig: ThemeUserConfig = {
     notice: {
       icon: 'i-fa6-solid:bullhorn',
     },
+    pageHeader: {
+      image: {
+        scale: 1,
+      },
+    },
     postList: {
       icon: 'i-fa6-solid:water',
+
+      image: {
+        rotate: 5,
+        scale: 1.1,
+        transitionDuration: '0.45s',
+      },
 
       responsive: {
       },
     },
     pinnedPost: {
       icon: 'i-fa6-solid:anchor',
+
+      image: {
+        scale: 1.1,
+      },
+    },
+    links: {
+      image: {
+        scale: 1,
+        rotate: 360,
+      },
     },
     scrollDown: {
       icon: 'i-fa6-solid-angle-down',

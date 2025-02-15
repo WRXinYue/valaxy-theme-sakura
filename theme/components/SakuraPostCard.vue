@@ -14,8 +14,9 @@ const props = defineProps<{
 const themeConfig = useThemeConfig()
 const breakpoints = useBreakpoints(breakpointsTailwind)
 
-const defaultImage = computed(() => resolveImage(themeConfig.value.postList?.defaultImage ?? ''))
+const defaultImage = computed(() => themeConfig.value.postList && resolveImage(themeConfig.value.postList?.defaultImage))
 const cover = computed(() => props.post.cover || defaultImage.value)
+const imageCard = computed(() => themeConfig.value.ui.postList?.image)
 
 const isGroup = computed(() => props.cols > 1)
 const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-direction: column;
@@ -26,7 +27,7 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
     hover="scale-101 z-10" class="sakura-card sakura-post-card transition-all duration-500"
     :class="[position, { 'is-col': isCol }, { group: isGroup }]"
   >
-    <SakuraImageCard v-if="cover" class="aspect-video" :to="post.path" :src="cover || defaultImage" rotate="5" space="1.1" transition-duration="0.45s" />
+    <SakuraImageCard v-if="cover" class="aspect-video" :to="post.path" :src="cover || defaultImage" v-bind="imageCard" />
 
     <div flex="~ col" class="post-card-content" :class="cover && 'has-cover'">
       <slot>
