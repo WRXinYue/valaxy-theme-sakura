@@ -1,9 +1,3 @@
-export type SidebarMulti = (string | SidebarItem)[]
-
-// export interface SidebarMulti {
-//   [path: string]: SidebarItem[] | { items: SidebarItem[], base: string }
-// }
-
 export interface SidebarItem {
   /**
    * @zh 侧边栏文本标签

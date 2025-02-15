@@ -5,7 +5,7 @@ import type { NavItem, NavbarOptions } from './navbar'
 import type { Pagination } from './pagination'
 import type { PinnedPost } from './pinned'
 import type { PostFooter, PostList } from './post'
-import type { SidebarMulti, SidebarOptions } from './sidebar'
+import type { SidebarItem, SidebarOptions } from './sidebar'
 import type { UserUI } from './ui'
 
 export interface ThemeConfig extends DefaultTheme.Config {
@@ -39,7 +39,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * @zh 侧边栏配置
    * @en Sidebar configuration
    */
-  sidebar: NavItem[] | SidebarMulti
+  sidebar: NavItem[] | SidebarItem[]
   /**
    * @zh 侧边栏选项配置
    * @en Sidebar options configuration

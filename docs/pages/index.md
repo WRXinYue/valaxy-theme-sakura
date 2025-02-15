@@ -3,7 +3,7 @@ title: Valaxy Theme Sakura
 
 features:
   title: 特色
-  subtitle: 01 - Features
+  subtitle: Features
   text: valaxy-theme-sakura 设计风格继承于 wordpress-theme-sakura(mashirozx 的 sakura 主题)，复刻了原主题几乎所有功能，并进行了大规模的功能和样式增强
   cards:
     - title: 简洁优雅
@@ -19,10 +19,10 @@ features:
     - title: 个性化、多布局、灵活
       details: 核心布局基于动态多栏设计，用户可以自由定制组件、文章布局、主页布局等，满足各种个性化需求，并且支持响应式调整
 
-contributors:
-  title: 贡献者
-  subtitle: 02 - Contributors
-  text: 项目已经逐步完善。特别感谢热心用户支持和帮助，感谢 GitHub 上的所有贡献者！(贡献者信息由 valaxy-git-log 读取 git 记录自动生成)
+# contributors:
+#   title: 贡献者
+#   subtitle: Contributors
+#   text: 项目已经逐步完善。特别感谢热心用户支持和帮助，感谢 GitHub 上的所有贡献者！(贡献者信息由 valaxy-git-log 读取 git 记录自动生成)
 
 getStarted:
   title: 基于 Valaxy 构建

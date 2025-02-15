@@ -3,7 +3,6 @@ import { defineValaxyConfig } from 'valaxy'
 import { addonWaline } from 'valaxy-addon-waline'
 import { ValaxyThemesResolver } from 'valaxy-addon-components'
 import { defaultThemeConfig } from 'valaxy-theme-sakura/node'
-import demoThemeConfig from '../demo/valaxy.config'
 
 export default defineValaxyConfig<ThemeConfig>({
   ...defaultThemeConfig,
@@ -112,7 +111,6 @@ export default defineValaxyConfig<ThemeConfig>({
 
     hero: {
       title: 'VALAXY THEME SAKURA',
-      img: demoThemeConfig.themeConfig!.hero!.urls![0],
       motto: '开放、高自由、功能丰富的 valaxy 主题',
     },
 
