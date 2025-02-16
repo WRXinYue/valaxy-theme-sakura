@@ -13,7 +13,7 @@ const pagination = themeConfig.value.pagination
 
 const pageSize = computed(() => pagination?.itemsPerPage || siteConfig.value.pageSize)
 const posts = computed(() => routes.value)
-const identification = computed(() => pagination?.animation ? 'animation-fade-up' : 'identification') // Determine the class identifier; if animation is enabled, use the class with animation
+const identification = computed(() => pagination?.animation ? 'sakura-fade-up' : 'identification') // Determine the class identifier; if animation is enabled, use the class with animation
 
 const totalPages = ref(Math.ceil(posts.value.length / pageSize.value))
 

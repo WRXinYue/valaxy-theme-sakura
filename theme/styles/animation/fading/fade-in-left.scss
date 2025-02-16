@@ -1,0 +1,19 @@
+@keyframes sakura-fade-in-left {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@mixin fade-in-left {
+  animation-name:  sakura-fade-in-left;
+
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out, ease-in-out;
+}

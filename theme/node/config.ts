@@ -76,8 +76,8 @@ export const defaultThemeConfig: ThemeUserConfig = {
   navbar: [],
   navbarOptions: {
     title: '',
-    animIn: 'animation-fade-in-left',
-    animOut: 'animation-fade-out-left',
+    animIn: 'sakura-fade-in-left',
+    animOut: 'sakura-fade-out-left',
     showMarker: true,
     offset: 100,
     enableHover: true,

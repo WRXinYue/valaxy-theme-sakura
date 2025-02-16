@@ -1,41 +1,7 @@
-// --------------- Valaxy ---------------
 @use 'valaxy/client/styles/common/code.scss' as *;
-
-// --------------- Layouts ---------------
 @use './layouts/layout.scss' as *;
-
-// --------------- Animation ---------------
-@use './animation/fading/fading.scss' as *;
-@use './animation/slide/slide.scss' as *;
-@use './animation/hover/hover.scss' as *;
-@use './animation/loop/loop.scss' as *;
-@use './animation/slit-in/slit-in.scss' as *;
-
-// --------------- Common ---------------
-@use './common/button.scss' as *;
-@use './common/background.scss' as *;
-@use './common/valaxy.scss' as *;
-@use './common/site.scss' as *;
-@use './common/text.scss' as *;
-@use './common/scrollbar.scss' as *;
-@use './common/card.scss' as *;
-@use './common/animation.scss' as *;
-@use './common/columns.scss' as *;
-
-// --------------- Markdown ---------------
-// Reset valaxy markdown style
-@use './markdown/reset-markdown.scss' as *;
-@use './markdown/prose.scss' as *;
-@use './markdown/sakura-prose' as *;
-@use './markdown/animation.scss' as *;
-@use './markdown/code.scss' as *;
-@use './markdown/code-group.scss' as *;
-@use './markdown/custom-block.scss' as *;
-
-// --------------- Widgets ---------------
+@use './animation' as *;
+@use './common' as *;
+@use './markdown' as *;
 @use './widgets/sidebar.scss' as *;
-
-// --------------- Plugins ---------------
-@use './plugins/aplayer.scss' as *;
-@use './plugins/live2d.scss' as *;
-@use './plugins/bangumi.scss' as *;
+@use './plugins' as *;

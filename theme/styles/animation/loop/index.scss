@@ -1,0 +1,15 @@
+@use "./loop-blink" as *;
+@use "./loop-fly" as *;
+@use "./loop-float" as *;
+
+.sakura-loop-blink {
+  @include loop-blink;
+}
+
+.sakura-loop-fly {
+  @include loop-fly;
+}
+
+.sakura-loop-float {
+  @include loop-float;
+}

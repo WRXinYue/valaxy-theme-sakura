@@ -14,13 +14,13 @@ const appStore = useSakuraAppStore()
 const isMounted = useMounted()
 
 const banner = computed(() => props.hero || themeConfig.value.hero)
-const overlayBarClass = computed(() => appStore.wallpaperIsPlaying ? 'animation-fade-out-down' : 'animation-fade-in-up')
+const overlayBarClass = computed(() => appStore.wallpaperIsPlaying ? 'sakura-fade-out-down' : 'sakura-fade-in-up')
 
 watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
   const navbarElement = document.querySelector('.sakura-navbar')
 
-  navbarElement?.classList.toggle('animation-fade-in-down', !isPlaying)
-  navbarElement?.classList.toggle('animation-fade-out-up', isPlaying)
+  navbarElement?.classList.toggle('sakura-fade-in-down', !isPlaying)
+  navbarElement?.classList.toggle('sakura-fade-out-up', isPlaying)
 
   const live2dToolQuitElement = document.querySelector('#live2d-tool-quit')
   const live2dToolElement = document.querySelector('#live2d-tools')

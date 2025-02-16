@@ -89,14 +89,16 @@
     padding-left: 16px;
   }
 
-  h2::after {
-    content: '\00B6';
-    position: absolute;
-    color: oklch(71.45% 0.1788 22.7);
-    font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
-      'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
-    padding-left: 6px;
-    font-size: 1.03em;
+  :where(h2):not(:where(.not-prose, .not-prose *)) {
+    &::after {
+      content: '\00B6';
+      position: absolute;
+      color: oklch(71.45% 0.1788 22.7);
+      font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
+        'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+      padding-left: 6px;
+      font-size: 1.03em;
+    }
   }
 
   .serif h2::after {

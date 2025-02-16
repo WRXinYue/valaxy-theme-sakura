@@ -1,0 +1,5 @@
+@use './hvr-rotate' as *;
+
+.sakura-hvr-rotate {
+  @include hvr-rotate;
+}

@@ -28,10 +28,10 @@ const { hitokoto, fetchHitokoto } = computed(() => {
 <template>
   <div class="sakura-hero-info-overlay">
     <slot name="highlighted-text">
-      <SakuraGlitchText :class="sakura.wallpaperIsPlaying ? 'animation-fade-out-up' : 'animation-fade-in-down'" :text="banner.title" />
+      <SakuraGlitchText :class="sakura.wallpaperIsPlaying ? 'sakura-fade-out-up' : 'sakura-fade-in-down'" :text="banner.title" />
     </slot>
 
-    <div class="sakura-info-card" :class="sakura.wallpaperIsPlaying ? 'animation-slit-out-horizontal' : 'animation-slit-in-horizontal'">
+    <div class="sakura-info-card" :class="sakura.wallpaperIsPlaying ? 'sakura-anim-slit-out-horizontal' : 'sakura-anim-slit-in-horizontal'">
       <div :class="themeConfig.hero.socialStyle === 'merge' && 'sakura-social-card'">
         <slot name="muted-text">
           <div class="flex justify-center" :class="themeConfig.hero.socialStyle === 'separate' && 'sakura-social-card'">

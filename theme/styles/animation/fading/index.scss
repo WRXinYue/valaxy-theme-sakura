@@ -1,0 +1,50 @@
+@use "./fade-in-down" as *;
+@use "./fade-in-up" as *;
+@use "./fade-in-left" as *;
+@use "./fade-in-right" as *;
+@use "./fade-in" as *;
+@use "./fade-out-down" as *;
+@use "./fade-out-left" as *;
+@use "./fade-out-right" as *;
+@use "./fade-out-up" as *;
+@use "./fade-up" as *;
+
+.sakura-fade-in-down {
+  @include fade-in-down;
+}
+
+.sakura-fade-in-up {
+  @include fade-in-up;
+}
+
+.sakura-fade-in-left {
+  @include fade-in-left;
+}
+
+.sakura-fade-in-right {
+  @include fade-in-right;
+}
+
+.sakura-fade-in {
+  @include fade-in;
+}
+
+.sakura-fade-out-down {
+  @include fade-out-down;
+}
+
+.sakura-fade-out-left {
+  @include fade-out-left;
+}
+
+.sakura-fade-out-right {
+  @include fade-out-right;
+}
+
+.sakura-fade-out-up {
+  @include fade-out-up;
+}
+
+.sakura-fade-up {
+  @include fade-up;
+}

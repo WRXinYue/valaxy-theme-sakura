@@ -1,0 +1,18 @@
+@keyframes sakura-fade-in-up {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@mixin fade-in-up {
+  animation-name: sakura-fade-in-up;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out, ease-in-out;
+}

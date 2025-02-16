@@ -1,5 +1,4 @@
 @use 'valaxy/client/styles/mixins/index.scss' as *;
-@use 'valaxy-theme-sakura/styles/animation/slide/slide.scss' as *;
 
 .link {
   color: var(--sakura-color-primary);
@@ -31,16 +30,8 @@ a {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .sakura-post-header {
-    @include slide-down;
-    /* stylelint-disable-next-line scss/double-slash-comment-empty-line-before */
-    // @extend .animation-slide-down;
-  }
-}
-
-.site-content {
-  padding-inline: 20px;
+.sakura-site-content {
+  padding-inline: max(20px, env(safe-area-inset-left));
 }
 
 .sakura-safe-padding {

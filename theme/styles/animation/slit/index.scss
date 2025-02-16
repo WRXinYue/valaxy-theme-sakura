@@ -1,0 +1,10 @@
+@use "./slit-in-horizontal" as *;
+@use "./slit-out-horizontal" as *;
+
+.sakura-slit-in-horizontal {
+  @include slit-in-horizontal;
+}
+
+.sakura-slit-out-horizontal {
+  @include slit-out-horizontal;
+}

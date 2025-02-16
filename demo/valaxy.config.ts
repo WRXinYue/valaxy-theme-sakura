@@ -94,38 +94,32 @@ export default defineValaxyConfig<ThemeUserConfig>({
         icon: 'i-fa-fort-awesome',
         locale: 'menu.home',
         link: '/',
-        animated: 'animation-hvr-grow',
       },
       {
         icon: 'i-line-md-folder-twotone',
         locale: 'menu.categories',
         link: '/categories',
-        animated: 'animation-hvr-grow',
       },
       {
         icon: 'i-fa-archive',
         locale: 'menu.archives',
         link: '/archives',
-        animated: 'animation-hvr-grow',
       },
       {
         icon: 'i-fa-film',
         text: '番剧',
         // locale: 'menu.anime',
         link: '/anime',
-        animated: 'animation-hvr-grow',
       },
       {
         icon: 'i-fa-edit',
         text: '留言板',
         link: '/comment',
-        animated: 'animation-hvr-grow',
       },
       {
         text: '友情链接',
         icon: 'i-fa-chain',
         link: '/links',
-        animated: 'animation-hvr-icon-buzz-out',
         items: [
           {
             text: 'GitHub',
@@ -149,21 +143,18 @@ export default defineValaxyConfig<ThemeUserConfig>({
         icon: 'i-line-md-hazard-lights-filled',
         link: pkg.author.url,
         target: '_blank',
-        animated: 'animation-hvr-icon-bounce',
       },
       {
         text: '关于',
         icon: 'i-fa-leaf',
         link: pkg.author.url,
         target: '_blank',
-        animated: 'animation-hvr-icon-bounce',
       },
       {
         text: 'RSS',
         icon: 'i-fa-feed',
         link: '/atom.xml',
         target: '_blank',
-        animated: 'animation-hvr-icon-up',
       },
     ],
     navbarOptions: {

@@ -1,0 +1,17 @@
+@keyframes sakura-fade-up {
+  from {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@mixin fade-up {
+  animation-name: sakura-fade-up;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}

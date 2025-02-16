@@ -1,0 +1,10 @@
+@keyframes sakura-loop-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@mixin loop-blink {
+  animation-name: sakura-loop-blink;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}

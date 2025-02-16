@@ -1,0 +1,21 @@
+
+
+$translate-distance: 0.5rem;
+
+@keyframes sakura-loop-fly {
+  from {
+    transform: translateY(var(--translate-distance, $translate-distance));
+  }
+
+  to {
+    transform: translateY(calc(var(--translate-distance, $translate-distance) * -1));
+  }
+}
+
+@mixin loop-fly {
+  animation-name: sakura-loop-fly;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
