@@ -4,11 +4,13 @@ import type { CSSProperties } from 'vue'
 import { computed } from 'vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { usePostList, useThemeConfig } from '../composables'
+import type { ResponsiveBreakpoints } from '../types'
 
 const props = defineProps<{
   icon?: string
   text?: string
   posts?: Post[]
+  responsive?: ResponsiveBreakpoints
 }>()
 
 const themeConfig = useThemeConfig()
@@ -20,7 +22,7 @@ const isImageReversed = computed(() => themeConfig.value.postList?.isImageRevers
 const icon = computed(() => props.icon ?? themeConfig.value.ui.postList?.icon)
 const text = computed(() => props.text ?? themeConfig.value.postList?.text)
 const posts = computed(() => props.posts || postsList.value)
-const responsive = computed(() => themeConfig.value.ui.postList?.responsive || {})
+const responsive = computed(() => props.responsive || themeConfig.value.ui.postList?.responsive || {})
 
 const cols = computed(() => {
   const keys: (keyof typeof breakpointsTailwind)[] = ['2xl', 'xl', 'lg', 'md', 'sm']

@@ -10,7 +10,7 @@ const themeConfig = useThemeConfig()
   </slot>
 
   <div class="sakura-home" flex="~ col center">
-    <SakuraMultiColumns class="sakura-safe-padding sakura-home-layout site-content" base>
+    <SakuraMultiColumns class="sakura-safe-padding sakura-home-layout sakura-site-content" base>
       <slot name="notice-board">
         <SakuraNoticeBoard />
       </slot>

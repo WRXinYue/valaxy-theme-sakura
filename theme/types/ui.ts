@@ -32,13 +32,7 @@ export interface UI {
      *
      * @see https://tailwindcss.com/docs/breakpoints
      */
-    responsive: Partial<{
-      'sm': number
-      'md': number
-      'lg': number
-      'xl': number
-      '2xl': number
-    }>
+    responsive: Partial<ResponsiveBreakpoints>
   }
 
   notice: {
@@ -73,6 +67,14 @@ export interface UI {
      */
     lightIcon?: string
   }
+}
+
+export interface ResponsiveBreakpoints {
+  'sm': number
+  'md': number
+  'lg': number
+  'xl': number
+  '2xl': number
 }
 
 export type UserUI = {
