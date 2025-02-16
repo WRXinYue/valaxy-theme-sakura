@@ -105,7 +105,7 @@ export default defineValaxyConfig<ThemeConfig>({
     ],
 
     navTools: [
-      ['togglTheme', { icon: 'i-ri-github-fill', link: 'https://github.com/WRXinYue/valaxy-theme-sakura' }],
+      ['toggleLocale', 'togglTheme', { icon: 'i-ri-github-fill', link: 'https://github.com/WRXinYue/valaxy-theme-sakura' }],
       ['search'],
     ],
 
