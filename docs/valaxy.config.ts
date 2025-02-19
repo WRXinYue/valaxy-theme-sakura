@@ -3,10 +3,9 @@ import { defineValaxyConfig } from 'valaxy'
 import { addonWaline } from 'valaxy-addon-waline'
 import { ValaxyThemesResolver } from 'valaxy-addon-components'
 import { defaultThemeConfig } from 'valaxy-theme-sakura/node'
+import type { ThemeConfig as SakuraThemeConfig } from 'valaxy-theme-sakura'
 
-export default defineValaxyConfig<ThemeConfig>({
-  ...defaultThemeConfig,
-
+export default defineValaxyConfig<ThemeConfig & SakuraThemeConfig>({
   siteConfig: {
     title: 'Sakura Docs',
     url: 'https://sakura.wrxinyue.org',
@@ -52,6 +51,8 @@ export default defineValaxyConfig<ThemeConfig>({
 
   theme: 'oceanus',
   themeConfig: {
+    ...defaultThemeConfig,
+
     ui: {
       primary: '#ff4e6a',
     },

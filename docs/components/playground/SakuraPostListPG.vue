@@ -2,14 +2,15 @@
 import type { ResponsiveBreakpoints } from 'valaxy-theme-sakura/types'
 import { postList } from '../../data/posts'
 
-const responsive: Partial<ResponsiveBreakpoints> = {
-  'xl': 2,
-  '2xl': 3,
-}
+defineProps<{
+  responsive?: Partial<ResponsiveBreakpoints>
+}>()
 </script>
 
 <template>
   <div class="not-prose">
-    <SakuraPostList :posts="postList" :responsive />
+    <div class="mb-4 max-h-50vh overflow-y-scroll border border-$oceanus-c-border-line p-4">
+      <SakuraPostList :posts="postList" :responsive />
+    </div>
   </div>
 </template>

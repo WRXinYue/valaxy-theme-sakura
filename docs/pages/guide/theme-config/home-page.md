@@ -23,3 +23,7 @@ Hero 当中可以配置博客首页大屏壁纸或者标题之类的
 | motto | `string`                                                  | `'You got to put the past behind you before you can move on.'` | 首页标语 (写下愿景也很不错呀)                                                                                                                                                                          |
 | urls  | `string[] \| string`                                      | `undefined`                                                    | 用于网站头部背景壁纸链接支持图片及视频,支持填入多个                                                                                                                                                    |
 | style | `'\|filter-dot\|' \| 'filter-dim' \| 'filter-grid' \| ''` | `'filter-dim'`                                                 | 背景图片的过滤样式，可选值为`'filter-dot'`（点状过滤效果）、<br class="<md:hidden" />`'filter-dim'`（昏暗过滤效果）、`'filter-grid'`（网格过滤效果）<br class="<md:hidden" /> 或空字符串（无过滤效果） |
+
+## 卡片列表 (PostList)
+
+详情请见 [PostList](/guide/theme-config/post-list)

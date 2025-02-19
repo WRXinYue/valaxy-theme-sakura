@@ -37,6 +37,7 @@ declare module 'vue-router/auto-routes' {
     '/guide/theme-config/home-page': RouteRecordInfo<'/guide/theme-config/home-page', '/guide/theme-config/home-page', Record<never, never>, Record<never, never>>,
     '/guide/theme-config/links-page': RouteRecordInfo<'/guide/theme-config/links-page', '/guide/theme-config/links-page', Record<never, never>, Record<never, never>>,
     '/guide/theme-config/nav': RouteRecordInfo<'/guide/theme-config/nav', '/guide/theme-config/nav', Record<never, never>, Record<never, never>>,
+    '/guide/theme-config/post-list': RouteRecordInfo<'/guide/theme-config/post-list', '/guide/theme-config/post-list', Record<never, never>, Record<never, never>>,
     '/guide/theme-config/post-page': RouteRecordInfo<'/guide/theme-config/post-page', '/guide/theme-config/post-page', Record<never, never>, Record<never, never>>,
     '/guide/theme-config/sidebar': RouteRecordInfo<'/guide/theme-config/sidebar', '/guide/theme-config/sidebar', Record<never, never>, Record<never, never>>,
     '/releases': RouteRecordInfo<'/releases', '/releases', Record<never, never>, Record<never, never>>,
