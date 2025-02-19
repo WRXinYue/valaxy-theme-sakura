@@ -98,9 +98,9 @@ const isHeaderHighlighted = computed(() => {
     }
   }
 
-  .sakura-logo-link span:first-child {
-    background-color: oklch(100% 0 0 / 50%);
-  }
+  // .sakura-logo-link span:first-child {
+  //   background-color: oklch(100% 0 0 / 50%);
+  // }
 
   .sakura-nav-link-icon {
     height: 1em;

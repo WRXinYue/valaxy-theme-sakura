@@ -9,11 +9,11 @@ const props = defineProps<{
 const themeConfig = useThemeConfig()
 const { toDown } = useScroll()
 
-const icon = computed(() => props.icon || themeConfig.value.ui.scrollDown.icon)
+const icon = computed(() => props.icon || themeConfig.value.ui.scrollDown?.icon)
 </script>
 
 <template>
-  <button class="sakura-scroll-down" @click="toDown">
+  <button v-if="icon" class="sakura-scroll-down" @click="toDown">
     <span :class="icon" class="sakura-scroll-down-icon sakura-anim-float inline-block" />
   </button>
 </template>
