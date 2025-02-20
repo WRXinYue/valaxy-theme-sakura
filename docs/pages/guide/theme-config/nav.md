@@ -27,27 +27,11 @@ top: 500
 | isExternal | `boolean`            | ---    | 是否使用 a 标签跳转                                    |
 | submenu    | `NavItem[]`          | ---    | 二级菜单                                               |
 
-## 启用 `sticky`
-
-```scss
-.sakura-navbar {
-  position: sticky;
-}
-```
-
-## 如何为`sticky`不占用实际位置
-
-```scss
-.app-container {
-  margin-top: calc(-1 * var(--sakura-navbar-height));
-}
-```
-
 ## 自定义高度
 
 修改css全局变量 `--sakura-navbar-height` 即可
 
-### 更改标题文字大小
+## 更改标题文字大小
 
 ```scss {1,5-6,9-10}
 @use 'valaxy/client/styles/mixins/index.scss' as *;
@@ -62,9 +46,23 @@ top: 500
       font-weight: 800;
     }
   }
+}
+```
 
-  .moe-mashiro {
-    font-family: Moe-Mashiro, sans-serif;
-  }
+## 高级技巧
+
+### 导航栏定位改用 `sticky`
+
+```scss
+.sakura-navbar {
+  position: sticky;
+}
+```
+
+### 如何为`sticky`不占用实际位置
+
+```scss
+.app-container {
+  margin-top: calc(-1 * var(--sakura-navbar-height));
 }
 ```

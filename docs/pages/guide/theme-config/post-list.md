@@ -6,6 +6,10 @@ categories:
   - theme-config
 ---
 
+文章列表常在于首页等位置，可自定义。
+
+<SakuraPostListPG  />
+
 ## 标题
 
 | 属性名          | 类型     | 默认值       | 说明               |
