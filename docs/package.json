@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "monaco-editor": "^0.52.2",
-    "valaxy": "catalog:",
+    "valaxy": "^0.22.5",
     "valaxy-addon-components": "^0.1.0",
     "valaxy-addon-git-log": "^0.2.0",
     "valaxy-addon-twikoo": "catalog:",
