@@ -89,6 +89,10 @@ export default defineValaxyConfig<ThemeConfig & SakuraThemeConfig>({
             text: 'frontmatter 配置',
             link: '/guide/getting-started/frontmatter-config',
           },
+          {
+            text: '特殊页面',
+            link: '/guide/special-pages',
+          },
         ],
       },
       {
@@ -137,6 +141,7 @@ export default defineValaxyConfig<ThemeConfig & SakuraThemeConfig>({
       'examples',
       'releases',
       'dev',
+      'special-pages',
     ],
 
     footer: {
