@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@iconify-json/fa": "^1.2.1",
-    "@iconify-json/line-md": "^1.2.4",
+    "@iconify-json/line-md": "^1.2.5",
     "valaxy-addon-algolia": "catalog:",
     "valaxy-addon-bangumi": "catalog:",
     "valaxy-addon-live2d": "catalog:",

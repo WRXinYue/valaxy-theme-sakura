@@ -14,15 +14,15 @@
     "monaco-editor": "^0.52.2",
     "valaxy": "catalog:",
     "valaxy-addon-components": "^0.1.0",
-    "valaxy-addon-git-log": "^0.2.0",
+    "valaxy-addon-git-log": "^0.2.1",
     "valaxy-addon-twikoo": "catalog:",
     "valaxy-theme-oceanus": "^0.1.0",
     "valaxy-theme-sakura": "workspace:*",
     "vue-toastification": "2.0.0-rc.5"
   },
   "devDependencies": {
-    "@iconify-json/qlementine-icons": "^1.2.1",
-    "@iconify-json/simple-icons": "^1.2.18",
+    "@iconify-json/qlementine-icons": "^1.2.4",
+    "@iconify-json/simple-icons": "^1.2.29",
     "typescript": "catalog:"
   }
 }

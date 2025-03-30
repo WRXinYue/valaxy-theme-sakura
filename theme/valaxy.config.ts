@@ -21,6 +21,7 @@ export default defineTheme<ThemeUserConfig>((options) => {
 
   return {
     themeConfig: defaultThemeConfig,
+
     vite: {
       plugins: [
         themePlugin(themeConfig),
