@@ -28,7 +28,7 @@
   },
   "peerDependencies": {
     "valaxy-addon-hitokoto": "^0.0.1",
-    "valaxy-addon-vercount": "^0.0.5"
+    "valaxy-addon-vercount": "^0.0.6"
   },
   "dependencies": {
     "@ctrl/tinycolor": "^4.1.0",

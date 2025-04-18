@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineWebPage, useSchemaOrg } from '@unhead/schema-org'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 useSchemaOrg([
   defineWebPage({
