@@ -13,7 +13,7 @@ const themeConfig = useThemeConfig()
 const appStore = useSakuraAppStore()
 const isMounted = useMounted()
 
-const banner = computed(() => props.hero || themeConfig.value.hero)
+const hero = computed(() => props.hero || themeConfig.value.hero)
 const overlayBarClass = computed(() => appStore.wallpaperIsPlaying ? 'sakura-fade-out-down' : 'sakura-fade-in-up')
 
 watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
@@ -36,16 +36,16 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
 <template>
   <header class="sakura-hero <md:px-5">
     <template v-if="isMounted">
-      <div class="absolute inset-0 overflow-hidden" :class="[!appStore.wallpaperIsPlaying && banner.style && 'banner-style', banner.style]">
+      <div class="absolute inset-0 overflow-hidden" :class="[!appStore.wallpaperIsPlaying && hero.style && 'banner-style', hero.style]">
         <slot name="background">
           <SakuraHeroBackground :urls="hero?.urls" />
         </slot>
 
-        <div v-if="banner?.waveTheme" :class="overlayBarClass">
+        <div v-if="hero?.waveTheme" :class="overlayBarClass">
           <slot name="overlay-bar">
-            <SakuraWaveFish v-if="banner.waveTheme === 'fish'" />
-            <SakuraWaveHorizontal v-else-if="banner.waveTheme === 'horizontal'" />
-            <SakuraWaveRipple v-else-if="banner.waveTheme === 'ripple'" />
+            <SakuraWaveFish v-if="hero.waveTheme === 'fish'" />
+            <SakuraWaveHorizontal v-else-if="hero.waveTheme === 'horizontal'" />
+            <SakuraWaveRipple v-else-if="hero.waveTheme === 'ripple'" />
           </slot>
         </div>
       </div>
@@ -57,7 +57,7 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
       </div>
 
       <slot name="player">
-        <SakuraPlayer v-if="banner?.playerUrl" class="absolute bottom-2 right-2 z-4 h-8 w-8" />
+        <SakuraPlayer v-if="hero?.playerUrl" class="absolute bottom-2 right-2 z-4 h-8 w-8" />
       </slot>
 
       <div :class="overlayBarClass" class="absolute bottom-12 right-50% z-4">

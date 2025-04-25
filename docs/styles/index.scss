@@ -9,6 +9,7 @@
 @use 'valaxy-theme-sakura/styles/markdown/code.scss' as *;
 @use 'valaxy-theme-sakura/styles/markdown/code-group.scss' as *;
 @use 'valaxy-theme-sakura/styles/markdown/custom-block.scss' as *;
+@import 'https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap';
 
 :root {
   @include set-css-var-from-map($light);
@@ -24,4 +25,54 @@ html.dark {
 * ------------------------------------- */
 a {
   text-decoration: none !important;
+}
+
+body {
+  font-family: 'Baloo Paaji 2', cursive;
+}
+
+/* -------------------------------------
+* valaxy-theme-oceanus styles
+* ------------------------------------- */
+
+.oceanus-section {
+  background-color: var(--oceanus-c-bg-design);
+}
+
+.hero-title,
+.hero-motto {
+  color: oklch(100% 0 0);
+  font-size: 6rem;
+  text-shadow:
+    2px 2px 4px oklch(84% 0.0878 19.07 / 50%),
+    4px 4px 8px oklch(73% 0.1652 21.99 / 30%),
+    6px 6px 12px oklch(68% 0.2 24.81 / 20%);
+}
+
+.oceanus-hero::before {
+  z-index: 1;
+}
+
+h1,
+h2,
+h3 {
+  text-shadow:
+    1px 1px 1px oklch(88% 0.0629 18.42 / 30%),
+    -1px -1px 1px oklch(0% 0 0 / 20%);
+}
+
+/* -------------------------------------
+* valaxy-theme-sakura styles
+* ------------------------------------- */
+
+.sakura-waves-ripple {
+  z-index: 2;
+}
+
+/* -------------------------------------
+* Document custom styles
+* ------------------------------------- */
+
+.sakura-fall {
+  height: calc(100vh - var(--oceanus-nav-height)) !important;
 }
