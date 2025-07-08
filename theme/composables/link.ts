@@ -39,7 +39,7 @@ export function useLinkData(source: string | LinkType[], random = false) {
             const authorName = link.name || xml.querySelector('author > name')?.textContent
             // const authorEmail = xml.querySelector('author > email')?.textContent
             // const authorUri = xml.querySelector('author > uri')?.textContent
-            const linkAlternate = xml.querySelector('link[rel="alternate"]')?.getAttribute('href')
+            const linkAlternate = link.url || xml.querySelector('link[rel="alternate"]')?.getAttribute('href')
             // const linkSelf = link.url || xml.querySelector('link[rel="self"]')?.getAttribute('href')
             const subtitle = link.desc || xml.querySelector('subtitle')?.textContent
             const logo = link.avatar || xml.querySelector('logo')?.textContent
