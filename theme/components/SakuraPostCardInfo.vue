@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <div class="sakura-post-card-info">
-    <SakuraPostDate :date="post.date" class="post-date order-1" pb-4 text-sm />
+    <SakuraPostDate :date="post.updated" class="post-date order-1" pb-4 text-sm />
     <SakuraPostTitle pb-4 class="order-2" :title="post.title" :to="post.path" />
     <SakuraPostMeta pb-2 class="order-3" :post />
     <SakuraPostExcerpt v-if="post?.excerpt" pb-2 class="order-4" :excerpt="post.excerpt" />
