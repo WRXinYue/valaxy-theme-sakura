@@ -31,7 +31,7 @@ const { hitokoto, fetchHitokoto } = computed(() => {
       <SakuraGlitchText :class="sakura.wallpaperIsPlaying ? 'sakura-fade-out-up' : 'sakura-fade-in-down'" :text="banner.title" />
     </slot>
 
-    <div class="sakura-info-card" :class="sakura.wallpaperIsPlaying ? 'sakura-anim-slit-out-horizontal' : 'sakura-anim-slit-in-horizontal'">
+    <div class="sakura-info-card" :class="sakura.wallpaperIsPlaying ? 'sakura-slit-out-horizontal' : 'sakura-slit-in-horizontal'">
       <div :class="themeConfig.hero.socialStyle === 'merge' && 'sakura-social-card'">
         <slot name="muted-text">
           <div class="flex justify-center" :class="themeConfig.hero.socialStyle === 'separate' && 'sakura-social-card'">

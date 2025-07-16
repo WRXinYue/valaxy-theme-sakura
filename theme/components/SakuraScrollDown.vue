@@ -14,7 +14,7 @@ const icon = computed(() => props.icon || themeConfig.value.ui.scrollDown?.icon)
 
 <template>
   <button v-if="icon" class="sakura-scroll-down" @click="toDown">
-    <span :class="icon" class="sakura-scroll-down-icon sakura-anim-float inline-block" />
+    <span :class="icon" class="sakura-scroll-down-icon sakura-loop-float inline-block" />
   </button>
 </template>
 
