@@ -42,7 +42,7 @@ const isHeaderHighlighted = computed(() => {
 <template>
   <!-- NOTE: Dynamic :class switching affects triggering the component loader for some reason, not sure why. -->
   <header flex="~" w="full" fixed top-0 z-100 class="sakura-navbar" @mouseover="hoverNavbar = true" @mouseleave="hoverNavbar = false">
-    <div class="navbar-content sakura-safe-padding" flex="~ items-center justify-between" w="full" :class="{ 'active-header': isHeaderHighlighted, 'has-scrolled': isScrolled, 'no-animation': noAnimation }">
+    <div class="sakura-safe-padding navbar-content" flex="~ items-center justify-between" w="full" :class="{ 'active-header': isHeaderHighlighted, 'has-scrolled': isScrolled, 'no-animation': noAnimation }">
       <slot name="brand">
         <div flex="~ items-center">
           <template v-if="themeConfig.sidebarOptions?.position === 'left'">

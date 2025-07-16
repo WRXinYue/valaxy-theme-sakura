@@ -29,7 +29,7 @@ const siteConfig = useSiteConfig()
 
     <!-- <div class="inline-block" i-ri-calendar-line />
       <div i-ri-calendar-2-line /> -->
-    <SakuraPostDate :date="fm.date" type="posted" class="post-time posted-time" />
+    <SakuraPostDate :date="fm.date" type="posted" class="posted-time post-time" />
     <SakuraPostDate v-if="fm.updated && fm.updated !== fm.date" :date="fm.updated" type="edited" class="post-time edited-time" />
 
     <template v-if="siteConfig.statistics.enable">
