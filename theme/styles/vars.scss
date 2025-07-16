@@ -2,13 +2,11 @@
 
 $common: (
   'font-family': 'Rubik, sans-serif',
-  'font-family-spicy': '"Moe-Mashiro",sans-serif',
   'color-primary': var(--va-c-primary),
   'color-action': var(--va-c-primary-dark),
   'color-background': var(--va-c-bg),
   'color-muted-background': var(--va-bg-mute-color),
   'color-overlay-background': oklch(16.83% 0.0061 248.19 / 75%),
-  'color-divider': oklch(94.31% 0 0),
   'scrollbar-bg': var(--sakura-color-background),
   'scrollbar-thumb': var(--sakura-color-primary),
   'scrollbar-thumb-hover': oklch(67.17% 0.0163 271.17),
@@ -16,6 +14,7 @@ $common: (
   'radius-large': 15px,
   'radius-small': 5px,
   // --------------- Navbar ---------------
+  'navbar-bg': var(--sakura-card-bg),
   'navbar-height': 65px,
   'navbar-marker-height': 2px,
   'navbar-marker-color': var(--sakura-color-primary),
@@ -27,7 +26,6 @@ $common: (
   // --------------- Footer ---------------
   'footer-height': 140px,
   // --------------- Card ---------------
-  'card-bg': var(--sakura-color-background),
   'card-shadow': 0px 20px 26px oklch(33% 0.0014 17.23 / 30%),
   // --------------- PostCard ---------------
   'post-card-height': 250px,
@@ -62,8 +60,9 @@ $light: (
   'color-text-deep': oklch(37.15% 0 0),
   'color-border': oklch(94.91% 0 0),
   'color-icon': oklch(100% 0 0),
-  // --------------- Navbar ---------------
-  'navbar-bg': oklch(100% 0 0 / 98%),
+  'color-divider': oklch(94.31% 0 0),
+  // --------------- Card ---------------
+  'card-bg': oklch(100% 0 0 / 98%),
 ) !default;
 $light: map.merge((), $light);
 
@@ -74,7 +73,8 @@ $dark: (
   'color-text-deep': oklch(100% 0 0),
   'color-border': oklch(17.76% 0 0),
   'color-icon': oklch(100% 0 0),
-  // --------------- Navbar ---------------
-  'navbar-bg': var(--va-c-bg-alt)
+  'color-divider': oklch(36% 0.0034 286.23),
+  // --------------- Card ---------------
+  'card-bg': oklch(22.71% 0.0079 274.58)
 ) !default;
 $dark: map.merge((), $dark);

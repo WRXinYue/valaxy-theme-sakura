@@ -46,7 +46,6 @@ const siteConfig = useSiteConfig()
 
   .logo-link {
     color: var(--sakura-navbar-title-color);
-    font-family: var(--sakura-font-family-spicy);
     font-size: 20px;
     font-weight: 600;
     line-height: normal;
