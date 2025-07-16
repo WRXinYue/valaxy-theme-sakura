@@ -23,6 +23,8 @@
 
   "stylelint.validate": ["css", "scss", "vue"],
 
+  "css.customData": [".vscode/unocss.json"],
+
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
