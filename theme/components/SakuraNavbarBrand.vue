@@ -100,6 +100,11 @@ const siteConfig = useSiteConfig()
       opacity: 0;
       transition-property: opacity;
       transition-duration: 0.5s, 0.5s;
+
+      // HACK: Safari has rendering issues with ruby/rt elements causing layout shifts
+      @supports not (background: paint(xxx)) {
+        display: none !important;
+      }
     }
 
     &:hover {
