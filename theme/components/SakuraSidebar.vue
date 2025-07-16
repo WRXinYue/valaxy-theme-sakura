@@ -75,5 +75,9 @@ const position = ref(props.position ?? themeConfig.value.sidebarOptions.position
     pointer-events: none;
     height: 100%;
   }
+
+  .sakura-copyright {
+    font-size: 12px;
+  }
 }
 </style>

@@ -8,11 +8,12 @@ const router = useRouter()
 
 <template>
   <div class="site-info flex flex-col items-center">
-    <RouterLink class="site-author-avatar" to="/about">
-      <SakuraImageCard class="rounded-full" :src="siteConfig.author.avatar" alt="avatar" />
+    <RouterLink v-if="siteConfig.author.avatar" class="site-author-avatar" to="/about">
+      <img class="rounded-full" :src="siteConfig.author.avatar" alt="avatar">
       <span class="site-author-status" :title="siteConfig.author.status.message">{{ siteConfig.author.status.emoji }}</span>
     </RouterLink>
     <div
+      v-if="siteConfig.author.name"
       class="site-author-name leading-6"
       m="t-0 b-4"
     >
