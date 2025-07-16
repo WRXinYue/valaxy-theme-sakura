@@ -196,6 +196,9 @@ importers:
       valaxy-addon-vercount:
         specifier: ^0.0.6
         version: 0.0.6
+      vue-progressive-image:
+        specifier: ^5.0.4
+        version: 5.0.4(vue@3.5.17(typescript@5.8.2))
     devDependencies:
       '@interactjs/types':
         specifier: ^1.10.27
@@ -6320,6 +6323,11 @@ packages:
     engines: {node: '>= 16'}
     peerDependencies:
       vue: ^3.0.0
+
+  vue-progressive-image@5.0.4:
+    resolution: {integrity: sha512-NB5thJDr3/uuN04vlsEUBAKsMp5R4uITmI2AdwBScCX+pw1BoQijULd4RqXdjxe7l0e0Kkq0upJCJZbloyBpYg==}
+    peerDependencies:
+      vue: 3.5.13
 
   vue-resize@2.0.0-alpha.1:
     resolution: {integrity: sha512-7+iqOueLU7uc9NrMfrzbG8hwMqchfVfSzpVlCMeJQe4pyibqyoifDNbKTZvwxZKDvGkB+PdFeKvnGZMoEb8esg==}
@@ -13421,6 +13429,10 @@ snapshots:
       '@intlify/core-base': 11.1.9
       '@intlify/shared': 11.1.9
       '@vue/devtools-api': 6.6.4
+      vue: 3.5.17(typescript@5.8.2)
+
+  vue-progressive-image@5.0.4(vue@3.5.17(typescript@5.8.2)):
+    dependencies:
       vue: 3.5.17(typescript@5.8.2)
 
   vue-resize@2.0.0-alpha.1(vue@3.5.17(typescript@5.8.2)):

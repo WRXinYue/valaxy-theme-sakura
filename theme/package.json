@@ -36,7 +36,8 @@
     "@iconify-json/mdi": "^1.2.3",
     "interactjs": "^1.10.27",
     "lenis": "^1.2.3",
-    "typeit": "^8.8.7"
+    "typeit": "^8.8.7",
+    "vue-progressive-image": "^5.0.4"
   },
   "devDependencies": {
     "@interactjs/types": "^1.10.27",

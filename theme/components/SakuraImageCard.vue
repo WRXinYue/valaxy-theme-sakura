@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { ProgressiveImage } from 'vue-progressive-image'
 import { useThemeConfig } from '../composables'
 import { resolveImage } from '../utils'
 
@@ -88,7 +89,12 @@ const src = computed(() => {
 <template>
   <div class="sakura-image-card relative overflow-hidden" @mouseover="isHovering = true" @mouseleave="isHovering = false">
     <AppLink w="full" h="full" :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
-      <img v-if="src" v-show="!showNotFondIcon" class="h-full w-full object-cover" loading="lazy" :src :alt="props.alt || 'cover'" :style="imageStyle" @error="onImgError">
+      <ClientOnly>
+        <ProgressiveImage
+          v-if="src" v-show="!showNotFondIcon" custom-class="sakura-image-card-img" lazy-placeholder
+          :src :alt="props.alt || 'cover'" :style="imageStyle" @error="onImgError"
+        />
+      </ClientOnly>
       <div v-show="showNotFondIcon || !src" class="h-full w-full bg-$sakura-color-background opacity-70" :style="imageStyle" flex="~ center">
         <div i-fa6-solid-image w="30%" h="30%" />
       </div>
@@ -112,6 +118,10 @@ const src = computed(() => {
     width: 100%;
     opacity: 0;
     transition: opacity var(--va-transition-duration) ease;
+  }
+
+  &-img img {
+    @apply h-full w-full object-cover;
   }
 }
 </style>
