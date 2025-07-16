@@ -88,7 +88,7 @@ const src = computed(() => {
 
 <template>
   <div class="sakura-image-card relative overflow-hidden" @mouseover="isHovering = true" @mouseleave="isHovering = false">
-    <AppLink w="full" h="full" :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
+    <AppLink flex="~" w="full" h="full" :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
       <ClientOnly>
         <ProgressiveImage
           v-if="src" v-show="!showNotFondIcon" custom-class="sakura-image-card-img" lazy-placeholder
@@ -118,10 +118,6 @@ const src = computed(() => {
     width: 100%;
     opacity: 0;
     transition: opacity var(--va-transition-duration) ease;
-  }
-
-  &-img img {
-    @apply h-full w-full object-cover;
   }
 }
 </style>
