@@ -36,7 +36,7 @@ export interface Hero {
    * @en Background wave theme
    * @default undefined
    */
-  waveTheme?: 'fish' | 'horizontal' | 'ripple' | 'yunCloud'
+  waveTheme?: 'fish' | 'horizontal' | 'ripple'
   /**
    * @zh 自定义视频, 可以放PV MV之类的
    * @en Custom Video
