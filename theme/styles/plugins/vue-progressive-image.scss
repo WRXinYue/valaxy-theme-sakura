@@ -32,6 +32,7 @@ html.dark {
   position: relative;
   overflow: hidden;
   width: 100%;
+  max-width: none !important;
   display: inline-block;
   background: var(--progressive-image-background-color);
 }
