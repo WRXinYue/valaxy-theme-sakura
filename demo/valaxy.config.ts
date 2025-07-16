@@ -1,10 +1,9 @@
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 import { defineValaxyConfig } from 'valaxy'
 import { addonBangumi } from 'valaxy-addon-bangumi'
-import { addonLive2d } from 'valaxy-addon-live2d'
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
-import { addonBackgrounds } from 'valaxy-addon-backgrounds'
+// import { addonBackgrounds } from 'valaxy-addon-backgrounds'
 import { addonHitokoto } from 'valaxy-addon-hitokoto'
 import pkg from 'valaxy-theme-sakura/package.json'
 
@@ -46,13 +45,12 @@ export default defineValaxyConfig<ThemeUserConfig>({
       ],
       randomUrls: true,
       // playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/PV/563098369-1-208.mp4',
-      // playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/The Pet Girl of Sakurasou.mp4',
-      playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/PV/Original PV Little love song MONGOL 800 cover by Amatsuki.mp4',
-      style: 'filter-grid',
+      playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/theming-demos/mashiro/The Pet Girl of Sakurasou.mp4',
+      // playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/PV/Original PV Little love song MONGOL 800 cover by Amatsuki.mp4',
+      style: 'filter-dim',
       fixedImg: true,
       typewriter: true,
       enableHitokoto: true,
-      waveTheme: 'fish',
     },
 
     notice: {
@@ -268,102 +266,14 @@ export default defineValaxyConfig<ThemeUserConfig>({
         lyricHidden: true,
       },
     }),
-    addonLive2d({
-      enableLive2D: ['Tia', 'Pio', 'XiaoYun'],
-      live2DCollection: {
-        // https://github.com/AdingApkgg/live2d-api
-        // https://cdn.jsdelivr.net/gh/adingapkgg/live2d-api/
-        Asuna: {
-          models: [
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_01/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_02/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_03/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_04/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_05/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_06/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_07/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_08/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_09/index.json',
-            // 'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_10/index.json',
-            // 'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_11/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_12/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_13/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_14/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_15/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_16/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_17/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_18/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_19/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_20/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_21/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_22/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_23/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_24/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_25/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_26/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_27/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_28/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_29/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_30/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_31/index.json',
-            // 'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_32/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_33/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_34/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_35/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_36/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_37/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_38/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_39/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_40/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_41/index.json',
-            // 'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_42/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_43/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_44/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_45/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/asuna/asuna_46/index.json',
-          ],
-        },
-        Type95: {
-          models: [
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/95type/95type_3702/normal/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/95type/95type_3702/destroy/index.json',
-          ],
-        },
-        HK416: {
-          models: [
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/HK416/HK416_3401/destroy/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/HK416/HK416_3401/normal/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/HK416/HK416_805/normal/index.json',
-            'https://registry.npmmirror.com/weblive2d/latest/files/model/HK416/HK416_805/destroy/index.json',
-          ],
-        },
-      },
-      tools: {
-        hitokoto: {
-          visible: true,
-        },
-      },
-    }),
     addonBangumi({
       api: 'https://yi_xiao_jiu-bangumi.web.val.run',
-      bilibiliUid: '1579790',
+      bilibiliUid: '438788541',
       bgmEnabled: false,
     }),
-    addonBackgrounds({}),
+    // addonBackgrounds({}),
     addonHitokoto({
       api: 'intl',
-      // args: [HitokotoType.Animation, HitokotoType.Comic], // 句子类型
-      // minLength: 0, // 最短句子长度
-      // maxLength: 30, // 最长句子长度
     }),
   ],
-
-  vite: {
-    optimizeDeps: {
-      include: [
-        'd3',
-        'lodash-es',
-      ],
-    },
-  },
 })

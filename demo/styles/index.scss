@@ -1,9 +1,5 @@
 @use 'valaxy-theme-sakura/styles/fonts.scss' as *;
 
-:root {
-  --sakura-color-main-background: transparent;
-}
-
 #tsparticles canvas {
   z-index: -1 !important;
 }
