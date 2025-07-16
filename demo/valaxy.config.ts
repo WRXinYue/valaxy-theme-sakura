@@ -4,6 +4,8 @@ import { addonBangumi } from 'valaxy-addon-bangumi'
 import { addonLive2d } from 'valaxy-addon-live2d'
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
+import { addonBackgrounds } from 'valaxy-addon-backgrounds'
+import { addonHitokoto } from 'valaxy-addon-hitokoto'
 import pkg from 'valaxy-theme-sakura/package.json'
 
 export default defineValaxyConfig<ThemeUserConfig>({
@@ -50,7 +52,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
       fixedImg: true,
       typewriter: true,
       enableHitokoto: true,
-      waveTheme: 'horizontal',
+      waveTheme: 'fish',
     },
 
     notice: {
@@ -336,11 +338,23 @@ export default defineValaxyConfig<ThemeUserConfig>({
           ],
         },
       },
+      tools: {
+        hitokoto: {
+          visible: true,
+        },
+      },
     }),
     addonBangumi({
       api: 'https://yi_xiao_jiu-bangumi.web.val.run',
       bilibiliUid: '1579790',
       bgmEnabled: false,
+    }),
+    addonBackgrounds({}),
+    addonHitokoto({
+      api: 'intl',
+      // args: [HitokotoType.Animation, HitokotoType.Comic], // 句子类型
+      // minLength: 0, // 最短句子长度
+      // maxLength: 30, // 最长句子长度
     }),
   ],
 

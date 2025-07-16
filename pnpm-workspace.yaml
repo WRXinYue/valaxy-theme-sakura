@@ -5,10 +5,10 @@ packages:
   - scripts
 catalog:
   typescript: ^5.8.2
-  valaxy: ^0.23.3
+  valaxy: ^0.25.5
   valaxy-addon-algolia: ^0.2.0
   valaxy-addon-bangumi: ^0.2.2
-  valaxy-addon-live2d: ^0.3.0
+  valaxy-addon-live2d: ^0.4.0
   valaxy-addon-meting: ^0.1.4
   valaxy-addon-twikoo: ^0.0.3
   valaxy-addon-waline: ^0.2.0
