@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useCssVar } from '@vueuse/core'
 import { useAppStore } from 'valaxy'
 import { onMounted, watch } from 'vue'
 
@@ -13,7 +12,7 @@ let renderer: Renderer
 
 watch(() => appStore.isDark, async () => {
   setTimeout(() => {
-    renderer.setFishColor(useCssVar('--va-c-bg').value!)
+    renderer.updateFishColor()
   }, 0)
 })
 
@@ -46,7 +45,7 @@ class Renderer {
   constructor(private props: { color?: string }) { }
 
   init(): void {
-    this.setFishColor(this.props.color)
+    this.updateFishColor(this.props.color)
     this.setParameters()
     this.reconstructMethods()
     this.setup()
@@ -54,8 +53,13 @@ class Renderer {
     this.render()
   }
 
-  setFishColor(color?: string): void {
-    color ? this.fishColor = color : this.fishColor = useCssVar('--sakura-color-background').value!
+  private getComputedDefaultColor(): string {
+    return window.getComputedStyle(window?.document?.documentElement)
+      .getPropertyValue('--sakura-card-bg')?.trim()
+  }
+
+  updateFishColor(color?: string): void {
+    this.fishColor = color || this.getComputedDefaultColor()
   }
 
   setParameters(): void {
