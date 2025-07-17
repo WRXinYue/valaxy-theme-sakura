@@ -8,6 +8,9 @@
   <a href="https://npm.chart.dev/valaxy-theme-sakura" target="__blank"><img src="https://img.shields.io/npm/dm/valaxy-theme-sakura.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="Downloads"></a>
   <a href="https://github.com/wrxinyue/valaxy-theme-sakura/tree/main/LICENSE" target="__blank"><img src="https://img.shields.io/github/license/wrxinyue/valaxy-theme-sakura.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="License"></a>
   <a href="https://npmjs.com/package/valaxy" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/dependency-version/valaxy-theme-sakura/dev/valaxy?style=flat&colorA=18181B&colorB=9333ea" alt="Valaxy version"></a>
+  <a href="https://npmjs.com/package/valaxy" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/dependency-version/valaxy-theme-sakura/peer/valaxy-addon-hitokoto?style=flat&colorA=18181B&colorB=9333ea" alt="Valaxy version"></a>
+  <a href="https://npmjs.com/package/valaxy" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/dependency-version/valaxy-theme-sakura/peer/valaxy-addon-vercount?style=flat&colorA=18181B&colorB=9333ea" alt="Valaxy version"></a>
+  <a href="https://npmjs.com/package/valaxy" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/dependency-version/valaxy-theme-sakura/dev/valaxy-addon-waline?style=flat&colorA=18181B&colorB=9333ea" alt="Valaxy version"></a>
   <a href="https://stackblitz.com/edit/stackblitz-starters-tqdtk7?file=README.md" target="__blank"><img src="https://img.shields.io/badge/Open in StackBlitz-_?logo=stackblitz&colorA=18181B&colorB=439CFF" alt="Open in StackBlitz"></a>
 </p>
 
