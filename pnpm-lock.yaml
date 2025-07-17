@@ -133,8 +133,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       valaxy-addon-git-log:
-        specifier: ^0.2.1
-        version: 0.2.1(valaxy@0.25.5(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@22.9.0)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.18.0(jiti@2.4.2))(postcss@8.5.6)(prettier@3.4.2)(rollup@4.45.0)(terser@5.36.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.8.0))
+        specifier: ^0.3.2
+        version: 0.3.2(valaxy@0.25.5(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@22.9.0)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.18.0(jiti@2.4.2))(postcss@8.5.6)(prettier@3.4.2)(rollup@4.45.0)(terser@5.36.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.8.0))
       valaxy-addon-twikoo:
         specifier: 'catalog:'
         version: 0.0.3(valaxy@0.25.5(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@22.9.0)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.18.0(jiti@2.4.2))(postcss@8.5.6)(prettier@3.4.2)(rollup@4.45.0)(terser@5.36.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.8.0))
@@ -5816,6 +5816,11 @@ packages:
     resolution: {integrity: sha512-Xofxvu+Vb6K5HyRjUZgLBBHo08+P0cWKHx96FJ9iFnbpllZsZXyomUie+ZcRm6mC06Z+WdkeBAwgv9QAB0j3qw==}
     peerDependencies:
       valaxy: latest
+
+  valaxy-addon-git-log@0.3.2:
+    resolution: {integrity: sha512-2gJPX6+gXYvyMtoboLORuFrsE9Bh+jz5cy8zjXfW2kDJdxmyJI8rqpP8WBHepssbU2DRUauK3cS+O+Xhnchs3A==}
+    peerDependencies:
+      valaxy: '>=0.22'
 
   valaxy-addon-hitokoto@0.0.1:
     resolution: {integrity: sha512-N+1dl3gwxeoTraT+r7gvNfTUHIjapBNHXj/urILdKQFfji++s7ELqeCNoyyOLUpvLJJOPSfObkJ9MKDsfCm8FA==}
@@ -12514,6 +12519,17 @@ snapshots:
   valaxy-addon-git-log@0.2.1(valaxy@0.25.5(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@22.9.0)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.18.0(jiti@2.4.2))(postcss@8.5.6)(prettier@3.4.2)(rollup@4.45.0)(terser@5.36.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.8.0)):
     dependencies:
       '@octokit/rest': 21.0.2
+      gravatar: 1.8.2
+      md5: 2.3.0
+      simple-git: 3.27.0
+      valaxy: 0.25.5(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@22.9.0)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.18.0(jiti@2.4.2))(postcss@8.5.6)(prettier@3.4.2)(rollup@4.45.0)(terser@5.36.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.8.0)
+    transitivePeerDependencies:
+      - supports-color
+
+  valaxy-addon-git-log@0.3.2(valaxy@0.25.5(@babel/parser@7.28.0)(@types/markdown-it@14.1.2)(@types/node@22.9.0)(@vue/compiler-dom@3.5.17)(@vue/compiler-sfc@3.5.17)(axios@1.10.0)(eslint@9.18.0(jiti@2.4.2))(postcss@8.5.6)(prettier@3.4.2)(rollup@4.45.0)(terser@5.36.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.8.0)):
+    dependencies:
+      '@octokit/rest': 21.0.2
+      fs-extra: 11.3.0
       gravatar: 1.8.2
       md5: 2.3.0
       simple-git: 3.27.0

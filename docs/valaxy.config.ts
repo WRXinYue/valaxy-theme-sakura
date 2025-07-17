@@ -103,6 +103,10 @@ export default defineValaxyConfig<ThemeConfig & SakuraThemeConfig>({
         text: '组件',
         link: '/components',
       },
+      {
+        text: '发行',
+        link: '/releases',
+      },
       // {
       //   text: 'Gallery',
       //   link: '/examples/gallery',

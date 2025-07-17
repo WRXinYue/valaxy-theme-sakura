@@ -81,7 +81,7 @@ const isHeaderHighlighted = computed(() => {
 .sakura-navbar {
   .navbar-content {
     height: var(--sakura-navbar-height);
-    transition: all var(--va-transition-duration) ease;
+    transition: all var(--va-transition-duration) ease-in;
 
     &.active-header {
       background: var(--sakura-navbar-bg);
