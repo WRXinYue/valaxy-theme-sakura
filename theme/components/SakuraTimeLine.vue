@@ -109,7 +109,7 @@ function handleMouseEnter(year: number, month: number) {
                   formatDate(post.date, 'MM') }}月
                 </time>
                 <span class="text-$sakura-color-text">
-                  ({{ originalPostListByYear[year][month].length }} 篇文章)
+                  ({{ originalPostListByYear[year][month].length - 1 }} 篇文章)
                 </span>
               </div>
               <div v-if="j !== 0" class="post-meta my-[1rem] ml-[1.2rem]">
