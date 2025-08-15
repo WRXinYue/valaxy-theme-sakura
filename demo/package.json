@@ -13,7 +13,6 @@
     "@iconify-json/fa": "^1.2.1",
     "@iconify-json/line-md": "^1.2.5",
     "valaxy-addon-algolia": "catalog:",
-    "valaxy-addon-backgrounds": "^0.0.2",
     "valaxy-addon-bangumi": "catalog:",
     "valaxy-addon-meting": "catalog:",
     "valaxy-addon-twikoo": "catalog:",

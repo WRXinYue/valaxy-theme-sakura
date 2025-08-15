@@ -3,7 +3,6 @@ import { defineValaxyConfig } from 'valaxy'
 import { addonBangumi } from 'valaxy-addon-bangumi'
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
-// import { addonBackgrounds } from 'valaxy-addon-backgrounds'
 import { addonHitokoto } from 'valaxy-addon-hitokoto'
 import pkg from 'valaxy-theme-sakura/package.json'
 
