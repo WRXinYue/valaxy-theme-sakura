@@ -109,7 +109,7 @@ const siteConfig = useSiteConfig()
 
     &:hover {
       rt {
-        color: orange;
+        color: var(--sakura-color-primary);
         opacity: 1;
       }
     }
