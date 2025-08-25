@@ -19,7 +19,7 @@ const convertedCategories = computed(() => {
     <RouterLink
       v-for="(category, index) in convertedCategories"
       :key="index"
-      :to="{ path: '/categories', query: { category: Array.isArray(categories) ? categories.join('/') : categories } }"
+      :to="{ path: '/categories/', query: { category: Array.isArray(categories) ? categories.join('/') : categories } }"
       class="inline-flex items-center align-top"
     >
       <span v-if="index === 0" class="sakura-icon mr-1 inline-block" i-mdi-folder-open-outline />
