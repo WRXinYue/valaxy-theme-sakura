@@ -6,8 +6,8 @@ import { useSakuraAppStore } from '../stores'
 const sakura = useSakuraAppStore()
 const siteConfig = useSiteConfig()
 
-const isAlgolia = computed(() => siteConfig.value.search.type === 'algolia')
-const isFuse = computed(() => siteConfig.value.search.type === 'fuse')
+const isAlgolia = computed(() => siteConfig.value.search.provider === 'algolia')
+const isFuse = computed(() => siteConfig.value.search.provider === 'fuse')
 
 const SakuraAlgoliaSearch = isAlgolia.value && defineAsyncComponent({
   loader: () => import('./plugins/SakuraAlgoliaSearch.vue'),
