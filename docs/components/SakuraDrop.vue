@@ -132,7 +132,7 @@ div {
     position: relative;
     width: 20px;
     height: 20px;
-    border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
+    border-radius: 0% 100% / 0% 100%;
     background: oklch(89% 0.05 18.3);
     transform: rotateZ(45deg);
   }
@@ -143,7 +143,7 @@ div {
     width: 100%;
     height: 100%;
     background: oklch(89% 0.05 18.3);
-    border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
+    border-radius: 0% 100% / 0% 100%;
     transform-origin: 100% 100%;
     transform: rotate(15deg);
   }

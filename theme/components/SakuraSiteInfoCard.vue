@@ -66,7 +66,8 @@ const router = useRouter()
 .content-number {
   font-size: 1.25rem;
   line-height: 1.75rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
 }
 </style>

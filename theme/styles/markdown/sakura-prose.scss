@@ -94,7 +94,8 @@
       content: '\00B6';
       position: absolute;
       color: oklch(71.45% 0.1788 22.7);
-      font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
+      font-family:
+        'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
         'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
       padding-left: 6px;
       font-size: 1.03em;
@@ -105,7 +106,8 @@
     content: '\00B6';
     position: absolute;
     color: var(--sakura-color-primary);
-    font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
+    font-family:
+      'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC',
       'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
     padding-left: 6px;
     font-size: 1.13em;
@@ -166,8 +168,9 @@
 
   code {
     word-break: break-word;
-    font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial,
-      STXihei, 'STHeiti Light', 'Microsoft YaHei', sans-serif;
+    font-family:
+      'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei,
+      'STHeiti Light', 'Microsoft YaHei', sans-serif;
     padding: 2px;
     text-shadow: none;
     border-radius: 5px;

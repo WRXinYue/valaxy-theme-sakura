@@ -137,7 +137,8 @@ watch(() => route.query.q as string, (query) => {
       font-size: 20px;
       font-weight: 400;
       line-height: 50px;
-      font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Source Han Serif',
+      font-family:
+        'Noto Serif SC', 'Source Han Serif SC', 'Source Han Serif',
         source-han-serif-sc, 'PT Serif', 'SongTi SC', 'MicroSoft Yahei',
         Georgia, serif;
 

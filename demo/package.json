@@ -10,8 +10,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@iconify-json/fa": "^1.2.1",
-    "@iconify-json/line-md": "^1.2.5",
+    "@iconify-json/fa": "^1.2.2",
+    "@iconify-json/line-md": "^1.2.11",
     "valaxy-addon-algolia": "catalog:",
     "valaxy-addon-bangumi": "catalog:",
     "valaxy-addon-meting": "catalog:",

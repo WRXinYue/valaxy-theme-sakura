@@ -11,11 +11,8 @@
   }
 
   .hero-style.grid::before {
-    background-image: linear-gradient(
-        to right,
-        oklch(0% 0 0 / 20%) 1px,
-        transparent 1px
-      ),
+    background-image:
+      linear-gradient(to right, oklch(0% 0 0 / 20%) 1px, transparent 1px),
       linear-gradient(to bottom, oklch(0% 0 0 / 20%) 1px, transparent 1px);
     background-size: 20px 20px;
   }
