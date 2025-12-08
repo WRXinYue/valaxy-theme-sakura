@@ -32,7 +32,13 @@ function cancelHideDropdown() {
 </script>
 
 <template>
-  <SakuraDropdown :is-show="!!items?.length" class="sakura-navbar-link-item" @mouseenter="showDropdown" @mouseleave="scheduleHideDropdown">
+  <SakuraDropdown
+    :is-show="!!items?.length"
+    :visible="isDropdownVisible"
+    class="sakura-navbar-link-item"
+    @mouseenter="showDropdown"
+    @mouseleave="scheduleHideDropdown"
+  >
     <template #button>
       <SakuraNavLink v-bind="props" />
     </template>
@@ -54,15 +60,18 @@ function cancelHideDropdown() {
   margin-inline: 0.75rem;
 
   & > .sakura-nav-link {
+    position: relative;
+
     &::after {
       content: '';
       position: absolute;
       width: 0;
-      left: 0;
-      bottom: 0;
+      left: 50%;
+      bottom: -3px;
       height: var(--sakura-navbar-marker-height);
       background-color: var(--sakura-navbar-marker-color);
       transition: width 0.3s ease;
+      transform: translateX(-50%);
     }
 
     &:hover::after {

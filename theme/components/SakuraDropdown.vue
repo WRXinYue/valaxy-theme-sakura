@@ -1,17 +1,30 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
-withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
   isShow?: boolean
+  visible?: boolean
 }>(), {
   isShow: true,
+  visible: undefined,
 })
 
-const isOpen = ref(false)
+const internalOpen = ref(false)
+const isOpen = computed(() => props.visible !== undefined ? props.visible : internalOpen.value)
+
+function handleMouseOver() {
+  if (props.visible === undefined)
+    internalOpen.value = true
+}
+
+function handleMouseLeave() {
+  if (props.visible === undefined)
+    internalOpen.value = false
+}
 </script>
 
 <template>
-  <div class="sakura-dropdown" :aria-haspopup="!!$slots.menu" :aria-expanded="isOpen" @mouseover="isOpen = true" @mouseleave="isOpen = false">
+  <div class="sakura-dropdown" :aria-haspopup="!!$slots.menu" :aria-expanded="isOpen" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
     <slot name="button" />
     <div v-if="isShow && $slots.menu" class="sakura-dropdown-menu">
       <slot name="menu" />
@@ -28,7 +41,8 @@ const isOpen = ref(false)
     position: absolute;
     z-index: 3;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
     background-color: var(--sakura-navbar-bg);
     border-radius: 4px;
     box-shadow: 0 8px 16px oklch(0% 0 0 / 20%);
@@ -43,13 +57,13 @@ const isOpen = ref(false)
   &[aria-expanded='true'] .sakura-dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
 
   &[aria-expanded='false'] .sakura-dropdown-menu {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(10px);
   }
 }
 </style>

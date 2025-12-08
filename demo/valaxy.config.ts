@@ -66,6 +66,16 @@ export default defineValaxyConfig<ThemeUserConfig>({
           link: 'https://sakura.valaxy.site',
           img: 'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper-2025%2Fwallhaven-yxoejx.jpg',
         },
+        {
+          title: 'About',
+          desc: '关于主题',
+          link: '/about',
+        },
+        {
+          title: 'Valaxy Docs',
+          desc: 'Valaxy 文档',
+          link: 'https://valaxy.site',
+        },
       ],
     },
 
@@ -146,7 +156,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
       {
         text: '关于',
         icon: 'i-fa-leaf',
-        link: pkg.author.url,
+        link: '/about',
         target: '_blank',
       },
       {
