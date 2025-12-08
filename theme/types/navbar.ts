@@ -98,7 +98,13 @@ export interface NavbarOptions {
    * @en The style of the hamburger button in the navigation bar
    * - 'uneven': A style where one line is different in length
    * - 'old': The classic style with three equal-length lines
-   * @default 'uneven'
    */
-  hamburgerStyle: 'uneven' | 'old'
+  hamburgerStyle?: 'uneven' | 'old'
+
+  /**
+   * @zh 是否开启旋转动画
+   * @en Whether to enable the rotation animation
+   * @default true
+   */
+  enableRotate?: boolean
 }

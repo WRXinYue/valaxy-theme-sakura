@@ -83,6 +83,7 @@ export const defaultThemeConfig: ThemeUserConfig = {
     enableHover: true,
     tools: ['toggleDark', 'search'],
     hamburgerStyle: 'uneven',
+    enableRotate: false,
   },
 
   sidebar: [],

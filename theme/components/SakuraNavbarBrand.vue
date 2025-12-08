@@ -6,6 +6,7 @@ defineProps<{
   title?: string | string[]
   hamburger?: boolean
   subTitle?: string
+  enableRotate?: boolean
 }>()
 
 const siteConfig = useSiteConfig()
@@ -24,7 +25,7 @@ const siteConfig = useSiteConfig()
           </template>
           <template v-else>
             <span mr1>{{ title![0] }}</span>
-            <span mr1 class="sakura-hvr-rotate">{{ title![1] }}</span>
+            <span mr1 :class="enableRotate && 'sakura-hvr-rotate'">{{ title![1] }}</span>
             <span>{{ title![2] }}</span>
           </template>
         </RouterLink>

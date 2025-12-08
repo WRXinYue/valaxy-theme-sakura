@@ -52,6 +52,7 @@ top: 500
 | offset         | `number`                                         | `100`                      | 导航栏偏移量                           |
 | tools          | `('toggleLocale' \| 'toggleDark' \| 'search')[]` | `['toggleDark', 'search']` | 导航栏的工具按钮                       |
 | hamburgerStyle | `'uneven' \| 'old'`                              | `'uneven'`                 | 导航栏汉堡按钮的样式                   |
+| enableRotate   | `boolean`                                        | `true`                     | 是否开启站点标题旋转动画               |
 
 ## 配置示例
 
