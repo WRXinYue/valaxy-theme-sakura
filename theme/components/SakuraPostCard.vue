@@ -51,6 +51,7 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
   border-radius: var(--sakura-post-card-rd);
   border-width: 1px;
   border-style: solid;
+  border-color: transparent;
 
   .post-card-content {
     padding: 20px 39px;
