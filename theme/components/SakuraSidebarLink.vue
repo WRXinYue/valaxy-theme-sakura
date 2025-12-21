@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import type { NavItem } from '../types'
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import type { NavItem } from '../types'
 import { useThemeConfig } from '../composables'
 
 const props = defineProps<{
