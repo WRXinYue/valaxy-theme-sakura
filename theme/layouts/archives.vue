@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
+import { useSiteStore } from 'valaxy'
+
+const site = useSiteStore()
 
 useSchemaOrg([
   defineWebPage({
@@ -9,5 +12,15 @@ useSchemaOrg([
 </script>
 
 <template>
-  <SakuraArchivesLayout />
+  <SakuraPage>
+    <RouterView v-slot="{ Component }">
+      <component :is="Component">
+        <template #main-content>
+          <slot name="content">
+            <SakuraTimeLine :posts="site.postList" />
+          </slot>
+        </template>
+      </component>
+    </RouterView>
+  </SakuraPage>
 </template>
