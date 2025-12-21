@@ -1,12 +1,4 @@
 {
-  "SakuraAnimeLayout": "layouts/SakuraAnimeLayout.vue",
-  "SakuraArchivesLayout": "layouts/SakuraArchivesLayout.vue",
-  "SakuraCategoriesLayout": "layouts/SakuraCategoriesLayout.vue",
-  "SakuraCommentLayout": "layouts/SakuraCommentLayout.vue",
-  "SakuraHomeLayout": "layouts/SakuraHomeLayout.vue",
-  "SakuraLinksLayout": "layouts/SakuraLinksLayout.vue",
-  "SakuraSearchLayout": "layouts/SakuraSearchLayout.vue",
-  "SakuraTagsLayout": "layouts/SakuraTagsLayout.vue",
   "SakuraTwikoo": "plugins/SakuraTwikoo.vue",
   "SakuraComment": "plugins/SakuraComment.vue",
   "SakuraTypewriter": "plugins/SakuraTypewriter.vue"

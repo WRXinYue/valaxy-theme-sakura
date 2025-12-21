@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
+import { ref } from 'vue'
 
 const config = ref<ThemeUserConfig>({
   hero: {

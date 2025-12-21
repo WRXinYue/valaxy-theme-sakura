@@ -22,6 +22,10 @@
   "svg.preview.background": "editor",
 
   "stylelint.validate": ["css", "scss", "vue"],
+  "[scss]": {
+    "editor.formatOnSave": true
+    // "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
 
   "css.customData": [".vscode/unocss.json"],
 
@@ -46,16 +50,6 @@
     "markdown",
     "json",
     "jsonc",
-    "yaml",
-    "toml",
-    "xml",
-    "gql",
-    "graphql",
-    "astro",
-    "css",
-    "less",
-    "scss",
-    "pcss",
-    "postcss"
+    "yaml"
   ]
 }

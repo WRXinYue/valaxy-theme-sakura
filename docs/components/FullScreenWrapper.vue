@@ -54,12 +54,7 @@ function toggleFullScreen() {
     height: 100%;
     max-width: 200px;
     max-height: 200px;
-    background: linear-gradient(
-      to bottom left,
-      oklch(0% 0 0 / 70%),
-      oklch(0% 0 0 / 20%),
-      transparent 49%
-    );
+    background: linear-gradient(to bottom left, oklch(0% 0 0 / 70%), oklch(0% 0 0 / 20%), transparent 49%);
     opacity: 0;
     transition: inherit;
     transform: scale(0.9);

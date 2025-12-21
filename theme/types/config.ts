@@ -1,7 +1,9 @@
 import type { DefaultTheme } from 'valaxy'
 import type { Footer } from './footer'
 import type { Hero } from './hero'
-import type { NavItem, NavbarOptions } from './navbar'
+import type { SakuraLayoutOptions } from './layout'
+import type { LinkItem } from './link'
+import type { NavbarOptions, NavItem } from './navbar'
 import type { Pagination } from './pagination'
 import type { PinnedPost } from './pinned'
 import type { PostFooter, PostList } from './post'
@@ -10,6 +12,11 @@ import type { UserUI } from './ui'
 
 export interface ThemeConfig extends DefaultTheme.Config {
   ui: UserUI
+  /**
+   * @zh 布局配置
+   * @en Layout configuration
+   */
+  layout: Record<string, SakuraLayoutOptions>
   /**
    * @zh 页脚配置
    * @en Footer configuration
@@ -26,6 +33,11 @@ export interface ThemeConfig extends DefaultTheme.Config {
    */
   postList?: PostList
   postFooter?: PostFooter
+  /**
+   * @zh 友情链接
+   * @en Links
+   */
+  links?: LinkItem[]
   /**
    * @deprecated Use hero instead
    */

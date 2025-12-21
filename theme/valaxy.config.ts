@@ -1,8 +1,8 @@
+import type { Hero, ThemeConfig, ThemeUserConfig } from './types'
 import defu from 'defu'
 import { defineTheme } from 'valaxy'
 import { addonHitokoto } from 'valaxy-addon-hitokoto'
 import { addonVercount } from 'valaxy-addon-vercount'
-import type { Hero, ThemeConfig, ThemeUserConfig } from './types'
 import { generateSafelist, defaultThemeConfig as sakuraDefaultThemeConfig, themePlugin } from './node'
 
 export default defineTheme<ThemeUserConfig>((options) => {

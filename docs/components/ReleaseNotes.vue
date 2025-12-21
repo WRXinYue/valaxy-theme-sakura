@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
 import MarkdownIt from 'markdown-it'
 import { formatDate } from 'valaxy'
+import { onMounted, ref } from 'vue'
 
 const md = new MarkdownIt({
   html: true,

@@ -1,9 +1,9 @@
 import type { ThemeConfig } from 'valaxy-theme-oceanus'
-import { defineValaxyConfig } from 'valaxy'
-import { addonWaline } from 'valaxy-addon-waline'
-import { ValaxyThemesResolver } from 'valaxy-addon-components'
-import { defaultThemeConfig } from 'valaxy-theme-sakura/node'
 import type { ThemeConfig as SakuraThemeConfig } from 'valaxy-theme-sakura'
+import { defineValaxyConfig } from 'valaxy'
+import { ValaxyThemesResolver } from 'valaxy-addon-components'
+import { addonWaline } from 'valaxy-addon-waline'
+import { defaultThemeConfig } from 'valaxy-theme-sakura/node'
 
 export default defineValaxyConfig<ThemeConfig & SakuraThemeConfig>({
   siteConfig: {

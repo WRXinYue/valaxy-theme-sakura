@@ -1,9 +1,9 @@
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 import { defineValaxyConfig } from 'valaxy'
 import { addonBangumi } from 'valaxy-addon-bangumi'
+import { addonHitokoto } from 'valaxy-addon-hitokoto'
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
-import { addonHitokoto } from 'valaxy-addon-hitokoto'
 import pkg from 'valaxy-theme-sakura/package.json'
 
 export default defineValaxyConfig<ThemeUserConfig>({
@@ -98,6 +98,21 @@ export default defineValaxyConfig<ThemeUserConfig>({
       navigationMerge: true,
     },
 
+    links: [
+      {
+        name: 'GitHub',
+        url: 'https://github.com/WRXinYue/valaxy-theme-sakura',
+        avatar: 'https://github.com/WRXinYue.png',
+        desc: 'Theme Source',
+      },
+      {
+        name: 'Valaxy',
+        url: 'https://valaxy.site',
+        avatar: 'https://valaxy.site/favicon.svg',
+        desc: 'Valaxy Doc',
+      },
+    ],
+
     navbar: [
       {
         icon: 'i-fa-fort-awesome',
@@ -174,7 +189,40 @@ export default defineValaxyConfig<ThemeUserConfig>({
       showMarker: false,
       autoHide: ['home'],
     },
-
+    layout: {
+      general: {
+        layout: 'triple-columns',
+        sidebar: {
+          left: [
+            'SakuraSidebarSiteInfo',
+            'SakuraSidebarCategories',
+            'SakuraSidebarTags',
+            'SakuraSidebarLinks',
+          ],
+          right: [
+            'SakuraSidebarMusic',
+            'SakuraSidebarLatestPosts',
+            'SakuraSidebarLatestComments',
+          ],
+        },
+      },
+      home: {
+        layout: 'triple-columns',
+        sidebar: {
+          left: [
+            'SakuraSidebarSiteInfo',
+            'SakuraSidebarCategories',
+            'SakuraSidebarTags',
+            'SakuraSidebarLinks',
+          ],
+          right: [
+            'SakuraSidebarMusic',
+            'SakuraSidebarLatestPosts',
+            'SakuraSidebarLatestComments',
+          ],
+        },
+      },
+    },
     sidebar: [
       {
         text: '🌈',
@@ -265,7 +313,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
     addonMeting({
       global: true,
       props: {
-        id: '2489775340',
+        id: '2963327092',
         server: 'netease',
         type: 'playlist',
       },
