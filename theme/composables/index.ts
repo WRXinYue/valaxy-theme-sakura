@@ -1,4 +1,5 @@
 export * from './aside'
+export * from './category'
 export * from './config'
 export * from './helper'
 export * from './layout'

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
 import type { PinnedPost } from '../types'
+import { computed } from 'vue'
 import { useNavigate, useThemeConfig } from '../composables'
 
 const props = defineProps<Partial<PinnedPost & { icon: string }>>()

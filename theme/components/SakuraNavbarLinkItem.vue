@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import type { NavItem } from '../types'
+import { ref } from 'vue'
 
 const props = defineProps<Partial<NavItem>>()
 

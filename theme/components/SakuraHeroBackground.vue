@@ -107,11 +107,7 @@ watch(() => urls.value.length, (length) => {
   }
 
   &-default {
-    background: linear-gradient(
-      45deg,
-      var(--sakura-color-primary),
-      var(--sakura-color-primary)
-    );
+    background: linear-gradient(45deg, var(--sakura-color-primary), var(--sakura-color-primary));
     background-size: 600% 600%;
     animation: gradient-background 10s ease infinite;
   }

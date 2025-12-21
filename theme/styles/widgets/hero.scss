@@ -52,11 +52,7 @@
   }
 
   .hero-style.dot::before {
-    background: radial-gradient(
-      circle at center,
-      oklch(0% 0 0 / 20%) 0%,
-      transparent 100%
-    );
+    background: radial-gradient(circle at center, oklch(0% 0 0 / 20%) 0%, transparent 100%);
     background-size: 3px 3px;
   }
 

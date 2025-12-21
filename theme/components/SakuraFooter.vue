@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { Pkg } from 'valaxy'
-import { computed } from 'vue'
 import type { Footer } from '../types'
+import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
 
 const props = defineProps<{

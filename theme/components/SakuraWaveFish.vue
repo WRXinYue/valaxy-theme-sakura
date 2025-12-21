@@ -55,7 +55,8 @@ class Renderer {
 
   private getComputedDefaultColor(): string {
     return window.getComputedStyle(window?.document?.documentElement)
-      .getPropertyValue('--sakura-color-background')?.trim()
+      .getPropertyValue('--sakura-color-background')
+      ?.trim()
   }
 
   updateFishColor(color?: string): void {

@@ -1,5 +1,5 @@
-import { ref } from 'vue'
 import { useStorage } from '@vueuse/core'
+import { ref } from 'vue'
 
 export function useWallpaper() {
   const wallpaperIndex = useStorage(`wallpaperKey-hero`, 0)

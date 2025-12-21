@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import type { Hero } from '../types/index'
 import { useMounted } from '@vueuse/core'
 import { computed, watch } from 'vue'
-import type { Hero } from '../types/index'
 import { useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores'
 

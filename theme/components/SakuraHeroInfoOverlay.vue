@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import type { Hero, HeroSocialLink } from '../types/index'
 import { useSiteConfig } from 'valaxy'
 import { computed } from 'vue'
-import addonHitokoto from '../plugins/hitokoto'
-import type { Hero, HeroSocialLink } from '../types/index'
 import { useThemeConfig } from '../composables'
+import addonHitokoto from '../plugins/hitokoto'
 import { useSakuraAppStore } from '../stores'
 
 const props = withDefaults(defineProps<{

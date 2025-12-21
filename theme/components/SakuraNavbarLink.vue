@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import type { NavItem } from '../types/index'
 import { nextTick, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import type { NavItem } from '../types/index'
 
 const props = withDefaults(defineProps<{
   navbar: NavItem[]
@@ -77,8 +77,7 @@ onMounted(() => {
 
   .marker {
     position: absolute;
-    border-bottom: var(--sakura-navbar-marker-height) solid
-      var(--sakura-color-primary);
+    border-bottom: var(--sakura-navbar-marker-height) solid var(--sakura-color-primary);
     transition-property: opacity, left, top;
     transition-duration: 0.5s;
     pointer-events: none;

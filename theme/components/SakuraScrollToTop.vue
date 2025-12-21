@@ -2,9 +2,9 @@
 import { breakpointsTailwind, useWindowScroll, useWindowSize } from '@vueuse/core'
 import interact from 'interactjs'
 import { onMounted, ref, watch } from 'vue'
-import { useScroll } from '../composables'
 import scrollCat from '../assets/scroll-cat.png'
 import scrollLine from '../assets/scroll-line.png'
+import { useScroll } from '../composables'
 
 const props = withDefaults(defineProps<{
   height?: number
@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<{
   floatAmplitude?: number
   floatSpeed?: number
 }>(), {
-  position: 0.9,
+  position: 0.9425,
   height: 600,
   mass: 2,
   floatAmplitude: 1.3,

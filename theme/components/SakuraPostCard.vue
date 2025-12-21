@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
-import { computed } from 'vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
 import { resolveImage } from '../utils'
 

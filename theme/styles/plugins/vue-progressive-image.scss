@@ -111,10 +111,8 @@ html.dark {
 .v-progressive-image-placeholder-fade-leave-active,
 .v-progressive-image-placeholder-fade-enter-active {
   transition:
-    opacity var(--progressive-image-fade-speed)
-      var(--progressive-image-fade-ease),
-    filter calc(var(--progressive-image-fade-speed) * 1.85)
-      var(--progressive-image-fade-ease);
+    opacity var(--progressive-image-fade-speed) var(--progressive-image-fade-ease),
+    filter calc(var(--progressive-image-fade-speed) * 1.85) var(--progressive-image-fade-ease);
 }
 
 .v-progressive-image-main-fade-leave-to,

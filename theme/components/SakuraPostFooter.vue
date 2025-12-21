@@ -17,5 +17,6 @@
 <style lang="scss" scoped>
 .sakura-post-footer {
   border-style: none;
+  width: 100%;
 }
 </style>

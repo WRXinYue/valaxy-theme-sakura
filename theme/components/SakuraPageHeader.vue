@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { PostFrontMatter } from 'valaxy'
-import { computed } from 'vue'
 import type { SakuraImageCardProps } from '../types'
+import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
 
 const props = defineProps<{
@@ -32,6 +32,8 @@ const imageCard = computed(() => props.imageCard || themeConfig.value.ui.pageHea
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
 .sakura-page-header {
+  // If flattened, the children will not exist on their own in the 3D-space. – transform-style by MDN
+  transform-style: preserve-3d;
   margin-top: var(--sakura-navbar-height);
   width: 100%;
   position: relative;

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { Post } from 'valaxy'
 import type { CSSProperties } from 'vue'
-import { computed } from 'vue'
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { usePostList, useThemeConfig } from '../composables'
 import type { ResponsiveBreakpoints } from '../types'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import { computed } from 'vue'
+import { usePostList, useThemeConfig } from '../composables'
 
 const props = defineProps<{
   icon?: string

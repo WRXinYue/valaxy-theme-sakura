@@ -1,11 +1,11 @@
+import type { ThemeConfig } from '../types'
 import { isEmptyAddon, useScreenSize } from 'valaxy'
 import * as addonBangumi from 'valaxy-addon-bangumi'
-import type { ThemeConfig } from '../types'
 import { StorageKeys } from '../enum'
+import { applySakuraBangumiStyles } from '../plugins/bangumi'
 import { initLenis } from '../plugins/lenis'
 import { useSakuraAppStore } from '../stores'
 import { getLocalStorageItem, getSessionStorageItem } from '../utils/storage'
-import { applySakuraBangumiStyles } from '../plugins/bangumi'
 
 export function defineSakuraSetup(themeConfig: ThemeConfig) {
   const sakuraAppStore = useSakuraAppStore()

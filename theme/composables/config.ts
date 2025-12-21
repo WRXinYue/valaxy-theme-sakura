@@ -1,6 +1,6 @@
+import type { ThemeConfig } from '../types'
 import { useConfig } from 'valaxy'
 import { computed } from 'vue'
-import type { ThemeConfig } from '../types'
 
 /**
  * getThemeConfig

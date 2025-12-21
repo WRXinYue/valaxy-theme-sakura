@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
 import type { LinkItem } from '../types'
+import { computed } from 'vue'
 import { useLinkData, useThemeConfig } from '../composables'
 
 const props = defineProps<{
