@@ -5,6 +5,20 @@ export interface PostList {
    * string 数组随机选择
    */
   defaultImage: string | string[]
+
+  /**
+   * Breakpoints from Tailwind V2
+   *
+   * @see https://tailwindcss.com/docs/breakpoints
+   */
+  responsive?: Partial<ResponsiveBreakpoints>
+
+  /**
+   * @zh 是否开启元数据截断（平均隐藏分类和标签）
+   * @en Whether to enable metadata truncation (evenly hide categories and tags)
+   * @default true
+   */
+  truncateMeta?: boolean
 }
 
 export interface PostFooter {
@@ -14,4 +28,12 @@ export interface PostFooter {
    * @default false
    */
   navigationMerge?: boolean
+}
+
+export interface ResponsiveBreakpoints {
+  'sm': number
+  'md': number
+  'lg': number
+  'xl': number
+  '2xl': number
 }

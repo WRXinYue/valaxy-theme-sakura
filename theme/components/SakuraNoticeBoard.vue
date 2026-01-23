@@ -47,7 +47,6 @@ function closeNotice() {
 .sakura-notice-board {
   position: relative;
   width: 100%;
-  background: var(--sakura-card-bg);
   color: var(--sakura-color-text);
   border: 1px solid transparent;
   transition: all 0.3s;

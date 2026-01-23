@@ -28,6 +28,8 @@ const componentMap: Record<string, any> = {
   SakuraSidebarMusic,
   SakuraSidebarLatestPosts,
   SakuraSidebarLatestComments,
+  SakuraSidebarToc: SakuraToc,
+  SakuraToc,
 }
 
 function normalize(item: SidebarComponent | SakuraLayoutSidebarItem): SakuraLayoutSidebarItem {
@@ -97,6 +99,8 @@ const showRight = computed(() => {
           v-for="(item, index) in leftSidebar"
           :key="index"
           v-bind="item.props"
+          v-animate-on-view
+          :style="{ 'animation-delay': `${index * 0.1}s`, 'animation-fill-mode': 'both' }"
         />
       </slot>
     </template>
@@ -109,7 +113,7 @@ const showRight = computed(() => {
       <slot name="right">
         <template v-if="layout === 'post'">
           <SakuraAside>
-            <SakuraToc />
+            <SakuraToc class="sakura-fade-in-up" style="animation-fill-mode: both;" />
           </SakuraAside>
         </template>
         <component
@@ -117,6 +121,8 @@ const showRight = computed(() => {
           v-for="(item, index) in rightSidebar"
           :key="index"
           v-bind="item.props"
+          v-animate-on-view
+          :style="{ 'animation-delay': `${index * 0.1}s`, 'animation-fill-mode': 'both' }"
         />
       </slot>
     </template>
@@ -138,13 +144,17 @@ const showRight = computed(() => {
   aside {
     align-self: start;
     position: sticky;
-    top: calc(var(--sakura-navbar-height, 64px) + 1.5rem);
+    top: calc(var(--sakura-navbar-height, 64px) + var(--sakura-layout-mt));
     transition: top 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sakura-layout-mt);
   }
 
   &.sakura-triple-columns-layout {
     grid-template-columns: 100%;
-    gap: 1.5rem;
+    gap: var(--sakura-layout-mt);
+    margin-top: var(--sakura-layout-mt);
 
     aside {
       display: none;
@@ -158,7 +168,7 @@ const showRight = computed(() => {
       grid-template-columns: 240px 1fr 240px;
 
       aside {
-        display: block;
+        display: flex;
       }
     }
 
@@ -168,7 +178,7 @@ const showRight = computed(() => {
   }
 
   &.sakura-two-columns-right-layout {
-    gap: 1.5rem;
+    gap: var(--sakura-layout-mt);
 
     aside {
       display: none;
@@ -182,7 +192,7 @@ const showRight = computed(() => {
       grid-template-columns: 1fr 280px;
 
       aside {
-        display: block;
+        display: flex;
       }
     }
 

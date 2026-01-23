@@ -16,7 +16,7 @@ function jumpToCategory(categoryName: string) {
 </script>
 
 <template>
-  <SakuraSidebarCard class="sakura-sidebar-categories" mt-4 icon="i-ri-folder-2-line" :title="t('menu.categories')">
+  <SakuraSidebarCard class="sakura-sidebar-categories" icon="i-ri-folder-2-line" :title="t('menu.categories')">
     <ul class="sakura-sidebar-category-list px-2">
       <li v-for="category in categories.children.values()" :key="category.name" class="sidebar-category-item">
         <a class="sidebar-category-link" @click="jumpToCategory(category.name)">

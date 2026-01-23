@@ -12,7 +12,7 @@ const tagCount = computed(() => Array.from(tags.value).length)
 </script>
 
 <template>
-  <SakuraSidebarCard class="sakura-sidebar-site-info" mt-4>
+  <SakuraSidebarCard class="sakura-sidebar-site-info">
     <SakuraSiteInfo />
 
     <div class="content-container grid grid-cols-3 gap-x-8">

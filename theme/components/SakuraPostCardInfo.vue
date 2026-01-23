@@ -1,16 +1,21 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
+import { computed } from 'vue'
+import { useThemeConfig } from '../composables'
 
 defineProps<{
   post: Post
 }>()
+
+const themeConfig = useThemeConfig()
+const truncateMeta = computed(() => themeConfig.value.postList?.truncateMeta ?? true)
 </script>
 
 <template>
   <div class="sakura-post-card-info">
     <SakuraPostDate :date="post.updated" class="post-date order-1" pb-4 text-sm />
     <SakuraPostTitle pb-4 class="order-2" :title="post.title" :to="post.path" />
-    <SakuraPostMeta pb-2 class="order-3" :post />
+    <SakuraPostMeta pb-2 class="order-3" :post :truncate="truncateMeta" />
     <SakuraPostExcerpt v-if="post?.excerpt" pb-2 class="order-4" :excerpt="post.excerpt" />
   </div>
 </template>

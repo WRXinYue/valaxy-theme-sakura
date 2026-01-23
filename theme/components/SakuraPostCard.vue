@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { computed } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import { useThemeConfig } from '../composables'
 import { resolveImage } from '../utils'
 
@@ -9,6 +9,7 @@ const props = defineProps<{
   post: Post
   position: 'left' | 'right'
   cols: number
+  contentStyle?: any
 }>()
 
 const themeConfig = useThemeConfig()
@@ -20,16 +21,55 @@ const imageCard = computed(() => themeConfig.value.ui.postList?.image)
 
 const isGroup = computed(() => props.cols > 1)
 const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-direction: column;
+
+const imageRef = ref<any>(null)
+const contentRef = ref<HTMLElement | null>(null)
+
+watch(isCol, async () => {
+  const els: HTMLElement[] = []
+  if (imageRef.value?.$el)
+    els.push(imageRef.value.$el)
+  if (contentRef.value)
+    els.push(contentRef.value)
+
+  const firsts = els.map(el => el.getBoundingClientRect())
+
+  await nextTick()
+
+  els.forEach((el, i) => {
+    const first = firsts[i]
+    const last = el.getBoundingClientRect()
+    const dx = first.left - last.left
+    const dy = first.top - last.top
+
+    if (dx !== 0 || dy !== 0) {
+      el.animate([
+        { transform: `translate(${dx}px, ${dy}px)` },
+        { transform: 'none' },
+      ], {
+        duration: 500,
+        easing: 'cubic-bezier(0.55, 0, 0.1, 1)',
+      })
+    }
+  })
+})
 </script>
 
 <template>
   <article
-    hover="scale-101 z-10" class="sakura-card sakura-post-card transition-all duration-500"
+    hover="scale-101 z-10" class="sakura-card sakura-post-card"
     :class="[position, { 'is-col': isCol }, { group: isGroup }]"
   >
-    <SakuraImageCard v-if="cover" class="aspect-video" :to="post.path" :src="cover || defaultImage" v-bind="imageCard" />
+    <SakuraImageCard
+      v-if="cover"
+      ref="imageRef"
+      class="post-card-image aspect-video"
+      :to="post.path"
+      :src="cover || defaultImage"
+      v-bind="imageCard"
+    />
 
-    <div flex="~ col" class="post-card-content" :class="cover && 'has-cover'">
+    <div ref="contentRef" flex="~ col" class="post-card-content" :class="cover && 'has-cover'" :style="contentStyle">
       <slot>
         <SakuraPostCardInfo :post />
       </slot>
@@ -52,9 +92,15 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 
   .post-card-content {
     padding: 20px 39px;
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+
+  .post-card-image {
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   }
 
   @at-root html.dark & {
@@ -67,6 +113,7 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
 
   &.is-col {
     flex-direction: column;
+    justify-content: flex-start;
 
     .post-card-content {
       padding-inline: 20px;
@@ -98,6 +145,10 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
 
     &.right {
       text-align: right;
+
+      :deep(.sakura-post-meta.is-truncated) {
+        justify-content: flex-end;
+      }
     }
   }
 }

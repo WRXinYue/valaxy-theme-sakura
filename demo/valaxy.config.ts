@@ -70,11 +70,13 @@ export default defineValaxyConfig<ThemeUserConfig>({
           title: 'About',
           desc: '关于主题',
           link: '/about',
+          img: 'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper-2025%2Fwallhaven-3l2vm3.jpg',
         },
         {
           title: 'Valaxy Docs',
           desc: 'Valaxy 文档',
           link: 'https://valaxy.site',
+          img: 'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper-2025%2Fwallhaven-zyxq6j.jpg',
         },
       ],
     },
@@ -92,6 +94,14 @@ export default defineValaxyConfig<ThemeUserConfig>({
       isImageReversed: true,
       // defaultImage: ['https://www.dmoe.cc/random.php?random', 'https://www.loliapi.com/acg/pc/?random'],
       defaultImage: ['https://www.dmoe.cc/random.php?random', 'https://img.xjh.me/random_img.php?random?type=bg&return=302'],
+
+      responsive: {
+        '2xl': 3,
+        'xl': 3,
+        'lg': 2,
+        'md': 2,
+        'sm': 1,
+      },
     },
 
     postFooter: {

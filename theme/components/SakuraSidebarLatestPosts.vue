@@ -11,7 +11,7 @@ const posts = computed(() => {
 </script>
 
 <template>
-  <SakuraSidebarCard class="sakura-sidebar-posts" mt-4 icon="i-ri-file-list-line" title="Latest Posts">
+  <SakuraSidebarCard class="sakura-sidebar-posts" icon="i-ri-file-list-line" title="Latest Posts">
     <div class="px-2">
       <div v-for="post in posts" :key="post.path" class="sidebar-post-item" py-2>
         <RouterLink :to="post.path || ''" class="sidebar-post-link block truncate">

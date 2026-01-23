@@ -2,6 +2,7 @@
 import { defineAppSetup } from 'valaxy'
 // import { useSakuraAppStore } from '../stores'
 import { useThemeConfig } from '../composables'
+import { vAnimateOnView } from '../directives'
 import { defineSakuraSetup } from './sakuraSetup'
 
 export default defineAppSetup(async (ctx) => {
@@ -9,6 +10,8 @@ export default defineAppSetup(async (ctx) => {
   const { toScrollPosition } = await import('../utils/rolling')
   if (!isClient)
     return
+
+  app.directive('animate-on-view', vAnimateOnView)
 
   const themeConfig = app.runWithContext(() => useThemeConfig().value)
 

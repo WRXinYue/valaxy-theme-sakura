@@ -1,11 +1,14 @@
 <script lang="ts" setup>
 import { isEmptyAddon } from 'valaxy'
 import * as addonWaline from 'valaxy-addon-waline'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const comments = ref<any[]>([])
 const loading = ref(true)
+const containerRef = ref<HTMLElement | null>(null)
+const contentRef = ref<HTMLElement | null>(null)
+let resizeObserver: ResizeObserver | null = null
 
 const router = useRouter()
 
@@ -16,6 +19,17 @@ const addon = hasWaline.value ? addonWaline.useAddonWaline() : null
 const serverURL = computed(() => addon?.value?.options?.serverURL)
 
 onMounted(async () => {
+  if (contentRef.value && containerRef.value) {
+    resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        if (containerRef.value) {
+          containerRef.value.style.height = `${entry.contentRect.height}px`
+        }
+      }
+    })
+    resizeObserver.observe(contentRef.value)
+  }
+
   if (serverURL.value) {
     try {
       // Waline API: /comment?type=recent&count=5
@@ -34,6 +48,10 @@ onMounted(async () => {
   else {
     loading.value = false
   }
+})
+
+onUnmounted(() => {
+  resizeObserver?.disconnect()
 })
 
 function formatTime(time: string) {
@@ -98,33 +116,46 @@ function getArticleTitle(url: string) {
 </script>
 
 <template>
-  <SakuraSidebarCard v-if="hasWaline && serverURL" class="sakura-sidebar-comments" mt-4 icon="i-ri-chat-1-line" title="Latest Comments">
-    <div v-if="loading" class="py-4 text-center opacity-50">
-      <div i-ri-loader-4-line class="mx-auto mb-2 animate-spin text-2xl" />
-      Loading...
-    </div>
+  <SakuraSidebarCard v-if="hasWaline && serverURL" class="sakura-sidebar-comments" icon="i-ri-chat-1-line" title="Latest Comments">
+    <div
+      ref="containerRef"
+      class="comments-transition-container"
+    >
+      <div ref="contentRef" class="comments-content-wrapper">
+        <SakuraLoading v-if="loading" />
 
-    <div v-else-if="comments.length > 0" class="sidebar-comment-list">
-      <div v-for="comment in comments" :key="comment.objectId" class="sidebar-comment-item py-2">
-        <div class="mb-1 flex items-center">
-          <img v-if="comment.avatar" :src="comment.avatar" class="mr-2 h-6 w-6 rounded-full" alt="avatar">
-          <span class="sidebar-comment-nick flex-1 truncate font-bold">{{ comment.nick }}</span>
-          <span class="text-xs opacity-50">{{ formatTime(comment.insertedAt || comment.time) }}</span>
+        <div v-else-if="comments.length > 0" class="sidebar-comment-list">
+          <div v-for="comment in comments" :key="comment.objectId" class="sidebar-comment-item py-2">
+            <div class="mb-1 flex items-center">
+              <img v-if="comment.avatar" :src="comment.avatar" class="mr-2 h-6 w-6 rounded-full" alt="avatar">
+              <span class="sidebar-comment-nick flex-1 truncate font-bold">{{ comment.nick }}</span>
+              <span class="text-xs opacity-50">{{ formatTime(comment.insertedAt || comment.time) }}</span>
+            </div>
+            <a :href="`${comment.url}#${comment.objectId}`" class="sidebar-comment-content block truncate opacity-80" v-html="getCommentContent(comment.comment)" />
+            <div v-if="getArticleTitle(comment.url)" class="mt-1 truncate text-right text-xs opacity-50">
+              From: {{ getArticleTitle(comment.url) }}
+            </div>
+          </div>
         </div>
-        <a :href="`${comment.url}#${comment.objectId}`" class="sidebar-comment-content block truncate opacity-80" v-html="getCommentContent(comment.comment)" />
-        <div v-if="getArticleTitle(comment.url)" class="mt-1 truncate text-right text-xs opacity-50">
-          From: {{ getArticleTitle(comment.url) }}
+
+        <div v-else class="py-4 text-center text-sm opacity-50">
+          No comments yet.
         </div>
       </div>
-    </div>
-
-    <div v-else class="py-4 text-center text-sm opacity-50">
-      No comments yet.
     </div>
   </SakuraSidebarCard>
 </template>
 
 <style lang="scss" scoped>
+.comments-transition-container {
+  overflow: hidden;
+  position: relative;
+
+  /* Start with a small height for loading state */
+  min-height: 60px;
+  transition: height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
 .sidebar-comment-item {
   border-bottom: 1px dashed var(--sakura-color-divider);
 

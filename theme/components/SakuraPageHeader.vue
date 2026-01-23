@@ -15,7 +15,7 @@ const imageCard = computed(() => props.imageCard || themeConfig.value.ui.pageHea
 </script>
 
 <template>
-  <header class="sakura-page-header space-y-1" :class="fm.cover && `has-cover`" flex="~ center items-end justify-center">
+  <header class="sakura-page-header sakura-fade-in-down space-y-1" :class="fm.cover && `has-cover`" flex="~ center items-end justify-center">
     <SakuraImageCard v-if="fm.cover" v-bind="imageCard" :src="fm.cover" h="full" w="full" absolute="!" z="-1" />
     <div class="sakura-safe-padding sakura-header-container pb-25px">
       <slot name="title">

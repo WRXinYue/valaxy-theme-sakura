@@ -1,4 +1,5 @@
 .sakura-card {
+  background: var(--sakura-card-bg);
   will-change: filter;
   transition: filter 0.3s ease-out;
   filter: drop-shadow(0 1px 3px oklch(0% 0 0 / 20%));

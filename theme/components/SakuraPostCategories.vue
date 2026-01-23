@@ -12,10 +12,14 @@ const convertedCategories = computed(() => {
 
   return props.categories
 })
+
+const categoriesString = computed(() => {
+  return convertedCategories.value?.join(' / ') || ''
+})
 </script>
 
 <template>
-  <div class="sakura-post-categories">
+  <div class="sakura-post-categories" :title="categoriesString">
     <RouterLink
       v-for="(category, index) in convertedCategories"
       :key="index"
@@ -28,7 +32,7 @@ const convertedCategories = computed(() => {
   </div>
 </template>
 
-<style last="scss">
+<style lang="scss">
 .sakura-post-categories {
   font-size: 14px;
 

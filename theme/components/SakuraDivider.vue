@@ -9,11 +9,16 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <div class="sakura-divider flex items-center">
-    <div :class="icon" class="sakura-divider-icon" />
-    <span class="sakura-divider-text">
-      {{ text }}
-    </span>
+  <div class="sakura-divider flex items-center justify-between">
+    <div flex items-center>
+      <div :class="icon" class="sakura-divider-icon" />
+      <span class="sakura-divider-text">
+        {{ text }}
+      </span>
+    </div>
+    <div class="sakura-divider-action">
+      <slot />
+    </div>
   </div>
 </template>
 

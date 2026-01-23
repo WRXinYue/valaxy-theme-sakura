@@ -26,13 +26,6 @@ export interface UI {
     icon: string
 
     image: Partial<SakuraImageCardProps>
-
-    /**
-     * Breakpoints from Tailwind V2
-     *
-     * @see https://tailwindcss.com/docs/breakpoints
-     */
-    responsive: Partial<ResponsiveBreakpoints>
   }
 
   notice: {
@@ -67,14 +60,6 @@ export interface UI {
      */
     lightIcon?: string
   }
-}
-
-export interface ResponsiveBreakpoints {
-  'sm': number
-  'md': number
-  'lg': number
-  'xl': number
-  '2xl': number
 }
 
 export type UserUI = {

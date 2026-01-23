@@ -24,9 +24,6 @@ export const defaultThemeConfig: ThemeUserConfig = {
         scale: 1.1,
         transitionDuration: '0.45s',
       },
-
-      responsive: {
-      },
     },
     pinnedPost: {
       icon: 'i-fa6-solid:anchor',
@@ -98,10 +95,21 @@ export const defaultThemeConfig: ThemeUserConfig = {
 
   postList: {
     text: '文章列表',
+    truncateMeta: true,
+    responsive: {
+      'sm': 1,
+      'md': 2,
+      'lg': 3,
+      'xl': 3,
+      '2xl': 3,
+    },
   },
 
   pinnedPost: {
     text: 'START:DASH!!',
+    autoplay: false,
+    interval: 3000,
+    desktopItems: 3,
   },
 
   footer: {

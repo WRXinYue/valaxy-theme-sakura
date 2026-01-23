@@ -15,7 +15,7 @@ function displayTag(tag: string) {
 </script>
 
 <template>
-  <SakuraSidebarCard class="sakura-sidebar-tags" mt-4 icon="i-ri-price-tag-3-line" :title="t('menu.tags')">
+  <SakuraSidebarCard class="sakura-sidebar-tags" icon="i-ri-price-tag-3-line" :title="t('menu.tags')">
     <div class="items-end justify-center" flex="~ wrap" gap="1">
       <SakuraButton
         v-for="([key, tag], index) in Array.from(tags).sort()"
