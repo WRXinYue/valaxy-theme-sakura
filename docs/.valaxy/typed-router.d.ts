@@ -135,6 +135,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/guide/theme-config/archives': RouteRecordInfo<
+      '/guide/theme-config/archives',
+      '/guide/theme-config/archives',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/guide/theme-config/footer': RouteRecordInfo<
       '/guide/theme-config/footer',
       '/guide/theme-config/footer',
@@ -145,6 +152,13 @@ declare module 'vue-router/auto-routes' {
     '/guide/theme-config/home-page': RouteRecordInfo<
       '/guide/theme-config/home-page',
       '/guide/theme-config/home-page',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/guide/theme-config/layout': RouteRecordInfo<
+      '/guide/theme-config/layout',
+      '/guide/theme-config/layout',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -224,7 +238,7 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    '../node_modules/.pnpm/valaxy@0.26.10_@babel+parser@7.28.5_@types+markdown-it@14.1.2_@types+node@22.9.0_@vue+c_8678bbc3b0fc3e5d930fbd2f480d6f4b/node_modules/valaxy/client/pages/[...path].vue': {
+    '../node_modules/.pnpm/valaxy@0.26.10_@babel+parser@7.28.5_@types+markdown-it@14.1.2_@types+node@22.9.0_@vue+c_e9dbe56ec039b7277f54535bc1ed265a/node_modules/valaxy/client/pages/[...path].vue': {
       routes:
         | '/[...path]'
       views:
@@ -314,6 +328,12 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
+    'pages/guide/theme-config/archives.md': {
+      routes:
+        | '/guide/theme-config/archives'
+      views:
+        | never
+    }
     'pages/guide/theme-config/footer.md': {
       routes:
         | '/guide/theme-config/footer'
@@ -323,6 +343,12 @@ declare module 'vue-router/auto-routes' {
     'pages/guide/theme-config/home-page.md': {
       routes:
         | '/guide/theme-config/home-page'
+      views:
+        | never
+    }
+    'pages/guide/theme-config/layout.md': {
+      routes:
+        | '/guide/theme-config/layout'
       views:
         | never
     }

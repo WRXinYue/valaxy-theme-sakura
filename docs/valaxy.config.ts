@@ -121,7 +121,7 @@ export default defineValaxyConfig<ThemeConfig & SakuraThemeConfig>({
     hero: {
       title: 'VALAXY THEME SAKURA',
       motto: '开放、高自由、功能丰富的 valaxy 主题',
-      img: 'https://w.wallhaven.cc/full/pk/wallhaven-pkkgy9.jpg',
+      img: 'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper-2025/wallhaven-x69l7v.jpg',
     },
 
     // addons: [
