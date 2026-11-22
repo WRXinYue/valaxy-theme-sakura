@@ -1,8 +1,9 @@
 catalogMode: prefer
 minimumReleaseAgeExcludePrune: true
-shellEmulator: true
 # eslint-disable-next-line pnpm/yaml-enforce-settings
 trustPolicy: off
+shellEmulator: true
+
 packages:
   - theme
   - docs
