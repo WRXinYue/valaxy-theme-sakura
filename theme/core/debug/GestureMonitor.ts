@@ -21,7 +21,9 @@ export class GestureMonitor {
   log(gesture: string, source: string, metadata?: unknown) {
     const timestamp = Date.now()
     const id = `gesture_${timestamp}_${Math.random().toString(36).slice(2, 11)}`
-    const stackTrace = import.meta.env.DEV ? new Error('GestureMonitor').stack : undefined
+    const stackTrace = import.meta.env.DEV
+      ? new Error('GestureMonitor').stack
+      : undefined
 
     const logEntry: GestureLogEntry = {
       id,

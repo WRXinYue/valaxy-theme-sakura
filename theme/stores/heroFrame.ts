@@ -89,7 +89,10 @@ export function useHeroFrameHit() {
   const heroFrameGestureSeq = ref(0)
 
   function emitHeroFrameHit(id: HeroFrameHitId) {
-    heroFrameHit.value = { id, at: Date.now() }
+    heroFrameHit.value = {
+      id,
+      at: Date.now(),
+    }
     heroFrameHitSeq.value += 1
     gestureEventBus.emitHeroFrameHit(heroFrameHit.value)
   }
@@ -122,7 +125,12 @@ export function useHeroFrameHit() {
   }
 
   function emitHeroFramePanSessionStart(id: HeroFrameHitId, event: PointerEvent, info: PanInfo) {
-    emitHeroFrameGesture({ type: 'panSessionStart', id, event, info })
+    emitHeroFrameGesture({
+      type: 'panSessionStart',
+      id,
+      event,
+      info,
+    })
   }
 
   function emitHeroFramePanStart(id: HeroFrameHitId, event: PointerEvent, info: PanInfo) {

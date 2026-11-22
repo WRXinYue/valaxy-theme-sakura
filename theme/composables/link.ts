@@ -78,7 +78,9 @@ export function useLinkData(source: string | LinkItem[] | Ref<string | LinkItem[
       await Promise.all(s.map(fetchSingleURL))
     }
 
-    data.value = random ? Array.from(rawData).sort(() => Math.random() - 0.5) : rawData
+    data.value = random
+      ? Array.from(rawData).sort(() => Math.random() - 0.5)
+      : rawData
   }, { immediate: true })
 
   return {

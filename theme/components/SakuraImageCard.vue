@@ -47,7 +47,9 @@ const themeConfig = useThemeConfig()
 const isHovering = ref(false)
 const showNotFondIcon = ref(false)
 
-const defaultImg = computed(() => props.errorImg ? resolveImage(props.errorImg) : themeConfig.value?.notFoundImage)
+const defaultImg = computed(() => props.errorImg
+  ? resolveImage(props.errorImg)
+  : themeConfig.value?.notFoundImage)
 
 const imageStyle = computed(() => {
   if (isHovering.value) {
@@ -80,9 +82,13 @@ function onImgError(e: Event) {
 }
 
 const src = computed(() => {
-  const img = props.src ? resolveImage(props.src) : ''
+  const img = props.src
+    ? resolveImage(props.src)
+    : ''
 
-  return img && img.includes('?random') ? img.replace('?random', `?random=${Math.random()}`) : img
+  return img && img.includes('?random')
+    ? img.replace('?random', `?random=${Math.random()}`)
+    : img
 })
 </script>
 

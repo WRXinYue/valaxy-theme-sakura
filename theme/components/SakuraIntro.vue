@@ -53,7 +53,9 @@ const wallpapers = computed(() => {
   const urls = themeConfig.value.hero.urls
   if (Array.isArray(urls))
     return urls
-  return urls ? [urls] : []
+  return urls
+    ? [urls]
+    : []
 })
 
 const currentMediaUrl = computed(() => {
@@ -71,7 +73,9 @@ const backgroundUrl = computed(() => {
     return current
   if (isYouTubeUrl(current)) {
     const id = getYouTubeId(current)
-    return id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : ''
+    return id
+      ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+      : ''
   }
   return wallpapers.value.find(url => !isVideoUrl(url) && !isYouTubeUrl(url)) || ''
 })
@@ -196,7 +200,9 @@ function typeTitle() {
 function createPetal(initial = true): Petal {
   return {
     x: Math.random() * window.innerWidth,
-    y: initial ? Math.random() * window.innerHeight : -40,
+    y: initial
+      ? Math.random() * window.innerHeight
+      : -40,
     scale: 0.3 + Math.random() * 0.7,
     alpha: 0.5 + Math.random() * 0.45,
     rotation: Math.random() * Math.PI * 2,
@@ -208,8 +214,12 @@ function createPetal(initial = true): Petal {
 
 function resetPetal(petal: Petal) {
   const fromTop = Math.random() > 0.4
-  petal.x = fromTop ? Math.random() * window.innerWidth : window.innerWidth + 40
-  petal.y = fromTop ? -40 : Math.random() * window.innerHeight
+  petal.x = fromTop
+    ? Math.random() * window.innerWidth
+    : window.innerWidth + 40
+  petal.y = fromTop
+    ? -40
+    : Math.random() * window.innerHeight
   petal.scale = 0.3 + Math.random() * 0.7
   petal.alpha = 0.5 + Math.random() * 0.45
   petal.rotation = Math.random() * Math.PI * 2

@@ -31,7 +31,9 @@ async function fetchReleases() {
     }))
   }
   catch (err) {
-    error.value = err instanceof Error ? err.message : 'Unknown error'
+    error.value = err instanceof Error
+      ? err.message
+      : 'Unknown error'
   }
   finally {
     isLoading.value = false

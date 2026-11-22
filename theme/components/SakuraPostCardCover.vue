@@ -22,9 +22,30 @@ interface ShapeRole {
  * 三块色雾的角色：主色块、副色块、点缀块
  */
 const SHAPE_ROLES: ShapeRole[] = [
-  { size: [44, 60], hue: [16, 32], alpha: [78, 90], blur: [40, 48], cx: [26, 44], cy: [22, 40] },
-  { size: [34, 48], hue: [-32, -14], alpha: [72, 86], blur: [38, 46], cx: [56, 74], cy: [28, 46] },
-  { size: [20, 30], hue: [4, 10], alpha: [40, 55], blur: [32, 40], cx: [40, 60], cy: [40, 60] },
+  {
+    size: [44, 60],
+    hue: [16, 32],
+    alpha: [78, 90],
+    blur: [40, 48],
+    cx: [26, 44],
+    cy: [22, 40],
+  },
+  {
+    size: [34, 48],
+    hue: [-32, -14],
+    alpha: [72, 86],
+    blur: [38, 46],
+    cx: [56, 74],
+    cy: [28, 46],
+  },
+  {
+    size: [20, 30],
+    hue: [4, 10],
+    alpha: [40, 55],
+    blur: [32, 40],
+    cx: [40, 60],
+    cy: [40, 60],
+  },
 ]
 
 /**
@@ -103,8 +124,12 @@ const shapes = computed(() => {
 })
 
 const initial = computed(() => {
-  const title = typeof props.post.title === 'string' ? props.post.title.trim() : ''
-  return title ? Array.from(title)[0].toUpperCase() : ''
+  const title = typeof props.post.title === 'string'
+    ? props.post.title.trim()
+    : ''
+  return title
+    ? Array.from(title)[0].toUpperCase()
+    : ''
 })
 </script>
 

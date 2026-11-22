@@ -13,7 +13,9 @@ export function useWallpaper() {
   function selectWallpaper(index: number) {
     if (index < 0)
       return
-    wallpaperOperation.value = index >= wallpaperIndex.value ? 'nextMedia' : 'prevMedia'
+    wallpaperOperation.value = index >= wallpaperIndex.value
+      ? 'nextMedia'
+      : 'prevMedia'
     wallpaperIndex.value = index
     wallpaperManual.value = true
     setTimeout(() => {

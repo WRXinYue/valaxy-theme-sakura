@@ -21,7 +21,9 @@ export function useSidebar() {
   }
 
   function toggle() {
-    isOpen.value ? close() : open()
+    isOpen.value
+      ? close()
+      : open()
   }
 
   const sidebarOptions = useThemeConfig().value.sidebarOptions
@@ -32,5 +34,13 @@ export function useSidebar() {
   else if (sidebarOptions?.persistence === 'session')
     watch(isOpen, () => setSessionStorageItem(StorageKeys.IS_SIDEBAR_OPEN, isOpen.value))
 
-  return { sidebar: { isOpen, hasSidebar, open, close, toggle } }
+  return {
+    sidebar: {
+      isOpen,
+      hasSidebar,
+      open,
+      close,
+      toggle,
+    },
+  }
 }

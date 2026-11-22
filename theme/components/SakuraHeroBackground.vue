@@ -46,7 +46,12 @@ function nextRandomIndex(length: number, visited: number[], lastIndex: number) {
 }
 
 watch(
-  [() => sakura.wallpaperIndex, () => hero.value.randomUrls, () => sakura.wallpaperManual, urls],
+  [
+    () => sakura.wallpaperIndex,
+    () => hero.value.randomUrls,
+    () => sakura.wallpaperManual,
+    urls,
+  ],
   () => {
     if (!hero.value.randomUrls || sakura.wallpaperManual) {
       visitedUrls.value = []
@@ -143,11 +148,23 @@ function layerInitial(operation: LayerOperation) {
 
 function layerAnimate(layer: MediaLayer) {
   const { operation, leaving } = layer
-  if (operation === 'nextMedia')
-    return { x: leaving ? '-100%' : '0%', y: 0 }
-  if (operation === 'prevMedia')
-    return { x: leaving ? '100%' : '0%', y: 0 }
-  return { opacity: leaving ? 0 : 1, x: '0%', y: 0 }
+  if (operation === 'nextMedia') {
+    return {
+      x: leaving ? '-100%' : '0%',
+      y: 0,
+    }
+  }
+  if (operation === 'prevMedia') {
+    return {
+      x: leaving ? '100%' : '0%',
+      y: 0,
+    }
+  }
+  return {
+    opacity: leaving ? 0 : 1,
+    x: '0%',
+    y: 0,
+  }
 }
 
 function preloadUrl(url: string) {
@@ -277,7 +294,10 @@ watch(
     const operation = (lastOperation.value || '') as LayerOperation
     if (last) {
       const leaving = { ...last, leaving: true, operation }
-      layers.value = [...layers.value.slice(0, -1), leaving]
+      layers.value = [
+        ...layers.value.slice(0, -1),
+        leaving,
+      ]
       scheduleRemoveLayer(leaving.id, layerDurationSeconds(operation))
     }
 
@@ -297,14 +317,18 @@ watch(
 )
 
 watch(() => sakura.wallpaperIndex, () => {
-  const length = Array.isArray(urls.value) ? urls.value.length : (urls.value ? 1 : 0)
+  const length = Array.isArray(urls.value)
+    ? urls.value.length
+    : (urls.value ? 1 : 0)
   if (!length)
     return
   if (sakura.wallpaperIndex >= length)
     sakura.wallpaperIndex = 0
 }, { immediate: true, flush: 'sync' })
 
-watch(() => (Array.isArray(urls.value) ? urls.value.length : (urls.value ? 1 : 0)), (length) => {
+watch(() => (Array.isArray(urls.value)
+  ? urls.value.length
+  : (urls.value ? 1 : 0)), (length) => {
   sakura.wallpaperLength = length
 }, { immediate: true })
 

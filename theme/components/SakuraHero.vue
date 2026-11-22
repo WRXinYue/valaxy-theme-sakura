@@ -31,7 +31,9 @@ const heroUrls = computed(() => {
   const urls = hero.value?.urls
   if (Array.isArray(urls))
     return urls
-  return urls ? [urls] : []
+  return urls
+    ? [urls]
+    : []
 })
 const currentHeroUrl = computed(() => heroUrls.value[appStore.wallpaperDisplayIndex] || '')
 const canPlayCurrent = computed(() => isVideoUrl(currentHeroUrl.value) || isYouTubeUrl(currentHeroUrl.value))
@@ -174,7 +176,11 @@ function initSideNavSectionObserver() {
 
   sideNavSectionObserver = new IntersectionObserver(() => {
     scheduleSideNavActiveUpdate()
-  }, { root: null, rootMargin, threshold: [0, 1] })
+  }, {
+    root: null,
+    rootMargin,
+    threshold: [0, 1],
+  })
 
   for (const item of heroSideNavItems.value) {
     const el = document.getElementById(item.id)
@@ -202,7 +208,9 @@ function computeActiveSideNavId() {
   const points = heroSideNavItems.value
     .map((item) => {
       const el = document.getElementById(item.id)
-      const top = el ? el.getBoundingClientRect().top : Number.NaN
+      const top = el
+        ? el.getBoundingClientRect().top
+        : Number.NaN
       return { id: item.id, top }
     })
     .filter(p => Number.isFinite(p.top))
@@ -319,7 +327,9 @@ function syncBottomPushTargetRaw() {
   if (!el)
     return
   const v = el.style.getPropertyValue('--sakura-hero-bottom-push-target')
-  bottomPushTargetRaw.value = (v && v.trim()) ? v.trim() : '0px'
+  bottomPushTargetRaw.value = (v && v.trim())
+    ? v.trim()
+    : '0px'
 }
 
 function syncNavbarHeight() {
@@ -388,7 +398,10 @@ onMounted(() => {
   if (!heroEl.value)
     return
   heroStyleObserver = new MutationObserver(() => syncBottomPushTargetRaw())
-  heroStyleObserver.observe(heroEl.value, { attributes: true, attributeFilter: ['style'] })
+  heroStyleObserver.observe(heroEl.value, {
+    attributes: true,
+    attributeFilter: ['style'],
+  })
   window.addEventListener('resize', onWindowResize, { passive: true })
   document.addEventListener('scroll', onDocumentScroll, { passive: true })
   document.addEventListener('pointerdown', onDocumentPointerDown, { passive: true })

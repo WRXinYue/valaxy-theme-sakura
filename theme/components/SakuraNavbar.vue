@@ -45,9 +45,14 @@ const isHeaderHighlighted = computed(() => {
 
   const invert = isIncludes(navbarOptions.value.invert)
 
-  if (enableHover)
-    return hoverNavbar.value || (invert ? isScrolled.value : !isScrolled.value)
-  return invert ? isScrolled.value : !isScrolled.value
+  if (enableHover) {
+    return hoverNavbar.value || (invert
+      ? isScrolled.value
+      : !isScrolled.value)
+  }
+  return invert
+    ? isScrolled.value
+    : !isScrolled.value
 })
 
 const linkAnimate = computed(() => {

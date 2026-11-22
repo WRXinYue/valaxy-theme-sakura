@@ -58,7 +58,9 @@ class Node {
     this.mass = mass
     this.gravity = gravity
     this.friction = friction
-    this.el = !fixed ? imgRef.value : nodeRef.value
+    this.el = !fixed
+      ? imgRef.value
+      : nodeRef.value
 
     interact(this.el)
       .draggable({})
@@ -233,7 +235,7 @@ watch(width, (width) => {
   }, 200)
 })
 
-onMounted(() => setTimeout(() => init(), 0))
+onMounted(() => setTimeout(init, 0))
 </script>
 
 <template>

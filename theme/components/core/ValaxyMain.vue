@@ -47,10 +47,14 @@ onContentUpdated(() => {
             e.preventDefault()
             // scroll between hash anchors in the same page
             if (hash && hash !== currentUrl.hash) {
-              await router.push({ hash: decodeURIComponent(hash) })
+              await router.push({
+                hash: decodeURIComponent(hash),
+              })
 
               // use smooth scroll when clicking on header anchor links
-              scrollTo(link, hash, { smooth: link.classList.contains('header-anchor') })
+              scrollTo(link, hash, {
+                smooth: link.classList.contains('header-anchor'),
+              })
             }
           }
         }

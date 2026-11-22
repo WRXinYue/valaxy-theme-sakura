@@ -28,7 +28,10 @@ watch(() => props.open, async () => {
 })
 
 function toSearch() {
-  router.push({ path: '/search', query: { q: input.value } })
+  router.push({
+    path: '/search',
+    query: { q: input.value },
+  })
   search.close()
 }
 </script>

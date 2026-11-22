@@ -8,6 +8,9 @@ pnpm-global
 components.d.ts
 auto-imports.d.ts
 
+# valaxy build artifacts
+rss-assets.json
+
 .vite-ssg-dist
 .vite-ssg-temp
 

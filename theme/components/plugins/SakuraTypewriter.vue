@@ -98,7 +98,9 @@ function createTypewriter(typeStrings: string[]) {
     if (refreshNeeded) {
       // @ts-expect-error missing types
       instance = instance!.reset()
-      createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+      createTypewriter(Array.isArray(props.typeString)
+        ? props.typeString
+        : [props.typeString])
       refreshNeeded = false
     }
   })
@@ -107,11 +109,15 @@ function createTypewriter(typeStrings: string[]) {
 watch(() => props.typeString, () => refreshNeeded = true)
 onMounted(() => {
   if (props.typeString) {
-    createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+    createTypewriter(Array.isArray(props.typeString)
+      ? props.typeString
+      : [props.typeString])
   }
   else { // If the data is empty, it is likely reactive, enable a one-time watch to ensure reactive data is displayed immediately
     watchOnce(() => props.typeString, () => {
-      createTypewriter(Array.isArray(props.typeString) ? props.typeString : [props.typeString])
+      createTypewriter(Array.isArray(props.typeString)
+        ? props.typeString
+        : [props.typeString])
     })
   }
 })

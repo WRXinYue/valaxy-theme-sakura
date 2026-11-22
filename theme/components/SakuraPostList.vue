@@ -32,11 +32,15 @@ const responsive = computed(() => props.responsive || themeConfig.value.postList
 const categoryList = useCategories()
 const selectedCategory = ref('All')
 const displayedCategory = ref(selectedCategory.value)
-const allLabel = computed(() => locale.value.startsWith('zh') ? '全部' : 'All')
+const allLabel = computed(() => locale.value.startsWith('zh')
+  ? '全部'
+  : 'All')
 
 const categoryTabs = computed(() => [
   { name: 'All', total: categoryList.value.total },
-  ...[...categoryList.value.children.values()]
+  ...[
+    ...categoryList.value.children.values(),
+  ]
     .filter(category => category.total > 0 && category.name !== 'Uncategorized')
     .map(category => ({ name: category.name, total: category.total })),
 ])
@@ -47,7 +51,9 @@ const visiblePosts = computed(() => {
   return posts.value.filter((post) => {
     const categories = Array.isArray(post.categories)
       ? post.categories
-      : post.categories ? [post.categories] : []
+      : post.categories
+        ? [post.categories]
+        : []
     return categories.includes(displayedCategory.value)
   })
 })
@@ -132,7 +138,10 @@ function selectCategory(name: string) {
   filtering.value = true
 
   function reveal(from: string) {
-    const fadeIn = frame!.animate([{ opacity: from }, { opacity: 1 }], {
+    const fadeIn = frame!.animate([
+      { opacity: from },
+      { opacity: 1 },
+    ], {
       duration: 150,
       easing: 'ease-out',
     })
@@ -148,7 +157,10 @@ function selectCategory(name: string) {
     return
   }
 
-  const fade = frame.animate([{ opacity }, { opacity: 0 }], { duration: 90, fill: 'forwards' })
+  const fade = frame.animate([
+    { opacity },
+    { opacity: 0 },
+  ], { duration: 90, fill: 'forwards' })
   categoryFade = fade
   fade.onfinish = async () => {
     if (fade !== categoryFade)
@@ -238,7 +250,11 @@ async function setLayout(mode: 'list' | 'grid') {
   }
   // Only the outer frame changes flow height. The grid inside lays out at its
   // final size so pagination follows without rewrapping article text each frame.
-  const height = animate(frame, [oldHeight, toList ? newHeight : oldHeight, newHeight]
+  const height = animate(frame, [
+    oldHeight,
+    toList ? newHeight : oldHeight,
+    newHeight,
+  ]
     .map(value => ({ height: `${value}px` })))
   height.onfinish = () => {
     if (revision === token)
@@ -246,7 +262,12 @@ async function setLayout(mode: 'list' | 'grid') {
   }
 }
 
-watch([visiblePosts, responsiveCols, reducedMotion, () => props.column], stopMorph)
+watch([
+  visiblePosts,
+  responsiveCols,
+  reducedMotion,
+  () => props.column,
+], stopMorph)
 useEventListener('resize', stopMorph)
 onBeforeUnmount(stopMorph)
 

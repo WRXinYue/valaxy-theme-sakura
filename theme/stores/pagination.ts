@@ -9,5 +9,11 @@ export function usePagination() {
   const paginationTargets: Ref<Element[]> = ref([])
   const paginationObserver = ref<IntersectionObserver>()
   const paginationElementPositionsNumber = ref(0)
-  return { curPage, loadMultiple, paginationTargets, paginationObserver, paginationElementPositionsNumber }
+  return {
+    curPage,
+    loadMultiple,
+    paginationTargets,
+    paginationObserver,
+    paginationElementPositionsNumber,
+  }
 }

@@ -52,7 +52,9 @@ function onMarqueeEnter() {
     // 归位途中重新悬停：用负 delay 从当前进度继续，而不是跳回开头
     if (isSettling.value) {
       const matrix = new DOMMatrixReadOnly(getComputedStyle(track).transform)
-      const shift = Number.isFinite(matrix.m41) ? matrix.m41 : 0
+      const shift = Number.isFinite(matrix.m41)
+        ? matrix.m41
+        : 0
       const seconds = Number.parseFloat(marqueeDuration.value) || 10
       const distance = marqueeDistance.value
       if (distance > 0 && shift < 0)
@@ -77,7 +79,9 @@ function onMarqueeLeave() {
     return
 
   const matrix = new DOMMatrixReadOnly(getComputedStyle(track).transform)
-  const shift = Number.isFinite(matrix.m41) ? matrix.m41 : 0
+  const shift = Number.isFinite(matrix.m41)
+    ? matrix.m41
+    : 0
   track.style.animationDelay = ''
   track.style.setProperty('--sakura-notice-settle', `${shift}px`)
   isSettling.value = true

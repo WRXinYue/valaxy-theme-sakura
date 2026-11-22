@@ -14,7 +14,9 @@ const router = useRouter()
 
 // Check if addon is enabled
 const hasWaline = computed(() => !isEmptyAddon(addonWaline))
-const addon = hasWaline.value ? addonWaline.useAddonWaline() : null
+const addon = hasWaline.value
+  ? addonWaline.useAddonWaline()
+  : null
 
 const serverURL = computed(() => addon?.value?.options?.serverURL)
 
@@ -36,7 +38,9 @@ onMounted(async () => {
       const res = await fetch(`${serverURL.value}/comment?type=recent&count=5`)
       const data = await res.json()
       // Waline V2 returns array directly or { data: [...] }
-      comments.value = Array.isArray(data) ? data : (data.data || [])
+      comments.value = Array.isArray(data)
+        ? data
+        : (data.data || [])
     }
     catch (e) {
       console.error('Failed to fetch recent comments:', e)

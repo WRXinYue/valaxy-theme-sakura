@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import addonHitokoto from '../plugins/hitokoto'
 
-const { hitokoto } = addonHitokoto?.useAddonHitokoto({ args: [addonHitokoto?.HitokotoType.Poetry] })
+const { hitokoto } = addonHitokoto?.useAddonHitokoto({
+  args: [addonHitokoto?.HitokotoType.Poetry],
+})
 </script>
 
 <template>

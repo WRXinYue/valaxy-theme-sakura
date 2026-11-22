@@ -7,13 +7,6 @@ export default defineConfig({
   ignorePaths: [
     '**/node_modules/**',
   ],
-  packageMode: {
-    'typescript': 'major',
-    'unocss': 'ignore',
-    'eslint': 'ignore',
-    'valaxy': 'latest',
-    '/vue/': 'latest',
-  },
   depFields: {
     overrides: false,
   },

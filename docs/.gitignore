@@ -17,7 +17,9 @@ node_modules
 .idea/
 *.log
 
+# .valaxy
 components.d.ts
+route-map.d.ts
 
 # valaxy rss
 public/feed.xml
@@ -27,3 +29,6 @@ public/feed.json
 
 # valaxy rss
 public/atom.xml
+
+# valaxy fuse
+public/valaxy-fuse-list.json

@@ -24,7 +24,9 @@ const router = useRouter()
 const route = useRoute()
 const categoryList = computed(() => {
   const c = (route.query.category as string) || ''
-  return Array.isArray(c) ? [c] : c.split('/')
+  return Array.isArray(c)
+    ? [c]
+    : c.split('/')
 })
 
 const { isExpanded, setExpanded } = useCategoryState()
@@ -75,8 +77,12 @@ const { t } = useI18n()
  */
 const { locale } = useI18n()
 function getTitle(post: Post | any) {
-  const lang = locale.value === 'zh-CN' ? 'zh' : locale.value
-  return post[`title_${lang}`] ? post[`title_${lang}`] : post.title
+  const lang = locale.value === 'zh-CN'
+    ? 'zh'
+    : locale.value
+  return post[`title_${lang}`]
+    ? post[`title_${lang}`]
+    : post.title
 }
 
 const postCollapseElRef = ref<HTMLElement>()

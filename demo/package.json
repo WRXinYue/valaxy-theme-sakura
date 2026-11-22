@@ -21,6 +21,8 @@
     "valaxy-theme-sakura": "workspace:*"
   },
   "devDependencies": {
-    "valaxy": "catalog:"
+    "valaxy": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
   }
 }

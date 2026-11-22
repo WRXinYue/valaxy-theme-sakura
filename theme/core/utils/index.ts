@@ -20,7 +20,9 @@ export function checkRouteAgainstConditions(route: RouteLocationNormalizedLoaded
   if (conditions === 'none' || conditions === '')
     return false
 
-  const conditionsArray = typeof conditions === 'string' ? [conditions] : conditions
+  const conditionsArray = typeof conditions === 'string'
+    ? [conditions]
+    : conditions
   const inclusionConditions = conditionsArray.filter(condition => !condition.startsWith('-'))
   const exclusionConditions = conditionsArray.filter(condition => condition.startsWith('-')).map(condition => condition.slice(1))
 

@@ -64,7 +64,9 @@ const rotateStyle = computed(() => {
 })
 
 const sizeStyle = computed(() => {
-  const scale = randomValues.value.isReverse ? Math.random() : randomValues.value.scale
+  const scale = randomValues.value.isReverse
+    ? Math.random()
+    : randomValues.value.scale
   return {
     transform: `scale(${scale})`,
   }

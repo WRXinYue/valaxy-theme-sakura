@@ -260,7 +260,9 @@ class SurfacePoint {
   /** 干扰方法，用于产生波动效果 */
   interfere(t: number, i: number) {
     // 根据传入的值计算y方向上的力
-    this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0
+      ? -1
+      : 1) * Math.abs(i)
   }
 
   /** 更新自身状态 */
@@ -320,9 +322,13 @@ class Fish {
   // 随机设置鱼的初始状态
   private init(): void {
     this.direction = Math.random() < 0.5
-    this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD
+    this.x = this.direction
+      ? this.renderer.width + this.renderer.THRESHOLD
+      : -this.renderer.THRESHOLD
     this.previousY = this.y
-    this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1)
+    this.vx = this.getRandomValue(4, 10) * (this.direction
+      ? -1
+      : 1)
     // 根据renderer的reverse属性设置鱼的初始y坐标、速度和加速度
     if (this.renderer.reverse) {
       this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10)
@@ -390,7 +396,9 @@ class Fish {
       this.phi %= 2 * Math.PI
     }
     // 在水面生成波纹中心
-    this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY)
+    this.renderer.generateEpicenter(this.x + (this.direction
+      ? -1
+      : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY)
     // 如果鱼游出画布范围，则重新初始化
     if ((this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD) || (this.vx < 0 && this.x < -this.renderer.THRESHOLD))
       this.init()
@@ -401,7 +409,9 @@ class Fish {
     ctx.save()
     ctx.translate(this.x, this.y)
     ctx.rotate(Math.PI + Math.atan2(this.vy, this.vx))
-    ctx.scale(1, this.direction ? 1 : -1)
+    ctx.scale(1, this.direction
+      ? 1
+      : -1)
     ctx.beginPath()
     // 绘制鱼身体
     ctx.moveTo(-30, 0)
@@ -423,7 +433,9 @@ class Fish {
     // 绘制鱼鳍
     ctx.save()
     ctx.translate(-3, 0)
-    ctx.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1))
+    ctx.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse
+      ? -1
+      : 1))
     ctx.beginPath()
     if (this.renderer.reverse) {
       ctx.moveTo(5, 0)

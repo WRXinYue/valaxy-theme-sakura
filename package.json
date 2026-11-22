@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.28.1",
+  "packageManager": "pnpm@10.34.9",
   "homepage": "https://sakura.wrxinyue.org",
   "scripts": {
     "build": "pnpm -C demo run build",
@@ -29,9 +29,11 @@
     "cross-env": "catalog:",
     "eslint": "catalog:",
     "eslint-plugin-format": "catalog:",
+    "postcss-html": "catalog:",
     "rimraf": "catalog:",
     "simple-git-hooks": "catalog:",
     "stylelint": "catalog:",
+    "stylelint-config-html": "catalog:",
     "stylelint-config-recommended-vue": "catalog:",
     "stylelint-config-standard-scss": "catalog:",
     "stylelint-gamut": "catalog:",

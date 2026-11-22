@@ -1,7 +1,7 @@
 {
   "name": "valaxy-theme-sakura",
   "version": "0.10.3-alpha.1",
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.34.9",
   "author": {
     "email": "3322543587@qq.com",
     "name": "WRXinYue",
@@ -44,6 +44,8 @@
   "devDependencies": {
     "@interactjs/types": "catalog:",
     "valaxy": "catalog:",
-    "valaxy-addon-waline": "catalog:"
+    "valaxy-addon-waline": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
   }
 }

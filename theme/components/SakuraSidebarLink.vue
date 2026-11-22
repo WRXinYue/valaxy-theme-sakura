@@ -15,7 +15,9 @@ const marker = ref()
 
 const sidebar = computed(() =>
   props.sidebar
-  || (Array.isArray(themeConfig.value.sidebar) && themeConfig.value.sidebar.length > 0 ? themeConfig.value.sidebar : themeConfig.value.navbar),
+  || (Array.isArray(themeConfig.value.sidebar) && themeConfig.value.sidebar.length > 0
+    ? themeConfig.value.sidebar
+    : themeConfig.value.navbar),
 )
 watch(() => route.path, () => nextTick(() => updateMarker()))
 

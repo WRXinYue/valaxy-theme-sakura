@@ -35,7 +35,9 @@ export class YouTubeProgressTracker {
 
     let payload: YouTubeInfoPayload | undefined
     try {
-      payload = typeof event.data === 'string' ? JSON.parse(event.data) : event.data
+      payload = typeof event.data === 'string'
+        ? JSON.parse(event.data)
+        : event.data
     }
     catch {
       return

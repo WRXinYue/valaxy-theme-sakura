@@ -9,7 +9,9 @@ const props = defineProps<Partial<NavItem> & {
 
 const { t } = useI18n()
 
-const text = computed(() => props.locale ? `${props.text ?? ''} ${t(props.locale)}` : props.text)
+const text = computed(() => props.locale
+  ? `${props.text ?? ''} ${t(props.locale)}`
+  : props.text)
 </script>
 
 <template>

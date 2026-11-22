@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useFrontmatter } from 'valaxy'
 import { ref } from 'vue'
-import { POSITION, useToast } from 'vue-toastification'
 
 const { type } = defineProps<{
   type: string
@@ -13,19 +12,14 @@ const elements = frontmatter.value[type]
 
 const showElements = ref(Array.from({ length: elements.length }).fill(false))
 
-function copyToClipboard(text: string) {
-  const toast = useToast()
+const copied = ref(false)
+let copiedTimer: ReturnType<typeof setTimeout> | undefined
 
+function copyToClipboard(text: string) {
   navigator.clipboard.writeText(text).then(() => {
-    toast.success('Copied to clipboard', {
-      position: POSITION.TOP_CENTER,
-      timeout: 2000,
-      closeButton: false,
-      icon: {
-        iconClass: 'i-fa6-solid-code!',
-        iconTag: 'div',
-      },
-    })
+    copied.value = true
+    clearTimeout(copiedTimer)
+    copiedTimer = setTimeout(() => copied.value = false, 2000)
   }).catch((err) => {
     console.error('Failed to copy text: ', err)
   })
@@ -33,6 +27,9 @@ function copyToClipboard(text: string) {
 </script>
 
 <template>
+  <div v-if="copied" class="fixed left-1/2 top-4 z-50 rounded bg-black/80 px-3 py-1 text-sm text-white -translate-x-1/2">
+    Copied to clipboard
+  </div>
   <div v-if="type.includes('hvr')">
     <div class="gap-5">
       <div v-for="(element, idx) in elements" :key="idx" class="btn m-1" :class="element.class" @click="copyToClipboard(element.class)">

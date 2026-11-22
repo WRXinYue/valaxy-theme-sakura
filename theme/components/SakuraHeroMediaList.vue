@@ -45,7 +45,9 @@ const wallpaperUrls = computed(() => {
   const urls = themeConfig.value.hero.urls
   if (Array.isArray(urls))
     return urls
-  return urls ? [urls] : []
+  return urls
+    ? [urls]
+    : []
 })
 
 const items = computed(() => wallpaperUrls.value)
@@ -66,7 +68,9 @@ function kindOf(url: string): MediaKind {
 
 function youTubePoster(url: string) {
   const id = getYouTubeId(url)
-  return id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : ''
+  return id
+    ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+    : ''
 }
 
 function videoPoster(url: string) {
@@ -74,7 +78,9 @@ function videoPoster(url: string) {
 }
 
 function itemLabel(index: number) {
-  return `${kindOf(items.value[index] || '') === 'image' ? 'Wallpaper' : 'Video'} ${index + 1}`
+  return `${kindOf(items.value[index] || '') === 'image'
+    ? 'Wallpaper'
+    : 'Video'} ${index + 1}`
 }
 
 function select(index: number) {

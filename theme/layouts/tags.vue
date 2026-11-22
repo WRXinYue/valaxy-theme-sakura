@@ -28,7 +28,9 @@ const posts = computed(() => {
 })
 
 function displayTag(tag: string) {
-  router.push({ query: { tag } })
+  router.push({
+    query: { tag },
+  })
 }
 
 useSchemaOrg([

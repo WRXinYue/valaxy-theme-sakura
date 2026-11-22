@@ -9,8 +9,12 @@ const { type } = defineProps<{
 
 const { t } = useI18n()
 
-const itemprop = computed(() => t(type === 'posted' ? 'datePublished' : 'dateModified'))
-const label = computed(() => t(type === 'posted' ? 'post.posted' : 'post.edited'))
+const itemprop = computed(() => t(type === 'posted'
+  ? 'datePublished'
+  : 'dateModified'))
+const label = computed(() => t(type === 'posted'
+  ? 'post.posted'
+  : 'post.edited'))
 </script>
 
 <template>

@@ -77,6 +77,6 @@ $dark: (
   'color-icon': oklch(100% 0 0),
   'color-divider': oklch(36% 0.0034 286.23),
   // --------------- Card ---------------
-  'card-bg': oklch(22.71% 0.0079 274.58)
+  'card-bg': oklch(22.71% 0.0079 274.58),
 ) !default;
 $dark: map.merge((), $dark);

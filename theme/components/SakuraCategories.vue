@@ -23,7 +23,9 @@ const route = useRoute()
 const { t } = useI18n()
 const categoryList = computed(() => {
   const c = route.query.category || ''
-  return Array.isArray(c) ? [c] : c.split('/')
+  return Array.isArray(c)
+    ? [c]
+    : c.split('/')
 })
 
 const { expandAll, collapseAll } = useCategoryState()
@@ -33,7 +35,9 @@ function collectKeys(categories: Categories, parentKey = ''): string[] {
   let keys: string[] = []
   for (const item of categories.values()) {
     if (isCategoryList(item)) {
-      const currentKey = parentKey ? `${parentKey}/${item.name}` : item.name
+      const currentKey = parentKey
+        ? `${parentKey}/${item.name}`
+        : item.name
       keys.push(currentKey)
       keys = keys.concat(collectKeys(item.children, currentKey))
     }

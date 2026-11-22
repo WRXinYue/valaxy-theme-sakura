@@ -208,7 +208,9 @@ function stackStyle(index: number) {
   return {
     '--sakura-carousel-depth': Math.min(depth, STACK_VISIBLE - 1),
     '--sakura-carousel-row': depth,
-    'z-index': index === boostIndex.value ? 50 : entries.value.length - depth,
+    'z-index': index === boostIndex.value
+      ? 50
+      : entries.value.length - depth,
   }
 }
 

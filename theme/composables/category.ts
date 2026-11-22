@@ -28,7 +28,10 @@ export function useCategoryState() {
 
   const expandAll = (keys: string[]) => {
     // Merge existing keys with new keys, removing duplicates
-    const newSet = new Set([...expandedCategories.value, ...keys])
+    const newSet = new Set([
+      ...expandedCategories.value,
+      ...keys,
+    ])
     expandedCategories.value = Array.from(newSet)
   }
 

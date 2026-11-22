@@ -71,8 +71,12 @@ export function usePostList(params: {
       if (themeConfig.value.postList?.defaultImage)
         post.cover = post.cover || resolveImage(themeConfig.value.postList.defaultImage)
 
-      if (post.tags && post.tags.length > 3)
-        return { ...post, tags: post.tags.slice(0, 3) }
+      if (post.tags && post.tags.length > 3) {
+        return {
+          ...post,
+          tags: post.tags.slice(0, 3),
+        }
+      }
 
       return post
     })

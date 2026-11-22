@@ -12,7 +12,9 @@ node_modules
 .idea/
 *.log
 
+# .valaxy
 components.d.ts
+route-map.d.ts
 
 # valaxy rss
 public/atom.xml

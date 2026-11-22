@@ -17,7 +17,9 @@ export function useScroll(options: Partial<{
       return offset
 
     const v = Number.parseInt(useCssVar(offset).value || '', 10)
-    return Number.isFinite(v) ? v : 0
+    return Number.isFinite(v)
+      ? v
+      : 0
   }
 
   function scrollTo(top: number) {
@@ -25,7 +27,10 @@ export function useScroll(options: Partial<{
       lenisRef.value?.scrollTo(top, { offset: 0, immediate: !scrollAnimation })
     }
     else {
-      window.scrollTo({ top, behavior: scrollAnimation ? 'smooth' : 'auto' })
+      window.scrollTo({
+        top,
+        behavior: scrollAnimation ? 'smooth' : 'auto',
+      })
     }
   }
 
@@ -39,7 +44,9 @@ export function useScroll(options: Partial<{
 
     const targetElement = (typeof target === 'string')
       ? document.querySelector(target)
-      : (target instanceof Element ? target : null)
+      : (target instanceof Element
+          ? target
+          : null)
 
     if (!targetElement) {
       console.warn('Target element not found:', target)

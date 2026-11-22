@@ -10,7 +10,10 @@ const router = useRouter()
 const { getTagStyle } = useSakuraTags()
 
 function displayTag(tag: string) {
-  router.push({ path: '/tags/', query: { tag } })
+  router.push({
+    path: '/tags/',
+    query: { tag },
+  })
 }
 </script>
 

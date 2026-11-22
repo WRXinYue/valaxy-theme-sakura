@@ -29,8 +29,12 @@ watch(() => props.posts, () => {
   // 浅拷贝后按 date 纯时间排序，消除 top 对归档分组的干扰
   ;[...props.posts]
     .sort((a, b) => {
-      const da = a.date ? +new Date(a.date) : 0
-      const db = b.date ? +new Date(b.date) : 0
+      const da = a.date
+        ? +new Date(a.date)
+        : 0
+      const db = b.date
+        ? +new Date(b.date)
+        : 0
       return db - da
     })
     .forEach((post) => {
@@ -59,13 +63,17 @@ watch(() => props.posts, () => {
 const sortedYears = computed(() => {
   const y = [...years.value]
   const arr = y.sort((a, b) => b - a)
-  return isDesc.value ? arr : arr.reverse()
+  return isDesc.value
+    ? arr
+    : arr.reverse()
 })
 
 function sortedMonths(year: number) {
   const m = [...months.value[year]]
   const arr = m.sort((a, b) => b - a)
-  return isDesc.value ? arr : arr.reverse()
+  return isDesc.value
+    ? arr
+    : arr.reverse()
 }
 
 // 将 year/month 编码为唯一的展开状态 key

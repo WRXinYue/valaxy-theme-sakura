@@ -15,5 +15,7 @@ export function useSearch() {
     isOpen.value = false
   }
 
-  return { search: { isOpen, toggle, open, close } }
+  return {
+    search: { isOpen, toggle, open, close },
+  }
 }

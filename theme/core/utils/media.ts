@@ -43,7 +43,9 @@ export function getYouTubeId(url: string): string | null {
       ? parsed.searchParams.get('v')
       : parsed.pathname.match(/^\/(?:embed|shorts|live)\/([\w-]+)/)?.[1]
 
-  return id && youTubeIdPattern.test(id) ? id : null
+  return id && youTubeIdPattern.test(id)
+    ? id
+    : null
 }
 
 export function isYouTubeUrl(url: string) {

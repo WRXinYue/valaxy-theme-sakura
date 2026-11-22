@@ -51,8 +51,12 @@ export default defineTheme<ThemeUserConfig>((options) => {
   if (userThemeConfig.navbarOptions?.tools)
     defaultThemeConfig.navbarOptions.tools = []
 
-  if (userThemeConfig.banner)
-    defaultThemeConfig.hero = { ...userThemeConfig.banner, ...userThemeConfig.hero } as Hero
+  if (userThemeConfig.banner) {
+    defaultThemeConfig.hero = {
+      ...userThemeConfig.banner,
+      ...userThemeConfig.hero,
+    } as Hero
+  }
 
   return {
     themeConfig: defaultThemeConfig,
@@ -70,8 +74,12 @@ export default defineTheme<ThemeUserConfig>((options) => {
         return
 
       const maxLength = 120
-      const excerpt = text.length > maxLength ? `${text.slice(0, maxLength)}…` : text
-      ctx.route.addToMeta({ excerpt: escapeHtml(excerpt) })
+      const excerpt = text.length > maxLength
+        ? `${text.slice(0, maxLength)}…`
+        : text
+      ctx.route.addToMeta({
+        excerpt: escapeHtml(excerpt),
+      })
     },
 
     vite: {
