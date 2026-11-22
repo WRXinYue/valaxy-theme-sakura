@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { NavItem } from '../types'
+import type { SidebarItem } from '../types'
 
 defineProps<{
-  items?: Partial<NavItem>[]
-  item?: Partial<NavItem>
+  items?: Partial<SidebarItem>[]
+  item?: Partial<SidebarItem>
 }>()
 </script>
 

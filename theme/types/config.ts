@@ -70,12 +70,6 @@ export interface ThemeConfig extends DefaultTheme.Config {
    */
   navbar: NavItem[]
   /**
-   * @zh 导航栏标题
-   * @en Navbar title
-   * @deprecated Use NavbarOptions.title instead
-   */
-  navbarTitle: string | string[]
-  /**
    * @zh 导航栏选项配置
    * @en Navbar options configuration
    */
@@ -116,9 +110,6 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * @default true
    */
   scrollToTop: boolean | 'cord'
-  scrollDown: {
-    enable: boolean
-  }
   /**
    * @zh 404图片
    * @en Image for the 404

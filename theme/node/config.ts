@@ -38,9 +38,6 @@ export const defaultThemeConfig: ThemeUserConfig = {
         rotate: 360,
       },
     },
-    scrollDown: {
-      icon: 'i-fa6-solid-angle-down',
-    },
     toggleLocaleButton: {
       icon: 'i-ri-translate',
     },
@@ -49,8 +46,6 @@ export const defaultThemeConfig: ThemeUserConfig = {
       lightIcon: 'i-ri-sun-line',
     },
   },
-
-  navbarTitle: '',
 
   favicon: false,
 
@@ -72,15 +67,11 @@ export const defaultThemeConfig: ThemeUserConfig = {
 
   navbar: [],
   navbarOptions: {
-    title: '',
-    animIn: 'sakura-fade-in-left',
-    animOut: 'sakura-fade-out-left',
     showMarker: true,
     offset: 100,
     enableHover: true,
     tools: ['toggleDark', 'search'],
     hamburgerStyle: 'uneven',
-    enableRotate: false,
   },
 
   sidebar: [],
@@ -115,7 +106,6 @@ export const defaultThemeConfig: ThemeUserConfig = {
   footer: {
     since: 2024,
     icon: {
-      animated: true,
       url: 'https://sponsors.yunyoujun.cn',
       title: 'WRXinYue',
     },
@@ -140,9 +130,6 @@ export const defaultThemeConfig: ThemeUserConfig = {
   scrollIndicator: false,
   scrollLock: true,
   scrollToTop: false,
-  scrollDown: {
-    enable: true,
-  },
 }
 
 /**
@@ -177,9 +164,6 @@ export function generateSafelist(themeConfig: ThemeConfig) {
 
   if (ui.notice?.icon)
     safelist.push(ui.notice.icon)
-
-  if (ui.scrollDown?.icon)
-    safelist.push(ui.scrollDown.icon)
 
   if (ui.toggleLocaleButton?.icon)
     safelist.push(ui.toggleLocaleButton.icon)

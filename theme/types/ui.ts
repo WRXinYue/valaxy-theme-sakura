@@ -36,10 +36,6 @@ export interface UI {
     image: Partial<SakuraImageCardProps>
   }
 
-  scrollDown: {
-    icon: string
-  }
-
   toggleLocaleButton: {
     icon: string
   }

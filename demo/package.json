@@ -12,9 +12,10 @@
   "dependencies": {
     "@iconify-json/fa": "catalog:",
     "@iconify-json/line-md": "catalog:",
+    "@iconify-json/solar": "catalog:",
+    "driver.js": "catalog:",
     "valaxy-addon-algolia": "catalog:",
     "valaxy-addon-bangumi": "catalog:",
-    "valaxy-addon-meting": "catalog:",
     "valaxy-addon-twikoo": "catalog:",
     "valaxy-addon-waline": "catalog:",
     "valaxy-theme-sakura": "workspace:*"

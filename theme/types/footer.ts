@@ -14,7 +14,6 @@ export interface Footer {
     enable?: boolean
     name?: string
     img?: string
-    animated?: boolean
     url?: string
     title?: string
   }

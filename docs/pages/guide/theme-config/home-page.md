@@ -21,15 +21,14 @@ Hero 当中可以配置博客首页大屏壁纸或者标题之类的
 | ----------------------- | -------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | title                   | `string`                                           | `'Hello, sakura'`                                              | 首页标题                                                                                                                                                                                                   |
 | motto                   | `string`                                           | `'You got to put the past behind you before you can move on.'` | 首页标语 (写下愿景也很不错呀)                                                                                                                                                                              |
-| urls                    | `string[] \| string`                               | `undefined`                                                    | 用于网站头部背景壁纸链接支持图片及视频,支持填入多个                                                                                                                                                        |
+| urls                    | `string[] \| string`                               | `undefined`                                                    | 网站头部背景媒体列表，支持图片、直链视频和 YouTube 链接；视频作为背景时静音自动播放，点击播放按钮播放当前视频                                                                                                |
 | style                   | 'dim' \| 'dot' \| 'scanline' \| 'glitch' \| 'grid' | `'dim'`                                                        | 背景叠加样式，可选值为`'dim'`（昏暗过滤效果）、`'dot'`（点状过滤效果）、<br class="<md:hidden" />`'scanline'`（扫描线效果）、`'glitch'`（故障艺术效果）、<br class="<md:hidden" />`'grid'`（网格过滤效果） |
 | randomUrls              | `boolean`                                          | `false`                                                        | 是否随机 urls，开启此项切换 url 也会进行随机                                                                                                                                                               |
 | fixedImg                | `boolean`                                          | `false`                                                        | 是否固定背景图片                                                                                                                                                                                           |
 | typewriter              | `boolean`                                          | `false`                                                        | 是否启用打字机组件                                                                                                                                                                                         |
 | enableHitokoto          | `boolean`                                          | `false`                                                        | 启用一言，如果启用则 `motto` 显示为一言                                                                                                                                                                    |
 | hitokoto                | `HitokotoOptions`                                  | `undefined`                                                    | 一言的配置选项                                                                                                                                                                                             |
-| waveTheme               | `'fish' \| 'horizontal' \| 'ripple'                | `undefined`                                                    | 背景波纹主题                                                                                                                                                                                               |
-| playerUrl               | `string`                                           | `undefined`                                                    | 自定义视频, 可以放PV MV之类的                                                                                                                                                                              |
+| waveTheme               | `'fish' \| 'ripple'                                | `undefined`                                                    | 背景波纹主题                                                                                                                                                                                               |
 | disablePictureInPicture | `boolean`                                          | `undefined`                                                    | 是否禁用画中画功能                                                                                                                                                                                         |
 | socials                 | `Partial<HeroSocialLink[]>`                        | `[]`                                                           | 社交链接                                                                                                                                                                                                   |
 | socialStyle             | `'merge' \| 'separate' \| 'single'`                | `'merge'`                                                      | 社交链接样式                                                                                                                                                                                               |
@@ -53,15 +52,15 @@ export default defineValaxyConfig<ThemeUserConfig>({
         'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper-2025%2Fwallhaven-zyxq6j.jpg',
         // 视频背景示例
         'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper/yae-miko-sunset-sakura-genshin-impact-moewalls-com.mp4',
+        // YouTube 背景示例（静音自动播放，点击播放按钮切换为有声播放）
+        'https://www.youtube.com/watch?v=OWDcn7hl16A',
       ],
       randomUrls: true,
-      // 自定义视频播放器
-      playerUrl: 'https://valaxy-theme-sakura.s3.bitiful.net/PV/Original PV Little love song MONGOL 800 cover by Amatsuki.mp4',
       style: 'scanline', // 使用扫描线效果
       fixedImg: true, // 固定背景图片
       typewriter: true, // 启用打字机效果
       enableHitokoto: true, // 启用一言
-      waveTheme: 'horizontal', // 设置水平波纹主题
+      waveTheme: 'fish', // 设置背景波纹主题
     },
     // ...
   }

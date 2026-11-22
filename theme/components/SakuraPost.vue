@@ -5,32 +5,31 @@ const frontmatter = useFrontmatter()
 </script>
 
 <template>
-  <SakuraPage class="sakura-post">
+  <SakuraPage>
     <template #header>
       <SakuraPostHeader :fm="frontmatter" />
     </template>
 
-    <slot />
+    <div class="sakura-post sakura-safe-padding">
+      <div class="sakura-post-content">
+        <slot />
+      </div>
+    </div>
   </SakuraPage>
 </template>
 
-<style lang="scss">
-@use 'valaxy/client/styles/mixins/index.scss' as *;
-
+<style scoped>
 .sakura-post {
-  .sakura-page-content {
-    max-width: 800px;
-    padding-block: 24px;
-  }
+  padding-block: 24px;
+  min-width: 0;
+}
 
-  .sakura-triple-columns {
-    @include screen('md') {
-      grid-template-columns: 150px minmax(0, 800px) 150px !important;
-    }
+.sakura-post-content {
+  max-width: 800px;
+  margin-inline: auto;
+}
 
-    @include screen('lg') {
-      grid-template-columns: 250px minmax(0, 800px) 250px !important;
-    }
-  }
+.sakura-post-content :deep(.markdown-body > .prose) {
+  max-width: none;
 }
 </style>

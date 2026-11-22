@@ -2,12 +2,12 @@
 import { defineAppSetup } from 'valaxy'
 // import { useSakuraAppStore } from '../stores'
 import { useThemeConfig } from '../composables'
-import { vAnimateOnView } from '../directives'
+import { vAnimateOnView } from '../core/directives'
 import { defineSakuraSetup } from './sakuraSetup'
 
 export default defineAppSetup(async (ctx) => {
   const { router, isClient, app } = ctx
-  const { toScrollPosition } = await import('../utils/rolling')
+  const { toScrollPosition } = await import('../core/utils/rolling')
   if (!isClient)
     return
 

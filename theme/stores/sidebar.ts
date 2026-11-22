@@ -1,9 +1,9 @@
 import { useFrontmatter } from 'valaxy'
 import { computed, ref, watch } from 'vue'
 import { useThemeConfig } from '../composables'
-import { StorageKeys } from '../enum'
+import { StorageKeys } from '../core/enum'
 // import { useFrontmatter, useMobile } from 'valaxy'
-import { setLocalStorageItem, setSessionStorageItem } from '../utils/storage'
+import { setLocalStorageItem, setSessionStorageItem } from '../core/utils/storage'
 
 export function useSidebar() {
   const isOpen = ref(false)

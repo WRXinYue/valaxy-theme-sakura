@@ -34,8 +34,10 @@
     "@ctrl/tinycolor": "catalog:",
     "@iconify-json/fa6-solid": "catalog:",
     "@iconify-json/mdi": "catalog:",
+    "@iconify-json/solar": "catalog:",
     "interactjs": "catalog:",
     "lenis": "catalog:",
+    "motion-v": "catalog:",
     "typeit": "catalog:",
     "vue-progressive-image": "catalog:"
   },

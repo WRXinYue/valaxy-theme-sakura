@@ -40,12 +40,7 @@ export interface Hero {
    * @en Background wave theme
    * @default undefined
    */
-  waveTheme?: 'fish' | 'horizontal' | 'ripple'
-  /**
-   * @zh 自定义视频, 可以放PV MV之类的
-   * @en Custom Video
-   */
-  playerUrl?: string
+  waveTheme?: 'fish' | 'ripple'
   /**
    * @zh 是否禁用画中画功能
    * @en Whether to disable picture-in-picture feature

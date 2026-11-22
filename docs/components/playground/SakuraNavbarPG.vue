@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 const config = ref(
   {
-    navbarTitle: ['Hello', '', 'Sakura'],
+    navbarTitle: 'Hello Sakura',
     navbar: [
       {
         text: 'GitHub',

@@ -12,7 +12,6 @@ defineProps<{
       <div v-if="fm.icon" class="icon" m="r-1" inline-flex align-top :class="fm.icon" />
     </slot>
     <span>{{ fm.title }}</span>
-    <span v-if="fm.subTitle"> · {{ fm.subTitle }}</span>
   </div>
 </template>
 

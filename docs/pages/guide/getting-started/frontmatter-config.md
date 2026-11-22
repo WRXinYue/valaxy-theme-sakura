@@ -21,7 +21,6 @@ title: Docs with VitePress
 | --------- | ------------------------------ | ----------- | ----------------------------------------------- |
 | icon      | `string`                       | `undefined` | ---                                             |
 | title     | `string`                       | `undefined` | ---                                             |
-| subTitle  | `string`                       | `undefined` | ---                                             |
 | cover     | `string`                       | `undefined` | ---                                             |
 | author    | `string`                       | `undefined` | ---                                             |
 | date      | `string` \| `number` \| `Date` | `undefined` | ---                                             |

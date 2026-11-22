@@ -24,7 +24,9 @@ const layout = useLayout()
     </slot>
 
     <slot name="navbar">
-      <SakuraNavbar class="sakura-sidebar-offset" />
+      <template v-if="layout !== 'home'">
+        <SakuraNavbar class="sakura-sidebar-offset" />
+      </template>
     </slot>
 
     <main class="sakura-sidebar-offset sakura-main">
@@ -91,6 +93,11 @@ const layout = useLayout()
 </template>
 
 <style lang="scss" scoped>
+.app-container {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
 // translation navbar
 .sakura-sidebar-offset {
   transform: translateX(var(--sakura-private-sidebar-offset));

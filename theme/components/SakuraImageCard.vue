@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import { ProgressiveImage } from 'vue-progressive-image'
 import { useThemeConfig } from '../composables'
-import { resolveImage } from '../utils'
+import { resolveImage } from '../core/utils'
 
 const props = withDefaults(defineProps<{
   [key: string]: any

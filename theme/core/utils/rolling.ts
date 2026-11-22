@@ -1,7 +1,7 @@
 import type { Router } from 'vue-router'
 import { scrollTo } from 'valaxy'
 import { nextTick } from 'vue'
-import { useSakuraAppStore } from '../stores'
+import { useSakuraAppStore } from '../../stores'
 
 export function toScrollPosition(router: Router) {
   const sakuraAppStore = useSakuraAppStore()

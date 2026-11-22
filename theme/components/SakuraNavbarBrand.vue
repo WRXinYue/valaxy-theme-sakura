@@ -3,10 +3,8 @@ import { useSiteConfig } from 'valaxy'
 
 defineProps<{
   favicon?: boolean
-  title?: string | string[]
+  title?: string
   hamburger?: boolean
-  subTitle?: string
-  enableRotate?: boolean
 }>()
 
 const siteConfig = useSiteConfig()
@@ -15,24 +13,14 @@ const siteConfig = useSiteConfig()
 <template>
   <div class="sakura-navbar-brand">
     <template v-if="favicon">
-      <img class="h-40px w-40px" alt="logo" :src="siteConfig.favicon">
+      <img class="navbar-logo h-40px w-40px" alt="logo" :src="siteConfig.favicon">
     </template>
     <template v-if="title">
-      <ruby class="navbar-title relative">
+      <div class="navbar-title">
         <RouterLink class="logo-link" to="/" :aria-label="siteConfig.title">
-          <template v-if="typeof title === 'string'">
-            <span>{{ title }}</span>
-          </template>
-          <template v-else>
-            <span mr1>{{ title![0] }}</span>
-            <span mr1 :class="enableRotate && 'sakura-hvr-rotate'">{{ title![1] }}</span>
-            <span>{{ title![2] }}</span>
-          </template>
+          <span>{{ title }}</span>
         </RouterLink>
-        <rt v-if="subTitle" class="navbar-subtitle">
-          {{ subTitle }}
-        </rt>
-      </ruby>
+      </div>
     </template>
   </div>
 </template>
@@ -43,76 +31,37 @@ const siteConfig = useSiteConfig()
 .sakura-navbar-brand {
   display: flex;
   align-items: center;
+  gap: 10px;
   white-space: nowrap;
 
-  .logo-link {
-    color: var(--sakura-navbar-title-color);
-    font-size: 20px;
-    font-weight: 600;
-    line-height: normal;
-    transition:
-      font-size 0.3s ease,
-      font-weight 0.3s ease;
-
-    @include screen('md') {
-      font-size: 22px;
-      font-weight: 800;
-    }
-
-    @include screen('lg') {
-      font-size: 24px;
-    }
-
-    span {
-      display: inline-block;
-    }
-
-    span:first-child {
-      border-radius: 9px;
-    }
-
-    &:hover {
-      span:first-child {
-        background-color: var(--sakura-color-primary);
-        color: var(--sakura-navbar-bg);
-      }
-
-      // span:nth-of-type(2) {
-      //   animation: rotate 1s linear infinite;
-      // }
-
-      span:not(:first-child) {
-        color: var(--sakura-color-primary);
-      }
-    }
+  .navbar-logo {
+    border-radius: 8px;
   }
 
   .navbar-title {
-    ruby-position: under;
-    font-variant-ligatures: no-common-ligatures;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
 
-    .navbar-subtitle {
-      position: absolute;
-      width: 100%;
-      font-size: 12px;
-      text-align: justify;
-      text-align-last: justify;
-      transform: translateY(-0.2em);
-      opacity: 0;
-      transition-property: opacity;
-      transition-duration: 0.5s, 0.5s;
+  .logo-link {
+    color: var(--sakura-navbar-title-color);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+    transition: color 0.2s ease;
 
-      // HACK: Safari has rendering issues with ruby/rt elements causing layout shifts
-      @supports not (background: paint(xxx)) {
-        display: none !important;
-      }
+    @include screen('md') {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    @include screen('lg') {
+      font-size: 22px;
     }
 
     &:hover {
-      rt {
-        color: var(--sakura-color-primary);
-        opacity: 1;
-      }
+      color: var(--sakura-color-primary);
     }
   }
 }

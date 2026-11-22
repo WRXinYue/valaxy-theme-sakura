@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { NavItem } from '../types'
+import type { SidebarItem } from '../types'
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useThemeConfig } from '../composables'
 
 const props = defineProps<{
-  sidebar?: NavItem[]
+  sidebar?: SidebarItem[]
 }>()
 
 const themeConfig = useThemeConfig()
@@ -16,7 +16,7 @@ const marker = ref()
 const sidebar = computed(() =>
   props.sidebar
   || (Array.isArray(themeConfig.value.sidebar) && themeConfig.value.sidebar.length > 0 ? themeConfig.value.sidebar : themeConfig.value.navbar),
-) as unknown as NavItem[]
+)
 watch(() => route.path, () => nextTick(() => updateMarker()))
 
 function updateMarker() {

@@ -19,14 +19,10 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
 </script>
 
 <template>
-  <div class="sakura-post-nav" :class="navigationMerge && 'flex'">
+  <div class="sakura-post-nav" :class="{ 'is-merged': navigationMerge }">
     <SakuraImageCard
       v-if="prev?.path" v-bind="{ ...props, src: prev.cover, to: prev.path }"
-      class="card-prev" :class="{
-        'mt-10': !navigationMerge,
-        'w-1/2 rounded-l-$sakura-radius': next?.path && navigationMerge,
-        'rounded-$sakura-radius': (navigationMerge && !next?.path) || !navigationMerge,
-      }"
+      class="card-prev" :class="{ 'mt-10': !navigationMerge }"
     >
       <div class="sakura-post-nav-content">
         <span class="sakura-post-nav-label">
@@ -39,10 +35,7 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
     </SakuraImageCard>
     <SakuraImageCard
       v-if="next?.path" v-bind="{ ...props, src: next.cover, to: next.path }"
-      class="card-next" :class="{
-        'w-1/2 rounded-r-$sakura-radius': prev?.path && navigationMerge,
-        'rounded-$sakura-radius': (navigationMerge && !prev?.path) || !navigationMerge,
-      }"
+      class="card-next"
     >
       <div class="sakura-post-nav-content">
         <span flex justify-end class="sakura-post-nav-label">
@@ -89,7 +82,7 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
   .sakura-image-card {
     height: var(--sakura-post-nav-height);
     width: 100%;
-    border-radius: 0;
+    border-radius: var(--sakura-post-card-rd);
 
     &::before {
       content: '';
@@ -104,6 +97,18 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
 
     &:hover::before {
       opacity: 0.4;
+    }
+  }
+
+  &.is-merged {
+    display: flex;
+    overflow: hidden;
+    border-radius: var(--sakura-post-card-rd);
+
+    .sakura-image-card {
+      flex: 1;
+      min-width: 0;
+      border-radius: 0;
     }
   }
 }

@@ -30,15 +30,14 @@ a {
   }
 }
 
-.sakura-site-content {
-  padding-inline: max(20px, env(safe-area-inset-left));
-}
-
 .sakura-safe-padding {
-  padding-inline: max(20px, env(safe-area-inset-left));
+  --sakura-page-gutter: 20px;
+
+  padding-left: max(var(--sakura-page-gutter), env(safe-area-inset-left));
+  padding-right: max(var(--sakura-page-gutter), env(safe-area-inset-right));
   transition: padding var(--va-transition-duration) ease;
 
   @include screen('sm') {
-    padding-inline: max(40px, env(safe-area-inset-left));
+    --sakura-page-gutter: 40px;
   }
 }
