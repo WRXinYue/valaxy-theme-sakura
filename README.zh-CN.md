@@ -27,7 +27,7 @@
 <td align="center">
   <img width="2000" height="0" alt="" aria-hidden="true"><br>
   <span><b>简体中文 | <a href="./README.md">English</a></b></span><br>
-  <sub>我们正在更新主题文档及示例，预计将在 `v0.7.0` 版本会发布到 <a href="https://valaxy.site/themes/gallery">Valaxy 主题橱窗</a></sub><br>
+  <sub>此分支保留 Sakura 的经典风格，后续以日常修复和兼容性更新为主。想体验新设计，欢迎访问 <a href="https://sakura.wrxinyue.org/">新版 Sakura</a>。</sub><br>
   <sub><a href="https://sakura-legacy.wrxinyue.org/">在线 Demo</a>  | <a href="https://sakura-legacy.wrxinyue.org/posts/guide/getting-started/installation">文档</a> | <a href="https://sakura-legacy.wrxinyue.org/links/">主题站点</a></sub><br>
   <img width="2000" height="0" alt="" aria-hidden="true">
 </td>

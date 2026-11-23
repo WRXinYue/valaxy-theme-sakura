@@ -27,7 +27,7 @@ A simple, personalized, and cute anime-style blog theme ❥(ゝω・✿ฺ)
 <td align="center">
   <img width="2000" height="0" alt="" aria-hidden="true"><br>
   <span><b>English | <a href="./README.zh-CN.md">简体中文</a></b></span><br>
-  <sub>We are updating the theme documentation and examples, expected to be released in version `v0.7.0` on the <a href="https://valaxy.site/themes/gallery">Valaxy Theme Gallery</a></sub><br>
+  <sub>This branch preserves Sakura’s classic look and receives routine fixes and compatibility updates. To explore the new design, try the <a href="https://sakura.wrxinyue.org/">latest Sakura demo</a>.</sub><br>
   <sub><a href="https://sakura-legacy.wrxinyue.org/">Live Demo</a>  | <a href="https://sakura-legacy.wrxinyue.org/posts/guide/getting-started/installation">Documentation</a> | <a href="https://sakura-legacy.wrxinyue.org/links/">Theme Sites</a></sub><br>
   <img width="2000" height="0" alt="" aria-hidden="true">
 </td>
