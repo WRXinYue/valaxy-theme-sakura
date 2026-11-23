@@ -12,7 +12,7 @@ const props = defineProps<{
 }>()
 
 const themeConfig = useThemeConfig()
-const breakpoints = useBreakpoints(breakpointsTailwind, { ssrWidth: 0 })
+const { md: isDesktop } = useBreakpoints(breakpointsTailwind, { ssrWidth: 0 })
 
 const imageCard = computed(() => themeConfig.value.ui.postList?.image)
 
@@ -24,7 +24,7 @@ function onTitleClick(event: MouseEvent) {
 }
 
 const isGroup = computed(() => props.cols > 1)
-const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-direction: column;
+const isCol = computed(() => !isDesktop.value || isGroup.value)
 </script>
 
 <template>

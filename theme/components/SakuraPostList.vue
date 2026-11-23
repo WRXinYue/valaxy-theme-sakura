@@ -18,7 +18,13 @@ const props = defineProps<{
 }>()
 
 const themeConfig = useThemeConfig()
-const breakpoints = useBreakpoints(breakpointsTailwind, { ssrWidth: 0 })
+const { md, lg, xl, '2xl': xxl } = useBreakpoints(breakpointsTailwind, { ssrWidth: 0 })
+const responsiveBreakpoints = [
+  ['2xl', xxl],
+  ['xl', xl],
+  ['lg', lg],
+  ['md', md],
+] as const
 const { locale, t } = useI18n()
 const { $tCategory } = useValaxyI18n()
 
@@ -85,9 +91,8 @@ const columnsByBreakpoint = computed(() => {
 })
 
 const responsiveCols = computed(() => {
-  const keys = ['2xl', 'xl', 'lg', 'md'] as const
-  for (const key of keys) {
-    if (breakpoints[key].value)
+  for (const [key, matches] of responsiveBreakpoints) {
+    if (matches.value)
       return columnsByBreakpoint.value[key]
   }
   return 1
@@ -98,7 +103,7 @@ const cols = computed(() => {
     return props.column
 
   // Mobile always 1 column
-  if (!breakpoints.md.value)
+  if (!md.value)
     return 1
 
   if (layoutMode.value === 'list')
@@ -247,7 +252,7 @@ async function setLayout(mode: 'list' | 'grid') {
   const grid = frame?.querySelector<HTMLElement>('.post-list-container')
   const shells = Array.from(grid?.querySelectorAll<HTMLElement>(':scope > .article-list > .post-morph-shell') ?? [])
   if (!frame || !grid || !shells.length || reducedMotion.value === 'reduce'
-    || !frame.animate || props.column || !breakpoints.md.value || responsiveCols.value === 1) {
+    || !frame.animate || props.column || !md.value || responsiveCols.value === 1) {
     stopMorph()
     layoutMode.value = mode
     return
