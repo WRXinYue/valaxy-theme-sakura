@@ -3,11 +3,10 @@ name: Release
 on:
   push:
     tags:
-      - 'v0.11.*'
+      - 'v0.11.*-legacy.*'
 
 jobs:
   release:
-    if: ${{ !contains(github.ref_name, '-') }}
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -33,7 +32,7 @@ jobs:
 
       - name: Create Classic Sakura release
         run: |
-          gh release create "$GITHUB_REF_NAME" --verify-tag --latest=false \
+          gh release create "$GITHUB_REF_NAME" --verify-tag --prerelease --latest=false \
             --title "Classic Sakura $GITHUB_REF_NAME" \
             --generate-notes --notes-start-tag v0.10.2 \
             --notes 'Classic Sakura for Valaxy 1.5. Install with `pnpm add valaxy-theme-sakura@legacy`.'
