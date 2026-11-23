@@ -1,37 +1,40 @@
 <script setup lang="ts">
 import { useOutline } from 'valaxy'
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useActiveAnchor } from '../client'
 import { useThemeConfig } from '../composables'
 
-const { viewScroll } = defineProps<{
+const { viewScroll, collapsible } = defineProps<{
   viewScroll: boolean
+  collapsible?: boolean
 }>()
 
 const themeConfig = useThemeConfig()
+const { t } = useI18n()
 
 const container = ref()
 const marker = ref()
 
-useActiveAnchor(container, marker, !viewScroll)
+if (!collapsible)
+  useActiveAnchor(container, marker, !viewScroll)
 
 const { headers, handleClick } = useOutline()
 </script>
 
 <template>
-  <div v-show="headers.length" ref="container">
+  <component :is="collapsible ? 'details' : 'div'" v-show="headers.length" ref="container">
+    <summary v-if="collapsible">
+      {{ t('sidebar.toc') }}
+    </summary>
     <div class="content">
-      <div class="outline-title">
+      <div v-if="!collapsible" class="outline-title">
         {{ themeConfig.outlineTitle || 'On this page' }}
       </div>
 
-      <div ref="marker" class="outline-marker" />
+      <div v-if="!collapsible" ref="marker" class="outline-marker" />
 
-      <nav aria-labelledby="doc-outline-aria-label">
-        <span id="doc-outline-aria-label" class="visually-hidden">
-          Table of Contents for current page
-        </span>
-
+      <nav :aria-label="t('sidebar.toc')">
         <SakuraOutlineItem
           class="va-toc css-i18n-toc relative z-1"
           :headers="headers"
@@ -40,7 +43,7 @@ const { headers, handleClick } = useOutline()
         />
       </nav>
     </div>
-  </div>
+  </component>
 </template>
 
 <style lang="scss" scoped>
@@ -93,12 +96,8 @@ const { headers, handleClick } = useOutline()
   transition: color 0.25s;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  white-space: nowrap;
-  clip-path: inset(50%);
-  overflow: hidden;
+summary {
+  cursor: pointer;
+  font-weight: 600;
 }
 </style>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { SakuraLayoutSidebarItem, SidebarComponent } from '../types'
-import { useLayout } from 'valaxy'
+import { useFrontmatter, useLayout } from 'valaxy'
 import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
 
@@ -19,6 +19,8 @@ const props = defineProps<{ class?: string, base?: boolean }>()
 
 const themeConfig = useThemeConfig()
 const layout = useLayout()
+const frontmatter = useFrontmatter()
+const showPostToc = computed(() => layout.value === 'post' && frontmatter.value.toc !== false && frontmatter.value.outline !== false)
 
 const componentMap: Record<string, any> = {
   SakuraSidebarSiteInfo,
@@ -53,7 +55,7 @@ const layoutConfig = computed(() => {
 })
 
 const layoutMode = computed(() => {
-  return layoutConfig.value?.layout || 'one-column'
+  return layoutConfig.value?.layout || (showPostToc.value ? 'two-columns-right' : 'one-column')
 })
 
 const leftSidebar = computed(() => {
@@ -111,7 +113,7 @@ const showRight = computed(() => {
 
     <template v-if="showRight" #right>
       <slot name="right">
-        <template v-if="layout === 'post'">
+        <template v-if="showPostToc">
           <SakuraAside>
             <SakuraToc class="sakura-fade-in-up" style="animation-fill-mode: both;" />
           </SakuraAside>
@@ -132,14 +134,54 @@ const showRight = computed(() => {
 <style lang="scss">
 @use 'valaxy/client/styles/mixins/index.scss' as *;
 
-.sakura-layout {
+.sakura-layout,
+.sakura-post-header > .sakura-header-grid {
   display: grid;
+  grid-template-columns: var(--sakura-article-columns, minmax(0, 1fr));
+  gap: var(--sakura-article-column-gap, 0);
   width: 100%;
   max-width: 1536px;
   margin: 0 auto;
+}
+
+@include screen('lg') {
+  .sakura-main:has(> .sakura-two-columns-right-layout),
+  .sakura-two-columns-right-layout {
+    --sakura-article-columns: minmax(0, 1fr) 280px;
+  }
+
+  .sakura-main:has(> .sakura-triple-columns-layout),
+  .sakura-triple-columns-layout {
+    --sakura-article-columns: 240px minmax(0, 1fr) 240px;
+    --sakura-article-column: 2;
+  }
+
+  .sakura-main:has(> :is(.sakura-two-columns-right-layout, .sakura-triple-columns-layout)),
+  .sakura-layout:is(.sakura-two-columns-right-layout, .sakura-triple-columns-layout) {
+    --sakura-article-column-gap: var(--sakura-layout-mt);
+  }
+}
+
+@include screen('xl') {
+  .sakura-main:has(> .sakura-two-columns-right-layout),
+  .sakura-two-columns-right-layout {
+    --sakura-article-columns: minmax(0, 1fr) 300px;
+  }
+
+  .sakura-main:has(> .sakura-triple-columns-layout),
+  .sakura-triple-columns-layout {
+    --sakura-article-columns: 280px minmax(0, 1fr) 280px;
+  }
+}
+
+.sakura-layout {
   transition:
     grid-template-columns 0.6s cubic-bezier(0.16, 1, 0.3, 1),
     gap 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  > div {
+    min-width: 0;
+  }
 
   aside {
     align-self: start;
@@ -152,7 +194,6 @@ const showRight = computed(() => {
   }
 
   &.sakura-triple-columns-layout {
-    grid-template-columns: 100%;
     gap: var(--sakura-layout-mt);
     margin-top: var(--sakura-layout-mt);
 
@@ -160,20 +201,10 @@ const showRight = computed(() => {
       display: none;
     }
 
-    @include screen('md') {
-      grid-template-columns: 1fr;
-    }
-
     @include screen('lg') {
-      grid-template-columns: 240px 1fr 240px;
-
       aside {
         display: flex;
       }
-    }
-
-    @include screen('xl') {
-      grid-template-columns: 280px 1fr 280px;
     }
   }
 
@@ -184,24 +215,45 @@ const showRight = computed(() => {
       display: none;
     }
 
-    @include screen('md') {
-      grid-template-columns: 1fr;
-    }
-
     @include screen('lg') {
-      grid-template-columns: 1fr 280px;
-
       aside {
         display: flex;
       }
     }
 
-    @include screen('xl') {
-      grid-template-columns: 1fr 300px;
-    }
-
     @include mobile {
       gap: 0;
+    }
+  }
+}
+
+.has-post-layout {
+  .sakura-main:has(> .sakura-two-columns-right-layout),
+  .sakura-layout.sakura-two-columns-right-layout {
+    --sakura-article-columns: minmax(0, 1fr);
+    --sakura-article-column-gap: 0px;
+  }
+
+  .sakura-layout.sakura-two-columns-right-layout {
+    gap: 0;
+
+    > aside {
+      display: none;
+    }
+
+    @include screen('xl') {
+      > div,
+      > aside {
+        grid-area: 1 / 1;
+      }
+
+      > aside {
+        display: flex;
+        justify-self: end;
+        width: max(0px, calc((100% - var(--sakura-article-width, 800px)) / 2 - var(--sakura-layout-mt) - 20px));
+        min-width: 0;
+        margin-inline-end: 20px;
+      }
     }
   }
 }
