@@ -12,14 +12,18 @@
   "dependencies": {
     "@iconify-json/fa": "^1.2.2",
     "@iconify-json/line-md": "^1.2.11",
+    "markdown-it": "^14.1.0",
+    "monaco-editor": "^0.52.2",
     "valaxy-addon-algolia": "catalog:",
     "valaxy-addon-bangumi": "catalog:",
     "valaxy-addon-meting": "catalog:",
     "valaxy-addon-twikoo": "catalog:",
     "valaxy-addon-waline": "catalog:",
-    "valaxy-theme-sakura": "workspace:*"
+    "valaxy-theme-sakura": "workspace:*",
+    "vue-toastification": "2.0.0-rc.5"
   },
   "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
     "valaxy": "catalog:"
   }
 }

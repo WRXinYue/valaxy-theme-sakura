@@ -63,7 +63,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
         {
           title: 'Docs',
           desc: '主题文档',
-          link: 'https://sakura.valaxy.site',
+          link: '/posts/guide/getting-started/installation',
           img: 'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper-2025%2Fwallhaven-yxoejx.jpg',
         },
         {
@@ -99,6 +99,11 @@ export default defineValaxyConfig<ThemeUserConfig>({
     },
 
     navbar: [
+      {
+        icon: 'i-fa-book',
+        text: '文档',
+        link: '/posts/guide/getting-started/installation',
+      },
       {
         icon: 'i-fa-fort-awesome',
         locale: 'menu.home',
@@ -176,6 +181,10 @@ export default defineValaxyConfig<ThemeUserConfig>({
     },
 
     sidebar: [
+      {
+        text: '📚 文档',
+        link: '/posts/guide/getting-started/installation',
+      },
       {
         text: '🌈',
         locale: 'menu.home',

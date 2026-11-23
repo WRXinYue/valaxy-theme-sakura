@@ -107,6 +107,27 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/posts/components/': RouteRecordInfo<
+      '/posts/components/',
+      '/posts/components',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/components/SakuraGlitchText': RouteRecordInfo<
+      '/posts/components/SakuraGlitchText',
+      '/posts/components/SakuraGlitchText',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/components/SakuraTypewriter': RouteRecordInfo<
+      '/posts/components/SakuraTypewriter',
+      '/posts/components/SakuraTypewriter',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/posts/draft': RouteRecordInfo<
       '/posts/draft',
       '/posts/draft',
@@ -124,6 +145,132 @@ declare module 'vue-router/auto-routes' {
     '/posts/encrypted-post': RouteRecordInfo<
       '/posts/encrypted-post',
       '/posts/encrypted-post',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/examples/animation': RouteRecordInfo<
+      '/posts/examples/animation',
+      '/posts/examples/animation',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/examples/config': RouteRecordInfo<
+      '/posts/examples/config',
+      '/posts/examples/config',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/getting-started/frontmatter-config': RouteRecordInfo<
+      '/posts/guide/getting-started/frontmatter-config',
+      '/posts/guide/getting-started/frontmatter-config',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/getting-started/installation': RouteRecordInfo<
+      '/posts/guide/getting-started/installation',
+      '/posts/guide/getting-started/installation',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/getting-started/site-config': RouteRecordInfo<
+      '/posts/guide/getting-started/site-config',
+      '/posts/guide/getting-started/site-config',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/getting-started/theme-config': RouteRecordInfo<
+      '/posts/guide/getting-started/theme-config',
+      '/posts/guide/getting-started/theme-config',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/getting-started/update': RouteRecordInfo<
+      '/posts/guide/getting-started/update',
+      '/posts/guide/getting-started/update',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/special-pages': RouteRecordInfo<
+      '/posts/guide/special-pages',
+      '/posts/guide/special-pages',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/theme-config/404-page': RouteRecordInfo<
+      '/posts/guide/theme-config/404-page',
+      '/posts/guide/theme-config/404-page',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/theme-config/footer': RouteRecordInfo<
+      '/posts/guide/theme-config/footer',
+      '/posts/guide/theme-config/footer',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/theme-config/home-page': RouteRecordInfo<
+      '/posts/guide/theme-config/home-page',
+      '/posts/guide/theme-config/home-page',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/theme-config/links-page': RouteRecordInfo<
+      '/posts/guide/theme-config/links-page',
+      '/posts/guide/theme-config/links-page',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/theme-config/nav': RouteRecordInfo<
+      '/posts/guide/theme-config/nav',
+      '/posts/guide/theme-config/nav',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/theme-config/other': RouteRecordInfo<
+      '/posts/guide/theme-config/other',
+      '/posts/guide/theme-config/other',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/theme-config/pagination': RouteRecordInfo<
+      '/posts/guide/theme-config/pagination',
+      '/posts/guide/theme-config/pagination',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/theme-config/post-list': RouteRecordInfo<
+      '/posts/guide/theme-config/post-list',
+      '/posts/guide/theme-config/post-list',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/theme-config/post-page': RouteRecordInfo<
+      '/posts/guide/theme-config/post-page',
+      '/posts/guide/theme-config/post-page',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/guide/theme-config/sidebar': RouteRecordInfo<
+      '/posts/guide/theme-config/sidebar',
+      '/posts/guide/theme-config/sidebar',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -166,6 +313,13 @@ declare module 'vue-router/auto-routes' {
     '/posts/nested/a/b/c': RouteRecordInfo<
       '/posts/nested/a/b/c',
       '/posts/nested/a/b/c',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/releases/': RouteRecordInfo<
+      '/posts/releases/',
+      '/posts/releases',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -290,6 +444,24 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
+    'pages/posts/components/index.md': {
+      routes:
+        | '/posts/components/'
+      views:
+        | never
+    }
+    'pages/posts/components/SakuraGlitchText.md': {
+      routes:
+        | '/posts/components/SakuraGlitchText'
+      views:
+        | never
+    }
+    'pages/posts/components/SakuraTypewriter.md': {
+      routes:
+        | '/posts/components/SakuraTypewriter'
+      views:
+        | never
+    }
     'pages/posts/draft.md': {
       routes:
         | '/posts/draft'
@@ -305,6 +477,114 @@ declare module 'vue-router/auto-routes' {
     'pages/posts/encrypted-post.md': {
       routes:
         | '/posts/encrypted-post'
+      views:
+        | never
+    }
+    'pages/posts/examples/animation.md': {
+      routes:
+        | '/posts/examples/animation'
+      views:
+        | never
+    }
+    'pages/posts/examples/config.md': {
+      routes:
+        | '/posts/examples/config'
+      views:
+        | never
+    }
+    'pages/posts/guide/getting-started/frontmatter-config.md': {
+      routes:
+        | '/posts/guide/getting-started/frontmatter-config'
+      views:
+        | never
+    }
+    'pages/posts/guide/getting-started/installation.md': {
+      routes:
+        | '/posts/guide/getting-started/installation'
+      views:
+        | never
+    }
+    'pages/posts/guide/getting-started/site-config.md': {
+      routes:
+        | '/posts/guide/getting-started/site-config'
+      views:
+        | never
+    }
+    'pages/posts/guide/getting-started/theme-config.md': {
+      routes:
+        | '/posts/guide/getting-started/theme-config'
+      views:
+        | never
+    }
+    'pages/posts/guide/getting-started/update.md': {
+      routes:
+        | '/posts/guide/getting-started/update'
+      views:
+        | never
+    }
+    'pages/posts/guide/special-pages.md': {
+      routes:
+        | '/posts/guide/special-pages'
+      views:
+        | never
+    }
+    'pages/posts/guide/theme-config/404-page.md': {
+      routes:
+        | '/posts/guide/theme-config/404-page'
+      views:
+        | never
+    }
+    'pages/posts/guide/theme-config/footer.md': {
+      routes:
+        | '/posts/guide/theme-config/footer'
+      views:
+        | never
+    }
+    'pages/posts/guide/theme-config/home-page.md': {
+      routes:
+        | '/posts/guide/theme-config/home-page'
+      views:
+        | never
+    }
+    'pages/posts/guide/theme-config/links-page.md': {
+      routes:
+        | '/posts/guide/theme-config/links-page'
+      views:
+        | never
+    }
+    'pages/posts/guide/theme-config/nav.md': {
+      routes:
+        | '/posts/guide/theme-config/nav'
+      views:
+        | never
+    }
+    'pages/posts/guide/theme-config/other.md': {
+      routes:
+        | '/posts/guide/theme-config/other'
+      views:
+        | never
+    }
+    'pages/posts/guide/theme-config/pagination.md': {
+      routes:
+        | '/posts/guide/theme-config/pagination'
+      views:
+        | never
+    }
+    'pages/posts/guide/theme-config/post-list.md': {
+      routes:
+        | '/posts/guide/theme-config/post-list'
+      views:
+        | never
+    }
+    'pages/posts/guide/theme-config/post-page.md': {
+      routes:
+        | '/posts/guide/theme-config/post-page'
+      views:
+        | never
+    }
+    'pages/posts/guide/theme-config/sidebar.md': {
+      routes:
+        | '/posts/guide/theme-config/sidebar'
       views:
         | never
     }
@@ -341,6 +621,12 @@ declare module 'vue-router/auto-routes' {
     'pages/posts/nested/a/b/c.md': {
       routes:
         | '/posts/nested/a/b/c'
+      views:
+        | never
+    }
+    'pages/posts/releases/index.md': {
+      routes:
+        | '/posts/releases/'
       views:
         | never
     }

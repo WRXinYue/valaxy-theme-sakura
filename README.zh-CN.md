@@ -28,7 +28,7 @@
   <img width="2000" height="0" alt="" aria-hidden="true"><br>
   <span><b>简体中文 | <a href="./README.md">English</a></b></span><br>
   <sub>我们正在更新主题文档及示例，预计将在 `v0.7.0` 版本会发布到 <a href="https://valaxy.site/themes/gallery">Valaxy 主题橱窗</a></sub><br>
-  <sub><a href="https://sakura.wrxinyue.org/">在线 Demo</a>  | <a href="https://sakura.valaxy.site/">文档</a> | <a href="https://sakura.valaxy.site/examples/gallery">主题站点</a></sub><br>
+  <sub><a href="https://sakura.wrxinyue.org/">在线 Demo</a>  | <a href="https://sakura.wrxinyue.org/posts/guide/getting-started/installation">文档</a> | <a href="https://sakura.wrxinyue.org/links/">主题站点</a></sub><br>
   <img width="2000" height="0" alt="" aria-hidden="true">
 </td>
 </tr>
@@ -39,16 +39,16 @@
 ## 快速开始
 
 > [!TIP]
-> 如果您是第一次使用 Valaxy，建议先查看 Valaxy 的[安装文档](https://valaxy.site/guide/getting-started)了解安装过程。关于详细安装教程请参照 valaxy-theme-sakura 的 [安装文档](https://sakura.valaxy.site/guide/installation)
+> 如果您是第一次使用 Valaxy，建议先查看 Valaxy 的[安装文档](https://valaxy.site/guide/getting-started)了解安装过程。关于详细安装教程请参照 valaxy-theme-sakura 的 [安装文档](https://sakura.wrxinyue.org/posts/guide/getting-started/installation)
 
 ```bash
-pnpm add valaxy-theme-sakura
+pnpm add valaxy-theme-sakura@0.10
 ```
 
 <details>
 <summary>valaxy.config.ts</summary><br>
 
-关于详细配置以及说明请见[主题配置](https://sakura.valaxy.site/config/theme)
+关于详细配置以及说明请见[主题配置](https://sakura.wrxinyue.org/posts/guide/getting-started/theme-config)
 
 ```ts
 import { defineValaxyConfig } from 'valaxy'
@@ -82,8 +82,8 @@ export default defineValaxyConfig<ThemeUserConfig>({
 随着版本不断迭代，我们建议您更新 [valaxy](https://github.com/YunYouJun/valaxy) 和 [valaxy-theme-sakura](https://github.com/WRXinYue/valaxy-theme-sakura) 的版本，以确保主题和框架保持最新同步。未来或许会有更多有趣的功能等待您去发现
 
 ```bash
-pnpm add valaxy@latest
-pnpm add valaxy-theme-sakura@latest
+pnpm add valaxy@0.26
+pnpm add valaxy-theme-sakura@0.10
 ```
 
 ## 集成插件
