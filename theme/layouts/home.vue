@@ -10,10 +10,12 @@ const route = useRoute()
 const router = useRouter()
 const sakura = useSakuraAppStore()
 const siteConfig = useSiteConfig()
-const { $t } = useValaxyI18n()
+const { $t, $tCategory } = useValaxyI18n()
 const heading = computed(() => sakura.homeCategory === 'All'
   ? $t(siteConfig.value.title)
-  : `${sakura.homeCategory} · ${$t(siteConfig.value.title)}`)
+  : `${$tCategory(sakura.homeCategory === 'Uncategorized'
+    ? 'uncategorized'
+    : sakura.homeCategory)} · ${$t(siteConfig.value.title)}`)
 
 useSchemaOrg([
   defineWebPage({ '@type': 'CollectionPage' }),

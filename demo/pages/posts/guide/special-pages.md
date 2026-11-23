@@ -1,6 +1,7 @@
 ---
-title: Special Pages
-title_zh-CN: 特殊页面
+title:
+  en: Special Pages
+  zh-CN: 特殊页面
 toc: true
 categories:
   - guide

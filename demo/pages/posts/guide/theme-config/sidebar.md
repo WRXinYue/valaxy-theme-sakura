@@ -1,6 +1,7 @@
 ---
-title: Sidebar
-title_zh-CN: 侧边栏
+title:
+  en: Sidebar
+  zh-CN: 侧边栏
 toc: true
 categories:
   - theme-config

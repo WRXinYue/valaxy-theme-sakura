@@ -1,6 +1,7 @@
 ---
-title: Archives
-title_zh-CN: 归档
+title:
+  en: Archives
+  zh-CN: 归档
 toc: true
 categories:
   - theme-config

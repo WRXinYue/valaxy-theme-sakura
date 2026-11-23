@@ -1,6 +1,7 @@
 ---
-title: links page
-title_zh-CN: 友联页
+title:
+  en: links page
+  zh-CN: 友联页
 categories:
   - theme-config
 top: 500

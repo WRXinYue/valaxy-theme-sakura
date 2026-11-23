@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-import { useCategories } from 'valaxy'
+import { useCategories, useValaxyI18n } from 'valaxy'
 import { useI18n } from 'vue-i18n'
 import { homeCategoryLink } from '../composables'
 
 const categories = useCategories()
 const { t } = useI18n()
+const { $tCategory } = useValaxyI18n()
 </script>
 
 <template>
@@ -12,7 +13,7 @@ const { t } = useI18n()
     <ul class="sakura-sidebar-category-list px-2">
       <li v-for="category in categories.children.values()" :key="category.name" class="sidebar-category-item">
         <RouterLink class="sidebar-category-link" :to="homeCategoryLink(category.name)">
-          <span class="category-name">{{ category.name === 'Uncategorized' ? t('category.uncategorized') : category.name }}</span>
+          <span class="category-name">{{ category.name === 'Uncategorized' ? t('category.uncategorized') : $tCategory(category.name) }}</span>
           <span class="category-count">{{ category.total }}</span>
         </RouterLink>
       </li>

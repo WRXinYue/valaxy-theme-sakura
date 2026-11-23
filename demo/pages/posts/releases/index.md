@@ -1,6 +1,7 @@
 ---
-title: Releases
-title_zh-CN: 发布版本
+title:
+  en: Releases
+  zh-CN: 发布版本
 toc: true
 categories:
   - releases

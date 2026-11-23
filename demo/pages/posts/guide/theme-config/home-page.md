@@ -1,6 +1,7 @@
 ---
-title: home
-title_zh-CN: 主页
+title:
+  en: home
+  zh-CN: 主页
 toc: true
 categories:
   - theme-config
@@ -17,6 +18,10 @@ top: 900
 | 底部菜单、搜索和明暗切换等工具 | [导航配置](/posts/guide/theme-config/nav)中的 `themeConfig.navbar` 和 `themeConfig.navbarOptions` |
 | 文章卡片、响应式列数 | [文章列表配置](/posts/guide/theme-config/post-list)中的 `themeConfig.postList` |
 | 翻页和无限滚动 | [分页配置](/posts/guide/theme-config/pagination)中的 `themeConfig.pagination` |
+
+## 分类顺序
+
+在 `valaxy.config.ts` 的 `themeConfig.postList` 中设置 `categoryOrder: ['getting-started', 'theme-config']`，就能把「快速入门」和「主题配置」按顺序排在「全部」后面。数组使用 frontmatter 中的原始分类名，未列出的分类沿用原有顺序。
 
 ## Hero 部分
 

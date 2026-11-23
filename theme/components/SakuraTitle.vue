@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import type { PostFrontMatter } from 'valaxy'
+import { useValaxyI18n } from 'valaxy'
 
 defineProps<{
   fm: PostFrontMatter
 }>()
+
+const { $tO } = useValaxyI18n()
 </script>
 
 <template>
@@ -11,7 +14,7 @@ defineProps<{
     <slot name="icon">
       <div v-if="fm.icon" class="icon" m="r-1" inline-flex align-top :class="fm.icon" />
     </slot>
-    <span>{{ fm.title }}</span>
+    <span>{{ $tO(fm.title) }}</span>
   </div>
 </template>
 

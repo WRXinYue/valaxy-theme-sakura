@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import { isClient } from '@vueuse/core'
-import { useFuseSearch } from 'valaxy'
+import { useFuseSearch, useValaxyI18n } from 'valaxy'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const input = ref()
+const { $tO } = useValaxyI18n()
 
 const { results, fetchFuseListData } = useFuseSearch(input)
 const route = useRoute()
@@ -35,7 +36,7 @@ watch(() => route.query.q as string, (query) => {
             </header>
             <div v-if="results.length > 0" overflow="auto" flex="~" w="full">
               <div class="sakura-search-result post post-list" flex="~ col" w="full">
-                <div v-for="result in results" :key="result.item.title" class="post-entry" flex="~">
+                <div v-for="result in results" :key="result.item.link" class="post-entry" flex="~">
                   <AppLink :to="result.item.link">
                     <div class="feature">
                       <div class="flex-center overlay">
@@ -48,7 +49,7 @@ watch(() => route.query.q as string, (query) => {
                     <div flex="~" class="items-center justify-between">
                       <h3 class="sakura-search-result-title entry-title">
                         <AppLink :to="result.item.link">
-                          {{ result.item.title }}
+                          {{ $tO(result.item.title) }}
                         </AppLink>
                       </h3>
 

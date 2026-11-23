@@ -1,8 +1,15 @@
 <script setup lang="ts">
-defineProps<{
-  title: string
+import type { Post } from 'valaxy'
+import { useValaxyI18n } from 'valaxy'
+import { computed } from 'vue'
+
+const props = defineProps<{
+  title?: Post['title']
   to?: string
 }>()
+
+const { $tO } = useValaxyI18n()
+const title = computed(() => $tO(props.title))
 </script>
 
 <template>

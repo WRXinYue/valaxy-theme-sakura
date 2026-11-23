@@ -1,6 +1,7 @@
 ---
-title: frontmatter config
-title_zh-CN: frontmatter 配置
+title:
+  en: frontmatter config
+  zh-CN: frontmatter 配置
 toc: true
 categories:
   - getting-started

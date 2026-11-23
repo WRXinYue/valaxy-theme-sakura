@@ -1,6 +1,7 @@
 ---
-title: 404 page
-title_zh-CN: 404 页面
+title:
+  en: 404 page
+  zh-CN: 404 页面
 categories:
   - theme-config
 top: 0

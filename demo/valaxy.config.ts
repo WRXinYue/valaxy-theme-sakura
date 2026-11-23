@@ -80,6 +80,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
     postList: {
       text: 'Discovery',
+      categoryOrder: ['getting-started'],
 
       isImageReversed: true,
       // defaultImage: ['https://www.dmoe.cc/random.php?random', 'https://www.loliapi.com/acg/pc/?random'],
@@ -119,6 +120,10 @@ export default defineValaxyConfig<ThemeUserConfig>({
         link: '/',
       },
       {
+        locale: 'menu.quick_start',
+        link: '/posts/guide/getting-started/installation',
+      },
+      {
         locale: 'menu.tags',
         link: '/tags/',
       },
@@ -138,14 +143,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
       {
         text: '友情链接',
         link: '/links',
-      },
-      {
-        text: '指南',
-        link: '/posts/guide/getting-started/installation',
-      },
-      {
-        text: '示例',
-        link: '/posts/examples/config',
       },
       {
         text: '发行',

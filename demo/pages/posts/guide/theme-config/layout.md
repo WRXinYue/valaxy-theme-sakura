@@ -1,6 +1,7 @@
 ---
-title: Layout & Sidebar Widgets
-title_zh-CN: 布局与侧边栏挂件
+title:
+  en: Layout & Sidebar Widgets
+  zh-CN: 布局与侧边栏挂件
 toc: true
 categories:
   - theme-config

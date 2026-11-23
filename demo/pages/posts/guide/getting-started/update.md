@@ -1,6 +1,7 @@
 ---
-title: Update
-title_zh-CN: 更新
+title:
+  en: Update
+  zh-CN: 更新
 categories:
   - getting-started
 end: true

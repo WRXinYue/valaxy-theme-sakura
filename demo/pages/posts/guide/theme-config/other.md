@@ -1,6 +1,7 @@
 ---
-title: Other Configurations
-title_zh-CN: 其他配置
+title:
+  en: Other Configurations
+  zh-CN: 其他配置
 toc: true
 categories:
   - theme-config

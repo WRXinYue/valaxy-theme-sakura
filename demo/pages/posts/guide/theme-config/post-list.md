@@ -1,6 +1,7 @@
 ---
-title: PostList
-title_zh-CN: 文章列表
+title:
+  en: PostList
+  zh-CN: 文章列表
 toc: true
 categories:
   - theme-config

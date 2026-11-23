@@ -1,6 +1,7 @@
 ---
-title: Pagination
-title_zh-CN: 分页
+title:
+  en: Pagination
+  zh-CN: 分页
 toc: true
 categories:
   - theme-config

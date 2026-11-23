@@ -1,6 +1,7 @@
 ---
-title: Installation
-title_zh-CN: 安装
+title:
+  en: Installation
+  zh-CN: 安装
 categories:
   - getting-started
 end: true

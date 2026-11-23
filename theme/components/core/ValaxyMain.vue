@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 import type { PageData, Post } from 'valaxy'
 import { onContentUpdated, scrollTo, useSiteConfig } from 'valaxy'
-import { nextTick } from 'vue'
+import { nextTick, useTemplateRef } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useCodeGroupIndicator } from '../../composables/codeGroupIndicator'
 
 defineProps<{
   frontmatter: Post
@@ -12,6 +13,7 @@ defineProps<{
 const siteConfig = useSiteConfig()
 const route = useRoute()
 const router = useRouter()
+useCodeGroupIndicator(useTemplateRef('prose'))
 
 nextTick(() => {
   if (route.hash) {
@@ -74,7 +76,7 @@ onContentUpdated(() => {
     <slot name="main-content">
       <Transition appear>
         <ValaxyMd class="min-w-0" :frontmatter="frontmatter">
-          <div class="max-w-none prose">
+          <div ref="prose" class="max-w-none prose">
             <slot name="main-content-md" />
           </div>
           <slot />

@@ -1,6 +1,7 @@
 ---
-title: footer
-title_zh-CN: 页脚
+title:
+  en: footer
+  zh-CN: 页脚
 categories:
   - theme-config
 top: 500

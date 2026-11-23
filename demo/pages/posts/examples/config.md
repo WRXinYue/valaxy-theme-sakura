@@ -1,6 +1,7 @@
 ---
-title: Config examples
-title_zh-CN: 配置示例
+title:
+  en: Config examples
+  zh-CN: 配置示例
 toc: true
 categories:
   - examples

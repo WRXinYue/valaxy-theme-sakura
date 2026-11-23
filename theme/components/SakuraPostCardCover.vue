@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
 import type { CSSProperties } from 'vue'
+import { useValaxyI18n } from 'valaxy'
 import { computed } from 'vue'
 
 const props = defineProps<{
@@ -123,10 +124,9 @@ const shapes = computed(() => {
   })
 })
 
+const { $tO } = useValaxyI18n()
 const initial = computed(() => {
-  const title = typeof props.post.title === 'string'
-    ? props.post.title.trim()
-    : ''
+  const title = $tO(props.post.title).trim()
   return title
     ? Array.from(title)[0].toUpperCase()
     : ''

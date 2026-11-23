@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { usePostList } from 'valaxy'
+import { usePostList, useValaxyI18n } from 'valaxy'
 import { computed } from 'vue'
 
 const postList = usePostList()
+const { $tO } = useValaxyI18n()
 const posts = computed(() => {
   return [...postList.value]
     .sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())
@@ -15,7 +16,7 @@ const posts = computed(() => {
     <div class="px-2">
       <div v-for="post in posts" :key="post.path" class="sidebar-post-item" py-2>
         <RouterLink :to="post.path || ''" class="sidebar-post-link block truncate">
-          {{ post.title }}
+          {{ $tO(post.title) }}
         </RouterLink>
         <div class="sidebar-post-date mt-1 text-xs opacity-60">
           {{ new Date(post.date as string).toLocaleDateString() }}

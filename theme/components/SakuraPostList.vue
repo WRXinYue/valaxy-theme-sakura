@@ -3,7 +3,7 @@ import type { Post } from 'valaxy'
 import type { CSSProperties } from 'vue'
 import type { ResponsiveBreakpoints } from '../types'
 import { breakpointsTailwind, useBreakpoints, useEventListener, usePreferredReducedMotion, useStorage } from '@vueuse/core'
-import { useCategories } from 'valaxy'
+import { useCategories, useValaxyI18n } from 'valaxy'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { usePostList, useThemeConfig } from '../composables'
@@ -20,6 +20,7 @@ const props = defineProps<{
 const themeConfig = useThemeConfig()
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const { locale, t } = useI18n()
+const { $tCategory } = useValaxyI18n()
 
 const isImageReversed = computed(() => themeConfig.value.postList?.isImageReversed)
 
@@ -36,14 +37,25 @@ const allLabel = computed(() => locale.value.startsWith('zh')
   ? '全部'
   : 'All')
 
-const categoryTabs = computed(() => [
-  { name: 'All', total: categoryList.value.total },
-  ...[
-    ...categoryList.value.children.values(),
-  ]
+const categoryTabs = computed(() => {
+  const order = themeConfig.value.postList?.categoryOrder ?? []
+  const priority = new Map(order.map((name, index) => [name, index]))
+  const categories = Array.from(categoryList.value.children.values())
     .filter(category => category.total > 0)
-    .map(category => ({ name: category.name, total: category.total })),
-])
+    .sort((a, b) => (priority.get(a.name) ?? order.length) - (priority.get(b.name) ?? order.length))
+    .map(category => ({
+      name: category.name,
+      label: category.name === 'Uncategorized'
+        ? t('category.uncategorized')
+        : $tCategory(category.name),
+      total: category.total,
+    }))
+
+  return [
+    { name: 'All', label: allLabel.value, total: categoryList.value.total },
+    ...categories,
+  ]
+})
 
 const visiblePosts = computed(() => {
   if (!props.showCategories || displayedCategory.value === 'All')
@@ -288,7 +300,7 @@ onMounted(() => requestAnimationFrame(() => {
           :aria-selected="selectedCategory === category.name"
           @click="selectedCategory = category.name"
         >
-          <span class="sakura-post-category-name">{{ category.name === 'All' ? allLabel : category.name === 'Uncategorized' ? t('category.uncategorized') : category.name }}</span>
+          <span class="sakura-post-category-name">{{ category.label }}</span>
           <span class="sakura-post-category-count">{{ category.total }}</span>
         </button>
       </div>
@@ -340,7 +352,7 @@ onMounted(() => requestAnimationFrame(() => {
         <div
           v-for="(post, index) of visiblePosts"
           :id="`article-${index}`"
-          :key="post.path || post.title || index"
+          :key="post.path || index"
           class="article-list"
         >
           <div aria-hidden="true" class="post-morph-shell" />

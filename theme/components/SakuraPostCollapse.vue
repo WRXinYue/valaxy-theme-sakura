@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
-import { formatDate, sortByDate } from 'valaxy'
+import { formatDate, sortByDate, useValaxyI18n } from 'valaxy'
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -9,6 +9,7 @@ const props = defineProps<{
 }>()
 
 const { t } = useI18n()
+const { $tO } = useValaxyI18n()
 
 const years = ref<number[]>([])
 const postListByYear = ref<Record<string, Post[]>>({})
@@ -74,7 +75,7 @@ const sortedYears = computed(() => {
           </div>
           <h2 class="post-title" inline-flex items-center font="serif black">
             <RouterLink :to="post.path || ''" class="post-title-link">
-              {{ post.title }}
+              {{ $tO(post.title) }}
             </RouterLink>
           </h2>
         </header>

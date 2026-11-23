@@ -1,6 +1,7 @@
 ---
-title: Site config
-title_zh-CN: 站点配置
+title:
+  en: Site config
+  zh-CN: 站点配置
 toc: true
 categories:
   - getting-started

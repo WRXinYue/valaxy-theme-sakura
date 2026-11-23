@@ -1,6 +1,7 @@
 ---
-title: Nav
-title_zh-CN: 导航栏
+title:
+  en: Nav
+  zh-CN: 导航栏
 toc: true
 categories:
   - theme-config

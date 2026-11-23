@@ -14,6 +14,12 @@ export interface PostList {
   responsive?: Partial<ResponsiveBreakpoints>
 
   /**
+   * @zh 首页分类的显示顺序，使用原始分类名。未列出的分类排在后面。
+   * @en Order of homepage categories by their original keys. Unlisted categories follow.
+   */
+  categoryOrder?: string[]
+
+  /**
    * @zh 是否开启元数据截断（平均隐藏分类和标签）
    * @en Whether to enable metadata truncation (evenly hide categories and tags)
    * @default true

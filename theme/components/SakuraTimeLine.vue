@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
-import { formatDate, sortByDate } from 'valaxy'
+import { formatDate, sortByDate, useValaxyI18n } from 'valaxy'
 // 引入 reactive 以支持展开状态的响应式追踪
 import { computed, reactive, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -10,6 +10,7 @@ const props = defineProps<{
 }>()
 
 const { t } = useI18n()
+const { $tO } = useValaxyI18n()
 
 const isDesc = ref(true)
 const years = ref<number[]>([])
@@ -147,7 +148,7 @@ function handleMouseEnter(year: number, month: number) {
                   </time>
                   <h2 class="post-title" inline-flex items-center font="serif black">
                     <RouterLink :to="post.path || ''" class="post-title-link text-$sakura-color-text hover:text-$sakura-color-action">
-                      {{ post.title }}
+                      {{ $tO(post.title) }}
                     </RouterLink>
                   </h2>
                 </div>

@@ -1,5 +1,7 @@
 ---
-title: KaTeX
+title:
+  en: KaTeX
+  zh-CN: KaTeX 数学公式
 date: 2023-12-22 02:02:15
 updated: 2023-12-22 02:02:15
 toc: true

@@ -1,6 +1,7 @@
 ---
-title: Post Page
-title_zh-CN: 文章页
+title:
+  en: Post Page
+  zh-CN: 文章页
 toc: true
 categories:
   - theme-config

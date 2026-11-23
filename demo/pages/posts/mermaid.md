@@ -1,5 +1,7 @@
 ---
-title: Mermaid
+title:
+  en: Mermaid
+  zh-CN: Mermaid 图表
 categories: Test
 ---
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { SakuraImageCardProps } from './SakuraImageCard.vue'
-import { usePrevNext } from 'valaxy'
+import { usePrevNext, useValaxyI18n } from 'valaxy'
 import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
 
@@ -14,6 +14,7 @@ const props = withDefaults(defineProps<{
 
 const themeConfig = useThemeConfig()
 const [prev, next] = usePrevNext()
+const { $tO } = useValaxyI18n()
 
 const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationMerge || false)
 </script>
@@ -29,7 +30,7 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
           Previous Post
         </span>
         <RouterLink :to="prev.path" class="sakura-post-nav-title">
-          {{ prev.title }}
+          {{ $tO(prev.title) }}
         </RouterLink>
       </div>
     </SakuraImageCard>
@@ -42,7 +43,7 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
           Next Post
         </span>
         <RouterLink :to="next.path" class="sakura-post-nav-title" flex justify-end>
-          {{ next.title }}
+          {{ $tO(next.title) }}
         </RouterLink>
       </div>
     </SakuraImageCard>

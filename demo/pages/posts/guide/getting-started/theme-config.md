@@ -1,6 +1,7 @@
 ---
-title: Theme Config
-title_zh-CN: 主题配置
+title:
+  en: Theme Config
+  zh-CN: 主题配置
 toc: true
 categories:
   - getting-started

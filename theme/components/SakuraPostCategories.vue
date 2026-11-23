@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
+import { useValaxyI18n } from 'valaxy'
 import { computed } from 'vue'
 import { homeCategoryLink } from '../composables'
 
@@ -7,6 +8,7 @@ const props = defineProps<{
   categories: Post['categories']
 }>()
 
+const { $tCategory } = useValaxyI18n()
 const category = computed(() => Array.isArray(props.categories)
   ? props.categories[0]
   : props.categories)
@@ -16,7 +18,7 @@ const category = computed(() => Array.isArray(props.categories)
   <div v-if="category" class="sakura-post-categories">
     <RouterLink :to="homeCategoryLink(category)" class="inline-flex items-center align-top">
       <span class="sakura-icon mr-1 inline-block" i-mdi-folder-open-outline />
-      {{ category }}
+      {{ $tCategory(category) }}
     </RouterLink>
   </div>
 </template>
