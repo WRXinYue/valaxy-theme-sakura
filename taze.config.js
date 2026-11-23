@@ -8,10 +8,10 @@ export default defineConfig({
     '**/node_modules/**',
   ],
   packageMode: {
-    'typescript': 'major',
+    'typescript': 'minor',
     'unocss': 'ignore',
     'eslint': 'ignore',
-    'valaxy': 'latest',
+    'valaxy': 'patch',
     '/vue/': 'latest',
   },
   depFields: {
