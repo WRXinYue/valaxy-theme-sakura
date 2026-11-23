@@ -12,7 +12,7 @@ const props = defineProps<{
 }>()
 
 const themeConfig = useThemeConfig()
-const breakpoints = useBreakpoints(breakpointsTailwind)
+const breakpoints = useBreakpoints(breakpointsTailwind, { ssrWidth: 0 })
 
 const imageCard = computed(() => themeConfig.value.ui.postList?.image)
 

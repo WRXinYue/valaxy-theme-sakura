@@ -18,7 +18,7 @@ const props = defineProps<{
 }>()
 
 const themeConfig = useThemeConfig()
-const breakpoints = useBreakpoints(breakpointsTailwind)
+const breakpoints = useBreakpoints(breakpointsTailwind, { ssrWidth: 0 })
 const { locale, t } = useI18n()
 const { $tCategory } = useValaxyI18n()
 
@@ -70,14 +70,25 @@ const visiblePosts = computed(() => {
   })
 })
 
-const layoutMode = useStorage<'list' | 'grid'>('valaxy-sakura-post-list-layout', 'grid')
+const layoutMode = useStorage<'list' | 'grid'>('valaxy-sakura-post-list-layout', 'grid', undefined, { initOnMounted: true })
+
+const columnsByBreakpoint = computed(() => {
+  const md = responsive.value.md || responsive.value.sm || 1
+  const lg = responsive.value.lg || md
+  const xl = responsive.value.xl || lg
+  return {
+    md,
+    lg,
+    xl,
+    '2xl': responsive.value['2xl'] || xl,
+  }
+})
 
 const responsiveCols = computed(() => {
-  const keys: (keyof typeof breakpointsTailwind)[] = ['2xl', 'xl', 'lg', 'md', 'sm']
+  const keys = ['2xl', 'xl', 'lg', 'md'] as const
   for (const key of keys) {
-    if (breakpoints[key].value && responsive.value[key]) {
-      return responsive.value[key]
-    }
+    if (breakpoints[key].value)
+      return columnsByBreakpoint.value[key]
   }
   return 1
 })
@@ -103,7 +114,13 @@ const layoutOptions = [
 ]
 
 const gridStyle = computed<CSSProperties>(() => ({
-  'grid-template-columns': `repeat(${cols.value}, minmax(0, 1fr))`,
+  '--post-cols-fixed': props.column || (layoutMode.value === 'list'
+    ? 1
+    : undefined),
+  '--post-cols-md': columnsByBreakpoint.value.md,
+  '--post-cols-lg': columnsByBreakpoint.value.lg,
+  '--post-cols-xl': columnsByBreakpoint.value.xl,
+  '--post-cols-2xl': columnsByBreakpoint.value['2xl'],
 }))
 
 const reducedMotion = usePreferredReducedMotion()
@@ -368,6 +385,28 @@ onMounted(() => requestAnimationFrame(() => {
 </template>
 
 <style lang="scss" scoped>
+.post-list-container {
+  --post-cols-responsive: 1;
+
+  grid-template-columns: repeat(var(--post-cols-fixed, var(--post-cols-responsive)), minmax(0, 1fr));
+
+  @media (width >= 768px) {
+    --post-cols-responsive: var(--post-cols-md);
+  }
+
+  @media (width >= 1024px) {
+    --post-cols-responsive: var(--post-cols-lg);
+  }
+
+  @media (width >= 1280px) {
+    --post-cols-responsive: var(--post-cols-xl);
+  }
+
+  @media (width >= 1536px) {
+    --post-cols-responsive: var(--post-cols-2xl);
+  }
+}
+
 .post-list-move {
   transition: transform 220ms ease-out;
 }
