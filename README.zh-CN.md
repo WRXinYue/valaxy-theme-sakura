@@ -28,7 +28,7 @@
   <img width="2000" height="0" alt="" aria-hidden="true"><br>
   <span><b>简体中文 | <a href="./README.md">English</a></b></span><br>
   <sub>我们正在更新主题文档及示例，预计将在 `v0.7.0` 版本会发布到 <a href="https://valaxy.site/themes/gallery">Valaxy 主题橱窗</a></sub><br>
-  <sub><a href="https://sakura.wrxinyue.org/">在线 Demo</a>  | <a href="https://sakura.valaxy.site/">文档</a> | <a href="https://sakura.valaxy.site/examples/gallery">主题站点</a></sub><br>
+  <sub><a href="https://sakura.wrxinyue.org/">在线 Demo</a>  | <a href="https://sakura.wrxinyue.org/posts/guide/getting-started/installation">文档</a> | <a href="https://sakura.valaxy.site/examples/gallery">主题站点</a></sub><br>
   <img width="2000" height="0" alt="" aria-hidden="true">
 </td>
 </tr>
@@ -39,7 +39,7 @@
 ## 快速开始
 
 > [!TIP]
-> 如果您是第一次使用 Valaxy，建议先查看 Valaxy 的[安装文档](https://valaxy.site/guide/getting-started)了解安装过程。关于详细安装教程请参照 valaxy-theme-sakura 的 [安装文档](https://sakura.valaxy.site/guide/installation)
+> 如果您是第一次使用 Valaxy，建议先查看 Valaxy 的[安装文档](https://valaxy.site/guide/getting-started)了解安装过程。关于详细安装教程请参照 valaxy-theme-sakura 的 [安装文档](https://sakura.wrxinyue.org/posts/guide/getting-started/installation)
 
 ```bash
 pnpm add valaxy-theme-sakura

@@ -14,7 +14,7 @@ export default defineSiteConfig({
       message: 'In a hurry',
     },
   },
-  description: 'Valaxy Theme Sakura 主题演示博客，收录安装指南、主题配置、组件示例与版本更新。可按分类或标签浏览文章。',
+  description: 'Valaxy Theme Sakura 示例站点',
   social: [
     {
       name: 'RSS',

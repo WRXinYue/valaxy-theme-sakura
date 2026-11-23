@@ -165,58 +165,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
       showMarker: false,
       autoHide: ['home'],
     },
-    sidebar: [
-      {
-        text: '🌈',
-        locale: 'menu.home',
-        link: '/',
-      },
-      {
-        text: '🗂️',
-        locale: 'menu.archives',
-        link: '/archives/',
-      },
-      {
-        text: '🏷️',
-        locale: 'menu.tags',
-        link: '/tags/',
-      },
-      {
-        text: '🎯 清单',
-
-        items: [
-          {
-            text: '电影 🎞️',
-            link: '/movie',
-          },
-          {
-            text: '番剧 🍨',
-            link: '/anime',
-          },
-          {
-            text: '游戏 🎮',
-            link: '/game',
-          },
-          {
-            text: '歌单 🎵',
-            link: '/music',
-          },
-        ],
-      },
-      {
-        text: '📝 留言板',
-      },
-      {
-        text: '🍻 朋友圈',
-      },
-      {
-        text: '❤️ 打赏',
-      },
-      {
-        text: '📌',
-        locale: 'menu.about',
-      },
-    ],
     sidebarOptions: {
       position: 'left',
     },

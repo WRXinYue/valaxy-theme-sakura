@@ -74,13 +74,19 @@ watch(isInHero, async () => {
     opacity 0.3s ease;
 }
 
-.sakura-home-navbar.is-in-hero :deep(.navbar-brand) {
-  max-width: 0;
-  opacity: 0;
-  pointer-events: none;
+@media (width < 768px) {
+  .sakura-home-navbar.is-in-hero :deep(.sakura-navbar-brand) {
+    display: none;
+  }
 }
 
 @media (width >= 768px) {
+  .sakura-home-navbar.is-in-hero :deep(.navbar-brand) {
+    max-width: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
   .sakura-home-navbar.is-in-hero :deep(.navbar-content) {
     display: flex;
     justify-content: space-between;
