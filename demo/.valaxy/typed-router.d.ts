@@ -58,13 +58,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/categories/': RouteRecordInfo<
-      '/categories/',
-      '/categories',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
     '/comment/': RouteRecordInfo<
       '/comment/',
       '/comment',
@@ -245,12 +238,6 @@ declare module 'vue-router/auto-routes' {
     'pages/archives/index.md': {
       routes:
         | '/archives/'
-      views:
-        | never
-    }
-    'pages/categories/index.md': {
-      routes:
-        | '/categories/'
       views:
         | never
     }

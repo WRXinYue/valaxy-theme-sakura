@@ -1,12 +1,21 @@
 // import { defineAppSetup, useAppStore } from 'valaxy'
 import { defineAppSetup } from 'valaxy'
 // import { useSakuraAppStore } from '../stores'
-import { useThemeConfig } from '../composables'
+import { homeCategoryLink, useThemeConfig } from '../composables'
 import { vAnimateOnView } from '../core/directives'
 import { defineSakuraSetup } from './sakuraSetup'
 
 export default defineAppSetup(async (ctx) => {
   const { router, isClient, app } = ctx
+  if (!router.getRoutes().some(route => /^\/categories\/?$/.test(route.path))) {
+    router.addRoute({
+      path: '/categories',
+      redirect: ({ query }) => homeCategoryLink(typeof query.category === 'string'
+        ? query.category.split('/')[0]
+        : undefined),
+    })
+  }
+
   const { toScrollPosition } = await import('../core/utils/rolling')
   if (!isClient)
     return

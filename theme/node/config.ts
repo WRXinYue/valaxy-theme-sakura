@@ -20,9 +20,9 @@ export const defaultThemeConfig: ThemeUserConfig = {
       icon: 'i-fa6-solid:water',
 
       image: {
-        rotate: 5,
-        scale: 1.1,
-        transitionDuration: '0.45s',
+        scale: 1.035,
+        transitionDuration: '0.32s',
+        transitionTimingFunction: 'ease-out',
       },
     },
     pinnedPost: {

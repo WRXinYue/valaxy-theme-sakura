@@ -9,7 +9,7 @@ const frontmatter = useFrontmatter()
     <RouterView v-slot="{ Component }">
       <component :is="Component">
         <template #main-content>
-          <SakuraLinks :links="frontmatter.links" :random="frontmatter.random" :error-img="frontmatter.errorImg" />
+          <SakuraLinks class="sakura-browse-content sakura-safe-padding" :links="frontmatter.links" :random="frontmatter.random" :error-img="frontmatter.errorImg" />
         </template>
       </component>
     </RouterView>

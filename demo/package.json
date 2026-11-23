@@ -12,8 +12,11 @@
   "dependencies": {
     "@iconify-json/fa": "catalog:",
     "@iconify-json/line-md": "catalog:",
+    "@iconify-json/qlementine-icons": "catalog:",
     "@iconify-json/solar": "catalog:",
     "driver.js": "catalog:",
+    "markdown-it": "catalog:",
+    "monaco-editor": "catalog:",
     "valaxy-addon-algolia": "catalog:",
     "valaxy-addon-bangumi": "catalog:",
     "valaxy-addon-twikoo": "catalog:",
@@ -21,6 +24,7 @@
     "valaxy-theme-sakura": "workspace:*"
   },
   "devDependencies": {
+    "@types/markdown-it": "catalog:",
     "valaxy": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:"

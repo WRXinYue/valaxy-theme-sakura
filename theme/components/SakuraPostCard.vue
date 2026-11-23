@@ -3,7 +3,6 @@ import type { Post } from 'valaxy'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { computed } from 'vue'
 import { useThemeConfig } from '../composables'
-import { resolveImage } from '../core/utils'
 
 const props = defineProps<{
   post: Post
@@ -14,8 +13,6 @@ const props = defineProps<{
 const themeConfig = useThemeConfig()
 const breakpoints = useBreakpoints(breakpointsTailwind)
 
-const defaultImage = computed(() => themeConfig.value.postList && resolveImage(themeConfig.value.postList?.defaultImage))
-const cover = computed(() => props.post.cover || defaultImage.value)
 const imageCard = computed(() => themeConfig.value.ui.postList?.image)
 
 const isGroup = computed(() => props.cols > 1)
@@ -24,17 +21,15 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
 
 <template>
   <article
-    hover="scale-101 z-10" class="sakura-card sakura-post-card"
+    class="sakura-card sakura-post-card"
     :class="[position, { 'is-col': isCol }, { group: isGroup }]"
   >
     <SakuraImageCard
       class="post-card-image aspect-video"
       :to="post.path"
-      :src="cover"
+      :post
       v-bind="imageCard"
-    >
-      <SakuraPostCardCover v-if="!cover" :post />
-    </SakuraImageCard>
+    />
 
     <div flex="~ col" class="post-card-content has-cover">
       <slot>
@@ -62,7 +57,7 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease,
-    transform 0.3s ease;
+    box-shadow 220ms ease-out;
 
   .post-card-content {
     padding: 20px 39px;
@@ -70,9 +65,12 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
 
   @at-root html.dark & {
     border-color: var(--sakura-color-divider);
+  }
 
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
-      border-color: var(--sakura-color-primary);
+      border-color: color-mix(in srgb, var(--sakura-color-primary) 28%, transparent);
+      box-shadow: 0 4px 12px oklch(0% 0 0 / 14%);
     }
   }
 

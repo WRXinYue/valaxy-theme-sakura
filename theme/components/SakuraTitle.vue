@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="sakura-title" flex="~ items-center" :class="!fm.cover && 'sakura-braced-text flex-center'">
+  <div class="sakura-title" flex="~ items-center">
     <slot name="icon">
       <div v-if="fm.icon" class="icon" m="r-1" inline-flex align-top :class="fm.icon" />
     </slot>
@@ -21,19 +21,11 @@ defineProps<{
 .sakura-title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--sakura-color-text-deep);
+  color: inherit;
+  text-shadow: 2px 2px 10px black;
 
   @include screen('sm') {
     font-size: 2.3rem;
-  }
-}
-</style>
-
-<style lang="scss">
-.has-cover {
-  .sakura-title {
-    color: inherit;
-    text-shadow: 2px 2px 10px black;
   }
 }
 </style>

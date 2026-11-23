@@ -2,6 +2,7 @@
 title: 草稿测试
 draft: true
 date: 2022-04-08
+categories: Test
 tags:
   - draft
 ---

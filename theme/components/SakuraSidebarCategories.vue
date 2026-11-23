@@ -1,28 +1,20 @@
 <script lang="ts" setup>
 import { useCategories } from 'valaxy'
 import { useI18n } from 'vue-i18n'
-import { useRouter } from 'vue-router'
+import { homeCategoryLink } from '../composables'
 
 const categories = useCategories()
 const { t } = useI18n()
-const router = useRouter()
-
-function jumpToCategory(categoryName: string) {
-  router.push({
-    path: '/categories/',
-    query: { category: categoryName },
-  })
-}
 </script>
 
 <template>
   <SakuraSidebarCard class="sakura-sidebar-categories" icon="i-ri-folder-2-line" :title="t('menu.categories')">
     <ul class="sakura-sidebar-category-list px-2">
       <li v-for="category in categories.children.values()" :key="category.name" class="sidebar-category-item">
-        <a class="sidebar-category-link" @click="jumpToCategory(category.name)">
+        <RouterLink class="sidebar-category-link" :to="homeCategoryLink(category.name)">
           <span class="category-name">{{ category.name === 'Uncategorized' ? t('category.uncategorized') : category.name }}</span>
           <span class="category-count">{{ category.total }}</span>
-        </a>
+        </RouterLink>
       </li>
     </ul>
   </SakuraSidebarCard>

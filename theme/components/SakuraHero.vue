@@ -542,7 +542,9 @@ onBeforeUnmount(() => {
       </div>
     </div>
 
-    <SakuraHeroCarousel :class="{ 'is-intro-hidden': appStore.introTransitioning }" />
+    <div class="sakura-hero-carousel-viewport">
+      <SakuraHeroCarousel />
+    </div>
 
     <nav
       v-if="heroSideNavItems.length"
@@ -634,6 +636,13 @@ onBeforeUnmount(() => {
   .sakura-glitch-text {
     font-family: Ubuntu, sans-serif;
   }
+}
+
+.sakura-hero-carousel-viewport {
+  position: absolute;
+  inset: 0;
+  overflow-x: clip;
+  pointer-events: none;
 }
 
 .sakura-hero-bottom-area {
@@ -1185,15 +1194,5 @@ onBeforeUnmount(() => {
     transform: translateY(24px);
     pointer-events: none;
   }
-
-  .sakura-hero-carousel {
-    opacity: 0;
-    transform: translateY(24px);
-    pointer-events: none;
-  }
-}
-
-.sakura-hero-carousel.is-intro-hidden {
-  opacity: 0;
 }
 </style>

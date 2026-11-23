@@ -1,5 +1,6 @@
 ---
 title: Mermaid
+categories: Test
 ---
 
 - [Mermaid](https://mermaid.js.org/) - Diagramming and charting tool

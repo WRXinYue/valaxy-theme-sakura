@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import type { Post } from 'valaxy'
+import { computed, ref, watch } from 'vue'
 import { ProgressiveImage } from 'vue-progressive-image'
 import { useThemeConfig } from '../composables'
 import { resolveImage } from '../core/utils'
 
 const props = withDefaults(defineProps<{
+  post?: Post
   [key: string]: any
 } & Partial<SakuraImageCardProps>>(), {
   scale: 1.2,
@@ -82,13 +84,17 @@ function onImgError(e: Event) {
 }
 
 const src = computed(() => {
-  const img = props.src
-    ? resolveImage(props.src)
+  const source = props.src || (props.post && (props.post.cover || themeConfig.value.postList?.defaultImage))
+  const img = source
+    ? resolveImage(source)
     : ''
 
   return img && img.includes('?random')
     ? img.replace('?random', `?random=${Math.random()}`)
     : img
+})
+watch(src, () => {
+  showNotFondIcon.value = false
 })
 </script>
 
@@ -101,7 +107,8 @@ const src = computed(() => {
           :src :alt="props.alt || 'cover'" :style="imageStyle" @error="onImgError"
         />
       </ClientOnly>
-      <div v-show="showNotFondIcon || !src" class="h-full w-full bg-$sakura-color-background opacity-70" :style="imageStyle" flex="~ center">
+      <SakuraPostCardCover v-if="post && (showNotFondIcon || !src)" :post />
+      <div v-else-if="showNotFondIcon || !src" class="h-full w-full bg-$sakura-color-background opacity-70" :style="imageStyle" flex="~ center">
         <div i-fa6-solid-image w="30%" h="30%" />
       </div>
       <template v-if="overlay">

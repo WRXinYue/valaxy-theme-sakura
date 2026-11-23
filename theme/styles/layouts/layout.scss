@@ -41,3 +41,16 @@ a {
     --sakura-page-gutter: 40px;
   }
 }
+
+.sakura-content-width,
+.sakura-browse-content {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1120px;
+  min-width: 0;
+  margin-inline: auto;
+}
+
+.sakura-browse-content {
+  padding-block: clamp(1.25rem, 3vw, 2.5rem);
+}

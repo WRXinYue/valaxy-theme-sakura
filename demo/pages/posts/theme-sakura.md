@@ -1,5 +1,6 @@
 ---
 title: valaxy-theme-sakura
+categories: Test
 tags: [sakura]
 date: 2024-12-31
 codeHeightLimit: 600

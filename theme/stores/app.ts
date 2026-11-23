@@ -14,6 +14,7 @@ export const useSakuraAppStore = defineStore('sakura-app', () => {
   const sidebar = useSidebar()
   const search = useSearch()
   const heroFrameHit = useHeroFrameHit()
+  const homeCategory = ref('All')
   const introEnded = ref(false)
   const introTransitioning = ref(false)
 
@@ -24,6 +25,7 @@ export const useSakuraAppStore = defineStore('sakura-app', () => {
     ...sidebar,
     ...search,
     ...heroFrameHit,
+    homeCategory,
     introEnded,
     introTransitioning,
   }

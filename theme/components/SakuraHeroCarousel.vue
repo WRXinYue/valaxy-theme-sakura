@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import type { Options } from 'motion-v'
+import type { CardTilt } from '../core/utils/cardTilt'
 import { motion } from 'motion-v'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useNavigate, useThemeConfig } from '../composables'
+import { getCardTilt } from '../core/utils/cardTilt'
 import { useSakuraAppStore } from '../stores'
 
 const STACK_VISIBLE = 3
@@ -33,7 +35,6 @@ const visibleStack = computed(() => Math.min(entries.value.length, STACK_VISIBLE
 const riftStart = { opacity: 0, y: 8 }
 const riftRest = { opacity: 1, y: 0 }
 const riftAnimate = computed(() => sakura.introTransitioning ? riftStart : riftRest)
-
 const riftTransition = computed<Options['transition']>(() => isEntering.value && !sakura.introTransitioning
   ? {
       duration: RIFT_DURATION / 1000,
@@ -41,6 +42,12 @@ const riftTransition = computed<Options['transition']>(() => isEntering.value &&
       ease: [0.32, 0, 0.22, 1],
     }
   : { duration: 0 })
+
+const PLAYBACK_SLIDE = 460
+const PLAYBACK_FOLD = 420
+const PLAYBACK_STAGGER = 70
+const isPlaybackOpening = ref(false)
+const playbackLocked = computed(() => sakura.wallpaperIsPlaying || isPlaybackOpening.value)
 
 let timer: ReturnType<typeof setInterval> | undefined
 let expandTimer: ReturnType<typeof setTimeout> | undefined
@@ -61,7 +68,7 @@ function stopTimer() {
 
 function startTimer() {
   stopTimer()
-  if (entries.value.length <= 1 || isHovered.value || isEntering.value || isUnfurling.value)
+  if (playbackLocked.value || entries.value.length <= 1 || isHovered.value || isEntering.value || isUnfurling.value)
     return
   timer = setInterval(nextSlide, 4200)
 }
@@ -121,13 +128,6 @@ function isLeaving(index: number) {
   return isDealing.value && index === leavingIndex.value
 }
 
-interface CardTilt {
-  rx: number
-  ry: number
-  sx: number
-  sy: number
-}
-
 /*
  * 直接写 DOM style，不走 Vue 响应式：鼠标移动每帧都 setState 会触发布局与重渲染，
  * 再加上较长的 transition，就会有一卡一卡的感觉。
@@ -156,17 +156,10 @@ function onSlideMove(event: MouseEvent, index: number) {
   const el = event.currentTarget as HTMLElement | null
   if (!el)
     return
-  const rect = el.getBoundingClientRect()
-  if (!rect.width || !rect.height)
+  const tilt = getCardTilt(el, event)
+  if (!tilt)
     return
-  const px = (event.clientX - rect.left) / rect.width
-  const py = (event.clientY - rect.top) / rect.height
-  tiltTargets.set(index, {
-    rx: (0.5 - py) * 9,
-    ry: (px - 0.5) * 11,
-    sx: px * 100,
-    sy: py * 100,
-  })
+  tiltTargets.set(index, tilt)
   if (tiltFrames.has(index))
     return
   tiltFrames.set(index, requestAnimationFrame(() => {
@@ -215,6 +208,8 @@ function stackStyle(index: number) {
 }
 
 function onEnter() {
+  if (playbackLocked.value)
+    return
   isHovered.value = true
   stopTimer()
   clearTimeout(collapseTimer)
@@ -230,6 +225,8 @@ function onEnter() {
 }
 
 function onLeave() {
+  if (playbackLocked.value)
+    return
   isHovered.value = false
   clearTimeout(expandTimer)
   clearTimeout(collapseTimer)
@@ -270,6 +267,31 @@ watch(() => sakura.introTransitioning, (transitioning) => {
   }, RIFT_DELAY + RIFT_DURATION)
 }, { immediate: true })
 
+watch(() => sakura.wallpaperIsPlaying, (playing, _, onCleanup) => {
+  isPlaybackOpening.value = !playing
+  if (playing) {
+    stopTimer()
+    clearTimeout(expandTimer)
+    clearTimeout(collapseTimer)
+    clearTimeout(dealTimer)
+    clearTimeout(boostTimer)
+    isHovered.value = false
+    isExpanded.value = false
+    isDealing.value = false
+    boostIndex.value = -1
+    resetAllTilts()
+    return
+  }
+
+  const layers = Math.max(0, visibleStack.value - 1)
+  const duration = Math.max(PLAYBACK_SLIDE, PLAYBACK_FOLD + Math.max(0, layers - 1) * PLAYBACK_STAGGER)
+  const openingTimer = setTimeout(() => {
+    isPlaybackOpening.value = false
+    startTimer()
+  }, duration)
+  onCleanup(() => clearTimeout(openingTimer))
+})
+
 onMounted(startTimer)
 
 onBeforeUnmount(() => {
@@ -285,67 +307,76 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <motion.div
+  <div
     v-if="entries.length"
     class="sakura-hero-carousel"
+    :inert="playbackLocked"
     :class="{
+      'is-playback-hidden': sakura.wallpaperIsPlaying,
+      'is-playback-opening': isPlaybackOpening,
       'is-expanded': isExpanded,
       'is-dealing': isDealing,
       'is-concealed': isConcealed,
-      'is-unfurling': isUnfurling,
+      'is-unfurling': isUnfurling && !playbackLocked,
     }"
-    :style="{ '--sakura-carousel-count': entries.length, '--sakura-carousel-visible': visibleStack }"
-    :initial="false"
-    :animate="riftAnimate"
-    :transition="riftTransition"
+    :style="{
+      '--sakura-carousel-count': entries.length,
+      '--sakura-carousel-visible': visibleStack,
+      '--playback-slide': `${PLAYBACK_SLIDE}ms`,
+      '--playback-fold': `${PLAYBACK_FOLD}ms`,
+      '--playback-stagger': `${PLAYBACK_STAGGER}ms`,
+    }"
     @mouseenter="onEnter"
     @mouseleave="onLeave"
   >
-    <a
-      v-for="(entry, i) in entries"
-      :key="i"
-      class="sakura-hero-carousel-slide"
-      :class="{ 'is-active': i === activeIndex, 'is-leaving': isLeaving(i) }"
-      :style="stackStyle(i)"
-      :data-depth="Math.min(depthOf(i), STACK_VISIBLE - 1)"
-      :href="entry.link"
-      :aria-hidden="!isExpanded && i !== activeIndex"
-      :tabindex="isExpanded || i === activeIndex ? 0 : -1"
-      @click.prevent="navigate.to(entry.link || '')"
-      @mousemove="onSlideMove($event, i)"
-      @mouseleave="onSlideLeave($event, i)"
-    >
-      <span class="sakura-hero-carousel-surface">
-        <img class="sakura-hero-carousel-img" :src="entry.img" :alt="entry.title" loading="lazy">
-        <span class="sakura-hero-carousel-shade" aria-hidden="true" />
-        <span class="sakura-hero-carousel-text">
-          <span class="sakura-hero-carousel-title">{{ entry.title }}</span>
-          <span v-if="entry.desc" class="sakura-hero-carousel-desc">{{ entry.desc }}</span>
-        </span>
-        <span class="sakura-hero-carousel-arrow" aria-hidden="true" />
-        <span class="sakura-hero-carousel-shine" aria-hidden="true" />
-      </span>
-    </a>
-
-    <div v-if="entries.length > 1" class="sakura-hero-carousel-dots">
-      <button
+    <motion.div class="sakura-hero-carousel-stack" :initial="false" :animate="riftAnimate" :transition="riftTransition">
+      <a
         v-for="(entry, i) in entries"
         :key="i"
-        class="sakura-hero-carousel-dot"
-        :class="{ 'is-active': i === activeIndex }"
-        type="button"
-        :aria-label="entry.title"
-        @mouseenter="selectSlide(i)"
-        @click.stop="selectSlide(i)"
-      />
-    </div>
-  </motion.div>
+        class="sakura-hero-carousel-slide"
+        :class="{ 'is-active': i === activeIndex, 'is-leaving': isLeaving(i) }"
+        :style="stackStyle(i)"
+        :data-depth="Math.min(depthOf(i), STACK_VISIBLE - 1)"
+        :href="entry.link"
+        :aria-hidden="!isExpanded && i !== activeIndex"
+        :tabindex="isExpanded || i === activeIndex ? 0 : -1"
+        @click.prevent="navigate.to(entry.link || '')"
+        @mousemove="onSlideMove($event, i)"
+        @mouseleave="onSlideLeave($event, i)"
+      >
+        <span class="sakura-hero-carousel-surface">
+          <img class="sakura-hero-carousel-img" :src="entry.img" :alt="entry.title" loading="lazy">
+          <span class="sakura-hero-carousel-shade" aria-hidden="true" />
+          <span class="sakura-hero-carousel-text">
+            <span class="sakura-hero-carousel-title">{{ entry.title }}</span>
+            <span v-if="entry.desc" class="sakura-hero-carousel-desc">{{ entry.desc }}</span>
+          </span>
+          <span class="sakura-hero-carousel-arrow" aria-hidden="true" />
+          <span class="sakura-hero-carousel-shine" aria-hidden="true" />
+        </span>
+      </a>
+
+      <div v-if="entries.length > 1" class="sakura-hero-carousel-dots">
+        <button
+          v-for="(entry, i) in entries"
+          :key="i"
+          class="sakura-hero-carousel-dot"
+          :class="{ 'is-active': i === activeIndex }"
+          type="button"
+          :aria-label="entry.title"
+          @mouseenter="selectSlide(i)"
+          @click.stop="selectSlide(i)"
+        />
+      </div>
+    </motion.div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .sakura-hero-carousel {
   --sakura-carousel-w: clamp(200px, 19vw, 272px);
   --sakura-carousel-card-h: calc(var(--sakura-carousel-w) * 9 / 16);
+  --sakura-carousel-inset: clamp(18px, 2vw, 26px);
   --sakura-carousel-gap: 8px;
   --sakura-carousel-row-h: calc(var(--sakura-carousel-card-h) + var(--sakura-carousel-gap));
   --sakura-carousel-peek: 8px;
@@ -353,16 +384,24 @@ onBeforeUnmount(() => {
   --sakura-carousel-fan-rotate: 1.6deg;
 
   position: absolute;
-  right: clamp(18px, 2vw, 26px);
+  right: var(--sakura-carousel-inset);
   bottom: calc(var(--sakura-navbar-height, 64px) + 20px);
 
-  /* 高于右侧导航（12）和 hero 边框（10），展开时卡片不被压住 */
-  z-index: 14;
+  /* 滑入和滑出时，卡片从 Hero 外边框（10）下方经过。 */
+  z-index: 9;
   width: var(--sakura-carousel-w);
   height: calc(var(--sakura-carousel-card-h) + (var(--sakura-carousel-visible, 1) - 1) * var(--sakura-carousel-peek));
   border-radius: 16px;
+  pointer-events: auto;
   transform-origin: left center;
-  transition: height 0.6s cubic-bezier(0.22, 1, 0.3, 1);
+  transition:
+    height 0.6s cubic-bezier(0.22, 1, 0.3, 1),
+    transform var(--playback-slide) cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.is-playback-hidden {
+    transform: translateX(calc(100% + var(--sakura-carousel-inset) + 40px));
+    transition-timing-function: ease, cubic-bezier(0.55, 0, 0.85, 0.45);
+  }
 
   &.is-expanded {
     height: calc(var(--sakura-carousel-count) * var(--sakura-carousel-row-h) - var(--sakura-carousel-gap));
@@ -371,6 +410,11 @@ onBeforeUnmount(() => {
   @media (width <= 768px) {
     display: none;
   }
+}
+
+.sakura-hero-carousel-stack {
+  position: absolute;
+  inset: 0;
 }
 
 .sakura-hero-carousel-slide {
@@ -403,6 +447,16 @@ onBeforeUnmount(() => {
   --sakura-carousel-delay: calc((var(--sakura-carousel-count, 1) - 1 - var(--sakura-carousel-row, 0)) * 165ms);
 
   transform: translateY(calc(var(--sakura-carousel-row, 0) * var(--sakura-carousel-row-h) * -1)) rotate(0deg) scale(1);
+}
+
+.sakura-hero-carousel.is-playback-hidden .sakura-hero-carousel-slide {
+  transform: none;
+  transition: transform var(--playback-fold) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sakura-hero-carousel.is-playback-opening .sakura-hero-carousel-slide {
+  transition: transform var(--playback-fold) cubic-bezier(0.22, 1, 0.36, 1)
+    max(0ms, calc((var(--sakura-carousel-depth) - 1) * var(--playback-stagger)));
 }
 
 /* 入场时先只露出顶卡，其余卡片等顶卡落位后再展开 */

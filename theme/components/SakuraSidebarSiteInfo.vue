@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useCategories, useSiteStore, useTags } from 'valaxy'
 import { computed } from 'vue'
+import { homeCategoryLink } from '../composables'
 
 const site = useSiteStore()
 const categories = useCategories()
@@ -24,7 +25,7 @@ const tagCount = computed(() => Array.from(tags.value).length)
         <span class="content-text">标签</span><br>
         <span class="content-number">{{ tagCount }}</span>
       </RouterLink>
-      <RouterLink to="/categories" class="category">
+      <RouterLink :to="homeCategoryLink()" class="category">
         <span class="content-text">分类</span><br>
         <span class="content-number">{{ categoryCount }}</span>
       </RouterLink>

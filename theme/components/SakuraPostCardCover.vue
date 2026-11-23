@@ -177,10 +177,6 @@ const initial = computed(() => {
   animation-play-state: paused;
 }
 
-.sakura-post-cover:hover .sakura-post-cover-shape {
-  animation-play-state: running;
-}
-
 @keyframes sakura-cover-float {
   0%,
   100% {
@@ -212,12 +208,18 @@ const initial = computed(() => {
   letter-spacing: -0.04em;
   user-select: none;
   transition:
-    transform 0.7s cubic-bezier(0.55, 0, 0.1, 1),
-    color 0.7s ease;
+    transform 320ms ease-out,
+    color 320ms ease-out;
 }
 
-.sakura-post-cover:hover .sakura-post-cover-initial {
-  transform: translate(-4%, -6%) scale(1.06);
-  color: oklch(22% 0.03 var(--sakura-cover-hue) / 22%);
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .sakura-post-cover:hover .sakura-post-cover-shape {
+    animation-play-state: running;
+  }
+
+  .sakura-post-cover:hover .sakura-post-cover-initial {
+    transform: translateY(-2%);
+    color: oklch(22% 0.03 var(--sakura-cover-hue) / 20%);
+  }
 }
 </style>

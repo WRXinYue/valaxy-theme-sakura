@@ -119,8 +119,8 @@ export default defineValaxyConfig<ThemeUserConfig>({
         link: '/',
       },
       {
-        locale: 'menu.categories',
-        link: '/categories',
+        locale: 'menu.tags',
+        link: '/tags/',
       },
       {
         locale: 'menu.archives',
@@ -138,6 +138,18 @@ export default defineValaxyConfig<ThemeUserConfig>({
       {
         text: '友情链接',
         link: '/links',
+      },
+      {
+        text: '指南',
+        link: '/posts/guide/getting-started/installation',
+      },
+      {
+        text: '示例',
+        link: '/posts/examples/config',
+      },
+      {
+        text: '发行',
+        link: '/posts/releases',
       },
       {
         text: '关于',
@@ -161,11 +173,6 @@ export default defineValaxyConfig<ThemeUserConfig>({
         text: '🗂️',
         locale: 'menu.archives',
         link: '/archives/',
-      },
-      {
-        text: '📂',
-        locale: 'menu.categories',
-        link: '/categories/',
       },
       {
         text: '🏷️',

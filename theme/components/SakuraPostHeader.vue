@@ -13,17 +13,3 @@ defineProps<{
     <SakuraPostHeaderMeta :fm />
   </SakuraPageHeader>
 </template>
-
-<style lang="scss">
-// @use 'valaxy-theme-sakura/styles/animation/slide/slide.scss' as *;
-
-.sakura-post-header {
-  // @media (prefers-reduced-motion: no-preference) {
-  //   @include slide-down;
-  // }
-
-  .has-cover {
-    height: 400px;
-  }
-}
-</style>

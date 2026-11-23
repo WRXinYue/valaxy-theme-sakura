@@ -1,33 +1,22 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
 import { computed } from 'vue'
+import { homeCategoryLink } from '../composables'
 
 const props = defineProps<{
   categories: Post['categories']
 }>()
 
-const convertedCategories = computed(() => {
-  if (typeof props.categories === 'string')
-    return [props.categories]
-
-  return props.categories
-})
-
-const categoriesString = computed(() => {
-  return convertedCategories.value?.join(' / ') || ''
-})
+const category = computed(() => Array.isArray(props.categories)
+  ? props.categories[0]
+  : props.categories)
 </script>
 
 <template>
-  <div class="sakura-post-categories" :title="categoriesString">
-    <RouterLink
-      v-for="(category, index) in convertedCategories"
-      :key="index"
-      :to="{ path: '/categories/', query: { category: Array.isArray(categories) ? categories.join('/') : categories } }"
-      class="inline-flex items-center align-top"
-    >
-      <span v-if="index === 0" class="sakura-icon mr-1 inline-block" i-mdi-folder-open-outline />
-      <span v-if="index > 0" class="mx-1">/</span> {{ category }}
+  <div v-if="category" class="sakura-post-categories">
+    <RouterLink :to="homeCategoryLink(category)" class="inline-flex items-center align-top">
+      <span class="sakura-icon mr-1 inline-block" i-mdi-folder-open-outline />
+      {{ category }}
     </RouterLink>
   </div>
 </template>

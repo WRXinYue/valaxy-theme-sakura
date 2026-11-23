@@ -50,7 +50,7 @@ import { useSakuraAppStore } from '../stores'
 
 export function usePostList(params: {
   type?: string
-} = {}) {
+} = {}, showAll: () => boolean | undefined = () => false) {
   const siteConfig = useSiteConfig()
   const themeConfig = useThemeConfig()
   const sakura = useSakuraAppStore()
@@ -60,10 +60,12 @@ export function usePostList(params: {
   const curPage = computed(() => sakura.curPage || 1)
 
   const displayedPosts = computed(() =>
-    posts.value.slice(
-      (curPage.value - 1) * pageSize.value,
-      curPage.value * pageSize.value * sakura.loadMultiple,
-    ),
+    showAll()
+      ? posts.value
+      : posts.value.slice(
+          (curPage.value - 1) * pageSize.value,
+          curPage.value * pageSize.value * sakura.loadMultiple,
+        ),
   )
 
   const postsWithLimitedTags = computed(() => {

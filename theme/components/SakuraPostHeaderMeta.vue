@@ -16,7 +16,7 @@ const siteConfig = useSiteConfig()
 </script>
 
 <template>
-  <div class="sakura-post-header-meta" flex="~ wrap gap-x-4" py="1" :class="{ 'text-$sakura-color-text': !fm.cover }">
+  <div class="sakura-post-header-meta" flex="~ wrap gap-x-4" py="1">
     <!-- TODO: 支持多作者 -->
     <!-- <span class="inline-flex-center">
         <SakuraImageCard to="/about" class="mr-3px h-30px w-30px rounded-full" :src="siteConfig.author.avatar" alt="author image" />

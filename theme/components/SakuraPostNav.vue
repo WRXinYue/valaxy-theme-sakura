@@ -21,7 +21,7 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
 <template>
   <div class="sakura-post-nav" :class="{ 'is-merged': navigationMerge }">
     <SakuraImageCard
-      v-if="prev?.path" v-bind="{ ...props, src: prev.cover, to: prev.path }"
+      v-if="prev?.path" v-bind="{ ...props, post: prev, src: prev.cover, to: prev.path }"
       class="card-prev" :class="{ 'mt-10': !navigationMerge }"
     >
       <div class="sakura-post-nav-content">
@@ -34,7 +34,7 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
       </div>
     </SakuraImageCard>
     <SakuraImageCard
-      v-if="next?.path" v-bind="{ ...props, src: next.cover, to: next.path }"
+      v-if="next?.path" v-bind="{ ...props, post: next, src: next.cover, to: next.path }"
       class="card-next"
     >
       <div class="sakura-post-nav-content">

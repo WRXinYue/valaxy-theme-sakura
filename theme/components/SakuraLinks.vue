@@ -21,14 +21,14 @@ const imageCard = computed(() => themeConfig.value.ui.links?.image)
 <template>
   <div class="links">
     <ul class="link-items">
-      <li v-for="link, i in data" :key="i" class="link-item" :style="`--primary-color: ${link.color}`">
-        <a class="link-url" p="x-4 y-2" :href="link.url" :title="link.name" alt="portrait" rel="friend" target="_blank">
+      <li v-for="link in data" :key="link.url || link.rss" class="link-item" :style="{ '--link-accent': link.color }">
+        <a class="link-url" :href="link.url" :title="link.name" rel="friend noopener" target="_blank">
           <div class="link-left">
             <SakuraImageCard v-bind="imageCard" class="link-avatar" width="64" height="64" w="16" h="16" :src="link.avatar" :alt="link.name" :error-img="errorImg" />
           </div>
-          <div class="link-info" m="l-2">
-            <div class="link-blog" font="serif black">{{ link.blog }}</div>
-            <div class="link-desc">{{ link.desc }}</div>
+          <div class="link-info">
+            <div class="link-blog">{{ link.blog || link.name }}</div>
+            <div v-if="link.desc" class="link-desc">{{ link.desc }}</div>
           </div>
         </a>
       </li>
@@ -36,72 +36,50 @@ const imageCard = computed(() => themeConfig.value.ui.links?.image)
   </div>
 </template>
 
-<style lang="scss" scoped>
-.link-item {
-  display: inline-flex;
+<style scoped>
+.link-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.links {
-  .link-items {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-left: 0;
-  }
+.link-url {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid var(--sakura-color-divider);
+  border-radius: var(--sakura-post-card-rd);
+  background: var(--sakura-card-bg);
+  color: var(--sakura-color-text);
+  transition: border-color 0.2s;
+}
 
-  .link-url {
-    --smc-link-color: var(--primary-color);
+.link-url:hover,
+.link-url:focus-visible {
+  border-color: var(--link-accent, var(--sakura-color-primary));
+}
 
-    display: inline-flex;
-    text-align: center;
-    justify-self: center;
-    line-height: 1.5;
-    margin: 0.5rem;
-    transition: 0.2s;
-    color: var(--primary-color, black);
-    border: 1px solid var(--primary-color, gray);
-    border-radius: var(--sakura-radius);
+.link-avatar {
+  border-radius: 50%;
+}
 
-    &:hover {
-      color: white;
-      background-color: var(--primary-color, gray);
-      box-shadow: 0 2px 20px var(--primary-color, gray);
-    }
+.link-info {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 
-    .link {
-      &-left {
-        line-height: 0;
-      }
+.link-blog {
+  font-weight: 700;
+}
 
-      &-avatar {
-        margin: 0;
-        display: inline-flex;
-        max-width: 100%;
-        border-radius: 50%;
-        background-color: oklch(100% 0 0);
-        border: 1px solid var(--primary-color, gray);
-        transition: 0.5s;
-
-        &:hover {
-          box-shadow: 0 0 20px oklch(0% 0 0 / 10%);
-        }
-      }
-
-      &-desc {
-        font-size: 0.8rem;
-        width: 10rem;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
-    }
-  }
-
-  .link-info {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.link-desc {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--sakura-color-text-muted);
 }
 </style>

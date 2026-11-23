@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
-import { useSiteStore, useTags } from 'valaxy'
+import { useSiteStore } from 'valaxy'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
@@ -9,9 +9,8 @@ import { useSakuraTags } from '../composables'
 const route = useRoute()
 const router = useRouter()
 const site = useSiteStore()
-const tags = useTags()
 const { t } = useI18n()
-const { getTagStyle } = useSakuraTags()
+const { tags, getTagStyle } = useSakuraTags()
 
 const curTag = computed(() => route.query.tag as string || '')
 const posts = computed(() => {
@@ -29,7 +28,12 @@ const posts = computed(() => {
 
 function displayTag(tag: string) {
   router.push({
-    query: { tag },
+    query: {
+      ...route.query,
+      tag: tag === curTag.value
+        ? undefined
+        : tag,
+    },
   })
 }
 
@@ -46,35 +50,33 @@ useSchemaOrg([
       <component :is="Component">
         <template #main-content>
           <slot name="content">
-            <div>
-              <div class="sakura-text-light" text="center" p="2">
-                {{ t('counter.tags', Array.from(tags).length) }}
-              </div>
-
-              <div class="items-end justify-center" flex="~ wrap" gap="1">
-                <SakuraButton
+            <div class="sakura-browse-content sakura-safe-padding">
+              <p id="sakura-tags-count" class="tag-summary">
+                {{ t('counter.tags', tags.size) }}
+              </p>
+              <div class="tag-list" role="group" aria-labelledby="sakura-tags-count">
+                <button
                   v-for="([key, tag], index) in Array.from(tags).sort()"
                   :key="key"
-                  class="sakura-tag-button"
+                  type="button"
+                  class="tag-button"
                   :style="getTagStyle(index)"
-                  :class="{ clicked: curTag === key.toString() }"
-                  @click="displayTag(key.toString())"
+                  :aria-pressed="curTag === key"
+                  @click="displayTag(key)"
                 >
-                  <span mx-1 inline-flex>{{ key }}</span>
-                  <span inline-flex text="xs">[{{ tag.count }}]</span>
-                </SakuraButton>
+                  <span class="tag-hash" aria-hidden="true">#</span>
+                  <span>{{ key }}</span>
+                  <span class="tag-count">{{ tag.count }}</span>
+                </button>
               </div>
-
-              <!-- TODO: icon -->
-              <SakuraDivider icon="i-fa6-solid:water" text="文章列表" :divider="false" />
             </div>
           </slot>
         </template>
 
         <template #main-nav-before>
           <slot name="post">
-            <div v-if="curTag">
-              <SakuraPostList :posts />
+            <div v-if="curTag" class="sakura-browse-content sakura-safe-padding tag-results">
+              <SakuraPostList :posts :text="`# ${curTag}`" icon="i-ri-price-tag-3-line" />
             </div>
           </slot>
         </template>
@@ -83,27 +85,67 @@ useSchemaOrg([
   </SakuraPage>
 </template>
 
-<style lang="scss" scoped>
-.sakura-tag-button {
-  color: var(--sakura-tag-color) !important;
-  background-color: var(--sakura-tag-bg);
-  line-height: 1.75rem;
+<style scoped>
+.tag-summary {
+  margin: 0 0 1rem;
+  color: var(--sakura-color-text-muted);
+  font-size: 0.875rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.tag-button {
+  --accent: var(--sakura-tag-color, var(--sakura-color-primary));
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 100%;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--sakura-color-divider);
+  border-radius: 2rem;
+  background: var(--sakura-card-bg);
+  color: var(--sakura-color-text);
+  overflow-wrap: anywhere;
   transition:
-    color 0.3s ease-in-out,
-    color-border 0.2s ease-in-out;
+    background-color 0.2s,
+    border-color 0.2s;
+}
 
-  &:hover {
-    color: var(--sakura-tag-color, var(--sakura-color-primary)) !important;
-    border-color: var(--sakura-tag-color, var(--sakura-color-primary));
-  }
+.tag-button:hover,
+.tag-button[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--sakura-tag-bg, color-mix(in srgb, var(--accent) 12%, var(--sakura-card-bg)));
+}
 
-  &.clicked {
-    color: var(--sakura-tag-color, var(--sakura-color-primary)) !important;
-    border-color: var(--sakura-tag-color, var(--sakura-color-primary));
-  }
+.tag-button[aria-pressed='true'] {
+  box-shadow: inset 0 0 0 1px var(--accent);
+  font-weight: 700;
+}
 
-  &::before {
-    content: '#';
-  }
+.tag-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.tag-hash {
+  color: var(--accent);
+}
+
+.tag-count {
+  padding-inline: 0.45rem;
+  border-radius: 1rem;
+  background: var(--sakura-color-muted-background);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tag-results {
+  padding-top: 0;
 }
 </style>

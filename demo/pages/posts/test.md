@@ -5,6 +5,7 @@ categories:
   - AAA
   - BBB
   - CCC
+  - Test
 tags:
   - valaxy
   - 测试

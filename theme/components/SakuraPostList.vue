@@ -18,20 +18,20 @@ const props = defineProps<{
 }>()
 
 const themeConfig = useThemeConfig()
-const postsList = usePostList()
 const breakpoints = useBreakpoints(breakpointsTailwind)
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
 const isImageReversed = computed(() => themeConfig.value.postList?.isImageReversed)
 
 const icon = computed(() => props.icon ?? themeConfig.value.ui.postList?.icon)
 const text = computed(() => props.text ?? themeConfig.value.postList?.text)
-const posts = computed(() => props.posts || postsList.value)
 const responsive = computed(() => props.responsive || themeConfig.value.postList?.responsive || {})
 
 const categoryList = useCategories()
-const selectedCategory = ref('All')
+const selectedCategory = defineModel<string>('category', { default: 'All' })
 const displayedCategory = ref(selectedCategory.value)
+const postsList = usePostList({}, () => props.showCategories && displayedCategory.value !== 'All')
+const posts = computed(() => props.posts || postsList.value)
 const allLabel = computed(() => locale.value.startsWith('zh')
   ? '全部'
   : 'All')
@@ -41,7 +41,7 @@ const categoryTabs = computed(() => [
   ...[
     ...categoryList.value.children.values(),
   ]
-    .filter(category => category.total > 0 && category.name !== 'Uncategorized')
+    .filter(category => category.total > 0)
     .map(category => ({ name: category.name, total: category.total })),
 ])
 
@@ -54,7 +54,7 @@ const visiblePosts = computed(() => {
       : post.categories
         ? [post.categories]
         : []
-    return categories.includes(displayedCategory.value)
+    return (categories[0] || 'Uncategorized') === displayedCategory.value
   })
 })
 
@@ -121,11 +121,7 @@ function finishCategoryChange() {
   filtering.value = false
 }
 
-function selectCategory(name: string) {
-  if (name === selectedCategory.value)
-    return
-
-  selectedCategory.value = name
+watch(selectedCategory, (name) => {
   stopMorph()
   const frame = viewport.value
   if (!frame?.animate || reducedMotion.value === 'reduce') {
@@ -172,7 +168,7 @@ function selectCategory(name: string) {
       reveal('0')
     }
   }
-}
+})
 
 watch(reducedMotion, (value) => {
   if (value === 'reduce')
@@ -290,9 +286,9 @@ onMounted(() => requestAnimationFrame(() => {
           type="button"
           role="tab"
           :aria-selected="selectedCategory === category.name"
-          @click="selectCategory(category.name)"
+          @click="selectedCategory = category.name"
         >
-          <span class="sakura-post-category-name">{{ category.name === 'All' ? allLabel : category.name }}</span>
+          <span class="sakura-post-category-name">{{ category.name === 'All' ? allLabel : category.name === 'Uncategorized' ? t('category.uncategorized') : category.name }}</span>
           <span class="sakura-post-category-count">{{ category.total }}</span>
         </button>
       </div>

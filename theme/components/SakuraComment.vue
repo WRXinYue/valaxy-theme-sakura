@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { useRuntimeConfig } from 'valaxy'
+import { useLayout, useRuntimeConfig } from 'valaxy'
 import { computed, defineAsyncComponent, onMounted, ref } from 'vue'
 
+const layout = useLayout()
 const runtimeConfig = useRuntimeConfig()
 
 const hasWaline = computed(() => runtimeConfig.value.addons['valaxy-addon-waline'])
@@ -29,22 +30,24 @@ const SakuraTwikoo = hasTwikoo.value
 </script>
 
 <template>
-  <SakuraCard v-if="hasWaline || hasTwikoo" w="full" class="sakura-comment" mt-6>
-    <ClientOnly>
-      <div v-if="showCommentToggle" class="sakura-comment-toggle mb-4 mt-5 flex justify-center">
-        <button class="sakura-comment-button" :class="[{ active: currentCommentSystem === 'waline' }]" @click="toggleCommentSystem('waline')">
-          Waline
-        </button>
-        <button class="sakura-comment-button" :class="[{ active: currentCommentSystem === 'twikoo' }]" @click="toggleCommentSystem('twikoo')">
-          Twikoo
-        </button>
-      </div>
+  <div v-if="hasWaline || hasTwikoo" class="mt-6" :class="{ 'sakura-content-width sakura-safe-padding': layout !== 'post' }">
+    <SakuraCard w="full" class="sakura-comment">
+      <ClientOnly>
+        <div v-if="showCommentToggle" class="sakura-comment-toggle mb-4 mt-5 flex justify-center">
+          <button class="sakura-comment-button" :class="[{ active: currentCommentSystem === 'waline' }]" @click="toggleCommentSystem('waline')">
+            Waline
+          </button>
+          <button class="sakura-comment-button" :class="[{ active: currentCommentSystem === 'twikoo' }]" @click="toggleCommentSystem('twikoo')">
+            Twikoo
+          </button>
+        </div>
 
-      <SakuraWaline v-if="hasWaline" v-show="!showCommentToggle || currentCommentSystem === 'waline'" />
-      <SakuraTwikoo v-if="hasTwikoo" v-show="!showCommentToggle || currentCommentSystem === 'twikoo'" />
-      <slot />
-    </ClientOnly>
-  </SakuraCard>
+        <SakuraWaline v-if="hasWaline" v-show="!showCommentToggle || currentCommentSystem === 'waline'" />
+        <SakuraTwikoo v-if="hasTwikoo" v-show="!showCommentToggle || currentCommentSystem === 'twikoo'" />
+        <slot />
+      </ClientOnly>
+    </SakuraCard>
+  </div>
 </template>
 
 <style lang="scss" scoped>
