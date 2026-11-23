@@ -1,6 +1,6 @@
 {
   "name": "valaxy-theme-sakura",
-  "version": "0.10.3-alpha.1",
+  "version": "1.0.0-rc.1",
   "packageManager": "pnpm@10.34.9",
   "author": {
     "email": "3322543587@qq.com",
@@ -22,7 +22,7 @@
     "vue"
   ],
   "main": "client/index.ts",
-  "types": "types/index.d.ts",
+  "types": "types/index.ts",
   "scripts": {
     "release": "bumpp && npm publish"
   },

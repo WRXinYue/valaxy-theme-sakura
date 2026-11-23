@@ -29,9 +29,11 @@ jobs:
 
       - run: pnpm run build
       # https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-      - run: pnpm ci:publish
+      - name: Publish to npm
+        run: pnpm ci:publish --tag "$NPM_DIST_TAG"
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_DIST_TAG: ${{ contains(github.ref_name, '-') && 'next' || 'latest' }}
 
       - run: npx changelogithub
         env:
