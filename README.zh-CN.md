@@ -6,6 +6,7 @@
 <p align="center">
   <a href="https://npmjs.com/package/valaxy-theme-sakura" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura/latest.svg?style=flat&label=latest&colorA=18181B&colorB=FF6F91" alt="npm latest version"></a>
   <a href="https://npmjs.com/package/valaxy-theme-sakura?activeTab=versions" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura/next.svg?style=flat&label=next&colorA=18181B&colorB=FF6F91" alt="npm next version"></a>
+  <a href="https://npmjs.com/package/valaxy-theme-sakura?activeTab=versions" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura/legacy.svg?style=flat&label=legacy&colorA=18181B&colorB=FF6F91" alt="npm legacy version"></a>
   <a href="https://npm.chart.dev/valaxy-theme-sakura" target="__blank"><img src="https://img.shields.io/npm/dm/valaxy-theme-sakura.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="Downloads"></a>
   <a href="https://github.com/wrxinyue/valaxy-theme-sakura/tree/main/LICENSE" target="__blank"><img src="https://img.shields.io/github/license/wrxinyue/valaxy-theme-sakura.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="License"></a>
   <a href="https://npmjs.com/package/valaxy" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/dependency-version/valaxy-theme-sakura/dev/valaxy?style=flat&colorA=18181B&colorB=9333ea" alt="Valaxy version"></a>
@@ -17,7 +18,7 @@
 
 <p align="center">
 <a href="https://sakura.wrxinyue.org" target="_blank">
-<img src="https://valaxy-theme-sakura.s3.bitiful.net/demo%2F2025-01-05%20222200.png" alt="valaxy-theme-sakura" />
+<img src="https://valaxy-theme-sakura.s3.bitiful.net/valaxy-theme-sakura.webp" alt="Valaxy Theme Sakura 首页截图" />
 </a>
 </p>
 
@@ -28,8 +29,8 @@
 <td align="center">
   <img width="2000" height="0" alt="" aria-hidden="true"><br>
   <span><b>简体中文 | <a href="./README.md">English</a></b></span><br>
-  <sub>我们正在更新主题文档及示例，预计将在 `v0.7.0` 版本会发布到 <a href="https://valaxy.site/themes/gallery">Valaxy 主题橱窗</a></sub><br>
-  <sub><a href="https://sakura.wrxinyue.org/">在线 Demo</a>  | <a href="https://sakura.wrxinyue.org/posts/guide/getting-started/installation">文档</a> | <a href="https://sakura.valaxy.site/examples/gallery">主题站点</a></sub><br>
+  <sub>新版 Sakura 的样式经过了大幅重构。如果你喜欢熟悉的旧版风格，欢迎体验 <a href="https://sakura-legacy.wrxinyue.org/">经典版 Sakura</a>。</sub><br>
+  <sub><a href="https://sakura.wrxinyue.org/">在线 Demo</a>  | <a href="https://sakura.wrxinyue.org/posts/guide/getting-started/installation">文档</a> | <a href="https://sakura-legacy.wrxinyue.org/posts/guide/getting-started/installation">经典版文档</a></sub><br>
   <img width="2000" height="0" alt="" aria-hidden="true">
 </td>
 </tr>

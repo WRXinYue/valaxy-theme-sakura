@@ -93,6 +93,14 @@ function stopTimer() {
   }
 }
 
+function stopDeal() {
+  clearTimeout(dealTimer)
+  clearTimeout(boostTimer)
+  isDealing.value = false
+  leavingIndex.value = -1
+  boostIndex.value = -1
+}
+
 function startTimer() {
   stopTimer()
   if (playbackLocked.value || entries.value.length <= 1 || isHovered.value || isEntering.value || isUnfurling.value)
@@ -124,8 +132,7 @@ function selectSlide(index: number) {
  */
 function startDeal() {
   if (entries.value.length <= 1 || isExpanded.value) {
-    leavingIndex.value = -1
-    boostIndex.value = -1
+    stopDeal()
     return
   }
   isDealing.value = true
@@ -241,12 +248,9 @@ function onEnter() {
   stopTimer()
   clearTimeout(collapseTimer)
   clearTimeout(expandTimer)
-  clearTimeout(dealTimer)
-  clearTimeout(boostTimer)
-  isDealing.value = false
-  leavingIndex.value = -1
-  boostIndex.value = -1
+  stopDeal()
   expandTimer = setTimeout(() => {
+    stopDeal()
     isExpanded.value = true
   }, EXPAND_DELAY)
 }
@@ -300,12 +304,9 @@ watch(() => sakura.wallpaperIsPlaying, (playing, _, onCleanup) => {
     stopTimer()
     clearTimeout(expandTimer)
     clearTimeout(collapseTimer)
-    clearTimeout(dealTimer)
-    clearTimeout(boostTimer)
     isHovered.value = false
     isExpanded.value = false
-    isDealing.value = false
-    boostIndex.value = -1
+    stopDeal()
     resetAllTilts()
     return
   }
@@ -396,7 +397,7 @@ onBeforeUnmount(() => {
           :class="{ 'is-active': i === activeIndex }"
           type="button"
           :aria-label="entry.title"
-          @mouseenter="selectSlide(i)"
+          @mouseenter="!isExpanded && selectSlide(i)"
           @click.stop="selectSlide(i)"
         />
       </div>
@@ -493,16 +494,16 @@ onBeforeUnmount(() => {
 }
 
 /* 入场时先只露出顶卡，其余卡片等顶卡落位后再展开 */
-.sakura-hero-carousel.is-concealed .sakura-hero-carousel-slide:not(.is-active) {
+.sakura-hero-carousel.is-concealed:not(.is-expanded) .sakura-hero-carousel-slide:not(.is-active) {
   opacity: 0;
   transition: none;
 }
 
-.sakura-hero-carousel.is-unfurling .sakura-hero-carousel-slide[data-depth='1'] {
+.sakura-hero-carousel.is-unfurling:not(.is-expanded) .sakura-hero-carousel-slide[data-depth='1'] {
   animation: sakura-carousel-unfurl-1 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.06s both;
 }
 
-.sakura-hero-carousel.is-unfurling .sakura-hero-carousel-slide[data-depth='2'] {
+.sakura-hero-carousel.is-unfurling:not(.is-expanded) .sakura-hero-carousel-slide[data-depth='2'] {
   animation: sakura-carousel-unfurl-2 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
 }
 
@@ -545,7 +546,7 @@ onBeforeUnmount(() => {
  * 轮换：旧顶卡快速淡出并降层，新顶卡同时从略低的位置顶上来，
  * 两条动画在 520ms 内一起结束，避免“上面消失了、下面才开始出现”。
  */
-.sakura-hero-carousel.is-dealing .sakura-hero-carousel-slide.is-leaving {
+.sakura-hero-carousel.is-dealing:not(.is-expanded) .sakura-hero-carousel-slide.is-leaving {
   animation: sakura-carousel-deal 0.52s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 

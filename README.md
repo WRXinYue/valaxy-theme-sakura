@@ -6,6 +6,7 @@ A simple, personalized, and cute anime-style blog theme ❥(ゝω・✿ฺ)
 <p align="center">
   <a href="https://npmjs.com/package/valaxy-theme-sakura" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura/latest.svg?style=flat&label=latest&colorA=18181B&colorB=FF6F91" alt="npm latest version"></a>
   <a href="https://npmjs.com/package/valaxy-theme-sakura?activeTab=versions" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura/next.svg?style=flat&label=next&colorA=18181B&colorB=FF6F91" alt="npm next version"></a>
+  <a href="https://npmjs.com/package/valaxy-theme-sakura?activeTab=versions" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura/legacy.svg?style=flat&label=legacy&colorA=18181B&colorB=FF6F91" alt="npm legacy version"></a>
   <a href="https://npm.chart.dev/valaxy-theme-sakura" target="__blank"><img src="https://img.shields.io/npm/dm/valaxy-theme-sakura.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="Downloads"></a>
   <a href="https://github.com/wrxinyue/valaxy-theme-sakura/tree/main/LICENSE" target="__blank"><img src="https://img.shields.io/github/license/wrxinyue/valaxy-theme-sakura.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="License"></a>
   <a href="https://npmjs.com/package/valaxy" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/dependency-version/valaxy-theme-sakura/dev/valaxy?style=flat&colorA=18181B&colorB=9333ea" alt="Valaxy version"></a>
@@ -17,7 +18,7 @@ A simple, personalized, and cute anime-style blog theme ❥(ゝω・✿ฺ)
 
 <p align="center">
 <a href="https://sakura.wrxinyue.org" target="_blank">
-<img src="https://valaxy-theme-sakura.s3.bitiful.net/demo%2F2025-01-05%20222200.png" alt="valaxy-theme-sakura" />
+<img src="https://valaxy-theme-sakura.s3.bitiful.net/valaxy-theme-sakura.webp" alt="Valaxy Theme Sakura homepage" />
 </a>
 </p>
 
@@ -28,8 +29,8 @@ A simple, personalized, and cute anime-style blog theme ❥(ゝω・✿ฺ)
 <td align="center">
   <img width="2000" height="0" alt="" aria-hidden="true"><br>
   <span><b>English | <a href="./README.zh-CN.md">简体中文</a></b></span><br>
-  <sub>We are updating the theme documentation and examples, expected to be released in version `v0.7.0` on the <a href="https://valaxy.site/themes/gallery">Valaxy Theme Gallery</a></sub><br>
-  <sub><a href="https://sakura.wrxinyue.org/">Live Demo</a>  | <a href="https://sakura.wrxinyue.org/posts/guide/getting-started/installation">Documentation</a> | <a href="https://sakura.valaxy.site/examples/gallery">Theme Sites</a></sub><br>
+  <sub>The new Sakura has undergone a major visual redesign. If you prefer the original look, explore <a href="https://sakura-legacy.wrxinyue.org/">Classic Sakura</a>.</sub><br>
+  <sub><a href="https://sakura.wrxinyue.org/">Live Demo</a>  | <a href="https://sakura.wrxinyue.org/posts/guide/getting-started/installation">Documentation</a> | <a href="https://sakura-legacy.wrxinyue.org/posts/guide/getting-started/installation">Classic Docs</a></sub><br>
   <img width="2000" height="0" alt="" aria-hidden="true">
 </td>
 </tr>
@@ -52,8 +53,8 @@ pnpm add valaxy-theme-sakura
 For detailed configuration and explanations, see [Theme Configuration](https://sakura.valaxy.site/config/theme).
 
 ```ts
-import { defineValaxyConfig } from 'valaxy'
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
+import { defineValaxyConfig } from 'valaxy'
 
 export default defineValaxyConfig<ThemeUserConfig>({
   theme: 'sakura',

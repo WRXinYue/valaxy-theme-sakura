@@ -58,14 +58,14 @@ export default defineValaxyConfig<ThemeUserConfig>({
         {
           title: 'Docs',
           desc: '主题文档',
-          link: 'https://sakura.valaxy.site',
+          link: '/posts/guide/getting-started/installation',
           img: 'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper-2025%2Fwallhaven-yxoejx.jpg',
         },
         {
-          title: 'About',
-          desc: '关于主题',
-          link: '/about',
-          img: 'https://valaxy-theme-sakura.s3.bitiful.net/wallpaper-2025%2Fwallhaven-3l2vm3.jpg',
+          title: 'Classic Sakura',
+          desc: '经典版 Sakura',
+          link: 'https://sakura-legacy.wrxinyue.org/',
+          img: 'https://valaxy-theme-sakura.s3.bitiful.net/demo%2F2025-01-05%20222200.png',
         },
         {
           title: 'Valaxy Docs',
