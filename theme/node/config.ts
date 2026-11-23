@@ -68,8 +68,6 @@ export const defaultThemeConfig: ThemeUserConfig = {
   navbar: [],
   navbarOptions: {
     showMarker: true,
-    offset: 100,
-    enableHover: true,
     tools: ['toggleDark', 'search'],
     hamburgerStyle: 'uneven',
   },

@@ -34,35 +34,11 @@ export interface NavbarOptions {
    */
   favicon: boolean
   /**
-   * @zh 是否反转导航栏
-   * @en Whether to invert the navbar
-   * @default false
-   */
-  invert: boolean | string | string[]
-  /**
-   * @default true
-   */
-  enableHover: boolean
-  /**
-   * @zh 是否自动隐藏导航栏
-   * @en Whether to auto-hide the navbar
-   * @default false
-   */
-  autoHide: boolean | string | string[]
-  /**
-   * @zh 导航栏显示的动画效果
-   * @en The animation effect when the navbar appears
-   */
-  /**
    * @zh 是否显示导航栏标记
    * @en Whether to show the marker on the navbar
-   * @default false
+   * @default true
    */
   showMarker: boolean
-  /**
-   * @default 100
-   */
-  offset: number
   /**
    * @zh 导航栏的工具按钮
    * @en Tool buttons to include in the navbar, like search or settings

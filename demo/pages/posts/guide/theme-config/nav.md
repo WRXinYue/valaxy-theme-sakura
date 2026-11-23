@@ -40,11 +40,7 @@ top: 500
 | 属性名         | 类型                                             | 默认值                     | 说明                 |
 | -------------- | ------------------------------------------------ | -------------------------- | -------------------- |
 | favicon        | `boolean`                                        | `true`                     | 是否显示站点图标     |
-| invert         | `boolean \| string \| string[]`                  | `false`                    | 是否反转导航栏颜色   |
-| enableHover    | `boolean`                                        | `true`                     | 是否启用悬停效果     |
-| autoHide       | `boolean \| string \| string[]`                  | `false`                    | 是否自动隐藏导航栏   |
-| showMarker     | `boolean`                                        | `false`                    | 是否显示导航栏标记   |
-| offset         | `number`                                         | `100`                      | 导航栏偏移量         |
+| showMarker     | `boolean`                                        | `true`                     | 是否显示导航栏标记   |
 | tools          | `('toggleLocale' \| 'toggleDark' \| 'search')[]` | `['toggleDark', 'search']` | 导航栏的工具按钮     |
 | hamburgerStyle | `'uneven' \| 'old'`                              | `'uneven'`                 | 导航栏汉堡按钮的样式 |
 
@@ -118,8 +114,6 @@ themeConfig: {
 const themeConfig = {
   navbarOptions: {
     favicon: true,
-    invert: false,
-    autoHide: true,
     showMarker: true,
     tools: ['toggleDark', 'search', 'toggleLocale'],
     hamburgerStyle: 'uneven',

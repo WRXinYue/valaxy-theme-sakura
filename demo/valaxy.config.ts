@@ -160,10 +160,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
       },
     ],
     navbarOptions: {
-      offset: 0,
-      invert: ['home'],
       showMarker: false,
-      autoHide: ['home'],
     },
     sidebarOptions: {
       position: 'left',

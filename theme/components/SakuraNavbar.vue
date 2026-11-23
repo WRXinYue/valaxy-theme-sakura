@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import type { $Transition } from 'motion-v'
 import type { NavbarOptions, NavItem } from '../types/index'
-import { useIntersectionObserver, useWindowScroll } from '@vueuse/core'
-import { motion } from 'motion-v'
+import { useIntersectionObserver } from '@vueuse/core'
 import { useSiteConfig } from 'valaxy'
 import { computed, ref, watchPostEffect } from 'vue'
 import { useLayout, useThemeConfig } from '../composables'
@@ -19,59 +17,16 @@ const props = defineProps<{
 const sakuraAppStore = useSakuraAppStore()
 const siteConfig = useSiteConfig()
 const themeConfig = useThemeConfig()
-const { isIncludes, layout } = useLayout()
-const { y } = useWindowScroll()
+const { layout } = useLayout()
 
-const noAnimation = ref(true)
-
-const hoverNavbar = ref(false)
 const stickySentinelEl = ref<HTMLElement>()
-const navbarEl = ref<HTMLElement>()
 const isStuck = ref(false)
 
 const navbar = computed(() => props.navbar || themeConfig.value.navbar)
 const navbarOptions = computed(() => props.options || themeConfig.value.navbarOptions)
 
-const { favicon, showMarker, enableHover, offset } = navbarOptions.value
 const brandTitle = computed(() => siteConfig.value.title || '')
-
-const isScrolled = computed(() => y.value > offset)
 const placement = computed(() => props.placement ?? 'fixed')
-
-const isHeaderHighlighted = computed(() => {
-  const autoHide = isIncludes(navbarOptions.value.autoHide)
-  if (!autoHide)
-    return true
-
-  const invert = isIncludes(navbarOptions.value.invert)
-
-  if (enableHover) {
-    return hoverNavbar.value || (invert
-      ? isScrolled.value
-      : !isScrolled.value)
-  }
-  return invert
-    ? isScrolled.value
-    : !isScrolled.value
-})
-
-const linkAnimate = computed(() => {
-  if (!isIncludes(navbarOptions.value.autoHide) || isHeaderHighlighted.value) {
-    return {
-      opacity: 1,
-      x: 0,
-    }
-  }
-  return {
-    opacity: 0,
-    x: 30,
-  }
-})
-
-const linkTransition: $Transition = {
-  duration: 0.25,
-  ease: 'easeOut',
-}
 
 function updateStuck() {
   if (!stickySentinelEl.value || placement.value !== 'sticky') {
@@ -105,10 +60,10 @@ useIntersectionObserver(
 <template>
   <div v-if="placement === 'sticky'" ref="stickySentinelEl" class="sakura-navbar-sentinel" aria-hidden="true" />
   <!-- NOTE: Dynamic :class switching affects triggering the component loader for some reason, not sure why. -->
-  <header ref="navbarEl" v-bind="$attrs" flex="~" w="full" top-0 z-100 class="sakura-navbar" :class="placement" @mouseover="hoverNavbar = true" @mouseleave="hoverNavbar = false">
-    <div class="sakura-safe-padding navbar-content" w="full" :class="{ 'active-header': isHeaderHighlighted, 'has-scrolled': isScrolled, 'no-animation': noAnimation }">
+  <header v-bind="$attrs" flex="~" w="full" top-0 z-100 class="sakura-navbar" :class="placement">
+    <div class="sakura-safe-padding navbar-content" w="full">
       <div class="navbar-area navbar-brand">
-        <slot name="brand" :favicon="favicon" :title="brandTitle" :is-stuck="isStuck" :placement="placement">
+        <slot name="brand" :favicon="navbarOptions.favicon" :title="brandTitle" :is-stuck="isStuck" :placement="placement">
           <div flex="~ items-center">
             <template v-if="themeConfig.sidebarOptions?.position === 'left'">
               <div class="flex-center" :class="!themeConfig.sidebarOptions.enableOnDesktop && 'md:hidden'">
@@ -121,7 +76,7 @@ useIntersectionObserver(
               </div>
             </template>
 
-            <SakuraNavbarBrand :favicon :title="brandTitle" />
+            <SakuraNavbarBrand :favicon="navbarOptions.favicon" :title="brandTitle" />
           </div>
         </slot>
       </div>
@@ -130,15 +85,11 @@ useIntersectionObserver(
         <slot
           name="link"
           :navbar="navbar"
-          :show-marker="showMarker"
-          :link-animate="linkAnimate"
-          :link-transition="linkTransition"
+          :show-marker="navbarOptions.showMarker"
           :is-stuck="isStuck"
           :placement="placement"
         >
-          <motion.div :initial="false" :animate="linkAnimate" :transition="linkTransition">
-            <SakuraNavbarLink :navbar :show-marker="showMarker" />
-          </motion.div>
+          <SakuraNavbarLink :navbar :show-marker="navbarOptions.showMarker" />
         </slot>
       </div>
 
@@ -172,15 +123,8 @@ useIntersectionObserver(
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     height: var(--sakura-navbar-height);
-    transition: all var(--va-transition-duration) ease-in;
-
-    &.active-header {
-      background: var(--sakura-navbar-bg);
-
-      &.has-scrolled {
-        // box-shadow: 0 1px 40px -8px oklch(0% 0 0 / 50%);
-      }
-    }
+    background: var(--sakura-navbar-bg);
+    transition: background-color var(--va-transition-duration) ease-in;
   }
 
   .navbar-area {
@@ -221,21 +165,8 @@ useIntersectionObserver(
     margin-right: 0.2rem;
   }
 
-  // &:not(&.active-header) {
-  //   .sakura-nav-link {
-  //     display: none;
-  //   }
-  // }
-
   .sakura-navbar-tools {
     color: var(--sakura-navbar-item-color);
-  }
-}
-
-// TODO: optimize
-.has-home-layout .sakura-navbar {
-  &.active-header {
-    // box-shadow: 0 1px 40px -8px oklch(0% 0 0 / 50%);
   }
 }
 </style>
