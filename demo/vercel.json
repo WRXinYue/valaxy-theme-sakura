@@ -1,4 +1,5 @@
 {
+  "installCommand": "npx --yes --package=pnpm@10.34.9 pnpm install --frozen-lockfile",
   "rewrites": [
     {
       "source": "/:path*",
