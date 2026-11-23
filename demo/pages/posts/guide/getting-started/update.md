@@ -14,15 +14,15 @@ top: 400
 <a href="https://www.npmjs.com/package/valaxy" rel="nofollow"><img src="https://img.shields.io/npm/v/valaxy?label=valaxy&color=9333ea" alt="NPM version"></a>
 
 ::: zh-CN
-npm 上已发布的 Sakura 0.10.2 使用 Valaxy 0.26.x。`legacy` 分支源码已经升级到 Valaxy 1.5。关于版本要求，请参阅[安装指南](/posts/guide/getting-started/installation#兼容性)
+npm 上已发布的 Sakura 0.10.2 使用 Valaxy 0.26.x。经典版 0.11.x 使用 Valaxy 1.5。关于版本要求，请参阅[安装指南](/posts/guide/getting-started/installation#兼容性)
 :::
 
 ::: en
-Sakura 0.10.2 on npm uses Valaxy 0.26.x. The `legacy` branch source now uses Valaxy 1.5. For version requirements, see the [installation guide](/posts/guide/getting-started/installation#compatibility).
+Sakura 0.10.2 on npm uses Valaxy 0.26.x. Classic Sakura 0.11.x uses Valaxy 1.5. For version requirements, see the [installation guide](/posts/guide/getting-started/installation#compatibility).
 :::
 
 ```bash
-pnpm add valaxy@0.26
+pnpm add valaxy@1
 ```
 
 ## 更新 Valaxy Theme Sakura{lang="zh-CN"}
@@ -44,7 +44,7 @@ Under normal circumstances, it is recommended to use the official release. For a
 <a href="https://www.npmjs.com/package/valaxy-theme-sakura" rel="nofollow"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura?label=valaxy-theme-sakura&color=ff4e6a" alt="NPM version"></a>
 
 ```bash
-pnpm add valaxy-theme-sakura@0.10
+pnpm add valaxy-theme-sakura@legacy
 ```
 
 ### 先行版{lang="zh-CN"}

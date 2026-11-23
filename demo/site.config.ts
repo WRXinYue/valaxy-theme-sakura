@@ -5,7 +5,7 @@ export default defineSiteConfig({
   lang: 'zh-CN',
   title: 'Valaxy Theme Sakura',
   favicon: '/favicon-32x32.ico',
-  url: 'https://sakura.wrxinyue.org/',
+  url: 'https://sakura-legacy.wrxinyue.org/',
   author: {
     avatar: 'https://gravatar.com/avatar/08816a513ec0691873ac3f5883431763', // 邮箱地址转为MD5
     name: 'WRXinYue',

@@ -3,36 +3,39 @@ name: Release
 on:
   push:
     tags:
-      - 'v*'
+      - 'v0.11.*'
 
 jobs:
   release:
+    if: ${{ !contains(github.ref_name, '-') }}
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           submodules: true
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v4
 
-      # after pnpm
-      - name: Use Node.js LTS
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
-          node-version: 'lts/*'
+          node-version: '24'
           registry-url: https://registry.npmjs.org/
           cache: pnpm
 
-      - run: pnpm install
-
+      - run: pnpm install --frozen-lockfile
       - run: pnpm run build
-      # https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-      - run: pnpm ci:publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: Publish to npm
+        run: pnpm ci:publish --tag legacy
 
-      - run: npx changelogithub
+      - name: Create Classic Sakura release
+        run: |
+          gh release create "$GITHUB_REF_NAME" --verify-tag --latest=false \
+            --title "Classic Sakura $GITHUB_REF_NAME" \
+            --generate-notes --notes-start-tag v0.10.2 \
+            --notes 'Classic Sakura for Valaxy 1.5. Install with `pnpm add valaxy-theme-sakura@legacy`.'
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GH_TOKEN: ${{ github.token }}

@@ -4,7 +4,7 @@ A simple, personalized, and cute anime-style blog theme ❥(ゝω・✿ฺ)
 </pre>
 
 <p align="center">
-  <a href="https://npmjs.com/package/valaxy-theme-sakura" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura/latest.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="NPM version"></a>
+  <a href="https://www.npmjs.com/package/valaxy-theme-sakura?activeTab=versions" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura/legacy.svg?style=flat&label=legacy&colorA=18181B&colorB=FF6F91" alt="Classic Sakura npm version"></a>
   <a href="https://npm.chart.dev/valaxy-theme-sakura" target="__blank"><img src="https://img.shields.io/npm/dm/valaxy-theme-sakura.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="Downloads"></a>
   <a href="https://github.com/wrxinyue/valaxy-theme-sakura/tree/main/LICENSE" target="__blank"><img src="https://img.shields.io/github/license/wrxinyue/valaxy-theme-sakura.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="License"></a>
   <a href="https://npmjs.com/package/valaxy" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/dependency-version/valaxy-theme-sakura/dev/valaxy?style=flat&colorA=18181B&colorB=9333ea" alt="Valaxy version"></a>
@@ -15,7 +15,7 @@ A simple, personalized, and cute anime-style blog theme ❥(ゝω・✿ฺ)
 </p>
 
 <p align="center">
-<a href="https://sakura.wrxinyue.org" target="_blank">
+<a href="https://sakura-legacy.wrxinyue.org" target="_blank">
 <img src="https://valaxy-theme-sakura.s3.bitiful.net/demo%2F2025-01-05%20222200.png" alt="valaxy-theme-sakura" />
 </a>
 </p>
@@ -28,7 +28,7 @@ A simple, personalized, and cute anime-style blog theme ❥(ゝω・✿ฺ)
   <img width="2000" height="0" alt="" aria-hidden="true"><br>
   <span><b>English | <a href="./README.zh-CN.md">简体中文</a></b></span><br>
   <sub>We are updating the theme documentation and examples, expected to be released in version `v0.7.0` on the <a href="https://valaxy.site/themes/gallery">Valaxy Theme Gallery</a></sub><br>
-  <sub><a href="https://sakura.wrxinyue.org/">Live Demo</a>  | <a href="https://sakura.wrxinyue.org/posts/guide/getting-started/installation">Documentation</a> | <a href="https://sakura.wrxinyue.org/links/">Theme Sites</a></sub><br>
+  <sub><a href="https://sakura-legacy.wrxinyue.org/">Live Demo</a>  | <a href="https://sakura-legacy.wrxinyue.org/posts/guide/getting-started/installation">Documentation</a> | <a href="https://sakura-legacy.wrxinyue.org/links/">Theme Sites</a></sub><br>
   <img width="2000" height="0" alt="" aria-hidden="true">
 </td>
 </tr>
@@ -39,18 +39,18 @@ A simple, personalized, and cute anime-style blog theme ❥(ゝω・✿ฺ)
 ## Getting Started
 
 > [!TIP]
-> If you are new to Valaxy, it's recommended to check the [installation documentation](https://valaxy.site/guide/getting-started) for the setup process. For detailed installation instructions, refer to the [installation documentation for valaxy-theme-sakura](https://sakura.wrxinyue.org/posts/guide/getting-started/installation).
+> If you are new to Valaxy, it's recommended to check the [installation documentation](https://valaxy.site/guide/getting-started) for the setup process. For detailed installation instructions, refer to the [installation documentation for valaxy-theme-sakura](https://sakura-legacy.wrxinyue.org/posts/guide/getting-started/installation).
 
-This branch runs the classic Sakura theme on Valaxy 1.5 and Node.js 22.12 or newer. The npm commands below install the previously published 0.10.x line.
+Classic Sakura requires Valaxy 1.5.1 or newer in the 1.x series and Node.js 22.12 or newer. Existing Valaxy 0.26 sites can continue using Sakura 0.10.2.
 
 ```bash
-pnpm add valaxy-theme-sakura@0.10
+pnpm add valaxy-theme-sakura@legacy
 ```
 
 <details>
 <summary>valaxy.config.ts</summary><br>
 
-For detailed configuration and explanations, see [Theme Configuration](https://sakura.wrxinyue.org/posts/guide/getting-started/theme-config).
+For detailed configuration and explanations, see [Theme Configuration](https://sakura-legacy.wrxinyue.org/posts/guide/getting-started/theme-config).
 
 ```ts
 import { defineValaxyConfig } from 'valaxy'
@@ -84,8 +84,8 @@ export default defineValaxyConfig<ThemeUserConfig>({
 As versions continue to evolve, we recommend updating [valaxy](https://github.com/YunYouJun/valaxy) and [valaxy-theme-sakura](https://github.com/WRXinYue/valaxy-theme-sakura) to ensure the theme and framework are up-to-date. More exciting features may await your discovery in the future.
 
 ```bash
-pnpm add valaxy@0.26
-pnpm add valaxy-theme-sakura@0.10
+pnpm add valaxy@1
+pnpm add valaxy-theme-sakura@legacy
 ```
 
 ## Integration Plugins

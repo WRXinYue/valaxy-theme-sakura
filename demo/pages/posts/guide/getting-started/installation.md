@@ -30,14 +30,14 @@ To use Valaxy, your computer must have Node.js installed.
 ::: zh-CN
 | 版本 | Node | valaxy |
 | --- | --- | --- |
-| `legacy` 分支源码 | Node >= 22.12 | Valaxy ^1.5.1 |
+| 经典版 0.11.x | Node >= 22.12 | Valaxy ^1.5.1 |
 | npm 0.10.2 | Node >= 18.12 | Valaxy 0.26.x |
 :::
 
 ::: en
 | version | Node | valaxy |
 | --- | --- | --- |
-| `legacy` branch source | Node >= 22.12 | Valaxy ^1.5.1 |
+| Classic Sakura 0.11.x | Node >= 22.12 | Valaxy ^1.5.1 |
 | npm 0.10.2 | Node >= 18.12 | Valaxy 0.26.x |
 :::
 
@@ -104,15 +104,15 @@ Navigate to the folder where you just created the Valaxy project, open the termi
 ::: code-group
 
 ```bash [pnpm]
-pnpm add valaxy@0.26 valaxy-theme-sakura@0.10
+pnpm add valaxy@1 valaxy-theme-sakura@legacy
 ```
 
 ```bash [npm]
-npm install valaxy@0.26 valaxy-theme-sakura@0.10
+npm install valaxy@1 valaxy-theme-sakura@legacy
 ```
 
 ```bash [yarn]
-yarn add valaxy@0.26 valaxy-theme-sakura@0.10
+yarn add valaxy@1 valaxy-theme-sakura@legacy
 ```
 
 :::

@@ -4,7 +4,7 @@
 </pre>
 
 <p align="center">
-  <a href="https://npmjs.com/package/valaxy-theme-sakura" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura/latest.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="NPM version"></a>
+  <a href="https://www.npmjs.com/package/valaxy-theme-sakura?activeTab=versions" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/v/valaxy-theme-sakura/legacy.svg?style=flat&label=legacy&colorA=18181B&colorB=FF6F91" alt="经典版 Sakura npm 版本"></a>
   <a href="https://npm.chart.dev/valaxy-theme-sakura" target="__blank"><img src="https://img.shields.io/npm/dm/valaxy-theme-sakura.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="Downloads"></a>
   <a href="https://github.com/wrxinyue/valaxy-theme-sakura/tree/main/LICENSE" target="__blank"><img src="https://img.shields.io/github/license/wrxinyue/valaxy-theme-sakura.svg?style=flat&colorA=18181B&colorB=FF6F91" alt="License"></a>
   <a href="https://npmjs.com/package/valaxy" rel="nofollow" target="__blank"><img src="https://img.shields.io/npm/dependency-version/valaxy-theme-sakura/dev/valaxy?style=flat&colorA=18181B&colorB=9333ea" alt="Valaxy version"></a>
@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-<a href="https://sakura.wrxinyue.org" target="_blank">
+<a href="https://sakura-legacy.wrxinyue.org" target="_blank">
 <img src="https://valaxy-theme-sakura.s3.bitiful.net/demo%2F2025-01-05%20222200.png" alt="valaxy-theme-sakura" />
 </a>
 </p>
@@ -28,7 +28,7 @@
   <img width="2000" height="0" alt="" aria-hidden="true"><br>
   <span><b>简体中文 | <a href="./README.md">English</a></b></span><br>
   <sub>我们正在更新主题文档及示例，预计将在 `v0.7.0` 版本会发布到 <a href="https://valaxy.site/themes/gallery">Valaxy 主题橱窗</a></sub><br>
-  <sub><a href="https://sakura.wrxinyue.org/">在线 Demo</a>  | <a href="https://sakura.wrxinyue.org/posts/guide/getting-started/installation">文档</a> | <a href="https://sakura.wrxinyue.org/links/">主题站点</a></sub><br>
+  <sub><a href="https://sakura-legacy.wrxinyue.org/">在线 Demo</a>  | <a href="https://sakura-legacy.wrxinyue.org/posts/guide/getting-started/installation">文档</a> | <a href="https://sakura-legacy.wrxinyue.org/links/">主题站点</a></sub><br>
   <img width="2000" height="0" alt="" aria-hidden="true">
 </td>
 </tr>
@@ -39,18 +39,18 @@
 ## 快速开始
 
 > [!TIP]
-> 如果您是第一次使用 Valaxy，建议先查看 Valaxy 的[安装文档](https://valaxy.site/guide/getting-started)了解安装过程。关于详细安装教程请参照 valaxy-theme-sakura 的 [安装文档](https://sakura.wrxinyue.org/posts/guide/getting-started/installation)
+> 如果您是第一次使用 Valaxy，建议先查看 Valaxy 的[安装文档](https://valaxy.site/guide/getting-started)了解安装过程。关于详细安装教程请参照 valaxy-theme-sakura 的 [安装文档](https://sakura-legacy.wrxinyue.org/posts/guide/getting-started/installation)
 
-此分支在 Valaxy 1.5 和 Node.js 22.12 及以上版本运行经典 Sakura 主题。下方 npm 安装命令对应已发布的 0.10.x 系列。
+经典版 Sakura 支持 Valaxy 1.5.1 及以上的 1.x 版本，要求 Node.js 22.12 或更新版本。使用 Valaxy 0.26 的旧站可以继续使用 Sakura 0.10.2。
 
 ```bash
-pnpm add valaxy-theme-sakura@0.10
+pnpm add valaxy-theme-sakura@legacy
 ```
 
 <details>
 <summary>valaxy.config.ts</summary><br>
 
-关于详细配置以及说明请见[主题配置](https://sakura.wrxinyue.org/posts/guide/getting-started/theme-config)
+关于详细配置以及说明请见[主题配置](https://sakura-legacy.wrxinyue.org/posts/guide/getting-started/theme-config)
 
 ```ts
 import { defineValaxyConfig } from 'valaxy'
@@ -84,8 +84,8 @@ export default defineValaxyConfig<ThemeUserConfig>({
 随着版本不断迭代，我们建议您更新 [valaxy](https://github.com/YunYouJun/valaxy) 和 [valaxy-theme-sakura](https://github.com/WRXinYue/valaxy-theme-sakura) 的版本，以确保主题和框架保持最新同步。未来或许会有更多有趣的功能等待您去发现
 
 ```bash
-pnpm add valaxy@0.26
-pnpm add valaxy-theme-sakura@0.10
+pnpm add valaxy@1
+pnpm add valaxy-theme-sakura@legacy
 ```
 
 ## 集成插件
