@@ -11,7 +11,6 @@ export default defineConfig({
     'typescript': 'minor',
     'unocss': 'ignore',
     'eslint': 'ignore',
-    'valaxy': 'patch',
     '/vue/': 'latest',
   },
   depFields: {

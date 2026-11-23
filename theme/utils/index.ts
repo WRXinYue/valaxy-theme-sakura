@@ -55,8 +55,8 @@ export function scrollTo(el: HTMLElement, hash: string, smooth = false) {
     const targetPadding = -64
     const targetTop
       = window.scrollY
-      + (target as HTMLElement).getBoundingClientRect().top
-      + targetPadding
+        + (target as HTMLElement).getBoundingClientRect().top
+        + targetPadding
 
     // only smooth scroll if distance is smaller than screen height.
     if (!smooth || Math.abs(targetTop - window.scrollY) > window.innerHeight) {

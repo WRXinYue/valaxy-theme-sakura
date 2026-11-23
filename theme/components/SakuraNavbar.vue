@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useWindowScroll } from '@vueuse/core'
 import { computed, ref } from 'vue'
-import type { NavItem, NavbarOptions } from '../types/index'
+import type { NavbarOptions, NavItem } from '../types/index'
 import { useLayout, useThemeConfig } from '../composables'
 import { useSakuraAppStore } from '../stores'
 

@@ -20,7 +20,7 @@ watch(() => props.posts, () => {
     if (post.hide && post.hide !== 'index')
       return
     if (post.date) {
-      const year = Number.parseInt(formatDate(post.date, 'yyyy'))
+      const year = Number.parseInt(formatDate(post.date, { template: 'YYYY' }))
       if (postListByYear.value[year]) {
         postListByYear.value[year].push(post)
       }
@@ -67,7 +67,7 @@ const sortedYears = computed(() => {
         <header class="post-header" relative flex items-center>
           <div class="post-meta">
             <time v-if="post.date" class="post-time" font="mono" opacity="80">{{
-              formatDate(post.date, 'MM-dd') }}
+              formatDate(post.date, { template: 'MM-DD' }) }}
             </time>
           </div>
           <h2 class="post-title" inline-flex items-center font="serif black">

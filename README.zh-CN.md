@@ -41,6 +41,8 @@
 > [!TIP]
 > 如果您是第一次使用 Valaxy，建议先查看 Valaxy 的[安装文档](https://valaxy.site/guide/getting-started)了解安装过程。关于详细安装教程请参照 valaxy-theme-sakura 的 [安装文档](https://sakura.wrxinyue.org/posts/guide/getting-started/installation)
 
+此分支在 Valaxy 1.5 和 Node.js 22.12 及以上版本运行经典 Sakura 主题。下方 npm 安装命令对应已发布的 0.10.x 系列。
+
 ```bash
 pnpm add valaxy-theme-sakura@0.10
 ```

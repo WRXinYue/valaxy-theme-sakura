@@ -42,6 +42,8 @@
   "devDependencies": {
     "@interactjs/types": "catalog:",
     "valaxy": "catalog:",
-    "valaxy-addon-waline": "catalog:"
+    "valaxy-addon-waline": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
   }
 }

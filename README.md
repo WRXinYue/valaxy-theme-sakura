@@ -41,6 +41,8 @@ A simple, personalized, and cute anime-style blog theme ❥(ゝω・✿ฺ)
 > [!TIP]
 > If you are new to Valaxy, it's recommended to check the [installation documentation](https://valaxy.site/guide/getting-started) for the setup process. For detailed installation instructions, refer to the [installation documentation for valaxy-theme-sakura](https://sakura.wrxinyue.org/posts/guide/getting-started/installation).
 
+This branch runs the classic Sakura theme on Valaxy 1.5 and Node.js 22.12 or newer. The npm commands below install the previously published 0.10.x line.
+
 ```bash
 pnpm add valaxy-theme-sakura@0.10
 ```

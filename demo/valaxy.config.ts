@@ -1,6 +1,7 @@
 import type { ThemeUserConfig } from 'valaxy-theme-sakura'
 import { defineValaxyConfig } from 'valaxy'
 import { addonBangumi } from 'valaxy-addon-bangumi'
+import { addonMermaid } from 'valaxy-addon-mermaid'
 import { addonMeting } from 'valaxy-addon-meting'
 import { addonWaline } from 'valaxy-addon-waline'
 import { addonHitokoto } from 'valaxy-addon-hitokoto'
@@ -266,6 +267,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
   },
 
   addons: [
+    addonMermaid(),
     addonWaline({
       serverURL: 'https://waline.wrxinyue.org',
       pageview: true,

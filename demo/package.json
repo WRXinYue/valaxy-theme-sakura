@@ -16,6 +16,7 @@
     "monaco-editor": "catalog:",
     "valaxy-addon-algolia": "catalog:",
     "valaxy-addon-bangumi": "catalog:",
+    "valaxy-addon-mermaid": "catalog:",
     "valaxy-addon-meting": "catalog:",
     "valaxy-addon-twikoo": "catalog:",
     "valaxy-addon-waline": "catalog:",
@@ -24,6 +25,8 @@
   },
   "devDependencies": {
     "@types/markdown-it": "catalog:",
-    "valaxy": "catalog:"
+    "valaxy": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
   }
 }

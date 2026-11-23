@@ -69,3 +69,7 @@ build/
 # theme
 theme/README.md
 theme/README.zh-CN.md
+
+# Valaxy generated files
+/demo/.valaxy/route-map.d.ts
+/demo/.valaxy/rss-assets.json

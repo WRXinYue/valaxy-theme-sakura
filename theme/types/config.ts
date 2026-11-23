@@ -1,7 +1,7 @@
 import type { DefaultTheme } from 'valaxy'
 import type { Footer } from './footer'
 import type { Hero } from './hero'
-import type { NavItem, NavbarOptions } from './navbar'
+import type { NavbarOptions, NavItem } from './navbar'
 import type { Pagination } from './pagination'
 import type { PinnedPost } from './pinned'
 import type { PostFooter, PostList } from './post'

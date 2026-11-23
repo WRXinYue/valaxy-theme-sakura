@@ -30,13 +30,15 @@ To use Valaxy, your computer must have Node.js installed.
 ::: zh-CN
 | 版本 | Node | valaxy |
 | --- | --- | --- |
-| <Version type="sakura" /> + | Node >= 18.12 | Valaxy 0.26.x |
+| `legacy` 分支源码 | Node >= 22.12 | Valaxy ^1.5.1 |
+| npm 0.10.2 | Node >= 18.12 | Valaxy 0.26.x |
 :::
 
 ::: en
 | version | Node | valaxy |
 | --- | --- | --- |
-| <Version type="sakura" /> + | Node >= 18.12 | Valaxy 0.26.x |
+| `legacy` branch source | Node >= 22.12 | Valaxy ^1.5.1 |
+| npm 0.10.2 | Node >= 18.12 | Valaxy 0.26.x |
 :::
 
 ### 创建 Valaxy 博客项目{lang="zh-CN"}

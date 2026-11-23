@@ -1,16 +1,17 @@
 import { isClient } from '@vueuse/core'
 
 import {
-  type ComputedRef,
-  type Ref,
   computed,
+
   onMounted,
   onUnmounted,
+
   ref,
   watch,
   watchEffect,
   watchPostEffect,
 } from 'vue'
+import type { ComputedRef, Ref } from 'vue'
 
 import { useRoute } from 'vue-router'
 import type { SidebarItem } from '../types'

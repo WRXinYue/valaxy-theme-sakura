@@ -10,6 +10,10 @@ export default antfu(
   {
     rules: {
       'ts/no-unused-expressions': 'off',
+      // Keep the legacy branch's existing import and formatting conventions.
+      'antfu/reasonable-newline': 'off',
+      'perfectionist/sort-imports': 'off',
+      'format/prettier': 'off',
     },
   },
 )

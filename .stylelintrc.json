@@ -7,6 +7,20 @@
     "stylelint-config-standard-scss",
     "stylelint-config-recommended-vue/scss"
   ],
+  "overrides": [
+    {
+      "files": ["theme/components/SakuraGlitchText.vue", "theme/components/SakuraOutline.vue"],
+      "rules": { "property-no-deprecated": null }
+    },
+    {
+      "files": ["theme/components/SakuraGlitchText.vue"],
+      "rules": { "block-no-redundant-nested-style-rules": null }
+    },
+    {
+      "files": ["theme/styles/markdown/sakura-prose.scss"],
+      "rules": { "declaration-property-value-keyword-no-deprecated": null }
+    }
+  ],
   "ignoreFiles": ["**/styles/animation/**", "**/styles/markdown/prose.scss", "**/dist/**"],
   "rules": {
     "gamut/color-no-out-gamut-range": true,

@@ -42,7 +42,7 @@ function updateMarker() {
 }
 
 watch(() => route.path, () => nextTick(updateMarker))
-watch(() => locale.value, () => setTimeout(() => updateMarker(), 0))
+watch(() => locale.value, () => setTimeout(updateMarker, 0))
 
 onMounted(() => {
   // HACK: Not the most elegant solution, but it works. :)

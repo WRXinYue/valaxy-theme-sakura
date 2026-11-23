@@ -233,7 +233,7 @@ watch(width, (width) => {
   }, 200)
 })
 
-onMounted(() => setTimeout(() => init(), 0))
+onMounted(() => setTimeout(init, 0))
 </script>
 
 <template>
