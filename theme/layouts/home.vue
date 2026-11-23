@@ -54,6 +54,9 @@ watch(pageIndex, (value) => {
         <SakuraHero />
       </slot>
     </Teleport>
+    <template #fallback>
+      <div class="sakura-home-hero-placeholder" aria-hidden="true" />
+    </template>
   </ClientOnly>
   <RouterView v-slot="{ Component }">
     <component :is="Component">
@@ -81,6 +84,12 @@ watch(pageIndex, (value) => {
 </template>
 
 <style lang="scss" scoped>
+.sakura-home-hero-placeholder {
+  block-size: 100vh;
+  block-size: 100dvh;
+  background: var(--sakura-color-background);
+}
+
 .sakura-home {
   padding-top: var(--sakura-navbar-height);
 }
