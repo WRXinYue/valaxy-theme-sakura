@@ -330,7 +330,8 @@ function finish() {
 }
 
 onMounted(async () => {
-  sakura.introEnded = false
+  if (sakura.introEnded)
+    return
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     sakura.introEnded = true

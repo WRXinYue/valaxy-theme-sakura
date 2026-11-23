@@ -51,6 +51,11 @@ export default defineValaxyConfig<ThemeUserConfig>({
 
       entries: [
         {
+          title: 'Hello, Valaxy!',
+          desc: 'Valaxy 介绍',
+          link: '/posts/hello-valaxy',
+        },
+        {
           title: 'Docs',
           desc: '主题文档',
           link: 'https://sakura.valaxy.site',

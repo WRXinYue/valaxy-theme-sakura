@@ -2,10 +2,14 @@
 import type { Post } from 'valaxy'
 import { computed, ref, watch } from 'vue'
 import { ProgressiveImage } from 'vue-progressive-image'
+import { useRouter } from 'vue-router'
 import { useThemeConfig } from '../composables'
-import { resolveImage } from '../core/utils'
+import { resolveCoverUrl, resolveImage } from '../core/utils'
+import { openPostCover, preloadPostRoute } from '../core/utils/postCoverTransition'
 
 const props = withDefaults(defineProps<{
+  postTransition?: boolean
+  resolvedSrc?: string | null
   post?: Post
   [key: string]: any
 } & Partial<SakuraImageCardProps>>(), {
@@ -84,32 +88,48 @@ function onImgError(e: Event) {
 }
 
 const src = computed(() => {
+  if (props.resolvedSrc !== undefined)
+    return props.resolvedSrc || undefined
   const source = props.src || (props.post && (props.post.cover || themeConfig.value.postList?.defaultImage))
-  const img = source
-    ? resolveImage(source)
-    : ''
-
-  return img && img.includes('?random')
-    ? img.replace('?random', `?random=${Math.random()}`)
-    : img
+  return resolveCoverUrl(source)
 })
 watch(src, () => {
   showNotFondIcon.value = false
 })
+
+const router = useRouter()
+const cover = ref<HTMLElement>()
+
+function onCoverClick(event: MouseEvent) {
+  if (!props.postTransition || !cover.value)
+    return
+  const img = cover.value.querySelector<HTMLImageElement>('img.v-progressive-image-main')
+  return openPostCover(event, router, props.to, cover.value, showNotFondIcon.value
+    ? null
+    : img?.currentSrc || src.value)
+}
+
+defineExpose({ onCoverClick })
 </script>
 
 <template>
   <div class="sakura-image-card relative overflow-hidden" @mouseover="isHovering = true" @mouseleave="isHovering = false">
-    <AppLink flex="~" w="full" h="full" :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to }">
-      <ClientOnly>
-        <ProgressiveImage
-          v-if="src" v-show="!showNotFondIcon" custom-class="sakura-image-card-img" lazy-placeholder
-          :src :alt="props.alt || 'cover'" :style="imageStyle" @error="onImgError"
-        />
-      </ClientOnly>
-      <SakuraPostCardCover v-if="post && (showNotFondIcon || !src)" :post />
-      <div v-else-if="showNotFondIcon || !src" class="h-full w-full bg-$sakura-color-background opacity-70" :style="imageStyle" flex="~ center">
-        <div i-fa6-solid-image w="30%" h="30%" />
+    <AppLink flex="~" w="full" h="full" :to="props.to || ''" aria-label="Go to Post" :class="{ 'cursor-default': !props.to, 'rounded-inherit': postTransition }" @pointerenter="postTransition && preloadPostRoute(router, props.to)" @focus="postTransition && preloadPostRoute(router, props.to)" @click.capture="onCoverClick">
+      <div ref="cover" class="sakura-image-card-cover" :class="postTransition ? 'absolute inset-0 flex overflow-hidden rounded-inherit' : 'contents'">
+        <ClientOnly>
+          <img
+            v-if="resolvedSrc" v-show="!showNotFondIcon" class="h-full w-full object-cover" :src="resolvedSrc"
+            :alt="props.alt || 'cover'" :style="imageStyle" @error="onImgError"
+          >
+          <ProgressiveImage
+            v-else-if="src" v-show="!showNotFondIcon" custom-class="sakura-image-card-img" lazy-placeholder
+            :src :alt="props.alt || 'cover'" :style="imageStyle" @error="onImgError"
+          />
+        </ClientOnly>
+        <SakuraPostCardCover v-if="post && (showNotFondIcon || !src)" :post />
+        <div v-else-if="showNotFondIcon || !src" class="h-full w-full bg-$sakura-color-background opacity-70" :style="imageStyle" flex="~ center">
+          <div i-fa6-solid-image w="30%" h="30%" />
+        </div>
       </div>
       <template v-if="overlay">
         <div class="sakura-image-card-overlay" :style="overlayStyle" />

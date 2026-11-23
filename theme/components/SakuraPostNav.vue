@@ -23,28 +23,32 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
   <div class="sakura-post-nav" :class="{ 'is-merged': navigationMerge }">
     <SakuraImageCard
       v-if="prev?.path" v-bind="{ ...props, post: prev, src: prev.cover, to: prev.path }"
+      data-post-card
+      post-transition
       class="card-prev" :class="{ 'mt-10': !navigationMerge }"
     >
       <div class="sakura-post-nav-content">
         <span class="sakura-post-nav-label">
           Previous Post
         </span>
-        <RouterLink :to="prev.path" class="sakura-post-nav-title">
+        <span data-post-title class="sakura-post-nav-title">
           {{ $tO(prev.title) }}
-        </RouterLink>
+        </span>
       </div>
     </SakuraImageCard>
     <SakuraImageCard
       v-if="next?.path" v-bind="{ ...props, post: next, src: next.cover, to: next.path }"
+      data-post-card
+      post-transition
       class="card-next"
     >
       <div class="sakura-post-nav-content">
         <span flex justify-end class="sakura-post-nav-label">
           Next Post
         </span>
-        <RouterLink :to="next.path" class="sakura-post-nav-title" flex justify-end>
+        <span data-post-title class="sakura-post-nav-title self-end">
           {{ $tO(next.title) }}
-        </RouterLink>
+        </span>
       </div>
     </SakuraImageCard>
   </div>
@@ -76,6 +80,8 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
   }
 
   &-title {
+    width: fit-content;
+    max-width: 100%;
     color: oklch(97.51% 0.01 244.25);
     font-weight: bold;
   }
@@ -85,7 +91,7 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
     width: 100%;
     border-radius: var(--sakura-post-card-rd);
 
-    &::before {
+    :deep(.sakura-image-card-cover)::after {
       content: '';
       transition: opacity 0.3s ease-in-out;
       background-color: var(--sakura-color-overlay-background);
@@ -96,7 +102,7 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
       pointer-events: none;
     }
 
-    &:hover::before {
+    &:hover :deep(.sakura-image-card-cover)::after {
       opacity: 0.4;
     }
   }
@@ -110,6 +116,16 @@ const navigationMerge = computed(() => themeConfig.value.postFooter?.navigationM
       flex: 1;
       min-width: 0;
       border-radius: 0;
+
+      &:first-child {
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: inherit;
+      }
+
+      &:last-child {
+        border-top-right-radius: inherit;
+        border-bottom-right-radius: inherit;
+      }
     }
   }
 }

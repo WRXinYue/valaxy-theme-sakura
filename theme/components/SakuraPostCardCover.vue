@@ -193,7 +193,6 @@ const initial = computed(() => {
   position: absolute;
   inset: 0;
   background: oklch(100% 0 0 / 16%);
-  backdrop-filter: blur(24px) saturate(1.1);
 }
 
 .sakura-post-cover-initial {

@@ -21,6 +21,7 @@ export interface PinnedPost {
 export interface PinnedPostRow {
   title: string
   desc: string
+  /** Cover for links outside the post layout. Article cards use frontmatter.cover. */
   img: string
   link: string
 }

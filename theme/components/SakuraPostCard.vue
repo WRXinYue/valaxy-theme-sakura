@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import type { Post } from 'valaxy'
+import type SakuraImageCard from './SakuraImageCard.vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useThemeConfig } from '../composables'
 
 const props = defineProps<{
@@ -15,23 +16,33 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 
 const imageCard = computed(() => themeConfig.value.ui.postList?.image)
 
+const coverCard = ref<InstanceType<typeof SakuraImageCard>>()
+
+function onTitleClick(event: MouseEvent) {
+  if (event.target instanceof Element && event.target.closest('a[data-post-title]'))
+    coverCard.value?.onCoverClick(event)
+}
+
 const isGroup = computed(() => props.cols > 1)
 const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-direction: column;
 </script>
 
 <template>
   <article
+    data-post-card
     class="sakura-card sakura-post-card"
     :class="[position, { 'is-col': isCol }, { group: isGroup }]"
   >
     <SakuraImageCard
+      ref="coverCard"
+      post-transition
       class="post-card-image aspect-video"
       :to="post.path"
       :post
       v-bind="imageCard"
     />
 
-    <div flex="~ col" class="post-card-content has-cover">
+    <div flex="~ col" class="post-card-content has-cover" @click.capture="onTitleClick">
       <slot>
         <SakuraPostCardInfo :post />
       </slot>
@@ -87,6 +98,7 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
     }
 
     .sakura-image-card {
+      border-radius: var(--sakura-post-card-rd) var(--sakura-post-card-rd) 0 0;
       width: 100%;
     }
   }
@@ -104,6 +116,14 @@ const isCol = computed(() => !breakpoints.md.value || isGroup.value) // flex-dir
 
     &.left {
       flex-direction: row-reverse;
+    }
+
+    &.left .sakura-image-card {
+      border-radius: 0 var(--sakura-post-card-rd) var(--sakura-post-card-rd) 0;
+    }
+
+    &.right .sakura-image-card {
+      border-radius: var(--sakura-post-card-rd) 0 0 var(--sakura-post-card-rd);
     }
 
     &.right {

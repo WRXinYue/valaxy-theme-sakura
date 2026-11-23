@@ -14,7 +14,7 @@ const { $tO } = useValaxyI18n()
     <slot name="icon">
       <div v-if="fm.icon" class="icon" m="r-1" inline-flex align-top :class="fm.icon" />
     </slot>
-    <span>{{ $tO(fm.title) }}</span>
+    <span data-post-title>{{ $tO(fm.title) }}</span>
   </div>
 </template>
 

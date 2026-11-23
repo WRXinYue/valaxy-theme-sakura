@@ -1,0 +1,95 @@
+// Capture the moving elements only. Both pages can render at their normal resolution.
+html.sakura-post-leaving {
+  --sakura-cover-duration: 420ms;
+  --sakura-cover-easing: cubic-bezier(0.3, 0, 0.2, 1);
+
+  view-transition-name: none;
+}
+
+html.sakura-post-transition .sakura-post-header .sakura-header-cover {
+  view-transition-name: sakura-post-cover;
+}
+
+html.sakura-post-transition .sakura-post-header .sakura-header-title [data-post-title] {
+  view-transition-name: sakura-post-heading;
+}
+
+html.sakura-post-transition .sakura-post-header-meta {
+  view-transition-name: sakura-post-meta;
+}
+
+html.sakura-post-transition::view-transition-group(sakura-post-cover),
+html.sakura-post-transition::view-transition-group(sakura-post-heading),
+html.sakura-post-transition::view-transition-group(sakura-post-date) {
+  animation-duration: var(--sakura-cover-duration);
+  animation-timing-function: var(--sakura-cover-easing);
+}
+
+// Clip both rendered snapshots, including when WebKit composites them separately.
+@keyframes sakura-post-cover-corners {
+  from {
+    clip-path: inset(0 round var(--sakura-cover-radius-from, 0px));
+  }
+
+  to {
+    clip-path: inset(0 round var(--sakura-cover-radius-to, 0px));
+  }
+}
+
+html.sakura-post-transition::view-transition-old(sakura-post-cover),
+html.sakura-post-transition::view-transition-new(sakura-post-cover) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: normal;
+}
+
+html.sakura-post-transition::view-transition-group(sakura-post-heading),
+html.sakura-post-transition::view-transition-group(sakura-post-date) {
+  z-index: 2;
+}
+
+html.sakura-post-transition::view-transition-group(sakura-post-meta) {
+  z-index: 1;
+}
+
+html.sakura-post-transition::view-transition-new(sakura-post-meta) {
+  animation: sakura-post-meta-in 200ms ease-out 220ms both;
+}
+
+@keyframes sakura-post-meta-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+}
+
+html.sakura-post-transition .sakura-post-content {
+  animation: sakura-post-fade-in 180ms ease-out both;
+}
+
+html.sakura-post-transition::view-transition-old(sakura-post-cover) {
+  z-index: 0;
+  animation:
+    sakura-post-cover-corners var(--sakura-cover-duration) var(--sakura-cover-easing) both,
+    sakura-post-cover-out 200ms ease-in 160ms both;
+}
+
+html.sakura-post-transition::view-transition-new(sakura-post-cover) {
+  z-index: 1;
+  animation:
+    sakura-post-cover-corners var(--sakura-cover-duration) var(--sakura-cover-easing) both,
+    sakura-post-fade-in 360ms ease-in-out both;
+}
+
+@keyframes sakura-post-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes sakura-post-cover-out {
+  to {
+    opacity: 0;
+  }
+}

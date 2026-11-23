@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { $Transition } from 'motion-v'
 import { motion } from 'motion-v'
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { useThemeConfig } from '../composables'
 import { getYouTubeId, isVideoUrl, isYouTubeUrl } from '../core/utils'
 import { findYouTubePlayer } from '../core/utils/youtubePlayer'
@@ -138,7 +138,10 @@ function layerTransition(operation: LayerOperation): $Transition {
   }
 }
 
-function layerInitial(operation: LayerOperation) {
+function layerInitial(layer: MediaLayer) {
+  if (layer.leaving || layer.id === 1)
+    return false
+  const { operation } = layer
   if (operation === 'nextMedia')
     return { x: '100%', y: 0 }
   if (operation === 'prevMedia')
@@ -332,17 +335,10 @@ watch(() => (Array.isArray(urls.value)
   sakura.wallpaperLength = length
 }, { immediate: true })
 
-onMounted(() => {
-  nextTick(() => {
-    if (sakura.introEnded)
-      revealed.value = true
-  })
-})
-
 watch(() => sakura.introEnded, (ended) => {
-  if (ended)
+  if (ended && sakura.introTransitioning)
     revealed.value = true
-})
+}, { flush: 'sync' })
 
 onBeforeUnmount(() => {
   for (const timer of removalTimers.values())
@@ -363,7 +359,7 @@ onBeforeUnmount(() => {
           v-if="layer.isYouTube"
           class="sakura-hero-background-layer sakura-hero-background-yt"
           :class="{ 'is-player': layer.isPlaying }"
-          :initial="layer.leaving ? false : layerInitial(layer.operation)"
+          :initial="layerInitial(layer)"
           :animate="layerAnimate(layer)"
           :transition="layerTransition(layer.operation)"
           :style="{ zIndex: index + 1 }"
@@ -381,7 +377,7 @@ onBeforeUnmount(() => {
           class="sakura-hero-background-layer min-h-full min-w-full object-cover"
           preload="auto" autoplay :loop="!layer.isPlaying" :muted="!sakura.wallpaperSoundEnabled"
           :disable-picture-in-picture="hero.disablePictureInPicture"
-          :initial="layer.leaving ? false : layerInitial(layer.operation)"
+          :initial="layerInitial(layer)"
           :animate="layerAnimate(layer)"
           :transition="layerTransition(layer.operation)"
           :style="{ zIndex: index + 1 }"
@@ -393,7 +389,7 @@ onBeforeUnmount(() => {
         <motion.div
           v-else
           class="sakura-hero-background-layer sakura-hero-background-img"
-          :initial="layer.leaving ? false : layerInitial(layer.operation)"
+          :initial="layerInitial(layer)"
           :animate="layerAnimate(layer)"
           :transition="layerTransition(layer.operation)"
           :style="{ zIndex: index + 1, backgroundImage: `url(${layer.url})`, backgroundAttachment: canUseFixedAttachment ? 'fixed' : 'scroll' }"
@@ -433,7 +429,7 @@ onBeforeUnmount(() => {
     );
     mix-blend-mode: hard-light;
     opacity: 0.9;
-    content: '';
+    content: none;
     pointer-events: none;
     will-change: transform;
   }
@@ -450,6 +446,7 @@ onBeforeUnmount(() => {
 
   &.is-revealed {
     &::after {
+      content: '';
       animation: sakura-hero-rainbow 6s forwards;
     }
 

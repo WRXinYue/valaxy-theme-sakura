@@ -6,20 +6,20 @@ import { useSakuraAppStore } from '../../stores'
 export function toScrollPosition(router: Router) {
   const sakuraAppStore = useSakuraAppStore()
 
-  router.afterEach((to, from) => {
-    const savedPosition = sakuraAppStore.getScrollPosition(to.path)
-
+  const defaultScroll = router.options.scrollBehavior
+  router.options.scrollBehavior = (to, from, savedPosition) => {
     if (to.fullPath !== from.fullPath && !to.hash) {
-      nextTick(() => {
-        setTimeout(() => {
-          document.documentElement.scrollTop = savedPosition
-        }, 0)
-      })
+      return {
+        top: sakuraAppStore.getScrollPosition(to.path),
+        behavior: 'instant',
+      }
     }
-  })
+
+    return defaultScroll?.call(router, to, from, savedPosition)
+  }
 
   router.beforeEach((to, from) => {
-    if (to.fullPath !== from.fullPath) {
+    if (to.hash && to.fullPath !== from.fullPath) {
       nextTick(() => {
         scrollTo(document.body, to.hash, {
           smooth: true,

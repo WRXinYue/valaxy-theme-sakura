@@ -1,10 +1,14 @@
 <script lang="ts" setup>
 import type { Options } from 'motion-v'
+import type { Post } from 'valaxy'
 import type { CardTilt } from '../core/utils/cardTilt'
 import { motion } from 'motion-v'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { useNavigate, useThemeConfig } from '../composables'
+import { useRouter } from 'vue-router'
+import { useThemeConfig } from '../composables'
 import { getCardTilt } from '../core/utils/cardTilt'
+import { resolveCoverUrl } from '../core/utils/media'
+import { openPostCover, preloadPostRoute } from '../core/utils/postCoverTransition'
 import { useSakuraAppStore } from '../stores'
 
 const STACK_VISIBLE = 3
@@ -15,10 +19,33 @@ const RIFT_DURATION = 1000
 const UNFURL_DURATION = 700
 
 const themeConfig = useThemeConfig()
-const navigate = useNavigate()
+const router = useRouter()
 const sakura = useSakuraAppStore()
 
-const entries = computed(() => themeConfig.value.pinnedPost?.entries || [])
+const entries = computed(() => (themeConfig.value.pinnedPost?.entries || []).map((entry) => {
+  const route = entry.link?.startsWith('/') && !entry.link.startsWith('//')
+    ? router.resolve(entry.link)
+    : undefined
+  const fm = route?.meta.frontmatter
+  const post: Post | undefined = route && fm && (route.path.startsWith('/posts/') || route.meta.layout === 'post')
+    ? { ...fm, path: fm.path || route.path }
+    : undefined
+  const img = post
+    ? resolveCoverUrl(post.cover || themeConfig.value.postList?.defaultImage)
+    : entry.img
+  return {
+    ...entry,
+    img,
+    post,
+    href: route?.href || entry.link,
+  }
+}))
+
+function openEntry(event: MouseEvent, entry: typeof entries.value[number]) {
+  const cover = (event.currentTarget as HTMLElement).querySelector<HTMLElement>('.sakura-hero-carousel-cover')
+  return openPostCover(event, router, entry.link, entry.post ? cover : null, cover?.querySelector('img')?.getAttribute('src'))
+}
+
 const activeIndex = ref(0)
 const isHovered = ref(false)
 const isExpanded = ref(false)
@@ -284,7 +311,7 @@ watch(() => sakura.wallpaperIsPlaying, (playing, _, onCleanup) => {
   }
 
   const layers = Math.max(0, visibleStack.value - 1)
-  const duration = Math.max(PLAYBACK_SLIDE, PLAYBACK_FOLD + Math.max(0, layers - 1) * PLAYBACK_STAGGER)
+  const duration = PLAYBACK_SLIDE + PLAYBACK_FOLD + Math.max(0, layers - 1) * PLAYBACK_STAGGER
   const openingTimer = setTimeout(() => {
     isPlaybackOpening.value = false
     startTimer()
@@ -333,22 +360,27 @@ onBeforeUnmount(() => {
       <a
         v-for="(entry, i) in entries"
         :key="i"
-        class="sakura-hero-carousel-slide"
+        class="sakura-hero-carousel-slide" data-post-card
         :class="{ 'is-active': i === activeIndex, 'is-leaving': isLeaving(i) }"
         :style="stackStyle(i)"
         :data-depth="Math.min(depthOf(i), STACK_VISIBLE - 1)"
-        :href="entry.link"
+        :href="entry.href"
         :aria-hidden="!isExpanded && i !== activeIndex"
         :tabindex="isExpanded || i === activeIndex ? 0 : -1"
-        @click.prevent="navigate.to(entry.link || '')"
+        @pointerenter="entry.post && preloadPostRoute(router, entry.link)"
+        @focus="entry.post && preloadPostRoute(router, entry.link)"
+        @click="openEntry($event, entry)"
         @mousemove="onSlideMove($event, i)"
         @mouseleave="onSlideLeave($event, i)"
       >
         <span class="sakura-hero-carousel-surface">
-          <img class="sakura-hero-carousel-img" :src="entry.img" :alt="entry.title" loading="lazy">
-          <span class="sakura-hero-carousel-shade" aria-hidden="true" />
+          <span class="sakura-hero-carousel-cover">
+            <img v-if="entry.img" class="sakura-hero-carousel-img" :src="entry.img" :alt="entry.title" loading="lazy">
+            <SakuraPostCardCover v-else-if="entry.post" :post="entry.post" />
+            <span class="sakura-hero-carousel-shade" aria-hidden="true" />
+          </span>
           <span class="sakura-hero-carousel-text">
-            <span class="sakura-hero-carousel-title">{{ entry.title }}</span>
+            <span class="sakura-hero-carousel-title" data-post-title>{{ entry.title }}</span>
             <span v-if="entry.desc" class="sakura-hero-carousel-desc">{{ entry.desc }}</span>
           </span>
           <span class="sakura-hero-carousel-arrow" aria-hidden="true" />
@@ -400,6 +432,7 @@ onBeforeUnmount(() => {
 
   &.is-playback-hidden {
     transform: translateX(calc(100% + var(--sakura-carousel-inset) + 40px));
+    transition-delay: 0s, var(--playback-fold);
     transition-timing-function: ease, cubic-bezier(0.55, 0, 0.85, 0.45);
   }
 
@@ -456,7 +489,7 @@ onBeforeUnmount(() => {
 
 .sakura-hero-carousel.is-playback-opening .sakura-hero-carousel-slide {
   transition: transform var(--playback-fold) cubic-bezier(0.22, 1, 0.36, 1)
-    max(0ms, calc((var(--sakura-carousel-depth) - 1) * var(--playback-stagger)));
+    calc(var(--playback-slide) + max(0ms, (var(--sakura-carousel-depth) - 1) * var(--playback-stagger)));
 }
 
 /* 入场时先只露出顶卡，其余卡片等顶卡落位后再展开 */
@@ -596,6 +629,13 @@ onBeforeUnmount(() => {
   opacity: 1;
 }
 
+.sakura-hero-carousel-cover {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
 .sakura-hero-carousel-img {
   width: 100%;
   height: 100%;
@@ -633,6 +673,8 @@ onBeforeUnmount(() => {
 }
 
 .sakura-hero-carousel-title {
+  width: fit-content;
+  max-width: 100%;
   overflow: hidden;
   font-size: 13px;
   font-weight: 700;

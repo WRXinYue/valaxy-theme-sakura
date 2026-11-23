@@ -14,12 +14,19 @@ const themeConfig = useThemeConfig()
 const route = useRoute()
 const coverPost = computed(() => ({ ...props.fm, path: props.fm.path || route.path }))
 
+const arrivalCover = computed(() => {
+  // The clicked card has already picked a URL for array and random covers.
+  return import.meta.env.SSR || history.state?.current !== route.fullPath
+    ? undefined
+    : history.state?.sakuraCover as string | null | undefined
+})
+
 const imageCard = computed(() => props.imageCard || themeConfig.value.ui.pageHeader?.image)
 </script>
 
 <template>
-  <header class="sakura-page-header sakura-fade-in-down space-y-1" flex="~ center items-end justify-center">
-    <SakuraImageCard v-bind="imageCard" :post="coverPost" :src="fm.cover" class="sakura-header-cover" h="full" w="full" absolute="!" z="-1" />
+  <header class="sakura-page-header space-y-1" :class="{ 'sakura-fade-in-down': arrivalCover === undefined }" flex="~ center items-end justify-center">
+    <SakuraImageCard v-bind="imageCard" :post="coverPost" :src="fm.cover" :resolved-src="arrivalCover" class="sakura-header-cover" h="full" w="full" absolute="!" z="-1" />
     <div class="sakura-header-grid">
       <div class="sakura-safe-padding sakura-header-container pb-25px">
         <div class="sakura-header-copy">
@@ -56,21 +63,26 @@ const imageCard = computed(() => props.imageCard || themeConfig.value.ui.pageHea
     isolation: isolate;
     transform-style: flat;
 
-    .sakura-header-cover,
-    &::before {
+    .sakura-header-cover {
       inset: 0 var(--sakura-post-cover-right) 0 var(--sakura-post-cover-left);
       border-radius: var(--sakura-post-cover-radius);
-    }
-
-    .sakura-header-cover {
       width: auto;
       z-index: 0;
+      overflow: hidden;
       clip-path: inset(0 round var(--sakura-post-cover-radius));
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        background: linear-gradient(to top, oklch(0% 0 0 / 72%), transparent 82%);
+      }
     }
 
     &::before {
-      z-index: 1;
-      background: linear-gradient(to top, oklch(0% 0 0 / 72%), transparent 82%);
+      content: none;
     }
 
     .sakura-header-container {
@@ -80,6 +92,10 @@ const imageCard = computed(() => props.imageCard || themeConfig.value.ui.pageHea
       padding-block: var(--sakura-post-header-inset);
       text-align: start;
       overflow-wrap: anywhere;
+    }
+
+    .sakura-header-title :deep(.sakura-title) {
+      text-shadow: 0 1px 5px oklch(0% 0 0 / 46%);
     }
 
     .sakura-header-copy {

@@ -7,6 +7,10 @@ export function resolveImage(data: string | string[]): string | undefined {
   }
 }
 
+export function resolveCoverUrl(source?: string | string[]) {
+  return source && resolveImage(source)?.replace('?random', () => `?random=${Math.random()}`)
+}
+
 export function isVideoUrl(url: string) {
   return /\.(?:mp4|webm|ogg)$/i.test(url)
 }
