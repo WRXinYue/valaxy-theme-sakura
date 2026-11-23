@@ -8,6 +8,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
     steps:
       - uses: actions/checkout@v3
         with:
@@ -18,10 +21,10 @@ jobs:
         uses: pnpm/action-setup@v4
 
       # after pnpm
-      - name: Use Node.js LTS
-        uses: actions/setup-node@v3
+      - name: Use Node.js 24
+        uses: actions/setup-node@v6
         with:
-          node-version: 'lts/*'
+          node-version: '24'
           registry-url: https://registry.npmjs.org/
           cache: pnpm
 
@@ -32,7 +35,6 @@ jobs:
       - name: Publish to npm
         run: pnpm ci:publish --tag "$NPM_DIST_TAG"
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NPM_DIST_TAG: ${{ contains(github.ref_name, '-') && 'next' || 'latest' }}
 
       - run: npx changelogithub
